@@ -23,7 +23,7 @@ Missing source metadata is null, visibly unavailable rather than inferred.
 | `lastAttemptAt`, `lastAttemptOutcome` | Most recent known acquisition attempt and its outcome; failure does not update `acquiredAt`. |
 | `preparedAt` | Static snapshot preparation, not publication or official revision. |
 | `publishedAt` | Site publication confirmed by a matching deployment receipt; null when unavailable. |
-| `refreshedAt` | Successful validation of published data on this device, not a live Parliament fetch. |
+| `refreshedAt` | Successful validation of the matching published pair on this device, including unchanged content; not a live Parliament fetch or proof of saving. A saved copy advances this time only when its replacement transaction commits. Null when no successful pair validation exists. |
 | `sourcePublishedAt`, `sourceRevisedAt` | Official dates only where explicitly supplied; currently unavailable in the sampled JSON. |
 
 ## Published entities
@@ -96,6 +96,12 @@ recheck need not change its digest.
 | `timestamp` | Nullable original source speech time value; not an official change timestamp. |
 | `gapReason` | Null unless unassigned: `missing-id`, `unknown-id`, or `conflicting-id`. |
 
+Classify an annotation only when the source `is_annotation` marker is boolean `true`.
+Missing, null or `false` markers leave the item in speaking-item accounting; do not infer
+annotations from labels, brackets or prose. Other marker values reject the replacement
+record as unsupported source structure. Preserve explicitly marked annotations separately
+even if they carry an author ID; they cannot establish assigned MP speech.
+
 Annotations remain distinct source content. Every other item is assigned only by an exact
 reconciled ID. A source label differing by titles or formatting is not by itself an ID
 conflict. An explicit contradictory structured identity is a conflict; missing identity
@@ -137,6 +143,19 @@ carries `refreshedAt`, whether it is a saved copy, and its semantic outcome:
 Loading, retrieval/schema/digest errors, offline-unsaved, unavailable device storage and
 incompatible saved data are separate reader states, not no-contributions outcomes.
 
+Unavailable/error states retain known pair/source details. Acquisition and pair-refresh
+times are null when no accepted record or successful pair validation exists; failed-attempt
+times do not populate them. A retained saved result keeps its own successful timestamps.
+
+After successful pair validation, including unchanged content, the current online result
+has the new `refreshedAt`. A committed save persists it with that result. Failed saving
+leaves any previous saved result and its timestamp unchanged; show the new online result
+as not saved and identify the older offline copy separately. Failed validation advances
+neither result nor saved-copy times. Shell-cache failure does not undo a committed pair:
+its transcript-saved status remains true. Offline reopening is promised only when required
+shell readiness is confirmed; an unsuccessful new-shell attempt does not invalidate an
+already confirmed compatible saved reader or its compatible saved transcripts.
+
 IndexedDB stores the validated catalogue, preferences (`language`, valid selected IDs),
 and opened results keyed by `(memberId, sittingId)`. Save a pair's identity, turns, gap
 passages, annotations and provenance in one transaction; announce offline availability
@@ -155,7 +174,8 @@ member does not mark another pair as saved. Storage failure leaves online readin
    replace the current pair. Language changes preserve IDs and source text.
 3. Online reopening: recheck published catalogue -> validate the matching shard -> replace
    the saved pair transactionally. Failure -> readable prior saved pair with dated notice;
-   the prior identity/provenance remains intact.
+   the prior identity/provenance remains intact. Saving failure after successful validation
+   preserves the old saved pair while the new, separately dated online result remains readable.
 4. Offline: compatible saved pair -> saved readable result; unsaved pair -> connection
    required. Evicted data -> unavailable offline, never invented recovery or absence.
 5. Updates: preserve valid selections before user-approved application update. Compatible

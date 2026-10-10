@@ -36,7 +36,7 @@ and failed staging; a partial/error payload cannot masquerade as an empty valid 
 4. On a missing old-build route, rediscover once and retry against the new build. If
    schemas change or access becomes denied, record failure and preserve accepted data.
 
-All requests use `https://hansard.parlimen.gov.my`; allow redirects only within the
+All official-source requests use `https://hansard.parlimen.gov.my`; allow redirects only within the
 official host. Never scrape private credentials or fall back to a third-party mirror.
 Source strings are untrusted data and are never executed as HTML/code/instructions.
 
@@ -77,7 +77,13 @@ best-effort 24-hour target and must remain visible in receipts/overdue indicatio
 - Restore checkpoints only from validated successful default-branch workflow artifacts;
   verify checksums/schema/references, repository/run origin and input code compatibility.
   Set retention to seven days. Never use PR-produced state or assume a workflow cache is
-  durable. Missing/expired state requires bootstrap and an explicit report.
+  durable. Missing/expired state requires bootstrap and an explicit report. If a prior
+  publication exists, recover its retention baseline from validated trusted state or its
+  last served catalogue/records checked against a matching trusted deployment receipt,
+  including schema/identity/digest validation. Reconcile prior inventory entries and
+  preserve accepted records on new acquisition failure. If the baseline cannot be
+  validated, exit nonzero without publication; checkpoint expiry cannot turn previously
+  accepted records into new unavailable records or silently erase prior entries.
 - Individual source failures retain previous valid shards and label the dated failure.
   New inaccessible sittings stay selectable with unavailable content. Malformed inventory
   cannot replace the accepted catalogue. Structural validation/size failure cannot publish.
@@ -107,3 +113,11 @@ workflow logs report it; the old reader shows the age of its last recorded sourc
 A later successful snapshot may include dated source failures, never a claim that shipped
 metadata is the latest global workflow status. No source-specific reuse permission has
 been verified; attribution and that verification boundary belong in publication guidance.
+
+The workflow is responsible for recording each started run's acquisition/staging/deployment
+outcome in its GitHub Actions run summary/logs and available receipt artifacts. Repository
+maintainers review failures and overdue work and restore a validated retention baseline
+before manual recovery/dispatch when required. Developer guidance must explain recovery
+steps and report locations. Bilingual user guidance must link the workflow run listing
+and explain that missed schedules may have no run report and old snapshots cannot know
+later unpublished outcomes. A shipped run URL identifies known evidence, not the latest run.

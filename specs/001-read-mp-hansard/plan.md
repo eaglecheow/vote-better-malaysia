@@ -112,7 +112,12 @@ and one of six stable ID buckets each run. Catch up overdue records after missed
 use content hashes for historical changes. Rediscover the source deployment ID each run.
 
 Restore only validated state from successful trusted default-branch workflow artifacts
-(seven-day retention); absent state triggers bootstrap. Rate-limit serial requests and
+(seven-day retention); absent state triggers bootstrap. Before replacing an existing
+publication, recover its retention baseline from validated trusted state or the last
+served catalogue/records verified against a matching trusted deployment receipt.
+Reconcile prior entries and retain accepted records even during bootstrap; if that
+baseline cannot be validated, block publication and require maintainer recovery.
+Rate-limit serial requests and
 checkpoint unfinished work. Keep catalogue sittings selectable; new inaccessible records
 are explicitly unavailable. Retain prior valid records and omitted prior inventory entries
 with their status. Schema/inventory rejection cannot overwrite valid data.
@@ -123,6 +128,12 @@ hash/identity checks, one latest-catalogue retry and safe fallback. Failed build
 deployments preserve the previous site. Successfully published snapshots can expose dated
 source failures. An old static site cannot know about an unpublished failure: it shows
 checks overdue by age and links workflow evidence, never infers failure from age.
+
+The workflow writes acquisition/staging/deployment outcomes to its GitHub Actions run
+summary/logs and available receipt artifacts, including failed runs. Repository maintainers
+review failures and overdue checks and perform manual recovery/dispatch. Developer guidance
+must document those locations and restoration of a validated retention baseline; bilingual
+user guidance links the workflow run listing and explains the old snapshot's knowledge limit.
 
 `acquiredAt`, snapshot `preparedAt`, verified deployment `publishedAt` and device
 `refreshedAt` have distinct meanings. Actual publication time belongs in a post-deployment
@@ -137,11 +148,17 @@ selections, results, gaps, localization, accessibility and updates. Render sourc
 as text, preserving paragraphs/traversal order. Names, brackets, titles and quotations
 cannot override IDs. Zero matches with unresolved speaking items are incomplete; verified
 absence requires a complete accepted sitting and zero unresolved nonannotation items.
+Only the explicit source annotation flag can exclude an item from speaking-item accounting;
+missing flags cannot be inferred from prose. The data model defines conservative marker rules.
 
 Fetch static data through network requests bypassing worker data caching; explicitly save
 validated catalogue and opened pair results in IndexedDB transactions. On online reopen,
 show saved data with its label, check the latest snapshot, and replace only after validation.
-Reject selection races and identity/schema mismatches. Confirm transcript saving on
+Reject selection races and identity/schema mismatches. Successful pair validation advances
+the current online result's `refreshedAt` even for unchanged data. Persist that time only
+with a committed pair; failed saving leaves the prior offline copy and its time intact
+while the new online result remains readable. Keep transcript-saved and offline-ready
+notices distinct when shell caching fails. Confirm transcript saving on
 transaction completion; promise offline reopening only after committed catalogue/result
 and shell-cache readiness. Online reading survives write/cache failures. Unsaved pairs require a connection
 offline even if another pair from that sitting was fetched.
@@ -179,6 +196,11 @@ incompatible data, concurrent reading tabs and the deployed subpath. Playwright 
 is not Safari; emulation is not an iPhone; patched Firefox is not stable Firefox acceptance.
 Record device, OS/browser version, date and journeys on every FR-009 target, including
 native gzip delivery/decoding and installation where supported.
+
+Refresh checks distinguish unchanged/changed valid data, failed validation, failed pair
+saving and failed shell caching, including current versus persisted refresh times.
+Acquisition checks cover annotation-marker classification and bootstrap without prior
+checkpoint state; an unrecoverable published retention baseline must block replacement.
 
 Manually compare ten pairs across five sittings, including the 2026-02-10 missing-ID
 question and an actually verified no-contribution case. Verify all source leaves, exact

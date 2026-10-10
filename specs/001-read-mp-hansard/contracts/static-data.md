@@ -113,12 +113,15 @@ are separately nullable. A successful static refresh must not imply a live sourc
    the source gap notice and access to all unassigned passages. Only a fully validated
    record with zero unresolved nonannotation items and zero assigned matches can produce
    `verified-absence`; otherwise an empty subset is `incomplete` or unavailable/error.
-5. Record a successful device `refreshedAt` only after this validation. Save the opened
+5. Record a successful device `refreshedAt` only after matching-pair validation, including
+   unchanged content. It describes the current online result; persist that time only with
+   a committed replacement pair. Save the opened
    pair, member/sitting identity, ordered turns, all gap passages, annotations and provenance
    transactionally. Announce transcript-save status after completion; promise offline
    reopening only with committed catalogue/result and confirmed shell-cache readiness.
-   Failed storage or shell caching leaves current
-   online reading available and reports that offline saving did not succeed.
+   Failed pair saving leaves current online reading available as not saved and preserves
+   the previous saved copy and its time. Failed shell caching does not undo a committed
+   transcript save; distinguish transcript-saved from offline-reopen readiness.
 
 Selection changes invalidate older pending results, including results from retry. An old
 compatible saved pair is self-contained with its accepted catalogue identities and digest;

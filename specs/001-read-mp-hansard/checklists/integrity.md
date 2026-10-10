@@ -13,64 +13,64 @@
 
 ## Requirement Completeness
 
-- [ ] CHK001 Are catalogue coverage requirements explicit for every source-represented Parliament, historical identities, missing records, and inventory omissions, without equating acquisition failure with lack of participation? [Completeness, Spec §FR-003, Spec §SC-008, Plan §Acquisition and Publication]
-- [ ] CHK002 Are requirements defined for distinguishing source speaker identity from verified MP membership and for labeling unavailable historical constituency or term context? [Completeness, Spec §FR-002, Spec §Key Entities]
-- [ ] CHK003 Are preservation requirements complete for all reliably attributed turns, interruptions, original words, paragraph structure, source order, and supplied timestamps or source locations? [Completeness, Spec §FR-005, Spec §SC-003]
-- [ ] CHK004 Are requirements explicit that unassigned passages remain accessible in sitting order with both online results and saved offline copies? [Completeness, Spec §FR-005, Spec §FR-010, Reader Contract §Selection and results]
-- [ ] CHK005 Are source identity, sitting context, official links, status, completeness, and freshness requirements defined for attributed, incomplete, verified-absence, unavailable, and saved-result states? [Completeness, Spec §FR-006, Spec §FR-007, Spec §FR-011]
+- [x] CHK001 Are catalogue coverage requirements explicit for every source-represented Parliament, historical identities, missing records, and inventory omissions, without equating acquisition failure with lack of participation? [Completeness, Spec §FR-003, Spec §SC-008, Plan §Acquisition and Publication]
+- [x] CHK002 Are requirements defined for distinguishing source speaker identity from verified MP membership and for labeling unavailable historical constituency or term context? [Completeness, Spec §FR-002, Spec §Key Entities]
+- [x] CHK003 Are preservation requirements complete for all reliably attributed turns, interruptions, original words, paragraph structure, source order, and supplied timestamps or source locations? [Completeness, Spec §FR-005, Spec §SC-003]
+- [x] CHK004 Are requirements explicit that unassigned passages remain accessible in sitting order with both online results and saved offline copies? [Completeness, Spec §FR-005, Spec §FR-010, Reader Contract §Selection and results]
+- [x] CHK005 Are source identity, sitting context, official links, status, completeness, and freshness requirements defined for attributed, incomplete, verified-absence, unavailable, and saved-result states? [Completeness, Spec §FR-006, Spec §FR-007, Spec §FR-011]
 
 ## Requirement Clarity
 
-- [ ] CHK006 Is "reliably attributed" defined by explicit source-identity criteria, including missing, unknown, and conflicting identities, without allowing names, quotations, or bracketed labels to substitute for identity evidence? [Clarity, Spec §FR-002, Spec §FR-005, Spec §Assumptions]
-- [ ] CHK007 Is the definition of a complete accepted record precise enough to distinguish verified absence from an empty attributed subset with unresolved speaking items, including the treatment of annotations? [Clarity, Spec §FR-007, Spec §SC-003, Reader Contract §Selection and results]
-- [ ] CHK008 Are official publication/revision time, source-acquisition time, snapshot-preparation time, confirmed site-publication time, and successful device-refresh time distinctly defined, including unavailable dates? [Clarity, Spec §FR-006, Spec §FR-011, Plan §Acquisition and Publication]
-- [ ] CHK009 Is the best-effort 24-hour target defined with a clear timing basis and distinct meanings for overdue source checks, recorded source failures, and failures to obtain published site data? [Clarity, Spec §FR-011, Spec §SC-009, Reader Contract §Provenance and freshness]
-- [ ] CHK010 Are the prerequisites for promising offline availability explicit, including a successfully saved selected pair, required source/gap details, saved selection lists, and readiness of the saved reader? [Clarity, Spec §FR-010, Spec §User Story 3, Plan §Reader and PWA]
+- [x] CHK006 Is "reliably attributed" defined by explicit source-identity criteria, including missing, unknown, and conflicting identities, without allowing names, quotations, or bracketed labels to substitute for identity evidence? [Clarity, Spec §FR-002, Spec §FR-005, Spec §Assumptions]
+- [x] CHK007 Is the definition of a complete accepted record precise enough to distinguish verified absence from an empty attributed subset with unresolved speaking items, including the treatment of annotations? [Clarity, Spec §FR-007, Spec §SC-003, Reader Contract §Selection and results]
+- [x] CHK008 Are official publication/revision time, source-acquisition time, snapshot-preparation time, confirmed site-publication time, and successful device-refresh time distinctly defined, including unavailable dates? [Clarity, Spec §FR-006, Spec §FR-011, Plan §Acquisition and Publication]
+- [x] CHK009 Is the best-effort 24-hour target defined with a clear timing basis and distinct meanings for overdue source checks, recorded source failures, and failures to obtain published site data? [Clarity, Spec §FR-011, Spec §SC-009, Reader Contract §Provenance and freshness]
+- [x] CHK010 Are the prerequisites for promising offline availability explicit, including a successfully saved selected pair, required source/gap details, saved selection lists, and readiness of the saved reader? [Clarity, Spec §FR-010, Spec §User Story 3, Plan §Reader and PWA]
 
 ## Requirement Consistency
 
-- [ ] CHK011 Do all-sitting coverage requirements align with retention of previously valid records, selectable new unavailable records, and explicit treatment of source inventory omissions? [Consistency, Spec §FR-003, Spec §FR-011, Spec §SC-008, Plan §Acquisition and Publication]
-- [ ] CHK012 Are failed-refresh preservation requirements consistent with the requirement to identify incompatible saved content as unavailable, without promising preservation of content that cannot safely be reused? [Consistency, Spec §FR-011, Spec §FR-012, Spec §SC-004]
-- [ ] CHK013 Are data-refresh and application-update requirements clearly distinguished and consistent about uninterrupted active reading, deliberate update acceptance, and preservation of valid selections? [Consistency, Spec §FR-011, Spec §FR-012, Reader Contract §Updates and compatibility]
-- [ ] CHK014 Are retained-copy identity and provenance requirements consistent with catalogue changes, so a saved pair retains its accepted historical context rather than receiving labels from a different snapshot? [Consistency, Spec §FR-002, Spec §FR-006, Spec §FR-012, Static Data Contract §Coherent online retrieval and failure preservation]
+- [x] CHK011 Do all-sitting coverage requirements align with retention of previously valid records, selectable new unavailable records, and explicit treatment of source inventory omissions? [Consistency, Spec §FR-003, Spec §FR-011, Spec §SC-008, Plan §Acquisition and Publication]
+- [x] CHK012 Are failed-refresh preservation requirements consistent with the requirement to identify incompatible saved content as unavailable, without promising preservation of content that cannot safely be reused? [Consistency, Spec §FR-011, Spec §FR-012, Spec §SC-004]
+- [x] CHK013 Are data-refresh and application-update requirements clearly distinguished and consistent about uninterrupted active reading, deliberate update acceptance, and preservation of valid selections? [Consistency, Spec §FR-011, Spec §FR-012, Reader Contract §Updates and compatibility]
+- [x] CHK014 Are retained-copy identity and provenance requirements consistent with catalogue changes, so a saved pair retains its accepted historical context rather than receiving labels from a different snapshot? [Consistency, Spec §FR-002, Spec §FR-006, Spec §FR-012, Static Data Contract §Coherent online retrieval and failure preservation]
 
 ## Acceptance Criteria Quality
 
-- [ ] CHK015 Are source-accuracy criteria objectively measurable, with explicit pair/sitting sample sizes, original-text comparison, attribution-gap coverage, and an independently established no-contributions case? [Measurability, Spec §SC-003, Spec §DV-005, Plan §Validation and CI Gates]
-- [ ] CHK016 Do freshness acceptance criteria distinguish controlled mechanism evidence from real-source observations and explicitly limit latency claims when official change times are unavailable? [Measurability, Spec §SC-009, Spec §DV-005]
-- [ ] CHK017 Are offline acceptance criteria explicit about ten attempts per supported actual browser target, the two-second limit, complete saved content/provenance, and separate unsaved or incompatible outcomes? [Measurability, Spec §SC-004, Spec §SC-011, Plan §Performance Budgets]
-- [ ] CHK018 Are archive, catalogue, record-size, and reading-time budgets specified with units, accounting, representative datasets, device/network conditions, run counts, and pass rules that forbid reducing source coverage to meet a limit? [Measurability, Spec §DV-003, Spec §SC-002, Plan §Performance Budgets]
+- [x] CHK015 Are source-accuracy criteria objectively measurable, with explicit pair/sitting sample sizes, original-text comparison, attribution-gap coverage, and an independently established no-contributions case? [Measurability, Spec §SC-003, Spec §DV-005, Plan §Validation and CI Gates]
+- [x] CHK016 Do freshness acceptance criteria distinguish controlled mechanism evidence from real-source observations and explicitly limit latency claims when official change times are unavailable? [Measurability, Spec §SC-009, Spec §DV-005]
+- [x] CHK017 Are offline acceptance criteria explicit about ten attempts per supported actual browser target, the two-second limit, complete saved content/provenance, and separate unsaved or incompatible outcomes? [Measurability, Spec §SC-004, Spec §SC-011, Plan §Performance Budgets]
+- [x] CHK018 Are archive, catalogue, record-size, and reading-time budgets specified with units, accounting, representative datasets, device/network conditions, run counts, and pass rules that forbid reducing source coverage to meet a limit? [Measurability, Spec §DV-003, Spec §SC-002, Plan §Performance Budgets]
 
 ## Scenario Coverage
 
-- [ ] CHK019 Are primary and alternate result requirements exhaustive and mutually distinguishable for attributed turns without gaps, attributed turns with gaps, unresolved empty subsets, and verified absence? [Coverage, Spec §User Story 1, Spec §User Story 2, Spec §FR-005, Spec §FR-007]
-- [ ] CHK020 Are exception requirements defined separately for catalogue failure, unavailable official records, invalid published content, and connectivity failure, including retry, preserved selections, and any dated saved fallback? [Coverage, Spec §User Story 2, Spec §FR-007, Spec §FR-011, Static Data Contract §Coherent online retrieval and failure preservation]
-- [ ] CHK021 Are acquisition/publication recovery requirements documented for missed schedules, unfinished acquisition, missing prior state, invalid replacement inventory, and failed publication, with retention of validated content and explicit overdue status? [Coverage, Spec §FR-011, Spec §Edge Cases, Plan §Acquisition and Publication]
-- [ ] CHK022 Are application-update requirements complete for postponement, deliberate acceptance, selection preservation, compatible saved copies, incompatible copies, and other concurrently open reading tabs? [Coverage, Spec §FR-012, Reader Contract §Updates and compatibility]
+- [x] CHK019 Are primary and alternate result requirements exhaustive and mutually distinguishable for attributed turns without gaps, attributed turns with gaps, unresolved empty subsets, and verified absence? [Coverage, Spec §User Story 1, Spec §User Story 2, Spec §FR-005, Spec §FR-007]
+- [x] CHK020 Are exception requirements defined separately for catalogue failure, unavailable official records, invalid published content, and connectivity failure, including retry, preserved selections, and any dated saved fallback? [Coverage, Spec §User Story 2, Spec §FR-007, Spec §FR-011, Static Data Contract §Coherent online retrieval and failure preservation]
+- [x] CHK021 Are acquisition/publication recovery requirements documented for missed schedules, unfinished acquisition, missing prior state, invalid replacement inventory, and failed publication, with retention of validated content and explicit overdue status? [Coverage, Spec §FR-011, Spec §Edge Cases, Plan §Acquisition and Publication]
+- [x] CHK022 Are application-update requirements complete for postponement, deliberate acceptance, selection preservation, compatible saved copies, incompatible copies, and other concurrently open reading tabs? [Coverage, Spec §FR-012, Reader Contract §Updates and compatibility]
 
 ## Edge Case Coverage
 
-- [ ] CHK023 Are requirements explicit for similar names, changing constituencies, historical identity gaps, quoted speakers, and repeated speaker headings, without merging identities or assigning another person's words? [Coverage, Spec §FR-002, Spec §FR-005, Spec §Edge Cases]
-- [ ] CHK024 Are requirements defined for draft/revised records, mixed-language text, long contributions, and missing source timestamps or constituency details while preserving original content and making unavailable metadata explicit? [Coverage, Spec §FR-005, Spec §FR-006, Spec §Edge Cases]
-- [ ] CHK025 Are requirements specified for selection changes during pending results or retries and for catalogue/content disagreement, including prevention of any earlier or mismatched pair becoming the current result? [Coverage, Spec §FR-004, Spec §FR-012, Static Data Contract §Coherent online retrieval and failure preservation]
-- [ ] CHK026 Are offline-limit requirements complete for first visits, unsaved pairs from an otherwise obtained sitting, storage removal, unsuccessful saving, and incompatible saved data, while preserving usable online reading? [Coverage, Spec §FR-010, Spec §FR-012, Spec §User Story 3, Plan §Reader and PWA]
+- [x] CHK023 Are requirements explicit for similar names, changing constituencies, historical identity gaps, quoted speakers, and repeated speaker headings, without merging identities or assigning another person's words? [Coverage, Spec §FR-002, Spec §FR-005, Spec §Edge Cases]
+- [x] CHK024 Are requirements defined for draft/revised records, mixed-language text, long contributions, and missing source timestamps or constituency details while preserving original content and making unavailable metadata explicit? [Coverage, Spec §FR-005, Spec §FR-006, Spec §Edge Cases]
+- [x] CHK025 Are requirements specified for selection changes during pending results or retries and for catalogue/content disagreement, including prevention of any earlier or mismatched pair becoming the current result? [Coverage, Spec §FR-004, Spec §FR-012, Static Data Contract §Coherent online retrieval and failure preservation]
+- [x] CHK026 Are offline-limit requirements complete for first visits, unsaved pairs from an otherwise obtained sitting, storage removal, unsuccessful saving, and incompatible saved data, while preserving usable online reading? [Coverage, Spec §FR-010, Spec §FR-012, Spec §User Story 3, Plan §Reader and PWA]
 
 ## Non-Functional Requirements
 
-- [ ] CHK027 Are security requirements explicit for treating source text as untrusted content and excluding private credentials from public files without altering original transcript words? [Completeness, Spec §FR-005, Spec §FR-013, Plan §Reader and PWA]
-- [ ] CHK028 Are bilingual accessibility requirements specified for attribution gaps, provenance, saved/stale notices, failure recovery, and update choices, while preserving original transcript language and valid selections? [Coverage, Spec §FR-008, Spec §FR-015, Spec §SC-006, Spec §SC-010]
-- [ ] CHK029 Are performance-reporting requirements consistent about separate mobile/desktop results, laboratory versus real-user evidence, disclosure of missing evidence, and merge-blocking missing or exceeded budgets? [Consistency, Spec §DV-003, Spec §SC-005, Plan §Validation and CI Gates]
+- [x] CHK027 Are security requirements explicit for treating source text as untrusted content and excluding private credentials from public files without altering original transcript words? [Completeness, Spec §FR-005, Spec §FR-013, Plan §Reader and PWA]
+- [x] CHK028 Are bilingual accessibility requirements specified for attribution gaps, provenance, saved/stale notices, failure recovery, and update choices, while preserving original transcript language and valid selections? [Coverage, Spec §FR-008, Spec §FR-015, Spec §SC-006, Spec §SC-010]
+- [x] CHK029 Are performance-reporting requirements consistent about separate mobile/desktop results, laboratory versus real-user evidence, disclosure of missing evidence, and merge-blocking missing or exceeded budgets? [Consistency, Spec §DV-003, Spec §SC-005, Plan §Validation and CI Gates]
 
 ## Dependencies & Assumptions
 
-- [ ] CHK030 Are dependencies on the official internal source interface, historical identity availability, revision metadata, and unverified reuse-policy applicability documented with their verification boundaries and failure-preservation requirements? [Completeness, Assumption, Spec §FR-001, Spec §Source Dependencies and Verification Boundary, Spec §DV-005]
-- [ ] CHK031 Are full-inventory acquisition and archive-size assumptions identified as required launch evidence rather than conclusions established by a sampled transcript or catalogue alone? [Clarity, Assumption, Spec §SC-008, Spec §DV-005, Plan §Technical Context, Plan §Performance Budgets]
-- [ ] CHK032 Are delivery requirements explicit about behavioral RED before implementation, actual-browser evidence for offline/update claims, and developer/user/code documentation of source and offline limitations? [Completeness, Spec §DV-001, Spec §DV-002, Spec §DV-004, Spec §FR-014]
+- [x] CHK030 Are dependencies on the official internal source interface, historical identity availability, revision metadata, and unverified reuse-policy applicability documented with their verification boundaries and failure-preservation requirements? [Completeness, Assumption, Spec §FR-001, Spec §Source Dependencies and Verification Boundary, Spec §DV-005]
+- [x] CHK031 Are full-inventory acquisition and archive-size assumptions identified as required launch evidence rather than conclusions established by a sampled transcript or catalogue alone? [Clarity, Assumption, Spec §SC-008, Spec §DV-005, Plan §Technical Context, Plan §Performance Budgets]
+- [x] CHK032 Are delivery requirements explicit about behavioral RED before implementation, actual-browser evidence for offline/update claims, and developer/user/code documentation of source and offline limitations? [Completeness, Spec §DV-001, Spec §DV-002, Spec §DV-004, Spec §FR-014]
 
 ## Ambiguities & Conflicts
 
-- [ ] CHK033 Are the responsible actor and reporting location specified for acquisition or deployment failures that cannot appear in the previously published static snapshot, without implying that snapshot knows unpublished events? [Clarity, Gap, Spec §FR-011, Spec §SC-009, Plan §Acquisition and Publication]
-- [ ] CHK034 Is "successful device refresh" unambiguous for unchanged content, changed content, and content obtained but not saved, so freshness labels cannot be mistaken for an offline-availability promise? [Clarity, Ambiguity, Spec §FR-006, Spec §FR-010, Spec §FR-011, Reader Contract §Provenance and freshness]
+- [x] CHK033 Are the responsible actor and reporting location specified for acquisition or deployment failures that cannot appear in the previously published static snapshot, without implying that snapshot knows unpublished events? [Clarity, Gap, Spec §FR-011, Spec §SC-009, Plan §Acquisition and Publication]
+- [x] CHK034 Is "successful device refresh" unambiguous for unchanged content, changed content, and content obtained but not saved, so freshness labels cannot be mistaken for an offline-availability promise? [Clarity, Ambiguity, Spec §FR-006, Spec §FR-010, Spec §FR-011, Reader Contract §Provenance and freshness]
 
 ## Notes
 
@@ -83,3 +83,23 @@
 - `tasks.md` does not exist at generation time; this review does not assess task sequencing or task completeness.
 - No additional must-have items were supplied beyond the selected focus and standard pre-implementation peer-review depth.
 - Add comments or findings inline and link relevant evidence. Items are numbered sequentially for easy reference.
+
+### Review on 2026-10-10
+
+The user authorized evaluation, targeted requirements corrections, and marking satisfied
+items. All 34 criteria are satisfied by the revised written requirements. The review began
+at `3188f64`; the specification, plan, data model, contracts, and validation guide were
+reviewed together. No application tests or live source probes were performed for this
+requirements review; runtime acceptance, full-archive fit, actual browser behavior,
+real-user performance, and source reuse-policy verification remain delivery boundaries.
+
+| Items | Requirements evidence and review finding |
+|---|---|
+| CHK001–004, CHK006, CHK011, CHK014, CHK023–024 | FR-002/003/005, data model identity/item/relationship rules, and reader/static contracts define historical coverage, exact-ID attribution, original content, accessible saved gaps, retained identities, and omitted inventory entries. |
+| CHK005, CHK007–009, CHK019 | FR-005/006/007/011, the data model, and reader result/provenance requirements define distinct outcomes and time meanings. The review added explicit annotation-marker rules and unavailable successful timestamps; missing markers cannot remove possible speech from gap accounting. |
+| CHK010, CHK012–013, CHK020, CHK025–026, CHK034 | FR-004/010/011/012, Story 3, SC-004, and reader/static/storage requirements distinguish online validation, committed pair saving, offline readiness, safe fallback, selection races, data refresh, and deliberate application updates. The review resolved unchanged-data and save/shell-failure timestamp and status ambiguities. |
+| CHK015–018, CHK029, CHK031 | SC-002/003/004/005/008/009/011 and the plan's validation/budget sections specify sample sizes, actual browser targets, repeatable size/timing measurements, CI gates, and separate fixture/lab/live/field evidence. Full inventory acquisition and archive fit remain measured launch obligations. |
+| CHK021, CHK033 | FR-011/DV-005, the plan's acquisition section, and the acquisition contract now require a validated published retention baseline after missing/expired state; an unrecoverable baseline blocks replacement. The workflow records run outcomes in Actions summaries/logs and available receipts; repository maintainers own review/manual recovery, with report locations and knowledge limits documented for developers and users. |
+| CHK022 | FR-012 and reader update/compatibility requirements cover postponement, deliberate application, selection preservation, compatible/incompatible content, and other reading tabs. Confirmed compatible saved-reader readiness survives an unsuccessful new-shell attempt. |
+| CHK027–028, CHK032 | FR-008/013/014/015, DV-001–004, and the plan require untrusted-text handling, credential exclusion, bilingual accessible controls/notices, behavioral RED evidence, actual-browser validation, and developer/user/function documentation. These are delivery requirements, not completed checks. |
+| CHK030 | FR-001, Source Dependencies and Verification Boundary, and DV-005 explicitly document internal-interface, identity, timestamp, and reuse-policy limitations and preservation on failure; checked status approves that disclosure without claiming those external limitations are resolved. |

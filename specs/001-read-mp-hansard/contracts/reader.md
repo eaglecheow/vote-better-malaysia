@@ -47,12 +47,23 @@ correct label, and successful device `refreshedAt`; a confirmed deployment `publ
 may be shown only when supplied by a verified receipt.
 
 Online reopening checks the newest published catalogue and matching shard. This is a
-check of the static published copy, not a live request to Parliament. If content changed,
-validate and atomically replace the saved pair; failure preserves the previous version
-and original refresh time. Save all required gap passages with the pair. Announce saved
+check of the static published copy, not a live request to Parliament. Validate the pair
+whether content changed or not, then attempt an atomic save. Successful validation, including unchanged
+content, gives the current online result a new `refreshedAt`; the saved copy receives that
+time only when its save commits. Failed validation preserves the previous result/time.
+Failed saving preserves the old saved copy/time while the new online result remains
+readable, explicitly not saved, with the older offline copy identified separately.
+Unavailable/error states retain known pair/source details and identify acquisition or
+pair-refresh times as unavailable when no accepted record or successful validation exists.
+Failed-attempt times never substitute for successful times.
+Save all required gap passages with the pair. Announce offline
 availability only after catalogue/result transactions complete and the worker confirms
 shell-cache readiness. Transcript-save completion alone is not an offline-reopen promise.
 Reading remains usable if storage or shell caching fails; explain the offline limit.
+If the pair save committed but required shell readiness cannot be confirmed, acknowledge
+the saved transcript without promising offline reopening; do not misreport the committed
+save as failed. An unsuccessful new-shell attempt does not invalidate an already confirmed
+compatible saved reader or compatible saved transcripts.
 
 Show a source check as overdue when the relevant last successful check is more than
 24 hours old. Show a dated source failure only if recorded in the published snapshot;

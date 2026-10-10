@@ -111,6 +111,9 @@ documentation reports from `evidence/`; do not substitute retrospective tests fo
    Follow acquisition limits; do not obtain a passing check by increasing source load
    or retrying access denial. Source/schema failures must not publish empty error
    output over valid records. Interrupted work resumes from a validated checkpoint.
+   With missing/expired state, restore and validate the prior served retention baseline
+   before replacement; failure to recover it must block publication, not erase prior
+   inventory entries or replace accepted records with unavailable content.
 6. Measure the full staged artifact and every shard against all size budgets before
    deployment. A failure blocks release without truncation or narrower coverage.
    The pipeline validates a complete staged snapshot before publishing it; failed
@@ -136,6 +139,10 @@ latency. A failed deployment is visible in workflow logs, while the old static s
 can show overdue data from age and only failures recorded in its published snapshot.
 It cannot claim to know a later failed run. An online device refresh reads the latest
 published static copy and does not establish a new Parliament-source retrieval.
+The workflow records started-run outcomes in Actions run summaries/logs and available
+receipt artifacts; repository maintainers review failures/overdue work and perform manual
+recovery. Developer guidance documents baseline restoration and these report locations;
+bilingual user guidance links the workflow run listing and explains unpublished events.
 
 Document the internal interface/deployment-ID dependence and unverified Hansard reuse
 policy. No transcript-specific permission or prohibition was established by research;
@@ -154,7 +161,8 @@ Run production-build checks, then repeat the journeys at the actual Pages addres
 | Gaps/source details | Unassigned passages remain reachable in source order with annotations identified; original source/status, unavailable metadata and relevant timestamps are honest. |
 | Locale/accessibility | First visit uses BM; switch BM/English preserves selections and transcript bytes; labels, focus and loading/result/error announcements work with keyboard and assistive technology. |
 | Offline reopen | Verify catalogue/result commits and shell-cache readiness before offline-ready messaging; failed shell installation must not promise reopening. Close, disconnect and reopen. Saved lists, selected result, gap passages and provenance are readable and marked saved. Unsaved pairs require a connection. |
-| Saved refresh/failure | Reconnect and reopen; latest published data replaces the saved version after validation. Failed retrieval/hash/storage writes preserve the last readable version with accurate notices. |
+| Saved refresh/failure | Reconnect and reopen with changed and unchanged data; successful validation advances the online result's refresh time. A committed save advances the saved copy/time; failed retrieval/hash checks preserve previous times. Failed saving keeps the old offline copy/time while newly validated online data remains readable as not saved. |
+| Saved transcript versus offline-ready | A committed pair remains transcript-saved if shell caching fails; offline-ready requires catalogue/result commits and confirmed compatible shell readiness. An unsuccessful new-shell attempt preserves a previously confirmed compatible saved reader and transcripts. |
 | Storage loss/write failure | Clear storage or exercise actual storage failure; online reading still works, missing content is not promised offline, and no false absence is shown. |
 | Worker/install/update | Verify initial installation/activation and waiting version B while reading version A. Continue keeps reading; Apply preserves selections and compatible data. No forced reload of another reading tab; incompatible data is explicitly unavailable. |
 | Repository subpath | Direct open, refresh, native gzip fetch, manifest/icons/scope, installed launch, offline reopen and updates all work at `/vote-better-malaysia/`. |
