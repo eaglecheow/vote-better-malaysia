@@ -71,13 +71,13 @@ anda ialah kegagalan mendapatkan data laman; ia tidak mencipta kegagalan proses 
 Pautan Bukti proses data, apabila tersedia, membantu menyemak sejarah proses.
 
 Salinan statik hanya mengetahui status ketika disediakan. Ia tidak dapat mengetahui
-proses yang terlepas/gagal selepas itu, atau penantian bukti untuk versi baharu. Sasaran
-semakan sumber 24 jam ialah usaha terbaik. Proses dijadualkan setiap empat jam pada
-minit 17 UTC apabila konfigurasi yang disemak tersedia di cawangan utama; konfigurasi
-tempatan tidak mengaktifkannya. Penantian pengesahan pada peranti sebenar boleh melambatkan
-penerbitan, termasuk perubahan tarikh sahaja tanpa perubahan perkataan transkrip.
+proses yang terlepas/gagal selepas itu, atau penantian bukti untuk versi baharu.
+Pratonton awam dikemas kini melalui proses manual; ia tidak menjanjikan kemas kini
+dalam 24 jam. Perolehan sumber dan semakan sebelum penerbitan boleh melambatkan
+kemas kini. Jadual dan pengesahan pada peranti sebenar untuk keluaran penuh masih
+dalam penilaian.
 Resit penerbitan lama tidak mengesahkan laman terkini jika semakan selepas penerbitan gagal.
-[Sejarah proses](https://github.com/eaglecheow/vote-better-malaysia/actions/workflows/pages.yml)
+[Sejarah proses pratonton](https://github.com/eaglecheow/vote-better-malaysia/actions/workflows/pages-preview.yml)
 dan [bukti semasa](../specs/001-read-mp-hansard/evidence/source-refresh.md) membezakan hasil ini.
 
 Tarikh penerbitan/semakan rasmi dan masa kejayaan yang tiada dinyatakan tidak tersedia.
@@ -252,12 +252,11 @@ snapshot. Your device's failed download is a site-data failure and does not crea
 source-pipeline failure. Data pipeline evidence, when available, links to run history.
 
 A static snapshot knows only status recorded when prepared. It cannot know later missed/
-failed runs or later waits for new-version evidence. The 24-hour source target is best
-effort. Preparation is scheduled every four hours at minute 17 UTC once the reviewed
-configuration is on the default branch; local configuration does not activate it.
-Waiting for actual-device checks can delay publication, including date/provenance-only
-changes with identical transcript words. An older confirmed receipt does not confirm the
-current live site after failed postdeployment verification. [Run history](https://github.com/eaglecheow/vote-better-malaysia/actions/workflows/pages.yml)
+failed runs or later waits for new-version evidence. The public preview is refreshed
+manually and does not promise updates within 24 hours. Source acquisition and checks
+before publication can delay updates. The full release's schedule and physical-device
+acceptance remain under review. An older confirmed receipt does not confirm the
+current live site after failed postdeployment verification. [Preview run history](https://github.com/eaglecheow/vote-better-malaysia/actions/workflows/pages-preview.yml)
 and [current operational evidence](../specs/001-read-mp-hansard/evidence/source-refresh.md)
 keep those outcomes separate.
 

@@ -65,14 +65,14 @@ async function sourceFetch(input: string | URL | Request): Promise<Response> {
 }
 
 /**
- * Builds controlled acquisition options with an advancing clock to avoid real delays.
+ * Builds controlled local acquisition options with an advancing clock to avoid real delays.
  * @param disk - Isolated output/state directories.
  * @param transport - Source response boundary.
  * @returns Options for bootstrap with test-only time and transport dependencies.
  */
 function options(disk: { state: string; out: string }, transport: typeof fetch = sourceFetch): unknown {
   return { ...disk, mode: 'bootstrap', transport, repository: 'eaglecheow/vote-better-malaysia',
-    branch: 'main', codeFingerprint: 'a'.repeat(64), now, sleep };
+    branch: 'main', codeFingerprint: 'a'.repeat(64), workflowContext: false, now, sleep };
 }
 
 let elapsed = 0;

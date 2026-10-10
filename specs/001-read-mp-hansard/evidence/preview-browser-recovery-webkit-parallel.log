@@ -1,0 +1,77 @@
+
+> vote-better-malaysia@0.1.0 test:browser
+> playwright test --project=webkit --workers=6 --output=/private/tmp/hansard-preview-recovery-red
+
+[WebServer] (node:97774) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 54 tests using 6 workers
+
+(node:97780) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:97778) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:97775) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:97776) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:97777) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:97779) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   6 [webkit] › tests/browser/install.spec.ts:3:1 › INSTALL-BROWSER001: real base-scoped manifest/start/scope and native decoded icon dimensions stay bounded (1.3s)
+  ✓   3 [webkit] › tests/browser/reading.spec.ts:42:60 › gzip: complete source words, paragraph breaks, gaps, annotations, and provenance remain accessible (1.6s)
+  ✓   5 [webkit] › tests/browser/storage.spec.ts:3:1 › STORAGE-BROWSER001: native request success precedes commit and cannot acknowledge the new saved time (2.1s)
+  ✓   2 [webkit] › tests/browser/failures.spec.ts:84:3 › ms: controlled complete absence, incomplete empty subset and inaccessible record are distinct (2.4s)
+  ✓   7 [webkit] › tests/browser/install.spec.ts:34:1 › INSTALL-BROWSER002: real native registration and complete versioned CacheStorage confirm shell readiness without data caching (1.1s)
+  ✓   8 [webkit] › tests/browser/reading.spec.ts:42:60 › decoded: complete source words, paragraph breaks, gaps, annotations, and provenance remain accessible (830ms)
+  ✓   4 [webkit] › tests/browser/offline.spec.ts:4:47 › OFFLINE001 ms: a closed reader reopens exact committed words, gaps, annotations and provenance offline (2.5s)
+  ✓   1 [webkit] › tests/browser/harness.spec.ts:15:1 › harness: opens the production application shell (2.7s)
+  ✓  10 [webkit] › tests/browser/failures.spec.ts:105:3 › ms: failed initial lists expose an announced keyboard Retry and recover the full choices (549ms)
+  ✓  12 [webkit] › tests/browser/reading.spec.ts:66:1 › native keyboard and language controls preserve source IDs, exact words, focus, and bilingual announcements (747ms)
+  ✓  11 [webkit] › tests/browser/install.spec.ts:60:1 › INSTALL-BROWSER003: an actual first-shell install failure leaves online reading/saving available with no offline-ready promise (976ms)
+  ✓  16 [webkit] › tests/browser/reading.spec.ts:87:1 › untrusted source strings are literal text without image/script elements or handler execution (672ms)
+  ✓  14 [webkit] › tests/browser/failures.spec.ts:118:114 › ms: catalogue-schema retains known context and retries the selected pair without inventing absence (1.1s)
+  ✓  13 [webkit] › tests/browser/offline.spec.ts:4:47 › OFFLINE001 en: a closed reader reopens exact committed words, gaps, annotations and provenance offline (2.0s)
+  ✓  18 [webkit] › tests/browser/reading.spec.ts:99:1 › a delayed old sitting response cannot overwrite the newer chosen source identity (651ms)
+  ✓   9 [webkit] › tests/browser/storage.spec.ts:26:1 › STORAGE-BROWSER002: native abort after real put success rolls back all stores and preserves the older offline copy (2.6s)
+  ✓  19 [webkit] › tests/browser/failures.spec.ts:118:114 › ms: shard-http retains known context and retries the selected pair without inventing absence (875ms)
+  ✓  17 [webkit] › tests/browser/install.spec.ts:95:1 › INSTALL-BROWSER004: the manifest reader entry remains a usable website with preserved saved content without a prompt event (1.9s)
+  ✓  21 [webkit] › tests/browser/reading.spec.ts:135:1 › 320 CSS pixels: both UI languages preserve full source text with no horizontal page scroll (794ms)
+  ✓  23 [webkit] › tests/browser/failures.spec.ts:118:114 › ms: shard-body retains known context and retries the selected pair without inventing absence (725ms)
+  ✓  22 [webkit] › tests/browser/storage.spec.ts:46:1 › STORAGE-BROWSER003: unchanged source bytes still get a new successful validation and committed saved time (1.1s)
+  ✓  15 [webkit] › tests/browser/updates.spec.ts:5:1 › UPDATES-BROWSER001: native waiting-version discovery and Continue preserve two current reading tabs (3.0s)
+  ✓  20 [webkit] › tests/browser/offline.spec.ts:27:1 › OFFLINE002: fetching one sitting never saves an unopened different-member pair (1.6s)
+  ✓  25 [webkit] › tests/browser/failures.spec.ts:118:114 › ms: shard-digest retains known context and retries the selected pair without inventing absence (801ms)
+  ✓  28 [webkit] › tests/browser/offline.spec.ts:44:1 › OFFLINE003: a cached shell and catalogue without an opened transcript require a connection (1.2s)
+  ✓  29 [webkit] › tests/browser/failures.spec.ts:118:114 › ms: shard-schema retains known context and retries the selected pair without inventing absence (920ms)
+  ✓  26 [webkit] › tests/browser/storage.spec.ts:66:1 › STORAGE-BROWSER004: a changed coherent record replaces all native saved source partitions after validation (1.5s)
+  ✓  31 [webkit] › tests/browser/failures.spec.ts:135:48 › ms: a delayed failed Retry cannot replace a newer same-pair Read (607ms)
+  ✓  30 [webkit] › tests/browser/offline.spec.ts:59:1 › OFFLINE004: real pair-store eviction loses that transcript without claiming verified absence (1.3s)
+  ✓  33 [webkit] › tests/browser/failures.spec.ts:135:48 › ms: a delayed failed Retry cannot replace a newer selection (782ms)
+  ✓  32 [webkit] › tests/browser/storage.spec.ts:80:66 › STORAGE-BROWSER005 digest: invalid online replacement cannot overwrite a previously committed pair or its time (1.4s)
+  ✓  27 [webkit] › tests/browser/updates.spec.ts:28:1 › UPDATES-BROWSER002: native preference commit precedes actual waiting-target Apply and only the consenting tab reloads (2.9s)
+  ✓  35 [webkit] › tests/browser/failures.spec.ts:155:3 › ms: source age, dated known failure and snapshot knowledge remain distinct at 320 CSS pixels (525ms)
+  ✓  34 [webkit] › tests/browser/offline.spec.ts:72:77 › OFFLINE005 schemaVersion: incompatible real saved data stays unavailable without destructive repair (1.1s)
+  ✓  38 [webkit] › tests/browser/failures.spec.ts:174:3 › ms: an old successful snapshot can disclose age but cannot invent a later workflow failure (561ms)
+  ✓  36 [webkit] › tests/browser/storage.spec.ts:80:66 › STORAGE-BROWSER005 identity: invalid online replacement cannot overwrite a previously committed pair or its time (1.4s)
+  ✓  24 [webkit] › tests/browser/reading.spec.ts:153:1 › reading help is reachable at the production repository base in both languages (5.3s)
+  ✓  39 [webkit] › tests/browser/offline.spec.ts:72:77 › OFFLINE005 memberId: incompatible real saved data stays unavailable without destructive repair (1.1s)
+  ✓  40 [webkit] › tests/browser/failures.spec.ts:84:3 › en: controlled complete absence, incomplete empty subset and inaccessible record are distinct (1.2s)
+  ✓  37 [webkit] › tests/browser/updates.spec.ts:85:1 › UPDATES-BROWSER003: real preference transaction abort prevents Apply and preserves both active and waiting workers (2.3s)
+  ✓  43 [webkit] › tests/browser/failures.spec.ts:105:3 › en: failed initial lists expose an announced keyboard Retry and recover the full choices (358ms)
+  ✓  41 [webkit] › tests/browser/storage.spec.ts:80:66 › STORAGE-BROWSER005 schema: invalid online replacement cannot overwrite a previously committed pair or its time (1.4s)
+  ✓  42 [webkit] › tests/browser/offline.spec.ts:72:77 › OFFLINE005 recordDigest: incompatible real saved data stays unavailable without destructive repair (949ms)
+  ✓  45 [webkit] › tests/browser/failures.spec.ts:118:114 › en: catalogue-schema retains known context and retries the selected pair without inventing absence (493ms)
+  ✓  44 [webkit] › tests/browser/updates.spec.ts:108:1 › UPDATES-BROWSER004: an actual failed new-shell install preserves confirmed old readiness and closed-reader offline content (990ms)
+  ✓  47 [webkit] › tests/browser/failures.spec.ts:118:114 › en: shard-http retains known context and retries the selected pair without inventing absence (419ms)
+  ✓  46 [webkit] › tests/browser/offline.spec.ts:87:1 › OFFLINE006: an explicitly opened zero-turn incomplete pair retains gaps rather than claiming absence (794ms)
+  ✓  48 [webkit] › tests/browser/failures.spec.ts:118:114 › en: shard-body retains known context and retries the selected pair without inventing absence (384ms)
+  ✓  49 [webkit] › tests/browser/failures.spec.ts:118:114 › en: shard-digest retains known context and retries the selected pair without inventing absence (375ms)
+  ✓  50 [webkit] › tests/browser/failures.spec.ts:118:114 › en: shard-schema retains known context and retries the selected pair without inventing absence (340ms)
+  ✓  51 [webkit] › tests/browser/failures.spec.ts:135:48 › en: a delayed failed Retry cannot replace a newer same-pair Read (298ms)
+  ✓  52 [webkit] › tests/browser/failures.spec.ts:135:48 › en: a delayed failed Retry cannot replace a newer selection (304ms)
+  ✓  53 [webkit] › tests/browser/failures.spec.ts:155:3 › en: source age, dated known failure and snapshot knowledge remain distinct at 320 CSS pixels (269ms)
+  ✓  54 [webkit] › tests/browser/failures.spec.ts:174:3 › en: an old successful snapshot can disclose age but cannot invent a later workflow failure (256ms)
+
+  54 passed (15.9s)

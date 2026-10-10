@@ -1,0 +1,3 @@
+Completed-source preview build with historical4090-record snapshot: PASS
+{"preview":true,"snapshot":{"snapshotId":"46deaa63-9074-408c-a1df-7fd687af312c","preparedAt":"2026-10-10T06:24:11.774Z","publishedAt":null,"coverage":{"parliaments":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],"startDate":"1959-09-11","endDate":"2026-10-08","latestInventoryCount":4090,"retainedSittingCount":0,"unavailableSittingCount":0,"attributionGapCount":533456},"status":{"acquisitionOutcome":"success","stagingOutcome":"success","workflowUrl":null,"completedAt":"2026-10-10T06:24:11.774Z","lastConfirmedDeployment":null},"sittingCount":4090},"shellGzip":24225,"jsGzip":15170,"iconBytes":3998,"artifactBytes":357817929,"availableRecords":4090}
+

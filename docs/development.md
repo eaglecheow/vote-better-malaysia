@@ -159,9 +159,15 @@ results do not establish a hosted dispatch, remote enforcement or device accepta
 See [CI guidance evidence](../specs/001-read-mp-hansard/evidence/tdd-ci-guidance.md)
 for the command/layout review and current limitations.
 
-The reviewed [CI workflow](../.github/workflows/ci.yml) configures two paths. A manual
-dispatch on `main` prepares a merge-only candidate for one open PR. PR runs are configured to
-authenticate that candidate, its laboratory archive and separately reviewed full
+The reviewed [CI workflow](../.github/workflows/ci.yml) runs type/unit and frozen
+production browser checks on every PR. The unit job installs Chromium for its native
+boundary tests. On 2026-10-10 the user approved a public preview stage: PRs carrying
+the explicit `release-acceptance` label additionally authenticate immutable full-release
+inputs. Adding or removing that label retriggers CI. Preview checks do not claim
+physical-device or full-release acceptance.
+
+A manual dispatch on `main` prepares a merge-only candidate for one open PR.
+Release PR runs authenticate that candidate, its laboratory archive and separately reviewed full
 reports before running the seven named merge checks. Preparation success does not
 establish physical-device acceptance or satisfy the PR's required checks.
 The current verifier requires a PR head in this same repository and requires the
@@ -332,7 +338,7 @@ Dependent required jobs run after upstream failure and explicitly reject failed
 inputs, since a skipped job can otherwise appear successful.
 [GitHub documents these required-check cases](https://docs.github.com/en/pull-requests/how-tos/merge-and-close-pull-requests/troubleshooting-required-status-checks#handling-skipped-but-required-checks).
 
-Repository administrators must require these seven checks, the required evidence
+For full release acceptance, repository administrators must require these seven checks, the required evidence
 reviews and an up-to-date branch, then demonstrate remote failed/missing/budget/
 wrong-artifact cases block merge. Manual preparation is not that demonstration.
 Local YAML/helper positives and negatives prove controlled mechanisms only.
@@ -340,6 +346,47 @@ Actual Ubuntu measurements, six stable-target reports, administrator settings,
 remote enforcement and live publication remain pending until dated evidence
 records them. Main publication independently rejects CI candidates, including
 after merge; it requires its own trusted main preparation/promotion path.
+
+## Public preview deployment
+
+The user approved an explicitly labeled public preview on 2026-10-10. Its
+[workflow](../.github/workflows/pages-preview.yml) is manual and restricted to `main`.
+It uses Node 24 and the lockfile, installs all three browser engines, runs all
+unit/type checks, acquires the complete official source, builds, validates source
+accounting and the existing shell/JS/icon/catalogue/shard/whole-artifact byte limits,
+and runs the authored browser journeys on the exact built directory. Only successful
+checks permit uploading `dist/` and deploying it. Private acquisition state stays
+outside that directory; a failed build/acquisition/check leaves the prior site served.
+
+Once the reviewed changes are merged into `main`, open repository **Settings →
+Pages → Build and deployment → Source**, select **GitHub Actions**, and invoke:
+
+```sh
+gh workflow run pages-preview.yml --ref main
+```
+
+Inspect the completed run at [Actions](https://github.com/eaglecheow/vote-better-malaysia/actions/workflows/pages-preview.yml)
+and its `github-pages` deployment URL. Verify direct open/reload, both-locale source
+reading, manifest/icons and the worker scope at
+`https://eaglecheow.github.io/vote-better-malaysia/` before reporting the preview live.
+Repeat the manual workflow to refresh the preview data. Each run bootstraps a fresh
+complete source snapshot and can take hours; it does not deploy on merge or promise
+the full release's 24-hour freshness target. Existing acquisition errors stop the
+run instead of replacing missing records with a smaller archive.
+
+For the preview stage, require **Hansard type and unit** and **Hansard preview build
+and browser** on ordinary PRs. Apply `release-acceptance` when evaluating the original
+full-release checklist and populate its genuine immutable reports as described above.
+Missing release evidence remains a failure; do not populate `ci-inputs.json` with
+placeholder IDs or invent physical-device/laboratory/human review results.
+
+The notice labels the site in BM and English. Physical stable-device, laboratory,
+field performance and human accessibility/usability acceptance remain unverified.
+The source's internal API and reuse-policy applicability remain disclosed limits;
+preview approval establishes no external licence. Preview deployment is separate
+from the original candidate promotion/confirmed-receipt process and cannot serve
+as proof of full-release acceptance. Hosted workflow and live-address results must
+be recorded after they actually run.
 
 ## Evidence and delivery
 

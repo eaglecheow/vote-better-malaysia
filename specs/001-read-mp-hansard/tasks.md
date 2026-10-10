@@ -324,6 +324,18 @@ Author independent test sets and temporary-fixture checker tests concurrently wh
 ## Notes
 
 - Local implementation checkpoint, 2026-10-10: **64/80** tasks checked. Final unrestricted units **2,021/2,021**, frozen Chromium/WebKit journeys **108/108**, complete 4,090-shard byte accounting, build/type and independent dependency/source checks pass in their recorded local scopes. [Exact final verification](evidence/final-verification.md) binds the working-tree and artifact hashes. T028, T057–T062, T071–T072 and T074–T080 remain unchecked; no release acceptance or successful-operation commit is claimed.
+
+## Public preview and hosted CI repair — 2026-10-10
+
+The user approved the explicitly labeled public preview stage in [the spec](spec.md#public-preview-stage--2026-10-10). These repair tasks preserve the original release checklist and do not mark T028/T057–T062/T071–T072/T074–T080 complete. Local readiness precedes the separately authorized remote rollout.
+
+- [X] T081 Reproduce the hosted acquisition context mismatch and missing browser/evidence routing defects; record repair regressions before edits in [acquisition context evidence](evidence/tdd-ci-acquisition-context.md) and [CI preview evidence](evidence/tdd-ci-preview-workflow.md).
+- [X] T082 Fix the local acquisition fixture context, install Chromium before units, run production browser checks on every PR, and select strict full-release evidence gates with an explicit release label. Verify all relevant suites in GitHub's workflow environment and retain actionable missing-evidence rejection.
+- [X] T083 Record RED for the public preview banner and manual workflow before implementation; implement Node 24 type/unit/source/build/byte/browser gates followed by a main-only Pages deployment with static output and shared publication concurrency.
+- [X] T084 Reproduce and fix the main candidate fixture/collector incompatibility using shared source-backed selection and exact manifest/hash checks. Verify original candidate provenance/tamper rejection and all existing CI/publication regressions.
+- [X] T085 Document the approved preview checklist, release-label routing, Pages configuration/manual launch, source/reuse/refresh limits and exact validation boundaries in README and developer/user guidance.
+- [X] T086 Run all units with GitHub Actions context, production build, available native production browser checks, complete local artifact byte/source accounting, workflow shell syntax and callable documentation review. Record results and independent review; unavailable Firefox/physical/hosted checks remain explicitly pending.
+- [ ] T087 After explicit push authorization, publish the repair branch/PR, verify hosted preview CI, merge the checked changes, configure Pages for Actions, invoke manual preview preparation/deployment, and verify the actual repository-subpath reading/manifest/worker URL. Record actual results; do not claim a full release or a successful deployment before those checks.
 - Scope is the three approved stories, not the README's other features, summaries, translation, rankings or account management.
 - Research inventory counts, source build IDs and sample sizes are dated evidence; T027/T071 reconcile and measure current release data.
 - Source annotation markers and IDs remain authoritative; missing markers/identity/context cannot be guessed from names, brackets or prose.

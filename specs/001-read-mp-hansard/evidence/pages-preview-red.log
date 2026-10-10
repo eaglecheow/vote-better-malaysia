@@ -1,0 +1,127 @@
+
+ RUN  v5.0.3 /Users/eaglecheow/dev/vote-better-malaysia
+
+ ❯ tests/unit/preview-workflow.test.ts (6 tests | 6 failed) 38ms
+   × PREVIEW-WF001: public preview is manually dispatched from main with no automatic deployment trigger 3ms
+   × PREVIEW-WF002: only a successful build receives the minimum Pages deployment authority 0ms
+   × PREVIEW-WF003: the preview runs the locked Node 24 unit and browser prerequisites before publication 0ms
+   × PREVIEW-WF004: the full-source artifact is size-checked without claiming release reports 0ms
+   × PREVIEW-WF005: preview and full-release deployments serialize and use immutable action versions 0ms
+   × PREVIEW-UI001: a persistent bilingual preview notice survives app rendering and discloses incomplete checks 33ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 6 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/preview-workflow.test.ts > PREVIEW-WF001: public preview is manually dispatched from main with no automatic deployment trigger
+AssertionError: expected [] to deeply equal [ 'workflow_dispatch' ]
+
+- Expected
++ Received
+
+- [
+-   "workflow_dispatch",
+- ]
++ []
+
+ ❯ tests/unit/preview-workflow.test.ts:40:49
+     38|   /** Checks publication consent and guarded source identity. @returns…
+     39|   () => {
+     40|     expect(Object.keys(configuration.on ?? {})).toEqual(['workflow_dis…
+       |                                                 ^
+     41|     for (const role of ['build', 'deploy']) {
+     42|       expect(job(role).if ?? '').toContain("github.event_name == 'work…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/6]⎯
+
+ FAIL  tests/unit/preview-workflow.test.ts > PREVIEW-WF002: only a successful build receives the minimum Pages deployment authority
+AssertionError: expected undefined to deeply equal { contents: 'read' }
+
+- Expected:
+{
+  "contents": "read",
+}
+
++ Received:
+undefined
+
+ ❯ tests/unit/preview-workflow.test.ts:51:39
+     49|   /** Checks failing acquisition/checks cannot deploy, and private sta…
+     50|   () => {
+     51|     expect(configuration.permissions).toEqual({ contents: 'read' });
+       |                                       ^
+     52|     expect(job('deploy').permissions).toEqual({ pages: 'write', 'id-to…
+     53|     expect(job('build').permissions?.pages).not.toBe('write');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/6]⎯
+
+ FAIL  tests/unit/preview-workflow.test.ts > PREVIEW-WF003: the preview runs the locked Node 24 unit and browser prerequisites before publication
+AssertionError: expected undefined to be '.nvmrc' // Object.is equality
+
+- Expected:
+".nvmrc"
+
++ Received:
+undefined
+
+ ❯ tests/unit/preview-workflow.test.ts:65:63
+     63|   /** Checks exact built bytes are browser-tested after official boots…
+     64|   () => {
+     65|     expect(step('build', 'node').with?.['node-version-file']).toBe('.n…
+       |                                                               ^
+     66|     expect(readFileSync('.nvmrc', 'utf8').trim()).toMatch(/^24/);
+     67|     expect(step('build', 'dependencies').run).toBe('npm ci');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/6]⎯
+
+ FAIL  tests/unit/preview-workflow.test.ts > PREVIEW-WF004: the full-source artifact is size-checked without claiming release reports
+AssertionError: expected '' to contain 'measureArtifact'
+
+- Expected
++ Received
+
+- measureArtifact
+
+ ❯ tests/unit/preview-workflow.test.ts:87:290
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/6]⎯
+
+ FAIL  tests/unit/preview-workflow.test.ts > PREVIEW-WF005: preview and full-release deployments serialize and use immutable action versions
+AssertionError: expected undefined to deeply equal { …(2) }
+
+- Expected:
+{
+  "cancel-in-progress": false,
+  "group": "hansard-pages-${{ github.repository }}",
+}
+
++ Received:
+undefined
+
+ ❯ tests/unit/preview-workflow.test.ts:95:39
+     93|   /** Checks shared concurrency and pinned provider actions. @returns …
+     94|   () => {
+     95|     expect(configuration.concurrency).toEqual({ group: 'hansard-pages-…
+       |                                       ^
+     96|     const references: string[] = [];
+     97|     for (const role of ['build', 'deploy']) for (const entry of job(ro…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/6]⎯
+
+ FAIL  tests/unit/preview-workflow.test.ts > PREVIEW-UI001: a persistent bilingual preview notice survives app rendering and discloses incomplete checks
+AssertionError: expected null not to be null
+ ❯ tests/unit/preview-workflow.test.ts:109:24
+    107|     const document = new JSDOM(readFileSync('index.html', 'utf8')).win…
+    108|     const notice = document.querySelector('#public-preview');
+    109|     expect(notice).not.toBeNull();
+       |                        ^
+    110|     expect(document.querySelector('#app')?.contains(notice)).toBe(fals…
+    111|     expect(notice?.getAttribute('aria-label')).toBe('Pratonton awam / …
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/6]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  6 failed (6)
+   Start at  20:43:35
+   Duration  472ms (import 87%, tests 9%, transform 3%)
+

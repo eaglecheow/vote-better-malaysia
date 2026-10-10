@@ -1,0 +1,24 @@
+
+> vote-better-malaysia@0.1.0 build
+> tsc --noEmit && vite build --outDir /private/tmp/hansard-preview-final.mGGMJJ
+
+vite v8.3.4 building client environment for production...
+transforming...
+✓ 9 modules transformed.
+
+(!) outDir /private/tmp/hansard-preview-final.mGGMJJ is not inside project root and will not be emptied.
+Use --emptyOutDir to override.
+
+rendering chunks...
+computing gzip size...
+../../../../private/tmp/hansard-preview-final.mGGMJJ/index.html                  1.04 kB │ gzip:  0.55 kB
+../../../../private/tmp/hansard-preview-final.mGGMJJ/assets/index-Bh8YJVd2.css   1.35 kB │ gzip:  0.66 kB
+../../../../private/tmp/hansard-preview-final.mGGMJJ/assets/index-C508zM4y.js   39.59 kB │ gzip: 13.27 kB
+
+✓ built in 7.63s
+[33m[PLUGIN_TIMINGS] [0mJavaScript callbacks ran for 7.6s. The build took 7.6s. Callbacks such as `closeBundle` run after the build ends, so callback time can be more than build time.
+The slowest callbacks, timed inside each callback (the wait before a callback starts is excluded, the time it awaits is included):
+  - plugin vite:prepare-out-dir renderStart (98%, 7.5s, 1 call)
+Additional callback time came from callbacks under 1s.
+See https://rolldown.rs/reference/InputOptions.checks#bundlertimings for more details.
+

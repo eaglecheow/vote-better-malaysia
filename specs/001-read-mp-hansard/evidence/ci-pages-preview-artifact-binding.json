@@ -1,0 +1,11 @@
+{
+  "artifactDigest": "6b328acd878302945a5a5c7516a61f8d0c42661ccfe769dfac7109c1af0c0b5c",
+  "files": 4099,
+  "artifactBytes": 357817929,
+  "independentArtifactMatch": true,
+  "independentManifestSha256": "cd9fb3c66e873f66c483c04a9f48da2bc745648db6b17d218604d5242370f60f",
+  "sourceSnapshot": "46deaa63-9074-408c-a1df-7fd687af312c",
+  "sourcePreparedAt": "2026-10-10T06:24:11.774Z",
+  "freshAcquisitionPerformed": false,
+  "applicationFingerprint": "6bf90c39765f13f603b08f17e4b494aeb5f5a453940169fc1a97c45a5b4cab08"
+}

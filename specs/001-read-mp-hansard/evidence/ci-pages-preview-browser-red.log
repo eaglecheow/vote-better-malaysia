@@ -1,0 +1,329 @@
+
+> vote-better-malaysia@0.1.0 test:browser
+> playwright test --project=chromium --project=webkit
+
+[WebServer] (node:96250) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 108 tests using 5 workers
+
+(node:96255) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:96251) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:96253) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:96252) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:96254) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓    5 [chromium] › tests/browser/install.spec.ts:3:1 › INSTALL-BROWSER001: real base-scoped manifest/start/scope and native decoded icon dimensions stay bounded (604ms)
+  ✓    1 [chromium] › tests/browser/harness.spec.ts:15:1 › harness: opens the production application shell (622ms)
+  ✓    2 [chromium] › tests/browser/reading.spec.ts:42:60 › gzip: complete source words, paragraph breaks, gaps, annotations, and provenance remain accessible (740ms)
+  ✓    4 [chromium] › tests/browser/offline.spec.ts:4:47 › OFFLINE001 ms: a closed reader reopens exact committed words, gaps, annotations and provenance offline (1.2s)
+  ✓    7 [chromium] › tests/browser/reading.spec.ts:42:60 › decoded: complete source words, paragraph breaks, gaps, annotations, and provenance remain accessible (422ms)
+  ✓    6 [chromium] › tests/browser/install.spec.ts:34:1 › INSTALL-BROWSER002: real native registration and complete versioned CacheStorage confirm shell readiness without data caching (565ms)
+  ✓    3 [chromium] › tests/browser/failures.spec.ts:84:3 › ms: controlled complete absence, incomplete empty subset and inaccessible record are distinct (1.2s)
+  ✓   12 [chromium] › tests/browser/failures.spec.ts:105:3 › ms: failed initial lists expose an announced keyboard Retry and recover the full choices (215ms)
+  ✓   10 [chromium] › tests/browser/reading.spec.ts:66:1 › native keyboard and language controls preserve source IDs, exact words, focus, and bilingual announcements (337ms)
+  ✓    8 [chromium] › tests/browser/storage.spec.ts:3:1 › STORAGE-BROWSER001: native request success precedes commit and cannot acknowledge the new saved time (1.0s)
+  ✓   14 [chromium] › tests/browser/reading.spec.ts:87:1 › untrusted source strings are literal text without image/script elements or handler execution (332ms)
+  ✓   11 [chromium] › tests/browser/install.spec.ts:60:1 › INSTALL-BROWSER003: an actual first-shell install failure leaves online reading/saving available with no offline-ready promise (747ms)
+  ✓   13 [chromium] › tests/browser/failures.spec.ts:118:114 › ms: catalogue-schema retains known context and retries the selected pair without inventing absence (608ms)
+  ✓    9 [chromium] › tests/browser/offline.spec.ts:4:47 › OFFLINE001 en: a closed reader reopens exact committed words, gaps, annotations and provenance offline (958ms)
+  ✓   16 [chromium] › tests/browser/reading.spec.ts:99:1 › a delayed old sitting response cannot overwrite the newer chosen source identity (404ms)
+  ✓   18 [chromium] › tests/browser/failures.spec.ts:118:114 › ms: shard-http retains known context and retries the selected pair without inventing absence (484ms)
+  ✓   17 [chromium] › tests/browser/install.spec.ts:95:1 › INSTALL-BROWSER004: the manifest reader entry remains a usable website with preserved saved content without a prompt event (792ms)
+  ✓   20 [chromium] › tests/browser/reading.spec.ts:135:1 › 320 CSS pixels: both UI languages preserve full source text with no horizontal page scroll (479ms)
+  ✓   15 [chromium] › tests/browser/storage.spec.ts:26:1 › STORAGE-BROWSER002: native abort after real put success rolls back all stores and preserves the older offline copy (1.2s)
+  ✓   21 [chromium] › tests/browser/failures.spec.ts:118:114 › ms: shard-body retains known context and retries the selected pair without inventing absence (484ms)
+  ✓   19 [chromium] › tests/browser/offline.spec.ts:27:1 › OFFLINE002: fetching one sitting never saves an unopened different-member pair (1.1s)
+  ✓   23 [chromium] › tests/browser/reading.spec.ts:153:1 › reading help is reachable at the production repository base in both languages (591ms)
+  ✓   25 [chromium] › tests/browser/failures.spec.ts:118:114 › ms: shard-digest retains known context and retries the selected pair without inventing absence (499ms)
+  ✓   24 [chromium] › tests/browser/storage.spec.ts:46:1 › STORAGE-BROWSER003: unchanged source bytes still get a new successful validation and committed saved time (734ms)
+(node:96395) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   26 [chromium] › tests/browser/offline.spec.ts:44:1 › OFFLINE003: a cached shell and catalogue without an opened transcript require a connection (607ms)
+  ✓   27 [chromium] › tests/browser/failures.spec.ts:118:114 › ms: shard-schema retains known context and retries the selected pair without inventing absence (404ms)
+  ✓   22 [chromium] › tests/browser/updates.spec.ts:5:1 › UPDATES-BROWSER001: native waiting-version discovery and Continue preserve two current reading tabs (1.4s)
+  ✓   31 [chromium] › tests/browser/failures.spec.ts:135:48 › ms: a delayed failed Retry cannot replace a newer same-pair Read (385ms)
+  ✓   30 [chromium] › tests/browser/offline.spec.ts:59:1 › OFFLINE004: real pair-store eviction loses that transcript without claiming verified absence (571ms)
+  ✓   28 [chromium] › tests/browser/storage.spec.ts:66:1 › STORAGE-BROWSER004: a changed coherent record replaces all native saved source partitions after validation (829ms)
+  ✓   33 [chromium] › tests/browser/failures.spec.ts:135:48 › ms: a delayed failed Retry cannot replace a newer selection (433ms)
+  ✓   34 [chromium] › tests/browser/offline.spec.ts:72:77 › OFFLINE005 schemaVersion: incompatible real saved data stays unavailable without destructive repair (705ms)
+  ✓   36 [chromium] › tests/browser/failures.spec.ts:155:3 › ms: source age, dated known failure and snapshot knowledge remain distinct at 320 CSS pixels (463ms)
+  ✓   35 [chromium] › tests/browser/storage.spec.ts:80:66 › STORAGE-BROWSER005 digest: invalid online replacement cannot overwrite a previously committed pair or its time (862ms)
+  ✓   38 [chromium] › tests/browser/failures.spec.ts:174:3 › ms: an old successful snapshot can disclose age but cannot invent a later workflow failure (286ms)
+  ✓   37 [chromium] › tests/browser/offline.spec.ts:72:77 › OFFLINE005 memberId: incompatible real saved data stays unavailable without destructive repair (725ms)
+  ✓   39 [chromium] › tests/browser/storage.spec.ts:80:66 › STORAGE-BROWSER005 identity: invalid online replacement cannot overwrite a previously committed pair or its time (826ms)
+  ✓   40 [chromium] › tests/browser/failures.spec.ts:84:3 › en: controlled complete absence, incomplete empty subset and inaccessible record are distinct (834ms)
+  ✓   41 [chromium] › tests/browser/offline.spec.ts:72:77 › OFFLINE005 recordDigest: incompatible real saved data stays unavailable without destructive repair (601ms)
+  ✓   29 [webkit] › tests/browser/failures.spec.ts:84:3 › ms: controlled complete absence, incomplete empty subset and inaccessible record are distinct (1.8s)
+  ✓   43 [chromium] › tests/browser/failures.spec.ts:105:3 › en: failed initial lists expose an announced keyboard Retry and recover the full choices (238ms)
+  ✓   32 [chromium] › tests/browser/updates.spec.ts:28:1 › UPDATES-BROWSER002: native preference commit precedes actual waiting-target Apply and only the consenting tab reloads (2.8s)
+  ✓   45 [webkit] › tests/browser/failures.spec.ts:105:3 › ms: failed initial lists expose an announced keyboard Retry and recover the full choices (464ms)
+  ✓   46 [chromium] › tests/browser/failures.spec.ts:118:114 › en: catalogue-schema retains known context and retries the selected pair without inventing absence (537ms)
+  ✓   42 [chromium] › tests/browser/storage.spec.ts:80:66 › STORAGE-BROWSER005 schema: invalid online replacement cannot overwrite a previously committed pair or its time (892ms)
+  ✓   44 [chromium] › tests/browser/offline.spec.ts:87:1 › OFFLINE006: an explicitly opened zero-turn incomplete pair retains gaps rather than claiming absence (732ms)
+  ✓   49 [chromium] › tests/browser/failures.spec.ts:118:114 › en: shard-http retains known context and retries the selected pair without inventing absence (459ms)
+(node:96454) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   48 [webkit] › tests/browser/failures.spec.ts:118:114 › ms: catalogue-schema retains known context and retries the selected pair without inventing absence (611ms)
+(node:96455) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   50 [chromium] › tests/browser/failures.spec.ts:118:114 › en: shard-body retains known context and retries the selected pair without inventing absence (389ms)
+  ✓   52 [webkit] › tests/browser/failures.spec.ts:118:114 › ms: shard-http retains known context and retries the selected pair without inventing absence (859ms)
+  ✓   47 [chromium] › tests/browser/updates.spec.ts:85:1 › UPDATES-BROWSER003: real preference transaction abort prevents Apply and preserves both active and waiting workers (1.6s)
+  ✓   54 [chromium] › tests/browser/failures.spec.ts:118:114 › en: shard-digest retains known context and retries the selected pair without inventing absence (650ms)
+  ✓   53 [webkit] › tests/browser/install.spec.ts:3:1 › INSTALL-BROWSER001: real base-scoped manifest/start/scope and native decoded icon dimensions stay bounded (753ms)
+  ✓   57 [chromium] › tests/browser/failures.spec.ts:118:114 › en: shard-schema retains known context and retries the selected pair without inventing absence (451ms)
+  ✓   55 [webkit] › tests/browser/failures.spec.ts:118:114 › ms: shard-body retains known context and retries the selected pair without inventing absence (665ms)
+  ✓   56 [chromium] › tests/browser/updates.spec.ts:108:1 › UPDATES-BROWSER004: an actual failed new-shell install preserves confirmed old readiness and closed-reader offline content (850ms)
+  ✓   59 [chromium] › tests/browser/failures.spec.ts:135:48 › en: a delayed failed Retry cannot replace a newer same-pair Read (437ms)
+  ✓   58 [webkit] › tests/browser/install.spec.ts:34:1 › INSTALL-BROWSER002: real native registration and complete versioned CacheStorage confirm shell readiness without data caching (798ms)
+  ✓   60 [webkit] › tests/browser/failures.spec.ts:118:114 › ms: shard-digest retains known context and retries the selected pair without inventing absence (658ms)
+(node:96499) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   61 [chromium] › tests/browser/failures.spec.ts:135:48 › en: a delayed failed Retry cannot replace a newer selection (435ms)
+  ✓   51 [webkit] › tests/browser/harness.spec.ts:15:1 › harness: opens the production application shell (2.1s)
+  ✓   64 [chromium] › tests/browser/failures.spec.ts:155:3 › en: source age, dated known failure and snapshot knowledge remain distinct at 320 CSS pixels (391ms)
+  ✓   63 [webkit] › tests/browser/failures.spec.ts:118:114 › ms: shard-schema retains known context and retries the selected pair without inventing absence (722ms)
+  ✓   62 [webkit] › tests/browser/install.spec.ts:60:1 › INSTALL-BROWSER003: an actual first-shell install failure leaves online reading/saving available with no offline-ready promise (869ms)
+  ✓   67 [chromium] › tests/browser/failures.spec.ts:174:3 › en: an old successful snapshot can disclose age but cannot invent a later workflow failure (450ms)
+  ✓   65 [webkit] › tests/browser/reading.spec.ts:42:60 › gzip: complete source words, paragraph breaks, gaps, annotations, and provenance remain accessible (756ms)
+  ✓   68 [webkit] › tests/browser/failures.spec.ts:135:48 › ms: a delayed failed Retry cannot replace a newer same-pair Read (660ms)
+  ✓   70 [webkit] › tests/browser/reading.spec.ts:42:60 › decoded: complete source words, paragraph breaks, gaps, annotations, and provenance remain accessible (521ms)
+(node:96520) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   71 [webkit] › tests/browser/failures.spec.ts:135:48 › ms: a delayed failed Retry cannot replace a newer selection (588ms)
+  ✓   69 [webkit] › tests/browser/install.spec.ts:95:1 › INSTALL-BROWSER004: the manifest reader entry remains a usable website with preserved saved content without a prompt event (1.4s)
+  ✓   72 [webkit] › tests/browser/reading.spec.ts:66:1 › native keyboard and language controls preserve source IDs, exact words, focus, and bilingual announcements (606ms)
+  ✓   66 [webkit] › tests/browser/offline.spec.ts:4:47 › OFFLINE001 ms: a closed reader reopens exact committed words, gaps, annotations and provenance offline (1.8s)
+  ✓   75 [webkit] › tests/browser/reading.spec.ts:87:1 › untrusted source strings are literal text without image/script elements or handler execution (539ms)
+  ✓   74 [webkit] › tests/browser/failures.spec.ts:155:3 › ms: source age, dated known failure and snapshot knowledge remain distinct at 320 CSS pixels (689ms)
+  ✓   79 [webkit] › tests/browser/failures.spec.ts:174:3 › ms: an old successful snapshot can disclose age but cannot invent a later workflow failure (439ms)
+  ✓   78 [webkit] › tests/browser/reading.spec.ts:99:1 › a delayed old sitting response cannot overwrite the newer chosen source identity (479ms)
+  ✓   73 [webkit] › tests/browser/storage.spec.ts:3:1 › STORAGE-BROWSER001: native request success precedes commit and cannot acknowledge the new saved time (1.3s)
+  ✓   81 [webkit] › tests/browser/reading.spec.ts:135:1 › 320 CSS pixels: both UI languages preserve full source text with no horizontal page scroll (611ms)
+  ✓   77 [webkit] › tests/browser/offline.spec.ts:4:47 › OFFLINE001 en: a closed reader reopens exact committed words, gaps, annotations and provenance offline (1.3s)
+  ✓   80 [webkit] › tests/browser/failures.spec.ts:84:3 › en: controlled complete absence, incomplete empty subset and inaccessible record are distinct (1.0s)
+  ✓   76 [webkit] › tests/browser/updates.spec.ts:5:1 › UPDATES-BROWSER001: native waiting-version discovery and Continue preserve two current reading tabs (2.2s)
+  ✓   85 [webkit] › tests/browser/failures.spec.ts:105:3 › en: failed initial lists expose an announced keyboard Retry and recover the full choices (360ms)
+  ✘   84 [webkit] › tests/browser/offline.spec.ts:27:1 › OFFLINE002: fetching one sitting never saves an unopened different-member pair (1.0s)
+  ✓   82 [webkit] › tests/browser/storage.spec.ts:26:1 › STORAGE-BROWSER002: native abort after real put success rolls back all stores and preserves the older offline copy (1.4s)
+  ✓   87 [webkit] › tests/browser/failures.spec.ts:118:114 › en: catalogue-schema retains known context and retries the selected pair without inventing absence (558ms)
+(node:96623) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   88 [webkit] › tests/browser/storage.spec.ts:46:1 › STORAGE-BROWSER003: unchanged source bytes still get a new successful validation and committed saved time (688ms)
+  ✓   89 [webkit] › tests/browser/failures.spec.ts:118:114 › en: shard-http retains known context and retries the selected pair without inventing absence (598ms)
+  ✓   86 [webkit] › tests/browser/updates.spec.ts:28:1 › UPDATES-BROWSER002: native preference commit precedes actual waiting-target Apply and only the consenting tab reloads (2.2s)
+  ✓   92 [webkit] › tests/browser/failures.spec.ts:118:114 › en: shard-body retains known context and retries the selected pair without inventing absence (754ms)
+  ✓   91 [webkit] › tests/browser/storage.spec.ts:66:1 › STORAGE-BROWSER004: a changed coherent record replaces all native saved source partitions after validation (1.3s)
+  ✓   90 [webkit] › tests/browser/offline.spec.ts:44:1 › OFFLINE003: a cached shell and catalogue without an opened transcript require a connection (1.2s)
+  ✓   94 [webkit] › tests/browser/failures.spec.ts:118:114 › en: shard-digest retains known context and retries the selected pair without inventing absence (678ms)
+  ✓   97 [webkit] › tests/browser/failures.spec.ts:118:114 › en: shard-schema retains known context and retries the selected pair without inventing absence (659ms)
+  ✓   95 [webkit] › tests/browser/storage.spec.ts:80:66 › STORAGE-BROWSER005 digest: invalid online replacement cannot overwrite a previously committed pair or its time (1.2s)
+  ✘   96 [webkit] › tests/browser/offline.spec.ts:59:1 › OFFLINE004: real pair-store eviction loses that transcript without claiming verified absence (1.1s)
+  ✓   98 [webkit] › tests/browser/failures.spec.ts:135:48 › en: a delayed failed Retry cannot replace a newer same-pair Read (520ms)
+  ✓   83 [webkit] › tests/browser/reading.spec.ts:153:1 › reading help is reachable at the production repository base in both languages (4.7s)
+  ✓   93 [webkit] › tests/browser/updates.spec.ts:85:1 › UPDATES-BROWSER003: real preference transaction abort prevents Apply and preserves both active and waiting workers (2.0s)
+(node:96660) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  100 [webkit] › tests/browser/failures.spec.ts:135:48 › en: a delayed failed Retry cannot replace a newer selection (448ms)
+  ✘   99 [webkit] › tests/browser/storage.spec.ts:80:66 › STORAGE-BROWSER005 identity: invalid online replacement cannot overwrite a previously committed pair or its time (874ms)
+  ✓  103 [webkit] › tests/browser/failures.spec.ts:155:3 › en: source age, dated known failure and snapshot knowledge remain distinct at 320 CSS pixels (464ms)
+  ✘  101 [webkit] › tests/browser/updates.spec.ts:108:1 › UPDATES-BROWSER004: an actual failed new-shell install preserves confirmed old readiness and closed-reader offline content (878ms)
+(node:96678) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  104 [webkit] › tests/browser/failures.spec.ts:174:3 › en: an old successful snapshot can disclose age but cannot invent a later workflow failure (315ms)
+  ✘  102 [webkit] › tests/browser/offline.spec.ts:72:77 › OFFLINE005 schemaVersion: incompatible real saved data stays unavailable without destructive repair (959ms)
+(node:96698) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  105 [webkit] › tests/browser/storage.spec.ts:80:66 › STORAGE-BROWSER005 schema: invalid online replacement cannot overwrite a previously committed pair or its time (939ms)
+  ✓  106 [webkit] › tests/browser/offline.spec.ts:72:77 › OFFLINE005 memberId: incompatible real saved data stays unavailable without destructive repair (793ms)
+  ✓  107 [webkit] › tests/browser/offline.spec.ts:72:77 › OFFLINE005 recordDigest: incompatible real saved data stays unavailable without destructive repair (635ms)
+  ✘  108 [webkit] › tests/browser/offline.spec.ts:87:1 › OFFLINE006: an explicitly opened zero-turn incomplete pair retains gaps rather than claiming absence (560ms)
+
+
+  1) [webkit] › tests/browser/offline.spec.ts:27:1 › OFFLINE002: fetching one sitting never saves an unopened different-member pair 
+
+    Error: page.goto: FetchEvent.respondWith received an error: TypeError: Load failed
+    Call log:
+      - navigating to "http://127.0.0.1:64114/vote-better-malaysia/", waiting until "load"
+
+
+       at ../fixtures/pwa.ts:452
+
+      450 |  */
+      451 | export async function reopenOffline(context: BrowserContext, previous: Page, fixture: PwaFixture): Promise<Page> {
+    > 452 |   await previous.close(); await context.setOffline(true); const reopened = await context.newPage(); await reopened.goto(fixture.url); return reopened;
+          |                                                                                                                    ^
+      453 | }
+      454 |
+      455 | /** Arms a forwarding observer or one deliberate native transaction abort, without synthesizing successful storage events.
+        at reopenOffline (/Users/eaglecheow/dev/vote-better-malaysia/tests/fixtures/pwa.ts:452:116)
+        at /Users/eaglecheow/dev/vote-better-malaysia/tests/browser/offline.spec.ts:35:22
+
+    Error Context: test-results/offline-OFFLINE002-fetchin-62685-pened-different-member-pair-webkit/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/offline-OFFLINE002-fetchin-62685-pened-different-member-pair-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/offline-OFFLINE002-fetchin-62685-pened-different-member-pair-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [webkit] › tests/browser/offline.spec.ts:59:1 › OFFLINE004: real pair-store eviction loses that transcript without claiming verified absence 
+
+    Error: page.goto: FetchEvent.respondWith received an error: TypeError: Load failed
+    Call log:
+      - navigating to "http://127.0.0.1:64164/vote-better-malaysia/", waiting until "load"
+
+
+       at ../fixtures/pwa.ts:452
+
+      450 |  */
+      451 | export async function reopenOffline(context: BrowserContext, previous: Page, fixture: PwaFixture): Promise<Page> {
+    > 452 |   await previous.close(); await context.setOffline(true); const reopened = await context.newPage(); await reopened.goto(fixture.url); return reopened;
+          |                                                                                                                    ^
+      453 | }
+      454 |
+      455 | /** Arms a forwarding observer or one deliberate native transaction abort, without synthesizing successful storage events.
+        at reopenOffline (/Users/eaglecheow/dev/vote-better-malaysia/tests/fixtures/pwa.ts:452:116)
+        at /Users/eaglecheow/dev/vote-better-malaysia/tests/browser/offline.spec.ts:67:22
+
+    Error Context: test-results/offline-OFFLINE004-real-pa-4ab52-t-claiming-verified-absence-webkit/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/offline-OFFLINE004-real-pa-4ab52-t-claiming-verified-absence-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/offline-OFFLINE004-real-pa-4ab52-t-claiming-verified-absence-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [webkit] › tests/browser/offline.spec.ts:72:77 › OFFLINE005 schemaVersion: incompatible real saved data stays unavailable without destructive repair 
+
+    Error: page.goto: FetchEvent.respondWith received an error: TypeError: Load failed
+    Call log:
+      - navigating to "http://127.0.0.1:64185/vote-better-malaysia/", waiting until "load"
+
+
+       at ../fixtures/pwa.ts:452
+
+      450 |  */
+      451 | export async function reopenOffline(context: BrowserContext, previous: Page, fixture: PwaFixture): Promise<Page> {
+    > 452 |   await previous.close(); await context.setOffline(true); const reopened = await context.newPage(); await reopened.goto(fixture.url); return reopened;
+          |                                                                                                                    ^
+      453 | }
+      454 |
+      455 | /** Arms a forwarding observer or one deliberate native transaction abort, without synthesizing successful storage events.
+        at reopenOffline (/Users/eaglecheow/dev/vote-better-malaysia/tests/fixtures/pwa.ts:452:116)
+        at /Users/eaglecheow/dev/vote-better-malaysia/tests/browser/offline.spec.ts:81:67
+
+    Error Context: test-results/offline-OFFLINE005-schemaV-013cd--without-destructive-repair-webkit/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/offline-OFFLINE005-schemaV-013cd--without-destructive-repair-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/offline-OFFLINE005-schemaV-013cd--without-destructive-repair-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) [webkit] › tests/browser/offline.spec.ts:87:1 › OFFLINE006: an explicitly opened zero-turn incomplete pair retains gaps rather than claiming absence 
+
+    Error: page.goto: FetchEvent.respondWith received an error: TypeError: Load failed
+    Call log:
+      - navigating to "http://127.0.0.1:64206/vote-better-malaysia/", waiting until "load"
+
+
+       at ../fixtures/pwa.ts:452
+
+      450 |  */
+      451 | export async function reopenOffline(context: BrowserContext, previous: Page, fixture: PwaFixture): Promise<Page> {
+    > 452 |   await previous.close(); await context.setOffline(true); const reopened = await context.newPage(); await reopened.goto(fixture.url); return reopened;
+          |                                                                                                                    ^
+      453 | }
+      454 |
+      455 | /** Arms a forwarding observer or one deliberate native transaction abort, without synthesizing successful storage events.
+        at reopenOffline (/Users/eaglecheow/dev/vote-better-malaysia/tests/fixtures/pwa.ts:452:116)
+        at /Users/eaglecheow/dev/vote-better-malaysia/tests/browser/offline.spec.ts:96:22
+
+    Error Context: test-results/offline-OFFLINE006-an-expl-5d7ad-ather-than-claiming-absence-webkit/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/offline-OFFLINE006-an-expl-5d7ad-ather-than-claiming-absence-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/offline-OFFLINE006-an-expl-5d7ad-ather-than-claiming-absence-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5) [webkit] › tests/browser/storage.spec.ts:80:66 › STORAGE-BROWSER005 identity: invalid online replacement cannot overwrite a previously committed pair or its time 
+
+    Error: page.goto: FetchEvent.respondWith received an error: TypeError: Load failed
+    Call log:
+      - navigating to "http://127.0.0.1:64171/vote-better-malaysia/", waiting until "load"
+
+
+       at ../fixtures/pwa.ts:452
+
+      450 |  */
+      451 | export async function reopenOffline(context: BrowserContext, previous: Page, fixture: PwaFixture): Promise<Page> {
+    > 452 |   await previous.close(); await context.setOffline(true); const reopened = await context.newPage(); await reopened.goto(fixture.url); return reopened;
+          |                                                                                                                    ^
+      453 | }
+      454 |
+      455 | /** Arms a forwarding observer or one deliberate native transaction abort, without synthesizing successful storage events.
+        at reopenOffline (/Users/eaglecheow/dev/vote-better-malaysia/tests/fixtures/pwa.ts:452:116)
+        at /Users/eaglecheow/dev/vote-better-malaysia/tests/browser/storage.spec.ts:91:22
+
+    Error Context: test-results/storage-STORAGE-BROWSER005-d44df--committed-pair-or-its-time-webkit/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/storage-STORAGE-BROWSER005-d44df--committed-pair-or-its-time-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/storage-STORAGE-BROWSER005-d44df--committed-pair-or-its-time-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  6) [webkit] › tests/browser/updates.spec.ts:108:1 › UPDATES-BROWSER004: an actual failed new-shell install preserves confirmed old readiness and closed-reader offline content 
+
+    Error: page.goto: FetchEvent.respondWith received an error: TypeError: Load failed
+    Call log:
+      - navigating to "http://127.0.0.1:64178/vote-better-malaysia/", waiting until "load"
+
+
+       at ../fixtures/pwa.ts:452
+
+      450 |  */
+      451 | export async function reopenOffline(context: BrowserContext, previous: Page, fixture: PwaFixture): Promise<Page> {
+    > 452 |   await previous.close(); await context.setOffline(true); const reopened = await context.newPage(); await reopened.goto(fixture.url); return reopened;
+          |                                                                                                                    ^
+      453 | }
+      454 |
+      455 | /** Arms a forwarding observer or one deliberate native transaction abort, without synthesizing successful storage events.
+        at reopenOffline (/Users/eaglecheow/dev/vote-better-malaysia/tests/fixtures/pwa.ts:452:116)
+        at /Users/eaglecheow/dev/vote-better-malaysia/tests/browser/updates.spec.ts:153:22
+
+    Error Context: test-results/updates-UPDATES-BROWSER004-b13b6-osed-reader-offline-content-webkit/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/updates-UPDATES-BROWSER004-b13b6-osed-reader-offline-content-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/updates-UPDATES-BROWSER004-b13b6-osed-reader-offline-content-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  6 failed
+    [webkit] › tests/browser/offline.spec.ts:27:1 › OFFLINE002: fetching one sitting never saves an unopened different-member pair 
+    [webkit] › tests/browser/offline.spec.ts:59:1 › OFFLINE004: real pair-store eviction loses that transcript without claiming verified absence 
+    [webkit] › tests/browser/offline.spec.ts:72:77 › OFFLINE005 schemaVersion: incompatible real saved data stays unavailable without destructive repair 
+    [webkit] › tests/browser/offline.spec.ts:87:1 › OFFLINE006: an explicitly opened zero-turn incomplete pair retains gaps rather than claiming absence 
+    [webkit] › tests/browser/storage.spec.ts:80:66 › STORAGE-BROWSER005 identity: invalid online replacement cannot overwrite a previously committed pair or its time 
+    [webkit] › tests/browser/updates.spec.ts:108:1 › UPDATES-BROWSER004: an actual failed new-shell install preserves confirmed old readiness and closed-reader offline content 
+  102 passed (23.7s)

@@ -1,6 +1,7 @@
-import { existsSync } from 'node:fs';
-import { execFileSync } from 'node:child_process';
-import { resolve } from 'node:path';
+import { existsSync, mkdtempSync, rmSync } from 'node:fs';
+import { execFileSync, spawnSync } from 'node:child_process';
+import { join, resolve } from 'node:path';
+import { tmpdir } from 'node:os';
 import { expect, test } from 'vitest';
 
 type Mapping = Record<string, any>;
@@ -49,9 +50,12 @@ function upload(role: string, name: string): Mapping {
   return {};
 }
 
-test('CI-WF001: every PR retriggers gates without path or branch filters',
+test('CI-WF001: every PR and release label change retriggers gates without path or branch filters',
   /** Checks missing evidence commits cannot skip required checks. @returns Nothing after assertions. */
-  () => { expect.soft(configuration.on && Object.hasOwn(configuration.on, 'pull_request')).toBe(true); expect.soft(configuration.on?.pull_request).toBeNull(); });
+  () => {
+    expect.soft(configuration.on && Object.hasOwn(configuration.on, 'pull_request')).toBe(true);
+    expect.soft(configuration.on?.pull_request).toEqual({ types: ['opened', 'synchronize', 'reopened', 'labeled', 'unlabeled'] });
+  });
 
 test('CI-WF002: candidate preparation requires manual dispatch',
   /** Checks CI candidate work has a separate explicit trigger. @returns Nothing after assertions. */
@@ -181,4 +185,54 @@ test('CI-WF018: native laboratory collection serves the frozen candidate at an a
     expect.soft(commands('prepare')).toContain('--host 127.0.0.1');
     expect.soft(commands('prepare')).toContain('http://127.0.0.1:4173/vote-better-malaysia/');
     expect.soft(commands('prepare')).toContain('--url "$lab_url"');
+  });
+
+test('CI-WF019: the unit job installs native Chromium before running all units',
+  /** Checks hosted native unit boundaries have their executable before assertions run. @returns Nothing after checking executable step order. */
+  () => {
+    let install = -1; let tests = -1;
+    for (const [index, step] of (job('unit').steps ?? []).entries()) {
+      if ((step.run ?? '').includes('playwright install --with-deps chromium')) install = index;
+      if ((step.run ?? '').includes('npm test -- --run')) tests = index;
+    }
+    expect(install).toBeGreaterThan(-1);
+    expect(install).toBeLessThan(tests);
+  });
+
+test('CI-WF020: full evidence gates require an explicit release-acceptance label',
+  /** Checks the approved public preview stage does not claim or require full release acceptance. @returns Nothing after checking all strict release roles. */
+  () => {
+    for (const role of ['inputs', 'production', 'review', 'size', 'laboratory', 'targets', 'documentation']) {
+      expect.soft(job(role).if ?? '').toContain("contains(github.event.pull_request.labels.*.name, 'release-acceptance')");
+    }
+    expect.soft(job('unit').if ?? '').not.toContain('release-acceptance');
+  });
+
+test('CI-WF021: every preview PR builds and tests the frozen production shell on all engines',
+  /** Checks preview behavior runs independently of immutable full-release inputs. @returns Nothing after asserting native build/check commands and their context. */
+  () => {
+    expect.soft(job('preview').if).toBe("github.event_name == 'pull_request'");
+    expect.soft(job('preview').needs).toBeUndefined();
+    expect.soft(commands('preview')).toContain('npm ci');
+    expect.soft(commands('preview')).toContain('playwright install --with-deps chromium firefox webkit');
+    expect.soft(commands('preview')).toContain('npm run build');
+    expect.soft(commands('preview')).toContain('HANSARD_FROZEN_SITE="$GITHUB_WORKSPACE/dist" npm run test:browser');
+    let checkout: Mapping = {};
+    for (const step of job('preview').steps ?? []) if (step.uses?.startsWith('actions/checkout@')) checkout = step;
+    expect.soft(checkout?.with?.ref).toBe('${{ github.event.pull_request.head.sha }}');
+  });
+
+test('CI-WF022: a missing release locator produces an actionable rejection before artifact selection',
+  /** Executes actual selection in an empty controlled checkout. @returns Nothing after asserting honest missing-evidence feedback. @remarks Creates and removes an owned temporary directory; no provider calls run. */
+  () => {
+    const root = mkdtempSync(join(tmpdir(), 'hansard-ci-locator-'));
+    try {
+      let selection: Mapping = {};
+      for (const step of job('inputs').steps ?? []) if (step.id === 'selection') selection = step;
+      const result = spawnSync('bash', ['-euc', selection?.run ?? ''], { cwd: root, encoding: 'utf8', env: { ...process.env, GITHUB_REPOSITORY: 'eaglecheow/vote-better-malaysia' } });
+      expect.soft(result.status).toBe(1);
+      expect.soft(result.stdout + result.stderr).toContain('Full release acceptance requires');
+      expect.soft(result.stdout + result.stderr).toContain('docs/development.md');
+      expect.soft(result.stdout + result.stderr).not.toContain('jq: error');
+    } finally { rmSync(root, { recursive: true, force: true }); }
   });

@@ -1,0 +1,32 @@
+
+ RUN  v5.0.3 /Users/eaglecheow/dev/vote-better-malaysia
+
+ ❯ tests/unit/preview-workflow.test.ts (6 tests | 1 failed | 5 skipped) 11ms
+   × PREVIEW-UI001: a persistent bilingual preview notice survives app rendering and discloses incomplete checks 11ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/preview-workflow.test.ts > PREVIEW-UI001: a persistent bilingual preview notice survives app rendering and discloses incomplete checks
+AssertionError: expected '' to contain 'Pratonton awam'
+
+- Expected
++ Received
+
+- Pratonton awam
+
+ ❯ tests/unit/preview-workflow.test.ts:113:69
+    111|     expect(notice?.getAttribute('aria-label')).toBe('Pratonton awam / …
+    112|     expect(notice?.textContent ?? '').toContain('Pratonton awam');
+    113|     expect(notice?.querySelector('[lang="ms"]')?.textContent ?? '').to…
+       |                                                                     ^
+    114|     expect(notice?.querySelector('[lang="en"]')?.textContent ?? '').to…
+    115|     expect(notice?.querySelector('[lang="en"]')?.textContent ?? '').to…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 5 skipped (6)
+   Start at  20:48:02
+   Duration  497ms (environment 77%, import 17%, transform 3%, tests 3%)
+

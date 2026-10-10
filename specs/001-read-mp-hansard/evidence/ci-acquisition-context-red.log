@@ -1,0 +1,32 @@
+
+ RUN  v5.0.3 /Users/eaglecheow/dev/vote-better-malaysia
+
+ ❯ tests/unit/acquisition-bootstrap.test.ts (99 tests | 1 failed | 98 skipped) 33ms
+   × T013 local feature-branch private partial work resumes only in the same development session 32ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 local feature-branch private partial work resumes only in the same development session
+Error: Private partial execution context mismatch
+ ❯ failure scripts/acquire.ts:343:24
+    341|  */
+    342| function failure(kind: string, message: string): Error & { kind: strin…
+    343|   return Object.assign(new Error(message), { kind });
+       |                        ^
+    344| }
+    345|
+ ❯ check scripts/acquire.ts:332:25
+ ❯ acquire scripts/acquire.ts:985:5
+ ❯ checkpointsRunCap tests/unit/acquisition-bootstrap.test.ts:612:19
+ ❯ checkpointsLocalRunCap tests/unit/acquisition-bootstrap.test.ts:819:58
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 98 skipped (99)
+   Start at  20:39:57
+   Duration  290ms (import 46%, transform 40%, tests 14%, worker 1%)
+
+
+::error file=/Users/eaglecheow/dev/vote-better-malaysia/scripts/acquire.ts,title=tests/unit/acquisition-bootstrap.test.ts > T013 local feature-branch private partial work resumes only in the same development session,line=343,column=24::Error: Private partial execution context mismatch%0A ❯ failure scripts/acquire.ts:343:24%0A ❯ check scripts/acquire.ts:332:25%0A ❯ acquire scripts/acquire.ts:985:5%0A ❯ checkpointsRunCap tests/unit/acquisition-bootstrap.test.ts:612:19%0A ❯ checkpointsLocalRunCap tests/unit/acquisition-bootstrap.test.ts:819:58%0A%0A⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯%0ASerialized Error: { kind: 'structural' }%0A

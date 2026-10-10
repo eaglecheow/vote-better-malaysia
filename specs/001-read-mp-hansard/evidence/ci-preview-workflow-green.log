@@ -1,0 +1,13 @@
+
+> vote-better-malaysia@0.1.0 test
+> vitest --run tests/unit/ci-workflow.test.ts
+
+
+ RUN  v5.0.3 /Users/eaglecheow/dev/vote-better-malaysia
+
+
+ Test Files  1 passed (1)
+      Tests  35 passed (35)
+   Start at  20:46:38
+   Duration  604ms (import 66%, transform 16%, tests 15%, worker 3%)
+

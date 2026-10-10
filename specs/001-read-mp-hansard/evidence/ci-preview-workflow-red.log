@@ -1,0 +1,287 @@
+
+> vote-better-malaysia@0.1.0 test
+> vitest --run tests/unit/ci-workflow.test.ts
+
+
+ RUN  v5.0.3 /Users/eaglecheow/dev/vote-better-malaysia
+
+ ❯ tests/unit/ci-workflow.test.ts (35 tests | 5 failed) 21ms
+   × CI-WF001: every PR and release label change retriggers gates without path or branch filters 4ms
+   × CI-WF019: the unit job installs native Chromium before running all units 0ms
+   × CI-WF020: full evidence gates require an explicit release-acceptance label 2ms
+   × CI-WF021: every preview PR builds and tests the frozen production shell on all engines 1ms
+   × CI-WF022: a missing release locator produces an actionable rejection before artifact selection 9ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 5 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/ci-workflow.test.ts > CI-WF001: every PR and release label change retriggers gates without path or branch filters
+AssertionError: expected null to deeply equal { types: [ 'opened', …(4) ] }
+
+- Expected:
+{
+  "types": [
+    "opened",
+    "synchronize",
+    "reopened",
+    "labeled",
+    "unlabeled",
+  ],
+}
+
++ Received:
+null
+
+ ❯ tests/unit/ci-workflow.test.ts:57:49
+     55|   () => {
+     56|     expect.soft(configuration.on && Object.hasOwn(configuration.on, 'p…
+     57|     expect.soft(configuration.on?.pull_request).toEqual({ types: ['ope…
+       |                                                 ^
+     58|   });
+     59|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/19]⎯
+
+ FAIL  tests/unit/ci-workflow.test.ts > CI-WF019: the unit job installs native Chromium before running all units
+AssertionError: expected -1 to be greater than -1
+ ❯ tests/unit/ci-workflow.test.ts:196:21
+    194|     const install = bodies.findIndex((body: string) => body.includes('…
+    195|     const tests = bodies.findIndex((body: string) => body.includes('np…
+    196|     expect(install).toBeGreaterThan(-1);
+       |                     ^
+    197|     expect(install).toBeLessThan(tests);
+    198|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/19]⎯
+
+ FAIL  tests/unit/ci-workflow.test.ts > CI-WF020: full evidence gates require an explicit release-acceptance label
+AssertionError: expected 'github.event_name == \'pull_request\'' to contain 'contains(github.event.pull_request.la…'
+
+Expected: "contains(github.event.pull_request.labels.*.name, 'release-acceptance')"
+Received: "github.event_name == 'pull_request'"
+
+ ❯ tests/unit/ci-workflow.test.ts:204:39
+    202|   () => {
+    203|     for (const role of ['inputs', 'production', 'review', 'size', 'lab…
+    204|       expect.soft(job(role).if ?? '').toContain("contains(github.event…
+       |                                       ^
+    205|     }
+    206|     expect.soft(job('unit').if ?? '').not.toContain('release-acceptanc…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/19]⎯
+
+ FAIL  tests/unit/ci-workflow.test.ts > CI-WF020: full evidence gates require an explicit release-acceptance label
+ FAIL  tests/unit/ci-workflow.test.ts > CI-WF020: full evidence gates require an explicit release-acceptance label
+ FAIL  tests/unit/ci-workflow.test.ts > CI-WF020: full evidence gates require an explicit release-acceptance label
+ FAIL  tests/unit/ci-workflow.test.ts > CI-WF020: full evidence gates require an explicit release-acceptance label
+ FAIL  tests/unit/ci-workflow.test.ts > CI-WF020: full evidence gates require an explicit release-acceptance label
+ FAIL  tests/unit/ci-workflow.test.ts > CI-WF020: full evidence gates require an explicit release-acceptance label
+AssertionError: expected 'always() && github.event_name == \'pu…' to contain 'contains(github.event.pull_request.la…'
+
+Expected: "contains(github.event.pull_request.labels.*.name, 'release-acceptance')"
+Received: "always() && github.event_name == 'pull_request'"
+
+ ❯ tests/unit/ci-workflow.test.ts:204:39
+    202|   () => {
+    203|     for (const role of ['inputs', 'production', 'review', 'size', 'lab…
+    204|       expect.soft(job(role).if ?? '').toContain("contains(github.event…
+       |                                       ^
+    205|     }
+    206|     expect.soft(job('unit').if ?? '').not.toContain('release-acceptanc…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/19]⎯
+
+ FAIL  tests/unit/ci-workflow.test.ts > CI-WF021: every preview PR builds and tests the frozen production shell on all engines
+AssertionError: expected undefined to be 'github.event_name == \'pull_request\'' // Object.is equality
+
+- Expected:
+"github.event_name == 'pull_request'"
+
++ Received:
+undefined
+
+ ❯ tests/unit/ci-workflow.test.ts:212:36
+    210|   /** Checks preview behavior runs independently of immutable full-rel…
+    211|   () => {
+    212|     expect.soft(job('preview').if).toBe("github.event_name == 'pull_re…
+       |                                    ^
+    213|     expect.soft(job('preview').needs).toBeUndefined();
+    214|     expect.soft(commands('preview')).toContain('npm ci');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/19]⎯
+
+ FAIL  tests/unit/ci-workflow.test.ts > CI-WF021: every preview PR builds and tests the frozen production shell on all engines
+AssertionError: expected '' to contain 'npm ci'
+
+- Expected
++ Received
+
+- npm ci
+
+ ❯ tests/unit/ci-workflow.test.ts:214:38
+    212|     expect.soft(job('preview').if).toBe("github.event_name == 'pull_re…
+    213|     expect.soft(job('preview').needs).toBeUndefined();
+    214|     expect.soft(commands('preview')).toContain('npm ci');
+       |                                      ^
+    215|     expect.soft(commands('preview')).toContain('playwright install --w…
+    216|     expect.soft(commands('preview')).toContain('npm run build');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/19]⎯
+
+ FAIL  tests/unit/ci-workflow.test.ts > CI-WF021: every preview PR builds and tests the frozen production shell on all engines
+AssertionError: expected '' to contain 'playwright install --with-deps chromi…'
+
+- Expected
++ Received
+
+- playwright install --with-deps chromium firefox webkit
+
+ ❯ tests/unit/ci-workflow.test.ts:215:38
+    213|     expect.soft(job('preview').needs).toBeUndefined();
+    214|     expect.soft(commands('preview')).toContain('npm ci');
+    215|     expect.soft(commands('preview')).toContain('playwright install --w…
+       |                                      ^
+    216|     expect.soft(commands('preview')).toContain('npm run build');
+    217|     expect.soft(commands('preview')).toContain('HANSARD_FROZEN_SITE="$…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/19]⎯
+
+ FAIL  tests/unit/ci-workflow.test.ts > CI-WF021: every preview PR builds and tests the frozen production shell on all engines
+AssertionError: expected '' to contain 'npm run build'
+
+- Expected
++ Received
+
+- npm run build
+
+ ❯ tests/unit/ci-workflow.test.ts:216:38
+    214|     expect.soft(commands('preview')).toContain('npm ci');
+    215|     expect.soft(commands('preview')).toContain('playwright install --w…
+    216|     expect.soft(commands('preview')).toContain('npm run build');
+       |                                      ^
+    217|     expect.soft(commands('preview')).toContain('HANSARD_FROZEN_SITE="$…
+    218|     const checkout = (job('preview').steps ?? []).find((step: Mapping)…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/19]⎯
+
+ FAIL  tests/unit/ci-workflow.test.ts > CI-WF021: every preview PR builds and tests the frozen production shell on all engines
+AssertionError: expected '' to contain 'HANSARD_FROZEN_SITE="$GITHUB_WORKSPAC…'
+
+- Expected
++ Received
+
+- HANSARD_FROZEN_SITE="$GITHUB_WORKSPACE/dist" npm run test:browser
+
+ ❯ tests/unit/ci-workflow.test.ts:217:38
+    215|     expect.soft(commands('preview')).toContain('playwright install --w…
+    216|     expect.soft(commands('preview')).toContain('npm run build');
+    217|     expect.soft(commands('preview')).toContain('HANSARD_FROZEN_SITE="$…
+       |                                      ^
+    218|     const checkout = (job('preview').steps ?? []).find((step: Mapping)…
+    219|     expect.soft(checkout?.with?.ref).toBe('${{ github.event.pull_reque…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/19]⎯
+
+ FAIL  tests/unit/ci-workflow.test.ts > CI-WF021: every preview PR builds and tests the frozen production shell on all engines
+AssertionError: expected undefined to be '${{ github.event.pull_request.head.sh…' // Object.is equality
+
+- Expected:
+"${{ github.event.pull_request.head.sha }}"
+
++ Received:
+undefined
+
+ ❯ tests/unit/ci-workflow.test.ts:219:38
+    217|     expect.soft(commands('preview')).toContain('HANSARD_FROZEN_SITE="$…
+    218|     const checkout = (job('preview').steps ?? []).find((step: Mapping)…
+    219|     expect.soft(checkout?.with?.ref).toBe('${{ github.event.pull_reque…
+       |                                      ^
+    220|   });
+    221|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/19]⎯
+
+ FAIL  tests/unit/ci-workflow.test.ts > CI-WF022: a missing release locator produces an actionable rejection before artifact selection
+AssertionError: expected 2 to be 1 // Object.is equality
+
+- Expected
++ Received
+
+- 1
++ 2
+
+ ❯ tests/unit/ci-workflow.test.ts:229:34
+    227|       const selection = (job('inputs').steps ?? []).find((step: Mappin…
+    228|       const result = spawnSync('bash', ['-euc', selection?.run ?? ''],…
+    229|       expect.soft(result.status).toBe(1);
+       |                                  ^
+    230|       expect.soft(result.stdout + result.stderr).toContain('Full relea…
+    231|       expect.soft(result.stdout + result.stderr).toContain('docs/devel…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/19]⎯
+
+ FAIL  tests/unit/ci-workflow.test.ts > CI-WF022: a missing release locator produces an actionable rejection before artifact selection
+AssertionError: expected 'jq: error: Could not open file specs/…' to contain 'Full release acceptance requires'
+
+- Expected
++ Received
+
+- Full release acceptance requires
++ jq: error: Could not open file specs/001-read-mp-hansard/evidence/ci-inputs.json: No such file or directory
++
+
+ ❯ tests/unit/ci-workflow.test.ts:230:50
+    228|       const result = spawnSync('bash', ['-euc', selection?.run ?? ''],…
+    229|       expect.soft(result.status).toBe(1);
+    230|       expect.soft(result.stdout + result.stderr).toContain('Full relea…
+       |                                                  ^
+    231|       expect.soft(result.stdout + result.stderr).toContain('docs/devel…
+    232|       expect.soft(result.stdout + result.stderr).not.toContain('jq: er…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/19]⎯
+
+ FAIL  tests/unit/ci-workflow.test.ts > CI-WF022: a missing release locator produces an actionable rejection before artifact selection
+AssertionError: expected 'jq: error: Could not open file specs/…' to contain 'docs/development.md'
+
+- Expected
++ Received
+
+- docs/development.md
++ jq: error: Could not open file specs/001-read-mp-hansard/evidence/ci-inputs.json: No such file or directory
++
+
+ ❯ tests/unit/ci-workflow.test.ts:231:50
+    229|       expect.soft(result.status).toBe(1);
+    230|       expect.soft(result.stdout + result.stderr).toContain('Full relea…
+    231|       expect.soft(result.stdout + result.stderr).toContain('docs/devel…
+       |                                                  ^
+    232|       expect.soft(result.stdout + result.stderr).not.toContain('jq: er…
+    233|     } finally { rmSync(root, { recursive: true, force: true }); }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[13/19]⎯
+
+ FAIL  tests/unit/ci-workflow.test.ts > CI-WF022: a missing release locator produces an actionable rejection before artifact selection
+AssertionError: expected 'jq: error: Could not open file specs/…' not to contain 'jq: error'
+
+- Expected
++ Received
+
+- jq: error
++ jq: error: Could not open file specs/001-read-mp-hansard/evidence/ci-inputs.json: No such file or directory
++
+
+ ❯ tests/unit/ci-workflow.test.ts:232:54
+    230|       expect.soft(result.stdout + result.stderr).toContain('Full relea…
+    231|       expect.soft(result.stdout + result.stderr).toContain('docs/devel…
+    232|       expect.soft(result.stdout + result.stderr).not.toContain('jq: er…
+       |                                                      ^
+    233|     } finally { rmSync(root, { recursive: true, force: true }); }
+    234|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[14/19]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  5 failed | 30 passed (35)
+   Start at  20:42:57
+   Duration  227ms (import 69%, tests 16%, transform 13%, worker 2%)
+

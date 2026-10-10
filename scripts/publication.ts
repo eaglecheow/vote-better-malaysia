@@ -4,10 +4,11 @@ import { createHash } from 'node:crypto';
 import { execFileSync } from 'node:child_process';
 import { gunzipSync } from 'node:zlib';
 import { pathToFileURL } from 'node:url';
+import { isDeepStrictEqual } from 'node:util';
 import { checkDocumentation, isCandidate, isCurrentReview, sameCandidate, type DocumentationCandidate } from './check-documentation.ts';
 import { evaluateBudgets, measureArtifact, type ArtifactSizes } from './check-performance.ts';
 import { acquire, finalizeAcquiredCheckpoint, readPublicationCheckpoint, validateHistoricalServedBaseline, type AcquisitionOptions, type ServedBaseline } from './acquire.ts';
-import { DATA_LIMITS, validateCatalogue, type Catalogue, type DeploymentReceipt } from '../src/source.ts';
+import { DATA_LIMITS, validateCatalogue, validateSittingRecord, type Catalogue, type DeploymentReceipt, type SittingRecord } from '../src/source.ts';
 import { applicationFingerprint } from './application-fingerprint.ts';
 export { applicationFingerprint } from './application-fingerprint.ts';
 
@@ -346,10 +347,9 @@ async function frozen(options: PublicationOptions): Promise<{ candidate: Documen
   await imported(options, options.candidateRunId, options.pagesCandidateArtifactId, 'hansard-pages-candidate', options.work, candidate.sourceRevision);
   await restoreArchive(options); const sizes = await measureArtifact(join(options.work, 'artifact')); requireOrigin(sizes.complete && sizes.artifactDigest === candidate.artifactDigest && sizes.snapshot?.snapshotId === candidate.snapshotId, 'Frozen artifact/source digest or snapshot mismatch');
   requireOrigin(await applicationFingerprint(options.root) === candidate.applicationFingerprint, 'Current application inputs changed');
-  const declared = await json(join(options.work, 'fixtures.json')); requireOrigin(JSON.stringify(declared) === JSON.stringify(candidate.fixtureHashes), 'Frozen fixture metadata changed');
-  const required = rankedFixtures(sizes); requireOrigin(JSON.stringify(Object.keys(required).sort()) === JSON.stringify(Object.keys(candidate.fixtureHashes).sort()), 'Frozen ranked fixture set incomplete');
-  for (const [path, digest] of Object.entries(required)) requireOrigin(candidate.fixtureHashes[path] === digest, 'Frozen fixture bytes changed');
-  const original = catalogue(await readFile(join(options.work, 'artifact/data/catalogue.json.gz'))); return { candidate, sizes, catalogue: original.value, catalogueDigest: original.digest };
+  const original = catalogue(await readFile(join(options.work, 'artifact/data/catalogue.json.gz')));
+  await validateFixtureManifest(await json(join(options.work, 'fixtures.json')), candidate, sizes, original.value, join(options.work, 'artifact'));
+  return { candidate, sizes, catalogue: original.value, catalogueDigest: original.digest };
 }
 /** Orders actual source fixtures by decoded size and exact path for rank ties.
  * @param left First measured record.
@@ -374,6 +374,61 @@ export function rankedFixtures(sizes: ArtifactSizes): Record<string, string> {
 export function rankedPaths(sizes: ArtifactSizes): { median: string; p95: string; largest: string } {
   const records = [...sizes.sittings].sort(fixtureOrder); requireOrigin(records.length > 0, 'No acquired ranked fixtures');
   return { median: records[Math.ceil(records.length * .5) - 1].path, p95: records[Math.ceil(records.length * .95) - 1].path, largest: records.at(-1)!.path };
+}
+
+/** Reads one already checksum-validated shard for source-backed member/gap selection.
+ * @param artifact Complete measured frozen site.
+ * @param path Exact measured sitting path.
+ * @param catalogue Coherent accepted source catalogue.
+ * @returns Exact normalized source record.
+ * @throws On a mismatched sitting or invalid shard.
+ */
+async function fixtureRecord(artifact: string, path: string, catalogue: Catalogue): Promise<SittingRecord> { let sitting: Catalogue['sittings'][number] | null = null; for (const input of catalogue.sittings) if (input.record.path === path) sitting = input; requireOrigin(sitting, 'Fixture is not an acquired sitting'); const value = JSON.parse(gunzipSync(await readFile(join(artifact, path)), { maxOutputLength: DATA_LIMITS.decoded }).toString('utf8')); return validateSittingRecord(value, sitting, catalogue); }
+/** Selects a real assigned member without guessing from visible author labels.
+ * @param value Exact normalized sitting record.
+ * @returns Actual assigned member ID.
+ * @throws If no matched member is available for the native reader fixture.
+ */
+function fixtureMember(value: SittingRecord): string { for (const item of value.items) if (item.attribution === 'assigned' && item.memberId !== null) return item.memberId; throw new Error('Fixture has no actual assigned member'); }
+/** Produces collector-compatible roles from exact accepted assigned records.
+ * @param artifact Complete native frozen site.
+ * @param sizes Canonical measured all-file sizes.
+ * @param catalogue Exact accepted catalogue.
+ * @returns Real ranked reader pairs and gap/largest interactions.
+ * @throws On absent real assigned or gap fixtures.
+ */
+export async function createFixtureManifest(artifact: string, sizes: ArtifactSizes, catalogue: Catalogue): Promise<Record<string, any>> { const ranks = rankedPaths(sizes); const datasets: Record<string, any> = {}; for (const role of ['median', 'p95', 'largest'] as const) datasets[role] = { path: ranks[role], memberId: fixtureMember(await fixtureRecord(artifact, ranks[role], catalogue)) }; const interactions: Record<string, any>[] = [datasets.largest]; let hasGap = false; for (const input of (await fixtureRecord(artifact, ranks.largest, catalogue)).items) if (input.attribution === 'unassigned') hasGap = true; if (!hasGap) { for (const sitting of catalogue.sittings) { if (sitting.record.path === null) continue; const value = await fixtureRecord(artifact, sitting.record.path, catalogue); let gap = false; for (const item of value.items) if (item.attribution === 'unassigned') gap = true; if (gap) { interactions.push({ path: sitting.record.path, memberId: fixtureMember(value) }); hasGap = true; break; } } } requireOrigin(hasGap, 'No actual source gap fixture is available'); return { datasets, interactions }; }
+/** Freezes exact ranked and selected interaction hashes without changing artifact bytes.
+ * @param sizes Canonical measured all-file sizes.
+ * @param manifest Source-backed collector selections.
+ * @returns Complete ranked/interaction digest map.
+ * @throws On a selected path absent from the measured artifact.
+ */
+export function selectedFixtureHashes(sizes: ArtifactSizes, manifest: Record<string, any>): Record<string, string> { const required = rankedFixtures(sizes); for (const input of manifest.interactions) { let digest: string | null = null; for (const [path, , hash] of sizes.files) if (path === input.path) digest = hash; requireOrigin(digest, 'Selected interaction fixture is missing'); required[input.path] = digest; } return required; }
+/** Checks one exact source-backed reader pair.
+ * @param chosen Selected path/member metadata.
+ * @param candidate Complete fixture digest map.
+ * @param catalogue Validated source catalogue.
+ * @param artifact Frozen source path.
+ * @returns Original normalized record.
+ * @throws On an unmeasured file/member identity.
+ */
+async function selectedFixture(chosen: Record<string, any>, candidate: DocumentationCandidate, catalogue: Catalogue, artifact: string): Promise<SittingRecord> { requireOrigin(typeof chosen.path === 'string' && Object.hasOwn(candidate.fixtureHashes, chosen.path) && typeof chosen.memberId === 'string', 'Measured fixture identity required'); const value = await fixtureRecord(artifact, chosen.path, catalogue); let assigned = false; for (const item of value.items) if (item.attribution === 'assigned' && item.memberId === chosen.memberId) assigned = true; requireOrigin(assigned, 'Fixture member absent'); return value; }
+/** Validates collector roles, actual selected members and required largest/gap interactions.
+ * @param manifest Downloaded collector-compatible fixture metadata.
+ * @param candidate Exact measured candidate.
+ * @param sizes Canonical full artifact measurements.
+ * @param catalogue Actual accepted source catalogue.
+ * @param artifact Fixed frozen site path.
+ * @returns Validated collector manifest.
+ * @throws On incorrect roles, absent members, unknown hashes or omitted interaction fixtures.
+ */
+export async function validateFixtureManifest(manifest: unknown, candidate: DocumentationCandidate, sizes: ArtifactSizes, catalogue: Catalogue, artifact: string): Promise<Record<string, any>> {
+  const value = object(manifest); const datasets = object(value.datasets); const ranks = rankedPaths(sizes);
+  for (const role of ['median', 'p95', 'largest'] as const) { const chosen = object(datasets[role]); requireOrigin(chosen.path === ranks[role], 'Ranked fixture role mismatch'); await selectedFixture(chosen, candidate, catalogue, artifact); }
+  requireOrigin(Array.isArray(value.interactions) && value.interactions.length > 0, 'Gap/largest interaction fixtures missing'); let gap = false; let largest = false;
+  for (const input of value.interactions) { const chosen = object(input); const record = await selectedFixture(chosen, candidate, catalogue, artifact); if (chosen.path === ranks.largest) largest = true; for (const item of record.items) if (item.attribution === 'unassigned') gap = true; }
+  requireOrigin(gap && largest, 'Real gap and largest interactions required'); requireOrigin(isDeepStrictEqual(candidate.fixtureHashes, selectedFixtureHashes(sizes, value)), 'Measured ranked/interaction fixture digest map mismatch'); return value;
 }
 /** Identifies the reviewed fixed runtime, laboratory conditions and source budgets.
  * @returns SHA-256 of the existing canonical publication conditions.
@@ -569,12 +624,13 @@ export async function preparePublication(supplied: unknown): Promise<Publication
     const acquired = await acquire(settings); fields.acquisitionOutcome = acquired.catalogue.status.acquisitionOutcome; fields.stagingOutcome = 'failed';
     const command = options.command ?? commands; await command('build', options.root); await command('checks', options.root);
     const built = join(options.root, 'dist'); const sizes = await measureArtifact(built); requireOrigin(sizes.complete && sizes.snapshot?.snapshotId === acquired.catalogue.snapshotId, 'Built artifact is not complete accepted source');
+    const manifest = await createFixtureManifest(built, sizes, acquired.catalogue);
     const candidate: DocumentationCandidate = { sourceRevision: options.sourceRevision, applicationFingerprint: await applicationFingerprint(options.root), artifactDigest: sizes.artifactDigest, snapshotId: acquired.catalogue.snapshotId,
-      fixtureHashes: rankedFixtures(sizes), conditionsDigest: conditionsDigest(),
+      fixtureHashes: selectedFixtureHashes(sizes, manifest), conditionsDigest: conditionsDigest(),
       priorServedBaselineDigest: previous?.artifactDigest as string ?? null };
     await rm(join(options.work, 'artifact'), { recursive: true, force: true }); await cp(built, join(options.work, 'artifact'), { recursive: true });
     requireOrigin((await measureArtifact(join(options.work, 'artifact'))).artifactDigest === candidate.artifactDigest, 'Frozen copied artifact differs');
-    await put(join(options.work, 'candidate.json'), candidate); await put(join(options.work, 'fixtures.json'), candidate.fixtureHashes);
+    await put(join(options.work, 'candidate.json'), candidate); await put(join(options.work, 'fixtures.json'), manifest);
     await put(join(options.work, 'origin.json'), { repository: options.repository, branch: 'main', runId: options.runId, runAttempt: options.runAttempt, sourceRevision: options.sourceRevision, codeFingerprint: options.codeFingerprint });
     await put(join(options.work, 'reports/automated.json'), { candidate, reviewedAt: now(options), checks: { type: true, unit: true, build: true, browser: true, source: sizes.sourceVerified } });
     await copyAccepted(options.state, join(options.work, 'acquired-state'));
