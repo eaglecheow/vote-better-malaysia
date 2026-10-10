@@ -101,6 +101,27 @@ Unavailable evidence MUST be explicitly reported, including unavailable real-use
 or insufficient data for a device group. A laboratory pass MUST NOT be reported as proof
 that the real-user percentile targets have been met.
 
+### VII. Required Developer, User, and Code Documentation
+
+Developer getting-started documentation MUST describe prerequisites, installation,
+required configuration, and the commands to run, test, and build the project. The README
+MUST contain this information or link directly to it. Documented commands MUST be
+verified against the current project setup.
+
+User documentation MUST explain each implemented feature, how to use it, and any
+user-relevant limitations, including offline behavior where applicable. It MUST be
+discoverable from the README or the application. Developer and user documentation MUST
+be prepared with the corresponding work and updated whenever setup or features change.
+
+Every function and method MUST have documentation comments using the chosen language's
+convention, such as JSDoc for JavaScript or docstrings for Python. These comments MUST
+explain purpose, parameters, return values, and relevant side effects or errors, where
+applicable, and MUST stay consistent with the implementation.
+
+Documentation makes the project usable by new developers and voters and preserves code
+contracts for maintainers. Missing or outdated required documentation MUST block
+completion of the affected work.
+
 ## Project Scope
 
 Vote Better Malaysia is a Progressive Web App (PWA). The README defines its voter
@@ -116,35 +137,43 @@ tasks, implement it, and assess convergence. Each artifact MUST enforce these ga
 
 - Specifications (`spec.md`) MUST define observable acceptance criteria, require failing
   unit tests before feature implementation and regression tests before bug fixes, identify
-  relevant PWA browser scenarios, and include measurable performance success criteria.
+  relevant PWA browser scenarios, include measurable performance success criteria, and
+  identify developer and user documentation deliverables for the requested work.
 - Plans (`plan.md`) MUST include a Constitution Check before research and again after
   design. It MUST cover the RED -> GREEN -> REFACTOR sequence, test tools and evidence
   locations, applicable SOLID decisions, authoritative shared rules, numeric performance
-  budgets and measurement conditions, browser validation, and CI merge gates. Missing
-  budgets or test strategy MUST block implementation.
+  budgets and measurement conditions, browser validation, and CI merge gates. Plans MUST
+  identify documentation locations and the language's function/method comment convention.
+  Missing budgets or test strategy MUST block implementation.
 - Tasks (`tasks.md`) MUST include explicit test-writing and RED verification/evidence
   tasks before each corresponding production implementation task. Every task MUST define
   observable success criteria and complete its relevant checks. Dependencies MUST
   prevent implementation from starting, including in parallel, before that behavior's
   RED gate passes. GREEN validation, necessary refactoring or a no-refactor decision,
   browser/integration checks, production-build performance checks, and CI budget
-  enforcement MUST be included where relevant. Test tasks MUST NOT be optional or
-  deferred to a final polish phase.
+  enforcement MUST be included where relevant. Tasks MUST include developer and user
+  documentation preparation or updates; production code tasks MUST require documentation
+  comments for every function and method they introduce or change. Test tasks MUST NOT
+  be optional or deferred to a final polish phase.
 - Implementation MUST execute and record these gates in order. A test-writing task MUST
   NOT be marked complete until the tests run and the required behavioral failure is
   confirmed; production code MUST NOT be written to make an unverified test task pass.
 - Completion and convergence checks MUST trace acceptance criteria to test results and
   include initial RED evidence, passing unit/regression and relevant browser suites,
-  production-build budget results, CI enforcement evidence, and any remaining limitations.
+  production-build budget results, CI enforcement evidence, documentation review results,
+  and any remaining limitations. Documentation review MUST verify developer setup commands,
+  user coverage of implemented features, and function/method comment coverage and accuracy.
   Missing required evidence or a failed gate MUST prevent a completion or convergence
   claim. Unavailable real-user data MUST be disclosed and MUST NOT be treated as a
   failed laboratory check or as proof that real-user targets passed.
 
 Analysis and review MUST treat missing test tasks, implementation scheduled before RED,
 missing numeric budgets or CI enforcement, and unsupported performance claims as
-constitution violations. Generic template or command language making tests optional
-MUST NOT override this project's mandatory TDD requirements. A test-policy exemption
-MUST NOT be inferred from a feature's size or apparent simplicity.
+constitution violations. Missing or outdated required developer, user, or code
+documentation MUST also be treated as a constitution violation. Generic template or
+command language making tests optional MUST NOT override this project's mandatory TDD
+requirements. A test-policy exemption MUST NOT be inferred from a feature's size or
+apparent simplicity.
 
 The configured Git lifecycle hooks MUST create a numbered branch before feature
 specification and commit locally after successful core operations when files change.
@@ -168,4 +197,4 @@ principles or sections, and PATCH for non-semantic clarifications. Reviewers MUS
 the amendment's effect on active feature artifacts and require any necessary updates
 before implementation continues. See `AGENTS.md` for day-to-day guidance.
 
-**Version**: 1.1.0 | **Ratified**: 2026-10-10 | **Last Amended**: 2026-10-10
+**Version**: 1.2.0 | **Ratified**: 2026-10-10 | **Last Amended**: 2026-10-10
