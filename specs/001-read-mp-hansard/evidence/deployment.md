@@ -108,10 +108,11 @@ the observations and their limits.
 
 ### Evidence-only follow-up validation
 
-The follow-up changes only feature evidence and T087's status. JSON assertions
+The follow-up changes only repository guidance, feature evidence and T087's status.
+The 54 focused preview-workflow/documentation tests pass. JSON assertions
 verify both passing reports' engine/snapshot/source digest, preserve the initial
 failure and distinguish the 4,089/4,090 inventory observations. The executed smoke
-hash matches, both saved scripts pass Node syntax checking, all 39 local Markdown
+hash matches, both saved scripts pass Node syntax checking, all 70 local Markdown
 links in the edited documents resolve and `git diff --check` passes.
 The shared application fingerprint remains
 `6bf90c39765f13f603b08f17e4b494aeb5f5a453940169fc1a97c45a5b4cab08`.
