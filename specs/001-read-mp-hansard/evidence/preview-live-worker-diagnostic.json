@@ -1,0 +1,327 @@
+{
+  "base": "https://eaglecheow.github.io/vote-better-malaysia/",
+  "events": [
+    {
+      "type": "response",
+      "url": "https://eaglecheow.github.io/vote-better-malaysia/",
+      "status": 200,
+      "fromServiceWorker": false,
+      "headers": {
+        "accept-ranges": "bytes",
+        "access-control-allow-origin": "*",
+        "age": "0",
+        "cache-control": "max-age=600",
+        "content-encoding": "gzip",
+        "content-length": "639",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Sat, 10 Oct 2026 14:24:12 GMT",
+        "etag": "W/\"6aca495e-480\"",
+        "expires": "Sat, 10 Oct 2026 14:30:46 GMT",
+        "last-modified": "Sat, 10 Oct 2026 14:19:10 GMT",
+        "server": "GitHub.com",
+        "strict-transport-security": "max-age=31556952",
+        "vary": "Accept-Encoding",
+        "via": "1.1 varnish",
+        "x-cache": "HIT",
+        "x-cache-hits": "0",
+        "x-fastly-request-id": "938a93e77ca35ae16153564e60640412b44d25be",
+        "x-github-edge-region": "uksouth",
+        "x-github-request-id": "E18A:0A6D:412B08:443303:6ACA49BE",
+        "x-origin-cache": "HIT",
+        "x-proxy-cache": "MISS",
+        "x-served-by": "cache-sin-wsap440035-SIN",
+        "x-timer": "S1791642253.639141,VS0,VE241"
+      }
+    },
+    {
+      "type": "response",
+      "url": "https://eaglecheow.github.io/vote-better-malaysia/",
+      "status": 200,
+      "fromServiceWorker": false,
+      "headers": {
+        "age": "0",
+        "cache-control": "max-age=600",
+        "date": "Sat, 10 Oct 2026 14:24:13 GMT",
+        "etag": "W/\"6aca495e-480\"",
+        "expires": "Sat, 10 Oct 2026 14:30:46 GMT",
+        "vary": "Accept-Encoding",
+        "via": "1.1 varnish",
+        "x-cache": "HIT",
+        "x-cache-hits": "1",
+        "x-fastly-request-id": "681aa6b1d32a1778abd93a31c82ff4405b4b1f6c",
+        "x-served-by": "cache-sin-wsap440035-SIN",
+        "x-timer": "S1791642253.270148,VS0,VE2"
+      }
+    },
+    {
+      "type": "controller-wait-error",
+      "message": "page.waitForFunction: Timeout 5000ms exceeded."
+    },
+    {
+      "type": "response",
+      "url": "https://eaglecheow.github.io/vote-better-malaysia/",
+      "status": 200,
+      "fromServiceWorker": true,
+      "headers": {
+        "accept-ranges": "bytes",
+        "access-control-allow-origin": "*",
+        "age": "0",
+        "cache-control": "max-age=600",
+        "content-encoding": "gzip",
+        "content-length": "639",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Sat, 10 Oct 2026 14:24:13 GMT",
+        "etag": "W/\"6aca495e-480\"",
+        "expires": "Sat, 10 Oct 2026 14:30:46 GMT",
+        "last-modified": "Sat, 10 Oct 2026 14:19:10 GMT",
+        "server": "GitHub.com",
+        "strict-transport-security": "max-age=31556952",
+        "vary": "Accept-Encoding",
+        "via": "1.1 varnish",
+        "x-cache": "HIT",
+        "x-cache-hits": "2",
+        "x-fastly-request-id": "f63bfd54a1e1324f83283a71a3aa843daa704308",
+        "x-github-edge-region": "uksouth",
+        "x-github-request-id": "E18A:0A6D:412B08:443303:6ACA49BE",
+        "x-origin-cache": "HIT",
+        "x-proxy-cache": "MISS",
+        "x-served-by": "cache-sin-wsap440035-SIN",
+        "x-timer": "S1791642254.601407,VS0,VE1"
+      }
+    }
+  ],
+  "checkpoints": [
+    {
+      "label": "initial active",
+      "href": "https://eaglecheow.github.io/vote-better-malaysia/",
+      "baseURI": "https://eaglecheow.github.io/vote-better-malaysia/",
+      "secure": true,
+      "online": true,
+      "controller": null,
+      "registrations": [
+        {
+          "scope": "https://eaglecheow.github.io/vote-better-malaysia/",
+          "active": null,
+          "waiting": null,
+          "installing": null
+        }
+      ],
+      "workerEvents": [],
+      "cacheList": [],
+      "version": "f459a43d5ccff3d895453e431d730d7797a49d83b42119d4cf77440d4df13d7e",
+      "offlineStatus": "<p id=\"reader-offline-status\" role=\"status\" aria-live=\"polite\" data-offline-ready=\"false\">Pembukaan semula tanpa sambungan belum dapat dipastikan.</p>"
+    },
+    {
+      "label": "after native reload",
+      "href": "https://eaglecheow.github.io/vote-better-malaysia/",
+      "baseURI": "https://eaglecheow.github.io/vote-better-malaysia/",
+      "secure": true,
+      "online": true,
+      "controller": null,
+      "registrations": [
+        {
+          "scope": "https://eaglecheow.github.io/vote-better-malaysia/",
+          "active": null,
+          "waiting": null,
+          "installing": null
+        }
+      ],
+      "workerEvents": [],
+      "cacheList": [],
+      "version": "f459a43d5ccff3d895453e431d730d7797a49d83b42119d4cf77440d4df13d7e",
+      "offlineStatus": "<p id=\"reader-offline-status\" role=\"status\" aria-live=\"polite\" data-offline-ready=\"false\">Pembukaan semula tanpa sambungan belum dapat dipastikan.</p>"
+    },
+    {
+      "label": "after controller wait",
+      "href": "https://eaglecheow.github.io/vote-better-malaysia/",
+      "baseURI": "https://eaglecheow.github.io/vote-better-malaysia/",
+      "secure": true,
+      "online": true,
+      "controller": null,
+      "registrations": [
+        {
+          "scope": "https://eaglecheow.github.io/vote-better-malaysia/",
+          "active": {
+            "scriptURL": "https://eaglecheow.github.io/vote-better-malaysia/sw.js",
+            "state": "activated"
+          },
+          "waiting": null,
+          "installing": null
+        }
+      ],
+      "workerEvents": [],
+      "cacheList": [
+        {
+          "name": "hansard-shell:%2Fvote-better-malaysia%2F:f459a43d5ccff3d895453e431d730d7797a49d83b42119d4cf77440d4df13d7e",
+          "cached": [
+            {
+              "request": "https://eaglecheow.github.io/vote-better-malaysia/",
+              "response": "https://eaglecheow.github.io/vote-better-malaysia/",
+              "status": 200,
+              "type": "basic",
+              "redirected": false
+            },
+            {
+              "request": "https://eaglecheow.github.io/vote-better-malaysia/assets/index-Bh8YJVd2.css",
+              "response": "https://eaglecheow.github.io/vote-better-malaysia/assets/index-Bh8YJVd2.css",
+              "status": 200,
+              "type": "basic",
+              "redirected": false
+            },
+            {
+              "request": "https://eaglecheow.github.io/vote-better-malaysia/assets/index-C508zM4y.js",
+              "response": "https://eaglecheow.github.io/vote-better-malaysia/assets/index-C508zM4y.js",
+              "status": 200,
+              "type": "basic",
+              "redirected": false
+            },
+            {
+              "request": "https://eaglecheow.github.io/vote-better-malaysia/help.html",
+              "response": "https://eaglecheow.github.io/vote-better-malaysia/help.html",
+              "status": 200,
+              "type": "basic",
+              "redirected": false
+            },
+            {
+              "request": "https://eaglecheow.github.io/vote-better-malaysia/icons/icon-192.png",
+              "response": "https://eaglecheow.github.io/vote-better-malaysia/icons/icon-192.png",
+              "status": 200,
+              "type": "basic",
+              "redirected": false
+            },
+            {
+              "request": "https://eaglecheow.github.io/vote-better-malaysia/icons/icon-512.png",
+              "response": "https://eaglecheow.github.io/vote-better-malaysia/icons/icon-512.png",
+              "status": 200,
+              "type": "basic",
+              "redirected": false
+            },
+            {
+              "request": "https://eaglecheow.github.io/vote-better-malaysia/index.html",
+              "response": "https://eaglecheow.github.io/vote-better-malaysia/index.html",
+              "status": 200,
+              "type": "basic",
+              "redirected": false
+            },
+            {
+              "request": "https://eaglecheow.github.io/vote-better-malaysia/manifest.webmanifest",
+              "response": "https://eaglecheow.github.io/vote-better-malaysia/manifest.webmanifest",
+              "status": 200,
+              "type": "basic",
+              "redirected": false
+            },
+            {
+              "request": "https://eaglecheow.github.io/vote-better-malaysia/sw.js",
+              "response": "https://eaglecheow.github.io/vote-better-malaysia/sw.js",
+              "status": 200,
+              "type": "basic",
+              "redirected": false
+            }
+          ]
+        }
+      ],
+      "version": "f459a43d5ccff3d895453e431d730d7797a49d83b42119d4cf77440d4df13d7e",
+      "offlineStatus": "<p id=\"reader-offline-status\" role=\"status\" aria-live=\"polite\" data-offline-ready=\"false\">Pembukaan semula tanpa sambungan belum dapat dipastikan.</p>"
+    },
+    {
+      "label": "after direct second navigation",
+      "href": "https://eaglecheow.github.io/vote-better-malaysia/",
+      "baseURI": "https://eaglecheow.github.io/vote-better-malaysia/",
+      "secure": true,
+      "online": true,
+      "controller": {
+        "scriptURL": "https://eaglecheow.github.io/vote-better-malaysia/sw.js",
+        "state": "activated"
+      },
+      "registrations": [
+        {
+          "scope": "https://eaglecheow.github.io/vote-better-malaysia/",
+          "active": {
+            "scriptURL": "https://eaglecheow.github.io/vote-better-malaysia/sw.js",
+            "state": "activated"
+          },
+          "waiting": null,
+          "installing": null
+        }
+      ],
+      "workerEvents": [],
+      "cacheList": [
+        {
+          "name": "hansard-shell:%2Fvote-better-malaysia%2F:f459a43d5ccff3d895453e431d730d7797a49d83b42119d4cf77440d4df13d7e",
+          "cached": [
+            {
+              "request": "https://eaglecheow.github.io/vote-better-malaysia/",
+              "response": "https://eaglecheow.github.io/vote-better-malaysia/",
+              "status": 200,
+              "type": "basic",
+              "redirected": false
+            },
+            {
+              "request": "https://eaglecheow.github.io/vote-better-malaysia/assets/index-Bh8YJVd2.css",
+              "response": "https://eaglecheow.github.io/vote-better-malaysia/assets/index-Bh8YJVd2.css",
+              "status": 200,
+              "type": "basic",
+              "redirected": false
+            },
+            {
+              "request": "https://eaglecheow.github.io/vote-better-malaysia/assets/index-C508zM4y.js",
+              "response": "https://eaglecheow.github.io/vote-better-malaysia/assets/index-C508zM4y.js",
+              "status": 200,
+              "type": "basic",
+              "redirected": false
+            },
+            {
+              "request": "https://eaglecheow.github.io/vote-better-malaysia/help.html",
+              "response": "https://eaglecheow.github.io/vote-better-malaysia/help.html",
+              "status": 200,
+              "type": "basic",
+              "redirected": false
+            },
+            {
+              "request": "https://eaglecheow.github.io/vote-better-malaysia/icons/icon-192.png",
+              "response": "https://eaglecheow.github.io/vote-better-malaysia/icons/icon-192.png",
+              "status": 200,
+              "type": "basic",
+              "redirected": false
+            },
+            {
+              "request": "https://eaglecheow.github.io/vote-better-malaysia/icons/icon-512.png",
+              "response": "https://eaglecheow.github.io/vote-better-malaysia/icons/icon-512.png",
+              "status": 200,
+              "type": "basic",
+              "redirected": false
+            },
+            {
+              "request": "https://eaglecheow.github.io/vote-better-malaysia/index.html",
+              "response": "https://eaglecheow.github.io/vote-better-malaysia/index.html",
+              "status": 200,
+              "type": "basic",
+              "redirected": false
+            },
+            {
+              "request": "https://eaglecheow.github.io/vote-better-malaysia/manifest.webmanifest",
+              "response": "https://eaglecheow.github.io/vote-better-malaysia/manifest.webmanifest",
+              "status": 200,
+              "type": "basic",
+              "redirected": false
+            },
+            {
+              "request": "https://eaglecheow.github.io/vote-better-malaysia/sw.js",
+              "response": "https://eaglecheow.github.io/vote-better-malaysia/sw.js",
+              "status": 200,
+              "type": "basic",
+              "redirected": false
+            }
+          ]
+        }
+      ],
+      "version": "f459a43d5ccff3d895453e431d730d7797a49d83b42119d4cf77440d4df13d7e",
+      "offlineStatus": "<p id=\"reader-offline-status\" role=\"status\" aria-live=\"polite\" data-offline-ready=\"false\">Pembukaan semula tanpa sambungan belum dapat dipastikan.</p>"
+    }
+  ],
+  "newPage": {
+    "href": "https://eaglecheow.github.io/vote-better-malaysia/",
+    "controlled": "https://eaglecheow.github.io/vote-better-malaysia/sw.js",
+    "scope": "https://eaglecheow.github.io/vote-better-malaysia/"
+  }
+}

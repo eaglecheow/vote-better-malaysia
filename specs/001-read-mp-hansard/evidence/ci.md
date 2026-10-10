@@ -1,5 +1,25 @@
 # CI and repository enforcement evidence
 
+## Verified hosted preview rollout, 2026-10-10
+
+[PR #2](https://github.com/eaglecheow/vote-better-malaysia/pull/2) passed
+[hosted CI](https://github.com/eaglecheow/vote-better-malaysia/actions/runs/38053871243)
+at head `3c1d3612a453b9db8b22bdac2f02806b82305328`: TypeScript,
+**2,038/2,038** units and **162/162** authored Chromium/Firefox/WebKit cases.
+Only then was it merged, producing `89533546ea9908591ff5c0011e1437d67f578e23`.
+The strict full-release jobs were intentionally skipped under the user-approved
+preview stage; their unavailable physical/laboratory/human reports were not
+fabricated. This demonstrates repaired hosted execution, not branch-protection
+enforcement or full-release acceptance. T074 remains unchecked.
+
+The [manual deployment run](https://github.com/eaglecheow/vote-better-malaysia/actions/runs/38054189881)
+also passed **2,038/2,038** units and **162/162** native browser cases on its exact
+built output after official acquisition and source/byte validation. It successfully
+published the labeled preview. [Deployment evidence](deployment.md) records the
+deployed revision, snapshot, source freshness limitation and live-check scope.
+Earlier local counts and read-only inspection below retain their original dated
+scope; they do not describe current Pages configuration.
+
 ## Public preview repair, 2026-10-10
 
 The merged feature's [first hosted CI run](https://github.com/eaglecheow/vote-better-malaysia/actions/runs/38052361819)

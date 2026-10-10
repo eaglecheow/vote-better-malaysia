@@ -3,7 +3,10 @@
 The user approved an explicitly labeled public preview with a smaller checklist.
 This verifies the local repair operation on `codex/fix-ci-pages`, based on merged
 main `0ad1c20450718e308d6dc81f3a6b5ef24e4230a9`. Original full-release acceptance
-remains pending; no hosted repair run or deployment has been claimed.
+remains pending. This report preserves the local prepublication checkpoint;
+[subsequent hosted CI](ci.md#verified-hosted-preview-rollout-2026-10-10) and
+[actual deployment evidence](deployment.md#authorized-public-preview-2026-10-10)
+record the later authorized rollout separately.
 
 ## Changed behavior
 
@@ -69,15 +72,14 @@ bilingual Help correction. Source/document whitespace checks pass. Captured test
 logs retain their exact original output, including runner-emitted blank/trailing
 whitespace; staged whitespace validation excludes only those raw evidence logs.
 
-Read-only GitHub inspection confirms `main` is public, Pages is disabled and the
-caller has push/admin access. The earlier PR
+At this local checkpoint, read-only GitHub inspection confirmed `main` was public,
+Pages was disabled and the caller had push/admin access. The earlier PR
 [hosted failure](https://github.com/eaglecheow/vote-better-malaysia/actions/runs/38052361819)
-is historical evidence for the repaired defects. The repair has not been pushed,
-so its hosted Ubuntu/Firefox checks and actual Pages address remain unverified.
+is historical evidence for the repaired defects. The repair had not yet been pushed,
+so hosted Ubuntu/Firefox checks and the actual Pages address were then unverified.
 The known macOS Firefox pre-launch limitation is not replaced with a passing claim.
 Physical device, lab/field performance, human reviews and full-release source reuse
 policy applicability remain pending under the original checklist.
 
-The local preview repair is ready for remote verification. Push requires explicit
-user authorization under `AGENTS.md`; a successful hosted check and confirmed live
-preview must precede any publication-success claim.
+The local preview repair was ready for remote verification. The subsequently
+authorized rollout and current limits are recorded in the linked hosted reports.

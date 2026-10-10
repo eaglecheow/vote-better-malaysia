@@ -1,0 +1,22 @@
+{
+  "scope": "One live source pair in an isolated native engine; not full-archive, device or performance acceptance",
+  "address": "https://eaglecheow.github.io/vote-better-malaysia/",
+  "expectedSnapshotId": "cc1b416a-e31a-4990-88d3-311e9e85e3bf",
+  "engine": "chromium",
+  "checkedAt": "2026-10-10T14:20:43.424Z",
+  "checks": [
+    "served snapshot and selected original source identity/digest",
+    "repository manifest identity and both PNG icon dimensions"
+  ],
+  "passed": false,
+  "snapshotId": "cc1b416a-e31a-4990-88d3-311e9e85e3bf",
+  "preparedAt": "2026-10-10T14:13:46.782Z",
+  "memberId": "1216",
+  "sittingId": "26241",
+  "sittingDate": "2014-07-23",
+  "recordDigest": "989d11b9e602dd737cfdbd4b3306c125b543c8d13c800a0bb843f3c9ca55c18d",
+  "turns": 5,
+  "gaps": 41,
+  "annotations": 16,
+  "error": "page.waitForFunction: Timeout 30000ms exceeded.\n    at /private/tmp/hansard-live-preview-check.mjs:95:14"
+}
