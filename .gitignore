@@ -1,0 +1,9 @@
+.DS_Store
+.env
+.env.*
+!.env.example
+
+# Keep shared Codex skills; ignore local credentials and session state.
+.codex/
+.agents/*
+!.agents/skills/

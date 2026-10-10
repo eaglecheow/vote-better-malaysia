@@ -18,8 +18,8 @@ Vote Better Malaysia is an initiative to improve civic engagement and voter lite
 
 ### Prerequisites
 
-- [List any prerequisites: Node.js, Python, etc.]
-- [Add any other setup requirements]
+- Git, Python 3.11+, [uv](https://docs.astral.sh/uv/), and Codex.
+- Spec Kit **1.1.3**, with the bundled Git extension **1.0.1**.
 
 ### Installation
 
@@ -29,28 +29,83 @@ git clone https://github.com/eaglecheow/vote-better-malaysia.git
 cd vote-better-malaysia
 ```
 
-2. Install dependencies:
+2. Install the pinned Spec Kit release:
 ```bash
-# Add your installation commands here
-# Example: npm install or pip install -r requirements.txt
+uv tool install specify-cli --from git+https://github.com/github/spec-kit.git@v1.1.3
+specify version
+specify check
 ```
 
-3. Start the application:
-```bash
-# Add your startup commands here
-```
+3. Open this folder in Codex. Project skills are installed in `.agents/skills/`;
+   open a new chat if they are not yet visible.
+
+This repository contains the project setup and documentation. Application dependencies
+and startup commands will be defined by the first feature's implementation plan.
 
 ## Usage
 
-[Add usage instructions and examples for your project]
+The constitution is initialized at `.specify/memory/constitution.md`. Invoke these
+skills in Codex chat, one operation at a time:
+
+```text
+$speckit-specify Describe the feature, its users, and the intended outcome.
+$speckit-clarify
+$speckit-plan Describe the implementation constraints and proposed stack.
+$speckit-tasks
+$speckit-analyze
+$speckit-implement
+$speckit-converge
+```
+
+Clarification and analysis are optional. Repeat implement and converge until the feature
+converges. Use `$speckit-checklist` for requirement quality checks and
+`$speckit-constitution` to amend project principles. These are agent skills, not shell
+commands.
+
+### Git automation
+
+The official Git extension creates a numbered feature branch before specification.
+Mandatory post-operation hooks make a **local commit** after every successful core
+operation when files change:
+
+`constitution`, `specify`, `clarify`, `plan`, `tasks`, `implement`, `checklist`,
+`analyze`, `converge`, and the deprecated `taskstoissues` operation.
+
+The hooks live in `.specify/extensions.yml`; enabled events and commit messages live in
+`.specify/extensions/git/git-config.yml`. This setup adds `after_converge`, which is
+absent from the bundled Git extension's default hooks. Before-operation commits are
+disabled. Read-only operations with no changes skip the commit. Optional bug and idea
+assessment extensions are not installed.
+
+These are Spec Kit lifecycle hooks executed by the coding agent. Native Git hooks
+under `.git/hooks` do not receive Spec Kit operation events. Start each operation with
+a clean working tree: the bundled script stages all non-ignored repository changes.
+The agent must finish the operation's required checks before running its commit hook.
+Failed operations leave changes uncommitted.
+
+Push manually when ready:
+
+```bash
+git push -u origin HEAD
+```
+
+Reinstalling, re-enabling, or updating the Git extension can reset hook settings.
+After such a change, restore this policy: keep repository initialization and feature
+branching enabled; disable all before-operation commit hooks; enable mandatory
+(`optional: false`) after-operation commit hooks for all ten operations, including
+`after_converge`; enable their matching `auto_commit` events in the Git config.
+
+See the [official Git extension documentation](https://github.com/github/spec-kit/blob/v1.1.3/extensions/git/README.md).
 
 ## Project Structure
 
 ```
 vote-better-malaysia/
+├── .agents/skills/             # Codex Spec Kit skills
+├── .specify/                   # Templates, workflow, constitution, Git extension
+├── AGENTS.md                   # Coding and automatic commit guidance
 ├── README.md
-├── [Add your directory structure]
-└── ...
+└── specs/                      # Created when the first feature is specified
 ```
 
 ## Contributing
@@ -58,9 +113,9 @@ vote-better-malaysia/
 We welcome contributions! Please follow these steps:
 
 1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+2. Use `$speckit-specify` to create a numbered feature branch and specification
 3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
+4. Push the current branch (`git push -u origin HEAD`)
 5. Open a Pull Request
 
 Please make sure to:
