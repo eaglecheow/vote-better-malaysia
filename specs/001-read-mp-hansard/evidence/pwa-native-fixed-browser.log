@@ -1,0 +1,147 @@
+
+> vote-better-malaysia@0.1.0 test:browser
+> playwright test tests/browser/offline.spec.ts tests/browser/storage.spec.ts tests/browser/updates.spec.ts tests/browser/install.spec.ts --project=chromium --project=webkit
+
+[WebServer] (node:75041) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 48 tests using 5 workers
+
+(node:75044) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:75046) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:75048) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:75045) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:75047) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   2 [chromium] › tests/browser/install.spec.ts:3:1 › INSTALL-BROWSER001: real base-scoped manifest/start/scope and native decoded icon dimensions stay bounded (606ms)
+  ✓   6 [chromium] › tests/browser/install.spec.ts:34:1 › INSTALL-BROWSER002: real native registration and complete versioned CacheStorage confirm shell readiness without data caching (582ms)
+  ✓   1 [chromium] › tests/browser/storage.spec.ts:3:1 › STORAGE-BROWSER001: native request success precedes commit and cannot acknowledge the new saved time (1.2s)
+  ✓   4 [chromium] › tests/browser/offline.spec.ts:4:47 › OFFLINE001 ms: a closed reader reopens exact committed words, gaps, annotations and provenance offline (1.3s)
+  ✓   5 [webkit] › tests/browser/install.spec.ts:3:1 › INSTALL-BROWSER001: real base-scoped manifest/start/scope and native decoded icon dimensions stay bounded (1.6s)
+  ✓   7 [chromium] › tests/browser/install.spec.ts:60:1 › INSTALL-BROWSER003: an actual first-shell install failure leaves online reading/saving available with no offline-ready promise (547ms)
+  ✓   3 [chromium] › tests/browser/updates.spec.ts:5:1 › UPDATES-BROWSER001: native waiting-version discovery and Continue preserve two current reading tabs (2.0s)
+  ✓   8 [chromium] › tests/browser/storage.spec.ts:26:1 › STORAGE-BROWSER002: native abort after real put success rolls back all stores and preserves the older offline copy (962ms)
+  ✓   9 [chromium] › tests/browser/offline.spec.ts:4:47 › OFFLINE001 en: a closed reader reopens exact committed words, gaps, annotations and provenance offline (927ms)
+  ✓  10 [webkit] › tests/browser/install.spec.ts:34:1 › INSTALL-BROWSER002: real native registration and complete versioned CacheStorage confirm shell readiness without data caching (956ms)
+  ✓  11 [chromium] › tests/browser/install.spec.ts:95:1 › INSTALL-BROWSER004: the manifest reader entry remains a usable website with preserved saved content without a prompt event (962ms)
+  ✓  13 [chromium] › tests/browser/storage.spec.ts:46:1 › STORAGE-BROWSER003: unchanged source bytes still get a new successful validation and committed saved time (650ms)
+  ✓  14 [chromium] › tests/browser/offline.spec.ts:27:1 › OFFLINE002: fetching one sitting never saves an unopened different-member pair (808ms)
+(node:75127) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  15 [webkit] › tests/browser/install.spec.ts:60:1 › INSTALL-BROWSER003: an actual first-shell install failure leaves online reading/saving available with no offline-ready promise (600ms)
+  ✓  17 [chromium] › tests/browser/offline.spec.ts:44:1 › OFFLINE003: a cached shell and catalogue without an opened transcript require a connection (508ms)
+  ✓  16 [chromium] › tests/browser/storage.spec.ts:66:1 › STORAGE-BROWSER004: a changed coherent record replaces all native saved source partitions after validation (763ms)
+  ✓  20 [chromium] › tests/browser/offline.spec.ts:59:1 › OFFLINE004: real pair-store eviction loses that transcript without claiming verified absence (644ms)
+  ✓  18 [webkit] › tests/browser/install.spec.ts:95:1 › INSTALL-BROWSER004: the manifest reader entry remains a usable website with preserved saved content without a prompt event (1.4s)
+  ✓  21 [chromium] › tests/browser/storage.spec.ts:80:66 › STORAGE-BROWSER005 digest: invalid online replacement cannot overwrite a previously committed pair or its time (1.1s)
+  ✘  12 [chromium] › tests/browser/updates.spec.ts:28:1 › UPDATES-BROWSER002: native preference commit precedes actual waiting-target Apply and only the consenting tab reloads (2.8s)
+  ✓  22 [chromium] › tests/browser/offline.spec.ts:72:77 › OFFLINE005 schemaVersion: incompatible real saved data stays unavailable without destructive repair (795ms)
+  ✓  19 [webkit] › tests/browser/offline.spec.ts:4:47 › OFFLINE001 ms: a closed reader reopens exact committed words, gaps, annotations and provenance offline (1.5s)
+(node:75154) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  23 [chromium] › tests/browser/storage.spec.ts:80:66 › STORAGE-BROWSER005 identity: invalid online replacement cannot overwrite a previously committed pair or its time (792ms)
+  ✓  24 [webkit] › tests/browser/storage.spec.ts:3:1 › STORAGE-BROWSER001: native request success precedes commit and cannot acknowledge the new saved time (809ms)
+  ✓  25 [chromium] › tests/browser/offline.spec.ts:72:77 › OFFLINE005 memberId: incompatible real saved data stays unavailable without destructive repair (577ms)
+  ✓  30 [chromium] › tests/browser/offline.spec.ts:72:77 › OFFLINE005 recordDigest: incompatible real saved data stays unavailable without destructive repair (690ms)
+  ✓  27 [chromium] › tests/browser/storage.spec.ts:80:66 › STORAGE-BROWSER005 schema: invalid online replacement cannot overwrite a previously committed pair or its time (922ms)
+  ✓  26 [webkit] › tests/browser/offline.spec.ts:4:47 › OFFLINE001 en: a closed reader reopens exact committed words, gaps, annotations and provenance offline (1.4s)
+(node:75174) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  29 [webkit] › tests/browser/storage.spec.ts:26:1 › STORAGE-BROWSER002: native abort after real put success rolls back all stores and preserves the older offline copy (1.4s)
+  ✓  31 [chromium] › tests/browser/offline.spec.ts:87:1 › OFFLINE006: an explicitly opened zero-turn incomplete pair retains gaps rather than claiming absence (724ms)
+  ✓  28 [chromium] › tests/browser/updates.spec.ts:85:1 › UPDATES-BROWSER003: real preference transaction abort prevents Apply and preserves both active and waiting workers (1.6s)
+  ✓  33 [webkit] › tests/browser/storage.spec.ts:46:1 › STORAGE-BROWSER003: unchanged source bytes still get a new successful validation and committed saved time (641ms)
+  ✓  32 [webkit] › tests/browser/offline.spec.ts:27:1 › OFFLINE002: fetching one sitting never saves an unopened different-member pair (1.1s)
+  ✓  35 [chromium] › tests/browser/updates.spec.ts:108:1 › UPDATES-BROWSER004: an actual failed new-shell install preserves confirmed old readiness and closed-reader offline content (849ms)
+  ✓  37 [webkit] › tests/browser/offline.spec.ts:44:1 › OFFLINE003: a cached shell and catalogue without an opened transcript require a connection (916ms)
+  ✓  36 [webkit] › tests/browser/storage.spec.ts:66:1 › STORAGE-BROWSER004: a changed coherent record replaces all native saved source partitions after validation (1.1s)
+  ✓  38 [webkit] › tests/browser/offline.spec.ts:59:1 › OFFLINE004: real pair-store eviction loses that transcript without claiming verified absence (754ms)
+  ✓  34 [webkit] › tests/browser/updates.spec.ts:5:1 › UPDATES-BROWSER001: native waiting-version discovery and Continue preserve two current reading tabs (1.9s)
+  ✓  39 [webkit] › tests/browser/storage.spec.ts:80:66 › STORAGE-BROWSER005 digest: invalid online replacement cannot overwrite a previously committed pair or its time (906ms)
+  ✓  40 [webkit] › tests/browser/offline.spec.ts:72:77 › OFFLINE005 schemaVersion: incompatible real saved data stays unavailable without destructive repair (786ms)
+  ✓  42 [webkit] › tests/browser/storage.spec.ts:80:66 › STORAGE-BROWSER005 identity: invalid online replacement cannot overwrite a previously committed pair or its time (1.1s)
+  ✓  43 [webkit] › tests/browser/offline.spec.ts:72:77 › OFFLINE005 memberId: incompatible real saved data stays unavailable without destructive repair (1.1s)
+  ✓  44 [webkit] › tests/browser/storage.spec.ts:80:66 › STORAGE-BROWSER005 schema: invalid online replacement cannot overwrite a previously committed pair or its time (1.1s)
+  ✘  41 [webkit] › tests/browser/updates.spec.ts:28:1 › UPDATES-BROWSER002: native preference commit precedes actual waiting-target Apply and only the consenting tab reloads (2.2s)
+(node:75231) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  45 [webkit] › tests/browser/offline.spec.ts:72:77 › OFFLINE005 recordDigest: incompatible real saved data stays unavailable without destructive repair (939ms)
+  ✓  46 [webkit] › tests/browser/offline.spec.ts:87:1 › OFFLINE006: an explicitly opened zero-turn incomplete pair retains gaps rather than claiming absence (858ms)
+  ✓  47 [webkit] › tests/browser/updates.spec.ts:85:1 › UPDATES-BROWSER003: real preference transaction abort prevents Apply and preserves both active and waiting workers (1.4s)
+  ✓  48 [webkit] › tests/browser/updates.spec.ts:108:1 › UPDATES-BROWSER004: an actual failed new-shell install preserves confirmed old readiness and closed-reader offline content (687ms)
+
+
+  1) [chromium] › tests/browser/updates.spec.ts:28:1 › UPDATES-BROWSER002: native preference commit precedes actual waiting-target Apply and only the consenting tab reloads 
+
+    Error: expect(received).toMatchObject(expected)
+
+    - Expected  - 1
+    + Received  + 1
+
+      Object {
+    -   "committedPreferences": true,
+    +   "committedPreferences": false,
+        "version": "860559f2da69a614d410780849ad4b0774258f0b2ecebcf958e4c3d6569215a6",
+        "waitingTarget": true,
+      }
+
+      63 |        */
+      64 |       function applied(event): boolean { return event.type === 'apply'; });
+    > 65 |     expect(apply).toMatchObject({ waitingTarget: true, version: pwa.b.manifest.version, committedPreferences: true });
+         |                   ^
+      66 |     const after = await nativeSnapshot(page, pwa); expect(after.pair).toMatchObject({ schemaVersion: before.pair!.schemaVersion,
+      67 |       snapshotId: before.pair!.snapshotId, snapshot: before.pair!.snapshot, provenance: before.pair!.provenance,
+      68 |       memberId: before.pair!.memberId, sittingId: before.pair!.sittingId, member: before.pair!.member, sitting: before.pair!.sitting,
+        at /Users/eaglecheow/dev/vote-better-malaysia/tests/browser/updates.spec.ts:65:19
+
+    Error Context: test-results/updates-UPDATES-BROWSER002-9f735--the-consenting-tab-reloads-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/updates-UPDATES-BROWSER002-9f735--the-consenting-tab-reloads-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/updates-UPDATES-BROWSER002-9f735--the-consenting-tab-reloads-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [webkit] › tests/browser/updates.spec.ts:28:1 › UPDATES-BROWSER002: native preference commit precedes actual waiting-target Apply and only the consenting tab reloads 
+
+    Error: expect(received).toMatchObject(expected)
+
+    - Expected  - 1
+    + Received  + 1
+
+      Object {
+    -   "committedPreferences": true,
+    +   "committedPreferences": false,
+        "version": "860559f2da69a614d410780849ad4b0774258f0b2ecebcf958e4c3d6569215a6",
+        "waitingTarget": true,
+      }
+
+      63 |        */
+      64 |       function applied(event): boolean { return event.type === 'apply'; });
+    > 65 |     expect(apply).toMatchObject({ waitingTarget: true, version: pwa.b.manifest.version, committedPreferences: true });
+         |                   ^
+      66 |     const after = await nativeSnapshot(page, pwa); expect(after.pair).toMatchObject({ schemaVersion: before.pair!.schemaVersion,
+      67 |       snapshotId: before.pair!.snapshotId, snapshot: before.pair!.snapshot, provenance: before.pair!.provenance,
+      68 |       memberId: before.pair!.memberId, sittingId: before.pair!.sittingId, member: before.pair!.member, sitting: before.pair!.sitting,
+        at /Users/eaglecheow/dev/vote-better-malaysia/tests/browser/updates.spec.ts:65:19
+
+    Error Context: test-results/updates-UPDATES-BROWSER002-9f735--the-consenting-tab-reloads-webkit/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/updates-UPDATES-BROWSER002-9f735--the-consenting-tab-reloads-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/updates-UPDATES-BROWSER002-9f735--the-consenting-tab-reloads-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2 failed
+    [chromium] › tests/browser/updates.spec.ts:28:1 › UPDATES-BROWSER002: native preference commit precedes actual waiting-target Apply and only the consenting tab reloads 
+    [webkit] › tests/browser/updates.spec.ts:28:1 › UPDATES-BROWSER002: native preference commit precedes actual waiting-target Apply and only the consenting tab reloads 
+  46 passed (15.8s)

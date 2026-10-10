@@ -1,0 +1,46 @@
+{
+  "scope": "local-full-source-native-render-and-layout",
+  "recordedAt": "2026-10-10T12:13:31.525Z",
+  "artifact": "/Users/eaglecheow/dev/vote-better-malaysia/.cache/hansard/local-final-site-20261010",
+  "url": "http://127.0.0.1:4181/vote-better-malaysia/",
+  "engine": "156.0.8078.4",
+  "physicalAcceptance": false,
+  "assistiveTechnologyVerified": false,
+  "performanceAcceptance": false,
+  "snapshotId": "46deaa63-9074-408c-a1df-7fd687af312c",
+  "sittingId": "29326",
+  "date": "2026-02-10",
+  "memberId": "1839",
+  "catalogueSittings": 4090,
+  "outcome": "incomplete",
+  "exactPartitions": {
+    "turns": 2,
+    "gaps": 66,
+    "annotations": 8
+  },
+  "checks": [
+    {
+      "locale": "ms",
+      "layout": {
+        "viewport": 320,
+        "page": 320
+      }
+    },
+    {
+      "locale": "en",
+      "layout": {
+        "viewport": 320,
+        "page": 320
+      }
+    }
+  ],
+  "desktop": {
+    "viewport": 1440,
+    "page": 1440
+  },
+  "help": {
+    "viewport": 320,
+    "page": 320
+  },
+  "screenshots": "/Users/eaglecheow/dev/vote-better-malaysia/.cache/hansard/final-visuals"
+}

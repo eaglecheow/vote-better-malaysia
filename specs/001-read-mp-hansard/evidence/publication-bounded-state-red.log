@@ -1,0 +1,38 @@
+
+ RUN  v5.0.3 /Users/eaglecheow/dev/vote-better-malaysia
+
+ ❯ tests/unit/publication-workflow.test.ts (55 tests | 1 failed | 54 skipped) 5ms
+   × PUB-WF049: accepted recovery uploads only the existing bounded current-checkpoint bundle 4ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF049: accepted recovery uploads only the existing bounded current-checkpoint bundle
+AssertionError: expected '.cache/hansard/checkpoint.json\n.cach…' to be '${{ runner.temp }}/hansard-publicatio…' // Object.is equality
+
+- Expected
++ Received
+
+- ${{ runner.temp }}/hansard-publication/acquired-state/checkpoint.json
+- ${{ runner.temp }}/hansard-publication/acquired-state/origin.json
+- ${{ runner.temp }}/hansard-publication/acquired-state/snapshots/
++ .cache/hansard/checkpoint.json
++ .cache/hansard/origin.json
++ .cache/hansard/snapshots/
+
+
+ ❯ tests/unit/publication-workflow.test.ts:502:58
+    500|   /** Checks successive runs cannot embed every historical full archiv…
+    501|   () => {
+    502|     expect(step('candidate', 'upload-state').with?.path).toBe([
+       |                                                          ^
+    503|       '${{ runner.temp }}/hansard-publication/acquired-state/checkpoin…
+    504|       '${{ runner.temp }}/hansard-publication/acquired-state/origin.js…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 54 skipped (55)
+   Start at  18:49:03
+   Duration  144ms (import 78%, transform 15%, tests 6%, worker 2%)
+

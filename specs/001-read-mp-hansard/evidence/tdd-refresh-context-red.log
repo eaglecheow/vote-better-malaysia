@@ -1,0 +1,546 @@
+
+> vote-better-malaysia@0.1.0 test
+> vitest --run tests/unit/acquisition-refresh.test.ts -t REF-CONTEXT
+
+
+ RUN  v5.0.3 /Users/eaglecheow/dev/vote-better-malaysia
+
+ ❯ tests/unit/acquisition-refresh.test.ts (86 tests | 5 failed | 81 skipped) 389ms
+   × REF-CONTEXT-PARTIAL-OMISSION: newly completed partial-only sitting remains coherent when omitted before resume 111ms
+   × REF-CONTEXT-LATE-IDENTITY: untouched accepted unknown-ID gap survives a new exact identity used in another rechecked sitting 126ms
+   × REF-CONTEXT-PRECISION-false: whole-second and millisecond UTC spellings sort by actual successful or failed time 3ms
+   × REF-CONTEXT-PRECISION-true: whole-second and millisecond UTC spellings sort by actual successful or failed time 2ms
+   × REF-CONTEXT-RESUME-NEW: a genuinely new latest inventory identity is attempted before older pending work on resume 147ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 5 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-CONTEXT-PARTIAL-OMISSION: newly completed partial-only sitting remains coherent when omitted before resume
+AssertionError: expected { succeeded: false, …(1) } to deeply equal { succeeded: true, error: null }
+
+- Expected
++ Received
+
+  {
+-   "error": null,
+-   "succeeded": true,
++   "error": "Invalid partial targetIds ID",
++   "succeeded": false,
+  }
+
+ ❯ checksOmittedPartialCompletion tests/unit/acquisition-refresh.test.ts:1103:51
+    1101|   catch (failure) { error = failure instanceof Error ? failure.message…
+    1102|   const retained = run?.catalogue.sittings.find(matchesId);
+    1103|   expect.soft({ succeeded: run !== null, error }).toEqual({ succeeded:…
+       |                                                   ^
+    1104|   expect.soft(retained).toMatchObject({ id, listedInLatestInventory: f…
+    1105|     acquiredAt: completed?.record.acquiredAt, lastAttemptAt: completed…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/9]⎯
+
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-CONTEXT-PARTIAL-OMISSION: newly completed partial-only sitting remains coherent when omitted before resume
+AssertionError: expected undefined to match object { id: '9999', …(2) }
+
+- Expected:
+{
+  "id": "9999",
+  "listedInLatestInventory": false,
+  "record": {
+    "acquiredAt": "2026-10-10T04:00:03.000Z",
+    "availability": "retained",
+    "digest": "e31eb210cfe7e87f6d556ad22fdf89e19613c9f7b04154225ba79af47ef98fa1",
+    "lastAttemptAt": "2026-10-10T04:00:03.000Z",
+    "lastAttemptOutcome": "success",
+  },
+}
+
++ Received:
+undefined
+
+ ❯ checksOmittedPartialCompletion tests/unit/acquisition-refresh.test.ts:1104:25
+    1102|   const retained = run?.catalogue.sittings.find(matchesId);
+    1103|   expect.soft({ succeeded: run !== null, error }).toEqual({ succeeded:…
+    1104|   expect.soft(retained).toMatchObject({ id, listedInLatestInventory: f…
+       |                         ^
+    1105|     acquiredAt: completed?.record.acquiredAt, lastAttemptAt: completed…
+    1106|     lastAttemptOutcome: 'success', digest: completed?.record.digest } …
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/9]⎯
+
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-CONTEXT-PARTIAL-OMISSION: newly completed partial-only sitting remains coherent when omitted before resume
+AssertionError: expected null to deeply equal Buffer[ 31, 139, 8, 0, 0, 0, 0, …(338) ]
+
+- Expected:
+Buffer [
+  31,
+  139,
+  8,
+  0,
+  0,
+  0,
+  0,
+  0,
+  2,
+  19,
+  85,
+  145,
+  65,
+  79,
+  235,
+  64,
+  12,
+  132,
+  255,
+  74,
+  52,
+  231,
+  109,
+  154,
+  20,
+  9,
+  232,
+  222,
+  184,
+  32,
+  113,
+  122,
+  79,
+  239,
+  9,
+  46,
+  128,
+  144,
+  73,
+  76,
+  178,
+  34,
+  235,
+  141,
+  188,
+  14,
+  16,
+  85,
+  253,
+  239,
+  40,
+  173,
+  138,
+  232,
+  117,
+  60,
+  254,
+  102,
+  100,
+  239,
+  144,
+  155,
+  158,
+  35,
+  61,
+  176,
+  230,
+  144,
+  4,
+  190,
+  118,
+  200,
+  193,
+  44,
+  72,
+  119,
+  215,
+  194,
+  99,
+  187,
+  221,
+  110,
+  225,
+  16,
+  90,
+  22,
+  11,
+  54,
+  195,
+  239,
+  208,
+  146,
+  49,
+  60,
+  54,
+  213,
+  230,
+  114,
+  85,
+  87,
+  171,
+  186,
+  130,
+  195,
+  72,
+  58,
+  4,
+  138,
+  44,
+  6,
+  95,
+  95,
+  56,
+  140,
+  44,
+  93,
+  71,
+  3,
+  252,
+  198,
+  33,
+  114,
+  158,
+  39,
+  82,
+  50,
+  248,
+  202,
+  161,
+  79,
+  83,
+  94,
+  214,
+  91,
+  254,
+  36,
+  89,
+  41,
+  189,
+  207,
+  100,
+  112,
+  120,
+  11,
+  3,
+  11,
+  197,
+  195,
+  68,
+  95,
+  206,
+  216,
+  33,
+  223,
+  6,
+  89,
+  88,
+  166,
+  19,
+  239,
+  29,
+  114,
+  154,
+  180,
+  225,
+  123,
+  29,
+  224,
+  209,
+  155,
+  141,
+  217,
+  175,
+  215,
+  61,
+  73,
+  38,
+  109,
+  203,
+  67,
+  143,
+  200,
+  82,
+  118,
+  233,
+  163,
+  140,
+  243,
+  73,
+  95,
+  255,
+  78,
+  91,
+  159,
+  211,
+  141,
+  99,
+  134,
+  127,
+  220,
+  33,
+  105,
+  123,
+  204,
+  169,
+  78,
+  25,
+  119,
+  210,
+  242,
+  23,
+  252,
+  149,
+  67,
+  230,
+  198,
+  66,
+  146,
+  191,
+  100,
+  61,
+  252,
+  227,
+  179,
+  131,
+  241,
+  151,
+  193,
+  227,
+  255,
+  44,
+  214,
+  179,
+  133,
+  166,
+  104,
+  146,
+  152,
+  134,
+  215,
+  105,
+  177,
+  21,
+  111,
+  73,
+  139,
+  229,
+  114,
+  229,
+  147,
+  60,
+  201,
+  31,
+  13,
+  221,
+  2,
+  46,
+  70,
+  82,
+  234,
+  148,
+  198,
+  62,
+  151,
+  112,
+  80,
+  250,
+  188,
+  153,
+  172,
+  79,
+  122,
+  134,
+  57,
+  6,
+  23,
+  121,
+  100,
+  122,
+  103,
+  197,
+  169,
+  201,
+  209,
+  121,
+  248,
+  72,
+  125,
+  125,
+  177,
+  124,
+  36,
+  114,
+  124,
+  229,
+  51,
+  133,
+  236,
+  167,
+  0,
+  60,
+  40,
+  231,
+  208,
+  9,
+  183,
+  112,
+  176,
+  16,
+  57,
+  27,
+  197,
+  17,
+  94,
+  166,
+  97,
+  112,
+  232,
+  104,
+  252,
+  199,
+  148,
+  23,
+  223,
+  34,
+  236,
+  159,
+  247,
+  223,
+  182,
+  144,
+  233,
+  33,
+  7,
+  2,
+  0,
+  0,
+]
+
++ Received:
+null
+
+ ❯ checksOmittedPartialCompletion tests/unit/acquisition-refresh.test.ts:1110:31
+    1108|   let publishedBytes: Uint8Array | null = null;
+    1109|   if (retained) publishedBytes = await readFile(join(value.out, 'sitti…
+    1110|   expect.soft(publishedBytes).toEqual(completedBytes);
+       |                               ^
+    1111|
+    1112|   /** Selects the exact independently completed synthetic source sitti…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/9]⎯
+
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-CONTEXT-LATE-IDENTITY: untouched accepted unknown-ID gap survives a new exact identity used in another rechecked sitting
+AssertionError: expected { succeeded: false, …(1) } to deeply equal { succeeded: true, error: null }
+
+- Expected
++ Received
+
+  {
+-   "error": null,
+-   "succeeded": true,
++   "error": "Invalid source data: unreconciled source ID",
++   "succeeded": false,
+  }
+
+ ❯ checksUntouchedLateKnownGap tests/unit/acquisition-refresh.test.ts:1149:51
+    1147|   catch (failure) { error = failure instanceof Error ? failure.message…
+    1148|   const retained = run?.catalogue.sittings.find(matchesUntouched);
+    1149|   expect.soft({ succeeded: run !== null, error }).toEqual({ succeeded:…
+       |                                                   ^
+    1150|   expect.soft(requested(value)).toEqual(targets);
+    1151|   expect.soft(retained?.record).toMatchObject({ digest: acceptedDescri…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/9]⎯
+
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-CONTEXT-LATE-IDENTITY: untouched accepted unknown-ID gap survives a new exact identity used in another rechecked sitting
+AssertionError: expected undefined to match object { …(5) }
+
+- Expected:
+{
+  "accounting": {
+    "annotations": 0,
+    "assigned": 1,
+    "total": 2,
+    "unassigned": 1,
+  },
+  "acquiredAt": "2026-10-09T21:58:50.000Z",
+  "digest": "03e1f79a901226f888305ddbd6b461e76780520f3788f6f74aadc3a63b6c18e3",
+  "lastAttemptAt": "2026-10-09T21:58:50.000Z",
+  "lastAttemptOutcome": "success",
+}
+
++ Received:
+undefined
+
+ ❯ checksUntouchedLateKnownGap tests/unit/acquisition-refresh.test.ts:1151:33
+    1149|   expect.soft({ succeeded: run !== null, error }).toEqual({ succeeded:…
+    1150|   expect.soft(requested(value)).toEqual(targets);
+    1151|   expect.soft(retained?.record).toMatchObject({ digest: acceptedDescri…
+       |                                 ^
+    1152|     lastAttemptAt: acceptedDescriptor.lastAttemptAt, lastAttemptOutcom…
+    1153|   expect.soft(run?.catalogue.members).toEqual(expect.arrayContaining([…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/9]⎯
+
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-CONTEXT-LATE-IDENTITY: untouched accepted unknown-ID gap survives a new exact identity used in another rechecked sitting
+AssertionError: expected undefined to deeply equal ArrayContaining{…}
+
+- Expected:
+ArrayContaining [
+  ObjectContaining {
+    "id": "999999",
+  },
+]
+
++ Received:
+undefined
+
+ ❯ checksUntouchedLateKnownGap tests/unit/acquisition-refresh.test.ts:1153:39
+    1151|   expect.soft(retained?.record).toMatchObject({ digest: acceptedDescri…
+    1152|     lastAttemptAt: acceptedDescriptor.lastAttemptAt, lastAttemptOutcom…
+    1153|   expect.soft(run?.catalogue.members).toEqual(expect.arrayContaining([…
+       |                                       ^
+    1154|   const publishedBytes = await readFile(join(value.out, 'sittings', ol…
+    1155|   expect.soft(publishedBytes).toEqual(bytes);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/9]⎯
+
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-CONTEXT-PRECISION-false: whole-second and millisecond UTC spellings sort by actual successful or failed time
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-CONTEXT-PRECISION-true: whole-second and millisecond UTC spellings sort by actual successful or failed time
+AssertionError: expected [ '1003', '26241' ] to deeply equal [ '26241', '1003' ]
+
+- Expected
++ Received
+
+  [
+-   "26241",
+    "1003",
++   "26241",
+  ]
+
+ ❯ mixedPrecision tests/unit/acquisition-refresh.test.ts:1206:20
+    1204|     const plan = planRefresh(validateCatalogue(value.catalogue), value…
+    1205|     const actual: string[] = []; for (const id of plan.sittingIds) if …
+    1206|     expect(actual).toEqual(['26241', '1003']);
+       |                    ^
+    1207|   });
+    1208|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/9]⎯
+
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-CONTEXT-RESUME-NEW: a genuinely new latest inventory identity is attempted before older pending work on resume
+AssertionError: expected '1002' to be '9999' // Object.is equality
+
+Expected: "9999"
+Received: "1002"
+
+ ❯ newOnResume tests/unit/acquisition-refresh.test.ts:1216:76
+    1214|   async function newOnResume(): Promise<void> {
+    1215|     const { value } = await interruptedLedger(); value.latest.push(sit…
+    1216|     const run = await acquire(options(value)); expect(requested(value)…
+       |                                                                            ^
+    1217|     expect(selected(run.catalogue, '9999').record).toMatchObject({ ava…
+    1218|     expect(await report(value)).toMatchObject({ targetIds: expect.arra…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/9]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  5 failed | 81 skipped (86)
+   Start at  17:27:27
+   Duration  507ms (tests 86%, transform 11%, import 3%)
+

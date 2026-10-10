@@ -1,0 +1,13 @@
+
+> vote-better-malaysia@0.1.0 test
+> vitest --run tests/unit/saved-reader.test.ts tests/unit/bootstrap.test.ts tests/unit/pwa-messages.test.ts tests/unit/reader.test.ts tests/unit/recovery.test.ts tests/unit/messages.test.ts tests/unit/recovery-messages.test.ts
+
+
+ RUN  v5.0.3 /Users/eaglecheow/dev/vote-better-malaysia
+
+
+ Test Files  7 passed (7)
+      Tests  240 passed (240)
+   Start at  19:13:15
+   Duration  1.08s (environment 50%, tests 40%, transform 7%, import 3%)
+

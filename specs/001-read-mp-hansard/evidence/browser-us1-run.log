@@ -1,0 +1,351 @@
+
+> vote-better-malaysia@0.1.0 test:browser
+> playwright test
+
+[WebServer] (node:34474) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:34497) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 24 tests using 5 workers
+
+(node:34502) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:34505) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:34503) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:34506) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:34504) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   4 [chromium] › tests/browser/harness.spec.ts:15:1 › harness: opens the production application shell (227ms)
+  ✓   5 [chromium] › tests/browser/reading.spec.ts:42:60 › gzip: complete source words, paragraph breaks, gaps, annotations, and provenance remain accessible (432ms)
+  ✘   2 [firefox] › tests/browser/harness.spec.ts:15:1 › harness: opens the production application shell (2ms)
+  ✘   3 [firefox] › tests/browser/reading.spec.ts:42:60 › gzip: complete source words, paragraph breaks, gaps, annotations, and provenance remain accessible (1ms)
+(node:34532) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   6 [chromium] › tests/browser/reading.spec.ts:42:60 › decoded: complete source words, paragraph breaks, gaps, annotations, and provenance remain accessible (312ms)
+  ✓   1 [webkit] › tests/browser/harness.spec.ts:15:1 › harness: opens the production application shell (711ms)
+(node:34540) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   8 [chromium] › tests/browser/reading.spec.ts:66:1 › native keyboard and language controls preserve source IDs, exact words, focus, and bilingual announcements (200ms)
+  ✘   9 [firefox] › tests/browser/reading.spec.ts:42:60 › decoded: complete source words, paragraph breaks, gaps, annotations, and provenance remain accessible (1ms)
+  ✓  10 [chromium] › tests/browser/reading.spec.ts:87:1 › untrusted source strings are literal text without image/script elements or handler execution (286ms)
+(node:34558) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   7 [webkit] › tests/browser/reading.spec.ts:42:60 › gzip: complete source words, paragraph breaks, gaps, annotations, and provenance remain accessible (517ms)
+  ✓  11 [chromium] › tests/browser/reading.spec.ts:99:1 › a delayed old sitting response cannot overwrite the newer chosen source identity (242ms)
+  ✘  13 [firefox] › tests/browser/reading.spec.ts:66:1 › native keyboard and language controls preserve source IDs, exact words, focus, and bilingual announcements (1ms)
+  ✓  12 [webkit] › tests/browser/reading.spec.ts:42:60 › decoded: complete source words, paragraph breaks, gaps, annotations, and provenance remain accessible (319ms)
+  ✓  14 [chromium] › tests/browser/reading.spec.ts:135:1 › 320 CSS pixels: both UI languages preserve full source text with no horizontal page scroll (376ms)
+(node:34566) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  16 [chromium] › tests/browser/reading.spec.ts:153:1 › reading help is reachable at the production repository base in both languages (217ms)
+  ✘  17 [firefox] › tests/browser/reading.spec.ts:87:1 › untrusted source strings are literal text without image/script elements or handler execution (0ms)
+  ✓  15 [webkit] › tests/browser/reading.spec.ts:66:1 › native keyboard and language controls preserve source IDs, exact words, focus, and bilingual announcements (401ms)
+(node:34570) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  18 [webkit] › tests/browser/reading.spec.ts:87:1 › untrusted source strings are literal text without image/script elements or handler execution (243ms)
+  ✘  19 [firefox] › tests/browser/reading.spec.ts:99:1 › a delayed old sitting response cannot overwrite the newer chosen source identity (0ms)
+  ✓  20 [webkit] › tests/browser/reading.spec.ts:99:1 › a delayed old sitting response cannot overwrite the newer chosen source identity (283ms)
+(node:34574) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  22 [firefox] › tests/browser/reading.spec.ts:135:1 › 320 CSS pixels: both UI languages preserve full source text with no horizontal page scroll (0ms)
+  ✓  21 [webkit] › tests/browser/reading.spec.ts:135:1 › 320 CSS pixels: both UI languages preserve full source text with no horizontal page scroll (313ms)
+(node:34579) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  24 [firefox] › tests/browser/reading.spec.ts:153:1 › reading help is reachable at the production repository base in both languages (0ms)
+  ✓  23 [webkit] › tests/browser/reading.spec.ts:153:1 › reading help is reachable at the production repository base in both languages (286ms)
+
+
+  1) [firefox] › tests/browser/harness.spec.ts:15:1 › harness: opens the production application shell 
+
+    Error: browserType.launch: Failed to launch the browser process.
+    Browser logs:
+
+    <launching> /private/tmp/hansard-browsers/firefox-1555/firefox/Nightly.app/Contents/MacOS/firefox -no-remote -headless -profile /var/folders/k0/g8pbxnd92ys6vg8mt_m_88840000gn/T/playwright_firefoxdev_profile-F6CGRQ -juggler-pipe -silent
+    <launched> pid=34513
+    [pid=34513][err] *** You are running in headless mode.
+    [pid=34513][err] Could not find profile folder.
+    [pid=34513] <process did exit: exitCode=1, signal=null>
+    [pid=34513] starting temporary directories cleanup
+    Call log:
+      - <launching> /private/tmp/hansard-browsers/firefox-1555/firefox/Nightly.app/Contents/MacOS/firefox -no-remote -headless -profile /var/folders/k0/g8pbxnd92ys6vg8mt_m_88840000gn/T/playwright_firefoxdev_profile-F6CGRQ -juggler-pipe -silent
+      - <launched> pid=34513
+      - [pid=34513][err] *** You are running in headless mode.
+      - [pid=34513][err] Could not find profile folder.
+      - [pid=34513] <process did exit: exitCode=1, signal=null>
+      - [pid=34513] starting temporary directories cleanup
+      - [pid=34513] <gracefully close start>
+      - [pid=34513] <kill>
+      - [pid=34513] <skipped force kill spawnedProcess.killed=false processClosed=true>
+      - [pid=34513] finished temporary directories cleanup
+      - [pid=34513] <gracefully close end>
+
+
+    Error Context: test-results/harness-harness-opens-the-production-application-shell-firefox/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/harness-harness-opens-the-production-application-shell-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/harness-harness-opens-the-production-application-shell-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [firefox] › tests/browser/reading.spec.ts:42:60 › gzip: complete source words, paragraph breaks, gaps, annotations, and provenance remain accessible 
+
+    Error: browserType.launch: Failed to launch the browser process.
+    Browser logs:
+
+    <launching> /private/tmp/hansard-browsers/firefox-1555/firefox/Nightly.app/Contents/MacOS/firefox -no-remote -headless -profile /var/folders/k0/g8pbxnd92ys6vg8mt_m_88840000gn/T/playwright_firefoxdev_profile-YprNHh -juggler-pipe -silent
+    <launched> pid=34512
+    [pid=34512][err] *** You are running in headless mode.
+    [pid=34512][err] Could not find profile folder.
+    [pid=34512] <process did exit: exitCode=1, signal=null>
+    [pid=34512] starting temporary directories cleanup
+    Call log:
+      - <launching> /private/tmp/hansard-browsers/firefox-1555/firefox/Nightly.app/Contents/MacOS/firefox -no-remote -headless -profile /var/folders/k0/g8pbxnd92ys6vg8mt_m_88840000gn/T/playwright_firefoxdev_profile-YprNHh -juggler-pipe -silent
+      - <launched> pid=34512
+      - [pid=34512][err] *** You are running in headless mode.
+      - [pid=34512][err] Could not find profile folder.
+      - [pid=34512] <process did exit: exitCode=1, signal=null>
+      - [pid=34512] starting temporary directories cleanup
+      - [pid=34512] <gracefully close start>
+      - [pid=34512] <kill>
+      - [pid=34512] <skipped force kill spawnedProcess.killed=false processClosed=true>
+      - [pid=34512] finished temporary directories cleanup
+      - [pid=34512] <gracefully close end>
+
+
+    Error Context: test-results/reading-gzip-complete-sour-9a8db-rovenance-remain-accessible-firefox/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/reading-gzip-complete-sour-9a8db-rovenance-remain-accessible-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/reading-gzip-complete-sour-9a8db-rovenance-remain-accessible-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [firefox] › tests/browser/reading.spec.ts:42:60 › decoded: complete source words, paragraph breaks, gaps, annotations, and provenance remain accessible 
+
+    Error: browserType.launch: Failed to launch the browser process.
+    Browser logs:
+
+    <launching> /private/tmp/hansard-browsers/firefox-1555/firefox/Nightly.app/Contents/MacOS/firefox -no-remote -headless -profile /var/folders/k0/g8pbxnd92ys6vg8mt_m_88840000gn/T/playwright_firefoxdev_profile-zRthoI -juggler-pipe -silent
+    <launched> pid=34550
+    [pid=34550][err] *** You are running in headless mode.
+    [pid=34550][err] Could not find profile folder.
+    [pid=34550] <process did exit: exitCode=1, signal=null>
+    [pid=34550] starting temporary directories cleanup
+    Call log:
+      - <launching> /private/tmp/hansard-browsers/firefox-1555/firefox/Nightly.app/Contents/MacOS/firefox -no-remote -headless -profile /var/folders/k0/g8pbxnd92ys6vg8mt_m_88840000gn/T/playwright_firefoxdev_profile-zRthoI -juggler-pipe -silent
+      - <launched> pid=34550
+      - [pid=34550][err] *** You are running in headless mode.
+      - [pid=34550][err] Could not find profile folder.
+      - [pid=34550] <process did exit: exitCode=1, signal=null>
+      - [pid=34550] starting temporary directories cleanup
+      - [pid=34550] <gracefully close start>
+      - [pid=34550] <kill>
+      - [pid=34550] <skipped force kill spawnedProcess.killed=false processClosed=true>
+      - [pid=34550] finished temporary directories cleanup
+      - [pid=34550] <gracefully close end>
+
+
+    Error Context: test-results/reading-decoded-complete-s-28ca4-rovenance-remain-accessible-firefox/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/reading-decoded-complete-s-28ca4-rovenance-remain-accessible-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/reading-decoded-complete-s-28ca4-rovenance-remain-accessible-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) [firefox] › tests/browser/reading.spec.ts:66:1 › native keyboard and language controls preserve source IDs, exact words, focus, and bilingual announcements 
+
+    Error: browserType.launch: Failed to launch the browser process.
+    Browser logs:
+
+    <launching> /private/tmp/hansard-browsers/firefox-1555/firefox/Nightly.app/Contents/MacOS/firefox -no-remote -headless -profile /var/folders/k0/g8pbxnd92ys6vg8mt_m_88840000gn/T/playwright_firefoxdev_profile-2upuuK -juggler-pipe -silent
+    <launched> pid=34563
+    [pid=34563][err] *** You are running in headless mode.
+    [pid=34563][err] Could not find profile folder.
+    [pid=34563] <process did exit: exitCode=1, signal=null>
+    [pid=34563] starting temporary directories cleanup
+    Call log:
+      - <launching> /private/tmp/hansard-browsers/firefox-1555/firefox/Nightly.app/Contents/MacOS/firefox -no-remote -headless -profile /var/folders/k0/g8pbxnd92ys6vg8mt_m_88840000gn/T/playwright_firefoxdev_profile-2upuuK -juggler-pipe -silent
+      - <launched> pid=34563
+      - [pid=34563][err] *** You are running in headless mode.
+      - [pid=34563][err] Could not find profile folder.
+      - [pid=34563] <process did exit: exitCode=1, signal=null>
+      - [pid=34563] starting temporary directories cleanup
+      - [pid=34563] <gracefully close start>
+      - [pid=34563] <kill>
+      - [pid=34563] <skipped force kill spawnedProcess.killed=false processClosed=true>
+      - [pid=34563] finished temporary directories cleanup
+      - [pid=34563] <gracefully close end>
+
+
+    Error Context: test-results/reading-native-keyboard-an-0383a-and-bilingual-announcements-firefox/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/reading-native-keyboard-an-0383a-and-bilingual-announcements-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/reading-native-keyboard-an-0383a-and-bilingual-announcements-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5) [firefox] › tests/browser/reading.spec.ts:87:1 › untrusted source strings are literal text without image/script elements or handler execution 
+
+    Error: browserType.launch: Failed to launch the browser process.
+    Browser logs:
+
+    <launching> /private/tmp/hansard-browsers/firefox-1555/firefox/Nightly.app/Contents/MacOS/firefox -no-remote -headless -profile /var/folders/k0/g8pbxnd92ys6vg8mt_m_88840000gn/T/playwright_firefoxdev_profile-283TK7 -juggler-pipe -silent
+    <launched> pid=34569
+    [pid=34569][err] *** You are running in headless mode.
+    [pid=34569][err] Could not find profile folder.
+    [pid=34569] <process did exit: exitCode=1, signal=null>
+    [pid=34569] starting temporary directories cleanup
+    Call log:
+      - <launching> /private/tmp/hansard-browsers/firefox-1555/firefox/Nightly.app/Contents/MacOS/firefox -no-remote -headless -profile /var/folders/k0/g8pbxnd92ys6vg8mt_m_88840000gn/T/playwright_firefoxdev_profile-283TK7 -juggler-pipe -silent
+      - <launched> pid=34569
+      - [pid=34569][err] *** You are running in headless mode.
+      - [pid=34569][err] Could not find profile folder.
+      - [pid=34569] <process did exit: exitCode=1, signal=null>
+      - [pid=34569] starting temporary directories cleanup
+      - [pid=34569] <gracefully close start>
+      - [pid=34569] <kill>
+      - [pid=34569] <skipped force kill spawnedProcess.killed=false processClosed=true>
+      - [pid=34569] finished temporary directories cleanup
+      - [pid=34569] <gracefully close end>
+
+
+    Error Context: test-results/reading-untrusted-source-s-fb6cd-ements-or-handler-execution-firefox/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/reading-untrusted-source-s-fb6cd-ements-or-handler-execution-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/reading-untrusted-source-s-fb6cd-ements-or-handler-execution-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  6) [firefox] › tests/browser/reading.spec.ts:99:1 › a delayed old sitting response cannot overwrite the newer chosen source identity 
+
+    Error: browserType.launch: Failed to launch the browser process.
+    Browser logs:
+
+    <launching> /private/tmp/hansard-browsers/firefox-1555/firefox/Nightly.app/Contents/MacOS/firefox -no-remote -headless -profile /var/folders/k0/g8pbxnd92ys6vg8mt_m_88840000gn/T/playwright_firefoxdev_profile-FZJeZy -juggler-pipe -silent
+    <launched> pid=34572
+    [pid=34572][err] *** You are running in headless mode.
+    [pid=34572][err] Could not find profile folder.
+    [pid=34572] <process did exit: exitCode=1, signal=null>
+    [pid=34572] starting temporary directories cleanup
+    Call log:
+      - <launching> /private/tmp/hansard-browsers/firefox-1555/firefox/Nightly.app/Contents/MacOS/firefox -no-remote -headless -profile /var/folders/k0/g8pbxnd92ys6vg8mt_m_88840000gn/T/playwright_firefoxdev_profile-FZJeZy -juggler-pipe -silent
+      - <launched> pid=34572
+      - [pid=34572][err] *** You are running in headless mode.
+      - [pid=34572][err] Could not find profile folder.
+      - [pid=34572] <process did exit: exitCode=1, signal=null>
+      - [pid=34572] starting temporary directories cleanup
+      - [pid=34572] <gracefully close start>
+      - [pid=34572] <kill>
+      - [pid=34572] <skipped force kill spawnedProcess.killed=false processClosed=true>
+      - [pid=34572] finished temporary directories cleanup
+      - [pid=34572] <gracefully close end>
+
+
+    Error Context: test-results/reading-a-delayed-old-sitt-50b3a-ewer-chosen-source-identity-firefox/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/reading-a-delayed-old-sitt-50b3a-ewer-chosen-source-identity-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/reading-a-delayed-old-sitt-50b3a-ewer-chosen-source-identity-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  7) [firefox] › tests/browser/reading.spec.ts:135:1 › 320 CSS pixels: both UI languages preserve full source text with no horizontal page scroll 
+
+    Error: browserType.launch: Failed to launch the browser process.
+    Browser logs:
+
+    <launching> /private/tmp/hansard-browsers/firefox-1555/firefox/Nightly.app/Contents/MacOS/firefox -no-remote -headless -profile /var/folders/k0/g8pbxnd92ys6vg8mt_m_88840000gn/T/playwright_firefoxdev_profile-5ipWUB -juggler-pipe -silent
+    <launched> pid=34576
+    [pid=34576][err] *** You are running in headless mode.
+    [pid=34576][err] Could not find profile folder.
+    [pid=34576] <process did exit: exitCode=1, signal=null>
+    [pid=34576] starting temporary directories cleanup
+    Call log:
+      - <launching> /private/tmp/hansard-browsers/firefox-1555/firefox/Nightly.app/Contents/MacOS/firefox -no-remote -headless -profile /var/folders/k0/g8pbxnd92ys6vg8mt_m_88840000gn/T/playwright_firefoxdev_profile-5ipWUB -juggler-pipe -silent
+      - <launched> pid=34576
+      - [pid=34576][err] *** You are running in headless mode.
+      - [pid=34576][err] Could not find profile folder.
+      - [pid=34576] <process did exit: exitCode=1, signal=null>
+      - [pid=34576] starting temporary directories cleanup
+      - [pid=34576] <gracefully close start>
+      - [pid=34576] <kill>
+      - [pid=34576] <skipped force kill spawnedProcess.killed=false processClosed=true>
+      - [pid=34576] finished temporary directories cleanup
+      - [pid=34576] <gracefully close end>
+
+
+    Error Context: test-results/reading-320-CSS-pixels-bot-dfd9c-h-no-horizontal-page-scroll-firefox/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/reading-320-CSS-pixels-bot-dfd9c-h-no-horizontal-page-scroll-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/reading-320-CSS-pixels-bot-dfd9c-h-no-horizontal-page-scroll-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  8) [firefox] › tests/browser/reading.spec.ts:153:1 › reading help is reachable at the production repository base in both languages 
+
+    Error: browserType.launch: Failed to launch the browser process.
+    Browser logs:
+
+    <launching> /private/tmp/hansard-browsers/firefox-1555/firefox/Nightly.app/Contents/MacOS/firefox -no-remote -headless -profile /var/folders/k0/g8pbxnd92ys6vg8mt_m_88840000gn/T/playwright_firefoxdev_profile-cgyWj4 -juggler-pipe -silent
+    <launched> pid=34581
+    [pid=34581][err] *** You are running in headless mode.
+    [pid=34581][err] Could not find profile folder.
+    [pid=34581] <process did exit: exitCode=1, signal=null>
+    [pid=34581] starting temporary directories cleanup
+    Call log:
+      - <launching> /private/tmp/hansard-browsers/firefox-1555/firefox/Nightly.app/Contents/MacOS/firefox -no-remote -headless -profile /var/folders/k0/g8pbxnd92ys6vg8mt_m_88840000gn/T/playwright_firefoxdev_profile-cgyWj4 -juggler-pipe -silent
+      - <launched> pid=34581
+      - [pid=34581][err] *** You are running in headless mode.
+      - [pid=34581][err] Could not find profile folder.
+      - [pid=34581] <process did exit: exitCode=1, signal=null>
+      - [pid=34581] starting temporary directories cleanup
+      - [pid=34581] <gracefully close start>
+      - [pid=34581] <kill>
+      - [pid=34581] <skipped force kill spawnedProcess.killed=false processClosed=true>
+      - [pid=34581] finished temporary directories cleanup
+      - [pid=34581] <gracefully close end>
+
+
+    Error Context: test-results/reading-reading-help-is-re-4c662-tory-base-in-both-languages-firefox/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/reading-reading-help-is-re-4c662-tory-base-in-both-languages-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/reading-reading-help-is-re-4c662-tory-base-in-both-languages-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  8 failed
+    [firefox] › tests/browser/harness.spec.ts:15:1 › harness: opens the production application shell 
+    [firefox] › tests/browser/reading.spec.ts:42:60 › gzip: complete source words, paragraph breaks, gaps, annotations, and provenance remain accessible 
+    [firefox] › tests/browser/reading.spec.ts:42:60 › decoded: complete source words, paragraph breaks, gaps, annotations, and provenance remain accessible 
+    [firefox] › tests/browser/reading.spec.ts:66:1 › native keyboard and language controls preserve source IDs, exact words, focus, and bilingual announcements 
+    [firefox] › tests/browser/reading.spec.ts:87:1 › untrusted source strings are literal text without image/script elements or handler execution 
+    [firefox] › tests/browser/reading.spec.ts:99:1 › a delayed old sitting response cannot overwrite the newer chosen source identity 
+    [firefox] › tests/browser/reading.spec.ts:135:1 › 320 CSS pixels: both UI languages preserve full source text with no horizontal page scroll 
+    [firefox] › tests/browser/reading.spec.ts:153:1 › reading help is reachable at the production repository base in both languages 
+  16 passed (5.8s)

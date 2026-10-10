@@ -1,0 +1,85 @@
+
+ RUN  v5.0.3 /Users/eaglecheow/dev/vote-better-malaysia
+
+ ✓ tests/unit/recovery.test.ts > T029 source check overdue at 2026-10-11T03:00:59.999Z is false, independently of device/snapshot times 3ms
+ ✓ tests/unit/recovery.test.ts > T029 source check overdue at 2026-10-11T03:01:00.000Z is false, independently of device/snapshot times 0ms
+ ✓ tests/unit/recovery.test.ts > T029 source check overdue at 2026-10-11T03:01:00.001Z is true, independently of device/snapshot times 0ms
+ ✓ tests/unit/recovery.test.ts > T029 failed source attempt preserves accepted successful age and reports only its known date 1ms
+ ✓ tests/unit/recovery.test.ts > T029 old successful snapshot age does not invent a later pipeline failure 0ms
+ ✓ tests/unit/recovery.test.ts > T029 unknown source success cannot be replaced by attempt/preparation/device times 0ms
+ ✓ tests/unit/recovery.test.ts > T029 rejects invalid independent current clock invalid 0ms
+ ✓ tests/unit/recovery.test.ts > T029 rejects invalid independent current clock 2026-02-30T00:00:00.000Z 0ms
+ ✓ tests/unit/recovery.test.ts > T029 rejects invalid independent current clock 2026-10-10T04:00:00+00:00 0ms
+ ✓ tests/unit/recovery.test.ts > REC-LIST-ms: failed initial list can be retried through labeled native controls 15ms
+ ✓ tests/unit/recovery.test.ts > REC-LIST-en: failed initial list can be retried through labeled native controls 7ms
+ ✓ tests/unit/recovery.test.ts > REC-PAIR-ms: retry keeps exact selections/focus and yields the matching complete supplied pair 39ms
+ ✓ tests/unit/recovery.test.ts > REC-PAIR-en: retry keeps exact selections/focus and yields the matching complete supplied pair 14ms
+ ✓ tests/unit/recovery.test.ts > REC-LOADING-ms: native retry is keyboard-focusable and announces its actual pending request 8ms
+ ✓ tests/unit/recovery.test.ts > REC-LOADING-en: native retry is keyboard-focusable and announces its actual pending request 9ms
+ ✓ tests/unit/recovery.test.ts > REC-RACE-SAME-ms: late same-pair Retry cannot replace a newer successful Read 10ms
+ ✓ tests/unit/recovery.test.ts > REC-RACE-SAME-en: late same-pair Retry cannot replace a newer successful Read 11ms
+ ✓ tests/unit/recovery.test.ts > REC-RACE-CHANGE-ms: an old retry completion cannot follow new identity controls 7ms
+ ✓ tests/unit/recovery.test.ts > REC-RACE-CHANGE-en: an old retry completion cannot follow new identity controls 10ms
+ ✓ tests/unit/recovery.test.ts > REC-AGE-ms: overdue uses accepted source success despite a newer failure/snapshot/device check 5ms
+ ✓ tests/unit/recovery.test.ts > REC-AGE-en: overdue uses accepted source success despite a newer failure/snapshot/device check 4ms
+ ✓ tests/unit/recovery.test.ts > REC-KNOWN-ms: only the published snapshot supplies a dated failure and workflow evidence link 7ms
+ ✓ tests/unit/recovery.test.ts > REC-KNOWN-en: only the published snapshot supplies a dated failure and workflow evidence link 6ms
+ ✓ tests/unit/recovery.test.ts > REC-KNOWLEDGE-ms: age cannot become a specific future workflow failure 6ms
+ ✓ tests/unit/recovery.test.ts > REC-KNOWLEDGE-en: age cannot become a specific future workflow failure 5ms
+ ✓ tests/unit/recovery.test.ts > REC-UNKNOWN-ms: failed-attempt age cannot create source success or a device check 5ms
+ ✓ tests/unit/recovery.test.ts > REC-UNKNOWN-en: failed-attempt age cannot create source success or a device check 7ms
+ ✓ tests/unit/recovery.test.ts > REC-ERROR-CONTEXT-ms: site-data failure preserves known pair/draft/source without claiming absence or pipeline failure 5ms
+ ✓ tests/unit/recovery.test.ts > REC-ERROR-CONTEXT-en: site-data failure preserves known pair/draft/source without claiming absence or pipeline failure 6ms
+ ✓ tests/unit/recovery.test.ts > REC-LANGUAGE: recovery notices switch to English while original source bytes and valid choices remain 7ms
+ × tests/unit/recovery.test.ts > REC-REVIEW-RETRY-ms: successful focused Retry hides its error control and focuses stable Read 11ms
+   → expected false to be true // Object.is equality
+   → expected 'retry-button' to be 'read-button' // Object.is equality
+ × tests/unit/recovery.test.ts > REC-REVIEW-RETRY-en: successful focused Retry hides its error control and focuses stable Read 8ms
+   → expected false to be true // Object.is equality
+   → expected 'retry-button' to be 'read-button' // Object.is equality
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/recovery.test.ts > REC-REVIEW-RETRY-ms: successful focused Retry hides its error control and focuses stable Read
+ FAIL  tests/unit/recovery.test.ts > REC-REVIEW-RETRY-en: successful focused Retry hides its error control and focuses stable Read
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ checksSuccessfulRetryDismissal tests/unit/recovery.test.ts:421:30
+    419|   expect(control(root, 'reader-status').textContent).toBe(getMessages(…
+    420|   expect(control(root, 'reader-result').getAttribute('data-result-comp…
+    421|   expect.soft(button.hidden).toBe(true);
+       |                              ^
+    422|   expect.soft(document.activeElement?.id).toBe('read-button');
+    423| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+
+ FAIL  tests/unit/recovery.test.ts > REC-REVIEW-RETRY-ms: successful focused Retry hides its error control and focuses stable Read
+ FAIL  tests/unit/recovery.test.ts > REC-REVIEW-RETRY-en: successful focused Retry hides its error control and focuses stable Read
+AssertionError: expected 'retry-button' to be 'read-button' // Object.is equality
+
+Expected: "read-button"
+Received: "retry-button"
+
+ ❯ checksSuccessfulRetryDismissal tests/unit/recovery.test.ts:422:43
+    420|   expect(control(root, 'reader-result').getAttribute('data-result-comp…
+    421|   expect.soft(button.hidden).toBe(true);
+    422|   expect.soft(document.activeElement?.id).toBe('read-button');
+       |                                           ^
+    423| }
+    424| test.each(['ms', 'en'] as const)('REC-REVIEW-RETRY-%s: successful focu…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 30 passed (32)
+   Start at  17:15:26
+   Duration  641ms (environment 54%, tests 38%, transform 6%, import 2%)
+

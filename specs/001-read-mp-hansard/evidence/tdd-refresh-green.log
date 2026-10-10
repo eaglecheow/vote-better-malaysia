@@ -1,0 +1,13 @@
+
+> vote-better-malaysia@0.1.0 test
+> vitest --run tests/unit/acquisition-refresh.test.ts tests/unit/acquisition-bootstrap.test.ts
+
+
+ RUN  v5.0.3 /Users/eaglecheow/dev/vote-better-malaysia
+
+
+ Test Files  2 passed (2)
+      Tests  185 passed (185)
+   Start at  17:30:41
+   Duration  7.35s (tests 98%, transform 1%)
+

@@ -1,0 +1,13 @@
+
+> vote-better-malaysia@0.1.0 test
+> vitest --run tests/unit/catalogue-policy.test.ts tests/unit/acquisition-bootstrap.test.ts tests/unit/static-data.test.ts tests/unit/performance.test.ts
+
+
+ RUN  v5.0.3 /Users/eaglecheow/dev/vote-better-malaysia
+
+
+ Test Files  4 passed (4)
+      Tests  334 passed (334)
+   Start at  17:02:38
+   Duration  2.43s (tests 86%, transform 8%, import 6%)
+

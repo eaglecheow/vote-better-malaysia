@@ -2,10 +2,15 @@
 
 **Date**: 2026-10-10 | **Branch**: `001-read-mp-hansard`
 
-This is a Phase 1 validation guide. The repository currently has no application,
-`package.json`, lockfile, acquisition script, or CI workflow. Commands below are the
-**proposed implementation command contract**, not commands verified or run during
-planning. Implementation must provide and verify them before claiming delivery.
+This guide was authored during Phase 1 planning on 2026-10-10; its original
+command contract and acceptance scenarios below remain dated requirements.
+Application, acquisition, publication and saved-reader mechanisms now exist.
+The CI workflow passes 31/31 configuration cases and its helper passes 201/201.
+Final unrestricted units pass 2,021/2,021, production build/typecheck pass, and
+the frozen site passes 108/108 Chromium/WebKit cases. See the
+[developer guide](../../docs/development.md) and dated evidence for verified
+commands. Planning scenarios are not proof that physical-device, remote CI or
+publication gates passed.
 
 Use [plan.md](plan.md) for architecture/budgets, [data-model.md](data-model.md) for
 entities and timestamps, and the [static-data](contracts/static-data.md),
@@ -109,10 +114,13 @@ RED for the later performance checker does not cover that earlier behavior.
    2026-02-10. It must remain accessible as unassigned content, excluded from Lim Guan
    Eng's confirmed subset, with a visible gap notice. Do not infer identity from its
    embedded name or infer another speaker's words from a quotation.
-3. Include a genuinely verified no-contributions case: a fully validated sitting
-   without unresolved nonannotation items and with no assigned turn for that member.
-   Find and document that case; none was established by planning. An empty subset
-   from an incomplete sitting must produce the incomplete-match state instead.
+3. Include a genuinely verified no-contributions case when the complete source supplies
+   an eligible fully validated sitting without unresolved nonannotation items and with
+   no assigned turn for that member. Otherwise document the complete dated archive
+   eligibility search, inventory/record counts, method and no-eligible-record result,
+   and disclose real-source absence as unavailable. Controlled complete-record absence
+   tests remain required. An empty subset from an incomplete sitting must produce the
+   incomplete-match state instead.
 4. Exercise deployment-ID rediscovery and schema changes, a new sitting and a changed
    historical record through controlled source fixtures. Separately report real-source
    observations. Verify exact-ID/conflict validation, raw/normalized hashes,
@@ -165,6 +173,14 @@ publication, without reinstating the user's superseded source-choice blocker.
 ## Reader, offline and update acceptance
 
 Run production-build checks, then repeat the journeys at the actual Pages address:
+
+Controlled complete-record absence tests remain mandatory. Include a real verified-absence
+pair only when the complete dated source archive supplies a fully validated eligible record
+with zero unresolved nonannotation items and zero assigned matches for that identity.
+If none exists, record the complete archive eligibility search, inventory/record counts,
+method and result, and report real-source absence as unavailable; incomplete zero-match
+records retain their gaps and cannot become absence fixtures. See the dated
+[source policy decision](evidence/source-policy.md).
 
 | Journey | Required observable outcome |
 |---|---|
@@ -220,7 +236,7 @@ files. Decode and validate complete text/provenance before marking a result read
 | HTML/JS/CSS/manifest/worker | ≤150 KiB gzip combined, including ≤100 KiB JS; every build. |
 | Icons | ≤60 KiB combined delivered bytes; every build. |
 | Full deployed artifact | ≤900,000,000 bytes, counting every deployed file. |
-| Catalogue / each sitting | ≤200 KiB gzip catalogue; ≤512 KiB gzip per sitting; ≤5 MiB decoded for either resource. |
+| Catalogue / each sitting | ≤1 MiB gzip catalogue (1,048,576 bytes); ≤512 KiB gzip per sitting; ≤5 MiB decoded for either resource. |
 | Cold shell | Lab p75 LCP ≤2.5 s, CLS ≤0.1, TBT ≤200 ms. |
 | Cold full catalogue / repeat reader | p95 ready ≤5 s / ≤1 s. |
 | Decompression/validation/filtering | p95 ≤500 ms mobile proxy; ≤200 ms desktop proxy. |
@@ -237,6 +253,41 @@ Verify exact-candidate report reuse succeeds, while changed bytes/application/fi
 wrong conditions, missing/expired reports and superseded-candidate promotion fail. Each
 new scheduled snapshot runs fresh automated checks and needs fresh actual-target reports;
 do not treat an old report's code revision alone as sufficient publication evidence.
+
+### Merge-only CI candidate and evidence
+
+The CI workflow configures preparation of a merge-only candidate for an actual open
+PR from complete, compatible source state authenticated from reviewed-main
+Pages. Once its reviewed helper/workflow is available on `main`, set
+`PR_NUMBER` and `SOURCE_RUN_ID` to the actual positive numeric identifiers:
+
+```sh
+gh workflow run ci.yml --ref main \
+  -f pull_request_number="$PR_NUMBER" \
+  -f source_run_id="$SOURCE_RUN_ID"
+```
+
+The immutable `hansard-ci-candidate` and `hansard-ci-lab` archives retain
+seven days of evidence. Collect all six actual-target reports on the named
+hardware and original frozen bytes, review the four full reports into `main`,
+then upload them with `gh workflow run pages.yml --ref main -f operation=evidence`.
+That evidence operation performs no acquisition/build/promotion/deployment.
+
+Review `evidence/ci-inputs.json` into the PR with original tested PR/base
+context and the exact candidate/laboratory/main-evidence producing run IDs,
+attempts, artifact IDs and archive SHA-256 digests. The PR verifies authenticity,
+all bytes/bindings and freshness before its seven named checks can pass. Keep
+the original tested SHA distinct from the current checkout and main report
+producer; reviewed unchanged evidence-only commits can reuse the exact
+candidate, while application/deployed-byte changes require fresh evidence.
+Follow the [developer guide](../../docs/development.md#merge-checks-and-immutable-ci-inputs)
+for the field table, required names and fail-closed behavior.
+
+Missing full source, reports, actual targets or authentic unexpired artifacts
+fails required checks. Configuration/unit proof does not establish remote
+merge blocking or device measurements; administrator settings and actual
+failed-gate demonstrations remain required. CI candidates remain merge-only
+and cannot become trusted main publication state.
 
 Report real-user mobile and desktop p75 LCP ≤2.5 s, INP ≤200 ms and CLS ≤0.1 separately.
 Before sufficient field data exists, state these targets are unverified for each group.

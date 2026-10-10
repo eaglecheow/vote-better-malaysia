@@ -1,0 +1,671 @@
+
+ RUN  v5.0.3 /Users/eaglecheow/dev/vote-better-malaysia
+
+ ↓ tests/unit/storage.test.ts > STORAGE001: database names are scoped to the complete origin and repository base
+ ↓ tests/unit/storage.test.ts > STORAGE002: opening an application initializes exactly its own native database
+ ↓ tests/unit/storage.test.ts > STORAGE003: missing state is explicitly null and an unopened pair is missing
+ ↓ tests/unit/storage.test.ts > STORAGE004: catalogue and valid language/source selections persist together
+ ↓ tests/unit/storage.test.ts > STORAGE005: complete source turns, gaps, annotations and accepted snapshot metadata commit as one opened pair
+ ↓ tests/unit/storage.test.ts > STORAGE006: saving one member never saves a different member from the same fetched sitting
+ ↓ tests/unit/storage.test.ts > STORAGE007: saving only catalogue/preferences never marks a transcript pair as saved
+ ↓ tests/unit/storage.test.ts > STORAGE008: successful replacement advances saved refresh time only to the accepted result time
+ ↓ tests/unit/storage.test.ts > STORAGE009: local results retain original identities and snapshot metadata when newer catalogue state changes
+ ↓ tests/unit/storage.test.ts > STORAGE010: repository namespaces isolate saved pairs and language preferences
+ ↓ tests/unit/storage.test.ts > STORAGE011: transaction request success is not commit completion
+ ↓ tests/unit/storage.test.ts > STORAGE012: transaction abort rejects instead of acknowledging a saved transcript
+ ↓ tests/unit/storage.test.ts > STORAGE013: quota/write failure propagates and never changes the current online result to saved
+ ↓ tests/unit/storage.test.ts > STORAGE014: failed replacement preserves the previous saved content and successful refresh time
+ ↓ tests/unit/storage.test.ts > STORAGE015: native transaction abort preserves previous catalogue, preferences and pair together
+ ↓ tests/unit/storage.test.ts > STORAGE016: eviction or deletion makes the exact pair missing without inventing recovery or absence
+ ↓ tests/unit/storage.test.ts > STORAGE017: malformed saved field schemaVersion rejects compatible-content validation
+ ↓ tests/unit/storage.test.ts > STORAGE017: malformed saved field memberId rejects compatible-content validation
+ ↓ tests/unit/storage.test.ts > STORAGE017: malformed saved field member.id rejects compatible-content validation
+ ↓ tests/unit/storage.test.ts > STORAGE017: malformed saved field member.name rejects compatible-content validation
+ ↓ tests/unit/storage.test.ts > STORAGE017: malformed saved field member.historicalContext rejects compatible-content validation
+ ↓ tests/unit/storage.test.ts > STORAGE017: malformed saved field snapshotId rejects compatible-content validation
+ ↓ tests/unit/storage.test.ts > STORAGE017: malformed saved field sittingId rejects compatible-content validation
+ ↓ tests/unit/storage.test.ts > STORAGE017: malformed saved field sitting.id rejects compatible-content validation
+ ↓ tests/unit/storage.test.ts > STORAGE017: malformed saved field sitting.date rejects compatible-content validation
+ ↓ tests/unit/storage.test.ts > STORAGE017: malformed saved field sitting.house rejects compatible-content validation
+ ↓ tests/unit/storage.test.ts > STORAGE017: malformed saved field sitting.filename rejects compatible-content validation
+ ↓ tests/unit/storage.test.ts > STORAGE017: malformed saved field recordDigest rejects compatible-content validation
+ ↓ tests/unit/storage.test.ts > STORAGE017: malformed saved field sitting.record.digest rejects compatible-content validation
+ ↓ tests/unit/storage.test.ts > STORAGE017: malformed saved field recordDigest rejects compatible-content validation
+ ↓ tests/unit/storage.test.ts > STORAGE017: malformed saved field snapshot.preparedAt rejects compatible-content validation
+ ↓ tests/unit/storage.test.ts > STORAGE017: malformed saved field snapshot.publishedAt rejects compatible-content validation
+ ↓ tests/unit/storage.test.ts > STORAGE017: malformed saved field snapshot.status.acquisitionOutcome rejects compatible-content validation
+ ↓ tests/unit/storage.test.ts > STORAGE017: malformed saved field snapshot.coverage.startDate rejects compatible-content validation
+ ↓ tests/unit/storage.test.ts > STORAGE017: malformed saved field snapshot.coverage.latestInventoryCount rejects compatible-content validation
+ ↓ tests/unit/storage.test.ts > STORAGE017: malformed saved field provenance.membersRawDigest rejects compatible-content validation
+ ↓ tests/unit/storage.test.ts > STORAGE017: malformed saved field refreshedAt rejects compatible-content validation
+ ↓ tests/unit/storage.test.ts > STORAGE017: malformed saved field saved rejects compatible-content validation
+ ↓ tests/unit/storage.test.ts > STORAGE017: malformed saved field outcome rejects compatible-content validation
+ ↓ tests/unit/storage.test.ts > STORAGE017: malformed saved field turns.0.memberId rejects compatible-content validation
+ ↓ tests/unit/storage.test.ts > STORAGE017: malformed saved field turns.0.sourceAuthorId rejects compatible-content validation
+ ↓ tests/unit/storage.test.ts > STORAGE017: malformed saved field turns.0.text rejects compatible-content validation
+ ↓ tests/unit/storage.test.ts > STORAGE017: malformed saved field turns.0.sectionPath rejects compatible-content validation
+ ↓ tests/unit/storage.test.ts > STORAGE017: malformed saved field turns.0.timestamp rejects compatible-content validation
+ ↓ tests/unit/storage.test.ts > STORAGE017: malformed saved field turns.0.ordinal rejects compatible-content validation
+ ↓ tests/unit/storage.test.ts > STORAGE017: malformed saved field gaps.0.gapReason rejects compatible-content validation
+ ↓ tests/unit/storage.test.ts > STORAGE017: malformed saved field gaps.0.memberId rejects compatible-content validation
+ ↓ tests/unit/storage.test.ts > STORAGE017: malformed saved field turns.0.attribution rejects compatible-content validation
+ ↓ tests/unit/storage.test.ts > STORAGE017: malformed saved field turns.0.gapReason rejects compatible-content validation
+ ↓ tests/unit/storage.test.ts > STORAGE017: malformed saved field gaps.0.ordinal rejects compatible-content validation
+ ↓ tests/unit/storage.test.ts > STORAGE017: malformed saved field annotations.0.attribution rejects compatible-content validation
+ ↓ tests/unit/storage.test.ts > STORAGE017: malformed saved field annotations.0.memberId rejects compatible-content validation
+ ↓ tests/unit/storage.test.ts > STORAGE017: malformed saved field gaps rejects compatible-content validation
+ ↓ tests/unit/storage.test.ts > STORAGE017: malformed saved field annotations rejects compatible-content validation
+ ↓ tests/unit/storage.test.ts > STORAGE018: a compatible saved pair preserves exact historical nulls, original strings and source metadata
+ ↓ tests/unit/storage.test.ts > STORAGE019: incompatible stored schemaVersion returns unavailable compatibility state without deleting it
+ ↓ tests/unit/storage.test.ts > STORAGE019: incompatible stored recordDigest returns unavailable compatibility state without deleting it
+ ↓ tests/unit/storage.test.ts > STORAGE019: incompatible stored member.id returns unavailable compatibility state without deleting it
+ ↓ tests/unit/storage.test.ts > STORAGE019: incompatible stored turns.0.text returns unavailable compatibility state without deleting it
+ ↓ tests/unit/storage.test.ts > STORAGE020: a stored result under another pair key is incompatible rather than relabeled
+ ↓ tests/unit/storage.test.ts > STORAGE021: invalid preferences {"language":"de","memberId":"1839","sittingId":"29326"} reject before replacing accepted state
+ ↓ tests/unit/storage.test.ts > STORAGE021: invalid preferences {"language":"ms","memberId":"999","sittingId":"29326"} reject before replacing accepted state
+ ↓ tests/unit/storage.test.ts > STORAGE021: invalid preferences {"language":"en","memberId":"1839","sittingId":"999"} reject before replacing accepted state
+ ↓ tests/unit/storage.test.ts > STORAGE021: invalid preferences {"language":"en","memberId":1839,"sittingId":"29326"} reject before replacing accepted state
+ ↓ tests/unit/storage.test.ts > STORAGE022: language and absent selections can persist before any catalogue exists
+ ↓ tests/unit/storage.test.ts > STORAGE023: null-catalogue preferences never erase an already accepted catalogue
+ ↓ tests/unit/storage.test.ts > STORAGE024: selected IDs cannot be persisted without their validated catalogue
+ ↓ tests/unit/storage.test.ts > STORAGE025: invalid replacement catalogue cannot overwrite previously accepted state
+ ↓ tests/unit/storage.test.ts > STORAGE026: an unavailable source result cannot be acknowledged as a saved transcript
+ ↓ tests/unit/storage.test.ts > STORAGE027: opening denied device storage rejects without changing online source content
+ ↓ tests/unit/storage.test.ts > STORAGE028: opening an incompatible future database version preserves its raw data
+ ↓ tests/unit/storage.test.ts > STORAGE029: a validated ready semantic outcome saves without changing its meaning
+ ↓ tests/unit/storage.test.ts > STORAGE029: a validated absence semantic outcome saves without changing its meaning
+ ↓ tests/unit/storage.test.ts > STORAGE030: invalid opened schemaVersion rejects before replacing a saved copy
+ ↓ tests/unit/storage.test.ts > STORAGE030: invalid opened member.id rejects before replacing a saved copy
+ ↓ tests/unit/storage.test.ts > STORAGE030: invalid opened recordDigest rejects before replacing a saved copy
+ ↓ tests/unit/storage.test.ts > STORAGE030: invalid opened gaps rejects before replacing a saved copy
+ ↓ tests/unit/storage.test.ts > STORAGE031: mismatched snapshot catalogue cannot be atomically saved with an older result
+ ↓ tests/unit/storage.test.ts > STORAGE031: mismatched member catalogue cannot be atomically saved with an older result
+ ↓ tests/unit/storage.test.ts > STORAGE031: mismatched sitting catalogue cannot be atomically saved with an older result
+ ↓ tests/unit/storage.test.ts > STORAGE031: mismatched digest catalogue cannot be atomically saved with an older result
+ ↓ tests/unit/storage.test.ts > STORAGE032: storing an online-unsaved result cannot make the exact pair locally saved
+ ↓ tests/unit/storage.test.ts > STORAGE033: pair save preferences cannot silently select another member
+ ↓ tests/unit/storage.test.ts > STORAGE034: valid absent selection null/"29326" persists beside its accepted catalogue
+ ↓ tests/unit/storage.test.ts > STORAGE034: valid absent selection "1839"/null persists beside its accepted catalogue
+ ↓ tests/unit/storage.test.ts > STORAGE034: valid absent selection null/null persists beside its accepted catalogue
+ ↓ tests/unit/storage.test.ts > STORAGE035: an incompatible stored catalogue exposes neither a validated list nor dependent selected IDs
+ ↓ tests/unit/storage.test.ts > STORAGE036: invalid stored preferences {"language":"de","memberId":"1839","sittingId":"29326"} are not exposed as valid selections
+ ↓ tests/unit/storage.test.ts > STORAGE036: invalid stored preferences {"language":"ms","memberId":"999","sittingId":"29326"} are not exposed as valid selections
+ ↓ tests/unit/storage.test.ts > STORAGE036: invalid stored preferences {"language":"en","memberId":"1839","sittingId":"999"} are not exposed as valid selections
+ ↓ tests/unit/storage.test.ts > STORAGE036: invalid stored preferences {"language":"en","memberId":1839,"sittingId":"29326"} are not exposed as valid selections
+ ↓ tests/unit/storage.test.ts > STORAGE037: valid stored language and null selections survive absent catalogue data
+ ↓ tests/unit/storage.test.ts > STORAGE038: savePair acknowledges saved content only after its native three-store transaction completes
+ × tests/unit/storage.test.ts > STORAGE-REVIEW-SCOPE: catalogue, preferences and pair writes share one actual three-store transaction 9ms
+   → expected [] to deeply equal [ 'catalogue', 'pairs', 'preferences' ]
+   → expected +0 to be 1 // Object.is equality
+   → expected [] to deeply equal [ Array(3) ]
+ × tests/unit/storage.test.ts > STORAGE-REVIEW-REQUEST-ABORT: public save rejects an actual abort after pair request success and rolls back every store 4ms
+   → expected false to be true // Object.is equality
+   → expected false to be true // Object.is equality
+   → expected null to be an instance of Error
+ × tests/unit/storage.test.ts > STORAGE-REVIEW-SYNC-ERROR: a third-put failure preserves the exact original error and rolls back two already queued writes 3ms
+   → expected +0 to be 3 // Object.is equality
+   → expected +0 to be 2 // Object.is equality
+   → expected null to be DOMException{ stack: 'QuotaExceededE…' } // Object.is equality
+ × tests/unit/storage.test.ts > STORAGE-REVIEW-SOURCE-SUBSET: source authority accepts a self-contained saved result with real omitted-member ordinal holes 1ms
+   → expected undefined to be { schemaVersion: 1, …(14) } // Object.is equality
+ × tests/unit/storage.test.ts > STORAGE-REVIEW-SOURCE-ONLINE: source authority accepts a matching unsaved online result without changing its saving state 1ms
+   → expected undefined to be { schemaVersion: 1, …(14) } // Object.is equality
+ × tests/unit/storage.test.ts > STORAGE-REVIEW-SOURCE-BIND-preparedAt: optional catalogue cannot relabel opened snapshot metadata 1ms
+   → expected [Function: bound validateTranscriptResult] to throw an error
+ × tests/unit/storage.test.ts > STORAGE-REVIEW-SOURCE-BIND-provenance: optional catalogue cannot relabel opened snapshot metadata 1ms
+   → expected [Function: bound validateTranscriptResult] to throw an error
+ × tests/unit/storage.test.ts > STORAGE-REVIEW-SOURCE-BIND-status: optional catalogue cannot relabel opened snapshot metadata 1ms
+   → expected [Function: bound validateTranscriptResult] to throw an error
+ × tests/unit/storage.test.ts > STORAGE-REVIEW-SOURCE-BIND-coverage: optional catalogue cannot relabel opened snapshot metadata 0ms
+   → expected [Function: bound validateTranscriptResult] to throw an error
+ × tests/unit/storage.test.ts > STORAGE-REVIEW-SOURCE-LOCATION-index: included subset locations stay unique, bounded and ordered 0ms
+   → expected [Function: bound validateTranscriptResult] to throw an error
+ × tests/unit/storage.test.ts > STORAGE-REVIEW-SOURCE-LOCATION-ordinal: included subset locations stay unique, bounded and ordered 0ms
+   → expected [Function: bound validateTranscriptResult] to throw an error
+ × tests/unit/storage.test.ts > STORAGE-REVIEW-SOURCE-LOCATION-order: included subset locations stay unique, bounded and ordered 0ms
+   → expected [Function: bound validateTranscriptResult] to throw an error
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 12 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/storage.test.ts > STORAGE-REVIEW-SCOPE: catalogue, preferences and pair writes share one actual three-store transaction
+AssertionError: expected [] to deeply equal [ 'catalogue', 'pairs', 'preferences' ]
+
+- Expected
++ Received
+
+- [
+-   "catalogue",
+-   "pairs",
+-   "preferences",
+- ]
++ []
+
+ ❯ checksWriteScope tests/unit/storage.test.ts:526:34
+    524|     try {
+    525|       await storage.savePair(fixture.catalogue, fixture.result, prefer…
+    526|       expect.soft(stores.sort()).toEqual(['catalogue', 'pairs', 'prefe…
+       |                                  ^
+    527|       expect.soft(transactions.size).toBe(1);
+    528|       expect.soft(scopes).toEqual(Array(3).fill(['catalogue', 'pairs',…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/18]⎯
+
+ FAIL  tests/unit/storage.test.ts > STORAGE-REVIEW-SCOPE: catalogue, preferences and pair writes share one actual three-store transaction
+AssertionError: expected +0 to be 1 // Object.is equality
+
+- Expected
++ Received
+
+- 1
++ 0
+
+ ❯ checksWriteScope tests/unit/storage.test.ts:527:38
+    525|       await storage.savePair(fixture.catalogue, fixture.result, prefer…
+    526|       expect.soft(stores.sort()).toEqual(['catalogue', 'pairs', 'prefe…
+    527|       expect.soft(transactions.size).toBe(1);
+       |                                      ^
+    528|       expect.soft(scopes).toEqual(Array(3).fill(['catalogue', 'pairs',…
+    529|     } finally { put.mockRestore(); storage.close(); }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/18]⎯
+
+ FAIL  tests/unit/storage.test.ts > STORAGE-REVIEW-SCOPE: catalogue, preferences and pair writes share one actual three-store transaction
+AssertionError: expected [] to deeply equal [ Array(3) ]
+
+- Expected
++ Received
+
+- [
+-   [
+-     "catalogue",
+-     "pairs",
+-     "preferences",
+-   ],
+-   [
+-     "catalogue",
+-     "pairs",
+-     "preferences",
+-   ],
+-   [
+-     "catalogue",
+-     "pairs",
+-     "preferences",
+-   ],
+- ]
++ []
+
+ ❯ checksWriteScope tests/unit/storage.test.ts:528:27
+    526|       expect.soft(stores.sort()).toEqual(['catalogue', 'pairs', 'prefe…
+    527|       expect.soft(transactions.size).toBe(1);
+    528|       expect.soft(scopes).toEqual(Array(3).fill(['catalogue', 'pairs',…
+       |                           ^
+    529|     } finally { put.mockRestore(); storage.close(); }
+    530|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/18]⎯
+
+ FAIL  tests/unit/storage.test.ts > STORAGE-REVIEW-REQUEST-ABORT: public save rejects an actual abort after pair request success and rolls back every store
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ checksPublicRequestAbort tests/unit/storage.test.ts:568:35
+    566|     try { await storage.savePair(replacement.catalogue, replacement.re…
+    567|     finally { put.mockRestore(); }
+    568|     expect.soft(requestSucceeded).toBe(true); expect.soft(aborted).toB…
+       |                                   ^
+    569|     expect.soft(await rawValue(factory, 'catalogue')).toEqual(fixture.…
+    570|     expect.soft(await rawValue(factory, 'preferences')).toEqual(prefer…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/18]⎯
+
+ FAIL  tests/unit/storage.test.ts > STORAGE-REVIEW-REQUEST-ABORT: public save rejects an actual abort after pair request success and rolls back every store
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ checksPublicRequestAbort tests/unit/storage.test.ts:568:68
+    566|     try { await storage.savePair(replacement.catalogue, replacement.re…
+    567|     finally { put.mockRestore(); }
+    568|     expect.soft(requestSucceeded).toBe(true); expect.soft(aborted).toB…
+       |                                                                    ^
+    569|     expect.soft(await rawValue(factory, 'catalogue')).toEqual(fixture.…
+    570|     expect.soft(await rawValue(factory, 'preferences')).toEqual(prefer…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/18]⎯
+
+ FAIL  tests/unit/storage.test.ts > STORAGE-REVIEW-REQUEST-ABORT: public save rejects an actual abort after pair request success and rolls back every store
+AssertionError: expected null to be an instance of Error
+ ❯ checksPublicRequestAbort tests/unit/storage.test.ts:568:99
+    566|     try { await storage.savePair(replacement.catalogue, replacement.re…
+    567|     finally { put.mockRestore(); }
+    568|     expect.soft(requestSucceeded).toBe(true); expect.soft(aborted).toB…
+       |                                                                                                   ^
+    569|     expect.soft(await rawValue(factory, 'catalogue')).toEqual(fixture.…
+    570|     expect.soft(await rawValue(factory, 'preferences')).toEqual(prefer…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/18]⎯
+
+ FAIL  tests/unit/storage.test.ts > STORAGE-REVIEW-SYNC-ERROR: a third-put failure preserves the exact original error and rolls back two already queued writes
+AssertionError: expected +0 to be 3 // Object.is equality
+
+- Expected
++ Received
+
+- 3
++ 0
+
+ ❯ checksOriginalEnqueueError tests/unit/storage.test.ts:601:28
+    599|     try { await storage.savePair(replacement.catalogue, replacement.re…
+    600|     finally { put.mockRestore(); }
+    601|     expect.soft(attempted).toBe(3); expect.soft(queued).toBe(2); expec…
+       |                            ^
+    602|     expect.soft(await rawValue(factory, 'catalogue')).toEqual(fixture.…
+    603|     expect.soft(await rawValue(factory, 'preferences')).toEqual(prefer…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/18]⎯
+
+ FAIL  tests/unit/storage.test.ts > STORAGE-REVIEW-SYNC-ERROR: a third-put failure preserves the exact original error and rolls back two already queued writes
+AssertionError: expected +0 to be 2 // Object.is equality
+
+- Expected
++ Received
+
+- 2
++ 0
+
+ ❯ checksOriginalEnqueueError tests/unit/storage.test.ts:601:57
+    599|     try { await storage.savePair(replacement.catalogue, replacement.re…
+    600|     finally { put.mockRestore(); }
+    601|     expect.soft(attempted).toBe(3); expect.soft(queued).toBe(2); expec…
+       |                                                         ^
+    602|     expect.soft(await rawValue(factory, 'catalogue')).toEqual(fixture.…
+    603|     expect.soft(await rawValue(factory, 'preferences')).toEqual(prefer…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/18]⎯
+
+ FAIL  tests/unit/storage.test.ts > STORAGE-REVIEW-SYNC-ERROR: a third-put failure preserves the exact original error and rolls back two already queued writes
+AssertionError: expected null to be DOMException{ stack: 'QuotaExceededE…' } // Object.is equality
+
+- Expected:
+QuotaExceededError {
+  "message": "Controlled original third-write quota error",
+}
+
++ Received:
+null
+
+ ❯ checksOriginalEnqueueError tests/unit/storage.test.ts:601:85
+    599|     try { await storage.savePair(replacement.catalogue, replacement.re…
+    600|     finally { put.mockRestore(); }
+    601|     expect.soft(attempted).toBe(3); expect.soft(queued).toBe(2); expec…
+       |                                                                                     ^
+    602|     expect.soft(await rawValue(factory, 'catalogue')).toEqual(fixture.…
+    603|     expect.soft(await rawValue(factory, 'preferences')).toEqual(prefer…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/18]⎯
+
+ FAIL  tests/unit/storage.test.ts > STORAGE-REVIEW-SOURCE-SUBSET: source authority accepts a self-contained saved result with real omitted-member ordinal holes
+AssertionError: expected undefined to be { schemaVersion: 1, …(14) } // Object.is equality
+
+- Expected:
+{
+  "annotations": [
+    {
+      "attribution": "annotation",
+      "gapReason": null,
+      "memberId": null,
+      "ordinal": 3,
+      "rawAuthor": "ANNOTATION",
+      "sectionPath": [
+        "PERTANYAAN-PERTANYAAN BAGI JAWAB LISAN",
+      ],
+      "sourceAuthorId": null,
+      "sourceIndex": 108,
+      "text": "[Soalan No. 5 - YB Tuan Prabakaran a/l M. Parameswaran (Batu) tidak hadir]",
+      "timestamp": 1130,
+    },
+  ],
+  "gaps": [
+    {
+      "attribution": "unassigned",
+      "gapReason": "missing-id",
+      "memberId": null,
+      "ordinal": 0,
+      "rawAuthor": null,
+      "sectionPath": [],
+      "sourceAuthorId": null,
+      "sourceIndex": 0,
+      "text": "*[Tuan Yang di-Pertua* ***mempengerusikan Mesyuarat****]*",
+      "timestamp": 1000,
+    },
+    {
+      "attribution": "unassigned",
+      "gapReason": "missing-id",
+      "memberId": null,
+      "ordinal": 1,
+      "rawAuthor": null,
+      "sectionPath": [
+        "WAKTU PERTANYAAN-PERTANYAAN MENTERI",
+      ],
+      "sourceAuthorId": null,
+      "sourceIndex": 2,
+      "text": "**1. Tuan Lim Guan Eng [Bagan]** Terima kasih, Tan Sri Yang di-Pertua. Bagan minta Yang Berhormat Menteri Luar Negeri menyatakan hasil perdagangan dan keselamatan serantau susulan lawatan Perdana Menteri India, Narendra Modi baru-baru ini ke Malaysia dan sejauh manakah langkah-langkah bersama yang boleh diambil oleh Malaysia dan India terhadap pelaksanaan tarif oleh Amerika Syarikat dan usaha memulihkan demokrasi dan keamanan di Myanmar. Terima kasih.",
+      "timestamp": 1000,
+    },
+  ],
+  "member": {
+    "historicalContext": null,
+    "id": "4463",
+    "listedInLatestSource": true,
+    "name": "MOHAMMED TAUFIQ BIN JOHARI",
+  },
+  "memberId": "4463",
+  "outcome": "incomplete",
+  "provenance": {
+    "interface": "official-next-page-data",
+    "inventoryAcquiredAt": "2026-10-10T03:00:00.000Z",
+    "inventoryRawDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "membersAcquiredAt": "2026-10-10T03:00:01.000Z",
+    "membersRawDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "sourceBuildId": "source-build",
+  },
+  "recordDigest": "f0e05674207bbce974855938883000c4912248816873a5906a4e39f0c1312fe1",
+  "refreshedAt": "2026-10-10T06:00:00.000Z",
+  "saved": true,
+  "schemaVersion": 1,
+  "sitting": {
+    "date": "2026-02-10",
+    "filename": "dr_2026-02-10",
+    "house": "dewan-rakyat",
+    "id": "29326",
+    "isFinal": false,
+    "listedInLatestInventory": true,
+    "mesyuarat": 1,
+    "parliament": 15,
+    "penggal": 5,
+    "record": {
+      "accounting": {
+        "annotations": 1,
+        "assigned": 3,
+        "total": 6,
+        "unassigned": 2,
+      },
+      "acquiredAt": "2026-10-10T03:01:00.000Z",
+      "availability": "available",
+      "compressedBytes": 1471,
+      "decodedBytes": 3595,
+      "digest": "f0e05674207bbce974855938883000c4912248816873a5906a4e39f0c1312fe1",
+      "lastAttemptAt": "2026-10-10T03:01:00.000Z",
+      "lastAttemptOutcome": "success",
+      "path": "data/sittings/29326.json.gz",
+      "rawSourceDigest": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+      "sourceBuildId": "source-build",
+      "sourcePublishedAt": null,
+      "sourceRevisedAt": null,
+    },
+    "sourceUrl": "https://hansard.parlimen.gov.my/hansard/dewan-rakyat/2026-02-10",
+  },
+  "sittingId": "29326",
+  "snapshot": {
+    "coverage": {
+      "attributionGapCount": 2,
+      "endDate": "2026-02-10",
+      "latestInventoryCount": 2,
+      "parliaments": [
+        13,
+        15,
+      ],
+      "retainedSittingCount": 0,
+      "startDate": "2014-07-23",
+      "unavailableSittingCount": 1,
+    },
+    "preparedAt": "2026-10-10T04:00:00.000Z",
+    "publishedAt": null,
+    "status": {
+      "acquisitionOutcome": "success",
+      "completedAt": "2026-10-10T03:59:00.000Z",
+      "lastConfirmedDeployment": null,
+      "stagingOutcome": "success",
+      "workflowUrl": null,
+    },
+  },
+  "snapshotId": "controlled-reader-gaps",
+  "turns": [
+    {
+      "attribution": "assigned",
+      "gapReason": null,
+      "memberId": "4463",
+      "ordinal": 4,
+      "rawAuthor": "Dr. Mohammed Taufiq bin Johari",
+      "sectionPath": [
+        "USUL",
+        "USUL MENJUNJUNG KASIH TITAH SERI PADUKA BAGINDA YANG DI-PERTUAN AGONG",
+      ],
+      "sourceAuthorId": "4463",
+      "sourceIndex": 277,
+      "text": "Ya.",
+      "timestamp": 1530,
+    },
+  ],
+}
+
++ Received:
+undefined
+
+ ❯ checksSourceSubset tests/unit/storage.test.ts:631:51
+    629|     )).toEqual([4]);
+    630|     const before = structuredClone(result);
+    631|     expect.soft(validateTranscriptResult(result)).toBe(result);
+       |                                                   ^
+    632|     expect(result).toEqual(before);
+    633|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/18]⎯
+
+ FAIL  tests/unit/storage.test.ts > STORAGE-REVIEW-SOURCE-ONLINE: source authority accepts a matching unsaved online result without changing its saving state
+AssertionError: expected undefined to be { schemaVersion: 1, …(14) } // Object.is equality
+
+- Expected:
+{
+  "annotations": [
+    {
+      "attribution": "annotation",
+      "gapReason": null,
+      "memberId": null,
+      "ordinal": 3,
+      "rawAuthor": "ANNOTATION",
+      "sectionPath": [
+        "PERTANYAAN-PERTANYAAN BAGI JAWAB LISAN",
+      ],
+      "sourceAuthorId": null,
+      "sourceIndex": 108,
+      "text": "[Soalan No. 5 - YB Tuan Prabakaran a/l M. Parameswaran (Batu) tidak hadir]",
+      "timestamp": 1130,
+    },
+  ],
+  "gaps": [
+    {
+      "attribution": "unassigned",
+      "gapReason": "missing-id",
+      "memberId": null,
+      "ordinal": 0,
+      "rawAuthor": null,
+      "sectionPath": [],
+      "sourceAuthorId": null,
+      "sourceIndex": 0,
+      "text": "*[Tuan Yang di-Pertua* ***mempengerusikan Mesyuarat****]*",
+      "timestamp": 1000,
+    },
+    {
+      "attribution": "unassigned",
+      "gapReason": "missing-id",
+      "memberId": null,
+      "ordinal": 1,
+      "rawAuthor": null,
+      "sectionPath": [
+        "WAKTU PERTANYAAN-PERTANYAAN MENTERI",
+      ],
+      "sourceAuthorId": null,
+      "sourceIndex": 2,
+      "text": "**1. Tuan Lim Guan Eng [Bagan]** Terima kasih, Tan Sri Yang di-Pertua. Bagan minta Yang Berhormat Menteri Luar Negeri menyatakan hasil perdagangan dan keselamatan serantau susulan lawatan Perdana Menteri India, Narendra Modi baru-baru ini ke Malaysia dan sejauh manakah langkah-langkah bersama yang boleh diambil oleh Malaysia dan India terhadap pelaksanaan tarif oleh Amerika Syarikat dan usaha memulihkan demokrasi dan keamanan di Myanmar. Terima kasih.",
+      "timestamp": 1000,
+    },
+  ],
+  "member": {
+    "historicalContext": null,
+    "id": "1839",
+    "listedInLatestSource": true,
+    "name": "LIM GUAN ENG",
+  },
+  "memberId": "1839",
+  "outcome": "incomplete",
+  "provenance": {
+    "interface": "official-next-page-data",
+    "inventoryAcquiredAt": "2026-10-10T03:00:00.000Z",
+    "inventoryRawDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "membersAcquiredAt": "2026-10-10T03:00:01.000Z",
+    "membersRawDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "sourceBuildId": "source-build",
+  },
+  "recordDigest": "f0e05674207bbce974855938883000c4912248816873a5906a4e39f0c1312fe1",
+  "refreshedAt": "2026-10-10T06:00:00.000Z",
+  "saved": false,
+  "schemaVersion": 1,
+  "sitting": {
+    "date": "2026-02-10",
+    "filename": "dr_2026-02-10",
+    "house": "dewan-rakyat",
+    "id": "29326",
+    "isFinal": false,
+    "listedInLatestInventory": true,
+    "mesyuarat": 1,
+    "parliament": 15,
+    "penggal": 5,
+    "record": {
+      "accounting": {
+        "annotations": 1,
+        "assigned": 3,
+        "total": 6,
+        "unassigned": 2,
+      },
+      "acquiredAt": "2026-10-10T03:01:00.000Z",
+      "availability": "available",
+      "compressedBytes": 1471,
+      "decodedBytes": 3595,
+      "digest": "f0e05674207bbce974855938883000c4912248816873a5906a4e39f0c1312fe1",
+      "lastAttemptAt": "2026-10-10T03:01:00.000Z",
+      "lastAttemptOutcome": "success",
+      "path": "data/sittings/29326.json.gz",
+      "rawSourceDigest": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+      "sourceBuildId": "source-build",
+      "sourcePublishedAt": null,
+      "sourceRevisedAt": null,
+    },
+    "sourceUrl": "https://hansard.parlimen.gov.my/hansard/dewan-rakyat/2026-02-10",
+  },
+  "sittingId": "29326",
+  "snapshot": {
+    "coverage": {
+      "attributionGapCount": 2,
+      "endDate": "2026-02-10",
+      "latestInventoryCount": 2,
+      "parliaments": [
+        13,
+        15,
+      ],
+      "retainedSittingCount": 0,
+      "startDate": "2014-07-23",
+      "unavailableSittingCount": 1,
+    },
+    "preparedAt": "2026-10-10T04:00:00.000Z",
+    "publishedAt": null,
+    "status": {
+      "acquisitionOutcome": "success",
+      "completedAt": "2026-10-10T03:59:00.000Z",
+      "lastConfirmedDeployment": null,
+      "stagingOutcome": "success",
+      "workflowUrl": null,
+    },
+  },
+  "snapshotId": "controlled-reader-gaps",
+  "turns": [
+    {
+      "attribution": "assigned",
+      "gapReason": null,
+      "memberId": "1839",
+      "ordinal": 2,
+      "rawAuthor": "Tuan Lim Guan Eng [Bagan]",
+      "sectionPath": [
+        "WAKTU PERTANYAAN-PERTANYAAN MENTERI",
+      ],
+      "sourceAuthorId": "1839",
+      "sourceIndex": 7,
+      "text": "Terima kasih Tan Sri Yang di-Pertua. Saya ingin ucapkan terima kasih kepada Yang Berhormat Menteri atas jawapan yang menyeluruh ini.
+
+Hubungan di antara Malaysia dan India seperti yang disebut oleh Yang Berhormat Menteri telah sampai ke tahap rakan kongsi strategik. Kalau rakan kongsi strategik ini dilihat membawa manfaat, ia mesti boleh dipercayai (*trusted*) dan juga dapat menunjukkan penyampaian barangan ataupun kegunaan awam dengan izin Tan Sri Yang di-Pertua, *delivery of public good*.
+
+Jadi, di sini saya nak tanya, apakah bentuk yang ada dalam kedua-dua konteks ini. Berkaitan dengan tarif Amerika Syarikat, bolehkah Malaysia bertukar pandangan macam mana dia boleh turunkan tarif daripada 50 peratus kepada 18, sedangkan kita sungguhpun ada hubungan baik dengan Amerika Syarikat, masih lebih tinggi dengan 19 peratus. Kalau boleh, bersama supaya kita dapat sama rata. Kalau tidak, dia ada sedikit kelebihan.
+
+Dan akhirnya berkaitan dengan Myanmar, apakah langkah seterusnya baik oleh India dan Malaysia, yang boleh membawa kepada keamanan atau menuju ke arah keamanan di Myanmar, iaitu apakah adakah mesyuarat yang akan datang, adakah inisiatif yang akan datang, apakah langkah seterusnya. Takkan kita hanya tunggu dan lihat? Sekian, terima kasih.",
+      "timestamp": 1010,
+    },
+  ],
+}
+
++ Received:
+undefined
+
+ ❯ checksSourceOnline tests/unit/storage.test.ts:641:78
+    639|   function checksSourceOnline(): void {
+    640|     const fixture = readerFixture(); const before = structuredClone(fi…
+    641|     expect.soft(validateTranscriptResult(fixture.result, fixture.catal…
+       |                                                                              ^
+    642|     expect(fixture.result).toEqual(before);
+    643|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/18]⎯
+
+ FAIL  tests/unit/storage.test.ts > STORAGE-REVIEW-SOURCE-BIND-preparedAt: optional catalogue cannot relabel opened snapshot metadata
+ FAIL  tests/unit/storage.test.ts > STORAGE-REVIEW-SOURCE-BIND-provenance: optional catalogue cannot relabel opened snapshot metadata
+ FAIL  tests/unit/storage.test.ts > STORAGE-REVIEW-SOURCE-BIND-status: optional catalogue cannot relabel opened snapshot metadata
+ FAIL  tests/unit/storage.test.ts > STORAGE-REVIEW-SOURCE-BIND-coverage: optional catalogue cannot relabel opened snapshot metadata
+AssertionError: expected [Function: bound validateTranscriptResult] to throw an error
+ ❯ rejectsSourceMetadataBinding tests/unit/storage.test.ts:663:74
+    661|   }
+    662|   expect(validateCatalogue(catalogue)).toBe(catalogue);
+    663|   expect(validateTranscriptResult.bind(null, fixture.result, catalogue…
+       |                                                                          ^
+    664| }
+    665| test.each(['preparedAt', 'provenance', 'status', 'coverage'] as const)…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/18]⎯
+
+ FAIL  tests/unit/storage.test.ts > STORAGE-REVIEW-SOURCE-LOCATION-index: included subset locations stay unique, bounded and ordered
+ FAIL  tests/unit/storage.test.ts > STORAGE-REVIEW-SOURCE-LOCATION-ordinal: included subset locations stay unique, bounded and ordered
+ FAIL  tests/unit/storage.test.ts > STORAGE-REVIEW-SOURCE-LOCATION-order: included subset locations stay unique, bounded and ordered
+AssertionError: expected [Function: bound validateTranscriptResult] to throw an error
+ ❯ rejectsSourceSubsetLocations tests/unit/storage.test.ts:677:55
+    675|   if (defect === 'ordinal') result.annotations[0].ordinal = result.sit…
+    676|   if (defect === 'order') result.gaps.reverse();
+    677|   expect(validateTranscriptResult.bind(null, result)).toThrow();
+       |                                                       ^
+    678| }
+    679| test.each(['index', 'ordinal', 'order'] as const)('STORAGE-REVIEW-SOUR…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[13/18]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  12 failed | 93 skipped (105)
+   Start at  17:59:27
+   Duration  188ms (transform 40%, import 34%, tests 24%, worker 2%)
+

@@ -1,0 +1,20 @@
+
+> vote-better-malaysia@0.1.0 data:acquire
+> node scripts/acquire.ts --mode bootstrap --state .cache/hansard --out public/data
+
+file:///Users/eaglecheow/dev/vote-better-malaysia/scripts/acquire.ts:139
+  return Object.assign(new Error(message), { kind });
+                       ^
+
+Error: Compressed resource exceeds acquisition budget
+    at failure (file:///Users/eaglecheow/dev/vote-better-malaysia/scripts/acquire.ts:139:24)
+    at check (file:///Users/eaglecheow/dev/vote-better-malaysia/scripts/acquire.ts:128:25)
+    at validateSizes (file:///Users/eaglecheow/dev/vote-better-malaysia/scripts/acquire.ts:345:5)
+    at stageSnapshot (file:///Users/eaglecheow/dev/vote-better-malaysia/scripts/acquire.ts:663:5)
+    at async acquire (file:///Users/eaglecheow/dev/vote-better-malaysia/scripts/acquire.ts:876:18)
+    at async cli (file:///Users/eaglecheow/dev/vote-better-malaysia/scripts/acquire.ts:896:15)
+    at async file:///Users/eaglecheow/dev/vote-better-malaysia/scripts/acquire.ts:905:81 {
+  kind: 'structural'
+}
+
+Node.js v24.21.0

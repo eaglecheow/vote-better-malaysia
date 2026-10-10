@@ -1,0 +1,683 @@
+
+ RUN  v5.0.3 /Users/eaglecheow/dev/vote-better-malaysia
+
+ ✓ tests/unit/source-retention.test.ts > RETENTION-IDENTITY: newly supplied identity does not invalidate an unchanged accepted unknown-ID gap after source failure 5ms
+ ✓ tests/unit/source-retention.test.ts > RETENTION-RESULT: late reconciliation never guesses assignment of the unchanged retained passage or claims verified absence 2ms
+ ✓ tests/unit/source-retention.test.ts > RETENTION-CONTROL: a current available record cannot call an already reconciled source ID unknown 3ms
+ ✓ tests/unit/source-schema.test.ts > SCHEMA-KNOWN-AT-PREPARATION rejects future completedAt metadata 3ms
+ ✓ tests/unit/source-schema.test.ts > SCHEMA-KNOWN-AT-PREPARATION rejects future acquiredAt metadata 0ms
+ ✓ tests/unit/source-schema.test.ts > SCHEMA-KNOWN-AT-PREPARATION rejects future lastAttemptAt metadata 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-ID accepts lossless positive ID 1 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-ID accepts lossless positive ID 1839 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-ID accepts lossless positive ID 9007199254740991 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-ID accepts lossless positive ID 1 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-ID accepts lossless positive ID 1839 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-ID accepts lossless positive ID 9007199254740993 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-ID rejects ambiguous ID 0 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-ID rejects ambiguous ID -1 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-ID rejects ambiguous ID 1.5 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-ID rejects ambiguous ID NaN 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-ID rejects ambiguous ID Infinity 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-ID rejects ambiguous ID 9007199254740992 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-ID rejects ambiguous ID  0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-ID rejects ambiguous ID 0 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-ID rejects ambiguous ID 01 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-ID rejects ambiguous ID +1 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-ID rejects ambiguous ID 1.0 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-ID rejects ambiguous ID 1e3 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-ID rejects ambiguous ID  1 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-ID rejects ambiguous ID 1  0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-ID rejects ambiguous ID null 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-ID rejects ambiguous ID undefined 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-ID rejects ambiguous ID true 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-ID rejects ambiguous ID {} 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-CATALOGUE accepts a coherent source-derived Mesyuarat 0 identity with null historical/official metadata 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-MEMBER preserves similar names, exact strings and supplied historical context 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field schemaVersion = 2 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field snapshotId = "" 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field snapshotId = null 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field preparedAt = "2026-10-10" 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field preparedAt = "2026-02-30T04:00:00.000Z" 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field preparedAt = "2026-10-10T04:00:00+00:00" 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field publishedAt = "not-a-time" 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field publishedAt = undefined 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field provenance.interface = "third-party" 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field provenance.sourceBuildId = "../build" 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field provenance.inventoryAcquiredAt = "2026-10-10T05:00:00.000Z" 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field provenance.membersAcquiredAt = "2026-10-10T05:00:00.000Z" 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field provenance.inventoryRawDigest = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field provenance.membersRawDigest = "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB" 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field coverage.parliaments = [13,13] 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field coverage.parliaments = [14] 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field coverage.startDate = "2014-07-22" 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field coverage.endDate = "2014-07-24" 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field coverage.latestInventoryCount = 0 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field coverage.retainedSittingCount = 1 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field coverage.unavailableSittingCount = 1 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field coverage.attributionGapCount = 1 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field status.acquisitionOutcome = "unknown" 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field status.stagingOutcome = "failed" 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field status.workflowUrl = "javascript:alert(1)" 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field status.completedAt = "yesterday" 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field status.lastConfirmedDeployment = {} 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field members.0.id = "01" 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field members.0.name = null 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field members.0.name = "   " 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field members.0.historicalContext = undefined 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field members.0.historicalContext = {} 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field members.0.listedInLatestSource = 1 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field members.0.birth_year = 1960 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field sittings.0.id = "0" 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field sittings.0.date = "2014-02-30" 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field sittings.0.parliament = 0 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field sittings.0.parliament = 1.5 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field sittings.0.penggal = 0 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field sittings.0.mesyuarat = -1 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field sittings.0.house = "dewan-negara" 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field sittings.0.filename = "dr_2014-07-24" 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field sittings.0.sourceUrl = "https://evil.example/hansard/dewan-rakyat/2014-07-23" 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field sittings.0.sourceUrl = "https://hansard.parlimen.gov.my/hansard/dewan-rakyat/2014-07-24" 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field sittings.0.isFinal = "final" 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field sittings.0.listedInLatestInventory = undefined 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field sittings.0.record.availability = "partial" 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field sittings.0.record.availability = ["available"] 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field sittings.0.record.path = "data/sittings/2.json.gz" 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field sittings.0.record.path = "../data/sittings/26241.json.gz" 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field sittings.0.record.digest = "bad" 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field sittings.0.record.compressedBytes = 524289 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field sittings.0.record.compressedBytes = 0 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field sittings.0.record.decodedBytes = 5242881 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field sittings.0.record.decodedBytes = -1 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field sittings.0.record.acquiredAt = undefined 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field sittings.0.record.lastAttemptAt = "2026-10-10T03:00:00.000Z" 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field sittings.0.record.lastAttemptOutcome = "unknown" 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field sittings.0.record.sourceBuildId = null 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field sittings.0.record.rawSourceDigest = undefined 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field sittings.0.record.sourcePublishedAt = "unknown" 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field sittings.0.record.sourceRevisedAt = undefined 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field sittings.0.record.accounting = null 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field sittings.0.record.accounting.total = 3 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field sittings.0.record.accounting.assigned = 1.5 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field sittings.0.record.accounting.unassigned = -1 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field sittings.0.record.accounting.annotations = -1 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REQUIRED rejects absent provenance 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REQUIRED rejects absent coverage 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REQUIRED rejects absent status 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REQUIRED rejects absent members 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REQUIRED rejects absent sittings 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-UNIQUE rejects duplicate members identities 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-UNIQUE rejects duplicate sittings identities 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-CONFLICT rejects a conflicting member replacement without mutating the old catalogue 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-RETAINED preserves an omitted sitting, old identity and accepted descriptor on a dated failure 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-UNAVAILABLE accepts explicit unavailable metadata without invented successful times 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-UNAVAILABLE rejects payload field path on unavailable records 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-UNAVAILABLE rejects payload field digest on unavailable records 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-UNAVAILABLE rejects payload field compressedBytes on unavailable records 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-UNAVAILABLE rejects payload field decodedBytes on unavailable records 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-UNAVAILABLE rejects payload field acquiredAt on unavailable records 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-UNAVAILABLE rejects payload field sourceBuildId on unavailable records 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-UNAVAILABLE rejects payload field rawSourceDigest on unavailable records 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-UNAVAILABLE rejects payload field accounting on unavailable records 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-SIZES accepts descriptor limits and exhaustive source accounting 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-PUBLICATION accepts matching confirmed deployment times distinct from preparation 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-PUBLICATION rejects missing publication evidence 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-PUBLICATION rejects wrong-snapshot publication evidence 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-PUBLICATION rejects wrong-time publication evidence 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-PUBLICATION rejects unverified-served publication evidence 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-PUBLICATION rejects before-preparation publication evidence 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-TIMES preserves independently supplied official dates and current attempt metadata 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-RECEIPT rejects malformed snapshotId = "" 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-RECEIPT rejects malformed deploymentId = "" 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-RECEIPT rejects malformed publishedAt = "unknown" 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-RECEIPT rejects malformed verifiedServedAt = undefined 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-RECEIPT rejects malformed workflowUrl = "https://evil.example/actions/runs/123" 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-RAW-MEMBERS preserves sampled exact identities and leaves context null 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-RAW-MEMBERS preserves explicitly supplied context and similar names without merging 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-RAW-MEMBERS rejects malformed replacement {} 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-RAW-MEMBERS rejects malformed replacement {"pageProps":{}} 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-RAW-MEMBERS rejects malformed replacement {"pageProps":{"speakers":[]}} 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-RAW-MEMBERS rejects malformed replacement {"pageProps":{"speakers":[{"new_author_id":"1839","name":"LIM GUAN ENG"}]}} 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-RAW-MEMBERS rejects malformed replacement {"pageProps":{"speakers":[{"new_author_id":0,"name":"LIM GUAN ENG"}]}} 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-RAW-MEMBERS rejects malformed replacement {"pageProps":{"speakers":[{"new_author_id":9007199254740992,"name":"Name"}]}} 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-RAW-MEMBERS rejects malformed replacement {"pageProps":{"speakers":[{"new_author_id":1,"name":null}]}} 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-RAW-MEMBERS rejects malformed replacement {"pageProps":{"speakers":[{"new_author_id":1,"name":"Name","historicalContext":{}}]}} 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-RAW-MEMBERS rejects malformed replacement {"pageProps":{"speakers":[{"new_author_id":1,"name":"Name"},{"new_author_id":1,"name":"Other"}]}} 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-RAW-INVENTORY recursively preserves complete selected inventory and exact source hierarchy 1ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-RAW-INVENTORY rejects malformed hierarchy {} 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-RAW-INVENTORY rejects malformed hierarchy {"unexpected":[]} 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-RAW-INVENTORY rejects malformed hierarchy {"0":{}} 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-RAW-INVENTORY rejects malformed hierarchy {"13":{"2":{},"start_date":"bad-date","end_date":"2014-07-23"}} 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-RAW-INVENTORY rejects source sitting sitting_id = "26241" 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-RAW-INVENTORY rejects source sitting sitting_id = 0 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-RAW-INVENTORY rejects source sitting date = "2014-02-30" 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-RAW-INVENTORY rejects source sitting filename = "../dr_2014-07-23" 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-RAW-INVENTORY rejects source sitting is_final = "true" 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-RAW-INVENTORY rejects duplicate sitting identity across catalogue hierarchy 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-RAW-INVENTORY rejects conflicting IDs for one dated record 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-CONFLICT rejects separate sitting IDs claiming the same source record 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-RAW-INVENTORY keeps absent source status null 0ms
+ ✓ tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-RAW-INVENTORY rejects unsupported root date metadata rather than silently discarding it 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-N001: every nested source leaf is retained exactly once with its original headings and paragraphs 4ms
+ ✓ tests/unit/source-items.test.ts > ITM-N002: exact text and raw author labels survive without trim, HTML interpretation, or bracket parsing 1ms
+ ✓ tests/unit/source-items.test.ts > ITM-N003: traversal order and sequential ordinals include annotations rather than sorting clock or indices 1ms
+ ✓ tests/unit/source-items.test.ts > ITM-N004: noncontiguous unique source indices are accepted unchanged 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-N005: missing source index stays null rather than being invented 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-N005: null source index stays null rather than being invented 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-N006: a duplicate provided index rejects the replacement even across headings 1ms
+ ✓ tests/unit/source-items.test.ts > ITM-N007: invalid source index -1 rejects the replacement 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-N007: invalid source index 1.5 rejects the replacement 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-N007: invalid source index "7" rejects the replacement 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-N007: invalid source index true rejects the replacement 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-N007: invalid source index {} rejects the replacement 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-N007: invalid source index 9007199254740992 rejects the replacement 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-N008: sibling heading arrays and directly nested arrays preserve every leaf and heading 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-N009: unfamiliar or mixed leaf structure {} rejects instead of dropping source content 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-N009: unfamiliar or mixed leaf structure null rejects instead of dropping source content 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-N009: unfamiliar or mixed leaf structure "stray text" rejects instead of dropping source content 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-N009: unfamiliar or mixed leaf structure 1 rejects instead of dropping source content 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-N009: unfamiliar or mixed leaf structure {"UNKNOWN":{}} rejects instead of dropping source content 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-N009: unfamiliar or mixed leaf structure {"UNKNOWN":"lost passage"} rejects instead of dropping source content 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-N009: unfamiliar or mixed leaf structure {"speech":"Original words.\n\nSecond paragraph.","author":"Tuan Lim Guan Eng [Bagan]","author_id":1839,"timestamp":1010,"is_annotation":false,"index":7,"HIDDEN":[{"speech":"Original words.\n\nSecond paragraph.","author":"Tuan Lim Guan Eng [Bagan]","author_id":1839,"timestamp":1010,"is_annotation":false,"index":8}]} rejects instead of dropping source content 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-N010: nonstring speech null rejects the replacement 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-N010: nonstring speech 42 rejects the replacement 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-N010: nonstring speech {} rejects the replacement 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-N010: nonstring speech [] rejects the replacement 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-N011: nonstring author label 42 rejects the replacement 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-N011: nonstring author label {} rejects the replacement 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-N011: nonstring author label [] rejects the replacement 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-N012: missing author metadata stays null while exact ID attribution works 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-N012: null author metadata stays null while exact ID attribution works 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-M001: annotation marker "missing" remains a speaking item 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-M001: annotation marker null remains a speaking item 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-M001: annotation marker false remains a speaking item 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-M002: only explicit true creates an annotation, even when it carries a known member ID 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-M003: unsupported annotation marker "true" rejects the record 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-M003: unsupported annotation marker "false" rejects the record 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-M003: unsupported annotation marker 0 rejects the record 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-M003: unsupported annotation marker 1 rejects the record 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-M003: unsupported annotation marker {} rejects the record 1ms
+ ✓ tests/unit/source-items.test.ts > ITM-M003: unsupported annotation marker [] rejects the record 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-A001: exact reconciled source ID assigns speech despite title and formatting differences 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-A002: an unknown source ID survives as an unassigned gap 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-A003: missing author ID stays missing despite quoted names and a preceding speaker 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-A003: null author ID stays missing despite quoted names and a preceding speaker 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-A004: malformed source author ID 0 rejects rather than guessing 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-A004: malformed source author ID -1 rejects rather than guessing 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-A004: malformed source author ID 1.5 rejects rather than guessing 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-A004: malformed source author ID true rejects rather than guessing 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-A004: malformed source author ID {} rejects rather than guessing 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-A004: malformed source author ID [] rejects rather than guessing 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-A004: malformed source author ID 9007199254740992 rejects rather than guessing 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-A004: malformed source author ID "01" rejects rather than guessing 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-A004: malformed source author ID "1839" rejects rather than guessing 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-A004: malformed source author ID "name" rejects rather than guessing 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-A005: contradictory structured new_author_id is a conflict, never a label comparison 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-A006: a matching optional structured identity preserves assignment 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-A007: optional second identity does not repair a missing authoritative author_id 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-A008: malformed optional structured identity true rejects the replacement 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-A008: malformed optional structured identity {} rejects the replacement 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-A008: malformed optional structured identity -1 rejects the replacement 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-A008: malformed optional structured identity "01" rejects the replacement 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-A008: malformed optional structured identity "1839" rejects the replacement 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-A009: embedded names and quotation text do not transfer a valid turn to another member 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-T001: original source speech timestamp 1000 is opaque and preserved 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-T001: original source speech timestamp "" is opaque and preserved 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-T001: original source speech timestamp "unknown source time" is opaque and preserved 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-T001: original source speech timestamp null is opaque and preserved 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-T002: missing speech timestamp stays null 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-T003: unsupported source speech timestamp true rejects the replacement 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-T003: unsupported source speech timestamp {} rejects the replacement 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-T003: unsupported source speech timestamp [] rejects the replacement 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-T003: unsupported source speech timestamp null rejects the replacement 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-T003: unsupported source speech timestamp null rejects the replacement 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-T003: unsupported source speech timestamp null rejects the replacement 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-N013: historical source text, null context, and empty speech time remain unchanged 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-N014: normalization emits the exact validated sitting identity and official record link 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-I001: mismatched raw date identity rejects the replacement 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-I001: mismatched raw filename identity rejects the replacement 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-I001: mismatched raw is_final identity rejects the replacement 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-I002: mismatched raw cycle term rejects the replacement 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-I002: mismatched raw cycle session rejects the replacement 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-I002: mismatched raw cycle meeting rejects the replacement 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-I002: mismatched raw cycle house rejects the replacement 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-I003: a wrong source meta record path rejects the replacement 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-N015: malformed speeches container null never establishes an empty valid record 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-N015: malformed speeches container {} never establishes an empty valid record 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-N015: malformed speeches container "empty" never establishes an empty valid record 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-N015: malformed speeches container undefined never establishes an empty valid record 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-N016: a fully validated source response may contain an explicitly empty speeches array 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-N017: official page-data envelope preserves the same source-derived record 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-I004: a supplied sitting absent from the exact catalogue cannot establish shard identity 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-R001: ready means matching assigned turns and no speaking gaps, while annotations remain separate 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-R002: validated zero matching turns without gaps yields verified absence with draft status preserved 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-R003: a complete validated empty source array yields verified absence 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-R004: speaking gaps force incomplete whether selected turns exist (true) 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-R004: speaking gaps force incomplete whether selected turns exist (false) 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-R005: all gap kinds and annotations survive in source order with their original details 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-R006: known missing-ID index 2 remains an accessible gap despite the visible member name 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-R007: unavailable sitting keeps known identities and source details without inventing accepted times 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-R008: result preserves exact selected identity copies, digest, schema, and source provenance 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-R009: historical result preserves supplied identity and null context without label-derived constituency 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-R010: mismatched shard schemaVersion never yields participation conclusions 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-R010: mismatched shard sittingId never yields participation conclusions 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-R010: mismatched shard sourceUrl never yields participation conclusions 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-R011: mismatched shard identity date rejects instead of matching display names 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-R011: mismatched shard identity parliament rejects instead of matching display names 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-R011: mismatched shard identity penggal rejects instead of matching display names 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-R011: mismatched shard identity mesyuarat rejects instead of matching display names 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-R011: mismatched shard identity house rejects instead of matching display names 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-R011: mismatched shard identity filename rejects instead of matching display names 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-R011: mismatched shard identity isFinal rejects instead of matching display names 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-R012: unknown member rejects even when source display names are familiar 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-R012: unknown sitting rejects even when source display names are familiar 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-R013: malformed normalized item {"ordinal":0,"sourceIndex":7,"sectionPath":[],"text":"Original words.\n\nSecond paragraph.","rawAuthor":"Tuan Lim Guan Eng [Bagan]","sourceAuthorId":"1839","memberId":"4463","attribution":"assigned","timestamp":1010,"gapReason":null} rejects before filtering 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-R013: malformed normalized item {"ordinal":0,"sourceIndex":7,"sectionPath":[],"text":"Original words.\n\nSecond paragraph.","rawAuthor":"Tuan Lim Guan Eng [Bagan]","sourceAuthorId":"999999","memberId":"999999","attribution":"assigned","timestamp":1010,"gapReason":null} rejects before filtering 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-R013: malformed normalized item {"ordinal":1,"sourceIndex":7,"sectionPath":[],"text":"Original words.\n\nSecond paragraph.","rawAuthor":"Tuan Lim Guan Eng [Bagan]","sourceAuthorId":"1839","memberId":"1839","attribution":"assigned","timestamp":1010,"gapReason":null} rejects before filtering 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-R013: malformed normalized item {"ordinal":0,"sourceIndex":7,"sectionPath":[],"text":"Original words.\n\nSecond paragraph.","rawAuthor":"Tuan Lim Guan Eng [Bagan]","sourceAuthorId":"1839","memberId":"1839","attribution":"annotation","timestamp":1010,"gapReason":null} rejects before filtering 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-R013: malformed normalized item {"ordinal":0,"sourceIndex":7,"sectionPath":[],"text":"Original words.\n\nSecond paragraph.","rawAuthor":"Tuan Lim Guan Eng [Bagan]","sourceAuthorId":"1839","memberId":null,"attribution":"unassigned","timestamp":1010,"gapReason":null} rejects before filtering 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-R013: malformed normalized item {"ordinal":0,"sourceIndex":7,"sectionPath":[],"text":7,"rawAuthor":"Tuan Lim Guan Eng [Bagan]","sourceAuthorId":"1839","memberId":"1839","attribution":"assigned","timestamp":1010,"gapReason":null} rejects before filtering 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-R013: malformed normalized item {"ordinal":0,"sourceIndex":"7","sectionPath":[],"text":"Original words.\n\nSecond paragraph.","rawAuthor":"Tuan Lim Guan Eng [Bagan]","sourceAuthorId":"1839","memberId":"1839","attribution":"assigned","timestamp":1010,"gapReason":null} rejects before filtering 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-R013: malformed normalized item {"ordinal":0,"sourceIndex":-1,"sectionPath":[],"text":"Original words.\n\nSecond paragraph.","rawAuthor":"Tuan Lim Guan Eng [Bagan]","sourceAuthorId":"1839","memberId":"1839","attribution":"assigned","timestamp":1010,"gapReason":null} rejects before filtering 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-R013: malformed normalized item {"ordinal":0,"sourceIndex":7,"sectionPath":[7],"text":"Original words.\n\nSecond paragraph.","rawAuthor":"Tuan Lim Guan Eng [Bagan]","sourceAuthorId":"1839","memberId":"1839","attribution":"assigned","timestamp":1010,"gapReason":null} rejects before filtering 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-R013: malformed normalized item {"ordinal":0,"sourceIndex":7,"sectionPath":[],"text":"Original words.\n\nSecond paragraph.","rawAuthor":7,"sourceAuthorId":"1839","memberId":"1839","attribution":"assigned","timestamp":1010,"gapReason":null} rejects before filtering 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-R013: malformed normalized item {"ordinal":0,"sourceIndex":7,"sectionPath":[],"text":"Original words.\n\nSecond paragraph.","rawAuthor":"Tuan Lim Guan Eng [Bagan]","sourceAuthorId":"01","memberId":"1839","attribution":"assigned","timestamp":1010,"gapReason":null} rejects before filtering 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-R013: malformed normalized item {"ordinal":0,"sourceIndex":7,"sectionPath":[],"text":"Original words.\n\nSecond paragraph.","rawAuthor":"Tuan Lim Guan Eng [Bagan]","sourceAuthorId":"1839","memberId":"1839","attribution":"assigned","timestamp":{},"gapReason":null} rejects before filtering 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-R013: malformed normalized item {"ordinal":0,"sourceIndex":7,"sectionPath":[],"text":"Original words.\n\nSecond paragraph.","rawAuthor":"Tuan Lim Guan Eng [Bagan]","sourceAuthorId":"1839","memberId":"1839","attribution":"assigned","timestamp":null,"gapReason":null} rejects before filtering 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-R013: malformed normalized item {"ordinal":0,"sourceIndex":7,"sectionPath":[],"text":"Original words.\n\nSecond paragraph.","rawAuthor":"Tuan Lim Guan Eng [Bagan]","sourceAuthorId":"1839","memberId":"1839","attribution":"assigned","timestamp":null,"gapReason":null} rejects before filtering 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-R013: malformed normalized item {"ordinal":0,"sourceIndex":7,"sectionPath":[],"text":"Original words.\n\nSecond paragraph.","rawAuthor":"Tuan Lim Guan Eng [Bagan]","sourceAuthorId":"1839","memberId":"1839","attribution":"unknown","timestamp":1010,"gapReason":null} rejects before filtering 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-R013: malformed normalized item {"ordinal":0,"sourceIndex":7,"sectionPath":[],"text":"Original words.\n\nSecond paragraph.","rawAuthor":"Tuan Lim Guan Eng [Bagan]","sourceAuthorId":"1839","memberId":null,"attribution":"assigned","timestamp":1010,"gapReason":null} rejects before filtering 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-R013: malformed normalized item {"ordinal":0,"sourceIndex":7,"sectionPath":[],"text":"Original words.\n\nSecond paragraph.","rawAuthor":"Tuan Lim Guan Eng [Bagan]","sourceAuthorId":"1839","memberId":"1839","attribution":"assigned","timestamp":1010,"gapReason":"missing-id"} rejects before filtering 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-R013: malformed normalized item {"ordinal":0,"sourceIndex":7,"sectionPath":[],"text":"Original words.\n\nSecond paragraph.","rawAuthor":"Tuan Lim Guan Eng [Bagan]","sourceAuthorId":"1839","memberId":null,"attribution":"annotation","timestamp":1010,"gapReason":"missing-id"} rejects before filtering 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-R013: malformed normalized item {"ordinal":0,"sourceIndex":7,"sectionPath":[],"text":"Original words.\n\nSecond paragraph.","rawAuthor":"Tuan Lim Guan Eng [Bagan]","sourceAuthorId":null,"memberId":null,"attribution":"unassigned","timestamp":1010,"gapReason":"unknown-id"} rejects before filtering 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-R013: malformed normalized item {"ordinal":0,"sourceIndex":7,"sectionPath":[],"text":"Original words.\n\nSecond paragraph.","rawAuthor":"Tuan Lim Guan Eng [Bagan]","sourceAuthorId":"1839","memberId":null,"attribution":"unassigned","timestamp":1010,"gapReason":"unknown-id"} rejects before filtering 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-R013: malformed normalized item {"ordinal":0,"sourceIndex":7,"sectionPath":[],"text":"Original words.\n\nSecond paragraph.","rawAuthor":"Tuan Lim Guan Eng [Bagan]","sourceAuthorId":null,"memberId":null,"attribution":"unassigned","timestamp":1010,"gapReason":"conflicting-id"} rejects before filtering 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-R020: malformed shard items null rejects rather than becoming an empty subset 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-R020: malformed shard items {} rejects rather than becoming an empty subset 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-R020: malformed shard items "empty" rejects rather than becoming an empty subset 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-R020: malformed shard items undefined rejects rather than becoming an empty subset 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-R021: all selected turns remain separate and ordered among other speakers and annotations 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-R022: unavailable content never receives a successful pair refresh timestamp 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-R014: duplicate shard indices are rejected instead of silently omitting a turn 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-R015: an accepted descriptor requires its matching shard and never substitutes unavailable 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-R016: an unavailable descriptor cannot accept an unrelated supplied shard 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-R017: returned identities and item collections do not alias mutable catalogue or shard input 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-R019: shard partitions must match the accepted descriptor source accounting 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-SNAPSHOT001: result keeps its accepted snapshot dates, coverage, and workflow metadata 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-SNAPSHOT002: confirmed publication stays separate from snapshot preparation and device validation 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-SNAPSHOT003: an older result retains its own metadata when a valid newer catalogue changes 1ms
+ ✓ tests/unit/source-items.test.ts > ITM-R018: malformed device refresh instant not-a-time rejects 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-R018: malformed device refresh instant 2026-10-10 rejects 0ms
+ ✓ tests/unit/source-items.test.ts > ITM-R018: malformed device refresh instant 2026-10-10T06:00:00+08:00 rejects 0ms
+ ✓ tests/unit/static-data.test.ts > T017 validates gzip catalogue and selected shard with identical exact content 27ms
+ ✓ tests/unit/static-data.test.ts > T017 validates decoded catalogue and selected shard with identical exact content 2ms
+ ✓ tests/unit/static-data.test.ts > T017 requests only fixed base resources with bypass, manual redirects and the supplied signal 2ms
+ ✓ tests/unit/static-data.test.ts > T017 standalone catalogue validates without fetching any sitting 2ms
+ ✓ tests/unit/static-data.test.ts > T017 advances current refresh on unchanged content only after validation 2ms
+ ✓ tests/unit/static-data.test.ts > T017 rejects invalid selected member before fetching a shard 1ms
+ ✓ tests/unit/static-data.test.ts > T017 rejects invalid selected sitting before fetching a shard 0ms
+ ✓ tests/unit/static-data.test.ts > T017 rejects invalid selected noncanonical before fetching a shard 0ms
+ ✓ tests/unit/static-data.test.ts > T017 rejects catalogue network without an empty transcript or automatic loop 0ms
+ ✓ tests/unit/static-data.test.ts > T017 rejects catalogue http without an empty transcript or automatic loop 0ms
+ ✓ tests/unit/static-data.test.ts > T017 rejects catalogue html without an empty transcript or automatic loop 0ms
+ ✓ tests/unit/static-data.test.ts > T017 rejects catalogue gzip without an empty transcript or automatic loop 1ms
+ ✓ tests/unit/static-data.test.ts > T017 rejects catalogue utf8 without an empty transcript or automatic loop 1ms
+ ✓ tests/unit/static-data.test.ts > T017 rejects catalogue json without an empty transcript or automatic loop 1ms
+ ✓ tests/unit/static-data.test.ts > T017 rejects catalogue schema without an empty transcript or automatic loop 0ms
+ ✓ tests/unit/static-data.test.ts > T017 rejects catalogue off-base without an empty transcript or automatic loop 0ms
+ ✓ tests/unit/static-data.test.ts > T017 rejects catalogue off-origin without an empty transcript or automatic loop 0ms
+ ✓ tests/unit/static-data.test.ts > T017 rejects catalogue redirect without an empty transcript or automatic loop 0ms
+ ✓ tests/unit/static-data.test.ts > T017 rejects catalogue path without an empty transcript or automatic loop 0ms
+ ✓ tests/unit/static-data.test.ts > T017 rejects sitting hash without stamping successful refresh 1ms
+ ✓ tests/unit/static-data.test.ts > T017 rejects sitting schema without stamping successful refresh 0ms
+ ✓ tests/unit/static-data.test.ts > T017 rejects sitting identity without stamping successful refresh 0ms
+ ✓ tests/unit/static-data.test.ts > T017 rejects sitting accounting without stamping successful refresh 1ms
+ ✓ tests/unit/static-data.test.ts > T017 rejects sitting utf8 without stamping successful refresh 0ms
+ ✓ tests/unit/static-data.test.ts > T017 rejects sitting html without stamping successful refresh 0ms
+ ✓ tests/unit/static-data.test.ts > T017 retries only a digest mismatch against one newest coherent catalogue 3ms
+ ✓ tests/unit/static-data.test.ts > T017 revalidates member after mismatch instead of reusing an obsolete pair 2ms
+ ✓ tests/unit/static-data.test.ts > T017 revalidates sitting after mismatch instead of reusing an obsolete pair 1ms
+ ✓ tests/unit/static-data.test.ts > T017 accepts the exact decoded ceiling while rejecting one additional byte 13ms
+ ✓ tests/unit/static-data.test.ts > T017 cancels an oversized response before pulling an unlimited tail 1ms
+ ✓ tests/unit/static-data.test.ts > T017 unavailable descriptor remains selectable without a successful time or shard request 0ms
+ ✓ tests/unit/static-data.test.ts > T017 bounds catalogue-gzip before unbounded buffering 19ms
+ ✓ tests/unit/static-data.test.ts > T017 bounds sitting-gzip before unbounded buffering 12ms
+ ✓ tests/unit/static-data.test.ts > T017 bounds catalogue-decoded before unbounded buffering 2ms
+ ✓ tests/unit/static-data.test.ts > T017 bounds sitting-decoded before unbounded buffering 2ms
+ ✓ tests/unit/static-data.test.ts > T017 bounds inflated before unbounded buffering 22ms
+ ✓ tests/unit/static-data.test.ts > T017 forwards abort signal and detects gzip magic split across first chunks 1ms
+ ✓ tests/unit/static-data.test.ts > T017 rejects ambiguous base query before issuing requests 0ms
+ ✓ tests/unit/static-data.test.ts > T017 rejects ambiguous base fragment before issuing requests 0ms
+ ✓ tests/unit/static-data.test.ts > T017 rejects ambiguous base credentials before issuing requests 0ms
+ ✓ tests/unit/static-data.test.ts > T017 rejects ambiguous base scheme before issuing requests 0ms
+ ✓ tests/unit/storage.test.ts > STORAGE001: database names are scoped to the complete origin and repository base 2ms
+ ✓ tests/unit/storage.test.ts > STORAGE002: opening an application initializes exactly its own native database 3ms
+ ✓ tests/unit/storage.test.ts > STORAGE003: missing state is explicitly null and an unopened pair is missing 2ms
+ ✓ tests/unit/storage.test.ts > STORAGE004: catalogue and valid language/source selections persist together 7ms
+ ✓ tests/unit/storage.test.ts > STORAGE005: complete source turns, gaps, annotations and accepted snapshot metadata commit as one opened pair 3ms
+ ✓ tests/unit/storage.test.ts > STORAGE006: saving one member never saves a different member from the same fetched sitting 2ms
+ ✓ tests/unit/storage.test.ts > STORAGE007: saving only catalogue/preferences never marks a transcript pair as saved 1ms
+ ✓ tests/unit/storage.test.ts > STORAGE008: successful replacement advances saved refresh time only to the accepted result time 2ms
+ ✓ tests/unit/storage.test.ts > STORAGE009: local results retain original identities and snapshot metadata when newer catalogue state changes 1ms
+ ✓ tests/unit/storage.test.ts > STORAGE010: repository namespaces isolate saved pairs and language preferences 2ms
+ ✓ tests/unit/storage.test.ts > STORAGE011: transaction request success is not commit completion 1ms
+ ✓ tests/unit/storage.test.ts > STORAGE012: transaction abort rejects instead of acknowledging a saved transcript 1ms
+ ✓ tests/unit/storage.test.ts > STORAGE013: quota/write failure propagates and never changes the current online result to saved 3ms
+ ✓ tests/unit/storage.test.ts > STORAGE014: failed replacement preserves the previous saved content and successful refresh time 2ms
+ ✓ tests/unit/storage.test.ts > STORAGE015: native transaction abort preserves previous catalogue, preferences and pair together 3ms
+ ✓ tests/unit/storage.test.ts > STORAGE016: eviction or deletion makes the exact pair missing without inventing recovery or absence 2ms
+ ✓ tests/unit/storage.test.ts > STORAGE017: malformed saved field schemaVersion rejects compatible-content validation 1ms
+ ✓ tests/unit/storage.test.ts > STORAGE017: malformed saved field memberId rejects compatible-content validation 1ms
+ ✓ tests/unit/storage.test.ts > STORAGE017: malformed saved field member.id rejects compatible-content validation 1ms
+ ✓ tests/unit/storage.test.ts > STORAGE017: malformed saved field member.name rejects compatible-content validation 0ms
+ ✓ tests/unit/storage.test.ts > STORAGE017: malformed saved field member.historicalContext rejects compatible-content validation 0ms
+ ✓ tests/unit/storage.test.ts > STORAGE017: malformed saved field snapshotId rejects compatible-content validation 1ms
+ ✓ tests/unit/storage.test.ts > STORAGE017: malformed saved field sittingId rejects compatible-content validation 1ms
+ ✓ tests/unit/storage.test.ts > STORAGE017: malformed saved field sitting.id rejects compatible-content validation 0ms
+ ✓ tests/unit/storage.test.ts > STORAGE017: malformed saved field sitting.date rejects compatible-content validation 0ms
+ ✓ tests/unit/storage.test.ts > STORAGE017: malformed saved field sitting.house rejects compatible-content validation 0ms
+ ✓ tests/unit/storage.test.ts > STORAGE017: malformed saved field sitting.filename rejects compatible-content validation 0ms
+ ✓ tests/unit/storage.test.ts > STORAGE017: malformed saved field recordDigest rejects compatible-content validation 0ms
+ ✓ tests/unit/storage.test.ts > STORAGE017: malformed saved field sitting.record.digest rejects compatible-content validation 1ms
+ ✓ tests/unit/storage.test.ts > STORAGE017: malformed saved field recordDigest rejects compatible-content validation 1ms
+ ✓ tests/unit/storage.test.ts > STORAGE017: malformed saved field snapshot.preparedAt rejects compatible-content validation 1ms
+ ✓ tests/unit/storage.test.ts > STORAGE017: malformed saved field snapshot.publishedAt rejects compatible-content validation 0ms
+ ✓ tests/unit/storage.test.ts > STORAGE017: malformed saved field snapshot.status.acquisitionOutcome rejects compatible-content validation 0ms
+ ✓ tests/unit/storage.test.ts > STORAGE017: malformed saved field snapshot.coverage.startDate rejects compatible-content validation 0ms
+ ✓ tests/unit/storage.test.ts > STORAGE017: malformed saved field snapshot.coverage.latestInventoryCount rejects compatible-content validation 0ms
+ ✓ tests/unit/storage.test.ts > STORAGE017: malformed saved field provenance.membersRawDigest rejects compatible-content validation 0ms
+ ✓ tests/unit/storage.test.ts > STORAGE017: malformed saved field refreshedAt rejects compatible-content validation 0ms
+ ✓ tests/unit/storage.test.ts > STORAGE017: malformed saved field saved rejects compatible-content validation 0ms
+ ✓ tests/unit/storage.test.ts > STORAGE017: malformed saved field outcome rejects compatible-content validation 0ms
+ ✓ tests/unit/storage.test.ts > STORAGE017: malformed saved field turns.0.memberId rejects compatible-content validation 0ms
+ ✓ tests/unit/storage.test.ts > STORAGE017: malformed saved field turns.0.sourceAuthorId rejects compatible-content validation 0ms
+ ✓ tests/unit/storage.test.ts > STORAGE017: malformed saved field turns.0.text rejects compatible-content validation 0ms
+ ✓ tests/unit/storage.test.ts > STORAGE017: malformed saved field turns.0.sectionPath rejects compatible-content validation 0ms
+ ✓ tests/unit/storage.test.ts > STORAGE017: malformed saved field turns.0.timestamp rejects compatible-content validation 0ms
+ ✓ tests/unit/storage.test.ts > STORAGE017: malformed saved field turns.0.ordinal rejects compatible-content validation 0ms
+ ✓ tests/unit/storage.test.ts > STORAGE017: malformed saved field gaps.0.gapReason rejects compatible-content validation 0ms
+ ✓ tests/unit/storage.test.ts > STORAGE017: malformed saved field gaps.0.memberId rejects compatible-content validation 0ms
+ ✓ tests/unit/storage.test.ts > STORAGE017: malformed saved field turns.0.attribution rejects compatible-content validation 1ms
+ ✓ tests/unit/storage.test.ts > STORAGE017: malformed saved field turns.0.gapReason rejects compatible-content validation 1ms
+ ✓ tests/unit/storage.test.ts > STORAGE017: malformed saved field gaps.0.ordinal rejects compatible-content validation 1ms
+ ✓ tests/unit/storage.test.ts > STORAGE017: malformed saved field annotations.0.attribution rejects compatible-content validation 1ms
+ ✓ tests/unit/storage.test.ts > STORAGE017: malformed saved field annotations.0.memberId rejects compatible-content validation 1ms
+ ✓ tests/unit/storage.test.ts > STORAGE017: malformed saved field gaps rejects compatible-content validation 1ms
+ ✓ tests/unit/storage.test.ts > STORAGE017: malformed saved field annotations rejects compatible-content validation 1ms
+ ✓ tests/unit/storage.test.ts > STORAGE018: a compatible saved pair preserves exact historical nulls, original strings and source metadata 1ms
+ ✓ tests/unit/storage.test.ts > STORAGE019: incompatible stored schemaVersion returns unavailable compatibility state without deleting it 1ms
+ ✓ tests/unit/storage.test.ts > STORAGE019: incompatible stored recordDigest returns unavailable compatibility state without deleting it 1ms
+ ✓ tests/unit/storage.test.ts > STORAGE019: incompatible stored member.id returns unavailable compatibility state without deleting it 2ms
+ ✓ tests/unit/storage.test.ts > STORAGE019: incompatible stored turns.0.text returns unavailable compatibility state without deleting it 1ms
+ ✓ tests/unit/storage.test.ts > STORAGE020: a stored result under another pair key is incompatible rather than relabeled 1ms
+ ✓ tests/unit/storage.test.ts > STORAGE021: invalid preferences {"language":"de","memberId":"1839","sittingId":"29326"} reject before replacing accepted state 2ms
+ ✓ tests/unit/storage.test.ts > STORAGE021: invalid preferences {"language":"ms","memberId":"999","sittingId":"29326"} reject before replacing accepted state 1ms
+ ✓ tests/unit/storage.test.ts > STORAGE021: invalid preferences {"language":"en","memberId":"1839","sittingId":"999"} reject before replacing accepted state 2ms
+ ✓ tests/unit/storage.test.ts > STORAGE021: invalid preferences {"language":"en","memberId":1839,"sittingId":"29326"} reject before replacing accepted state 1ms
+ ✓ tests/unit/storage.test.ts > STORAGE022: language and absent selections can persist before any catalogue exists 1ms
+ ✓ tests/unit/storage.test.ts > STORAGE023: null-catalogue preferences never erase an already accepted catalogue 1ms
+ ✓ tests/unit/storage.test.ts > STORAGE024: selected IDs cannot be persisted without their validated catalogue 0ms
+ ✓ tests/unit/storage.test.ts > STORAGE025: invalid replacement catalogue cannot overwrite previously accepted state 1ms
+ ✓ tests/unit/storage.test.ts > STORAGE026: an unavailable source result cannot be acknowledged as a saved transcript 1ms
+ ✓ tests/unit/storage.test.ts > STORAGE027: opening denied device storage rejects without changing online source content 0ms
+ ✓ tests/unit/storage.test.ts > STORAGE028: opening an incompatible future database version preserves its raw data 1ms
+ ✓ tests/unit/storage.test.ts > STORAGE029: a validated ready semantic outcome saves without changing its meaning 1ms
+ ✓ tests/unit/storage.test.ts > STORAGE029: a validated absence semantic outcome saves without changing its meaning 1ms
+ ✓ tests/unit/storage.test.ts > STORAGE030: invalid opened schemaVersion rejects before replacing a saved copy 2ms
+ ✓ tests/unit/storage.test.ts > STORAGE030: invalid opened member.id rejects before replacing a saved copy 3ms
+ ✓ tests/unit/storage.test.ts > STORAGE030: invalid opened recordDigest rejects before replacing a saved copy 2ms
+ ✓ tests/unit/storage.test.ts > STORAGE030: invalid opened gaps rejects before replacing a saved copy 2ms
+ ✓ tests/unit/storage.test.ts > STORAGE031: mismatched snapshot catalogue cannot be atomically saved with an older result 1ms
+ ✓ tests/unit/storage.test.ts > STORAGE031: mismatched member catalogue cannot be atomically saved with an older result 1ms
+ ✓ tests/unit/storage.test.ts > STORAGE031: mismatched sitting catalogue cannot be atomically saved with an older result 1ms
+ ✓ tests/unit/storage.test.ts > STORAGE031: mismatched digest catalogue cannot be atomically saved with an older result 1ms
+ ✓ tests/unit/storage.test.ts > STORAGE032: storing an online-unsaved result cannot make the exact pair locally saved 1ms
+ ✓ tests/unit/storage.test.ts > STORAGE033: pair save preferences cannot silently select another member 1ms
+ ✓ tests/unit/storage.test.ts > STORAGE034: valid absent selection null/"29326" persists beside its accepted catalogue 1ms
+ ✓ tests/unit/storage.test.ts > STORAGE034: valid absent selection "1839"/null persists beside its accepted catalogue 1ms
+ ✓ tests/unit/storage.test.ts > STORAGE034: valid absent selection null/null persists beside its accepted catalogue 1ms
+ ✓ tests/unit/storage.test.ts > STORAGE035: an incompatible stored catalogue exposes neither a validated list nor dependent selected IDs 2ms
+ ✓ tests/unit/storage.test.ts > STORAGE036: invalid stored preferences {"language":"de","memberId":"1839","sittingId":"29326"} are not exposed as valid selections 1ms
+ ✓ tests/unit/storage.test.ts > STORAGE036: invalid stored preferences {"language":"ms","memberId":"999","sittingId":"29326"} are not exposed as valid selections 1ms
+ ✓ tests/unit/storage.test.ts > STORAGE036: invalid stored preferences {"language":"en","memberId":"1839","sittingId":"999"} are not exposed as valid selections 1ms
+ ✓ tests/unit/storage.test.ts > STORAGE036: invalid stored preferences {"language":"en","memberId":1839,"sittingId":"29326"} are not exposed as valid selections 1ms
+ ✓ tests/unit/storage.test.ts > STORAGE037: valid stored language and null selections survive absent catalogue data 1ms
+ ✓ tests/unit/storage.test.ts > STORAGE038: savePair acknowledges saved content only after its native three-store transaction completes 1ms
+ ✓ tests/unit/storage.test.ts > STORAGE-REVIEW-SCOPE: catalogue, preferences and pair writes share one actual three-store transaction 1ms
+ ✓ tests/unit/storage.test.ts > STORAGE-REVIEW-REQUEST-ABORT: public save rejects an actual abort after pair request success and rolls back every store 2ms
+ ✓ tests/unit/storage.test.ts > STORAGE-REVIEW-SYNC-ERROR: a third-put failure preserves the exact original error and rolls back two already queued writes 3ms
+ ✓ tests/unit/storage.test.ts > STORAGE-REVIEW-SOURCE-SUBSET: source authority accepts a self-contained saved result with real omitted-member ordinal holes 1ms
+ ✓ tests/unit/storage.test.ts > STORAGE-REVIEW-SOURCE-ONLINE: source authority accepts a matching unsaved online result without changing its saving state 1ms
+ ✓ tests/unit/storage.test.ts > STORAGE-REVIEW-SOURCE-BIND-preparedAt: optional catalogue cannot relabel opened snapshot metadata 0ms
+ ✓ tests/unit/storage.test.ts > STORAGE-REVIEW-SOURCE-BIND-provenance: optional catalogue cannot relabel opened snapshot metadata 1ms
+ ✓ tests/unit/storage.test.ts > STORAGE-REVIEW-SOURCE-BIND-status: optional catalogue cannot relabel opened snapshot metadata 1ms
+ ✓ tests/unit/storage.test.ts > STORAGE-REVIEW-SOURCE-BIND-coverage: optional catalogue cannot relabel opened snapshot metadata 0ms
+ ✓ tests/unit/storage.test.ts > STORAGE-REVIEW-SOURCE-LOCATION-index: included subset locations stay unique, bounded and ordered 1ms
+ ✓ tests/unit/storage.test.ts > STORAGE-REVIEW-SOURCE-LOCATION-ordinal: included subset locations stay unique, bounded and ordered 0ms
+ ✓ tests/unit/storage.test.ts > STORAGE-REVIEW-SOURCE-LOCATION-order: included subset locations stay unique, bounded and ordered 1ms
+ ✓ tests/unit/acquisition-regressions.test.ts > COMMIT-RETAINED: cleanup failure after checkpoint replacement preserves the previous complete accepted public/private pair on rejection 16ms
+ ✓ tests/unit/acquisition-regressions.test.ts > COMMIT-FIRST: failed first staging leaves both resources absent or a complete consistently reported commit, never a split pair 8ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-PLAN-001: latest thirty and one oldest-successful historical bucket form a deduplicated normal plan 10ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-HASH-1: exact full-digest source-ID hashing selects bucket 3 1ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-HASH-2: exact full-digest source-ID hashing selects bucket 3 1ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-HASH-3: exact full-digest source-ID hashing selects bucket 2 1ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-HASH-4: exact full-digest source-ID hashing selects bucket 0 1ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-HASH-23: exact full-digest source-ID hashing selects bucket 4 1ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-HASH-1839: exact full-digest source-ID hashing selects bucket 2 1ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-HASH-22462: exact full-digest source-ID hashing selects bucket 3 1ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-HASH-26241: exact full-digest source-ID hashing selects bucket 5 2ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-HASH-29326: exact full-digest source-ID hashing selects bucket 1 1ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-HASH-22942: exact full-digest source-ID hashing selects bucket 1 1ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-BUCKET-all-null: null/tied/oldest checks select 0 without advancing caller state 4ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-BUCKET-null-first: null/tied/oldest checks select 1 without advancing caller state 3ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-BUCKET-equal-checks: null/tied/oldest checks select 0 without advancing caller state 2ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-BUCKET-oldest-five: null/tied/oldest checks select 5 without advancing caller state 2ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-INVALID-NaN-clock: unsupported planner input is rejected 2ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-INVALID-infinite-clock: unsupported planner input is rejected 2ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-INVALID-empty-history: unsupported planner input is rejected 1ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-INVALID-five-checks: unsupported planner input is rejected 2ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-INVALID-seven-checks: unsupported planner input is rejected 1ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-INVALID-malformed-date: unsupported planner input is rejected 1ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-INVALID-numeric-date: unsupported planner input is rejected 1ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-INVALID-future-check: unsupported planner input is rejected 1ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-PRIORITY: new/unavailable then prior-failed then latest30 then overdue then bucket, each ID once 3ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-OVERDUE: age 86399999 has overdue status false and catch-up targeting 2ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-OVERDUE: age 86400000 has overdue status false and catch-up targeting 1ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-OVERDUE: age 86400001 has overdue status true and catch-up targeting 2ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-ORDER: historical bucket checks use oldest successful acquiredAt before exact-ID ties 2ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-SIX-PLAN: six successful completed normal sweeps target every historical record 6ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-BOOTSTRAP: absent accepted state plans every freshly inventoried ID without fake overdue times 1ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-RETAINED-PLAN: prior omitted accepted IDs remain in the complete historical sweep scope 2ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 discovery accepts a validated __NEXT_DATA__ deployment ID 1ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 discovery rejects unsupported build metadata: <html>no deployment metadata</html> 0ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 discovery rejects unsupported build metadata: <script id="__NEXT_DATA__">{"buildId":"../other-host"}</script> 0ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 discovery rejects unsupported build metadata: <script id="__NEXT_DATA__">{"buildId":42}</script> 0ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 discovery rejects unsupported build metadata: <script id="__NEXT_DATA__">{"buildId":""}</script> 0ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 discovery rejects unsupported build metadata: <script id="__NEXT_DATA__">not-json</script> 0ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 request boundary rejects nonofficial or unapproved URL https://example.com/ 1ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 request boundary rejects nonofficial or unapproved URL http://hansard.parlimen.gov.my/ 0ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 request boundary rejects nonofficial or unapproved URL https://hansard.parlimen.gov.my/../private 0ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 request boundary rejects nonofficial or unapproved URL https://hansard.parlimen.gov.my/_next/data/x/private.json 0ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 approved requests use manual redirects and a timeout signal 8ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 rejects off-host redirects without requesting their target 0ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 access denial stops source requests 0ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 bootstrap stages all supplied leaves with distinct hashes, gzip, dates and serial pacing 20ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 malformed source inventory blocks static replacement 3ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 output cannot replace or overlap private input state 1ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 accepts exact catalogue-gzip byte ceiling 0ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 accepts exact sitting-gzip byte ceiling 0ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 accepts exact catalogue-decoded byte ceiling 0ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 accepts exact sitting-decoded byte ceiling 0ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 accepts exact total byte ceiling 0ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 rejects one byte over catalogue-gzip ceiling 0ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 rejects one byte over sitting-gzip ceiling 0ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 rejects one byte over catalogue-decoded ceiling 0ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 rejects one byte over sitting-decoded ceiling 0ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 rejects one byte over total ceiling 0ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 failed refresh retains accepted payload, digest, identity and acquisition time 9ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 new inaccessible sitting remains selectable as unavailable without invented accepted times 7ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 loss of a published retention baseline blocks replacement and preserves output 4ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 rejects untrusted, expired or corrupt checkpoint {"repository":"different/repository"} 4ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 rejects untrusted, expired or corrupt checkpoint {"branch":"pull-request"} 4ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 rejects untrusted, expired or corrupt checkpoint {"success":false} 5ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 rejects untrusted, expired or corrupt checkpoint {"codeFingerprint":"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"} 6ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 rejects untrusted, expired or corrupt checkpoint {"createdAt":"2026-10-01T04:00:00.000Z"} 3ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 rejects untrusted, expired or corrupt checkpoint {"catalogueDigest":"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"} 3ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 rejects untrusted, expired or corrupt checkpoint {"shardDigests":{"26241":"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"}} 4ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 rejects untrusted, expired or corrupt checkpoint {"schemaVersion":9} 4ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 refresh without prior publication or checkpoint performs safe bootstrap 5ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 decoded content hashes and fixed gzip are deterministic across preparation times 12ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 honors numeric/date Retry-After or bounded fallback 2 0ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 honors numeric/date Retry-After or bounded fallback Sat, 10 Oct 2026 04:00:05 GMT 0ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 honors numeric/date Retry-After or bounded fallback invalid 0ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 retries at most twice with backoff 0ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 transient source recovery remains paced 0ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 follows only approved official-host redirects 0ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 aborts each hung request after fifteen seconds and releases its timer 2ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 size validation rejects missing/nonfinite/negative metadata {} 0ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 size validation rejects missing/nonfinite/negative metadata {"catalogue":null,"sittings":[],"totalBytes":10} 0ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 size validation rejects missing/nonfinite/negative metadata {"catalogue":{"compressedBytes":null,"decodedBytes":100},"sittings":[],"totalBytes":10} 0ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 size validation rejects missing/nonfinite/negative metadata {"catalogue":{"compressedBytes":100,"decodedBytes":-1},"sittings":[],"totalBytes":10} 0ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 size validation rejects missing/nonfinite/negative metadata {"catalogue":{"compressedBytes":100,"decodedBytes":100},"sittings":null,"totalBytes":10} 0ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 size validation rejects missing/nonfinite/negative metadata {"catalogue":{"compressedBytes":100,"decodedBytes":100},"sittings":[],"totalBytes":null} 0ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 one-byte-over catalogue-gzip rejects replacement and preserves actual accepted output/state/served payload 7ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 one-byte-over sitting-gzip rejects replacement and preserves actual accepted output/state/served payload 8ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 one-byte-over catalogue-decoded rejects replacement and preserves actual accepted output/state/served payload 9ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 one-byte-over sitting-decoded rejects replacement and preserves actual accepted output/state/served payload 7ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 one-byte-over total rejects replacement and preserves actual accepted output/state/served payload 6ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 actual output commit failure rolls back old output and accepted state 9ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 actual checkpoint commit failure rolls back old output and accepted state 8ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 malformed sitting is fatal and preserves accepted state/output 7ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 raw-response bytes and audit receipts remain private 6ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 stale deployment routes rediscover once and retry against the new build 6ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 exhausted stale-build recovery terminates after one rediscovery 3ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 every source inventory entry has an outcome and only record-referenced identities are published 16ms
+ ✓ tests/unit/recovery.test.ts > T029 source check overdue at 2026-10-11T03:00:59.999Z is false, independently of device/snapshot times 3ms
+ ✓ tests/unit/recovery.test.ts > T029 source check overdue at 2026-10-11T03:01:00.000Z is false, independently of device/snapshot times 1ms
+ ✓ tests/unit/recovery.test.ts > T029 source check overdue at 2026-10-11T03:01:00.001Z is true, independently of device/snapshot times 0ms
+ ✓ tests/unit/recovery.test.ts > T029 failed source attempt preserves accepted successful age and reports only its known date 1ms
+ ✓ tests/unit/recovery.test.ts > T029 old successful snapshot age does not invent a later pipeline failure 0ms
+ ✓ tests/unit/recovery.test.ts > T029 unknown source success cannot be replaced by attempt/preparation/device times 0ms
+ ✓ tests/unit/recovery.test.ts > T029 rejects invalid independent current clock invalid 1ms
+ ✓ tests/unit/recovery.test.ts > T029 rejects invalid independent current clock 2026-02-30T00:00:00.000Z 0ms
+ ✓ tests/unit/recovery.test.ts > T029 rejects invalid independent current clock 2026-10-10T04:00:00+00:00 1ms
+ ✓ tests/unit/recovery.test.ts > REC-LIST-ms: failed initial list can be retried through labeled native controls 16ms
+ ✓ tests/unit/recovery.test.ts > REC-LIST-en: failed initial list can be retried through labeled native controls 6ms
+ ✓ tests/unit/recovery.test.ts > REC-PAIR-ms: retry keeps exact selections/focus and yields the matching complete supplied pair 59ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 latest inventory omission retains previous sitting identity/payload and explicit coverage 9ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 four-hour cap checkpoints accepted private work, leaves pending unattempted, and resumes same session 23ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 missing checkpoint recovers from validated trusted served baseline 14ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 expired checkpoint recovers from validated trusted served baseline 16ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 untrusted/mismatched served recovery proof {"repository":"another/repository"} preserves the old publication 4ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 untrusted/mismatched served recovery proof {"branch":"pull-request"} preserves the old publication 4ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 untrusted/mismatched served recovery proof {"success":false} preserves the old publication 4ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 untrusted/mismatched served recovery proof {"codeFingerprint":"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"} preserves the old publication 3ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 untrusted/mismatched served recovery proof {"baseUrl":"https://example.com/"} preserves the old publication 4ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 untrusted/mismatched served recovery proof {"receipt":{"snapshotId":"wrong","publishedAt":"2026-10-10T03:59:30.000Z"}} preserves the old publication 5ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 untrusted/mismatched served recovery proof {"catalogueDigest":"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"} preserves the old publication 4ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 untrusted/mismatched served recovery proof {"shardDigests":{"26241":"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"}} preserves the old publication 4ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 failed source finalization retains old draft status and accepted shard coherently 8ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-RUN-001: actual refresh fetches only prioritized targets and preserves unselected accepted metadata/bytes 191ms
+ ✓ tests/unit/recovery.test.ts > REC-PAIR-en: retry keeps exact selections/focus and yields the matching complete supplied pair 17ms
+ ✓ tests/unit/recovery.test.ts > REC-LOADING-ms: native retry is keyboard-focusable and announces its actual pending request 10ms
+ ✓ tests/unit/recovery.test.ts > REC-LOADING-en: native retry is keyboard-focusable and announces its actual pending request 7ms
+ ✓ tests/unit/recovery.test.ts > REC-RACE-SAME-ms: late same-pair Retry cannot replace a newer successful Read 13ms
+ ✓ tests/unit/recovery.test.ts > REC-RACE-SAME-en: late same-pair Retry cannot replace a newer successful Read 10ms
+ ✓ tests/unit/recovery.test.ts > REC-RACE-CHANGE-ms: an old retry completion cannot follow new identity controls 12ms
+ ✓ tests/unit/recovery.test.ts > REC-RACE-CHANGE-en: an old retry completion cannot follow new identity controls 10ms
+ ✓ tests/unit/recovery.test.ts > REC-AGE-ms: overdue uses accepted source success despite a newer failure/snapshot/device check 7ms
+ ✓ tests/unit/recovery.test.ts > REC-AGE-en: overdue uses accepted source success despite a newer failure/snapshot/device check 6ms
+ ✓ tests/unit/recovery.test.ts > REC-KNOWN-ms: only the published snapshot supplies a dated failure and workflow evidence link 6ms
+ ✓ tests/unit/recovery.test.ts > REC-KNOWN-en: only the published snapshot supplies a dated failure and workflow evidence link 6ms
+ ✓ tests/unit/recovery.test.ts > REC-KNOWLEDGE-ms: age cannot become a specific future workflow failure 6ms
+ ✓ tests/unit/recovery.test.ts > REC-KNOWLEDGE-en: age cannot become a specific future workflow failure 6ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 successful source finalization advances status and payload together 7ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 conflicting date/hierarchy identity cannot relabel accepted source payloads 4ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 source access denial stops the whole job and preserves the last output 5ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 symlinked output cannot alias private input state 1ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 physical parent symlink overlap cannot bypass state/output isolation 1ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 tampered/foreign private partial checkpoint {"sessionId":"other-session"} cannot be restored as trusted work 7ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 tampered/foreign private partial checkpoint {"repository":"other/repository"} cannot be restored as trusted work 9ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 tampered/foreign private partial checkpoint {"branch":"pull-request"} cannot be restored as trusted work 7ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 tampered/foreign private partial checkpoint {"codeFingerprint":"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"} cannot be restored as trusted work 7ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 tampered/foreign private partial checkpoint {"schemaVersion":9} cannot be restored as trusted work 7ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 tampered/foreign private partial checkpoint {"validationSuccess":false} cannot be restored as trusted work 7ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 tampered/foreign private partial checkpoint {"originKind":"local-development","intoWorkflow":true} cannot be restored as trusted work 6ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 HTTP success with unsupported source bytes <html>not a JSON record</html> cannot replace accepted data 8ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 HTTP success with unsupported source bytes not-json cannot replace accepted data 7ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 HTTP success with unsupported source bytes 255,254 cannot replace accepted data 7ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 local development bootstrap then refresh works with honest branch and nonpublication provenance 11ms
+ ✓ tests/unit/recovery.test.ts > REC-UNKNOWN-ms: failed-attempt age cannot create source success or a device check 8ms
+ ✓ tests/unit/recovery.test.ts > REC-UNKNOWN-en: failed-attempt age cannot create source success or a device check 7ms
+ ✓ tests/unit/recovery.test.ts > REC-ERROR-CONTEXT-ms: site-data failure preserves known pair/draft/source without claiming absence or pipeline failure 7ms
+ ✓ tests/unit/recovery.test.ts > REC-ERROR-CONTEXT-en: site-data failure preserves known pair/draft/source without claiming absence or pipeline failure 7ms
+ ✓ tests/unit/recovery.test.ts > REC-LANGUAGE: recovery notices switch to English while original source bytes and valid choices remain 9ms
+ ✓ tests/unit/recovery.test.ts > REC-REVIEW-RETRY-ms: successful focused Retry hides its error control and focuses stable Read 11ms
+ ✓ tests/unit/recovery.test.ts > REC-REVIEW-RETRY-en: successful focused Retry hides its error control and focuses stable Read 12ms
+ ✓ tests/unit/recovery.test.ts > REC-REVIEW-LIST-FOCUS-ms: completed focused list recovery focuses stable member search 11ms
+ ✓ tests/unit/recovery.test.ts > REC-REVIEW-LIST-FOCUS-en: completed focused list recovery focuses stable member search 10ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 local development checkpoint cannot cross the workflow trust boundary 9ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 local development checkpoint cannot cross the other-branch trust boundary 8ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 local development checkpoint cannot cross the published-baseline trust boundary 10ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 local feature-branch private partial work resumes only in the same development session 24ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 structural body rejection aborts the request before clearing its timeout 0ms
+ ✓ tests/unit/acquisition-bootstrap.test.ts > T013 access-denied headers stop immediately even when the denial body is inaccessible 0ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-RETAINED-RUN: omitted prior identity is historically rechecked without inventing a current inventory listing 211ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-RUN-PRIORITY: new/unavailable/previous-failure are acquired before recent and historical work 159ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-CONTENT-false: content hashes distinguish unchanged/changed while successful acquiredAt advances 127ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-CONTENT-true: content hashes distinguish unchanged/changed while successful acquiredAt advances 119ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-FAILED: failed target preserves successful check/content and cannot advance an incomplete bucket 120ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-THROTTLE: paced Retry-After recovery counts one accepted completed target 122ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-SIX-RUN: six normal four-hour refreshes sweep the full historical inventory without refetching all 601ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-CATCHUP: overdue accepted work is checked outside the oldest selected historical bucket 153ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-INTERRUPT: four-hour cap leaves accepted output/sweeps old and resumes only pending prioritized work 201ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-RESUME: same-session validated partial resumes only selected pending IDs and preserves accepted completion times 137ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-FATAL-discovery: failure preserves baseline/sweeps with separate acquisition and staging receipts 112ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-FATAL-inventory: failure preserves baseline/sweeps with separate acquisition and staging receipts 113ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-FATAL-record: failure preserves baseline/sweeps with separate acquisition and staging receipts 106ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-FATAL-output: failure preserves baseline/sweeps with separate acquisition and staging receipts 170ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-NO-STATE: no prior publication/checkpoint safely bootstraps with an explicit full-target report 121ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-LOST-false: missing/expired retention baseline blocks replacement and records trust failure 36ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-LOST-true: missing/expired retention baseline blocks replacement and records trust failure 39ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-RETENTION: exactly seven-day validated state is usable while later expiry cannot masquerade as new unavailable data 119ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-SERVED-false: missing/expired state recovers only trusted served baseline and reports bootstrap retention 138ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-SERVED-true: missing/expired state recovers only trusted served baseline and reports bootstrap retention 139ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-EXTRA-HISTORY-five-checks: malformed accepted sweep history cannot advance or replace prior state 91ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-EXTRA-HISTORY-seven-checks: malformed accepted sweep history cannot advance or replace prior state 87ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-EXTRA-HISTORY-not-array: malformed accepted sweep history cannot advance or replace prior state 87ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-EXTRA-HISTORY-numeric-check: malformed accepted sweep history cannot advance or replace prior state 86ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-EXTRA-HISTORY-malformed-check: malformed accepted sweep history cannot advance or replace prior state 88ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-EXTRA-HISTORY-calendar-invalid: malformed accepted sweep history cannot advance or replace prior state 89ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-EXTRA-HISTORY-future-check: malformed accepted sweep history cannot advance or replace prior state 85ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-EXTRA-LEGACY-false: valid or absent legacy bucket metadata is reusable, not an invented completed sweep 116ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-EXTRA-LEGACY-true: valid or absent legacy bucket metadata is reusable, not an invented completed sweep 115ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-EXTRA-PARTIAL-bucket-index: untrusted partial plan cannot resume or advance sweep history 126ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-EXTRA-PARTIAL-bucket-history: untrusted partial plan cannot resume or advance sweep history 126ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-EXTRA-PARTIAL-duplicate-target: untrusted partial plan cannot resume or advance sweep history 123ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-EXTRA-PARTIAL-unknown-pending: untrusted partial plan cannot resume or advance sweep history 124ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-EXTRA-PARTIAL-completed-not-accepted: untrusted partial plan cannot resume or advance sweep history 148ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-EXTRA-PARTIAL-pending-completed-overlap: untrusted partial plan cannot resume or advance sweep history 120ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-EXTRA-PARTIAL-changed-unchanged-overlap: untrusted partial plan cannot resume or advance sweep history 121ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-EXTRA-PARTIAL-failed-completed-overlap: untrusted partial plan cannot resume or advance sweep history 127ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-EXTRA-PARTIAL-missing-failed-record: untrusted partial plan cannot resume or advance sweep history 124ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-EXTRA-PARTIAL-unreferenced-hash: untrusted partial plan cannot resume or advance sweep history 124ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-EXTRA-PARTIAL-expired: untrusted partial plan cannot resume or advance sweep history 121ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-EXTRA-PARTIAL-future-created: untrusted partial plan cannot resume or advance sweep history 121ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-EXTRA-PARTIAL-CONTROL: a valid original partial ledger keeps its already accepted source timestamp 135ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-EXTRA-FLAG-false: a historical source flag revision stays coherent with its accepted shard and preserves failed prior data 144ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-EXTRA-FLAG-true: a historical source flag revision stays coherent with its accepted shard and preserves failed prior data 142ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-EXTRA-NEW-FAILURE: a new inaccessible record stays unavailable with failed rather than pending/success accounting 114ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-EXTRA-OUTSIDE-BUCKET: a failed recent target cannot erase a separately successful historical sweep 119ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-EXTRA-DENIAL: native source access denial preserves accepted data and records stopped acquisition without staging 108ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-EXTRA-REPORT-WRITE: an actual private outcome-write failure cannot commit new output or successful sweep state 172ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-EXTRA-FAILED-RESUME: a failed target before the cap retains its real attempt time/content without false completion on resume 137ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-CONTEXT-PARTIAL-OMISSION: newly completed partial-only sitting remains coherent when omitted before resume 138ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-CONTEXT-LATE-IDENTITY: untouched accepted unknown-ID gap survives a new exact identity used in another rechecked sitting 151ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-CONTEXT-PRECISION-false: whole-second and millisecond UTC spellings sort by actual successful or failed time 2ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-CONTEXT-PRECISION-true: whole-second and millisecond UTC spellings sort by actual successful or failed time 1ms
+ ✓ tests/unit/acquisition-refresh.test.ts > REF-CONTEXT-RESUME-NEW: a genuinely new latest inventory identity is attempted before older pending work on resume 139ms
+
+ Test Files  9 passed (9)
+      Tests  674 passed (674)
+   Start at  19:04:58
+   Duration  7.53s (tests 82%, transform 8%, import 6%, environment 4%)
+

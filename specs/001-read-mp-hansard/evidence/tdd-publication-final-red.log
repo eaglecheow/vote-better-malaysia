@@ -1,0 +1,1881 @@
+
+ RUN  v5.0.3 /Users/eaglecheow/dev/vote-better-malaysia
+
+ ✓ tests/unit/publication.test.ts > PUB-HARNESS: controlled real files satisfy existing authoritative checks (positive harness control, not RED) 20ms
+ × tests/unit/publication.test.ts > PUB-ORIGIN-ACCEPT: origin is authenticated separately from payload flags 15ms
+   → expected undefined to match object { …(6) }
+ × tests/unit/publication.test.ts > PUB-ORIGIN-REJECT: repository cannot authenticate imported state/candidate/report 13ms
+   → expected { rejected: false, …(1) } to deeply equal { rejected: true, …(1) }
+ × tests/unit/publication.test.ts > PUB-ORIGIN-REJECT: head-repository cannot authenticate imported state/candidate/report 11ms
+   → expected { rejected: false, …(1) } to deeply equal { rejected: true, …(1) }
+ × tests/unit/publication.test.ts > PUB-ORIGIN-REJECT: branch cannot authenticate imported state/candidate/report 11ms
+   → expected { rejected: false, …(1) } to deeply equal { rejected: true, …(1) }
+ × tests/unit/publication.test.ts > PUB-ORIGIN-REJECT: event-pr cannot authenticate imported state/candidate/report 10ms
+   → expected { rejected: false, …(1) } to deeply equal { rejected: true, …(1) }
+ × tests/unit/publication.test.ts > PUB-ORIGIN-REJECT: status cannot authenticate imported state/candidate/report 11ms
+   → expected { rejected: false, …(1) } to deeply equal { rejected: true, …(1) }
+ × tests/unit/publication.test.ts > PUB-ORIGIN-REJECT: conclusion cannot authenticate imported state/candidate/report 9ms
+   → expected { rejected: false, …(1) } to deeply equal { rejected: true, …(1) }
+ × tests/unit/publication.test.ts > PUB-ORIGIN-REJECT: workflow-path cannot authenticate imported state/candidate/report 10ms
+   → expected { rejected: false, …(1) } to deeply equal { rejected: true, …(1) }
+ × tests/unit/publication.test.ts > PUB-ORIGIN-REJECT: workflow-id cannot authenticate imported state/candidate/report 12ms
+   → expected { rejected: false, …(1) } to deeply equal { rejected: true, …(1) }
+ × tests/unit/publication.test.ts > PUB-ORIGIN-REJECT: source-revision cannot authenticate imported state/candidate/report 13ms
+   → expected { rejected: false, …(1) } to deeply equal { rejected: true, …(1) }
+ × tests/unit/publication.test.ts > PUB-ORIGIN-REJECT: run-id cannot authenticate imported state/candidate/report 10ms
+   → expected { rejected: false, …(1) } to deeply equal { rejected: true, …(1) }
+ × tests/unit/publication.test.ts > PUB-ORIGIN-REJECT: run-attempt cannot authenticate imported state/candidate/report 10ms
+   → expected { rejected: false, …(1) } to deeply equal { rejected: true, …(1) }
+ × tests/unit/publication.test.ts > PUB-ORIGIN-REJECT: artifact-run cannot authenticate imported state/candidate/report 11ms
+   → expected { rejected: false, …(1) } to deeply equal { rejected: true, …(1) }
+ × tests/unit/publication.test.ts > PUB-ORIGIN-REJECT: artifact-repository cannot authenticate imported state/candidate/report 9ms
+   → expected { rejected: false, …(1) } to deeply equal { rejected: true, …(1) }
+ × tests/unit/publication.test.ts > PUB-ORIGIN-REJECT: artifact-head-repository cannot authenticate imported state/candidate/report 9ms
+   → expected { rejected: false, …(1) } to deeply equal { rejected: true, …(1) }
+ × tests/unit/publication.test.ts > PUB-ORIGIN-REJECT: artifact-branch cannot authenticate imported state/candidate/report 9ms
+   → expected { rejected: false, …(1) } to deeply equal { rejected: true, …(1) }
+ × tests/unit/publication.test.ts > PUB-ORIGIN-REJECT: artifact-sha cannot authenticate imported state/candidate/report 10ms
+   → expected { rejected: false, …(1) } to deeply equal { rejected: true, …(1) }
+ × tests/unit/publication.test.ts > PUB-ORIGIN-REJECT: artifact-id cannot authenticate imported state/candidate/report 11ms
+   → expected { rejected: false, …(1) } to deeply equal { rejected: true, …(1) }
+ × tests/unit/publication.test.ts > PUB-ORIGIN-REJECT: artifact-name cannot authenticate imported state/candidate/report 11ms
+   → expected { rejected: false, …(1) } to deeply equal { rejected: true, …(1) }
+ × tests/unit/publication.test.ts > PUB-ORIGIN-REJECT: expired cannot authenticate imported state/candidate/report 8ms
+   → expected { rejected: false, …(1) } to deeply equal { rejected: true, …(1) }
+ × tests/unit/publication.test.ts > PUB-ORIGIN-REJECT: created-future cannot authenticate imported state/candidate/report 8ms
+   → expected { rejected: false, …(1) } to deeply equal { rejected: true, …(1) }
+ × tests/unit/publication.test.ts > PUB-ORIGIN-REJECT: seven-days-over cannot authenticate imported state/candidate/report 8ms
+   → expected { rejected: false, …(1) } to deeply equal { rejected: true, …(1) }
+ × tests/unit/publication.test.ts > PUB-ORIGIN-REJECT: digest cannot authenticate imported state/candidate/report 8ms
+   → expected { rejected: false, …(1) } to deeply equal { rejected: true, …(1) }
+ × tests/unit/publication.test.ts > PUB-ORIGIN-REJECT: downloaded-trusted-flag cannot authenticate imported state/candidate/report 9ms
+   → expected { rejected: false, …(1) } to deeply equal { rejected: true, …(1) }
+ × tests/unit/publication.test.ts > PUB-PROMOTE-EXACT: later documentation-only evidence run promotes exact older candidate without reacquisition/rebuild 9ms
+   → expected null to match object { outcome: 'ready', …(2) }
+ × tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: sourceRevision cannot publish or change accepted/served state 20ms
+   → expected { blocked: false, commands: [], …(2) } to deeply equal { blocked: true, commands: [], …(2) }
+ × tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: applicationFingerprint cannot publish or change accepted/served state 19ms
+   → expected { blocked: false, commands: [], …(2) } to deeply equal { blocked: true, commands: [], …(2) }
+ × tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: artifactDigest cannot publish or change accepted/served state 21ms
+   → expected { blocked: false, commands: [], …(2) } to deeply equal { blocked: true, commands: [], …(2) }
+ × tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: snapshotId cannot publish or change accepted/served state 20ms
+   → expected { blocked: false, commands: [], …(2) } to deeply equal { blocked: true, commands: [], …(2) }
+ × tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: fixtureHashes cannot publish or change accepted/served state 19ms
+   → expected { blocked: false, commands: [], …(2) } to deeply equal { blocked: true, commands: [], …(2) }
+ × tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: conditionsDigest cannot publish or change accepted/served state 18ms
+   → expected { blocked: false, commands: [], …(2) } to deeply equal { blocked: true, commands: [], …(2) }
+ × tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: priorServedBaselineDigest cannot publish or change accepted/served state 18ms
+   → expected { blocked: false, commands: [], …(2) } to deeply equal { blocked: true, commands: [], …(2) }
+ × tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: current-application cannot publish or change accepted/served state 19ms
+   → expected { blocked: false, commands: [], …(2) } to deeply equal { blocked: true, commands: [], …(2) }
+ × tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: superseded-baseline cannot publish or change accepted/served state 17ms
+   → expected { blocked: false, commands: [], …(2) } to deeply equal { blocked: true, commands: [], …(2) }
+ × tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: changed-asset cannot publish or change accepted/served state 18ms
+   → expected { blocked: false, commands: [], …(2) } to deeply equal { blocked: true, commands: [], …(2) }
+ × tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: provenance-only cannot publish or change accepted/served state 19ms
+   → expected { blocked: false, commands: [], …(2) } to deeply equal { blocked: true, commands: [], …(2) }
+ × tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: missing-performance cannot publish or change accepted/served state 23ms
+   → expected { blocked: false, commands: [], …(2) } to deeply equal { blocked: true, commands: [], …(2) }
+ × tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: failed-performance cannot publish or change accepted/served state 19ms
+   → expected { blocked: false, commands: [], …(2) } to deeply equal { blocked: true, commands: [], …(2) }
+ × tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: missing-device cannot publish or change accepted/served state 18ms
+   → expected { blocked: false, commands: [], …(2) } to deeply equal { blocked: true, commands: [], …(2) }
+ × tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: expired-device cannot publish or change accepted/served state 18ms
+   → expected { blocked: false, commands: [], …(2) } to deeply equal { blocked: true, commands: [], …(2) }
+ × tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: wrong-device-candidate cannot publish or change accepted/served state 18ms
+   → expected { blocked: false, commands: [], …(2) } to deeply equal { blocked: true, commands: [], …(2) }
+ × tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: missing-documentation cannot publish or change accepted/served state 18ms
+   → expected { blocked: false, commands: [], …(2) } to deeply equal { blocked: true, commands: [], …(2) }
+ × tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: failed-documentation cannot publish or change accepted/served state 18ms
+   → expected { blocked: false, commands: [], …(2) } to deeply equal { blocked: true, commands: [], …(2) }
+ × tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: changed-documentation cannot publish or change accepted/served state 20ms
+   → expected { blocked: false, commands: [], …(2) } to deeply equal { blocked: true, commands: [], …(2) }
+ × tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: missing-automated cannot publish or change accepted/served state 20ms
+   → expected { blocked: false, commands: [], …(2) } to deeply equal { blocked: true, commands: [], …(2) }
+ × tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: failed-automated cannot publish or change accepted/served state 19ms
+   → expected { blocked: false, commands: [], …(2) } to deeply equal { blocked: true, commands: [], …(2) }
+ × tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: missing-source cannot publish or change accepted/served state 18ms
+   → expected { blocked: false, commands: [], …(2) } to deeply equal { blocked: true, commands: [], …(2) }
+ × tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: failed-source cannot publish or change accepted/served state 18ms
+   → expected { blocked: false, commands: [], …(2) } to deeply equal { blocked: true, commands: [], …(2) }
+ × tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: expired-report cannot publish or change accepted/served state 18ms
+   → expected { blocked: false, commands: [], …(2) } to deeply equal { blocked: true, commands: [], …(2) }
+ × tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: untrusted-evidence-run cannot publish or change accepted/served state 19ms
+   → expected { blocked: false, commands: [], …(2) } to deeply equal { blocked: true, commands: [], …(2) }
+ × tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: untrusted-candidate-run cannot publish or change accepted/served state 19ms
+   → expected { blocked: false, commands: [], …(2) } to deeply equal { blocked: true, commands: [], …(2) }
+ × tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: metadata-inside-artifact cannot publish or change accepted/served state 20ms
+   → expected { blocked: false, commands: [], …(2) } to deeply equal { blocked: true, commands: [], …(2) }
+ × tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: fixture-missing cannot publish or change accepted/served state 20ms
+   → expected { blocked: false, commands: [], …(2) } to deeply equal { blocked: true, commands: [], …(2) }
+ × tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: fixture-changed cannot publish or change accepted/served state 20ms
+   → expected { blocked: false, commands: [], …(2) } to deeply equal { blocked: true, commands: [], …(2) }
+ × tests/unit/publication.test.ts > PUB-WAIT: missing evidence records awaiting-evidence and terminates without deployment or an open human wait 8ms
+   → expected { outcome: undefined, …(3) } to deeply equal { outcome: 'awaiting-evidence', …(3) }
+ × tests/unit/publication.test.ts > PUB-FINALIZE-ACCEPT: completed deployment job supplies confirmed time while current workflow remains in progress 9ms
+   → expected null to match object { outcome: 'finalized', …(1) }
+ × tests/unit/publication.test.ts > PUB-FINALIZE-REJECT: deployment-id cannot confirm publication 20ms
+   → expected { rejected: false, …(3) } to deeply equal { rejected: true, …(3) }
+ × tests/unit/publication.test.ts > PUB-FINALIZE-REJECT: deployment-run cannot confirm publication 20ms
+   → expected { rejected: false, …(3) } to deeply equal { rejected: true, …(3) }
+ × tests/unit/publication.test.ts > PUB-FINALIZE-REJECT: deployment-attempt cannot confirm publication 21ms
+   → expected { rejected: false, …(3) } to deeply equal { rejected: true, …(3) }
+ × tests/unit/publication.test.ts > PUB-FINALIZE-REJECT: deployment-artifact cannot confirm publication 19ms
+   → expected { rejected: false, …(3) } to deeply equal { rejected: true, …(3) }
+ × tests/unit/publication.test.ts > PUB-FINALIZE-REJECT: deployment-sha cannot confirm publication 20ms
+   → expected { rejected: false, …(3) } to deeply equal { rejected: true, …(3) }
+ × tests/unit/publication.test.ts > PUB-FINALIZE-REJECT: deployment-environment cannot confirm publication 21ms
+   → expected { rejected: false, …(3) } to deeply equal { rejected: true, …(3) }
+ × tests/unit/publication.test.ts > PUB-FINALIZE-REJECT: deployment-base cannot confirm publication 20ms
+   → expected { rejected: false, …(3) } to deeply equal { rejected: true, …(3) }
+ × tests/unit/publication.test.ts > PUB-FINALIZE-REJECT: deployment-log cannot confirm publication 19ms
+   → expected { rejected: false, …(3) } to deeply equal { rejected: true, …(3) }
+ × tests/unit/publication.test.ts > PUB-FINALIZE-REJECT: status-pending cannot confirm publication 20ms
+   → expected { rejected: false, …(3) } to deeply equal { rejected: true, …(3) }
+ × tests/unit/publication.test.ts > PUB-FINALIZE-REJECT: status-failed cannot confirm publication 20ms
+   → expected { rejected: false, …(3) } to deeply equal { rejected: true, …(3) }
+ × tests/unit/publication.test.ts > PUB-FINALIZE-REJECT: status-missing-time cannot confirm publication 20ms
+   → expected { rejected: false, …(3) } to deeply equal { rejected: true, …(3) }
+ × tests/unit/publication.test.ts > PUB-FINALIZE-REJECT: status-before-preparation cannot confirm publication 20ms
+   → expected { rejected: false, …(3) } to deeply equal { rejected: true, …(3) }
+ × tests/unit/publication.test.ts > PUB-FINALIZE-REJECT: status-future cannot confirm publication 20ms
+   → expected { rejected: false, …(3) } to deeply equal { rejected: true, …(3) }
+ × tests/unit/publication.test.ts > PUB-FINALIZE-REJECT: pages-incomplete cannot confirm publication 19ms
+   → expected { rejected: false, …(3) } to deeply equal { rejected: true, …(3) }
+ × tests/unit/publication.test.ts > PUB-FINALIZE-REJECT: pages-artifact cannot confirm publication 19ms
+   → expected { rejected: false, …(3) } to deeply equal { rejected: true, …(3) }
+ × tests/unit/publication.test.ts > PUB-FINALIZE-REJECT: pages-id cannot confirm publication 20ms
+   → expected { rejected: false, …(3) } to deeply equal { rejected: true, …(3) }
+ × tests/unit/publication.test.ts > PUB-FINALIZE-REJECT: live-snapshot cannot confirm publication 20ms
+   → expected { rejected: false, …(3) } to deeply equal { rejected: true, …(3) }
+ × tests/unit/publication.test.ts > PUB-FINALIZE-REJECT: live-digest cannot confirm publication 20ms
+   → expected { rejected: false, …(3) } to deeply equal { rejected: true, …(3) }
+ × tests/unit/publication.test.ts > PUB-FINALIZE-REJECT: live-http cannot confirm publication 19ms
+   → expected { rejected: false, …(3) } to deeply equal { rejected: true, …(3) }
+ × tests/unit/publication.test.ts > PUB-FINALIZE-REJECT: wrong-current-repository cannot confirm publication 20ms
+   → expected { rejected: false, …(3) } to deeply equal { rejected: true, …(3) }
+ × tests/unit/publication.test.ts > PUB-FINALIZE-REJECT: wrong-current-branch cannot confirm publication 20ms
+   → expected { rejected: false, …(3) } to deeply equal { rejected: true, …(3) }
+ × tests/unit/publication.test.ts > PUB-FINALIZE-REJECT: untrusted-current-workflow cannot confirm publication 19ms
+   → expected { rejected: false, …(3) } to deeply equal { rejected: true, …(3) }
+ × tests/unit/publication.test.ts > PUB-FINALIZE-REJECT: untrusted-current-event cannot confirm publication 23ms
+   → expected { rejected: false, …(3) } to deeply equal { rejected: true, …(3) }
+ × tests/unit/publication.test.ts > PUB-FINALIZE-REJECT: forged-upload-time cannot confirm publication 19ms
+   → expected { rejected: false, …(3) } to deeply equal { rejected: true, …(3) }
+ × tests/unit/publication.test.ts > PUB-OUTCOME: started finish records candidate=success deployment=skipped as not-attempted without receipt 8ms
+   → expected { recorded: undefined, …(4) } to deeply equal { recorded: 'not-attempted', …(4) }
+ × tests/unit/publication.test.ts > PUB-OUTCOME: started finish records candidate=success deployment=failure as failed without receipt 7ms
+   → expected { recorded: undefined, …(4) } to deeply equal { recorded: 'failed', …(4) }
+ × tests/unit/publication.test.ts > PUB-OUTCOME: started finish records candidate=failure deployment=skipped as not-attempted without receipt 7ms
+   → expected { recorded: undefined, …(4) } to deeply equal { recorded: 'not-attempted', …(4) }
+ × tests/unit/publication.test.ts > PUB-OUTCOME: started finish records candidate=cancelled deployment=cancelled as not-attempted without receipt 7ms
+   → expected { recorded: undefined, …(4) } to deeply equal { recorded: 'not-attempted', …(4) }
+ × tests/unit/publication.test.ts > PUB-ACQUIRED-VS-SERVED: older manual candidate receipt never relabels a newer acquired checkpoint 12ms
+   → expected { finalized: undefined, …(2) } to deeply equal { finalized: 'finalized', …(2) }
+ × tests/unit/publication.test.ts > PUB-PREPARE: acquire/build/check once, freeze complete candidate, then end awaiting fresh physical evidence 9ms
+   → expected null to match object { outcome: 'awaiting-evidence', …(1) }
+   → expected { acquired: false, build: false, …(1) } to deeply equal { acquired: true, build: true, …(1) }
+   → expected { …(7) } to match object { …(2) }
+(8 matching properties omitted from actual)
+   → expected null to match object { acquisitionOutcome: 'success', …(2) }
+ × tests/unit/publication.test.ts > PUB-PREPARE-FAIL: source-denial records failure and preserves prior served state 8ms
+   → expected { rejected: false, …(2) } to deeply equal { Object (rejected, reported, ...) }
+ × tests/unit/publication.test.ts > PUB-PREPARE-FAIL: source-schema records failure and preserves prior served state 8ms
+   → expected { rejected: false, …(2) } to deeply equal { Object (rejected, reported, ...) }
+ × tests/unit/publication.test.ts > PUB-PREPARE-FAIL: source-four-hour-cap records failure and preserves prior served state 8ms
+   → expected { rejected: false, …(2) } to deeply equal { Object (rejected, reported, ...) }
+ × tests/unit/publication.test.ts > PUB-PREPARE-FAIL: build-failed records failure and preserves prior served state 8ms
+   → expected { rejected: false, …(2) } to deeply equal { Object (rejected, reported, ...) }
+ × tests/unit/publication.test.ts > PUB-PREPARE-FAIL: automated-failed records failure and preserves prior served state 7ms
+   → expected { rejected: false, …(2) } to deeply equal { Object (rejected, reported, ...) }
+ × tests/unit/publication.test.ts > PUB-PREPARE-FAIL: size-failed records failure and preserves prior served state 7ms
+   → expected { rejected: false, …(2) } to deeply equal { Object (rejected, reported, ...) }
+ × tests/unit/publication.test.ts > PUB-PREPARE-FAIL: metadata-path-overlap records failure and preserves prior served state 8ms
+   → expected { rejected: false, …(2) } to deeply equal { Object (rejected, reported, ...) }
+ × tests/unit/publication.test.ts > PUB-PREPARE-FAIL: untrusted-current-run records failure and preserves prior served state 7ms
+   → expected { rejected: false, …(2) } to deeply equal { Object (rejected, reported, ...) }
+ × tests/unit/publication.test.ts > PUB-PREPARE-FAIL: foreign-state records failure and preserves prior served state 7ms
+   → expected { rejected: false, …(2) } to deeply equal { Object (rejected, reported, ...) }
+ × tests/unit/publication.test.ts > PUB-PREPARE-FAIL: expired-state-no-baseline records failure and preserves prior served state 7ms
+   → expected { rejected: false, …(2) } to deeply equal { Object (rejected, reported, ...) }
+ × tests/unit/publication.test.ts > PUB-PREPARE-FAIL: incompatible-state-no-baseline records failure and preserves prior served state 7ms
+   → expected { rejected: false, …(2) } to deeply equal { Object (rejected, reported, ...) }
+ × tests/unit/publication.test.ts > PUB-PREPARE-FAIL: foreign-partial-session records failure and preserves prior served state 8ms
+   → expected { rejected: false, …(2) } to deeply equal { Object (rejected, reported, ...) }
+ × tests/unit/publication.test.ts > PUB-CHECKPOINT-ACCEPT: receipt lives outside immutable original catalogue and checksum 7ms
+   → expected undefined to match object { catalogue: { …(9) }, …(2) }
+ × tests/unit/publication.test.ts > PUB-CHECKPOINT-REJECT: snapshot cannot relabel acquired data as served 18ms
+   → expected { rejected: false, …(1) } to deeply equal { rejected: true, …(1) }
+ × tests/unit/publication.test.ts > PUB-CHECKPOINT-REJECT: catalogue-digest cannot relabel acquired data as served 18ms
+   → expected { rejected: false, …(1) } to deeply equal { rejected: true, …(1) }
+ × tests/unit/publication.test.ts > PUB-CHECKPOINT-REJECT: artifact-digest cannot relabel acquired data as served 20ms
+   → expected { rejected: false, …(1) } to deeply equal { rejected: true, …(1) }
+ × tests/unit/publication.test.ts > PUB-CHECKPOINT-REJECT: receipt-time cannot relabel acquired data as served 17ms
+   → expected { rejected: false, …(1) } to deeply equal { rejected: true, …(1) }
+ × tests/unit/publication.test.ts > PUB-CHECKPOINT-REJECT: verification-time cannot relabel acquired data as served 17ms
+   → expected { rejected: false, …(1) } to deeply equal { rejected: true, …(1) }
+ × tests/unit/publication.test.ts > PUB-CHECKPOINT-REJECT: workflow-url cannot relabel acquired data as served 17ms
+   → expected { rejected: false, …(1) } to deeply equal { rejected: true, …(1) }
+ × tests/unit/publication.test.ts > PUB-CHECKPOINT-REJECT: local-state cannot relabel acquired data as served 17ms
+   → expected { rejected: false, …(1) } to deeply equal { rejected: true, …(1) }
+ × tests/unit/publication.test.ts > PUB-CHECKPOINT-REJECT: schema cannot relabel acquired data as served 18ms
+   → expected { rejected: false, …(1) } to deeply equal { rejected: true, …(1) }
+ × tests/unit/publication.test.ts > PUB-CHECKPOINT-REJECT: checksum cannot relabel acquired data as served 18ms
+   → expected { rejected: false, …(1) } to deeply equal { rejected: true, …(1) }
+ × tests/unit/publication.test.ts > PUB-CHECKPOINT-REJECT: missing-shard cannot relabel acquired data as served 17ms
+   → expected { rejected: false, …(1) } to deeply equal { rejected: true, …(1) }
+ × tests/unit/publication.test.ts > PUB-CHECKPOINT-REJECT: unreferenced-shard cannot relabel acquired data as served 17ms
+   → expected { rejected: false, …(1) } to deeply equal { rejected: true, …(1) }
+ × tests/unit/publication.test.ts > PUB-BASELINE-HISTORICAL: independently authenticated old code fingerprint stays honest during compatible current-code recovery 8ms
+   → expected undefined to match object { …(3) }
+ × tests/unit/publication.test.ts > PUB-BASELINE-REJECT: no-authentication never relaxes exact checkpoint or authenticated historical trust 18ms
+   → expected { rejected: false, …(2) } to deeply equal { rejected: true, …(2) }
+ × tests/unit/publication.test.ts > PUB-BASELINE-REJECT: self-trusted never relaxes exact checkpoint or authenticated historical trust 18ms
+   → expected { rejected: false, …(2) } to deeply equal { rejected: true, …(2) }
+ × tests/unit/publication.test.ts > PUB-BASELINE-REJECT: substituted-fingerprint never relaxes exact checkpoint or authenticated historical trust 18ms
+   → expected { rejected: false, …(2) } to deeply equal { rejected: true, …(2) }
+ × tests/unit/publication.test.ts > PUB-BASELINE-REJECT: wrong-repository never relaxes exact checkpoint or authenticated historical trust 19ms
+   → expected { rejected: false, …(2) } to deeply equal { rejected: true, …(2) }
+ × tests/unit/publication.test.ts > PUB-BASELINE-REJECT: wrong-branch never relaxes exact checkpoint or authenticated historical trust 18ms
+   → expected { rejected: false, …(2) } to deeply equal { rejected: true, …(2) }
+ × tests/unit/publication.test.ts > PUB-BASELINE-REJECT: wrong-run never relaxes exact checkpoint or authenticated historical trust 18ms
+   → expected { rejected: false, …(2) } to deeply equal { rejected: true, …(2) }
+ × tests/unit/publication.test.ts > PUB-BASELINE-REJECT: wrong-base never relaxes exact checkpoint or authenticated historical trust 19ms
+   → expected { rejected: false, …(2) } to deeply equal { rejected: true, …(2) }
+ × tests/unit/publication.test.ts > PUB-BASELINE-REJECT: wrong-snapshot never relaxes exact checkpoint or authenticated historical trust 18ms
+   → expected { rejected: false, …(2) } to deeply equal { rejected: true, …(2) }
+ × tests/unit/publication.test.ts > PUB-BASELINE-REJECT: wrong-catalogue-digest never relaxes exact checkpoint or authenticated historical trust 18ms
+   → expected { rejected: false, …(2) } to deeply equal { rejected: true, …(2) }
+ × tests/unit/publication.test.ts > PUB-BASELINE-REJECT: wrong-shard-digest never relaxes exact checkpoint or authenticated historical trust 17ms
+   → expected { rejected: false, …(2) } to deeply equal { rejected: true, …(2) }
+ × tests/unit/publication.test.ts > PUB-BASELINE-REJECT: missing-shard-reference never relaxes exact checkpoint or authenticated historical trust 18ms
+   → expected { rejected: false, …(2) } to deeply equal { rejected: true, …(2) }
+ × tests/unit/publication.test.ts > PUB-BASELINE-REJECT: unreferenced-shard never relaxes exact checkpoint or authenticated historical trust 18ms
+   → expected { rejected: false, …(2) } to deeply equal { rejected: true, …(2) }
+ × tests/unit/publication.test.ts > PUB-BASELINE-REJECT: unsupported-schema never relaxes exact checkpoint or authenticated historical trust 21ms
+   → expected { rejected: false, …(2) } to deeply equal { rejected: true, …(2) }
+ × tests/unit/publication.test.ts > PUB-BASELINE-REJECT: unrecoverable-http never relaxes exact checkpoint or authenticated historical trust 20ms
+   → expected { rejected: false, …(2) } to deeply equal { rejected: true, …(2) }
+ × tests/unit/publication.test.ts > PUB-PROOF-REUSE: json-clone cannot preserve authenticated authorization for new claims 7ms
+   → expected false to be true // Object.is equality
+ × tests/unit/publication.test.ts > PUB-PROOF-REUSE: codeFingerprint cannot preserve authenticated authorization for new claims 7ms
+   → expected false to be true // Object.is equality
+ × tests/unit/publication.test.ts > PUB-PROOF-REUSE: runId cannot preserve authenticated authorization for new claims 7ms
+   → expected false to be true // Object.is equality
+ × tests/unit/publication.test.ts > PUB-PROOF-REUSE: artifactId cannot preserve authenticated authorization for new claims 7ms
+   → expected false to be true // Object.is equality
+ × tests/unit/publication.test.ts > PUB-CHECKPOINT-READ: trusted external served receipt survives reload without relabeling original catalogue publication time 7ms
+   → expected undefined to match object { catalogue: { …(9) }, …(1) }
+ × tests/unit/publication.test.ts > PUB-CHECKPOINT-READ-REJECT: snapshot cannot survive restoration as served metadata 8ms
+   → expected false to be true // Object.is equality
+ × tests/unit/publication.test.ts > PUB-CHECKPOINT-READ-REJECT: catalogue-digest cannot survive restoration as served metadata 7ms
+   → expected false to be true // Object.is equality
+ × tests/unit/publication.test.ts > PUB-CHECKPOINT-READ-REJECT: artifact-digest cannot survive restoration as served metadata 7ms
+   → expected false to be true // Object.is equality
+ × tests/unit/publication.test.ts > PUB-CHECKPOINT-READ-REJECT: publication-time cannot survive restoration as served metadata 8ms
+   → expected false to be true // Object.is equality
+ × tests/unit/publication.test.ts > PUB-CHECKPOINT-READ-REJECT: verified-time cannot survive restoration as served metadata 7ms
+   → expected false to be true // Object.is equality
+ × tests/unit/publication.test.ts > PUB-CHECKPOINT-READ-REJECT: local-context cannot survive restoration as served metadata 8ms
+   → expected false to be true // Object.is equality
+ × tests/unit/publication.test.ts > PUB-TEST-ORIGIN: missing cannot establish prepublication physical evidence 10ms
+   → expected false to be true // Object.is equality
+ × tests/unit/publication.test.ts > PUB-TEST-ORIGIN: http cannot establish prepublication physical evidence 8ms
+   → expected false to be true // Object.is equality
+ × tests/unit/publication.test.ts > PUB-TEST-ORIGIN: wrong-subpath cannot establish prepublication physical evidence 8ms
+   → expected false to be true // Object.is equality
+ × tests/unit/publication.test.ts > PUB-TEST-ORIGIN: device-url cannot establish prepublication physical evidence 7ms
+   → expected false to be true // Object.is equality
+ × tests/unit/publication.test.ts > PUB-TEST-ORIGIN: missing-device-url cannot establish prepublication physical evidence 7ms
+   → expected false to be true // Object.is equality
+ × tests/unit/publication.test.ts > PUB-TEST-ORIGIN: candidate-mismatch cannot establish prepublication physical evidence 8ms
+   → expected false to be true // Object.is equality
+ × tests/unit/publication.test.ts > PUB-TEST-ORIGIN: unavailable-origin cannot establish prepublication physical evidence 8ms
+   → expected false to be true // Object.is equality
+ × tests/unit/publication.test.ts > PUB-FIRST-PUBLISH: prepublication checks use trusted test origin and do not require nonexistent production live result 8ms
+   → expected undefined to be 'ready' // Object.is equality
+ × tests/unit/publication.test.ts > PUB-RESUME: explicit API-verified capped partial adopts original session while current run remains independently recorded 35ms
+   → expected undefined to be 'awaiting-evidence' // Object.is equality
+   → expected { …(20) } to match object { …(4) }
+(16 matching properties omitted from actual)
+   → expected null to match object { runId: '300', …(1) }
+ × tests/unit/publication.test.ts > PUB-RESUME-REJECT: foreign-run cannot restore partial progress as a complete/served baseline 29ms
+   → expected { rejected: false, …(1) } to deeply equal { rejected: true, …(1) }
+ × tests/unit/publication.test.ts > PUB-RESUME-REJECT: pr-origin cannot restore partial progress as a complete/served baseline 29ms
+   → expected { rejected: false, …(1) } to deeply equal { rejected: true, …(1) }
+ × tests/unit/publication.test.ts > PUB-RESUME-REJECT: wrong-session cannot restore partial progress as a complete/served baseline 27ms
+   → expected { rejected: false, …(1) } to deeply equal { rejected: true, …(1) }
+ × tests/unit/publication.test.ts > PUB-RESUME-REJECT: wrong-code cannot restore partial progress as a complete/served baseline 29ms
+   → expected { rejected: false, …(1) } to deeply equal { rejected: true, …(1) }
+ × tests/unit/publication.test.ts > PUB-RESUME-REJECT: expired cannot restore partial progress as a complete/served baseline 27ms
+   → expected { rejected: false, …(1) } to deeply equal { rejected: true, …(1) }
+ × tests/unit/publication.test.ts > PUB-RESUME-REJECT: baseline-mismatch cannot restore partial progress as a complete/served baseline 27ms
+   → expected { rejected: false, …(1) } to deeply equal { rejected: true, …(1) }
+ × tests/unit/publication.test.ts > PUB-RESUME-REJECT: missing-payload cannot restore partial progress as a complete/served baseline 26ms
+   → expected { rejected: false, …(1) } to deeply equal { rejected: true, …(1) }
+ × tests/unit/publication.test.ts > PUB-RESUME-REJECT: payload-digest cannot restore partial progress as a complete/served baseline 29ms
+   → expected { rejected: false, …(1) } to deeply equal { rejected: true, …(1) }
+ × tests/unit/publication.test.ts > PUB-CLI-REJECT: unknown cannot silently succeed outside reviewed workflow context 58ms
+   → expected { status: +0, timeout: null } to deeply equal { status: 1, timeout: null }
+ × tests/unit/publication.test.ts > PUB-CLI-REJECT: prepare-local cannot silently succeed outside reviewed workflow context 57ms
+   → expected { status: +0, timeout: null } to deeply equal { status: 1, timeout: null }
+ × tests/unit/publication.test.ts > PUB-CLI-REJECT: promote-missing-ids cannot silently succeed outside reviewed workflow context 58ms
+   → expected { status: +0, timeout: null } to deeply equal { status: 1, timeout: null }
+ × tests/unit/publication.test.ts > PUB-CLI-REJECT: finalize-invalid-job-result cannot silently succeed outside reviewed workflow context 58ms
+   → expected { status: +0, timeout: null } to deeply equal { status: 1, timeout: null }
+ × tests/unit/publication.test.ts > PUB-ARCHIVE-REJECT: path-traversal cannot be extracted before authenticated safe-path verification 15ms
+   → expected { rejected: false, …(2) } to deeply equal { rejected: true, …(2) }
+ × tests/unit/publication.test.ts > PUB-ARCHIVE-REJECT: absolute-path cannot be extracted before authenticated safe-path verification 13ms
+   → expected { rejected: false, …(2) } to deeply equal { rejected: true, …(2) }
+ × tests/unit/publication.test.ts > PUB-ARCHIVE-REJECT: symlink cannot be extracted before authenticated safe-path verification 15ms
+   → expected { rejected: false, …(2) } to deeply equal { rejected: true, …(2) }
+ × tests/unit/publication.test.ts > PUB-ARCHIVE-REJECT: hardlink cannot be extracted before authenticated safe-path verification 16ms
+   → expected { rejected: false, …(2) } to deeply equal { rejected: true, …(2) }
+ × tests/unit/publication.test.ts > PUB-ARCHIVE-REJECT: untrusted-origin cannot be extracted before authenticated safe-path verification 18ms
+   → expected { rejected: false, …(2) } to deeply equal { rejected: true, …(2) }
+ × tests/unit/publication.test.ts > PUB-APPROVAL-RECHECK: environment approval delay cannot bypass current baseline/application/evidence revalidation 7ms
+   → expected undefined to be 'ready' // Object.is equality
+   → expected false to be true // Object.is equality
+ ✓ tests/unit/publication.test.ts > PUB-HARNESS-PARTIAL: selected partial input is native capped accepted work (positive setup control, not RED) 22ms
+ × tests/unit/publication.test.ts > PUB-ARCHIVE-RESTORE: fresh authenticated runner restores original tar without rebuilding or changing any deployed file 13ms
+   → expected undefined to be 'ready' // Object.is equality
+ × tests/unit/publication.test.ts > PUB-STATE-IMPORT: exact newest selected successful artifact is authenticated before acquire uses it 8ms
+   → expected undefined to be 'awaiting-evidence' // Object.is equality
+   → expected [] to include 'https://api.github.com/repos/eagleche…'
+   → expected null to match object { baseline: 'checkpoint', …(1) }
+ × tests/unit/publication.test.ts > PUB-STATE-IMPORT-REJECT: foreign-artifact cannot certify a successful retention baseline 8ms
+   → expected { rejected: false, …(1) } to deeply equal { rejected: true, …(1) }
+ × tests/unit/publication.test.ts > PUB-STATE-IMPORT-REJECT: failed-run cannot certify a successful retention baseline 11ms
+   → expected { rejected: false, …(1) } to deeply equal { rejected: true, …(1) }
+ × tests/unit/publication.test.ts > PUB-STATE-IMPORT-REJECT: pr-run cannot certify a successful retention baseline 8ms
+   → expected { rejected: false, …(1) } to deeply equal { rejected: true, …(1) }
+ × tests/unit/publication.test.ts > PUB-STATE-IMPORT-REJECT: wrong-branch cannot certify a successful retention baseline 8ms
+   → expected { rejected: false, …(1) } to deeply equal { rejected: true, …(1) }
+ × tests/unit/publication.test.ts > PUB-STATE-IMPORT-REJECT: expired cannot certify a successful retention baseline 9ms
+   → expected { rejected: false, …(1) } to deeply equal { rejected: true, …(1) }
+ × tests/unit/publication.test.ts > PUB-STATE-IMPORT-REJECT: malformed-latest-no-skip cannot certify a successful retention baseline 8ms
+   → expected { rejected: false, …(1) } to deeply equal { rejected: true, …(1) }
+ × tests/unit/publication.test.ts > PUB-STATE-SERVED-RECOVERY: missing checkpoint uses authenticated historical served compatibility 7ms
+   → expected undefined to be 'awaiting-evidence' // Object.is equality
+   → expected null to match object { baseline: 'served', …(1) }
+ × tests/unit/publication.test.ts > PUB-STATE-SERVED-RECOVERY: expired checkpoint uses authenticated historical served compatibility 7ms
+   → expected undefined to be 'awaiting-evidence' // Object.is equality
+   → expected null to match object { baseline: 'served', …(1) }
+ × tests/unit/publication.test.ts > PUB-STATE-SERVED-RECOVERY: incompatible checkpoint uses authenticated historical served compatibility 7ms
+   → expected undefined to be 'awaiting-evidence' // Object.is equality
+   → expected null to match object { baseline: 'served', …(1) }
+ × tests/unit/publication.test.ts > PUB-NEXT-CANDIDATE: restored confirmed receipt enters known history without rewriting its original served artifact 7ms
+   → expected undefined to be 'awaiting-evidence' // Object.is equality
+ × tests/unit/publication.test.ts > PUB-APPROVAL-CURRENT: application change while waiting blocks previously eligible deployment 8ms
+   → expected undefined to be 'ready' // Object.is equality
+   → expected false to be true // Object.is equality
+ × tests/unit/publication.test.ts > PUB-APPROVAL-CURRENT: evidence-expiry change while waiting blocks previously eligible deployment 7ms
+   → expected undefined to be 'ready' // Object.is equality
+   → expected false to be true // Object.is equality
+
+ Test Files  1 failed (1)
+      Tests  177 failed | 2 passed (179)
+   Start at  17:59:27
+   Duration  3.05s (tests 93%, import 4%, transform 3%)
+
+JSON report written to /private/tmp/hansard-publication-red-final.json
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 177 ⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/publication.test.ts > PUB-ORIGIN-ACCEPT: origin is authenticated separately from payload flags
+AssertionError: expected undefined to match object { …(6) }
+
+- Expected:
+{
+  "archiveDigest": "18e6a8b1afffa146badb15bce097de66383ac9082fb2e157fb40800d8c59ceed",
+  "artifactId": "501",
+  "repository": "eaglecheow/vote-better-malaysia",
+  "runAttempt": 1,
+  "runId": "101",
+  "sourceRevision": "1111111111111111111111111111111111111111",
+}
+
++ Received:
+undefined
+
+ ❯ acceptsOrigin tests/unit/publication.test.ts:289:20
+    287| async function acceptsOrigin(): Promise<void> {
+    288|   const value = await fixture(); const accepted = await verifyPublicat…
+    289|   expect(accepted).toMatchObject({ repository, runId: '101', runAttemp…
+       |                    ^
+    290|   expect(value.calls).toContain(`https://api.github.com/repos/${reposi…
+    291| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/190]⎯
+
+ FAIL  tests/unit/publication.test.ts > PUB-ORIGIN-REJECT: repository cannot authenticate imported state/candidate/report
+ FAIL  tests/unit/publication.test.ts > PUB-ORIGIN-REJECT: head-repository cannot authenticate imported state/candidate/report
+ FAIL  tests/unit/publication.test.ts > PUB-ORIGIN-REJECT: branch cannot authenticate imported state/candidate/report
+ FAIL  tests/unit/publication.test.ts > PUB-ORIGIN-REJECT: event-pr cannot authenticate imported state/candidate/report
+ FAIL  tests/unit/publication.test.ts > PUB-ORIGIN-REJECT: status cannot authenticate imported state/candidate/report
+ FAIL  tests/unit/publication.test.ts > PUB-ORIGIN-REJECT: conclusion cannot authenticate imported state/candidate/report
+ FAIL  tests/unit/publication.test.ts > PUB-ORIGIN-REJECT: workflow-path cannot authenticate imported state/candidate/report
+ FAIL  tests/unit/publication.test.ts > PUB-ORIGIN-REJECT: workflow-id cannot authenticate imported state/candidate/report
+ FAIL  tests/unit/publication.test.ts > PUB-ORIGIN-REJECT: source-revision cannot authenticate imported state/candidate/report
+ FAIL  tests/unit/publication.test.ts > PUB-ORIGIN-REJECT: run-id cannot authenticate imported state/candidate/report
+ FAIL  tests/unit/publication.test.ts > PUB-ORIGIN-REJECT: run-attempt cannot authenticate imported state/candidate/report
+ FAIL  tests/unit/publication.test.ts > PUB-ORIGIN-REJECT: artifact-run cannot authenticate imported state/candidate/report
+ FAIL  tests/unit/publication.test.ts > PUB-ORIGIN-REJECT: artifact-repository cannot authenticate imported state/candidate/report
+ FAIL  tests/unit/publication.test.ts > PUB-ORIGIN-REJECT: artifact-head-repository cannot authenticate imported state/candidate/report
+ FAIL  tests/unit/publication.test.ts > PUB-ORIGIN-REJECT: artifact-branch cannot authenticate imported state/candidate/report
+ FAIL  tests/unit/publication.test.ts > PUB-ORIGIN-REJECT: artifact-sha cannot authenticate imported state/candidate/report
+ FAIL  tests/unit/publication.test.ts > PUB-ORIGIN-REJECT: artifact-id cannot authenticate imported state/candidate/report
+ FAIL  tests/unit/publication.test.ts > PUB-ORIGIN-REJECT: artifact-name cannot authenticate imported state/candidate/report
+ FAIL  tests/unit/publication.test.ts > PUB-ORIGIN-REJECT: expired cannot authenticate imported state/candidate/report
+ FAIL  tests/unit/publication.test.ts > PUB-ORIGIN-REJECT: created-future cannot authenticate imported state/candidate/report
+ FAIL  tests/unit/publication.test.ts > PUB-ORIGIN-REJECT: seven-days-over cannot authenticate imported state/candidate/report
+ FAIL  tests/unit/publication.test.ts > PUB-ORIGIN-REJECT: digest cannot authenticate imported state/candidate/report
+ FAIL  tests/unit/publication.test.ts > PUB-ORIGIN-REJECT: downloaded-trusted-flag cannot authenticate imported state/candidate/report
+AssertionError: expected { rejected: false, …(1) } to deeply equal { rejected: true, …(1) }
+
+- Expected
++ Received
+
+@@ -1,7 +1,7 @@
+  {
+-   "rejected": true,
++   "rejected": false,
+    "served": {
+      "data": [
+        123,
+        34,
+        114,
+
+ ❯ rejectsOrigin tests/unit/publication.test.ts:317:94
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/190]⎯
+
+ FAIL  tests/unit/publication.test.ts > PUB-PROMOTE-EXACT: later documentation-only evidence run promotes exact older candidate without reacquisition/rebuild
+AssertionError: expected null to match object { outcome: 'ready', …(2) }
+
+- Expected:
+{
+  "candidate": {
+    "applicationFingerprint": "cd555c9886d35a09428455b0e3b25d7fc9e9cf257464d2bffa504a0015e431cf",
+    "artifactDigest": "513fec8c4d50ee74d0500a069c686474580d942a38f283172def694cb4e4f30d",
+    "conditionsDigest": "e3d914caf3e844aeca91bd7d34e1b4880da909728316834eec766ce877b5d177",
+    "fixtureHashes": {
+      "data/catalogue.json.gz": "c702e950e9ba4dc1e47f545979a3df5cbdb46bdf8b579f7731550c02f5e3ff28",
+      "data/sittings/3.json.gz": "58a5148df75b27f39e81703456fd3a2c8397c8bf15d0c09ed2f58739426e07e1",
+      "data/sittings/5.json.gz": "c7d091ac392ed9e83f1512db9dd0f6a1795b2cccc081170090a60f551049ce18",
+    },
+    "priorServedBaselineDigest": "516f262fa3d16a064518d0fb5cddb0b44bb191f733cd9db539c27338b456606e",
+    "snapshotId": "controlled-frozen-candidate",
+    "sourceRevision": "1111111111111111111111111111111111111111",
+  },
+  "outcome": "ready",
+  "receipt": null,
+}
+
++ Received:
+null
+
+ ❯ promotesExactCandidate tests/unit/publication.test.ts:327:27
+    325| async function promotesExactCandidate(): Promise<void> {
+    326|   const value = await fixture(); const before = await measureArtifact(…
+    327|   expect(observed.result).toMatchObject({ outcome: 'ready', candidate:…
+       |                           ^
+    328|   expect((await measureArtifact(value.artifact)).artifactDigest).toBe(…
+    329|   expect(value.calls.some(isOfficialSource)).toBe(false); expect(obser…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/190]⎯
+
+ FAIL  tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: sourceRevision cannot publish or change accepted/served state
+ FAIL  tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: applicationFingerprint cannot publish or change accepted/served state
+ FAIL  tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: artifactDigest cannot publish or change accepted/served state
+ FAIL  tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: snapshotId cannot publish or change accepted/served state
+ FAIL  tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: fixtureHashes cannot publish or change accepted/served state
+ FAIL  tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: conditionsDigest cannot publish or change accepted/served state
+ FAIL  tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: priorServedBaselineDigest cannot publish or change accepted/served state
+ FAIL  tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: current-application cannot publish or change accepted/served state
+ FAIL  tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: superseded-baseline cannot publish or change accepted/served state
+ FAIL  tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: changed-asset cannot publish or change accepted/served state
+ FAIL  tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: provenance-only cannot publish or change accepted/served state
+ FAIL  tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: missing-performance cannot publish or change accepted/served state
+ FAIL  tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: failed-performance cannot publish or change accepted/served state
+ FAIL  tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: missing-device cannot publish or change accepted/served state
+ FAIL  tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: expired-device cannot publish or change accepted/served state
+ FAIL  tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: wrong-device-candidate cannot publish or change accepted/served state
+ FAIL  tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: missing-documentation cannot publish or change accepted/served state
+ FAIL  tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: failed-documentation cannot publish or change accepted/served state
+ FAIL  tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: changed-documentation cannot publish or change accepted/served state
+ FAIL  tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: missing-automated cannot publish or change accepted/served state
+ FAIL  tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: failed-automated cannot publish or change accepted/served state
+ FAIL  tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: missing-source cannot publish or change accepted/served state
+ FAIL  tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: failed-source cannot publish or change accepted/served state
+ FAIL  tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: expired-report cannot publish or change accepted/served state
+ FAIL  tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: untrusted-evidence-run cannot publish or change accepted/served state
+ FAIL  tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: untrusted-candidate-run cannot publish or change accepted/served state
+ FAIL  tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: metadata-inside-artifact cannot publish or change accepted/served state
+ FAIL  tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: fixture-missing cannot publish or change accepted/served state
+ FAIL  tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: fixture-changed cannot publish or change accepted/served state
+AssertionError: expected { blocked: false, commands: [], …(2) } to deeply equal { blocked: true, commands: [], …(2) }
+
+- Expected
++ Received
+
+@@ -1,7 +1,7 @@
+  {
+-   "blocked": true,
++   "blocked": false,
+    "checkpoint": {
+      "data": [
+        123,
+        34,
+        115,
+
+ ❯ blocksPromotion tests/unit/publication.test.ts:368:143
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/190]⎯
+
+ FAIL  tests/unit/publication.test.ts > PUB-WAIT: missing evidence records awaiting-evidence and terminates without deployment or an open human wait
+AssertionError: expected { outcome: undefined, …(3) } to deeply equal { outcome: 'awaiting-evidence', …(3) }
+
+- Expected
++ Received
+
+  {
+    "commands": [],
+-   "outcome": "awaiting-evidence",
+-   "recorded": "awaiting-evidence",
++   "outcome": undefined,
++   "recorded": undefined,
+    "sourceRequested": false,
+  }
+
+ ❯ recordsEvidenceWait tests/unit/publication.test.ts:380:167
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/190]⎯
+
+ FAIL  tests/unit/publication.test.ts > PUB-FINALIZE-ACCEPT: completed deployment job supplies confirmed time while current workflow remains in progress
+AssertionError: expected null to match object { outcome: 'finalized', …(1) }
+
+- Expected:
+{
+  "outcome": "finalized",
+  "receipt": {
+    "deploymentId": "700",
+    "publishedAt": "2026-10-10T03:30:00.000Z",
+    "snapshotId": "controlled-frozen-candidate",
+    "verifiedServedAt": "2026-10-10T04:00:00.000Z",
+    "workflowUrl": "https://github.com/eaglecheow/vote-better-malaysia/actions/runs/300",
+  },
+}
+
++ Received:
+null
+
+ ❯ finalizesMatchingPublication tests/unit/publication.test.ts:391:27
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/190]⎯
+
+ FAIL  tests/unit/publication.test.ts > PUB-FINALIZE-REJECT: deployment-id cannot confirm publication
+ FAIL  tests/unit/publication.test.ts > PUB-FINALIZE-REJECT: deployment-run cannot confirm publication
+ FAIL  tests/unit/publication.test.ts > PUB-FINALIZE-REJECT: deployment-attempt cannot confirm publication
+ FAIL  tests/unit/publication.test.ts > PUB-FINALIZE-REJECT: deployment-artifact cannot confirm publication
+ FAIL  tests/unit/publication.test.ts > PUB-FINALIZE-REJECT: deployment-sha cannot confirm publication
+ FAIL  tests/unit/publication.test.ts > PUB-FINALIZE-REJECT: deployment-environment cannot confirm publication
+ FAIL  tests/unit/publication.test.ts > PUB-FINALIZE-REJECT: deployment-base cannot confirm publication
+ FAIL  tests/unit/publication.test.ts > PUB-FINALIZE-REJECT: deployment-log cannot confirm publication
+ FAIL  tests/unit/publication.test.ts > PUB-FINALIZE-REJECT: status-pending cannot confirm publication
+ FAIL  tests/unit/publication.test.ts > PUB-FINALIZE-REJECT: status-failed cannot confirm publication
+ FAIL  tests/unit/publication.test.ts > PUB-FINALIZE-REJECT: status-missing-time cannot confirm publication
+ FAIL  tests/unit/publication.test.ts > PUB-FINALIZE-REJECT: status-before-preparation cannot confirm publication
+ FAIL  tests/unit/publication.test.ts > PUB-FINALIZE-REJECT: status-future cannot confirm publication
+ FAIL  tests/unit/publication.test.ts > PUB-FINALIZE-REJECT: pages-incomplete cannot confirm publication
+ FAIL  tests/unit/publication.test.ts > PUB-FINALIZE-REJECT: pages-artifact cannot confirm publication
+ FAIL  tests/unit/publication.test.ts > PUB-FINALIZE-REJECT: pages-id cannot confirm publication
+ FAIL  tests/unit/publication.test.ts > PUB-FINALIZE-REJECT: live-snapshot cannot confirm publication
+ FAIL  tests/unit/publication.test.ts > PUB-FINALIZE-REJECT: live-digest cannot confirm publication
+ FAIL  tests/unit/publication.test.ts > PUB-FINALIZE-REJECT: live-http cannot confirm publication
+ FAIL  tests/unit/publication.test.ts > PUB-FINALIZE-REJECT: wrong-current-repository cannot confirm publication
+ FAIL  tests/unit/publication.test.ts > PUB-FINALIZE-REJECT: wrong-current-branch cannot confirm publication
+ FAIL  tests/unit/publication.test.ts > PUB-FINALIZE-REJECT: untrusted-current-workflow cannot confirm publication
+ FAIL  tests/unit/publication.test.ts > PUB-FINALIZE-REJECT: untrusted-current-event cannot confirm publication
+ FAIL  tests/unit/publication.test.ts > PUB-FINALIZE-REJECT: forged-upload-time cannot confirm publication
+AssertionError: expected { rejected: false, …(3) } to deeply equal { rejected: true, …(3) }
+
+- Expected
++ Received
+
+@@ -6189,7 +6189,7 @@
+        34,
+        125,
+      ],
+      "type": "Buffer",
+    },
+-   "rejected": true,
++   "rejected": false,
+  }
+
+ ❯ rejectsReceipt tests/unit/publication.test.ts:423:244
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/190]⎯
+
+ FAIL  tests/unit/publication.test.ts > PUB-OUTCOME: started finish records candidate=success deployment=skipped as not-attempted without receipt
+AssertionError: expected { recorded: undefined, …(4) } to deeply equal { recorded: 'not-attempted', …(4) }
+
+- Expected
++ Received
+
+@@ -1,10 +1,10 @@
+  {
+-   "candidateResult": "success",
+-   "deployResult": "skipped",
+-   "receipt": null,
+-   "recorded": "not-attempted",
++   "candidateResult": undefined,
++   "deployResult": undefined,
++   "receipt": undefined,
++   "recorded": undefined,
+    "served": {
+      "data": [
+        123,
+        34,
+        114,
+
+ ❯ recordsUnfinished tests/unit/publication.test.ts:453:112
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/190]⎯
+
+ FAIL  tests/unit/publication.test.ts > PUB-OUTCOME: started finish records candidate=success deployment=failure as failed without receipt
+AssertionError: expected { recorded: undefined, …(4) } to deeply equal { recorded: 'failed', …(4) }
+
+- Expected
++ Received
+
+@@ -1,10 +1,10 @@
+  {
+-   "candidateResult": "success",
+-   "deployResult": "failure",
+-   "receipt": null,
+-   "recorded": "failed",
++   "candidateResult": undefined,
++   "deployResult": undefined,
++   "receipt": undefined,
++   "recorded": undefined,
+    "served": {
+      "data": [
+        123,
+        34,
+        114,
+
+ ❯ recordsUnfinished tests/unit/publication.test.ts:453:112
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/190]⎯
+
+ FAIL  tests/unit/publication.test.ts > PUB-OUTCOME: started finish records candidate=failure deployment=skipped as not-attempted without receipt
+AssertionError: expected { recorded: undefined, …(4) } to deeply equal { recorded: 'not-attempted', …(4) }
+
+- Expected
++ Received
+
+@@ -1,10 +1,10 @@
+  {
+-   "candidateResult": "failure",
+-   "deployResult": "skipped",
+-   "receipt": null,
+-   "recorded": "not-attempted",
++   "candidateResult": undefined,
++   "deployResult": undefined,
++   "receipt": undefined,
++   "recorded": undefined,
+    "served": {
+      "data": [
+        123,
+        34,
+        114,
+
+ ❯ recordsUnfinished tests/unit/publication.test.ts:453:112
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/190]⎯
+
+ FAIL  tests/unit/publication.test.ts > PUB-OUTCOME: started finish records candidate=cancelled deployment=cancelled as not-attempted without receipt
+AssertionError: expected { recorded: undefined, …(4) } to deeply equal { recorded: 'not-attempted', …(4) }
+
+- Expected
++ Received
+
+@@ -1,10 +1,10 @@
+  {
+-   "candidateResult": "cancelled",
+-   "deployResult": "cancelled",
+-   "receipt": null,
+-   "recorded": "not-attempted",
++   "candidateResult": undefined,
++   "deployResult": undefined,
++   "receipt": undefined,
++   "recorded": undefined,
+    "served": {
+      "data": [
+        123,
+        34,
+        114,
+
+ ❯ recordsUnfinished tests/unit/publication.test.ts:453:112
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/190]⎯
+
+ FAIL  tests/unit/publication.test.ts > PUB-ACQUIRED-VS-SERVED: older manual candidate receipt never relabels a newer acquired checkpoint
+AssertionError: expected { finalized: undefined, …(2) } to deeply equal { finalized: 'finalized', …(2) }
+
+- Expected
++ Received
+
+@@ -5845,8 +5845,8 @@
+        108,
+        125,
+      ],
+      "type": "Buffer",
+    },
+-   "finalized": "finalized",
+-   "servedSnapshot": "controlled-frozen-candidate",
++   "finalized": undefined,
++   "servedSnapshot": "controlled-old-served",
+  }
+
+ ❯ preservesNewerAcquiredState tests/unit/publication.test.ts:466:214
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/190]⎯
+
+ FAIL  tests/unit/publication.test.ts > PUB-PREPARE: acquire/build/check once, freeze complete candidate, then end awaiting fresh physical evidence
+AssertionError: expected null to match object { outcome: 'awaiting-evidence', …(1) }
+
+- Expected:
+{
+  "outcome": "awaiting-evidence",
+  "receipt": null,
+}
+
++ Received:
+null
+
+ ❯ preparesCompleteCandidate tests/unit/publication.test.ts:477:32
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[13/190]⎯
+
+ FAIL  tests/unit/publication.test.ts > PUB-PREPARE: acquire/build/check once, freeze complete candidate, then end awaiting fresh physical evidence
+AssertionError: expected { acquired: false, build: false, …(1) } to deeply equal { acquired: true, build: true, …(1) }
+
+- Expected
++ Received
+
+  {
+-   "acquired": true,
+-   "build": true,
+-   "checks": true,
++   "acquired": false,
++   "build": false,
++   "checks": false,
+  }
+
+ ❯ preparesCompleteCandidate tests/unit/publication.test.ts:478:149
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[14/190]⎯
+
+ FAIL  tests/unit/publication.test.ts > PUB-PREPARE: acquire/build/check once, freeze complete candidate, then end awaiting fresh physical evidence
+AssertionError: expected { …(7) } to match object { …(2) }
+(8 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+    "priorServedBaselineDigest": "516f262fa3d16a064518d0fb5cddb0b44bb191f733cd9db539c27338b456606e",
+-   "sourceRevision": "2222222222222222222222222222222222222222",
++   "sourceRevision": "1111111111111111111111111111111111111111",
+  }
+
+ ❯ preparesCompleteCandidate tests/unit/publication.test.ts:479:25
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[15/190]⎯
+
+ FAIL  tests/unit/publication.test.ts > PUB-PREPARE: acquire/build/check once, freeze complete candidate, then end awaiting fresh physical evidence
+AssertionError: expected null to match object { acquisitionOutcome: 'success', …(2) }
+
+- Expected:
+{
+  "acquisitionOutcome": "success",
+  "deploymentOutcome": "awaiting-evidence",
+  "stagingOutcome": "success",
+}
+
++ Received:
+null
+
+ ❯ preparesCompleteCandidate tests/unit/publication.test.ts:480:25
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[16/190]⎯
+
+ FAIL  tests/unit/publication.test.ts > PUB-PREPARE-FAIL: source-denial records failure and preserves prior served state
+ FAIL  tests/unit/publication.test.ts > PUB-PREPARE-FAIL: source-schema records failure and preserves prior served state
+ FAIL  tests/unit/publication.test.ts > PUB-PREPARE-FAIL: source-four-hour-cap records failure and preserves prior served state
+ FAIL  tests/unit/publication.test.ts > PUB-PREPARE-FAIL: build-failed records failure and preserves prior served state
+ FAIL  tests/unit/publication.test.ts > PUB-PREPARE-FAIL: automated-failed records failure and preserves prior served state
+ FAIL  tests/unit/publication.test.ts > PUB-PREPARE-FAIL: size-failed records failure and preserves prior served state
+ FAIL  tests/unit/publication.test.ts > PUB-PREPARE-FAIL: metadata-path-overlap records failure and preserves prior served state
+ FAIL  tests/unit/publication.test.ts > PUB-PREPARE-FAIL: untrusted-current-run records failure and preserves prior served state
+ FAIL  tests/unit/publication.test.ts > PUB-PREPARE-FAIL: foreign-state records failure and preserves prior served state
+ FAIL  tests/unit/publication.test.ts > PUB-PREPARE-FAIL: expired-state-no-baseline records failure and preserves prior served state
+ FAIL  tests/unit/publication.test.ts > PUB-PREPARE-FAIL: incompatible-state-no-baseline records failure and preserves prior served state
+ FAIL  tests/unit/publication.test.ts > PUB-PREPARE-FAIL: foreign-partial-session records failure and preserves prior served state
+AssertionError: expected { rejected: false, …(2) } to deeply equal { Object (rejected, reported, ...) }
+
+- Expected
++ Received
+
+@@ -338,8 +338,8 @@
+        34,
+        125,
+      ],
+      "type": "Buffer",
+    },
+-   "rejected": true,
+-   "reported": true,
++   "rejected": false,
++   "reported": false,
+  }
+
+ ❯ failsPreparation tests/unit/publication.test.ts:505:143
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[17/190]⎯
+
+ FAIL  tests/unit/publication.test.ts > PUB-CHECKPOINT-ACCEPT: receipt lives outside immutable original catalogue and checksum
+AssertionError: expected undefined to match object { catalogue: { …(9) }, …(2) }
+
+- Expected:
+{
+  "catalogue": {
+    "coverage": {
+      "attributionGapCount": 0,
+      "endDate": "2026-10-05",
+      "latestInventoryCount": 5,
+      "parliaments": [
+        13,
+      ],
+      "retainedSittingCount": 0,
+      "startDate": "2026-10-01",
+      "unavailableSittingCount": 0,
+    },
+    "members": [
+      {
+        "historicalContext": null,
+        "id": "1839",
+        "listedInLatestSource": true,
+        "name": "LIM GUAN ENG",
+      },
+    ],
+    "preparedAt": "2026-10-10T03:00:00.000Z",
+    "provenance": {
+      "interface": "official-next-page-data",
+      "inventoryAcquiredAt": "2026-10-10T02:53:20.000Z",
+      "inventoryRawDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "membersAcquiredAt": "2026-10-10T02:53:19.999Z",
+      "membersRawDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "sourceBuildId": "source-build",
+    },
+    "publishedAt": null,
+    "schemaVersion": 1,
+    "sittings": [
+      {
+        "date": "2026-10-01",
+        "filename": "dr_2026-10-01",
+        "house": "dewan-rakyat",
+        "id": "1",
+        "isFinal": true,
+        "listedInLatestInventory": true,
+        "mesyuarat": 0,
+        "parliament": 13,
+        "penggal": 2,
+        "record": {
+          "accounting": {
+            "annotations": 0,
+            "assigned": 1,
+            "total": 1,
+            "unassigned": 0,
+          },
+          "acquiredAt": "2026-10-10T02:51:40.000Z",
+          "availability": "available",
+          "compressedBytes": 330,
+          "decodedBytes": 812,
+          "digest": "0a9d4648200b8b124e3575e94d645d860d3499a1ecca14d179cdac619d5a5ff8",
+          "lastAttemptAt": "2026-10-10T02:51:40.000Z",
+          "lastAttemptOutcome": "success",
+          "path": "data/sittings/1.json.gz",
+          "rawSourceDigest": "cf93949d8109323d13ecc884f49db42b007ef590abf5a8be09f6428aa09f6ebc",
+          "sourceBuildId": "synthetic-build",
+          "sourcePublishedAt": null,
+          "sourceRevisedAt": null,
+        },
+        "sourceUrl": "https://hansard.parlimen.gov.my/hansard/dewan-rakyat/2026-10-01",
+      },
+      {
+        "date": "2026-10-02",
+        "filename": "dr_2026-10-02",
+        "house": "dewan-rakyat",
+        "id": "2",
+        "isFinal": true,
+        "listedInLatestInventory": true,
+        "mesyuarat": 0,
+        "parliament": 13,
+        "penggal": 2,
+        "record": {
+          "accounting": {
+            "annotations": 0,
+            "assigned": 1,
+            "total": 1,
+            "unassigned": 0,
+          },
+          "acquiredAt": "2026-10-10T02:51:40.000Z",
+          "availability": "available",
+          "compressedBytes": 335,
+          "decodedBytes": 1152,
+          "digest": "62f908651f462278df2aeea7ad6a6fd627a22385be9b8957d7fc2e5b17ef46f5",
+          "lastAttemptAt": "2026-10-10T02:51:40.000Z",
+          "lastAttemptOutcome": "success",
+          "path": "data/sittings/2.json.gz",
+          "rawSourceDigest": "953f421df691d3fd08b9211feb63ff9ddd54927ed840c82730637e408de2f0a3",
+          "sourceBuildId": "synthetic-build",
+          "sourcePublishedAt": null,
+          "sourceRevisedAt": null,
+        },
+        "sourceUrl": "https://hansard.parlimen.gov.my/hansard/dewan-rakyat/2026-10-02",
+      },
+      {
+        "date": "2026-10-03",
+        "filename": "dr_2026-10-03",
+        "house": "dewan-rakyat",
+        "id": "3",
+        "isFinal": true,
+        "listedInLatestInventory": true,
+        "mesyuarat": 0,
+        "parliament": 13,
+        "penggal": 2,
+        "record": {
+          "accounting": {
+            "annotations": 0,
+            "assigned": 1,
+            "total": 1,
+            "unassigned": 0,
+          },
+          "acquiredAt": "2026-10-10T02:51:40.000Z",
+          "availability": "available",
+          "compressedBytes": 335,
+          "decodedBytes": 1492,
+          "digest": "ac3eca1f9cbb1531830d39c0b4cde9f1b595001923aad9a08ac2a7507c74c625",
+          "lastAttemptAt": "2026-10-10T02:51:40.000Z",
+          "lastAttemptOutcome": "success",
+          "path": "data/sittings/3.json.gz",
+          "rawSourceDigest": "e08f47d6a59c303581d8e9881351c0cfe9988131e7d3ca930a147b0523e0092e",
+          "sourceBuildId": "synthetic-build",
+          "sourcePublishedAt": null,
+          "sourceRevisedAt": null,
+        },
+        "sourceUrl": "https://hansard.parlimen.gov.my/hansard/dewan-rakyat/2026-10-03",
+      },
+      {
+        "date": "2026-10-04",
+        "filename": "dr_2026-10-04",
+        "house": "dewan-rakyat",
+        "id": "4",
+        "isFinal": true,
+        "listedInLatestInventory": true,
+        "mesyuarat": 0,
+        "parliament": 13,
+        "penggal": 2,
+        "record": {
+          "accounting": {
+            "annotations": 0,
+            "assigned": 1,
+            "total": 1,
+            "unassigned": 0,
+          },
+          "acquiredAt": "2026-10-10T02:51:40.000Z",
+          "availability": "available",
+          "compressedBytes": 339,
+          "decodedBytes": 1832,
+          "digest": "29334fa8d6f4ddbf452da3328fde07ba06d62218b1b512e43d6a29940495a6c5",
+          "lastAttemptAt": "2026-10-10T02:51:40.000Z",
+          "lastAttemptOutcome": "success",
+          "path": "data/sittings/4.json.gz",
+          "rawSourceDigest": "eef2b1dbd35857c6c4d62aaba813edb91c0e2b8fd93984049b0e9277198094c6",
+          "sourceBuildId": "synthetic-build",
+          "sourcePublishedAt": null,
+          "sourceRevisedAt": null,
+        },
+        "sourceUrl": "https://hansard.parlimen.gov.my/hansard/dewan-rakyat/2026-10-04",
+      },
+      {
+        "date": "2026-10-05",
+        "filename": "dr_2026-10-05",
+        "house": "dewan-rakyat",
+        "id": "5",
+        "isFinal": true,
+        "listedInLatestInventory": true,
+        "mesyuarat": 0,
+        "parliament": 13,
+        "penggal": 2,
+        "record": {
+          "accounting": {
+            "annotations": 0,
+            "assigned": 1,
+            "total": 1,
+            "unassigned": 0,
+          },
+          "acquiredAt": "2026-10-10T02:51:40.000Z",
+          "availability": "available",
+          "compressedBytes": 340,
+          "decodedBytes": 2172,
+          "digest": "c0b05da3c6033915f8758a72d781dacfbf3239b513fd0764ae900553a1c4e404",
+          "lastAttemptAt": "2026-10-10T02:51:40.000Z",
+          "lastAttemptOutcome": "success",
+          "path": "data/sittings/5.json.gz",
+          "rawSourceDigest": "8edb574612655951241bfbce569aedc92181688dfb1b9272183e1d0719b24597",
+          "sourceBuildId": "synthetic-build",
+          "sourcePublishedAt": null,
+          "sourceRevisedAt": null,
+        },
+        "sourceUrl": "https://hansard.parlimen.gov.my/hansard/dewan-rakyat/2026-10-05",
+      },
+    ],
+    "snapshotId": "controlled-frozen-candidate",
+    "status": {
+      "acquisitionOutcome": "success",
+      "completedAt": "2026-10-10T02:59:59.999Z",
+      "lastConfirmedDeployment": null,
+      "stagingOutcome": "success",
+      "workflowUrl": "https://github.com/eaglecheow/vote-better-malaysia/actions/runs/101",
+    },
+  },
+  "catalogueDigest": "63cd772b29c0cbe4a7459cea395d52be1b026657408c5fe6a8deb510e734e8c8",
+  "servedPublication": {
+    "artifactDigest": "513fec8c4d50ee74d0500a069c686474580d942a38f283172def694cb4e4f30d",
+    "catalogueDigest": "63cd772b29c0cbe4a7459cea395d52be1b026657408c5fe6a8deb510e734e8c8",
+    "receipt": {
+      "deploymentId": "700",
+      "publishedAt": "2026-10-10T03:30:00.000Z",
+      "snapshotId": "controlled-frozen-candidate",
+      "verifiedServedAt": "2026-10-10T04:00:00.000Z",
+      "workflowUrl": "https://github.com/eaglecheow/vote-better-malaysia/actions/runs/300",
+    },
+  },
+}
+
++ Received:
+undefined
+
+ ❯ acceptsCheckpointReceipt tests/unit/publication.test.ts:563:18
+    561|   const value = await fixture(); const binding = { receipt: receipt(va…
+    562|   const result = await finalizeAcquiredCheckpoint(value.checkpoint, bi…
+    563|   expect(result).toMatchObject({ catalogue: value.catalogue, catalogue…
+       |                  ^
+    564|   expect(result?.catalogue.publishedAt).toBeNull();
+    565| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[18/190]⎯
+
+ FAIL  tests/unit/publication.test.ts > PUB-CHECKPOINT-REJECT: snapshot cannot relabel acquired data as served
+ FAIL  tests/unit/publication.test.ts > PUB-CHECKPOINT-REJECT: catalogue-digest cannot relabel acquired data as served
+ FAIL  tests/unit/publication.test.ts > PUB-CHECKPOINT-REJECT: artifact-digest cannot relabel acquired data as served
+ FAIL  tests/unit/publication.test.ts > PUB-CHECKPOINT-REJECT: receipt-time cannot relabel acquired data as served
+ FAIL  tests/unit/publication.test.ts > PUB-CHECKPOINT-REJECT: verification-time cannot relabel acquired data as served
+ FAIL  tests/unit/publication.test.ts > PUB-CHECKPOINT-REJECT: workflow-url cannot relabel acquired data as served
+ FAIL  tests/unit/publication.test.ts > PUB-CHECKPOINT-REJECT: local-state cannot relabel acquired data as served
+ FAIL  tests/unit/publication.test.ts > PUB-CHECKPOINT-REJECT: schema cannot relabel acquired data as served
+ FAIL  tests/unit/publication.test.ts > PUB-CHECKPOINT-REJECT: checksum cannot relabel acquired data as served
+ FAIL  tests/unit/publication.test.ts > PUB-CHECKPOINT-REJECT: missing-shard cannot relabel acquired data as served
+ FAIL  tests/unit/publication.test.ts > PUB-CHECKPOINT-REJECT: unreferenced-shard cannot relabel acquired data as served
+AssertionError: expected { rejected: false, …(1) } to deeply equal { rejected: true, …(1) }
+
+- Expected
++ Received
+
+@@ -5847,7 +5847,7 @@
+        108,
+        125,
+      ],
+      "type": "Buffer",
+    },
+-   "rejected": true,
++   "rejected": false,
+  }
+
+ ❯ rejectsCheckpointReceipt tests/unit/publication.test.ts:586:90
+    584|   const before = await readFile(join(value.state, 'checkpoint.json'));…
+    585|   try { await finalizeAcquiredCheckpoint(input, binding, acquisitionOp…
+    586|   expect({ rejected, checkpoint: await readFile(join(value.state, 'che…
+       |                                                                                          ^
+    587| }
+    588| test.each(checkpointFaults)('PUB-CHECKPOINT-REJECT: %s cannot relabel …
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[19/190]⎯
+
+ FAIL  tests/unit/publication.test.ts > PUB-BASELINE-HISTORICAL: independently authenticated old code fingerprint stays honest during compatible current-code recovery
+AssertionError: expected undefined to match object { …(3) }
+
+- Expected:
+{
+  "catalogueDigest": "63cd772b29c0cbe4a7459cea395d52be1b026657408c5fe6a8deb510e734e8c8",
+  "codeFingerprint": "6b218a34d827d44e1d2a49cc048ff0dcc8c6c85c902bc96bc748046fc23e4b09",
+  "receipt": {
+    "deploymentId": "700",
+    "publishedAt": "2026-10-10T03:30:00.000Z",
+    "snapshotId": "controlled-frozen-candidate",
+    "verifiedServedAt": "2026-10-10T04:00:00.000Z",
+    "workflowUrl": "https://github.com/eaglecheow/vote-better-malaysia/actions/runs/101",
+  },
+}
+
++ Received:
+undefined
+
+ ❯ recoversAuthenticHistoricalCode tests/unit/publication.test.ts:600:21
+    598|     catalogueDigest: value.checkpoint.catalogueDigest, shardDigests: v…
+    599|   const recovered = await validateHistoricalServedBaseline(proof, orig…
+    600|   expect(recovered).toMatchObject({ codeFingerprint: oldFingerprint, c…
+       |                     ^
+    601|   expect(recovered?.codeFingerprint).not.toBe(value.options.codeFinger…
+    602| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[20/190]⎯
+
+ FAIL  tests/unit/publication.test.ts > PUB-BASELINE-REJECT: no-authentication never relaxes exact checkpoint or authenticated historical trust
+ FAIL  tests/unit/publication.test.ts > PUB-BASELINE-REJECT: self-trusted never relaxes exact checkpoint or authenticated historical trust
+ FAIL  tests/unit/publication.test.ts > PUB-BASELINE-REJECT: substituted-fingerprint never relaxes exact checkpoint or authenticated historical trust
+ FAIL  tests/unit/publication.test.ts > PUB-BASELINE-REJECT: wrong-repository never relaxes exact checkpoint or authenticated historical trust
+ FAIL  tests/unit/publication.test.ts > PUB-BASELINE-REJECT: wrong-branch never relaxes exact checkpoint or authenticated historical trust
+ FAIL  tests/unit/publication.test.ts > PUB-BASELINE-REJECT: wrong-run never relaxes exact checkpoint or authenticated historical trust
+ FAIL  tests/unit/publication.test.ts > PUB-BASELINE-REJECT: wrong-base never relaxes exact checkpoint or authenticated historical trust
+ FAIL  tests/unit/publication.test.ts > PUB-BASELINE-REJECT: wrong-snapshot never relaxes exact checkpoint or authenticated historical trust
+ FAIL  tests/unit/publication.test.ts > PUB-BASELINE-REJECT: wrong-catalogue-digest never relaxes exact checkpoint or authenticated historical trust
+ FAIL  tests/unit/publication.test.ts > PUB-BASELINE-REJECT: wrong-shard-digest never relaxes exact checkpoint or authenticated historical trust
+ FAIL  tests/unit/publication.test.ts > PUB-BASELINE-REJECT: missing-shard-reference never relaxes exact checkpoint or authenticated historical trust
+ FAIL  tests/unit/publication.test.ts > PUB-BASELINE-REJECT: unreferenced-shard never relaxes exact checkpoint or authenticated historical trust
+ FAIL  tests/unit/publication.test.ts > PUB-BASELINE-REJECT: unsupported-schema never relaxes exact checkpoint or authenticated historical trust
+ FAIL  tests/unit/publication.test.ts > PUB-BASELINE-REJECT: unrecoverable-http never relaxes exact checkpoint or authenticated historical trust
+AssertionError: expected { rejected: false, …(2) } to deeply equal { rejected: true, …(2) }
+
+- Expected
++ Received
+
+@@ -5847,11 +5847,11 @@
+        108,
+        125,
+      ],
+      "type": "Buffer",
+    },
+-   "rejected": true,
++   "rejected": false,
+    "served": {
+      "data": [
+        123,
+        34,
+        114,
+
+ ❯ rejectsHistoricalBaseline tests/unit/publication.test.ts:627:160
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[21/190]⎯
+
+ FAIL  tests/unit/publication.test.ts > PUB-PROOF-REUSE: json-clone cannot preserve authenticated authorization for new claims
+ FAIL  tests/unit/publication.test.ts > PUB-PROOF-REUSE: codeFingerprint cannot preserve authenticated authorization for new claims
+ FAIL  tests/unit/publication.test.ts > PUB-PROOF-REUSE: runId cannot preserve authenticated authorization for new claims
+ FAIL  tests/unit/publication.test.ts > PUB-PROOF-REUSE: artifactId cannot preserve authenticated authorization for new claims
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ deniesReusedOrigin tests/unit/publication.test.ts:668:33
+    666|     catalogueDigest: value.checkpoint.catalogueDigest, shardDigests: v…
+    667|   let rejected = false; try { await validateHistoricalServedBaseline(p…
+    668|   expect(immutable || rejected).toBe(true);
+       |                                 ^
+    669| }
+    670| test.each(originReuseFaults)('PUB-PROOF-REUSE: %s cannot preserve auth…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[22/190]⎯
+
+ FAIL  tests/unit/publication.test.ts > PUB-CHECKPOINT-READ: trusted external served receipt survives reload without relabeling original catalogue publication time
+AssertionError: expected undefined to match object { catalogue: { …(9) }, …(1) }
+
+- Expected:
+{
+  "catalogue": {
+    "coverage": {
+      "attributionGapCount": 0,
+      "endDate": "2026-10-05",
+      "latestInventoryCount": 5,
+      "parliaments": [
+        13,
+      ],
+      "retainedSittingCount": 0,
+      "startDate": "2026-10-01",
+      "unavailableSittingCount": 0,
+    },
+    "members": [
+      {
+        "historicalContext": null,
+        "id": "1839",
+        "listedInLatestSource": true,
+        "name": "LIM GUAN ENG",
+      },
+    ],
+    "preparedAt": "2026-10-10T03:00:00.000Z",
+    "provenance": {
+      "interface": "official-next-page-data",
+      "inventoryAcquiredAt": "2026-10-10T02:53:20.000Z",
+      "inventoryRawDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "membersAcquiredAt": "2026-10-10T02:53:19.999Z",
+      "membersRawDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "sourceBuildId": "source-build",
+    },
+    "publishedAt": null,
+    "schemaVersion": 1,
+    "sittings": [
+      {
+        "date": "2026-10-01",
+        "filename": "dr_2026-10-01",
+        "house": "dewan-rakyat",
+        "id": "1",
+        "isFinal": true,
+        "listedInLatestInventory": true,
+        "mesyuarat": 0,
+        "parliament": 13,
+        "penggal": 2,
+        "record": {
+          "accounting": {
+            "annotations": 0,
+            "assigned": 1,
+            "total": 1,
+            "unassigned": 0,
+          },
+          "acquiredAt": "2026-10-10T02:51:40.000Z",
+          "availability": "available",
+          "compressedBytes": 330,
+          "decodedBytes": 812,
+          "digest": "0a9d4648200b8b124e3575e94d645d860d3499a1ecca14d179cdac619d5a5ff8",
+          "lastAttemptAt": "2026-10-10T02:51:40.000Z",
+          "lastAttemptOutcome": "success",
+          "path": "data/sittings/1.json.gz",
+          "rawSourceDigest": "cf93949d8109323d13ecc884f49db42b007ef590abf5a8be09f6428aa09f6ebc",
+          "sourceBuildId": "synthetic-build",
+          "sourcePublishedAt": null,
+          "sourceRevisedAt": null,
+        },
+        "sourceUrl": "https://hansard.parlimen.gov.my/hansard/dewan-rakyat/2026-10-01",
+      },
+      {
+        "date": "2026-10-02",
+        "filename": "dr_2026-10-02",
+        "house": "dewan-rakyat",
+        "id": "2",
+        "isFinal": true,
+        "listedInLatestInventory": true,
+        "mesyuarat": 0,
+        "parliament": 13,
+        "penggal": 2,
+        "record": {
+          "accounting": {
+            "annotations": 0,
+            "assigned": 1,
+            "total": 1,
+            "unassigned": 0,
+          },
+          "acquiredAt": "2026-10-10T02:51:40.000Z",
+          "availability": "available",
+          "compressedBytes": 335,
+          "decodedBytes": 1152,
+          "digest": "62f908651f462278df2aeea7ad6a6fd627a22385be9b8957d7fc2e5b17ef46f5",
+          "lastAttemptAt": "2026-10-10T02:51:40.000Z",
+          "lastAttemptOutcome": "success",
+          "path": "data/sittings/2.json.gz",
+          "rawSourceDigest": "953f421df691d3fd08b9211feb63ff9ddd54927ed840c82730637e408de2f0a3",
+          "sourceBuildId": "synthetic-build",
+          "sourcePublishedAt": null,
+          "sourceRevisedAt": null,
+        },
+        "sourceUrl": "https://hansard.parlimen.gov.my/hansard/dewan-rakyat/2026-10-02",
+      },
+      {
+        "date": "2026-10-03",
+        "filename": "dr_2026-10-03",
+        "house": "dewan-rakyat",
+        "id": "3",
+        "isFinal": true,
+        "listedInLatestInventory": true,
+        "mesyuarat": 0,
+        "parliament": 13,
+        "penggal": 2,
+        "record": {
+          "accounting": {
+            "annotations": 0,
+            "assigned": 1,
+            "total": 1,
+            "unassigned": 0,
+          },
+          "acquiredAt": "2026-10-10T02:51:40.000Z",
+          "availability": "available",
+          "compressedBytes": 335,
+          "decodedBytes": 1492,
+          "digest": "ac3eca1f9cbb1531830d39c0b4cde9f1b595001923aad9a08ac2a7507c74c625",
+          "lastAttemptAt": "2026-10-10T02:51:40.000Z",
+          "lastAttemptOutcome": "success",
+          "path": "data/sittings/3.json.gz",
+          "rawSourceDigest": "e08f47d6a59c303581d8e9881351c0cfe9988131e7d3ca930a147b0523e0092e",
+          "sourceBuildId": "synthetic-build",
+          "sourcePublishedAt": null,
+          "sourceRevisedAt": null,
+        },
+        "sourceUrl": "https://hansard.parlimen.gov.my/hansard/dewan-rakyat/2026-10-03",
+      },
+      {
+        "date": "2026-10-04",
+        "filename": "dr_2026-10-04",
+        "house": "dewan-rakyat",
+        "id": "4",
+        "isFinal": true,
+        "listedInLatestInventory": true,
+        "mesyuarat": 0,
+        "parliament": 13,
+        "penggal": 2,
+        "record": {
+          "accounting": {
+            "annotations": 0,
+            "assigned": 1,
+            "total": 1,
+            "unassigned": 0,
+          },
+          "acquiredAt": "2026-10-10T02:51:40.000Z",
+          "availability": "available",
+          "compressedBytes": 339,
+          "decodedBytes": 1832,
+          "digest": "29334fa8d6f4ddbf452da3328fde07ba06d62218b1b512e43d6a29940495a6c5",
+          "lastAttemptAt": "2026-10-10T02:51:40.000Z",
+          "lastAttemptOutcome": "success",
+          "path": "data/sittings/4.json.gz",
+          "rawSourceDigest": "eef2b1dbd35857c6c4d62aaba813edb91c0e2b8fd93984049b0e9277198094c6",
+          "sourceBuildId": "synthetic-build",
+          "sourcePublishedAt": null,
+          "sourceRevisedAt": null,
+        },
+        "sourceUrl": "https://hansard.parlimen.gov.my/hansard/dewan-rakyat/2026-10-04",
+      },
+      {
+        "date": "2026-10-05",
+        "filename": "dr_2026-10-05",
+        "house": "dewan-rakyat",
+        "id": "5",
+        "isFinal": true,
+        "listedInLatestInventory": true,
+        "mesyuarat": 0,
+        "parliament": 13,
+        "penggal": 2,
+        "record": {
+          "accounting": {
+            "annotations": 0,
+            "assigned": 1,
+            "total": 1,
+            "unassigned": 0,
+          },
+          "acquiredAt": "2026-10-10T02:51:40.000Z",
+          "availability": "available",
+          "compressedBytes": 340,
+          "decodedBytes": 2172,
+          "digest": "c0b05da3c6033915f8758a72d781dacfbf3239b513fd0764ae900553a1c4e404",
+          "lastAttemptAt": "2026-10-10T02:51:40.000Z",
+          "lastAttemptOutcome": "success",
+          "path": "data/sittings/5.json.gz",
+          "rawSourceDigest": "8edb574612655951241bfbce569aedc92181688dfb1b9272183e1d0719b24597",
+          "sourceBuildId": "synthetic-build",
+          "sourcePublishedAt": null,
+          "sourceRevisedAt": null,
+        },
+        "sourceUrl": "https://hansard.parlimen.gov.my/hansard/dewan-rakyat/2026-10-05",
+      },
+    ],
+    "snapshotId": "controlled-frozen-candidate",
+    "status": {
+      "acquisitionOutcome": "success",
+      "completedAt": "2026-10-10T02:59:59.999Z",
+      "lastConfirmedDeployment": null,
+      "stagingOutcome": "success",
+      "workflowUrl": "https://github.com/eaglecheow/vote-better-malaysia/actions/runs/101",
+    },
+  },
+  "confirmedDeployment": {
+    "deploymentId": "700",
+    "publishedAt": "2026-10-10T03:30:00.000Z",
+    "snapshotId": "controlled-frozen-candidate",
+    "verifiedServedAt": "2026-10-10T04:00:00.000Z",
+    "workflowUrl": "https://github.com/eaglecheow/vote-better-malaysia/actions/runs/300",
+  },
+}
+
++ Received:
+undefined
+
+ ❯ readsConfirmedCheckpoint tests/unit/publication.test.ts:679:20
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[23/190]⎯
+
+ FAIL  tests/unit/publication.test.ts > PUB-CHECKPOINT-READ-REJECT: snapshot cannot survive restoration as served metadata
+ FAIL  tests/unit/publication.test.ts > PUB-CHECKPOINT-READ-REJECT: catalogue-digest cannot survive restoration as served metadata
+ FAIL  tests/unit/publication.test.ts > PUB-CHECKPOINT-READ-REJECT: artifact-digest cannot survive restoration as served metadata
+ FAIL  tests/unit/publication.test.ts > PUB-CHECKPOINT-READ-REJECT: publication-time cannot survive restoration as served metadata
+ FAIL  tests/unit/publication.test.ts > PUB-CHECKPOINT-READ-REJECT: verified-time cannot survive restoration as served metadata
+ FAIL  tests/unit/publication.test.ts > PUB-CHECKPOINT-READ-REJECT: local-context cannot survive restoration as served metadata
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ rejectsCheckpointReadback tests/unit/publication.test.ts:701:20
+    699|   if (fault === 'local-context') { input.originKind = 'local-developme…
+    700|   let rejected = false; try { await readPublicationCheckpoint(input, o…
+    701|   expect(rejected).toBe(true);
+       |                    ^
+    702| }
+    703| test.each(readbackFaults)('PUB-CHECKPOINT-READ-REJECT: %s cannot survi…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[24/190]⎯
+
+ FAIL  tests/unit/publication.test.ts > PUB-TEST-ORIGIN: missing cannot establish prepublication physical evidence
+ FAIL  tests/unit/publication.test.ts > PUB-TEST-ORIGIN: http cannot establish prepublication physical evidence
+ FAIL  tests/unit/publication.test.ts > PUB-TEST-ORIGIN: wrong-subpath cannot establish prepublication physical evidence
+ FAIL  tests/unit/publication.test.ts > PUB-TEST-ORIGIN: device-url cannot establish prepublication physical evidence
+ FAIL  tests/unit/publication.test.ts > PUB-TEST-ORIGIN: missing-device-url cannot establish prepublication physical evidence
+ FAIL  tests/unit/publication.test.ts > PUB-TEST-ORIGIN: candidate-mismatch cannot establish prepublication physical evidence
+ FAIL  tests/unit/publication.test.ts > PUB-TEST-ORIGIN: unavailable-origin cannot establish prepublication physical evidence
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ blocksUntrustedTestOrigin tests/unit/publication.test.ts:720:167
+    718|   if (fault === 'missing-device-url') delete value.performance.devices…
+    719|   if (fault === 'candidate-mismatch' || fault === 'unavailable-origin'…
+    720|   await save(value); const observed = await observe(promotePublication…
+       |                                                                                                                                                                       ^
+    721|   /** Supplies a wrong or unavailable test-origin candidate without ch…
+    722|    * @param input Actual native URL.
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[25/190]⎯
+
+ FAIL  tests/unit/publication.test.ts > PUB-FIRST-PUBLISH: prepublication checks use trusted test origin and do not require nonexistent production live result
+AssertionError: expected undefined to be 'ready' // Object.is equality
+
+- Expected:
+"ready"
+
++ Received:
+undefined
+
+ ❯ allowsFirstPublication tests/unit/publication.test.ts:744:103
+    742|   value.performance = performance(value); value.documentation.candidat…
+    743|   await save(value); await rm(join(value.state, 'served-publication.js…
+    744|   const observed = await observe(promotePublication, value.options); e…
+       |                                                                                                       ^
+    745|   /** Reports actual production-source absence only at the controlled …
+    746|    * @param input Requested native URL.
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[26/190]⎯
+
+ FAIL  tests/unit/publication.test.ts > PUB-RESUME: explicit API-verified capped partial adopts original session while current run remains independently recorded
+AssertionError: expected undefined to be 'awaiting-evidence' // Object.is equality
+
+- Expected:
+"awaiting-evidence"
+
++ Received:
+undefined
+
+ ❯ resumesExplicitPartial tests/unit/publication.test.ts:787:41
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[27/190]⎯
+
+ FAIL  tests/unit/publication.test.ts > PUB-RESUME: explicit API-verified capped partial adopts original session while current run remains independently recorded
+AssertionError: expected { …(20) } to match object { …(4) }
+(16 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+-   "acquisitionOutcome": "success",
++   "acquisitionOutcome": "failed",
+    "completedIds": [
+      "5",
+    ],
+-   "pendingIds": [],
++   "pendingIds": [
++     "4",
++     "3",
++     "2",
++     "1",
++   ],
+    "sessionId": "partial-session-100",
+  }
+
+ ❯ resumesExplicitPartial tests/unit/publication.test.ts:787:90
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[28/190]⎯
+
+ FAIL  tests/unit/publication.test.ts > PUB-RESUME: explicit API-verified capped partial adopts original session while current run remains independently recorded
+AssertionError: expected null to match object { runId: '300', …(1) }
+
+- Expected:
+{
+  "resumeSessionId": "partial-session-100",
+  "runId": "300",
+}
+
++ Received:
+null
+
+ ❯ resumesExplicitPartial tests/unit/publication.test.ts:788:104
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[29/190]⎯
+
+ FAIL  tests/unit/publication.test.ts > PUB-RESUME-REJECT: foreign-run cannot restore partial progress as a complete/served baseline
+ FAIL  tests/unit/publication.test.ts > PUB-RESUME-REJECT: pr-origin cannot restore partial progress as a complete/served baseline
+ FAIL  tests/unit/publication.test.ts > PUB-RESUME-REJECT: wrong-session cannot restore partial progress as a complete/served baseline
+ FAIL  tests/unit/publication.test.ts > PUB-RESUME-REJECT: wrong-code cannot restore partial progress as a complete/served baseline
+ FAIL  tests/unit/publication.test.ts > PUB-RESUME-REJECT: expired cannot restore partial progress as a complete/served baseline
+ FAIL  tests/unit/publication.test.ts > PUB-RESUME-REJECT: baseline-mismatch cannot restore partial progress as a complete/served baseline
+ FAIL  tests/unit/publication.test.ts > PUB-RESUME-REJECT: missing-payload cannot restore partial progress as a complete/served baseline
+ FAIL  tests/unit/publication.test.ts > PUB-RESUME-REJECT: payload-digest cannot restore partial progress as a complete/served baseline
+AssertionError: expected { rejected: false, …(1) } to deeply equal { rejected: true, …(1) }
+
+- Expected
++ Received
+
+@@ -5847,7 +5847,7 @@
+        108,
+        125,
+      ],
+      "type": "Buffer",
+    },
+-   "rejected": true,
++   "rejected": false,
+  }
+
+ ❯ rejectsPartialRestore tests/unit/publication.test.ts:816:109
+    814|   if (fault === 'payload-digest') partial.shardDigests[partial.accepte…
+    815|   await put(root, 'partial-checkpoint.json', JSON.stringify(partial));…
+    816|   expect({ rejected: observed.rejected, checkpoint: await readFile(joi…
+       |                                                                                                             ^
+    817| }
+    818| test.each(partialFaults)('PUB-RESUME-REJECT: %s cannot restore partial…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[30/190]⎯
+
+ FAIL  tests/unit/publication.test.ts > PUB-CLI-REJECT: unknown cannot silently succeed outside reviewed workflow context
+ FAIL  tests/unit/publication.test.ts > PUB-CLI-REJECT: prepare-local cannot silently succeed outside reviewed workflow context
+ FAIL  tests/unit/publication.test.ts > PUB-CLI-REJECT: promote-missing-ids cannot silently succeed outside reviewed workflow context
+ FAIL  tests/unit/publication.test.ts > PUB-CLI-REJECT: finalize-invalid-job-result cannot silently succeed outside reviewed workflow context
+AssertionError: expected { status: +0, timeout: null } to deeply equal { status: 1, timeout: null }
+
+- Expected
++ Received
+
+  {
+-   "status": 1,
++   "status": 0,
+    "timeout": null,
+  }
+
+ ❯ rejectsCli tests/unit/publication.test.ts:831:75
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[31/190]⎯
+
+ FAIL  tests/unit/publication.test.ts > PUB-ARCHIVE-REJECT: path-traversal cannot be extracted before authenticated safe-path verification
+ FAIL  tests/unit/publication.test.ts > PUB-ARCHIVE-REJECT: absolute-path cannot be extracted before authenticated safe-path verification
+ FAIL  tests/unit/publication.test.ts > PUB-ARCHIVE-REJECT: symlink cannot be extracted before authenticated safe-path verification
+ FAIL  tests/unit/publication.test.ts > PUB-ARCHIVE-REJECT: hardlink cannot be extracted before authenticated safe-path verification
+ FAIL  tests/unit/publication.test.ts > PUB-ARCHIVE-REJECT: untrusted-origin cannot be extracted before authenticated safe-path verification
+AssertionError: expected { rejected: false, …(2) } to deeply equal { rejected: true, …(2) }
+
+- Expected
++ Received
+
+@@ -1,8 +1,8 @@
+  {
+    "outside": "Original outside marker",
+-   "rejected": true,
++   "rejected": false,
+    "served": {
+      "data": [
+        123,
+        34,
+        114,
+
+ ❯ rejectsUnsafeArchive tests/unit/publication.test.ts:851:155
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[32/190]⎯
+
+ FAIL  tests/unit/publication.test.ts > PUB-APPROVAL-RECHECK: environment approval delay cannot bypass current baseline/application/evidence revalidation
+AssertionError: expected undefined to be 'ready' // Object.is equality
+
+- Expected:
+"ready"
+
++ Received:
+undefined
+
+ ❯ rejectsAfterApprovalDelay tests/unit/publication.test.ts:862:38
+    860| async function rejectsAfterApprovalDelay(): Promise<void> {
+    861|   const value = await fixture(); const first = await observe(promotePu…
+    862|   expect.soft(first.result?.outcome).toBe('ready'); await put(value.st…
+       |                                      ^
+    863|   const second = await observe(promotePublication, value.options); exp…
+    864|   expect.soft(value.commands).toEqual([]);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[33/190]⎯
+
+ FAIL  tests/unit/publication.test.ts > PUB-APPROVAL-RECHECK: environment approval delay cannot bypass current baseline/application/evidence revalidation
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ rejectsAfterApprovalDelay tests/unit/publication.test.ts:863:147
+    861|   const value = await fixture(); const first = await observe(promotePu…
+    862|   expect.soft(first.result?.outcome).toBe('ready'); await put(value.st…
+    863|   const second = await observe(promotePublication, value.options); exp…
+       |                                                                                                                                                   ^
+    864|   expect.soft(value.commands).toEqual([]);
+    865| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[34/190]⎯
+
+ FAIL  tests/unit/publication.test.ts > PUB-ARCHIVE-RESTORE: fresh authenticated runner restores original tar without rebuilding or changing any deployed file
+AssertionError: expected undefined to be 'ready' // Object.is equality
+
+- Expected:
+"ready"
+
++ Received:
+undefined
+
+ ❯ restoresExactArchive tests/unit/publication.test.ts:889:36
+    887|   const value = await fixture(); execFileSync('tar', ['-cf', join(valu…
+    888|   await rm(value.artifact, { recursive: true }); const observed = awai…
+    889|   expect(observed.result?.outcome).toBe('ready'); expect((await measur…
+       |                                    ^
+    890|   expect(value.commands).toEqual([]);
+    891| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[35/190]⎯
+
+ FAIL  tests/unit/publication.test.ts > PUB-STATE-IMPORT: exact newest selected successful artifact is authenticated before acquire uses it
+AssertionError: expected undefined to be 'awaiting-evidence' // Object.is equality
+
+- Expected:
+"awaiting-evidence"
+
++ Received:
+undefined
+
+ ❯ importsSelectedCompleteState tests/unit/publication.test.ts:911:41
+    909|   const value = await fixture(); await selectedState(value); const obs…
+    910|   const progress = await json(join(value.state, 'receipts/300/refresh.…
+    911|   expect.soft(observed.result?.outcome).toBe('awaiting-evidence'); exp…
+       |                                         ^
+    912|   expect.soft(progress).toMatchObject({ baseline: 'checkpoint', strate…
+    913| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[36/190]⎯
+
+ FAIL  tests/unit/publication.test.ts > PUB-STATE-IMPORT: exact newest selected successful artifact is authenticated before acquire uses it
+AssertionError: expected [] to include 'https://api.github.com/repos/eagleche…'
+ ❯ importsSelectedCompleteState tests/unit/publication.test.ts:911:93
+    909|   const value = await fixture(); await selectedState(value); const obs…
+    910|   const progress = await json(join(value.state, 'receipts/300/refresh.…
+    911|   expect.soft(observed.result?.outcome).toBe('awaiting-evidence'); exp…
+       |                                                                                             ^
+    912|   expect.soft(progress).toMatchObject({ baseline: 'checkpoint', strate…
+    913| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[37/190]⎯
+
+ FAIL  tests/unit/publication.test.ts > PUB-STATE-IMPORT: exact newest selected successful artifact is authenticated before acquire uses it
+AssertionError: expected null to match object { baseline: 'checkpoint', …(1) }
+
+- Expected:
+{
+  "baseline": "checkpoint",
+  "strategy": "incremental",
+}
+
++ Received:
+null
+
+ ❯ importsSelectedCompleteState tests/unit/publication.test.ts:912:25
+    910|   const progress = await json(join(value.state, 'receipts/300/refresh.…
+    911|   expect.soft(observed.result?.outcome).toBe('awaiting-evidence'); exp…
+    912|   expect.soft(progress).toMatchObject({ baseline: 'checkpoint', strate…
+       |                         ^
+    913| }
+    914| test('PUB-STATE-IMPORT: exact newest selected successful artifact is a…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[38/190]⎯
+
+ FAIL  tests/unit/publication.test.ts > PUB-STATE-IMPORT-REJECT: foreign-artifact cannot certify a successful retention baseline
+ FAIL  tests/unit/publication.test.ts > PUB-STATE-IMPORT-REJECT: failed-run cannot certify a successful retention baseline
+ FAIL  tests/unit/publication.test.ts > PUB-STATE-IMPORT-REJECT: pr-run cannot certify a successful retention baseline
+ FAIL  tests/unit/publication.test.ts > PUB-STATE-IMPORT-REJECT: wrong-branch cannot certify a successful retention baseline
+ FAIL  tests/unit/publication.test.ts > PUB-STATE-IMPORT-REJECT: expired cannot certify a successful retention baseline
+ FAIL  tests/unit/publication.test.ts > PUB-STATE-IMPORT-REJECT: malformed-latest-no-skip cannot certify a successful retention baseline
+AssertionError: expected { rejected: false, …(1) } to deeply equal { rejected: true, …(1) }
+
+- Expected
++ Received
+
+@@ -1,7 +1,7 @@
+  {
+-   "rejected": true,
++   "rejected": false,
+    "served": {
+      "data": [
+        123,
+        34,
+        114,
+
+ ❯ rejectsSelectedState tests/unit/publication.test.ts:932:113
+    930|   if (fault === 'malformed-latest-no-skip') await put(value.state, 'ch…
+    931|   const observed = await observe(preparePublication, value.options);
+    932|   expect({ rejected: observed.rejected, served: await readFile(join(va…
+       |                                                                                                                 ^
+    933| }
+    934| test.each(stateOriginFaults)('PUB-STATE-IMPORT-REJECT: %s cannot certi…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[39/190]⎯
+
+ FAIL  tests/unit/publication.test.ts > PUB-STATE-SERVED-RECOVERY: missing checkpoint uses authenticated historical served compatibility
+ FAIL  tests/unit/publication.test.ts > PUB-STATE-SERVED-RECOVERY: expired checkpoint uses authenticated historical served compatibility
+ FAIL  tests/unit/publication.test.ts > PUB-STATE-SERVED-RECOVERY: incompatible checkpoint uses authenticated historical served compatibility
+AssertionError: expected undefined to be 'awaiting-evidence' // Object.is equality
+
+- Expected:
+"awaiting-evidence"
+
++ Received:
+undefined
+
+ ❯ recoversControllerServedState tests/unit/publication.test.ts:951:41
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[40/190]⎯
+
+ FAIL  tests/unit/publication.test.ts > PUB-STATE-SERVED-RECOVERY: missing checkpoint uses authenticated historical served compatibility
+ FAIL  tests/unit/publication.test.ts > PUB-STATE-SERVED-RECOVERY: expired checkpoint uses authenticated historical served compatibility
+ FAIL  tests/unit/publication.test.ts > PUB-STATE-SERVED-RECOVERY: incompatible checkpoint uses authenticated historical served compatibility
+AssertionError: expected null to match object { baseline: 'served', …(1) }
+
+- Expected:
+{
+  "baseline": "served",
+  "strategy": "incremental",
+}
+
++ Received:
+null
+
+ ❯ recoversControllerServedState tests/unit/publication.test.ts:951:90
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[41/190]⎯
+
+ FAIL  tests/unit/publication.test.ts > PUB-NEXT-CANDIDATE: restored confirmed receipt enters known history without rewriting its original served artifact
+AssertionError: expected undefined to be 'awaiting-evidence' // Object.is equality
+
+- Expected:
+"awaiting-evidence"
+
++ Received:
+undefined
+
+ ❯ carriesReceiptIntoNextCandidate tests/unit/publication.test.ts:964:36
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[42/190]⎯
+
+ FAIL  tests/unit/publication.test.ts > PUB-APPROVAL-CURRENT: application change while waiting blocks previously eligible deployment
+ FAIL  tests/unit/publication.test.ts > PUB-APPROVAL-CURRENT: evidence-expiry change while waiting blocks previously eligible deployment
+AssertionError: expected undefined to be 'ready' // Object.is equality
+
+- Expected:
+"ready"
+
++ Received:
+undefined
+
+ ❯ rechecksApprovedEvidence tests/unit/publication.test.ts:977:133
+    975|  */
+    976| async function rechecksApprovedEvidence(fault: string): Promise<void> {
+    977|   const value = await fixture(); const first = await observe(promotePu…
+       |                                                                                                                                     ^
+    978|   if (fault === 'application') await put(value.root, 'src/sample.ts', …
+    979|   const second = await observe(promotePublication, value.options); exp…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[43/190]⎯
+
+ FAIL  tests/unit/publication.test.ts > PUB-APPROVAL-CURRENT: application change while waiting blocks previously eligible deployment
+ FAIL  tests/unit/publication.test.ts > PUB-APPROVAL-CURRENT: evidence-expiry change while waiting blocks previously eligible deployment
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ rechecksApprovedEvidence tests/unit/publication.test.ts:979:147
+    977|   const value = await fixture(); const first = await observe(promotePu…
+    978|   if (fault === 'application') await put(value.root, 'src/sample.ts', …
+    979|   const second = await observe(promotePublication, value.options); exp…
+       |                                                                                                                                                   ^
+    980| }
+    981| test.each(['application', 'evidence-expiry'])('PUB-APPROVAL-CURRENT: %…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[44/190]⎯
+

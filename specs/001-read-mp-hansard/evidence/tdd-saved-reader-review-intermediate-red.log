@@ -1,0 +1,2797 @@
+
+> vote-better-malaysia@0.1.0 test
+> vitest --run tests/unit/saved-reader.test.ts tests/unit/bootstrap.test.ts
+
+
+ RUN  v5.0.3 /Users/eaglecheow/dev/vote-better-malaysia
+
+ ❯ tests/unit/bootstrap.test.ts (3 tests | 3 failed) 45ms
+   × BOOTREV001 unsupported: actual app startup keeps ordinary reading usable with unconfirmed offline readiness 11ms
+   × BOOTREV001 rejected: actual app startup keeps ordinary reading usable with unconfirmed offline readiness 23ms
+   × BOOTREV001 pending: actual app startup keeps ordinary reading usable with unconfirmed offline readiness 11ms
+ ❯ tests/unit/saved-reader.test.ts (45 tests | 45 failed) 236ms
+   × SAVED001 ms: offline reopening restores valid catalogue, exact saved pair, locale and selections 21ms
+   × SAVED002 ms: another member from a fetched sitting remains offline-unsaved and requires a connection 6ms
+   × SAVED003 ms: incompatible saved content is unavailable and requires valid online retrieval 4ms
+   × SAVED004 ms: a committed transcript and compatible shell produce distinct saved/offline notices 5ms
+   × SAVED005 ms: unchanged bytes still advance current validation time and committed saved time 4ms
+   × SAVED006 ms: changed validated content commits every new turn and every source gap/annotation 4ms
+   × SAVED007 ms: failed saving keeps new online content unsaved and identifies the older offline copy separately 3ms
+   × SAVED008 ms: pair saving remains pending until transaction acknowledgement and does not advance saved time early 4ms
+   × SAVED009 ms: committed pair with unconfirmed shell stays transcript-saved without an offline-reopening promise 3ms
+   × SAVED010 ms: new-shell failure preserves an already confirmed compatible saved reader 5ms
+   × SAVED011 ms: failed hash validation keeps the prior accepted result/time and never saves failed data 5ms
+   × SAVED011 ms: failed identity validation keeps the prior accepted result/time and never saves failed data 5ms
+   × SAVED011 ms: failed schema validation keeps the prior accepted result/time and never saves failed data 4ms
+   × SAVED012 ms: device storage opening failure preserves ordinary online reading with an honest limit 7ms
+   × SAVED013 ms: saved result metadata is not relabeled from a newer cached catalogue 4ms
+   × SAVED014 ms: language and valid changed selections are persisted before deliberate Apply 4ms
+   × SAVED015 ms: Continue preserves exact reading, preferences and native control focus 5ms
+   × SAVED016 ms: complete saved-reader readiness mark waits until the matching saved pair is usable 4ms
+   × SAVED018 ms: first offline visit without committed lists cannot invent a readable source archive 5ms
+   × SAVED001 en: offline reopening restores valid catalogue, exact saved pair, locale and selections 4ms
+   × SAVED002 en: another member from a fetched sitting remains offline-unsaved and requires a connection 3ms
+   × SAVED003 en: incompatible saved content is unavailable and requires valid online retrieval 4ms
+   × SAVED004 en: a committed transcript and compatible shell produce distinct saved/offline notices 4ms
+   × SAVED005 en: unchanged bytes still advance current validation time and committed saved time 3ms
+   × SAVED006 en: changed validated content commits every new turn and every source gap/annotation 3ms
+   × SAVED007 en: failed saving keeps new online content unsaved and identifies the older offline copy separately 2ms
+   × SAVED008 en: pair saving remains pending until transaction acknowledgement and does not advance saved time early 5ms
+   × SAVED009 en: committed pair with unconfirmed shell stays transcript-saved without an offline-reopening promise 3ms
+   × SAVED010 en: new-shell failure preserves an already confirmed compatible saved reader 4ms
+   × SAVED011 en: failed hash validation keeps the prior accepted result/time and never saves failed data 3ms
+   × SAVED011 en: failed identity validation keeps the prior accepted result/time and never saves failed data 4ms
+   × SAVED011 en: failed schema validation keeps the prior accepted result/time and never saves failed data 4ms
+   × SAVED012 en: device storage opening failure preserves ordinary online reading with an honest limit 4ms
+   × SAVED013 en: saved result metadata is not relabeled from a newer cached catalogue 4ms
+   × SAVED014 en: language and valid changed selections are persisted before deliberate Apply 5ms
+   × SAVED015 en: Continue preserves exact reading, preferences and native control focus 3ms
+   × SAVED016 en: complete saved-reader readiness mark waits until the matching saved pair is usable 4ms
+   × SAVED018 en: first offline visit without committed lists cannot invent a readable source archive 4ms
+   × SAVED017: applying an update in one reader does not alter another mounted tab reading its complete pair 6ms
+   × SAVEDREV001 pair-switch/success: obsolete save settlement cannot replace the current reader 10ms
+   × SAVEDREV001 pair-switch/failure: obsolete save settlement cannot replace the current reader 9ms
+   × SAVEDREV001 same-pair-retry/success: obsolete save settlement cannot replace the current reader 15ms
+   × SAVEDREV001 same-pair-retry/failure: obsolete save settlement cannot replace the current reader 15ms
+   × SAVEDREV001 teardown/success: obsolete save settlement cannot replace the current reader 5ms
+   × SAVEDREV001 teardown/failure: obsolete save settlement cannot replace the current reader 5ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 48 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/bootstrap.test.ts > BOOTREV001 unsupported: actual app startup keeps ordinary reading usable with unconfirmed offline readiness
+Error: performance.now is not a function
+ ❯ isolatedBootstrap tests/unit/bootstrap.test.ts:113:48
+    111|         document.head.append(stamp); document.body.replaceChildren(roo…
+    112|         try {
+    113|           entry = import('../../src/main.ts'); await Promise.race([ent…
+       |                                                ^
+    114|           for (const [id, value] of [['language-select', 'en'], ['memb…
+    115|             const select = root.querySelector<HTMLSelectElement>(`#${i…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/309]⎯
+
+ FAIL  tests/unit/bootstrap.test.ts > BOOTREV001 rejected: actual app startup keeps ordinary reading usable with unconfirmed offline readiness
+ FAIL  tests/unit/bootstrap.test.ts > BOOTREV001 pending: actual app startup keeps ordinary reading usable with unconfirmed offline readiness
+AssertionError: expected "vi.fn()" to be called with arguments: [ …(2) ]
+
+Number of calls: 0
+
+ ❯ isolatedBootstrap tests/unit/bootstrap.test.ts:130:42
+    128|           expect.soft(root.querySelector('#reader-result')?.getAttribu…
+    129|           if (condition === 'unsupported') expect(registration).not.to…
+    130|           else expect.soft(registration).toHaveBeenCalledWith(new URL(…
+       |                                          ^
+    131|           expect.soft(root.querySelector('#reader-offline-status')?.ge…
+    132|           expect.soft(root.querySelector('#reader-offline-status')?.te…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/309]⎯
+
+ FAIL  tests/unit/bootstrap.test.ts > BOOTREV001 rejected: actual app startup keeps ordinary reading usable with unconfirmed offline readiness
+ FAIL  tests/unit/bootstrap.test.ts > BOOTREV001 pending: actual app startup keeps ordinary reading usable with unconfirmed offline readiness
+AssertionError: expected undefined to be 'false' // Object.is equality
+
+- Expected:
+"false"
+
++ Received:
+undefined
+
+ ❯ isolatedBootstrap tests/unit/bootstrap.test.ts:131:105
+    129|           if (condition === 'unsupported') expect(registration).not.to…
+    130|           else expect.soft(registration).toHaveBeenCalledWith(new URL(…
+    131|           expect.soft(root.querySelector('#reader-offline-status')?.ge…
+       |                                                                                                         ^
+    132|           expect.soft(root.querySelector('#reader-offline-status')?.te…
+    133|         } finally { stamp.remove(); }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/309]⎯
+
+ FAIL  tests/unit/bootstrap.test.ts > BOOTREV001 rejected: actual app startup keeps ordinary reading usable with unconfirmed offline readiness
+ FAIL  tests/unit/bootstrap.test.ts > BOOTREV001 pending: actual app startup keeps ordinary reading usable with unconfirmed offline readiness
+AssertionError: expected '' to be 'Offline reopening is not confirmed.' // Object.is equality
+
+- Expected
++ Received
+
+- Offline reopening is not confirmed.
+
+ ❯ isolatedBootstrap tests/unit/bootstrap.test.ts:132:88
+    130|           else expect.soft(registration).toHaveBeenCalledWith(new URL(…
+    131|           expect.soft(root.querySelector('#reader-offline-status')?.ge…
+    132|           expect.soft(root.querySelector('#reader-offline-status')?.te…
+       |                                                                                        ^
+    133|         } finally { stamp.remove(); }
+    134|       } finally {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED001 ms: offline reopening restores valid catalogue, exact saved pair, locale and selections
+ FAIL  tests/unit/saved-reader.test.ts > SAVED001 en: offline reopening restores valid catalogue, exact saved pair, locale and selections
+AssertionError: expected [] to deeply equal [ Array(1) ]
+
+- Expected
++ Received
+
+- [
+-   "Terima kasih Tan Sri Yang di-Pertua. Saya ingin ucapkan terima kasih kepada Yang Berhormat Menteri atas jawapan yang menyeluruh ini.
+-
+- Hubungan di antara Malaysia dan India seperti yang disebut oleh Yang Berhormat Menteri telah sampai ke tahap rakan kongsi strategik. Kalau rakan kongsi strategik ini dilihat membawa manfaat, ia mesti boleh dipercayai (*trusted*) dan juga dapat menunjukkan penyampaian barangan ataupun kegunaan awam dengan izin Tan Sri Yang di-Pertua, *delivery of public good*.
+-
+- Jadi, di sini saya nak tanya, apakah bentuk yang ada dalam kedua-dua konteks ini. Berkaitan dengan tarif Amerika Syarikat, bolehkah Malaysia bertukar pandangan macam mana dia boleh turunkan tarif daripada 50 peratus kepada 18, sedangkan kita sungguhpun ada hubungan baik dengan Amerika Syarikat, masih lebih tinggi dengan 19 peratus. Kalau boleh, bersama supaya kita dapat sama rata. Kalau tidak, dia ada sedikit kelebihan.
+-
+- Dan akhirnya berkaitan dengan Myanmar, apakah langkah seterusnya baik oleh India dan Malaysia, yang boleh membawa kepada keamanan atau menuju ke arah keamanan di Myanmar, iaitu apakah adakah mesyuarat yang akan datang, adakah inisiatif yang akan datang, apakah langkah seterusnya. Takkan kita hanya tunggu dan lihat? Sekian, terima kasih.",
+- ]
++ []
+
+ ❯ complete tests/unit/saved-reader.test.ts:93:44
+     91|   for (const [kind, items] of [['turn', result.turns], ['gap', result.…
+     92|     const expected: string[] = []; for (const item of items) expected.…
+     93|     expect.soft(texts(context.root, kind)).toEqual(expected);
+       |                                            ^
+     94|   }
+     95|   expect.soft(context.root.querySelector('#reader-result')?.getAttribu…
+ ❯ tests/unit/saved-reader.test.ts:118:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED001 ms: offline reopening restores valid catalogue, exact saved pair, locale and selections
+ FAIL  tests/unit/saved-reader.test.ts > SAVED001 en: offline reopening restores valid catalogue, exact saved pair, locale and selections
+AssertionError: expected [] to deeply equal [ …(2) ]
+
+- Expected
++ Received
+
+- [
+-   "*[Tuan Yang di-Pertua* ***mempengerusikan Mesyuarat****]*",
+-   "**1. Tuan Lim Guan Eng [Bagan]** Terima kasih, Tan Sri Yang di-Pertua. Bagan minta Yang Berhormat Menteri Luar Negeri menyatakan hasil perdagangan dan keselamatan serantau susulan lawatan Perdana Menteri India, Narendra Modi baru-baru ini ke Malaysia dan sejauh manakah langkah-langkah bersama yang boleh diambil oleh Malaysia dan India terhadap pelaksanaan tarif oleh Amerika Syarikat dan usaha memulihkan demokrasi dan keamanan di Myanmar. Terima kasih.",
+- ]
++ []
+
+ ❯ complete tests/unit/saved-reader.test.ts:93:44
+     91|   for (const [kind, items] of [['turn', result.turns], ['gap', result.…
+     92|     const expected: string[] = []; for (const item of items) expected.…
+     93|     expect.soft(texts(context.root, kind)).toEqual(expected);
+       |                                            ^
+     94|   }
+     95|   expect.soft(context.root.querySelector('#reader-result')?.getAttribu…
+ ❯ tests/unit/saved-reader.test.ts:118:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED001 ms: offline reopening restores valid catalogue, exact saved pair, locale and selections
+ FAIL  tests/unit/saved-reader.test.ts > SAVED001 en: offline reopening restores valid catalogue, exact saved pair, locale and selections
+AssertionError: expected [] to deeply equal [ Array(1) ]
+
+- Expected
++ Received
+
+- [
+-   "[Soalan No. 5 - YB Tuan Prabakaran a/l M. Parameswaran (Batu) tidak hadir]",
+- ]
++ []
+
+ ❯ complete tests/unit/saved-reader.test.ts:93:44
+     91|   for (const [kind, items] of [['turn', result.turns], ['gap', result.…
+     92|     const expected: string[] = []; for (const item of items) expected.…
+     93|     expect.soft(texts(context.root, kind)).toEqual(expected);
+       |                                            ^
+     94|   }
+     95|   expect.soft(context.root.querySelector('#reader-result')?.getAttribu…
+ ❯ tests/unit/saved-reader.test.ts:118:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED001 ms: offline reopening restores valid catalogue, exact saved pair, locale and selections
+ FAIL  tests/unit/saved-reader.test.ts > SAVED001 en: offline reopening restores valid catalogue, exact saved pair, locale and selections
+AssertionError: expected null to be '1839' // Object.is equality
+
+- Expected:
+"1839"
+
++ Received:
+null
+
+ ❯ complete tests/unit/saved-reader.test.ts:95:93
+     93|     expect.soft(texts(context.root, kind)).toEqual(expected);
+     94|   }
+     95|   expect.soft(context.root.querySelector('#reader-result')?.getAttribu…
+       |                                                                                             ^
+     96|   expect.soft(context.root.querySelector('#reader-result')?.getAttribu…
+     97| }
+ ❯ tests/unit/saved-reader.test.ts:118:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED001 ms: offline reopening restores valid catalogue, exact saved pair, locale and selections
+ FAIL  tests/unit/saved-reader.test.ts > SAVED001 en: offline reopening restores valid catalogue, exact saved pair, locale and selections
+AssertionError: expected null to be '29326' // Object.is equality
+
+- Expected:
+"29326"
+
++ Received:
+null
+
+ ❯ complete tests/unit/saved-reader.test.ts:96:94
+     94|   }
+     95|   expect.soft(context.root.querySelector('#reader-result')?.getAttribu…
+     96|   expect.soft(context.root.querySelector('#reader-result')?.getAttribu…
+       |                                                                                              ^
+     97| }
+     98|
+ ❯ tests/unit/saved-reader.test.ts:118:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED001 ms: offline reopening restores valid catalogue, exact saved pair, locale and selections
+ FAIL  tests/unit/saved-reader.test.ts > SAVED001 en: offline reopening restores valid catalogue, exact saved pair, locale and selections
+AssertionError: expected '' to be '1839' // Object.is equality
+
+- Expected
++ Received
+
+- 1839
+
+ ❯ tests/unit/saved-reader.test.ts:119:85
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED001 ms: offline reopening restores valid catalogue, exact saved pair, locale and selections
+ FAIL  tests/unit/saved-reader.test.ts > SAVED001 en: offline reopening restores valid catalogue, exact saved pair, locale and selections
+AssertionError: expected '' to be '29326' // Object.is equality
+
+- Expected
++ Received
+
+- 29326
+
+ ❯ tests/unit/saved-reader.test.ts:119:178
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED001 ms: offline reopening restores valid catalogue, exact saved pair, locale and selections
+AssertionError: expected '' to be 'Transkrip disimpan pada peranti.' // Object.is equality
+
+- Expected
++ Received
+
+- Transkrip disimpan pada peranti.
+
+ ❯ tests/unit/saved-reader.test.ts:120:56
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED001 ms: offline reopening restores valid catalogue, exact saved pair, locale and selections
+AssertionError: expected '' to be 'Pembaca sedia dibuka semula tanpa sam…' // Object.is equality
+
+- Expected
++ Received
+
+- Pembaca sedia dibuka semula tanpa sambungan.
+
+ ❯ tests/unit/saved-reader.test.ts:120:138
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[13/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED001 ms: offline reopening restores valid catalogue, exact saved pair, locale and selections
+ FAIL  tests/unit/saved-reader.test.ts > SAVED001 en: offline reopening restores valid catalogue, exact saved pair, locale and selections
+AssertionError: expected undefined to be 'true' // Object.is equality
+
+- Expected:
+"true"
+
++ Received:
+undefined
+
+ ❯ tests/unit/saved-reader.test.ts:121:92
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[14/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED001 ms: offline reopening restores valid catalogue, exact saved pair, locale and selections
+ FAIL  tests/unit/saved-reader.test.ts > SAVED001 en: offline reopening restores valid catalogue, exact saved pair, locale and selections
+AssertionError: expected undefined to be 'true' // Object.is equality
+
+- Expected:
+"true"
+
++ Received:
+undefined
+
+ ❯ tests/unit/saved-reader.test.ts:121:202
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[15/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED001 ms: offline reopening restores valid catalogue, exact saved pair, locale and selections
+ FAIL  tests/unit/saved-reader.test.ts > SAVED001 en: offline reopening restores valid catalogue, exact saved pair, locale and selections
+AssertionError: expected '' to contain '2026-10-10T06:00:00.000Z'
+
+- Expected
++ Received
+
+- 2026-10-10T06:00:00.000Z
+
+ ❯ tests/unit/saved-reader.test.ts:122:70
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[16/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED002 ms: another member from a fetched sitting remains offline-unsaved and requires a connection
+AssertionError: expected 'Data laman tidak dapat dimuatkan atau…' to be 'Sambungan diperlukan untuk membuka pa…' // Object.is equality
+
+Expected: "Sambungan diperlukan untuk membuka pasangan identiti dan persidangan yang belum disimpan."
+Received: "Data laman tidak dapat dimuatkan atau disahkan."
+
+ ❯ tests/unit/saved-reader.test.ts:130:51
+    128|       const s = scenario(language); s.online.value = false; s.storage.…
+    129|       s.storage.readPair.mockResolvedValue({ status: 'missing' }); s.l…
+    130|       expect.soft(text(s.root, '#reader-status')).toBe(labels[language…
+       |                                                   ^
+    131|       expect.soft(s.root.querySelector('#reader-offline-status')?.getA…
+    132|       expect(texts(s.root, 'turn')).toEqual([]); expect(s.loadPair).no…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[17/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED002 ms: another member from a fetched sitting remains offline-unsaved and requires a connection
+ FAIL  tests/unit/saved-reader.test.ts > SAVED002 en: another member from a fetched sitting remains offline-unsaved and requires a connection
+AssertionError: expected "vi.fn()" to be called with arguments: [ '4463', '29326' ]
+
+Number of calls: 0
+
+ ❯ tests/unit/saved-reader.test.ts:130:118
+    128|       const s = scenario(language); s.online.value = false; s.storage.…
+    129|       s.storage.readPair.mockResolvedValue({ status: 'missing' }); s.l…
+    130|       expect.soft(text(s.root, '#reader-status')).toBe(labels[language…
+       |                                                                                                                      ^
+    131|       expect.soft(s.root.querySelector('#reader-offline-status')?.getA…
+    132|       expect(texts(s.root, 'turn')).toEqual([]); expect(s.loadPair).no…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[18/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED002 ms: another member from a fetched sitting remains offline-unsaved and requires a connection
+ FAIL  tests/unit/saved-reader.test.ts > SAVED002 en: another member from a fetched sitting remains offline-unsaved and requires a connection
+AssertionError: expected undefined to be 'false' // Object.is equality
+
+- Expected:
+"false"
+
++ Received:
+undefined
+
+ ❯ tests/unit/saved-reader.test.ts:131:103
+    129|       s.storage.readPair.mockResolvedValue({ status: 'missing' }); s.l…
+    130|       expect.soft(text(s.root, '#reader-status')).toBe(labels[language…
+    131|       expect.soft(s.root.querySelector('#reader-offline-status')?.getA…
+       |                                                                                                       ^
+    132|       expect(texts(s.root, 'turn')).toEqual([]); expect(s.loadPair).no…
+    133|     });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[19/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED003 ms: incompatible saved content is unavailable and requires valid online retrieval
+AssertionError: expected 'Data laman tidak dapat dimuatkan atau…' to be 'Data yang disimpan tidak serasi. Samb…' // Object.is equality
+
+Expected: "Data yang disimpan tidak serasi. Sambungan diperlukan untuk mendapatkan salinan yang sah."
+Received: "Data laman tidak dapat dimuatkan atau disahkan."
+
+ ❯ tests/unit/saved-reader.test.ts:139:51
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[20/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED003 ms: incompatible saved content is unavailable and requires valid online retrieval
+AssertionError: expected '' to be 'Transkrip belum disimpan pada peranti.' // Object.is equality
+
+- Expected
++ Received
+
+- Transkrip belum disimpan pada peranti.
+
+ ❯ tests/unit/saved-reader.test.ts:139:137
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[21/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED004 ms: a committed transcript and compatible shell produce distinct saved/offline notices
+ FAIL  tests/unit/saved-reader.test.ts > SAVED004 en: a committed transcript and compatible shell produce distinct saved/offline notices
+AssertionError: expected [] to deeply equal [ Array(1) ]
+
+- Expected
++ Received
+
+- [
+-   "Terima kasih Tan Sri Yang di-Pertua. Saya ingin ucapkan terima kasih kepada Yang Berhormat Menteri atas jawapan yang menyeluruh ini.
+-
+- Hubungan di antara Malaysia dan India seperti yang disebut oleh Yang Berhormat Menteri telah sampai ke tahap rakan kongsi strategik. Kalau rakan kongsi strategik ini dilihat membawa manfaat, ia mesti boleh dipercayai (*trusted*) dan juga dapat menunjukkan penyampaian barangan ataupun kegunaan awam dengan izin Tan Sri Yang di-Pertua, *delivery of public good*.
+-
+- Jadi, di sini saya nak tanya, apakah bentuk yang ada dalam kedua-dua konteks ini. Berkaitan dengan tarif Amerika Syarikat, bolehkah Malaysia bertukar pandangan macam mana dia boleh turunkan tarif daripada 50 peratus kepada 18, sedangkan kita sungguhpun ada hubungan baik dengan Amerika Syarikat, masih lebih tinggi dengan 19 peratus. Kalau boleh, bersama supaya kita dapat sama rata. Kalau tidak, dia ada sedikit kelebihan.
+-
+- Dan akhirnya berkaitan dengan Myanmar, apakah langkah seterusnya baik oleh India dan Malaysia, yang boleh membawa kepada keamanan atau menuju ke arah keamanan di Myanmar, iaitu apakah adakah mesyuarat yang akan datang, adakah inisiatif yang akan datang, apakah langkah seterusnya. Takkan kita hanya tunggu dan lihat? Sekian, terima kasih.",
+- ]
++ []
+
+ ❯ complete tests/unit/saved-reader.test.ts:93:44
+     91|   for (const [kind, items] of [['turn', result.turns], ['gap', result.…
+     92|     const expected: string[] = []; for (const item of items) expected.…
+     93|     expect.soft(texts(context.root, kind)).toEqual(expected);
+       |                                            ^
+     94|   }
+     95|   expect.soft(context.root.querySelector('#reader-result')?.getAttribu…
+ ❯ tests/unit/saved-reader.test.ts:146:53
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[22/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED004 ms: a committed transcript and compatible shell produce distinct saved/offline notices
+ FAIL  tests/unit/saved-reader.test.ts > SAVED004 en: a committed transcript and compatible shell produce distinct saved/offline notices
+AssertionError: expected [] to deeply equal [ …(2) ]
+
+- Expected
++ Received
+
+- [
+-   "*[Tuan Yang di-Pertua* ***mempengerusikan Mesyuarat****]*",
+-   "**1. Tuan Lim Guan Eng [Bagan]** Terima kasih, Tan Sri Yang di-Pertua. Bagan minta Yang Berhormat Menteri Luar Negeri menyatakan hasil perdagangan dan keselamatan serantau susulan lawatan Perdana Menteri India, Narendra Modi baru-baru ini ke Malaysia dan sejauh manakah langkah-langkah bersama yang boleh diambil oleh Malaysia dan India terhadap pelaksanaan tarif oleh Amerika Syarikat dan usaha memulihkan demokrasi dan keamanan di Myanmar. Terima kasih.",
+- ]
++ []
+
+ ❯ complete tests/unit/saved-reader.test.ts:93:44
+     91|   for (const [kind, items] of [['turn', result.turns], ['gap', result.…
+     92|     const expected: string[] = []; for (const item of items) expected.…
+     93|     expect.soft(texts(context.root, kind)).toEqual(expected);
+       |                                            ^
+     94|   }
+     95|   expect.soft(context.root.querySelector('#reader-result')?.getAttribu…
+ ❯ tests/unit/saved-reader.test.ts:146:53
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[23/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED004 ms: a committed transcript and compatible shell produce distinct saved/offline notices
+ FAIL  tests/unit/saved-reader.test.ts > SAVED004 en: a committed transcript and compatible shell produce distinct saved/offline notices
+AssertionError: expected [] to deeply equal [ Array(1) ]
+
+- Expected
++ Received
+
+- [
+-   "[Soalan No. 5 - YB Tuan Prabakaran a/l M. Parameswaran (Batu) tidak hadir]",
+- ]
++ []
+
+ ❯ complete tests/unit/saved-reader.test.ts:93:44
+     91|   for (const [kind, items] of [['turn', result.turns], ['gap', result.…
+     92|     const expected: string[] = []; for (const item of items) expected.…
+     93|     expect.soft(texts(context.root, kind)).toEqual(expected);
+       |                                            ^
+     94|   }
+     95|   expect.soft(context.root.querySelector('#reader-result')?.getAttribu…
+ ❯ tests/unit/saved-reader.test.ts:146:53
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[24/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED004 ms: a committed transcript and compatible shell produce distinct saved/offline notices
+ FAIL  tests/unit/saved-reader.test.ts > SAVED004 en: a committed transcript and compatible shell produce distinct saved/offline notices
+AssertionError: expected null to be '1839' // Object.is equality
+
+- Expected:
+"1839"
+
++ Received:
+null
+
+ ❯ complete tests/unit/saved-reader.test.ts:95:93
+     93|     expect.soft(texts(context.root, kind)).toEqual(expected);
+     94|   }
+     95|   expect.soft(context.root.querySelector('#reader-result')?.getAttribu…
+       |                                                                                             ^
+     96|   expect.soft(context.root.querySelector('#reader-result')?.getAttribu…
+     97| }
+ ❯ tests/unit/saved-reader.test.ts:146:53
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[25/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED004 ms: a committed transcript and compatible shell produce distinct saved/offline notices
+ FAIL  tests/unit/saved-reader.test.ts > SAVED004 en: a committed transcript and compatible shell produce distinct saved/offline notices
+AssertionError: expected null to be '29326' // Object.is equality
+
+- Expected:
+"29326"
+
++ Received:
+null
+
+ ❯ complete tests/unit/saved-reader.test.ts:96:94
+     94|   }
+     95|   expect.soft(context.root.querySelector('#reader-result')?.getAttribu…
+     96|   expect.soft(context.root.querySelector('#reader-result')?.getAttribu…
+       |                                                                                              ^
+     97| }
+     98|
+ ❯ tests/unit/saved-reader.test.ts:146:53
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[26/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED004 ms: a committed transcript and compatible shell produce distinct saved/offline notices
+ FAIL  tests/unit/saved-reader.test.ts > SAVED004 en: a committed transcript and compatible shell produce distinct saved/offline notices
+AssertionError: expected "vi.fn()" to be called with arguments: [ '1839', '29326', Any<AbortSignal> ]
+
+Number of calls: 0
+
+ ❯ tests/unit/saved-reader.test.ts:147:31
+    145|     async () => {
+    146|       const s = scenario(language); await start(s); complete(s, s.fres…
+    147|       expect.soft(s.loadPair).toHaveBeenCalledWith('1839', '29326', ex…
+       |                               ^
+    148|       expect.soft(s.storage.savePair).toHaveBeenCalledWith(s.fresh.cat…
+    149|       expect.soft(text(s.root, '#reader-save-status')).toBe(labels[lan…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[27/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED004 ms: a committed transcript and compatible shell produce distinct saved/offline notices
+ FAIL  tests/unit/saved-reader.test.ts > SAVED004 en: a committed transcript and compatible shell produce distinct saved/offline notices
+AssertionError: expected "vi.fn()" to be called with arguments: [ { schemaVersion: 1, …(8) }, …(2) ]
+
+Number of calls: 0
+
+ ❯ tests/unit/saved-reader.test.ts:148:39
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[28/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED004 ms: a committed transcript and compatible shell produce distinct saved/offline notices
+AssertionError: expected '' to be 'Transkrip disimpan pada peranti.' // Object.is equality
+
+- Expected
++ Received
+
+- Transkrip disimpan pada peranti.
+
+ ❯ tests/unit/saved-reader.test.ts:149:56
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[29/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED004 ms: a committed transcript and compatible shell produce distinct saved/offline notices
+AssertionError: expected '' to be 'Pembaca sedia dibuka semula tanpa sam…' // Object.is equality
+
+- Expected
++ Received
+
+- Pembaca sedia dibuka semula tanpa sambungan.
+
+ ❯ tests/unit/saved-reader.test.ts:149:138
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[30/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED004 ms: a committed transcript and compatible shell produce distinct saved/offline notices
+ FAIL  tests/unit/saved-reader.test.ts > SAVED004 en: a committed transcript and compatible shell produce distinct saved/offline notices
+AssertionError: expected undefined to be 'true' // Object.is equality
+
+- Expected:
+"true"
+
++ Received:
+undefined
+
+ ❯ tests/unit/saved-reader.test.ts:150:92
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[31/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED004 ms: a committed transcript and compatible shell produce distinct saved/offline notices
+ FAIL  tests/unit/saved-reader.test.ts > SAVED004 en: a committed transcript and compatible shell produce distinct saved/offline notices
+AssertionError: expected undefined to be 'true' // Object.is equality
+
+- Expected:
+"true"
+
++ Received:
+undefined
+
+ ❯ tests/unit/saved-reader.test.ts:150:202
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[32/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED004 ms: a committed transcript and compatible shell produce distinct saved/offline notices
+ FAIL  tests/unit/saved-reader.test.ts > SAVED004 en: a committed transcript and compatible shell produce distinct saved/offline notices
+AssertionError: expected '' to contain '2026-10-10T07:00:00.000Z'
+
+- Expected
++ Received
+
+- 2026-10-10T07:00:00.000Z
+
+ ❯ tests/unit/saved-reader.test.ts:151:64
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[33/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED004 ms: a committed transcript and compatible shell produce distinct saved/offline notices
+ FAIL  tests/unit/saved-reader.test.ts > SAVED004 en: a committed transcript and compatible shell produce distinct saved/offline notices
+AssertionError: expected '' to contain '2026-10-10T07:00:00.000Z'
+
+- Expected
++ Received
+
+- 2026-10-10T07:00:00.000Z
+
+ ❯ tests/unit/saved-reader.test.ts:151:161
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[34/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED005 ms: unchanged bytes still advance current validation time and committed saved time
+ FAIL  tests/unit/saved-reader.test.ts > SAVED005 en: unchanged bytes still advance current validation time and committed saved time
+AssertionError: expected "vi.fn()" to be called with arguments: [ { schemaVersion: 1, …(8) }, …(2) ]
+
+Number of calls: 0
+
+ ❯ tests/unit/saved-reader.test.ts:158:39
+    156|     async () => {
+    157|       const s = scenario(language); expect(s.old.result.recordDigest).…
+    158|       expect.soft(s.storage.savePair).toHaveBeenCalledWith(s.fresh.cat…
+       |                                       ^
+    159|       expect.soft(text(s.root, '[data-field="refreshed-at"]')).toConta…
+    160|     });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[35/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED005 ms: unchanged bytes still advance current validation time and committed saved time
+ FAIL  tests/unit/saved-reader.test.ts > SAVED005 en: unchanged bytes still advance current validation time and committed saved time
+AssertionError: expected '' to contain '2026-10-10T07:00:00.000Z'
+
+- Expected
++ Received
+
+- 2026-10-10T07:00:00.000Z
+
+ ❯ tests/unit/saved-reader.test.ts:159:64
+    157|       const s = scenario(language); expect(s.old.result.recordDigest).…
+    158|       expect.soft(s.storage.savePair).toHaveBeenCalledWith(s.fresh.cat…
+    159|       expect.soft(text(s.root, '[data-field="refreshed-at"]')).toConta…
+       |                                                                ^
+    160|     });
+    161|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[36/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED005 ms: unchanged bytes still advance current validation time and committed saved time
+ FAIL  tests/unit/saved-reader.test.ts > SAVED005 en: unchanged bytes still advance current validation time and committed saved time
+AssertionError: expected '' to contain '2026-10-10T07:00:00.000Z'
+
+- Expected
++ Received
+
+- 2026-10-10T07:00:00.000Z
+
+ ❯ tests/unit/saved-reader.test.ts:159:161
+    157|       const s = scenario(language); expect(s.old.result.recordDigest).…
+    158|       expect.soft(s.storage.savePair).toHaveBeenCalledWith(s.fresh.cat…
+    159|       expect.soft(text(s.root, '[data-field="refreshed-at"]')).toConta…
+       |                                                                                                                                                                 ^
+    160|     });
+    161|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[37/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED006 ms: changed validated content commits every new turn and every source gap/annotation
+ FAIL  tests/unit/saved-reader.test.ts > SAVED006 en: changed validated content commits every new turn and every source gap/annotation
+AssertionError: expected [] to deeply equal [ Array(1) ]
+
+- Expected
++ Received
+
+- [
+-   "Terima kasih Tan Sri Yang di-Pertua. Saya ingin ucapkan terima kasih kepada Yang Berhormat Menteri atas jawapan yang menyeluruh ini.
+-
+- Hubungan di antara Malaysia dan India seperti yang disebut oleh Yang Berhormat Menteri telah sampai ke tahap rakan kongsi strategik. Kalau rakan kongsi strategik ini dilihat membawa manfaat, ia mesti boleh dipercayai (*trusted*) dan juga dapat menunjukkan penyampaian barangan ataupun kegunaan awam dengan izin Tan Sri Yang di-Pertua, *delivery of public good*.
+-
+- Jadi, di sini saya nak tanya, apakah bentuk yang ada dalam kedua-dua konteks ini. Berkaitan dengan tarif Amerika Syarikat, bolehkah Malaysia bertukar pandangan macam mana dia boleh turunkan tarif daripada 50 peratus kepada 18, sedangkan kita sungguhpun ada hubungan baik dengan Amerika Syarikat, masih lebih tinggi dengan 19 peratus. Kalau boleh, bersama supaya kita dapat sama rata. Kalau tidak, dia ada sedikit kelebihan.
+-
+- Dan akhirnya berkaitan dengan Myanmar, apakah langkah seterusnya baik oleh India dan Malaysia, yang boleh membawa kepada keamanan atau menuju ke arah keamanan di Myanmar, iaitu apakah adakah mesyuarat yang akan datang, adakah inisiatif yang akan datang, apakah langkah seterusnya. Takkan kita hanya tunggu dan lihat? Sekian, terima kasih.
+-
+- Controlled changed-source fixture.",
+- ]
++ []
+
+ ❯ complete tests/unit/saved-reader.test.ts:93:44
+     91|   for (const [kind, items] of [['turn', result.turns], ['gap', result.…
+     92|     const expected: string[] = []; for (const item of items) expected.…
+     93|     expect.soft(texts(context.root, kind)).toEqual(expected);
+       |                                            ^
+     94|   }
+     95|   expect.soft(context.root.querySelector('#reader-result')?.getAttribu…
+ ❯ tests/unit/saved-reader.test.ts:165:132
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[38/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED006 ms: changed validated content commits every new turn and every source gap/annotation
+ FAIL  tests/unit/saved-reader.test.ts > SAVED006 en: changed validated content commits every new turn and every source gap/annotation
+AssertionError: expected [] to deeply equal [ …(2) ]
+
+- Expected
++ Received
+
+- [
+-   "*[Tuan Yang di-Pertua* ***mempengerusikan Mesyuarat****]*",
+-   "**1. Tuan Lim Guan Eng [Bagan]** Terima kasih, Tan Sri Yang di-Pertua. Bagan minta Yang Berhormat Menteri Luar Negeri menyatakan hasil perdagangan dan keselamatan serantau susulan lawatan Perdana Menteri India, Narendra Modi baru-baru ini ke Malaysia dan sejauh manakah langkah-langkah bersama yang boleh diambil oleh Malaysia dan India terhadap pelaksanaan tarif oleh Amerika Syarikat dan usaha memulihkan demokrasi dan keamanan di Myanmar. Terima kasih.",
+- ]
++ []
+
+ ❯ complete tests/unit/saved-reader.test.ts:93:44
+     91|   for (const [kind, items] of [['turn', result.turns], ['gap', result.…
+     92|     const expected: string[] = []; for (const item of items) expected.…
+     93|     expect.soft(texts(context.root, kind)).toEqual(expected);
+       |                                            ^
+     94|   }
+     95|   expect.soft(context.root.querySelector('#reader-result')?.getAttribu…
+ ❯ tests/unit/saved-reader.test.ts:165:132
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[39/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED006 ms: changed validated content commits every new turn and every source gap/annotation
+ FAIL  tests/unit/saved-reader.test.ts > SAVED006 en: changed validated content commits every new turn and every source gap/annotation
+AssertionError: expected [] to deeply equal [ Array(1) ]
+
+- Expected
++ Received
+
+- [
+-   "[Soalan No. 5 - YB Tuan Prabakaran a/l M. Parameswaran (Batu) tidak hadir]",
+- ]
++ []
+
+ ❯ complete tests/unit/saved-reader.test.ts:93:44
+     91|   for (const [kind, items] of [['turn', result.turns], ['gap', result.…
+     92|     const expected: string[] = []; for (const item of items) expected.…
+     93|     expect.soft(texts(context.root, kind)).toEqual(expected);
+       |                                            ^
+     94|   }
+     95|   expect.soft(context.root.querySelector('#reader-result')?.getAttribu…
+ ❯ tests/unit/saved-reader.test.ts:165:132
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[40/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED006 ms: changed validated content commits every new turn and every source gap/annotation
+ FAIL  tests/unit/saved-reader.test.ts > SAVED006 en: changed validated content commits every new turn and every source gap/annotation
+AssertionError: expected null to be '1839' // Object.is equality
+
+- Expected:
+"1839"
+
++ Received:
+null
+
+ ❯ complete tests/unit/saved-reader.test.ts:95:93
+     93|     expect.soft(texts(context.root, kind)).toEqual(expected);
+     94|   }
+     95|   expect.soft(context.root.querySelector('#reader-result')?.getAttribu…
+       |                                                                                             ^
+     96|   expect.soft(context.root.querySelector('#reader-result')?.getAttribu…
+     97| }
+ ❯ tests/unit/saved-reader.test.ts:165:132
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[41/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED006 ms: changed validated content commits every new turn and every source gap/annotation
+ FAIL  tests/unit/saved-reader.test.ts > SAVED006 en: changed validated content commits every new turn and every source gap/annotation
+AssertionError: expected null to be '29326' // Object.is equality
+
+- Expected:
+"29326"
+
++ Received:
+null
+
+ ❯ complete tests/unit/saved-reader.test.ts:96:94
+     94|   }
+     95|   expect.soft(context.root.querySelector('#reader-result')?.getAttribu…
+     96|   expect.soft(context.root.querySelector('#reader-result')?.getAttribu…
+       |                                                                                              ^
+     97| }
+     98|
+ ❯ tests/unit/saved-reader.test.ts:165:132
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[42/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED006 ms: changed validated content commits every new turn and every source gap/annotation
+ FAIL  tests/unit/saved-reader.test.ts > SAVED006 en: changed validated content commits every new turn and every source gap/annotation
+AssertionError: expected "vi.fn()" to be called with arguments: [ { schemaVersion: 1, …(8) }, …(2) ]
+
+Number of calls: 0
+
+ ❯ tests/unit/saved-reader.test.ts:166:34
+    164|     async () => {
+    165|       const s = scenario(language, true); expect(s.old.result.recordDi…
+    166|       expect(s.storage.savePair).toHaveBeenCalledWith(s.fresh.catalogu…
+       |                                  ^
+    167|     });
+    168|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[43/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED007 ms: failed saving keeps new online content unsaved and identifies the older offline copy separately
+ FAIL  tests/unit/saved-reader.test.ts > SAVED007 en: failed saving keeps new online content unsaved and identifies the older offline copy separately
+AssertionError: expected [] to deeply equal [ Array(1) ]
+
+- Expected
++ Received
+
+- [
+-   "Terima kasih Tan Sri Yang di-Pertua. Saya ingin ucapkan terima kasih kepada Yang Berhormat Menteri atas jawapan yang menyeluruh ini.
+-
+- Hubungan di antara Malaysia dan India seperti yang disebut oleh Yang Berhormat Menteri telah sampai ke tahap rakan kongsi strategik. Kalau rakan kongsi strategik ini dilihat membawa manfaat, ia mesti boleh dipercayai (*trusted*) dan juga dapat menunjukkan penyampaian barangan ataupun kegunaan awam dengan izin Tan Sri Yang di-Pertua, *delivery of public good*.
+-
+- Jadi, di sini saya nak tanya, apakah bentuk yang ada dalam kedua-dua konteks ini. Berkaitan dengan tarif Amerika Syarikat, bolehkah Malaysia bertukar pandangan macam mana dia boleh turunkan tarif daripada 50 peratus kepada 18, sedangkan kita sungguhpun ada hubungan baik dengan Amerika Syarikat, masih lebih tinggi dengan 19 peratus. Kalau boleh, bersama supaya kita dapat sama rata. Kalau tidak, dia ada sedikit kelebihan.
+-
+- Dan akhirnya berkaitan dengan Myanmar, apakah langkah seterusnya baik oleh India dan Malaysia, yang boleh membawa kepada keamanan atau menuju ke arah keamanan di Myanmar, iaitu apakah adakah mesyuarat yang akan datang, adakah inisiatif yang akan datang, apakah langkah seterusnya. Takkan kita hanya tunggu dan lihat? Sekian, terima kasih.
+-
+- Controlled changed-source fixture.",
+- ]
++ []
+
+ ❯ complete tests/unit/saved-reader.test.ts:93:44
+     91|   for (const [kind, items] of [['turn', result.turns], ['gap', result.…
+     92|     const expected: string[] = []; for (const item of items) expected.…
+     93|     expect.soft(texts(context.root, kind)).toEqual(expected);
+       |                                            ^
+     94|   }
+     95|   expect.soft(context.root.querySelector('#reader-result')?.getAttribu…
+ ❯ tests/unit/saved-reader.test.ts:172:157
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[44/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED007 ms: failed saving keeps new online content unsaved and identifies the older offline copy separately
+ FAIL  tests/unit/saved-reader.test.ts > SAVED007 en: failed saving keeps new online content unsaved and identifies the older offline copy separately
+AssertionError: expected [] to deeply equal [ …(2) ]
+
+- Expected
++ Received
+
+- [
+-   "*[Tuan Yang di-Pertua* ***mempengerusikan Mesyuarat****]*",
+-   "**1. Tuan Lim Guan Eng [Bagan]** Terima kasih, Tan Sri Yang di-Pertua. Bagan minta Yang Berhormat Menteri Luar Negeri menyatakan hasil perdagangan dan keselamatan serantau susulan lawatan Perdana Menteri India, Narendra Modi baru-baru ini ke Malaysia dan sejauh manakah langkah-langkah bersama yang boleh diambil oleh Malaysia dan India terhadap pelaksanaan tarif oleh Amerika Syarikat dan usaha memulihkan demokrasi dan keamanan di Myanmar. Terima kasih.",
+- ]
++ []
+
+ ❯ complete tests/unit/saved-reader.test.ts:93:44
+     91|   for (const [kind, items] of [['turn', result.turns], ['gap', result.…
+     92|     const expected: string[] = []; for (const item of items) expected.…
+     93|     expect.soft(texts(context.root, kind)).toEqual(expected);
+       |                                            ^
+     94|   }
+     95|   expect.soft(context.root.querySelector('#reader-result')?.getAttribu…
+ ❯ tests/unit/saved-reader.test.ts:172:157
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[45/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED007 ms: failed saving keeps new online content unsaved and identifies the older offline copy separately
+ FAIL  tests/unit/saved-reader.test.ts > SAVED007 en: failed saving keeps new online content unsaved and identifies the older offline copy separately
+AssertionError: expected [] to deeply equal [ Array(1) ]
+
+- Expected
++ Received
+
+- [
+-   "[Soalan No. 5 - YB Tuan Prabakaran a/l M. Parameswaran (Batu) tidak hadir]",
+- ]
++ []
+
+ ❯ complete tests/unit/saved-reader.test.ts:93:44
+     91|   for (const [kind, items] of [['turn', result.turns], ['gap', result.…
+     92|     const expected: string[] = []; for (const item of items) expected.…
+     93|     expect.soft(texts(context.root, kind)).toEqual(expected);
+       |                                            ^
+     94|   }
+     95|   expect.soft(context.root.querySelector('#reader-result')?.getAttribu…
+ ❯ tests/unit/saved-reader.test.ts:172:157
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[46/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED007 ms: failed saving keeps new online content unsaved and identifies the older offline copy separately
+ FAIL  tests/unit/saved-reader.test.ts > SAVED007 en: failed saving keeps new online content unsaved and identifies the older offline copy separately
+AssertionError: expected null to be '1839' // Object.is equality
+
+- Expected:
+"1839"
+
++ Received:
+null
+
+ ❯ complete tests/unit/saved-reader.test.ts:95:93
+     93|     expect.soft(texts(context.root, kind)).toEqual(expected);
+     94|   }
+     95|   expect.soft(context.root.querySelector('#reader-result')?.getAttribu…
+       |                                                                                             ^
+     96|   expect.soft(context.root.querySelector('#reader-result')?.getAttribu…
+     97| }
+ ❯ tests/unit/saved-reader.test.ts:172:157
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[47/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED007 ms: failed saving keeps new online content unsaved and identifies the older offline copy separately
+ FAIL  tests/unit/saved-reader.test.ts > SAVED007 en: failed saving keeps new online content unsaved and identifies the older offline copy separately
+AssertionError: expected null to be '29326' // Object.is equality
+
+- Expected:
+"29326"
+
++ Received:
+null
+
+ ❯ complete tests/unit/saved-reader.test.ts:96:94
+     94|   }
+     95|   expect.soft(context.root.querySelector('#reader-result')?.getAttribu…
+     96|   expect.soft(context.root.querySelector('#reader-result')?.getAttribu…
+       |                                                                                              ^
+     97| }
+     98|
+ ❯ tests/unit/saved-reader.test.ts:172:157
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[48/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED007 ms: failed saving keeps new online content unsaved and identifies the older offline copy separately
+AssertionError: expected '' to be 'Transkrip belum disimpan pada peranti.' // Object.is equality
+
+- Expected
++ Received
+
+- Transkrip belum disimpan pada peranti.
+
+ ❯ tests/unit/saved-reader.test.ts:173:56
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[49/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED007 ms: failed saving keeps new online content unsaved and identifies the older offline copy separately
+AssertionError: expected '' to be 'Salinan lama yang disimpan masih ters…' // Object.is equality
+
+- Expected
++ Received
+
+- Salinan lama yang disimpan masih tersedia tanpa sambungan.
+
+ ❯ tests/unit/saved-reader.test.ts:173:140
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[50/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED007 ms: failed saving keeps new online content unsaved and identifies the older offline copy separately
+ FAIL  tests/unit/saved-reader.test.ts > SAVED007 en: failed saving keeps new online content unsaved and identifies the older offline copy separately
+AssertionError: expected undefined to be 'false' // Object.is equality
+
+- Expected:
+"false"
+
++ Received:
+undefined
+
+ ❯ tests/unit/saved-reader.test.ts:174:92
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[51/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED007 ms: failed saving keeps new online content unsaved and identifies the older offline copy separately
+ FAIL  tests/unit/saved-reader.test.ts > SAVED007 en: failed saving keeps new online content unsaved and identifies the older offline copy separately
+AssertionError: expected '' to contain '2026-10-10T07:00:00.000Z'
+
+- Expected
++ Received
+
+- 2026-10-10T07:00:00.000Z
+
+ ❯ tests/unit/saved-reader.test.ts:175:64
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[52/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED007 ms: failed saving keeps new online content unsaved and identifies the older offline copy separately
+ FAIL  tests/unit/saved-reader.test.ts > SAVED007 en: failed saving keeps new online content unsaved and identifies the older offline copy separately
+AssertionError: expected '' to contain '2026-10-10T06:00:00.000Z'
+
+- Expected
++ Received
+
+- 2026-10-10T06:00:00.000Z
+
+ ❯ tests/unit/saved-reader.test.ts:175:172
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[53/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED008 ms: pair saving remains pending until transaction acknowledgement and does not advance saved time early
+AssertionError: expected '' to be 'Transkrip belum disimpan pada peranti.' // Object.is equality
+
+- Expected
++ Received
+
+- Transkrip belum disimpan pada peranti.
+
+ ❯ tests/unit/saved-reader.test.ts:183:56
+    181|     async () => {
+    182|       const s = scenario(language); const commit = deferred<Transcript…
+    183|       expect.soft(text(s.root, '#reader-save-status')).toBe(labels[lan…
+       |                                                        ^
+    184|       expect.soft(text(s.root, '[data-field="saved-refreshed-at"]')).n…
+    185|       commit.resolve({ ...s.fresh.result, saved: true }); await settle…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[54/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED008 ms: pair saving remains pending until transaction acknowledgement and does not advance saved time early
+ FAIL  tests/unit/saved-reader.test.ts > SAVED008 en: pair saving remains pending until transaction acknowledgement and does not advance saved time early
+AssertionError: expected '' to contain '2026-10-10T06:00:00.000Z'
+
+- Expected
++ Received
+
+- 2026-10-10T06:00:00.000Z
+
+ ❯ tests/unit/saved-reader.test.ts:183:157
+    181|     async () => {
+    182|       const s = scenario(language); const commit = deferred<Transcript…
+    183|       expect.soft(text(s.root, '#reader-save-status')).toBe(labels[lan…
+       |                                                                                                                                                             ^
+    184|       expect.soft(text(s.root, '[data-field="saved-refreshed-at"]')).n…
+    185|       commit.resolve({ ...s.fresh.result, saved: true }); await settle…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[55/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED008 ms: pair saving remains pending until transaction acknowledgement and does not advance saved time early
+AssertionError: expected '' to be 'Transkrip disimpan pada peranti.' // Object.is equality
+
+- Expected
++ Received
+
+- Transkrip disimpan pada peranti.
+
+ ❯ tests/unit/saved-reader.test.ts:186:56
+    184|       expect.soft(text(s.root, '[data-field="saved-refreshed-at"]')).n…
+    185|       commit.resolve({ ...s.fresh.result, saved: true }); await settle…
+    186|       expect.soft(text(s.root, '#reader-save-status')).toBe(labels[lan…
+       |                                                        ^
+    187|     });
+    188|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[56/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED008 ms: pair saving remains pending until transaction acknowledgement and does not advance saved time early
+ FAIL  tests/unit/saved-reader.test.ts > SAVED008 en: pair saving remains pending until transaction acknowledgement and does not advance saved time early
+AssertionError: expected '' to contain '2026-10-10T07:00:00.000Z'
+
+- Expected
++ Received
+
+- 2026-10-10T07:00:00.000Z
+
+ ❯ tests/unit/saved-reader.test.ts:186:144
+    184|       expect.soft(text(s.root, '[data-field="saved-refreshed-at"]')).n…
+    185|       commit.resolve({ ...s.fresh.result, saved: true }); await settle…
+    186|       expect.soft(text(s.root, '#reader-save-status')).toBe(labels[lan…
+       |                                                                                                                                                ^
+    187|     });
+    188|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[57/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED009 ms: committed pair with unconfirmed shell stays transcript-saved without an offline-reopening promise
+AssertionError: expected '' to be 'Transkrip disimpan pada peranti.' // Object.is equality
+
+- Expected
++ Received
+
+- Transkrip disimpan pada peranti.
+
+ ❯ tests/unit/saved-reader.test.ts:193:56
+    191|     async () => {
+    192|       const s = scenario(language); s.state.value.shellReady = false; …
+    193|       expect.soft(text(s.root, '#reader-save-status')).toBe(labels[lan…
+       |                                                        ^
+    194|       expect(s.root.querySelector('#reader-offline-status')?.getAttrib…
+    195|     });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[58/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED009 ms: committed pair with unconfirmed shell stays transcript-saved without an offline-reopening promise
+AssertionError: expected '' to be 'Pembukaan semula tanpa sambungan belu…' // Object.is equality
+
+- Expected
++ Received
+
+- Pembukaan semula tanpa sambungan belum dapat dipastikan.
+
+ ❯ tests/unit/saved-reader.test.ts:193:138
+    191|     async () => {
+    192|       const s = scenario(language); s.state.value.shellReady = false; …
+    193|       expect.soft(text(s.root, '#reader-save-status')).toBe(labels[lan…
+       |                                                                                                                                          ^
+    194|       expect(s.root.querySelector('#reader-offline-status')?.getAttrib…
+    195|     });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[59/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED009 ms: committed pair with unconfirmed shell stays transcript-saved without an offline-reopening promise
+ FAIL  tests/unit/saved-reader.test.ts > SAVED009 en: committed pair with unconfirmed shell stays transcript-saved without an offline-reopening promise
+AssertionError: expected undefined to be 'false' // Object.is equality
+
+- Expected:
+"false"
+
++ Received:
+undefined
+
+ ❯ tests/unit/saved-reader.test.ts:194:98
+    192|       const s = scenario(language); s.state.value.shellReady = false; …
+    193|       expect.soft(text(s.root, '#reader-save-status')).toBe(labels[lan…
+    194|       expect(s.root.querySelector('#reader-offline-status')?.getAttrib…
+       |                                                                                                  ^
+    195|     });
+    196|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[60/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED010 ms: new-shell failure preserves an already confirmed compatible saved reader
+ FAIL  tests/unit/saved-reader.test.ts > SAVED010 en: new-shell failure preserves an already confirmed compatible saved reader
+AssertionError: expected [] to deeply equal [ Array(1) ]
+
+- Expected
++ Received
+
+- [
+-   "Terima kasih Tan Sri Yang di-Pertua. Saya ingin ucapkan terima kasih kepada Yang Berhormat Menteri atas jawapan yang menyeluruh ini.
+-
+- Hubungan di antara Malaysia dan India seperti yang disebut oleh Yang Berhormat Menteri telah sampai ke tahap rakan kongsi strategik. Kalau rakan kongsi strategik ini dilihat membawa manfaat, ia mesti boleh dipercayai (*trusted*) dan juga dapat menunjukkan penyampaian barangan ataupun kegunaan awam dengan izin Tan Sri Yang di-Pertua, *delivery of public good*.
+-
+- Jadi, di sini saya nak tanya, apakah bentuk yang ada dalam kedua-dua konteks ini. Berkaitan dengan tarif Amerika Syarikat, bolehkah Malaysia bertukar pandangan macam mana dia boleh turunkan tarif daripada 50 peratus kepada 18, sedangkan kita sungguhpun ada hubungan baik dengan Amerika Syarikat, masih lebih tinggi dengan 19 peratus. Kalau boleh, bersama supaya kita dapat sama rata. Kalau tidak, dia ada sedikit kelebihan.
+-
+- Dan akhirnya berkaitan dengan Myanmar, apakah langkah seterusnya baik oleh India dan Malaysia, yang boleh membawa kepada keamanan atau menuju ke arah keamanan di Myanmar, iaitu apakah adakah mesyuarat yang akan datang, adakah inisiatif yang akan datang, apakah langkah seterusnya. Takkan kita hanya tunggu dan lihat? Sekian, terima kasih.",
+- ]
++ []
+
+ ❯ complete tests/unit/saved-reader.test.ts:93:44
+     91|   for (const [kind, items] of [['turn', result.turns], ['gap', result.…
+     92|     const expected: string[] = []; for (const item of items) expected.…
+     93|     expect.soft(texts(context.root, kind)).toEqual(expected);
+       |                                            ^
+     94|   }
+     95|   expect.soft(context.root.querySelector('#reader-result')?.getAttribu…
+ ❯ tests/unit/saved-reader.test.ts:202:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[61/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED010 ms: new-shell failure preserves an already confirmed compatible saved reader
+ FAIL  tests/unit/saved-reader.test.ts > SAVED010 en: new-shell failure preserves an already confirmed compatible saved reader
+AssertionError: expected [] to deeply equal [ …(2) ]
+
+- Expected
++ Received
+
+- [
+-   "*[Tuan Yang di-Pertua* ***mempengerusikan Mesyuarat****]*",
+-   "**1. Tuan Lim Guan Eng [Bagan]** Terima kasih, Tan Sri Yang di-Pertua. Bagan minta Yang Berhormat Menteri Luar Negeri menyatakan hasil perdagangan dan keselamatan serantau susulan lawatan Perdana Menteri India, Narendra Modi baru-baru ini ke Malaysia dan sejauh manakah langkah-langkah bersama yang boleh diambil oleh Malaysia dan India terhadap pelaksanaan tarif oleh Amerika Syarikat dan usaha memulihkan demokrasi dan keamanan di Myanmar. Terima kasih.",
+- ]
++ []
+
+ ❯ complete tests/unit/saved-reader.test.ts:93:44
+     91|   for (const [kind, items] of [['turn', result.turns], ['gap', result.…
+     92|     const expected: string[] = []; for (const item of items) expected.…
+     93|     expect.soft(texts(context.root, kind)).toEqual(expected);
+       |                                            ^
+     94|   }
+     95|   expect.soft(context.root.querySelector('#reader-result')?.getAttribu…
+ ❯ tests/unit/saved-reader.test.ts:202:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[62/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED010 ms: new-shell failure preserves an already confirmed compatible saved reader
+ FAIL  tests/unit/saved-reader.test.ts > SAVED010 en: new-shell failure preserves an already confirmed compatible saved reader
+AssertionError: expected [] to deeply equal [ Array(1) ]
+
+- Expected
++ Received
+
+- [
+-   "[Soalan No. 5 - YB Tuan Prabakaran a/l M. Parameswaran (Batu) tidak hadir]",
+- ]
++ []
+
+ ❯ complete tests/unit/saved-reader.test.ts:93:44
+     91|   for (const [kind, items] of [['turn', result.turns], ['gap', result.…
+     92|     const expected: string[] = []; for (const item of items) expected.…
+     93|     expect.soft(texts(context.root, kind)).toEqual(expected);
+       |                                            ^
+     94|   }
+     95|   expect.soft(context.root.querySelector('#reader-result')?.getAttribu…
+ ❯ tests/unit/saved-reader.test.ts:202:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[63/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED010 ms: new-shell failure preserves an already confirmed compatible saved reader
+ FAIL  tests/unit/saved-reader.test.ts > SAVED010 en: new-shell failure preserves an already confirmed compatible saved reader
+AssertionError: expected null to be '1839' // Object.is equality
+
+- Expected:
+"1839"
+
++ Received:
+null
+
+ ❯ complete tests/unit/saved-reader.test.ts:95:93
+     93|     expect.soft(texts(context.root, kind)).toEqual(expected);
+     94|   }
+     95|   expect.soft(context.root.querySelector('#reader-result')?.getAttribu…
+       |                                                                                             ^
+     96|   expect.soft(context.root.querySelector('#reader-result')?.getAttribu…
+     97| }
+ ❯ tests/unit/saved-reader.test.ts:202:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[64/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED010 ms: new-shell failure preserves an already confirmed compatible saved reader
+ FAIL  tests/unit/saved-reader.test.ts > SAVED010 en: new-shell failure preserves an already confirmed compatible saved reader
+AssertionError: expected null to be '29326' // Object.is equality
+
+- Expected:
+"29326"
+
++ Received:
+null
+
+ ❯ complete tests/unit/saved-reader.test.ts:96:94
+     94|   }
+     95|   expect.soft(context.root.querySelector('#reader-result')?.getAttribu…
+     96|   expect.soft(context.root.querySelector('#reader-result')?.getAttribu…
+       |                                                                                              ^
+     97| }
+     98|
+ ❯ tests/unit/saved-reader.test.ts:202:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[65/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED010 ms: new-shell failure preserves an already confirmed compatible saved reader
+AssertionError: expected '' to be 'Transkrip disimpan pada peranti.' // Object.is equality
+
+- Expected
++ Received
+
+- Transkrip disimpan pada peranti.
+
+ ❯ tests/unit/saved-reader.test.ts:202:78
+    200|       const s = scenario(language); s.online.value = false; s.loadCata…
+    201|       s.state.value = { shellReady: true, waitingVersion: null, applyi…
+    202|       complete(s, s.saved); expect.soft(text(s.root, '#reader-save-sta…
+       |                                                                              ^
+    203|     });
+    204|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[66/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED010 ms: new-shell failure preserves an already confirmed compatible saved reader
+AssertionError: expected '' to be 'Pembaca sedia dibuka semula tanpa sam…' // Object.is equality
+
+- Expected
++ Received
+
+- Pembaca sedia dibuka semula tanpa sambungan.
+
+ ❯ tests/unit/saved-reader.test.ts:202:155
+    200|       const s = scenario(language); s.online.value = false; s.loadCata…
+    201|       s.state.value = { shellReady: true, waitingVersion: null, applyi…
+    202|       complete(s, s.saved); expect.soft(text(s.root, '#reader-save-sta…
+       |                                                                                                                                                           ^
+    203|     });
+    204|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[67/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED011 ms: failed hash validation keeps the prior accepted result/time and never saves failed data
+ FAIL  tests/unit/saved-reader.test.ts > SAVED011 ms: failed identity validation keeps the prior accepted result/time and never saves failed data
+ FAIL  tests/unit/saved-reader.test.ts > SAVED011 ms: failed schema validation keeps the prior accepted result/time and never saves failed data
+ FAIL  tests/unit/saved-reader.test.ts > SAVED011 en: failed hash validation keeps the prior accepted result/time and never saves failed data
+ FAIL  tests/unit/saved-reader.test.ts > SAVED011 en: failed identity validation keeps the prior accepted result/time and never saves failed data
+ FAIL  tests/unit/saved-reader.test.ts > SAVED011 en: failed schema validation keeps the prior accepted result/time and never saves failed data
+AssertionError: expected [] to deeply equal [ Array(1) ]
+
+- Expected
++ Received
+
+- [
+-   "Terima kasih Tan Sri Yang di-Pertua. Saya ingin ucapkan terima kasih kepada Yang Berhormat Menteri atas jawapan yang menyeluruh ini.
+-
+- Hubungan di antara Malaysia dan India seperti yang disebut oleh Yang Berhormat Menteri telah sampai ke tahap rakan kongsi strategik. Kalau rakan kongsi strategik ini dilihat membawa manfaat, ia mesti boleh dipercayai (*trusted*) dan juga dapat menunjukkan penyampaian barangan ataupun kegunaan awam dengan izin Tan Sri Yang di-Pertua, *delivery of public good*.
+-
+- Jadi, di sini saya nak tanya, apakah bentuk yang ada dalam kedua-dua konteks ini. Berkaitan dengan tarif Amerika Syarikat, bolehkah Malaysia bertukar pandangan macam mana dia boleh turunkan tarif daripada 50 peratus kepada 18, sedangkan kita sungguhpun ada hubungan baik dengan Amerika Syarikat, masih lebih tinggi dengan 19 peratus. Kalau boleh, bersama supaya kita dapat sama rata. Kalau tidak, dia ada sedikit kelebihan.
+-
+- Dan akhirnya berkaitan dengan Myanmar, apakah langkah seterusnya baik oleh India dan Malaysia, yang boleh membawa kepada keamanan atau menuju ke arah keamanan di Myanmar, iaitu apakah adakah mesyuarat yang akan datang, adakah inisiatif yang akan datang, apakah langkah seterusnya. Takkan kita hanya tunggu dan lihat? Sekian, terima kasih.",
+- ]
++ []
+
+ ❯ complete tests/unit/saved-reader.test.ts:93:44
+     91|   for (const [kind, items] of [['turn', result.turns], ['gap', result.…
+     92|     const expected: string[] = []; for (const item of items) expected.…
+     93|     expect.soft(texts(context.root, kind)).toEqual(expected);
+       |                                            ^
+     94|   }
+     95|   expect.soft(context.root.querySelector('#reader-result')?.getAttribu…
+ ❯ tests/unit/saved-reader.test.ts:209:100
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[68/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED011 ms: failed hash validation keeps the prior accepted result/time and never saves failed data
+ FAIL  tests/unit/saved-reader.test.ts > SAVED011 ms: failed identity validation keeps the prior accepted result/time and never saves failed data
+ FAIL  tests/unit/saved-reader.test.ts > SAVED011 ms: failed schema validation keeps the prior accepted result/time and never saves failed data
+ FAIL  tests/unit/saved-reader.test.ts > SAVED011 en: failed hash validation keeps the prior accepted result/time and never saves failed data
+ FAIL  tests/unit/saved-reader.test.ts > SAVED011 en: failed identity validation keeps the prior accepted result/time and never saves failed data
+ FAIL  tests/unit/saved-reader.test.ts > SAVED011 en: failed schema validation keeps the prior accepted result/time and never saves failed data
+AssertionError: expected [] to deeply equal [ …(2) ]
+
+- Expected
++ Received
+
+- [
+-   "*[Tuan Yang di-Pertua* ***mempengerusikan Mesyuarat****]*",
+-   "**1. Tuan Lim Guan Eng [Bagan]** Terima kasih, Tan Sri Yang di-Pertua. Bagan minta Yang Berhormat Menteri Luar Negeri menyatakan hasil perdagangan dan keselamatan serantau susulan lawatan Perdana Menteri India, Narendra Modi baru-baru ini ke Malaysia dan sejauh manakah langkah-langkah bersama yang boleh diambil oleh Malaysia dan India terhadap pelaksanaan tarif oleh Amerika Syarikat dan usaha memulihkan demokrasi dan keamanan di Myanmar. Terima kasih.",
+- ]
++ []
+
+ ❯ complete tests/unit/saved-reader.test.ts:93:44
+     91|   for (const [kind, items] of [['turn', result.turns], ['gap', result.…
+     92|     const expected: string[] = []; for (const item of items) expected.…
+     93|     expect.soft(texts(context.root, kind)).toEqual(expected);
+       |                                            ^
+     94|   }
+     95|   expect.soft(context.root.querySelector('#reader-result')?.getAttribu…
+ ❯ tests/unit/saved-reader.test.ts:209:100
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[69/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED011 ms: failed hash validation keeps the prior accepted result/time and never saves failed data
+ FAIL  tests/unit/saved-reader.test.ts > SAVED011 ms: failed identity validation keeps the prior accepted result/time and never saves failed data
+ FAIL  tests/unit/saved-reader.test.ts > SAVED011 ms: failed schema validation keeps the prior accepted result/time and never saves failed data
+ FAIL  tests/unit/saved-reader.test.ts > SAVED011 en: failed hash validation keeps the prior accepted result/time and never saves failed data
+ FAIL  tests/unit/saved-reader.test.ts > SAVED011 en: failed identity validation keeps the prior accepted result/time and never saves failed data
+ FAIL  tests/unit/saved-reader.test.ts > SAVED011 en: failed schema validation keeps the prior accepted result/time and never saves failed data
+AssertionError: expected [] to deeply equal [ Array(1) ]
+
+- Expected
++ Received
+
+- [
+-   "[Soalan No. 5 - YB Tuan Prabakaran a/l M. Parameswaran (Batu) tidak hadir]",
+- ]
++ []
+
+ ❯ complete tests/unit/saved-reader.test.ts:93:44
+     91|   for (const [kind, items] of [['turn', result.turns], ['gap', result.…
+     92|     const expected: string[] = []; for (const item of items) expected.…
+     93|     expect.soft(texts(context.root, kind)).toEqual(expected);
+       |                                            ^
+     94|   }
+     95|   expect.soft(context.root.querySelector('#reader-result')?.getAttribu…
+ ❯ tests/unit/saved-reader.test.ts:209:100
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[70/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED011 ms: failed hash validation keeps the prior accepted result/time and never saves failed data
+ FAIL  tests/unit/saved-reader.test.ts > SAVED011 ms: failed identity validation keeps the prior accepted result/time and never saves failed data
+ FAIL  tests/unit/saved-reader.test.ts > SAVED011 ms: failed schema validation keeps the prior accepted result/time and never saves failed data
+ FAIL  tests/unit/saved-reader.test.ts > SAVED011 en: failed hash validation keeps the prior accepted result/time and never saves failed data
+ FAIL  tests/unit/saved-reader.test.ts > SAVED011 en: failed identity validation keeps the prior accepted result/time and never saves failed data
+ FAIL  tests/unit/saved-reader.test.ts > SAVED011 en: failed schema validation keeps the prior accepted result/time and never saves failed data
+AssertionError: expected null to be '1839' // Object.is equality
+
+- Expected:
+"1839"
+
++ Received:
+null
+
+ ❯ complete tests/unit/saved-reader.test.ts:95:93
+     93|     expect.soft(texts(context.root, kind)).toEqual(expected);
+     94|   }
+     95|   expect.soft(context.root.querySelector('#reader-result')?.getAttribu…
+       |                                                                                             ^
+     96|   expect.soft(context.root.querySelector('#reader-result')?.getAttribu…
+     97| }
+ ❯ tests/unit/saved-reader.test.ts:209:100
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[71/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED011 ms: failed hash validation keeps the prior accepted result/time and never saves failed data
+ FAIL  tests/unit/saved-reader.test.ts > SAVED011 ms: failed identity validation keeps the prior accepted result/time and never saves failed data
+ FAIL  tests/unit/saved-reader.test.ts > SAVED011 ms: failed schema validation keeps the prior accepted result/time and never saves failed data
+ FAIL  tests/unit/saved-reader.test.ts > SAVED011 en: failed hash validation keeps the prior accepted result/time and never saves failed data
+ FAIL  tests/unit/saved-reader.test.ts > SAVED011 en: failed identity validation keeps the prior accepted result/time and never saves failed data
+ FAIL  tests/unit/saved-reader.test.ts > SAVED011 en: failed schema validation keeps the prior accepted result/time and never saves failed data
+AssertionError: expected null to be '29326' // Object.is equality
+
+- Expected:
+"29326"
+
++ Received:
+null
+
+ ❯ complete tests/unit/saved-reader.test.ts:96:94
+     94|   }
+     95|   expect.soft(context.root.querySelector('#reader-result')?.getAttribu…
+     96|   expect.soft(context.root.querySelector('#reader-result')?.getAttribu…
+       |                                                                                              ^
+     97| }
+     98|
+ ❯ tests/unit/saved-reader.test.ts:209:100
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[72/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED011 ms: failed hash validation keeps the prior accepted result/time and never saves failed data
+ FAIL  tests/unit/saved-reader.test.ts > SAVED011 ms: failed identity validation keeps the prior accepted result/time and never saves failed data
+ FAIL  tests/unit/saved-reader.test.ts > SAVED011 ms: failed schema validation keeps the prior accepted result/time and never saves failed data
+ FAIL  tests/unit/saved-reader.test.ts > SAVED011 en: failed hash validation keeps the prior accepted result/time and never saves failed data
+ FAIL  tests/unit/saved-reader.test.ts > SAVED011 en: failed identity validation keeps the prior accepted result/time and never saves failed data
+ FAIL  tests/unit/saved-reader.test.ts > SAVED011 en: failed schema validation keeps the prior accepted result/time and never saves failed data
+AssertionError: expected '' to contain '2026-10-10T06:00:00.000Z'
+
+- Expected
++ Received
+
+- 2026-10-10T06:00:00.000Z
+
+ ❯ tests/unit/saved-reader.test.ts:210:64
+    208|       const s = scenario(language); const expected = structuredClone(s…
+    209|       s.loadPair.mockRejectedValue(new Error(`controlled ${failure} va…
+    210|       expect.soft(text(s.root, '[data-field="refreshed-at"]')).toConta…
+       |                                                                ^
+    211|       expect.soft(text(s.root, '#reader-result h2')).toContain(expecte…
+    212|       expect.soft(s.root.querySelector('a[data-role="source"]')?.getAt…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[73/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED011 ms: failed hash validation keeps the prior accepted result/time and never saves failed data
+ FAIL  tests/unit/saved-reader.test.ts > SAVED011 ms: failed identity validation keeps the prior accepted result/time and never saves failed data
+ FAIL  tests/unit/saved-reader.test.ts > SAVED011 ms: failed schema validation keeps the prior accepted result/time and never saves failed data
+ FAIL  tests/unit/saved-reader.test.ts > SAVED011 en: failed hash validation keeps the prior accepted result/time and never saves failed data
+ FAIL  tests/unit/saved-reader.test.ts > SAVED011 en: failed identity validation keeps the prior accepted result/time and never saves failed data
+ FAIL  tests/unit/saved-reader.test.ts > SAVED011 en: failed schema validation keeps the prior accepted result/time and never saves failed data
+AssertionError: expected '' to contain '2026-10-10T06:00:00.000Z'
+
+- Expected
++ Received
+
+- 2026-10-10T06:00:00.000Z
+
+ ❯ tests/unit/saved-reader.test.ts:210:160
+    208|       const s = scenario(language); const expected = structuredClone(s…
+    209|       s.loadPair.mockRejectedValue(new Error(`controlled ${failure} va…
+    210|       expect.soft(text(s.root, '[data-field="refreshed-at"]')).toConta…
+       |                                                                                                                                                                ^
+    211|       expect.soft(text(s.root, '#reader-result h2')).toContain(expecte…
+    212|       expect.soft(s.root.querySelector('a[data-role="source"]')?.getAt…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[74/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED011 ms: failed hash validation keeps the prior accepted result/time and never saves failed data
+ FAIL  tests/unit/saved-reader.test.ts > SAVED011 ms: failed identity validation keeps the prior accepted result/time and never saves failed data
+ FAIL  tests/unit/saved-reader.test.ts > SAVED011 ms: failed schema validation keeps the prior accepted result/time and never saves failed data
+ FAIL  tests/unit/saved-reader.test.ts > SAVED011 en: failed hash validation keeps the prior accepted result/time and never saves failed data
+ FAIL  tests/unit/saved-reader.test.ts > SAVED011 en: failed identity validation keeps the prior accepted result/time and never saves failed data
+ FAIL  tests/unit/saved-reader.test.ts > SAVED011 en: failed schema validation keeps the prior accepted result/time and never saves failed data
+AssertionError: expected '' to contain 'LIM GUAN ENG'
+
+- Expected
++ Received
+
+- LIM GUAN ENG
+
+ ❯ tests/unit/saved-reader.test.ts:211:54
+    209|       s.loadPair.mockRejectedValue(new Error(`controlled ${failure} va…
+    210|       expect.soft(text(s.root, '[data-field="refreshed-at"]')).toConta…
+    211|       expect.soft(text(s.root, '#reader-result h2')).toContain(expecte…
+       |                                                      ^
+    212|       expect.soft(s.root.querySelector('a[data-role="source"]')?.getAt…
+    213|       expect.soft(text(s.root, '[data-field="prepared-at"]')).toContai…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[75/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED011 ms: failed hash validation keeps the prior accepted result/time and never saves failed data
+ FAIL  tests/unit/saved-reader.test.ts > SAVED011 ms: failed identity validation keeps the prior accepted result/time and never saves failed data
+ FAIL  tests/unit/saved-reader.test.ts > SAVED011 ms: failed schema validation keeps the prior accepted result/time and never saves failed data
+ FAIL  tests/unit/saved-reader.test.ts > SAVED011 en: failed hash validation keeps the prior accepted result/time and never saves failed data
+ FAIL  tests/unit/saved-reader.test.ts > SAVED011 en: failed identity validation keeps the prior accepted result/time and never saves failed data
+ FAIL  tests/unit/saved-reader.test.ts > SAVED011 en: failed schema validation keeps the prior accepted result/time and never saves failed data
+AssertionError: expected undefined to be 'https://hansard.parlimen.gov.my/hansa…' // Object.is equality
+
+- Expected:
+"https://hansard.parlimen.gov.my/hansard/dewan-rakyat/2026-02-10"
+
++ Received:
+undefined
+
+ ❯ tests/unit/saved-reader.test.ts:212:88
+    210|       expect.soft(text(s.root, '[data-field="refreshed-at"]')).toConta…
+    211|       expect.soft(text(s.root, '#reader-result h2')).toContain(expecte…
+    212|       expect.soft(s.root.querySelector('a[data-role="source"]')?.getAt…
+       |                                                                                        ^
+    213|       expect.soft(text(s.root, '[data-field="prepared-at"]')).toContai…
+    214|       expect.soft(text(s.root, '[data-field="acquired-at"]')).toContai…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[76/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED011 ms: failed hash validation keeps the prior accepted result/time and never saves failed data
+ FAIL  tests/unit/saved-reader.test.ts > SAVED011 ms: failed identity validation keeps the prior accepted result/time and never saves failed data
+ FAIL  tests/unit/saved-reader.test.ts > SAVED011 ms: failed schema validation keeps the prior accepted result/time and never saves failed data
+ FAIL  tests/unit/saved-reader.test.ts > SAVED011 en: failed hash validation keeps the prior accepted result/time and never saves failed data
+ FAIL  tests/unit/saved-reader.test.ts > SAVED011 en: failed identity validation keeps the prior accepted result/time and never saves failed data
+ FAIL  tests/unit/saved-reader.test.ts > SAVED011 en: failed schema validation keeps the prior accepted result/time and never saves failed data
+AssertionError: expected '' to contain '2026-10-10T04:00:00.000Z'
+
+- Expected
++ Received
+
+- 2026-10-10T04:00:00.000Z
+
+ ❯ tests/unit/saved-reader.test.ts:213:63
+    211|       expect.soft(text(s.root, '#reader-result h2')).toContain(expecte…
+    212|       expect.soft(s.root.querySelector('a[data-role="source"]')?.getAt…
+    213|       expect.soft(text(s.root, '[data-field="prepared-at"]')).toContai…
+       |                                                               ^
+    214|       expect.soft(text(s.root, '[data-field="acquired-at"]')).toContai…
+    215|       expect.soft(s.root.querySelector('#reader-result')?.getAttribute…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[77/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED011 ms: failed hash validation keeps the prior accepted result/time and never saves failed data
+ FAIL  tests/unit/saved-reader.test.ts > SAVED011 ms: failed identity validation keeps the prior accepted result/time and never saves failed data
+ FAIL  tests/unit/saved-reader.test.ts > SAVED011 ms: failed schema validation keeps the prior accepted result/time and never saves failed data
+ FAIL  tests/unit/saved-reader.test.ts > SAVED011 en: failed hash validation keeps the prior accepted result/time and never saves failed data
+ FAIL  tests/unit/saved-reader.test.ts > SAVED011 en: failed identity validation keeps the prior accepted result/time and never saves failed data
+ FAIL  tests/unit/saved-reader.test.ts > SAVED011 en: failed schema validation keeps the prior accepted result/time and never saves failed data
+AssertionError: expected '' to contain '2026-10-10T03:01:00.000Z'
+
+- Expected
++ Received
+
+- 2026-10-10T03:01:00.000Z
+
+ ❯ tests/unit/saved-reader.test.ts:214:63
+    212|       expect.soft(s.root.querySelector('a[data-role="source"]')?.getAt…
+    213|       expect.soft(text(s.root, '[data-field="prepared-at"]')).toContai…
+    214|       expect.soft(text(s.root, '[data-field="acquired-at"]')).toContai…
+       |                                                               ^
+    215|       expect.soft(s.root.querySelector('#reader-result')?.getAttribute…
+    216|       expect.soft(s.saved).toEqual(expected);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[78/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED011 ms: failed hash validation keeps the prior accepted result/time and never saves failed data
+ FAIL  tests/unit/saved-reader.test.ts > SAVED011 ms: failed identity validation keeps the prior accepted result/time and never saves failed data
+ FAIL  tests/unit/saved-reader.test.ts > SAVED011 ms: failed schema validation keeps the prior accepted result/time and never saves failed data
+ FAIL  tests/unit/saved-reader.test.ts > SAVED011 en: failed hash validation keeps the prior accepted result/time and never saves failed data
+ FAIL  tests/unit/saved-reader.test.ts > SAVED011 en: failed identity validation keeps the prior accepted result/time and never saves failed data
+ FAIL  tests/unit/saved-reader.test.ts > SAVED011 en: failed schema validation keeps the prior accepted result/time and never saves failed data
+AssertionError: expected null to be 'incomplete' // Object.is equality
+
+- Expected:
+"incomplete"
+
++ Received:
+null
+
+ ❯ tests/unit/saved-reader.test.ts:215:89
+    213|       expect.soft(text(s.root, '[data-field="prepared-at"]')).toContai…
+    214|       expect.soft(text(s.root, '[data-field="acquired-at"]')).toContai…
+    215|       expect.soft(s.root.querySelector('#reader-result')?.getAttribute…
+       |                                                                                         ^
+    216|       expect.soft(s.saved).toEqual(expected);
+    217|       expect(s.storage.savePair).not.toHaveBeenCalled();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[79/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED012 ms: device storage opening failure preserves ordinary online reading with an honest limit
+AssertionError: expected '' to be 'Storan peranti tidak tersedia. Bacaan…' // Object.is equality
+
+- Expected
++ Received
+
+- Storan peranti tidak tersedia. Bacaan dalam talian masih boleh digunakan.
+
+ ❯ tests/unit/saved-reader.test.ts:225:56
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[80/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED012 ms: device storage opening failure preserves ordinary online reading with an honest limit
+AssertionError: expected '' to be 'Pembukaan semula tanpa sambungan belu…' // Object.is equality
+
+- Expected
++ Received
+
+- Pembukaan semula tanpa sambungan belum dapat dipastikan.
+
+ ❯ tests/unit/saved-reader.test.ts:225:135
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[81/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED013 ms: saved result metadata is not relabeled from a newer cached catalogue
+ FAIL  tests/unit/saved-reader.test.ts > SAVED013 en: saved result metadata is not relabeled from a newer cached catalogue
+AssertionError: expected '' to contain 'LIM GUAN ENG'
+
+- Expected
++ Received
+
+- LIM GUAN ENG
+
+ ❯ tests/unit/saved-reader.test.ts:233:54
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[82/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED013 ms: saved result metadata is not relabeled from a newer cached catalogue
+ FAIL  tests/unit/saved-reader.test.ts > SAVED013 en: saved result metadata is not relabeled from a newer cached catalogue
+AssertionError: expected '' to contain '2026-10-10T04:00:00.000Z'
+
+- Expected
++ Received
+
+- 2026-10-10T04:00:00.000Z
+
+ ❯ tests/unit/saved-reader.test.ts:233:143
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[83/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED013 ms: saved result metadata is not relabeled from a newer cached catalogue
+ FAIL  tests/unit/saved-reader.test.ts > SAVED013 en: saved result metadata is not relabeled from a newer cached catalogue
+AssertionError: expected '' to contain '2026-10-10T03:01:00.000Z'
+
+- Expected
++ Received
+
+- 2026-10-10T03:01:00.000Z
+
+ ❯ tests/unit/saved-reader.test.ts:234:63
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[84/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED013 ms: saved result metadata is not relabeled from a newer cached catalogue
+ FAIL  tests/unit/saved-reader.test.ts > SAVED013 en: saved result metadata is not relabeled from a newer cached catalogue
+AssertionError: expected [] to deeply equal [ Array(1) ]
+
+- Expected
++ Received
+
+- [
+-   "Terima kasih Tan Sri Yang di-Pertua. Saya ingin ucapkan terima kasih kepada Yang Berhormat Menteri atas jawapan yang menyeluruh ini.
+-
+- Hubungan di antara Malaysia dan India seperti yang disebut oleh Yang Berhormat Menteri telah sampai ke tahap rakan kongsi strategik. Kalau rakan kongsi strategik ini dilihat membawa manfaat, ia mesti boleh dipercayai (*trusted*) dan juga dapat menunjukkan penyampaian barangan ataupun kegunaan awam dengan izin Tan Sri Yang di-Pertua, *delivery of public good*.
+-
+- Jadi, di sini saya nak tanya, apakah bentuk yang ada dalam kedua-dua konteks ini. Berkaitan dengan tarif Amerika Syarikat, bolehkah Malaysia bertukar pandangan macam mana dia boleh turunkan tarif daripada 50 peratus kepada 18, sedangkan kita sungguhpun ada hubungan baik dengan Amerika Syarikat, masih lebih tinggi dengan 19 peratus. Kalau boleh, bersama supaya kita dapat sama rata. Kalau tidak, dia ada sedikit kelebihan.
+-
+- Dan akhirnya berkaitan dengan Myanmar, apakah langkah seterusnya baik oleh India dan Malaysia, yang boleh membawa kepada keamanan atau menuju ke arah keamanan di Myanmar, iaitu apakah adakah mesyuarat yang akan datang, adakah inisiatif yang akan datang, apakah langkah seterusnya. Takkan kita hanya tunggu dan lihat? Sekian, terima kasih.",
+- ]
++ []
+
+ ❯ complete tests/unit/saved-reader.test.ts:93:44
+     91|   for (const [kind, items] of [['turn', result.turns], ['gap', result.…
+     92|     const expected: string[] = []; for (const item of items) expected.…
+     93|     expect.soft(texts(context.root, kind)).toEqual(expected);
+       |                                            ^
+     94|   }
+     95|   expect.soft(context.root.querySelector('#reader-result')?.getAttribu…
+ ❯ tests/unit/saved-reader.test.ts:234:110
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[85/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED013 ms: saved result metadata is not relabeled from a newer cached catalogue
+ FAIL  tests/unit/saved-reader.test.ts > SAVED013 en: saved result metadata is not relabeled from a newer cached catalogue
+AssertionError: expected [] to deeply equal [ …(2) ]
+
+- Expected
++ Received
+
+- [
+-   "*[Tuan Yang di-Pertua* ***mempengerusikan Mesyuarat****]*",
+-   "**1. Tuan Lim Guan Eng [Bagan]** Terima kasih, Tan Sri Yang di-Pertua. Bagan minta Yang Berhormat Menteri Luar Negeri menyatakan hasil perdagangan dan keselamatan serantau susulan lawatan Perdana Menteri India, Narendra Modi baru-baru ini ke Malaysia dan sejauh manakah langkah-langkah bersama yang boleh diambil oleh Malaysia dan India terhadap pelaksanaan tarif oleh Amerika Syarikat dan usaha memulihkan demokrasi dan keamanan di Myanmar. Terima kasih.",
+- ]
++ []
+
+ ❯ complete tests/unit/saved-reader.test.ts:93:44
+     91|   for (const [kind, items] of [['turn', result.turns], ['gap', result.…
+     92|     const expected: string[] = []; for (const item of items) expected.…
+     93|     expect.soft(texts(context.root, kind)).toEqual(expected);
+       |                                            ^
+     94|   }
+     95|   expect.soft(context.root.querySelector('#reader-result')?.getAttribu…
+ ❯ tests/unit/saved-reader.test.ts:234:110
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[86/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED013 ms: saved result metadata is not relabeled from a newer cached catalogue
+ FAIL  tests/unit/saved-reader.test.ts > SAVED013 en: saved result metadata is not relabeled from a newer cached catalogue
+AssertionError: expected [] to deeply equal [ Array(1) ]
+
+- Expected
++ Received
+
+- [
+-   "[Soalan No. 5 - YB Tuan Prabakaran a/l M. Parameswaran (Batu) tidak hadir]",
+- ]
++ []
+
+ ❯ complete tests/unit/saved-reader.test.ts:93:44
+     91|   for (const [kind, items] of [['turn', result.turns], ['gap', result.…
+     92|     const expected: string[] = []; for (const item of items) expected.…
+     93|     expect.soft(texts(context.root, kind)).toEqual(expected);
+       |                                            ^
+     94|   }
+     95|   expect.soft(context.root.querySelector('#reader-result')?.getAttribu…
+ ❯ tests/unit/saved-reader.test.ts:234:110
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[87/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED013 ms: saved result metadata is not relabeled from a newer cached catalogue
+ FAIL  tests/unit/saved-reader.test.ts > SAVED013 en: saved result metadata is not relabeled from a newer cached catalogue
+AssertionError: expected null to be '1839' // Object.is equality
+
+- Expected:
+"1839"
+
++ Received:
+null
+
+ ❯ complete tests/unit/saved-reader.test.ts:95:93
+     93|     expect.soft(texts(context.root, kind)).toEqual(expected);
+     94|   }
+     95|   expect.soft(context.root.querySelector('#reader-result')?.getAttribu…
+       |                                                                                             ^
+     96|   expect.soft(context.root.querySelector('#reader-result')?.getAttribu…
+     97| }
+ ❯ tests/unit/saved-reader.test.ts:234:110
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[88/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED013 ms: saved result metadata is not relabeled from a newer cached catalogue
+ FAIL  tests/unit/saved-reader.test.ts > SAVED013 en: saved result metadata is not relabeled from a newer cached catalogue
+AssertionError: expected null to be '29326' // Object.is equality
+
+- Expected:
+"29326"
+
++ Received:
+null
+
+ ❯ complete tests/unit/saved-reader.test.ts:96:94
+     94|   }
+     95|   expect.soft(context.root.querySelector('#reader-result')?.getAttribu…
+     96|   expect.soft(context.root.querySelector('#reader-result')?.getAttribu…
+       |                                                                                              ^
+     97| }
+     98|
+ ❯ tests/unit/saved-reader.test.ts:234:110
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[89/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED013 ms: saved result metadata is not relabeled from a newer cached catalogue
+ FAIL  tests/unit/saved-reader.test.ts > SAVED013 en: saved result metadata is not relabeled from a newer cached catalogue
+AssertionError: expected undefined to be 'https://hansard.parlimen.gov.my/hansa…' // Object.is equality
+
+- Expected:
+"https://hansard.parlimen.gov.my/hansard/dewan-rakyat/2026-02-10"
+
++ Received:
+undefined
+
+ ❯ tests/unit/saved-reader.test.ts:235:88
+    233|       expect.soft(text(s.root, '#reader-result h2')).toContain(expecte…
+    234|       expect.soft(text(s.root, '[data-field="acquired-at"]')).toContai…
+    235|       expect.soft(s.root.querySelector('a[data-role="source"]')?.getAt…
+       |                                                                                        ^
+    236|       expect.soft(s.root.querySelector('#reader-result')?.getAttribute…
+    237|       expect.soft(text(s.root, '[data-field="refreshed-at"]')).toConta…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[90/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED013 ms: saved result metadata is not relabeled from a newer cached catalogue
+ FAIL  tests/unit/saved-reader.test.ts > SAVED013 en: saved result metadata is not relabeled from a newer cached catalogue
+AssertionError: expected null to be 'incomplete' // Object.is equality
+
+- Expected:
+"incomplete"
+
++ Received:
+null
+
+ ❯ tests/unit/saved-reader.test.ts:236:89
+    234|       expect.soft(text(s.root, '[data-field="acquired-at"]')).toContai…
+    235|       expect.soft(s.root.querySelector('a[data-role="source"]')?.getAt…
+    236|       expect.soft(s.root.querySelector('#reader-result')?.getAttribute…
+       |                                                                                         ^
+    237|       expect.soft(text(s.root, '[data-field="refreshed-at"]')).toConta…
+    238|       expect.soft(text(s.root, '[data-field="saved-refreshed-at"]')).t…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[91/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED013 ms: saved result metadata is not relabeled from a newer cached catalogue
+ FAIL  tests/unit/saved-reader.test.ts > SAVED013 en: saved result metadata is not relabeled from a newer cached catalogue
+AssertionError: expected '' to contain '2026-10-10T06:00:00.000Z'
+
+- Expected
++ Received
+
+- 2026-10-10T06:00:00.000Z
+
+ ❯ tests/unit/saved-reader.test.ts:237:64
+    235|       expect.soft(s.root.querySelector('a[data-role="source"]')?.getAt…
+    236|       expect.soft(s.root.querySelector('#reader-result')?.getAttribute…
+    237|       expect.soft(text(s.root, '[data-field="refreshed-at"]')).toConta…
+       |                                                                ^
+    238|       expect.soft(text(s.root, '[data-field="saved-refreshed-at"]')).t…
+    239|       expect.soft(s.saved).toEqual(expected);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[92/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED013 ms: saved result metadata is not relabeled from a newer cached catalogue
+ FAIL  tests/unit/saved-reader.test.ts > SAVED013 en: saved result metadata is not relabeled from a newer cached catalogue
+AssertionError: expected '' to contain '2026-10-10T06:00:00.000Z'
+
+- Expected
++ Received
+
+- 2026-10-10T06:00:00.000Z
+
+ ❯ tests/unit/saved-reader.test.ts:238:70
+    236|       expect.soft(s.root.querySelector('#reader-result')?.getAttribute…
+    237|       expect.soft(text(s.root, '[data-field="refreshed-at"]')).toConta…
+    238|       expect.soft(text(s.root, '[data-field="saved-refreshed-at"]')).t…
+       |                                                                      ^
+    239|       expect.soft(s.saved).toEqual(expected);
+    240|     });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[93/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED014 ms: language and valid changed selections are persisted before deliberate Apply
+AssertionError: expected '' to be 'Gunakan kemas kini' // Object.is equality
+
+- Expected
++ Received
+
+- Gunakan kemas kini
+
+ ❯ tests/unit/saved-reader.test.ts:246:57
+    244|     async () => {
+    245|       const s = scenario(language); s.state.value.waitingVersion = 'b'…
+    246|       expect.soft(text(s.root, '#apply-update-button')).toBe(labels[la…
+       |                                                         ^
+    247|       choose(s.root, 'member-select', '4463'); choose(s.root, 'sitting…
+    248|       const button = s.root.querySelector<HTMLButtonElement>('#apply-u…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[94/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED014 ms: language and valid changed selections are persisted before deliberate Apply
+AssertionError: expected '' to be 'Teruskan membaca' // Object.is equality
+
+- Expected
++ Received
+
+- Teruskan membaca
+
+ ❯ tests/unit/saved-reader.test.ts:246:140
+    244|     async () => {
+    245|       const s = scenario(language); s.state.value.waitingVersion = 'b'…
+    246|       expect.soft(text(s.root, '#apply-update-button')).toBe(labels[la…
+       |                                                                                                                                            ^
+    247|       choose(s.root, 'member-select', '4463'); choose(s.root, 'sitting…
+    248|       const button = s.root.querySelector<HTMLButtonElement>('#apply-u…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[95/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED014 ms: language and valid changed selections are persisted before deliberate Apply
+ FAIL  tests/unit/saved-reader.test.ts > SAVED014 en: language and valid changed selections are persisted before deliberate Apply
+AssertionError: expected null not to be null
+ ❯ tests/unit/saved-reader.test.ts:248:111
+    246|       expect.soft(text(s.root, '#apply-update-button')).toBe(labels[la…
+    247|       choose(s.root, 'member-select', '4463'); choose(s.root, 'sitting…
+    248|       const button = s.root.querySelector<HTMLButtonElement>('#apply-u…
+       |                                                                                                               ^
+    249|       expect.soft(s.updates.apply).toHaveBeenCalledOnce(); const persi…
+    250|       if (typeof persist === 'function') await persist();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[96/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED014 ms: language and valid changed selections are persisted before deliberate Apply
+ FAIL  tests/unit/saved-reader.test.ts > SAVED014 en: language and valid changed selections are persisted before deliberate Apply
+AssertionError: expected "vi.fn()" to be called once, but got 0 times
+ ❯ tests/unit/saved-reader.test.ts:249:36
+    247|       choose(s.root, 'member-select', '4463'); choose(s.root, 'sitting…
+    248|       const button = s.root.querySelector<HTMLButtonElement>('#apply-u…
+    249|       expect.soft(s.updates.apply).toHaveBeenCalledOnce(); const persi…
+       |                                    ^
+    250|       if (typeof persist === 'function') await persist();
+    251|       expect(s.storage.saveState).toHaveBeenCalledWith(s.fresh.catalog…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[97/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED014 ms: language and valid changed selections are persisted before deliberate Apply
+ FAIL  tests/unit/saved-reader.test.ts > SAVED014 en: language and valid changed selections are persisted before deliberate Apply
+AssertionError: expected undefined to be type of 'function'
+
+Expected: "function"
+Received: "undefined"
+
+ ❯ tests/unit/saved-reader.test.ts:249:133
+    247|       choose(s.root, 'member-select', '4463'); choose(s.root, 'sitting…
+    248|       const button = s.root.querySelector<HTMLButtonElement>('#apply-u…
+    249|       expect.soft(s.updates.apply).toHaveBeenCalledOnce(); const persi…
+       |                                                                                                                                     ^
+    250|       if (typeof persist === 'function') await persist();
+    251|       expect(s.storage.saveState).toHaveBeenCalledWith(s.fresh.catalog…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[98/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED014 ms: language and valid changed selections are persisted before deliberate Apply
+ FAIL  tests/unit/saved-reader.test.ts > SAVED014 en: language and valid changed selections are persisted before deliberate Apply
+AssertionError: expected "vi.fn()" to be called with arguments: [ { schemaVersion: 1, …(8) }, …(1) ]
+
+Number of calls: 0
+
+ ❯ tests/unit/saved-reader.test.ts:251:35
+    249|       expect.soft(s.updates.apply).toHaveBeenCalledOnce(); const persi…
+    250|       if (typeof persist === 'function') await persist();
+    251|       expect(s.storage.saveState).toHaveBeenCalledWith(s.fresh.catalog…
+       |                                   ^
+    252|     });
+    253|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[99/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED015 ms: Continue preserves exact reading, preferences and native control focus
+ FAIL  tests/unit/saved-reader.test.ts > SAVED015 en: Continue preserves exact reading, preferences and native control focus
+AssertionError: expected null not to be null
+ ❯ tests/unit/saved-reader.test.ts:259:114
+    257|       const s = scenario(language); s.state.value.waitingVersion = 'b'…
+    258|       s.storage.saveState.mockClear();
+    259|       const button = s.root.querySelector<HTMLButtonElement>('#continu…
+       |                                                                                                                  ^
+    260|       complete(s, s.fresh.result); expect.soft(s.updates.continue).toH…
+    261|       if (button) expect.soft(document.activeElement).toBe(button); ex…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[100/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED015 ms: Continue preserves exact reading, preferences and native control focus
+ FAIL  tests/unit/saved-reader.test.ts > SAVED015 en: Continue preserves exact reading, preferences and native control focus
+AssertionError: expected [] to deeply equal [ Array(1) ]
+
+- Expected
++ Received
+
+- [
+-   "Terima kasih Tan Sri Yang di-Pertua. Saya ingin ucapkan terima kasih kepada Yang Berhormat Menteri atas jawapan yang menyeluruh ini.
+-
+- Hubungan di antara Malaysia dan India seperti yang disebut oleh Yang Berhormat Menteri telah sampai ke tahap rakan kongsi strategik. Kalau rakan kongsi strategik ini dilihat membawa manfaat, ia mesti boleh dipercayai (*trusted*) dan juga dapat menunjukkan penyampaian barangan ataupun kegunaan awam dengan izin Tan Sri Yang di-Pertua, *delivery of public good*.
+-
+- Jadi, di sini saya nak tanya, apakah bentuk yang ada dalam kedua-dua konteks ini. Berkaitan dengan tarif Amerika Syarikat, bolehkah Malaysia bertukar pandangan macam mana dia boleh turunkan tarif daripada 50 peratus kepada 18, sedangkan kita sungguhpun ada hubungan baik dengan Amerika Syarikat, masih lebih tinggi dengan 19 peratus. Kalau boleh, bersama supaya kita dapat sama rata. Kalau tidak, dia ada sedikit kelebihan.
+-
+- Dan akhirnya berkaitan dengan Myanmar, apakah langkah seterusnya baik oleh India dan Malaysia, yang boleh membawa kepada keamanan atau menuju ke arah keamanan di Myanmar, iaitu apakah adakah mesyuarat yang akan datang, adakah inisiatif yang akan datang, apakah langkah seterusnya. Takkan kita hanya tunggu dan lihat? Sekian, terima kasih.",
+- ]
++ []
+
+ ❯ complete tests/unit/saved-reader.test.ts:93:44
+     91|   for (const [kind, items] of [['turn', result.turns], ['gap', result.…
+     92|     const expected: string[] = []; for (const item of items) expected.…
+     93|     expect.soft(texts(context.root, kind)).toEqual(expected);
+       |                                            ^
+     94|   }
+     95|   expect.soft(context.root.querySelector('#reader-result')?.getAttribu…
+ ❯ tests/unit/saved-reader.test.ts:260:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[101/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED015 ms: Continue preserves exact reading, preferences and native control focus
+ FAIL  tests/unit/saved-reader.test.ts > SAVED015 en: Continue preserves exact reading, preferences and native control focus
+AssertionError: expected [] to deeply equal [ …(2) ]
+
+- Expected
++ Received
+
+- [
+-   "*[Tuan Yang di-Pertua* ***mempengerusikan Mesyuarat****]*",
+-   "**1. Tuan Lim Guan Eng [Bagan]** Terima kasih, Tan Sri Yang di-Pertua. Bagan minta Yang Berhormat Menteri Luar Negeri menyatakan hasil perdagangan dan keselamatan serantau susulan lawatan Perdana Menteri India, Narendra Modi baru-baru ini ke Malaysia dan sejauh manakah langkah-langkah bersama yang boleh diambil oleh Malaysia dan India terhadap pelaksanaan tarif oleh Amerika Syarikat dan usaha memulihkan demokrasi dan keamanan di Myanmar. Terima kasih.",
+- ]
++ []
+
+ ❯ complete tests/unit/saved-reader.test.ts:93:44
+     91|   for (const [kind, items] of [['turn', result.turns], ['gap', result.…
+     92|     const expected: string[] = []; for (const item of items) expected.…
+     93|     expect.soft(texts(context.root, kind)).toEqual(expected);
+       |                                            ^
+     94|   }
+     95|   expect.soft(context.root.querySelector('#reader-result')?.getAttribu…
+ ❯ tests/unit/saved-reader.test.ts:260:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[102/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED015 ms: Continue preserves exact reading, preferences and native control focus
+ FAIL  tests/unit/saved-reader.test.ts > SAVED015 en: Continue preserves exact reading, preferences and native control focus
+AssertionError: expected [] to deeply equal [ Array(1) ]
+
+- Expected
++ Received
+
+- [
+-   "[Soalan No. 5 - YB Tuan Prabakaran a/l M. Parameswaran (Batu) tidak hadir]",
+- ]
++ []
+
+ ❯ complete tests/unit/saved-reader.test.ts:93:44
+     91|   for (const [kind, items] of [['turn', result.turns], ['gap', result.…
+     92|     const expected: string[] = []; for (const item of items) expected.…
+     93|     expect.soft(texts(context.root, kind)).toEqual(expected);
+       |                                            ^
+     94|   }
+     95|   expect.soft(context.root.querySelector('#reader-result')?.getAttribu…
+ ❯ tests/unit/saved-reader.test.ts:260:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[103/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED015 ms: Continue preserves exact reading, preferences and native control focus
+ FAIL  tests/unit/saved-reader.test.ts > SAVED015 en: Continue preserves exact reading, preferences and native control focus
+AssertionError: expected null to be '1839' // Object.is equality
+
+- Expected:
+"1839"
+
++ Received:
+null
+
+ ❯ complete tests/unit/saved-reader.test.ts:95:93
+     93|     expect.soft(texts(context.root, kind)).toEqual(expected);
+     94|   }
+     95|   expect.soft(context.root.querySelector('#reader-result')?.getAttribu…
+       |                                                                                             ^
+     96|   expect.soft(context.root.querySelector('#reader-result')?.getAttribu…
+     97| }
+ ❯ tests/unit/saved-reader.test.ts:260:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[104/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED015 ms: Continue preserves exact reading, preferences and native control focus
+ FAIL  tests/unit/saved-reader.test.ts > SAVED015 en: Continue preserves exact reading, preferences and native control focus
+AssertionError: expected null to be '29326' // Object.is equality
+
+- Expected:
+"29326"
+
++ Received:
+null
+
+ ❯ complete tests/unit/saved-reader.test.ts:96:94
+     94|   }
+     95|   expect.soft(context.root.querySelector('#reader-result')?.getAttribu…
+     96|   expect.soft(context.root.querySelector('#reader-result')?.getAttribu…
+       |                                                                                              ^
+     97| }
+     98|
+ ❯ tests/unit/saved-reader.test.ts:260:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[105/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED015 ms: Continue preserves exact reading, preferences and native control focus
+ FAIL  tests/unit/saved-reader.test.ts > SAVED015 en: Continue preserves exact reading, preferences and native control focus
+AssertionError: expected "vi.fn()" to be called once, but got 0 times
+ ❯ tests/unit/saved-reader.test.ts:260:68
+    258|       s.storage.saveState.mockClear();
+    259|       const button = s.root.querySelector<HTMLButtonElement>('#continu…
+    260|       complete(s, s.fresh.result); expect.soft(s.updates.continue).toH…
+       |                                                                    ^
+    261|       if (button) expect.soft(document.activeElement).toBe(button); ex…
+    262|     });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[106/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED016 ms: complete saved-reader readiness mark waits until the matching saved pair is usable
+ FAIL  tests/unit/saved-reader.test.ts > SAVED016 en: complete saved-reader readiness mark waits until the matching saved pair is usable
+AssertionError: expected [] to include 'hansard.reader-ready'
+ ❯ tests/unit/saved-reader.test.ts:270:23
+    268|       const loaded = deferred<SavedPair>(); s.storage.readPair.mockRet…
+    269|       expect.soft(s.marks).not.toContain('hansard.reader-ready'); load…
+    270|       expect(s.marks).toContain('hansard.reader-ready');
+       |                       ^
+    271|     });
+    272|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[107/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED018 ms: first offline visit without committed lists cannot invent a readable source archive
+AssertionError: expected 'Data laman tidak dapat dimuatkan atau…' to be 'Sambungan diperlukan untuk memuatkan …' // Object.is equality
+
+Expected: "Sambungan diperlukan untuk memuatkan senarai dan rekod yang belum disimpan."
+Received: "Data laman tidak dapat dimuatkan atau disahkan."
+
+ ❯ tests/unit/saved-reader.test.ts:278:51
+    276|       const s = scenario(language); s.online.value = false; s.storage.…
+    277|       s.loadCatalogue.mockRejectedValue(new Error('controlled offline'…
+    278|       expect.soft(text(s.root, '#reader-status')).toBe(labels[language…
+       |                                                   ^
+    279|       expect(s.loadPair).not.toHaveBeenCalled(); expect(s.storage.save…
+    280|     });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[108/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED001 en: offline reopening restores valid catalogue, exact saved pair, locale and selections
+AssertionError: expected 'ms' to be 'en' // Object.is equality
+
+Expected: "en"
+Received: "ms"
+
+ ❯ tests/unit/saved-reader.test.ts:118:72
+    116|     async () => {
+    117|       const s = scenario(language); s.online.value = false; s.loadCata…
+    118|       complete(s, s.saved); expect.soft(document.documentElement.lang)…
+       |                                                                        ^
+    119|       expect.soft(s.root.querySelector<HTMLSelectElement>('#member-sel…
+    120|       expect.soft(text(s.root, '#reader-save-status')).toBe(labels[lan…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[109/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED001 en: offline reopening restores valid catalogue, exact saved pair, locale and selections
+AssertionError: expected '' to be 'Transcript saved on this device.' // Object.is equality
+
+- Expected
++ Received
+
+- Transcript saved on this device.
+
+ ❯ tests/unit/saved-reader.test.ts:120:56
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[110/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED001 en: offline reopening restores valid catalogue, exact saved pair, locale and selections
+AssertionError: expected '' to be 'Reader ready to reopen offline.' // Object.is equality
+
+- Expected
++ Received
+
+- Reader ready to reopen offline.
+
+ ❯ tests/unit/saved-reader.test.ts:120:138
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[111/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED002 en: another member from a fetched sitting remains offline-unsaved and requires a connection
+AssertionError: expected 'Data laman tidak dapat dimuatkan atau…' to be 'A connection is required to open this…' // Object.is equality
+
+Expected: "A connection is required to open this unsaved identity and sitting pair."
+Received: "Data laman tidak dapat dimuatkan atau disahkan."
+
+ ❯ tests/unit/saved-reader.test.ts:130:51
+    128|       const s = scenario(language); s.online.value = false; s.storage.…
+    129|       s.storage.readPair.mockResolvedValue({ status: 'missing' }); s.l…
+    130|       expect.soft(text(s.root, '#reader-status')).toBe(labels[language…
+       |                                                   ^
+    131|       expect.soft(s.root.querySelector('#reader-offline-status')?.getA…
+    132|       expect(texts(s.root, 'turn')).toEqual([]); expect(s.loadPair).no…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[112/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED003 en: incompatible saved content is unavailable and requires valid online retrieval
+AssertionError: expected 'Data laman tidak dapat dimuatkan atau…' to be 'Saved data is incompatible. A connect…' // Object.is equality
+
+Expected: "Saved data is incompatible. A connection is required to retrieve a valid copy."
+Received: "Data laman tidak dapat dimuatkan atau disahkan."
+
+ ❯ tests/unit/saved-reader.test.ts:139:51
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[113/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED003 en: incompatible saved content is unavailable and requires valid online retrieval
+AssertionError: expected '' to be 'Transcript is not saved on this devic…' // Object.is equality
+
+- Expected
++ Received
+
+- Transcript is not saved on this device.
+
+ ❯ tests/unit/saved-reader.test.ts:139:137
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[114/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED004 en: a committed transcript and compatible shell produce distinct saved/offline notices
+AssertionError: expected '' to be 'Transcript saved on this device.' // Object.is equality
+
+- Expected
++ Received
+
+- Transcript saved on this device.
+
+ ❯ tests/unit/saved-reader.test.ts:149:56
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[115/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED004 en: a committed transcript and compatible shell produce distinct saved/offline notices
+AssertionError: expected '' to be 'Reader ready to reopen offline.' // Object.is equality
+
+- Expected
++ Received
+
+- Reader ready to reopen offline.
+
+ ❯ tests/unit/saved-reader.test.ts:149:138
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[116/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED007 en: failed saving keeps new online content unsaved and identifies the older offline copy separately
+AssertionError: expected '' to be 'Transcript is not saved on this devic…' // Object.is equality
+
+- Expected
++ Received
+
+- Transcript is not saved on this device.
+
+ ❯ tests/unit/saved-reader.test.ts:173:56
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[117/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED007 en: failed saving keeps new online content unsaved and identifies the older offline copy separately
+AssertionError: expected '' to be 'The older saved copy remains availabl…' // Object.is equality
+
+- Expected
++ Received
+
+- The older saved copy remains available offline.
+
+ ❯ tests/unit/saved-reader.test.ts:173:140
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[118/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED008 en: pair saving remains pending until transaction acknowledgement and does not advance saved time early
+AssertionError: expected '' to be 'Transcript is not saved on this devic…' // Object.is equality
+
+- Expected
++ Received
+
+- Transcript is not saved on this device.
+
+ ❯ tests/unit/saved-reader.test.ts:183:56
+    181|     async () => {
+    182|       const s = scenario(language); const commit = deferred<Transcript…
+    183|       expect.soft(text(s.root, '#reader-save-status')).toBe(labels[lan…
+       |                                                        ^
+    184|       expect.soft(text(s.root, '[data-field="saved-refreshed-at"]')).n…
+    185|       commit.resolve({ ...s.fresh.result, saved: true }); await settle…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[119/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED008 en: pair saving remains pending until transaction acknowledgement and does not advance saved time early
+AssertionError: expected '' to be 'Transcript saved on this device.' // Object.is equality
+
+- Expected
++ Received
+
+- Transcript saved on this device.
+
+ ❯ tests/unit/saved-reader.test.ts:186:56
+    184|       expect.soft(text(s.root, '[data-field="saved-refreshed-at"]')).n…
+    185|       commit.resolve({ ...s.fresh.result, saved: true }); await settle…
+    186|       expect.soft(text(s.root, '#reader-save-status')).toBe(labels[lan…
+       |                                                        ^
+    187|     });
+    188|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[120/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED009 en: committed pair with unconfirmed shell stays transcript-saved without an offline-reopening promise
+AssertionError: expected '' to be 'Transcript saved on this device.' // Object.is equality
+
+- Expected
++ Received
+
+- Transcript saved on this device.
+
+ ❯ tests/unit/saved-reader.test.ts:193:56
+    191|     async () => {
+    192|       const s = scenario(language); s.state.value.shellReady = false; …
+    193|       expect.soft(text(s.root, '#reader-save-status')).toBe(labels[lan…
+       |                                                        ^
+    194|       expect(s.root.querySelector('#reader-offline-status')?.getAttrib…
+    195|     });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[121/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED009 en: committed pair with unconfirmed shell stays transcript-saved without an offline-reopening promise
+AssertionError: expected '' to be 'Offline reopening is not confirmed.' // Object.is equality
+
+- Expected
++ Received
+
+- Offline reopening is not confirmed.
+
+ ❯ tests/unit/saved-reader.test.ts:193:138
+    191|     async () => {
+    192|       const s = scenario(language); s.state.value.shellReady = false; …
+    193|       expect.soft(text(s.root, '#reader-save-status')).toBe(labels[lan…
+       |                                                                                                                                          ^
+    194|       expect(s.root.querySelector('#reader-offline-status')?.getAttrib…
+    195|     });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[122/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED010 en: new-shell failure preserves an already confirmed compatible saved reader
+AssertionError: expected '' to be 'Transcript saved on this device.' // Object.is equality
+
+- Expected
++ Received
+
+- Transcript saved on this device.
+
+ ❯ tests/unit/saved-reader.test.ts:202:78
+    200|       const s = scenario(language); s.online.value = false; s.loadCata…
+    201|       s.state.value = { shellReady: true, waitingVersion: null, applyi…
+    202|       complete(s, s.saved); expect.soft(text(s.root, '#reader-save-sta…
+       |                                                                              ^
+    203|     });
+    204|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[123/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED010 en: new-shell failure preserves an already confirmed compatible saved reader
+AssertionError: expected '' to be 'Reader ready to reopen offline.' // Object.is equality
+
+- Expected
++ Received
+
+- Reader ready to reopen offline.
+
+ ❯ tests/unit/saved-reader.test.ts:202:155
+    200|       const s = scenario(language); s.online.value = false; s.loadCata…
+    201|       s.state.value = { shellReady: true, waitingVersion: null, applyi…
+    202|       complete(s, s.saved); expect.soft(text(s.root, '#reader-save-sta…
+       |                                                                                                                                                           ^
+    203|     });
+    204|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[124/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED012 en: device storage opening failure preserves ordinary online reading with an honest limit
+AssertionError: expected '' to be 'Device storage is unavailable. Online…' // Object.is equality
+
+- Expected
++ Received
+
+- Device storage is unavailable. Online reading remains usable.
+
+ ❯ tests/unit/saved-reader.test.ts:225:56
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[125/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED012 en: device storage opening failure preserves ordinary online reading with an honest limit
+AssertionError: expected '' to be 'Offline reopening is not confirmed.' // Object.is equality
+
+- Expected
++ Received
+
+- Offline reopening is not confirmed.
+
+ ❯ tests/unit/saved-reader.test.ts:225:135
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[126/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED014 en: language and valid changed selections are persisted before deliberate Apply
+AssertionError: expected '' to be 'Apply update' // Object.is equality
+
+- Expected
++ Received
+
+- Apply update
+
+ ❯ tests/unit/saved-reader.test.ts:246:57
+    244|     async () => {
+    245|       const s = scenario(language); s.state.value.waitingVersion = 'b'…
+    246|       expect.soft(text(s.root, '#apply-update-button')).toBe(labels[la…
+       |                                                         ^
+    247|       choose(s.root, 'member-select', '4463'); choose(s.root, 'sitting…
+    248|       const button = s.root.querySelector<HTMLButtonElement>('#apply-u…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[127/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED014 en: language and valid changed selections are persisted before deliberate Apply
+AssertionError: expected '' to be 'Continue reading' // Object.is equality
+
+- Expected
++ Received
+
+- Continue reading
+
+ ❯ tests/unit/saved-reader.test.ts:246:140
+    244|     async () => {
+    245|       const s = scenario(language); s.state.value.waitingVersion = 'b'…
+    246|       expect.soft(text(s.root, '#apply-update-button')).toBe(labels[la…
+       |                                                                                                                                            ^
+    247|       choose(s.root, 'member-select', '4463'); choose(s.root, 'sitting…
+    248|       const button = s.root.querySelector<HTMLButtonElement>('#apply-u…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[128/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED018 en: first offline visit without committed lists cannot invent a readable source archive
+AssertionError: expected 'Site data could not be loaded or vali…' to be 'A connection is required to load unsa…' // Object.is equality
+
+Expected: "A connection is required to load unsaved lists and records."
+Received: "Site data could not be loaded or validated."
+
+ ❯ tests/unit/saved-reader.test.ts:278:51
+    276|       const s = scenario(language); s.online.value = false; s.storage.…
+    277|       s.loadCatalogue.mockRejectedValue(new Error('controlled offline'…
+    278|       expect.soft(text(s.root, '#reader-status')).toBe(labels[language…
+       |                                                   ^
+    279|       expect(s.loadPair).not.toHaveBeenCalled(); expect(s.storage.save…
+    280|     });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[129/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED017: applying an update in one reader does not alter another mounted tab reading its complete pair
+AssertionError: expected null not to be null
+ ❯ tests/unit/saved-reader.test.ts:288:111
+    286|     const one = scenario('ms'); const other = scenario('en'); document…
+    287|     one.state.value.waitingVersion = 'b'.repeat(64); await start(one);…
+    288|     const button = one.root.querySelector<HTMLButtonElement>('#apply-u…
+       |                                                                                                               ^
+    289|     expect.soft(one.updates.apply).toHaveBeenCalledOnce(); expect(othe…
+    290|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[130/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED017: applying an update in one reader does not alter another mounted tab reading its complete pair
+AssertionError: expected "vi.fn()" to be called once, but got 0 times
+ ❯ tests/unit/saved-reader.test.ts:289:36
+    287|     one.state.value.waitingVersion = 'b'.repeat(64); await start(one);…
+    288|     const button = one.root.querySelector<HTMLButtonElement>('#apply-u…
+    289|     expect.soft(one.updates.apply).toHaveBeenCalledOnce(); expect(othe…
+       |                                    ^
+    290|   });
+    291|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[131/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED017: applying an update in one reader does not alter another mounted tab reading its complete pair
+AssertionError: expected [] to deeply equal [ Array(1) ]
+
+- Expected
++ Received
+
+- [
+-   "Terima kasih Tan Sri Yang di-Pertua. Saya ingin ucapkan terima kasih kepada Yang Berhormat Menteri atas jawapan yang menyeluruh ini.
+-
+- Hubungan di antara Malaysia dan India seperti yang disebut oleh Yang Berhormat Menteri telah sampai ke tahap rakan kongsi strategik. Kalau rakan kongsi strategik ini dilihat membawa manfaat, ia mesti boleh dipercayai (*trusted*) dan juga dapat menunjukkan penyampaian barangan ataupun kegunaan awam dengan izin Tan Sri Yang di-Pertua, *delivery of public good*.
+-
+- Jadi, di sini saya nak tanya, apakah bentuk yang ada dalam kedua-dua konteks ini. Berkaitan dengan tarif Amerika Syarikat, bolehkah Malaysia bertukar pandangan macam mana dia boleh turunkan tarif daripada 50 peratus kepada 18, sedangkan kita sungguhpun ada hubungan baik dengan Amerika Syarikat, masih lebih tinggi dengan 19 peratus. Kalau boleh, bersama supaya kita dapat sama rata. Kalau tidak, dia ada sedikit kelebihan.
+-
+- Dan akhirnya berkaitan dengan Myanmar, apakah langkah seterusnya baik oleh India dan Malaysia, yang boleh membawa kepada keamanan atau menuju ke arah keamanan di Myanmar, iaitu apakah adakah mesyuarat yang akan datang, adakah inisiatif yang akan datang, apakah langkah seterusnya. Takkan kita hanya tunggu dan lihat? Sekian, terima kasih.",
+- ]
++ []
+
+ ❯ complete tests/unit/saved-reader.test.ts:93:44
+     91|   for (const [kind, items] of [['turn', result.turns], ['gap', result.…
+     92|     const expected: string[] = []; for (const item of items) expected.…
+     93|     expect.soft(texts(context.root, kind)).toEqual(expected);
+       |                                            ^
+     94|   }
+     95|   expect.soft(context.root.querySelector('#reader-result')?.getAttribu…
+ ❯ tests/unit/saved-reader.test.ts:289:112
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[132/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED017: applying an update in one reader does not alter another mounted tab reading its complete pair
+AssertionError: expected [] to deeply equal [ …(2) ]
+
+- Expected
++ Received
+
+- [
+-   "*[Tuan Yang di-Pertua* ***mempengerusikan Mesyuarat****]*",
+-   "**1. Tuan Lim Guan Eng [Bagan]** Terima kasih, Tan Sri Yang di-Pertua. Bagan minta Yang Berhormat Menteri Luar Negeri menyatakan hasil perdagangan dan keselamatan serantau susulan lawatan Perdana Menteri India, Narendra Modi baru-baru ini ke Malaysia dan sejauh manakah langkah-langkah bersama yang boleh diambil oleh Malaysia dan India terhadap pelaksanaan tarif oleh Amerika Syarikat dan usaha memulihkan demokrasi dan keamanan di Myanmar. Terima kasih.",
+- ]
++ []
+
+ ❯ complete tests/unit/saved-reader.test.ts:93:44
+     91|   for (const [kind, items] of [['turn', result.turns], ['gap', result.…
+     92|     const expected: string[] = []; for (const item of items) expected.…
+     93|     expect.soft(texts(context.root, kind)).toEqual(expected);
+       |                                            ^
+     94|   }
+     95|   expect.soft(context.root.querySelector('#reader-result')?.getAttribu…
+ ❯ tests/unit/saved-reader.test.ts:289:112
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[133/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED017: applying an update in one reader does not alter another mounted tab reading its complete pair
+AssertionError: expected [] to deeply equal [ Array(1) ]
+
+- Expected
++ Received
+
+- [
+-   "[Soalan No. 5 - YB Tuan Prabakaran a/l M. Parameswaran (Batu) tidak hadir]",
+- ]
++ []
+
+ ❯ complete tests/unit/saved-reader.test.ts:93:44
+     91|   for (const [kind, items] of [['turn', result.turns], ['gap', result.…
+     92|     const expected: string[] = []; for (const item of items) expected.…
+     93|     expect.soft(texts(context.root, kind)).toEqual(expected);
+       |                                            ^
+     94|   }
+     95|   expect.soft(context.root.querySelector('#reader-result')?.getAttribu…
+ ❯ tests/unit/saved-reader.test.ts:289:112
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[134/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED017: applying an update in one reader does not alter another mounted tab reading its complete pair
+AssertionError: expected null to be '1839' // Object.is equality
+
+- Expected:
+"1839"
+
++ Received:
+null
+
+ ❯ complete tests/unit/saved-reader.test.ts:95:93
+     93|     expect.soft(texts(context.root, kind)).toEqual(expected);
+     94|   }
+     95|   expect.soft(context.root.querySelector('#reader-result')?.getAttribu…
+       |                                                                                             ^
+     96|   expect.soft(context.root.querySelector('#reader-result')?.getAttribu…
+     97| }
+ ❯ tests/unit/saved-reader.test.ts:289:112
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[135/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVED017: applying an update in one reader does not alter another mounted tab reading its complete pair
+AssertionError: expected null to be '29326' // Object.is equality
+
+- Expected:
+"29326"
+
++ Received:
+null
+
+ ❯ complete tests/unit/saved-reader.test.ts:96:94
+     94|   }
+     95|   expect.soft(context.root.querySelector('#reader-result')?.getAttribu…
+     96|   expect.soft(context.root.querySelector('#reader-result')?.getAttribu…
+       |                                                                                              ^
+     97| }
+     98|
+ ❯ tests/unit/saved-reader.test.ts:289:112
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[136/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVEDREV001 pair-switch/success: obsolete save settlement cannot replace the current reader
+ FAIL  tests/unit/saved-reader.test.ts > SAVEDREV001 pair-switch/failure: obsolete save settlement cannot replace the current reader
+ FAIL  tests/unit/saved-reader.test.ts > SAVEDREV001 same-pair-retry/success: obsolete save settlement cannot replace the current reader
+ FAIL  tests/unit/saved-reader.test.ts > SAVEDREV001 same-pair-retry/failure: obsolete save settlement cannot replace the current reader
+ FAIL  tests/unit/saved-reader.test.ts > SAVEDREV001 teardown/success: obsolete save settlement cannot replace the current reader
+ FAIL  tests/unit/saved-reader.test.ts > SAVEDREV001 teardown/failure: obsolete save settlement cannot replace the current reader
+AssertionError: expected "vi.fn()" to be called with arguments: [ { schemaVersion: 1, …(8) }, …(2) ]
+
+Number of calls: 0
+
+ ❯ lateSaveCompletion tests/unit/saved-reader.test.ts:339:39
+    337|         s.root.querySelector<HTMLButtonElement>('#read-button')?.click…
+    338|       }
+    339|       expect.soft(s.storage.savePair).toHaveBeenCalledWith(s.fresh.cat…
+       |                                       ^
+    340|       if (transition === 'teardown') cleanup();
+    341|       else {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[137/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVEDREV001 pair-switch/success: obsolete save settlement cannot replace the current reader
+ FAIL  tests/unit/saved-reader.test.ts > SAVEDREV001 pair-switch/failure: obsolete save settlement cannot replace the current reader
+ FAIL  tests/unit/saved-reader.test.ts > SAVEDREV001 same-pair-retry/success: obsolete save settlement cannot replace the current reader
+ FAIL  tests/unit/saved-reader.test.ts > SAVEDREV001 same-pair-retry/failure: obsolete save settlement cannot replace the current reader
+AssertionError: expected '' to be 'Transcript saved on this device.' // Object.is equality
+
+- Expected
++ Received
+
+- Transcript saved on this device.
+
+ ❯ lateSaveCompletion tests/unit/saved-reader.test.ts:351:58
+    349|         expect.soft(action).not.toBeNull(); action?.click(); await set…
+    350|         complete(s, expected);
+    351|         expect.soft(text(s.root, '#reader-save-status')).toBe(labels.e…
+       |                                                          ^
+    352|         expect.soft(text(s.root, '#reader-offline-status')).toBe(label…
+    353|         expect.soft(text(s.root, '[data-field="refreshed-at"]')).toCon…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[138/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVEDREV001 pair-switch/success: obsolete save settlement cannot replace the current reader
+ FAIL  tests/unit/saved-reader.test.ts > SAVEDREV001 pair-switch/failure: obsolete save settlement cannot replace the current reader
+ FAIL  tests/unit/saved-reader.test.ts > SAVEDREV001 same-pair-retry/success: obsolete save settlement cannot replace the current reader
+ FAIL  tests/unit/saved-reader.test.ts > SAVEDREV001 same-pair-retry/failure: obsolete save settlement cannot replace the current reader
+AssertionError: expected '' to be 'Reader ready to reopen offline.' // Object.is equality
+
+- Expected
++ Received
+
+- Reader ready to reopen offline.
+
+ ❯ lateSaveCompletion tests/unit/saved-reader.test.ts:352:61
+    350|         complete(s, expected);
+    351|         expect.soft(text(s.root, '#reader-save-status')).toBe(labels.e…
+    352|         expect.soft(text(s.root, '#reader-offline-status')).toBe(label…
+       |                                                             ^
+    353|         expect.soft(text(s.root, '[data-field="refreshed-at"]')).toCon…
+    354|         expect.soft(text(s.root, '[data-field="saved-refreshed-at"]'))…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[139/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVEDREV001 pair-switch/success: obsolete save settlement cannot replace the current reader
+ FAIL  tests/unit/saved-reader.test.ts > SAVEDREV001 pair-switch/failure: obsolete save settlement cannot replace the current reader
+ FAIL  tests/unit/saved-reader.test.ts > SAVEDREV001 same-pair-retry/success: obsolete save settlement cannot replace the current reader
+ FAIL  tests/unit/saved-reader.test.ts > SAVEDREV001 same-pair-retry/failure: obsolete save settlement cannot replace the current reader
+AssertionError: expected '' to contain '2026-10-10T07:02:00.000Z'
+
+- Expected
++ Received
+
+- 2026-10-10T07:02:00.000Z
+
+ ❯ lateSaveCompletion tests/unit/saved-reader.test.ts:354:72
+    352|         expect.soft(text(s.root, '#reader-offline-status')).toBe(label…
+    353|         expect.soft(text(s.root, '[data-field="refreshed-at"]')).toCon…
+    354|         expect.soft(text(s.root, '[data-field="saved-refreshed-at"]'))…
+       |                                                                        ^
+    355|       }
+    356|       const beforeSettlement = s.root.innerHTML;
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[140/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVEDREV001 pair-switch/success: obsolete save settlement cannot replace the current reader
+ FAIL  tests/unit/saved-reader.test.ts > SAVEDREV001 pair-switch/failure: obsolete save settlement cannot replace the current reader
+ FAIL  tests/unit/saved-reader.test.ts > SAVEDREV001 same-pair-retry/success: obsolete save settlement cannot replace the current reader
+ FAIL  tests/unit/saved-reader.test.ts > SAVEDREV001 same-pair-retry/failure: obsolete save settlement cannot replace the current reader
+AssertionError: expected '' to be 'Transcript saved on this device.' // Object.is equality
+
+- Expected
++ Received
+
+- Transcript saved on this device.
+
+ ❯ lateSaveCompletion tests/unit/saved-reader.test.ts:368:58
+    366|         expect.soft(s.root.querySelector<HTMLSelectElement>('#member-s…
+    367|         expect.soft(s.root.querySelector<HTMLSelectElement>('#sitting-…
+    368|         expect.soft(text(s.root, '#reader-save-status')).toBe(labels.e…
+       |                                                          ^
+    369|         expect.soft(s.root.querySelector('#reader-save-status')?.getAt…
+    370|         expect.soft(s.root.querySelector('#reader-offline-status')?.ge…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[141/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVEDREV001 pair-switch/success: obsolete save settlement cannot replace the current reader
+ FAIL  tests/unit/saved-reader.test.ts > SAVEDREV001 pair-switch/failure: obsolete save settlement cannot replace the current reader
+ FAIL  tests/unit/saved-reader.test.ts > SAVEDREV001 same-pair-retry/success: obsolete save settlement cannot replace the current reader
+ FAIL  tests/unit/saved-reader.test.ts > SAVEDREV001 same-pair-retry/failure: obsolete save settlement cannot replace the current reader
+AssertionError: expected '' to be 'Reader ready to reopen offline.' // Object.is equality
+
+- Expected
++ Received
+
+- Reader ready to reopen offline.
+
+ ❯ lateSaveCompletion tests/unit/saved-reader.test.ts:368:133
+    366|         expect.soft(s.root.querySelector<HTMLSelectElement>('#member-s…
+    367|         expect.soft(s.root.querySelector<HTMLSelectElement>('#sitting-…
+    368|         expect.soft(text(s.root, '#reader-save-status')).toBe(labels.e…
+       |                                                                                                                                     ^
+    369|         expect.soft(s.root.querySelector('#reader-save-status')?.getAt…
+    370|         expect.soft(s.root.querySelector('#reader-offline-status')?.ge…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[142/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVEDREV001 pair-switch/success: obsolete save settlement cannot replace the current reader
+ FAIL  tests/unit/saved-reader.test.ts > SAVEDREV001 pair-switch/failure: obsolete save settlement cannot replace the current reader
+ FAIL  tests/unit/saved-reader.test.ts > SAVEDREV001 same-pair-retry/success: obsolete save settlement cannot replace the current reader
+ FAIL  tests/unit/saved-reader.test.ts > SAVEDREV001 same-pair-retry/failure: obsolete save settlement cannot replace the current reader
+AssertionError: expected undefined to be 'true' // Object.is equality
+
+- Expected:
+"true"
+
++ Received:
+undefined
+
+ ❯ lateSaveCompletion tests/unit/saved-reader.test.ts:369:94
+    367|         expect.soft(s.root.querySelector<HTMLSelectElement>('#sitting-…
+    368|         expect.soft(text(s.root, '#reader-save-status')).toBe(labels.e…
+    369|         expect.soft(s.root.querySelector('#reader-save-status')?.getAt…
+       |                                                                                              ^
+    370|         expect.soft(s.root.querySelector('#reader-offline-status')?.ge…
+    371|         expect.soft(text(s.root, '[data-field="refreshed-at"]')).toCon…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[143/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVEDREV001 pair-switch/success: obsolete save settlement cannot replace the current reader
+ FAIL  tests/unit/saved-reader.test.ts > SAVEDREV001 pair-switch/failure: obsolete save settlement cannot replace the current reader
+ FAIL  tests/unit/saved-reader.test.ts > SAVEDREV001 same-pair-retry/success: obsolete save settlement cannot replace the current reader
+ FAIL  tests/unit/saved-reader.test.ts > SAVEDREV001 same-pair-retry/failure: obsolete save settlement cannot replace the current reader
+AssertionError: expected undefined to be 'true' // Object.is equality
+
+- Expected:
+"true"
+
++ Received:
+undefined
+
+ ❯ lateSaveCompletion tests/unit/saved-reader.test.ts:370:105
+    368|         expect.soft(text(s.root, '#reader-save-status')).toBe(labels.e…
+    369|         expect.soft(s.root.querySelector('#reader-save-status')?.getAt…
+    370|         expect.soft(s.root.querySelector('#reader-offline-status')?.ge…
+       |                                                                                                         ^
+    371|         expect.soft(text(s.root, '[data-field="refreshed-at"]')).toCon…
+    372|         expect.soft(text(s.root, '[data-field="saved-refreshed-at"]'))…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[144/309]⎯
+
+ FAIL  tests/unit/saved-reader.test.ts > SAVEDREV001 pair-switch/success: obsolete save settlement cannot replace the current reader
+ FAIL  tests/unit/saved-reader.test.ts > SAVEDREV001 pair-switch/failure: obsolete save settlement cannot replace the current reader
+ FAIL  tests/unit/saved-reader.test.ts > SAVEDREV001 same-pair-retry/success: obsolete save settlement cannot replace the current reader
+ FAIL  tests/unit/saved-reader.test.ts > SAVEDREV001 same-pair-retry/failure: obsolete save settlement cannot replace the current reader
+AssertionError: expected '' to contain '2026-10-10T07:02:00.000Z'
+
+- Expected
++ Received
+
+- 2026-10-10T07:02:00.000Z
+
+ ❯ lateSaveCompletion tests/unit/saved-reader.test.ts:372:72
+    370|         expect.soft(s.root.querySelector('#reader-offline-status')?.ge…
+    371|         expect.soft(text(s.root, '[data-field="refreshed-at"]')).toCon…
+    372|         expect.soft(text(s.root, '[data-field="saved-refreshed-at"]'))…
+       |                                                                        ^
+    373|         cleanup();
+    374|       }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[145/309]⎯
+
+
+ Test Files  2 failed (2)
+      Tests  48 failed (48)
+   Start at  18:11:40
+   Duration  725ms (environment 64%, tests 26%, transform 8%, import 2%, worker 1%)
+

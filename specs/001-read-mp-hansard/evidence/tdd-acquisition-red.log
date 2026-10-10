@@ -1,0 +1,1154 @@
+
+> vote-better-malaysia@0.1.0 test
+> vitest --run tests/unit/acquisition-bootstrap.test.ts
+
+
+ RUN  v5.0.3 /Users/eaglecheow/dev/vote-better-malaysia
+
+ ❯ tests/unit/acquisition-bootstrap.test.ts (91 tests | 91 failed) 197ms
+   × T013 discovery accepts a validated __NEXT_DATA__ deployment ID 3ms
+   × T013 discovery rejects unsupported build metadata: <html>no deployment metadata</html> 1ms
+   × T013 discovery rejects unsupported build metadata: <script id="__NEXT_DATA__">{"buildId":"../other-host"}</script> 0ms
+   × T013 discovery rejects unsupported build metadata: <script id="__NEXT_DATA__">{"buildId":42}</script> 0ms
+   × T013 discovery rejects unsupported build metadata: <script id="__NEXT_DATA__">{"buildId":""}</script> 0ms
+   × T013 discovery rejects unsupported build metadata: <script id="__NEXT_DATA__">not-json</script> 0ms
+   × T013 request boundary rejects nonofficial or unapproved URL https://example.com/ 1ms
+   × T013 request boundary rejects nonofficial or unapproved URL http://hansard.parlimen.gov.my/ 0ms
+   × T013 request boundary rejects nonofficial or unapproved URL https://hansard.parlimen.gov.my/../private 0ms
+   × T013 request boundary rejects nonofficial or unapproved URL https://hansard.parlimen.gov.my/_next/data/x/private.json 0ms
+   × T013 approved requests use manual redirects and a timeout signal 7ms
+   × T013 rejects off-host redirects without requesting their target 0ms
+   × T013 access denial stops source requests 0ms
+   × T013 bootstrap stages all supplied leaves with distinct hashes, gzip, dates and serial pacing 1ms
+   × T013 malformed source inventory blocks static replacement 0ms
+   × T013 output cannot replace or overlap private input state 0ms
+   × T013 accepts exact catalogue-gzip byte ceiling 0ms
+   × T013 accepts exact sitting-gzip byte ceiling 0ms
+   × T013 accepts exact catalogue-decoded byte ceiling 0ms
+   × T013 accepts exact sitting-decoded byte ceiling 0ms
+   × T013 accepts exact total byte ceiling 0ms
+   × T013 rejects one byte over catalogue-gzip ceiling 0ms
+   × T013 rejects one byte over sitting-gzip ceiling 0ms
+   × T013 rejects one byte over catalogue-decoded ceiling 0ms
+   × T013 rejects one byte over sitting-decoded ceiling 0ms
+   × T013 rejects one byte over total ceiling 0ms
+   × T013 failed refresh retains accepted payload, digest, identity and acquisition time 3ms
+   × T013 new inaccessible sitting remains selectable as unavailable without invented accepted times 0ms
+   × T013 loss of a published retention baseline blocks replacement and preserves output 2ms
+   × T013 rejects untrusted, expired or corrupt checkpoint {"repository":"different/repository"} 2ms
+   × T013 rejects untrusted, expired or corrupt checkpoint {"branch":"pull-request"} 1ms
+   × T013 rejects untrusted, expired or corrupt checkpoint {"success":false} 1ms
+   × T013 rejects untrusted, expired or corrupt checkpoint {"codeFingerprint":"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"} 1ms
+   × T013 rejects untrusted, expired or corrupt checkpoint {"createdAt":"2026-10-01T04:00:00.000Z"} 1ms
+   × T013 rejects untrusted, expired or corrupt checkpoint {"catalogueDigest":"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"} 1ms
+   × T013 rejects untrusted, expired or corrupt checkpoint {"shardDigests":{"26241":"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"}} 1ms
+   × T013 rejects untrusted, expired or corrupt checkpoint {"schemaVersion":9} 1ms
+   × T013 refresh without prior publication or checkpoint performs safe bootstrap 0ms
+   × T013 decoded content hashes and fixed gzip are deterministic across preparation times 1ms
+   × T013 honors numeric/date Retry-After or bounded fallback 2 1ms
+   × T013 honors numeric/date Retry-After or bounded fallback Sat, 10 Oct 2026 04:00:05 GMT 0ms
+   × T013 honors numeric/date Retry-After or bounded fallback invalid 0ms
+   × T013 retries at most twice with backoff 0ms
+   × T013 transient source recovery remains paced 0ms
+   × T013 follows only approved official-host redirects 0ms
+   × T013 aborts each hung request after fifteen seconds and releases its timer 1ms
+   × T013 size validation rejects missing/nonfinite/negative metadata {} 0ms
+   × T013 size validation rejects missing/nonfinite/negative metadata {"catalogue":null,"sittings":[],"totalBytes":10} 0ms
+   × T013 size validation rejects missing/nonfinite/negative metadata {"catalogue":{"compressedBytes":null,"decodedBytes":100},"sittings":[],"totalBytes":10} 0ms
+   × T013 size validation rejects missing/nonfinite/negative metadata {"catalogue":{"compressedBytes":100,"decodedBytes":-1},"sittings":[],"totalBytes":10} 0ms
+   × T013 size validation rejects missing/nonfinite/negative metadata {"catalogue":{"compressedBytes":100,"decodedBytes":100},"sittings":null,"totalBytes":10} 0ms
+   × T013 size validation rejects missing/nonfinite/negative metadata {"catalogue":{"compressedBytes":100,"decodedBytes":100},"sittings":[],"totalBytes":null} 0ms
+   × T013 one-byte-over catalogue-gzip rejects replacement and preserves actual accepted output/state/served payload 12ms
+   × T013 one-byte-over sitting-gzip rejects replacement and preserves actual accepted output/state/served payload 10ms
+   × T013 one-byte-over catalogue-decoded rejects replacement and preserves actual accepted output/state/served payload 8ms
+   × T013 one-byte-over sitting-decoded rejects replacement and preserves actual accepted output/state/served payload 8ms
+   × T013 one-byte-over total rejects replacement and preserves actual accepted output/state/served payload 8ms
+   × T013 actual output commit failure rolls back old output and accepted state 8ms
+   × T013 actual checkpoint commit failure rolls back old output and accepted state 8ms
+   × T013 malformed sitting is fatal and preserves accepted state/output 7ms
+   × T013 raw-response bytes and audit receipts remain private 0ms
+   × T013 stale deployment routes rediscover once and retry against the new build 0ms
+   × T013 exhausted stale-build recovery terminates after one rediscovery 0ms
+   × T013 every source inventory entry has an outcome and only record-referenced identities are published 0ms
+   × T013 latest inventory omission retains previous sitting identity/payload and explicit coverage 2ms
+   × T013 four-hour cap checkpoints accepted private work, leaves pending unattempted, and resumes same session 11ms
+   × T013 missing checkpoint recovers from validated trusted served baseline 2ms
+   × T013 expired checkpoint recovers from validated trusted served baseline 2ms
+   × T013 untrusted/mismatched served recovery proof {"repository":"another/repository"} preserves the old publication 4ms
+   × T013 untrusted/mismatched served recovery proof {"branch":"pull-request"} preserves the old publication 4ms
+   × T013 untrusted/mismatched served recovery proof {"success":false} preserves the old publication 3ms
+   × T013 untrusted/mismatched served recovery proof {"codeFingerprint":"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"} preserves the old publication 3ms
+   × T013 untrusted/mismatched served recovery proof {"baseUrl":"https://example.com/"} preserves the old publication 3ms
+   × T013 untrusted/mismatched served recovery proof {"receipt":{"snapshotId":"wrong","publishedAt":"2026-10-10T03:59:30.000Z"}} preserves the old publication 4ms
+   × T013 untrusted/mismatched served recovery proof {"catalogueDigest":"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"} preserves the old publication 3ms
+   × T013 untrusted/mismatched served recovery proof {"shardDigests":{"26241":"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"}} preserves the old publication 3ms
+   × T013 failed source finalization retains old draft status and accepted shard coherently 2ms
+   × T013 successful source finalization advances status and payload together 1ms
+   × T013 conflicting date/hierarchy identity cannot relabel accepted source payloads 3ms
+   × T013 source access denial stops the whole job and preserves the last output 3ms
+   × T013 symlinked output cannot alias private input state 1ms
+   × T013 physical parent symlink overlap cannot bypass state/output isolation 0ms
+   × T013 tampered/foreign private partial checkpoint {"sessionId":"other-session"} cannot be restored as trusted work 3ms
+   × T013 tampered/foreign private partial checkpoint {"repository":"other/repository"} cannot be restored as trusted work 3ms
+   × T013 tampered/foreign private partial checkpoint {"branch":"pull-request"} cannot be restored as trusted work 3ms
+   × T013 tampered/foreign private partial checkpoint {"codeFingerprint":"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"} cannot be restored as trusted work 3ms
+   × T013 tampered/foreign private partial checkpoint {"schemaVersion":9} cannot be restored as trusted work 3ms
+   × T013 tampered/foreign private partial checkpoint {"validationSuccess":false} cannot be restored as trusted work 3ms
+   × T013 HTTP success with unsupported source bytes <html>not a JSON record</html> cannot replace accepted data 7ms
+   × T013 HTTP success with unsupported source bytes not-json cannot replace accepted data 7ms
+   × T013 HTTP success with unsupported source bytes 255,254 cannot replace accepted data 7ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 91 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 discovery accepts a validated __NEXT_DATA__ deployment ID
+AssertionError: expected undefined to be 'new-build_2' // Object.is equality
+
+- Expected:
+"new-build_2"
+
++ Received:
+undefined
+
+ ❯ validDiscovery tests/unit/acquisition-bootstrap.test.ts:92:116
+     90|  */
+     91| function validDiscovery(): void {
+     92|   expect(discoverBuildId('<script id="__NEXT_DATA__" type="application…
+       |                                                                                                                    ^
+     93| }
+     94| test('T013 discovery accepts a validated __NEXT_DATA__ deployment ID',…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/91]⎯
+
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 discovery rejects unsupported build metadata: <html>no deployment metadata</html>
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 discovery rejects unsupported build metadata: <script id="__NEXT_DATA__">{"buildId":"../other-host"}</script>
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 discovery rejects unsupported build metadata: <script id="__NEXT_DATA__">{"buildId":42}</script>
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 discovery rejects unsupported build metadata: <script id="__NEXT_DATA__">{"buildId":""}</script>
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 discovery rejects unsupported build metadata: <script id="__NEXT_DATA__">not-json</script>
+AssertionError: expected [Function bound discoverBuildId] to throw an error
+ ❯ invalidDiscovery tests/unit/acquisition-bootstrap.test.ts:97:90
+     95|
+     96| /** Checks rejection of malformed source deployment metadata. @param h…
+     97| function invalidDiscovery(html: string): void { expect(discoverBuildId…
+       |                                                                                          ^
+     98| test.each([
+     99|   '<html>no deployment metadata</html>',
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/91]⎯
+
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 request boundary rejects nonofficial or unapproved URL https://example.com/
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 request boundary rejects nonofficial or unapproved URL http://hansard.parlimen.gov.my/
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 request boundary rejects nonofficial or unapproved URL https://hansard.parlimen.gov.my/../private
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 request boundary rejects nonofficial or unapproved URL https://hansard.parlimen.gov.my/_next/data/x/private.json
+AssertionError: promise resolved "undefined" instead of rejecting
+
+- Expected:
+Error {
+  "message": "rejected promise",
+}
+
++ Received:
+undefined
+
+ ❯ rejectsHost tests/unit/acquisition-bootstrap.test.ts:109:48
+    107| async function rejectsHost(url: string): Promise<void> {
+    108|   const transport = vi.fn(sourceFetch);
+    109|   await expect(requestOfficial(url, transport)).rejects.toThrow();
+       |                                                ^
+    110|   expect(transport).not.toHaveBeenCalled();
+    111| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/91]⎯
+
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 approved requests use manual redirects and a timeout signal
+AssertionError: expected undefined to be an instance of Response
+ ❯ approvedRequest tests/unit/acquisition-bootstrap.test.ts:119:18
+    117|   const transport = vi.fn(approvedResponse);
+    118|   const result = await requestOfficial(`${origin}/`, transport);
+    119|   expect(result).toBeInstanceOf(Response);
+       |                  ^
+    120|   expect(transport).toHaveBeenCalledTimes(1);
+    121|   expect(transport.mock.calls[0][1]?.redirect).toBe('manual');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/91]⎯
+
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 rejects off-host redirects without requesting their target
+AssertionError: promise resolved "undefined" instead of rejecting
+
+- Expected:
+Error {
+  "message": "rejected promise",
+}
+
++ Received:
+undefined
+
+ ❯ rejectsRedirect tests/unit/acquisition-bootstrap.test.ts:131:57
+    129| async function rejectsRedirect(): Promise<void> {
+    130|   const transport = vi.fn(redirectResponse);
+    131|   await expect(requestOfficial(`${origin}/`, transport)).rejects.toThr…
+       |                                                         ^
+    132|   expect(transport).toHaveBeenCalledTimes(1);
+    133| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/91]⎯
+
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 access denial stops source requests
+AssertionError: promise resolved "undefined" instead of rejecting
+
+- Expected:
+Error {
+  "message": "rejected promise",
+}
+
++ Received:
+undefined
+
+ ❯ rejectsDenial tests/unit/acquisition-bootstrap.test.ts:141:57
+    139| async function rejectsDenial(): Promise<void> {
+    140|   const transport = vi.fn(deniedResponse);
+    141|   await expect(requestOfficial(`${origin}/`, transport)).rejects.toThr…
+       |                                                         ^
+    142|   expect(transport).toHaveBeenCalledTimes(1);
+    143| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/91]⎯
+
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 bootstrap stages all supplied leaves with distinct hashes, gzip, dates and serial pacing
+AssertionError: expected undefined to match object { catalogue: { …(3) } }
+
+- Expected:
+{
+  "catalogue": {
+    "publishedAt": null,
+    "schemaVersion": 1,
+    "sittings": [
+      {
+        "date": "2014-07-23",
+        "mesyuarat": 0,
+        "record": {
+          "availability": "available",
+          "lastAttemptOutcome": "success",
+        },
+      },
+    ],
+  },
+}
+
++ Received:
+undefined
+
+ ❯ stagesSnapshot tests/unit/acquisition-bootstrap.test.ts:154:15
+    152|   const transport = vi.fn(sourceFetch);
+    153|   const run = await acquire(options(disk, transport)) as { catalogue: …
+    154|   expect(run).toMatchObject({ catalogue: { schemaVersion: 1, published…
+       |               ^
+    155|     { date: '2014-07-23', mesyuarat: 0, record: { availability: 'avail…
+    156|   ] } });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/91]⎯
+
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 malformed source inventory blocks static replacement
+AssertionError: promise resolved "undefined" instead of rejecting
+
+- Expected:
+Error {
+  "message": "rejected promise",
+}
+
++ Received:
+undefined
+
+ ❯ rejectsSchema tests/unit/acquisition-bootstrap.test.ts:175:62
+    173| async function rejectsSchema(): Promise<void> {
+    174|   const disk = await paths();
+    175|   await expect(acquire(options(disk, invalidInventoryFetch))).rejects.…
+       |                                                              ^
+    176| }
+    177| /** Supplies a malformed inventory while preserving other controlled r…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/91]⎯
+
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 output cannot replace or overlap private input state
+AssertionError: promise resolved "undefined" instead of rejecting
+
+- Expected:
+Error {
+  "message": "rejected promise",
+}
+
++ Received:
+undefined
+
+ ❯ rejectsPaths tests/unit/acquisition-bootstrap.test.ts:188:100
+    186|   const disk = await paths();
+    187|   const transport = vi.fn(sourceFetch);
+    188|   await expect(acquire(options({ state: disk.state, out: join(disk.sta…
+       |                                                                                                    ^
+    189|   expect(transport).not.toHaveBeenCalled();
+    190| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/91]⎯
+
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 accepts exact catalogue-gzip byte ceiling
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 accepts exact sitting-gzip byte ceiling
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 accepts exact catalogue-decoded byte ceiling
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 accepts exact sitting-decoded byte ceiling
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 accepts exact total byte ceiling
+AssertionError: expected undefined to be true // Object.is equality
+
+- Expected:
+true
+
++ Received:
+undefined
+
+ ❯ acceptsLimit tests/unit/acquisition-bootstrap.test.ts:216:64
+    214| /** Checks exact acquisition byte-limit acceptance. @param boundary - …
+    215| function acceptsLimit(boundary: { field: string; limit: number }): voi…
+    216|   expect(validateSizes(sizes(boundary.field, boundary.limit))).toBe(tr…
+       |                                                                ^
+    217| }
+    218| /** Checks acquisition byte-limit rejection. @param boundary - One enf…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/91]⎯
+
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 rejects one byte over catalogue-gzip ceiling
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 rejects one byte over sitting-gzip ceiling
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 rejects one byte over catalogue-decoded ceiling
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 rejects one byte over sitting-decoded ceiling
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 rejects one byte over total ceiling
+AssertionError: expected [Function bound validateSizes] to throw an error
+ ❯ rejectsLimit tests/unit/acquisition-bootstrap.test.ts:220:79
+    218| /** Checks acquisition byte-limit rejection. @param boundary - One enf…
+    219| function rejectsLimit(boundary: { field: string; limit: number }): voi…
+    220|   expect(validateSizes.bind(null, sizes(boundary.field, boundary.limit…
+       |                                                                               ^
+    221| }
+    222| test.each(limits)('T013 accepts exact $field byte ceiling', acceptsLim…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/91]⎯
+
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 failed refresh retains accepted payload, digest, identity and acquisition time
+AssertionError: expected undefined to match object { catalogue: { sittings: [ …(1) ] } }
+
+- Expected:
+{
+  "catalogue": {
+    "sittings": [
+      {
+        "record": {
+          "acquiredAt": "2026-10-10T03:01:00.000Z",
+          "availability": "retained",
+          "digest": "1a0ae3d5cbdd86a6d928601be7f8eeec4e688b4085ab0fe70672304d21a4c9f8",
+          "lastAttemptOutcome": "failed",
+        },
+      },
+    ],
+  },
+}
+
++ Received:
+undefined
+
+ ❯ preservesFailedRecord tests/unit/acquisition-bootstrap.test.ts:270:15
+    268|   const previous = await baseline(disk);
+    269|   const run = await acquire(options(disk, unavailableRecordFetch)) as …
+    270|   expect(run).toMatchObject({ catalogue: { sittings: [{ record: {
+       |               ^
+    271|     availability: 'retained', digest: previous.catalogue.sittings[0].r…
+    272|     acquiredAt: previous.catalogue.sittings[0].record.acquiredAt, last…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/91]⎯
+
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 new inaccessible sitting remains selectable as unavailable without invented accepted times
+AssertionError: expected undefined to match object { catalogue: { sittings: [ …(1) ] } }
+
+- Expected:
+{
+  "catalogue": {
+    "sittings": [
+      {
+        "record": {
+          "acquiredAt": null,
+          "availability": "unavailable",
+          "compressedBytes": null,
+          "decodedBytes": null,
+          "digest": null,
+          "lastAttemptOutcome": "failed",
+          "path": null,
+          "rawSourceDigest": null,
+        },
+      },
+    ],
+  },
+}
+
++ Received:
+undefined
+
+ ❯ unavailableNewRecord tests/unit/acquisition-bootstrap.test.ts:291:15
+    289|   const disk = await paths();
+    290|   const run = await acquire(options(disk, unavailableRecordFetch)) as …
+    291|   expect(run).toMatchObject({ catalogue: { sittings: [{ record: {
+       |               ^
+    292|     availability: 'unavailable', path: null, digest: null, compressedB…
+    293|     decodedBytes: null, acquiredAt: null, rawSourceDigest: null, lastA…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[13/91]⎯
+
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 loss of a published retention baseline blocks replacement and preserves output
+AssertionError: promise resolved "undefined" instead of rejecting
+
+- Expected:
+Error {
+  "message": "rejected promise",
+}
+
++ Received:
+undefined
+
+ ❯ blocksLostBaseline tests/unit/acquisition-bootstrap.test.ts:303:39
+    301|   const previous = await baseline(disk);
+    302|   await rm(join(disk.state, 'checkpoint.json'));
+    303|   await expect(acquire(options(disk))).rejects.toThrow();
+       |                                       ^
+    304|   expect(await readFile(join(disk.out, 'catalogue.json.gz'))).toEqual(…
+    305| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[14/91]⎯
+
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 rejects untrusted, expired or corrupt checkpoint {"repository":"different/repository"}
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 rejects untrusted, expired or corrupt checkpoint {"branch":"pull-request"}
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 rejects untrusted, expired or corrupt checkpoint {"success":false}
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 rejects untrusted, expired or corrupt checkpoint {"codeFingerprint":"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"}
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 rejects untrusted, expired or corrupt checkpoint {"createdAt":"2026-10-01T04:00:00.000Z"}
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 rejects untrusted, expired or corrupt checkpoint {"catalogueDigest":"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"}
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 rejects untrusted, expired or corrupt checkpoint {"shardDigests":{"26241":"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"}}
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 rejects untrusted, expired or corrupt checkpoint {"schemaVersion":9}
+AssertionError: promise resolved "undefined" instead of rejecting
+
+- Expected:
+Error {
+  "message": "rejected promise",
+}
+
++ Received:
+undefined
+
+ ❯ rejectsCheckpoint tests/unit/acquisition-bootstrap.test.ts:315:39
+    313|   Object.assign(checkpoint, change);
+    314|   await writeFile(join(disk.state, 'checkpoint.json'), JSON.stringify(…
+    315|   await expect(acquire(options(disk))).rejects.toThrow();
+       |                                       ^
+    316|   expect(await readFile(join(disk.out, 'catalogue.json.gz'))).toEqual(…
+    317| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[15/91]⎯
+
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 refresh without prior publication or checkpoint performs safe bootstrap
+AssertionError: expected undefined to match object { catalogue: { sittings: [ …(1) ] } }
+
+- Expected:
+{
+  "catalogue": {
+    "sittings": [
+      {
+        "record": {
+          "availability": "available",
+        },
+      },
+    ],
+  },
+}
+
++ Received:
+undefined
+
+ ❯ refreshFallback tests/unit/acquisition-bootstrap.test.ts:331:15
+    329|   input.mode = 'refresh';
+    330|   const run = await acquire(input) as { catalogue: Catalogue };
+    331|   expect(run).toMatchObject({ catalogue: { sittings: [{ record: { avai…
+       |               ^
+    332| }
+    333| test('T013 refresh without prior publication or checkpoint performs sa…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[16/91]⎯
+
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 decoded content hashes and fixed gzip are deterministic across preparation times
+AssertionError: expected undefined to match object { catalogue: { sittings: [ …(1) ] } }
+
+- Expected:
+{
+  "catalogue": {
+    "sittings": [
+      {
+        "record": {
+          "digest": Any<String>,
+        },
+      },
+    ],
+  },
+}
+
++ Received:
+undefined
+
+ ❯ deterministicContent tests/unit/acquisition-bootstrap.test.ts:342:13
+    340|   elapsed += 10000;
+    341|   const b = await acquire(options(second)) as { catalogue: Catalogue };
+    342|   expect(a).toMatchObject({ catalogue: { sittings: [{ record: { digest…
+       |             ^
+    343|   expect(a.catalogue.sittings[0].record.digest).toEqual(b.catalogue.si…
+    344|   expect(await readFile(join(first.out, 'sittings', '26241.json.gz')))…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[17/91]⎯
+
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 honors numeric/date Retry-After or bounded fallback 2
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 honors numeric/date Retry-After or bounded fallback Sat, 10 Oct 2026 04:00:05 GMT
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 honors numeric/date Retry-After or bounded fallback invalid
+AssertionError: expected undefined to be an instance of Response
+ ❯ honorsRetryAfter tests/unit/acquisition-bootstrap.test.ts:358:18
+    356|   async function next(): Promise<Response> { return responses.shift()!…
+    357|   const result = await requestOfficial(`${origin}/`, transport, reques…
+    358|   expect(result).toBeInstanceOf(Response);
+       |                  ^
+    359|   expect(transport).toHaveBeenCalledTimes(2);
+    360|   expect(elapsed).toBeGreaterThanOrEqual(retryAfter === '2' ? 2000 : r…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[18/91]⎯
+
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 retries at most twice with backoff
+AssertionError: promise resolved "undefined" instead of rejecting
+
+- Expected:
+Error {
+  "message": "rejected promise",
+}
+
++ Received:
+undefined
+
+ ❯ capsRetries tests/unit/acquisition-bootstrap.test.ts:367:75
+    365| async function capsRetries(): Promise<void> {
+    366|   const transport = vi.fn(unavailableService);
+    367|   await expect(requestOfficial(`${origin}/`, transport, requestContext…
+       |                                                                           ^
+    368|   expect(transport).toHaveBeenCalledTimes(3);
+    369|   expect(elapsed).toBeGreaterThanOrEqual(3000);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[19/91]⎯
+
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 transient source recovery remains paced
+AssertionError: expected undefined to be an instance of Response
+ ❯ retriesTransient tests/unit/acquisition-bootstrap.test.ts:380:76
+    378|   /** Supplies one transient failure before success. @returns The cont…
+    379|   async function transient(): Promise<Response> { count++; return coun…
+    380|   expect(await requestOfficial(`${origin}/`, transient, requestContext…
+       |                                                                            ^
+    381|   expect(count).toBe(2);
+    382|   expect(elapsed).toBeGreaterThanOrEqual(1000);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[20/91]⎯
+
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 follows only approved official-host redirects
+AssertionError: expected undefined to be an instance of Response
+ ❯ followsOfficialRedirect tests/unit/acquisition-bootstrap.test.ts:395:83
+    393|     return count === 1 ? new Response(null, { status: 302, headers: { …
+    394|   }
+    395|   expect(await requestOfficial(`${origin}/`, officialRedirect, request…
+       |                                                                                   ^
+    396|   expect(count).toBe(2);
+    397|   expect(elapsed).toBeGreaterThanOrEqual(1000);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[21/91]⎯
+
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 aborts each hung request after fifteen seconds and releases its timer
+AssertionError: expected { rejected: false, value: undefined } to match object { rejected: true }
+(1 matching property omitted from actual)
+
+- Expected
++ Received
+
+  {
+-   "rejected": true,
++   "rejected": false,
+  }
+
+ ❯ timesOutRequests tests/unit/acquisition-bootstrap.test.ts:425:25
+    423|   function requestRejected(error: unknown): unknown { return { rejecte…
+    424|   await vi.advanceTimersByTimeAsync(48000);
+    425|   expect(await outcome).toMatchObject({ rejected: true });
+       |                         ^
+    426|   expect(transport).toHaveBeenCalledTimes(3);
+    427|   expect(waits).toEqual([15000, 15000, 15000]);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[22/91]⎯
+
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 size validation rejects missing/nonfinite/negative metadata {}
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 size validation rejects missing/nonfinite/negative metadata {"catalogue":null,"sittings":[],"totalBytes":10}
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 size validation rejects missing/nonfinite/negative metadata {"catalogue":{"compressedBytes":null,"decodedBytes":100},"sittings":[],"totalBytes":10}
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 size validation rejects missing/nonfinite/negative metadata {"catalogue":{"compressedBytes":100,"decodedBytes":-1},"sittings":[],"totalBytes":10}
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 size validation rejects missing/nonfinite/negative metadata {"catalogue":{"compressedBytes":100,"decodedBytes":100},"sittings":null,"totalBytes":10}
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 size validation rejects missing/nonfinite/negative metadata {"catalogue":{"compressedBytes":100,"decodedBytes":100},"sittings":[],"totalBytes":null}
+AssertionError: expected [Function bound validateSizes] to throw an error
+ ❯ invalidSizes tests/unit/acquisition-bootstrap.test.ts:439:87
+    437|
+    438| /** Checks invalid measurement metadata cannot bypass acquisition limi…
+    439| function invalidSizes(input: unknown): void { expect(validateSizes.bin…
+       |                                                                                       ^
+    440| test.each([
+    441|   {}, { catalogue: null, sittings: [], totalBytes: 10 },
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[23/91]⎯
+
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 one-byte-over catalogue-gzip rejects replacement and preserves actual accepted output/state/served payload
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 one-byte-over sitting-gzip rejects replacement and preserves actual accepted output/state/served payload
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 one-byte-over catalogue-decoded rejects replacement and preserves actual accepted output/state/served payload
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 one-byte-over sitting-decoded rejects replacement and preserves actual accepted output/state/served payload
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 one-byte-over total rejects replacement and preserves actual accepted output/state/served payload
+AssertionError: expected { rejected: false, …(3) } to deeply equal { rejected: true, …(3) }
+
+- Expected
++ Received
+
+@@ -3123,11 +3123,11 @@
+        0,
+        0,
+      ],
+      "type": "Buffer",
+    },
+-   "rejected": true,
++   "rejected": false,
+    "servedPayload": {
+      "data": [
+        31,
+        139,
+        8,
+
+ ❯ preservesOverLimit tests/unit/acquisition-bootstrap.test.ts:459:228
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[24/91]⎯
+
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 actual output commit failure rolls back old output and accepted state
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 actual checkpoint commit failure rolls back old output and accepted state
+AssertionError: expected { attempted: false, …(4) } to deeply equal { attempted: true, …(4) }
+
+- Expected
++ Received
+
+@@ -1,7 +1,7 @@
+  {
+-   "attempted": true,
++   "attempted": false,
+    "checkpoint": {
+      "data": [
+        123,
+        34,
+        115,
+@@ -3505,7 +3505,7 @@
+        0,
+        0,
+      ],
+      "type": "Buffer",
+    },
+-   "rejected": true,
++   "rejected": false,
+  }
+
+ ❯ rollsBackOutput tests/unit/acquisition-bootstrap.test.ts:478:233
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[25/91]⎯
+
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 malformed sitting is fatal and preserves accepted state/output
+AssertionError: expected { rejected: false, …(2) } to deeply equal { rejected: true, …(2) }
+
+- Expected
++ Received
+
+@@ -3123,7 +3123,7 @@
+        0,
+        0,
+      ],
+      "type": "Buffer",
+    },
+-   "rejected": true,
++   "rejected": false,
+  }
+
+ ❯ preservesStructuralFailure tests/unit/acquisition-bootstrap.test.ts:492:150
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[26/91]⎯
+
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 raw-response bytes and audit receipts remain private
+AssertionError: expected undefined to match object { receipts: Any<Array> }
+
+- Expected:
+{
+  "receipts": Any<Array>,
+}
+
++ Received:
+undefined
+
+ ❯ keepsRawEvidencePrivate tests/unit/acquisition-bootstrap.test.ts:500:15
+    498|   const disk = await paths();
+    499|   const run = await acquire(options(disk)) as { receipts: Array<{ path…
+    500|   expect(run).toMatchObject({ receipts: expect.any(Array) });
+       |               ^
+    501|   expect(run.receipts.length).toBeGreaterThanOrEqual(4);
+    502|   for (const receipt of run.receipts) {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[27/91]⎯
+
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 stale deployment routes rediscover once and retry against the new build
+AssertionError: expected undefined to match object { catalogue: { provenance: { …(1) } } }
+
+- Expected:
+{
+  "catalogue": {
+    "provenance": {
+      "sourceBuildId": "new-build",
+    },
+  },
+}
+
++ Received:
+undefined
+
+ ❯ rediscoverStaleBuild tests/unit/acquisition-bootstrap.test.ts:521:15
+    519|   }
+    520|   const run = await acquire(options(disk, changedBuild)) as { catalogu…
+    521|   expect(run).toMatchObject({ catalogue: { provenance: { sourceBuildId…
+       |               ^
+    522|   expect(discoveries).toBe(2);
+    523|   expect(urls).toContain(`${origin}/_next/data/new-build/en-GB/hansard…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[28/91]⎯
+
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 exhausted stale-build recovery terminates after one rediscovery
+AssertionError: promise resolved "undefined" instead of rejecting
+
+- Expected:
+Error {
+  "message": "rejected promise",
+}
+
++ Received:
+undefined
+
+ ❯ capsRediscovery tests/unit/acquisition-bootstrap.test.ts:535:52
+    533|     return new Response('stale', { status: 404 });
+    534|   }
+    535|   await expect(acquire(options(disk, alwaysStale))).rejects.toThrow();
+       |                                                    ^
+    536|   expect(discoveries).toBe(2);
+    537| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[29/91]⎯
+
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 every source inventory entry has an outcome and only record-referenced identities are published
+AssertionError: expected undefined to match object { catalogue: { …(2) } }
+
+- Expected:
+{
+  "catalogue": {
+    "coverage": {
+      "latestInventoryCount": 18,
+      "parliaments": [
+        1,
+        13,
+        14,
+        15,
+      ],
+      "retainedSittingCount": 0,
+      "unavailableSittingCount": 15,
+    },
+    "status": {
+      "acquisitionOutcome": "degraded",
+    },
+  },
+}
+
++ Received:
+undefined
+
+ ❯ accountsFullInventory tests/unit/acquisition-bootstrap.test.ts:553:15
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[30/91]⎯
+
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 latest inventory omission retains previous sitting identity/payload and explicit coverage
+AssertionError: expected undefined to match object { catalogue: { …(2) } }
+
+- Expected:
+{
+  "catalogue": {
+    "coverage": {
+      "latestInventoryCount": 1,
+      "retainedSittingCount": 1,
+    },
+    "sittings": ArrayContaining [
+      {
+        "date": "2014-07-23",
+        "filename": "dr_2014-07-23",
+        "house": "dewan-rakyat",
+        "id": "26241",
+        "isFinal": true,
+        "listedInLatestInventory": false,
+        "mesyuarat": 0,
+        "parliament": 13,
+        "penggal": 2,
+        "record": {
+          "accounting": {
+            "annotations": 0,
+            "assigned": 2,
+            "total": 2,
+            "unassigned": 0,
+          },
+          "acquiredAt": "2026-10-10T03:01:00.000Z",
+          "availability": "retained",
+          "compressedBytes": 376,
+          "decodedBytes": 728,
+          "digest": "1a0ae3d5cbdd86a6d928601be7f8eeec4e688b4085ab0fe70672304d21a4c9f8",
+          "lastAttemptAt": "2026-10-10T03:01:00.000Z",
+          "lastAttemptOutcome": "success",
+          "path": "data/sittings/26241.json.gz",
+          "rawSourceDigest": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+          "sourceBuildId": "source-build",
+          "sourcePublishedAt": null,
+          "sourceRevisedAt": null,
+        },
+        "sourceUrl": "https://hansard.parlimen.gov.my/hansard/dewan-rakyat/2014-07-23",
+      },
+    ],
+  },
+}
+
++ Received:
+undefined
+
+ ❯ preservesOmittedInventory tests/unit/acquisition-bootstrap.test.ts:578:15
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[31/91]⎯
+
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 four-hour cap checkpoints accepted private work, leaves pending unattempted, and resumes same session
+AssertionError: expected { rejected: false, …(3) } to match object { rejected: true, …(3) }
+
+- Expected
++ Received
+
+@@ -3123,15 +3123,8 @@
+        0,
+        0,
+      ],
+      "type": "Buffer",
+    },
+-   "partial": {
+-     "complete": false,
+-     "kind": "partial",
+-     "pendingIds": [
+-       "29326",
+-     ],
+-     "sessionId": "controlled-session",
+-   },
+-   "rejected": true,
++   "partial": null,
++   "rejected": false,
+  }
+
+ ❯ checkpointsRunCap tests/unit/acquisition-bootstrap.test.ts:608:232
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[32/91]⎯
+
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 missing checkpoint recovers from validated trusted served baseline
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 expired checkpoint recovers from validated trusted served baseline
+AssertionError: expected undefined to match object { catalogue: { sittings: [ …(1) ] } }
+
+- Expected:
+{
+  "catalogue": {
+    "sittings": [
+      {
+        "record": {
+          "availability": "retained",
+          "lastAttemptOutcome": "failed",
+        },
+      },
+    ],
+  },
+}
+
++ Received:
+undefined
+
+ ❯ recoversServedBaseline tests/unit/acquisition-bootstrap.test.ts:652:15
+    650|   input.servedBaseline = proof;
+    651|   const run = await acquire(input) as { catalogue: Catalogue };
+    652|   expect(run).toMatchObject({ catalogue: { sittings: [{ record: { avai…
+       |               ^
+    653|   expect(run.catalogue.sittings[0].record.digest).toBe(expected.sittin…
+    654|   expect(run.catalogue.sittings[0].record.acquiredAt).toBe(expected.si…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[33/91]⎯
+
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 untrusted/mismatched served recovery proof {"repository":"another/repository"} preserves the old publication
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 untrusted/mismatched served recovery proof {"branch":"pull-request"} preserves the old publication
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 untrusted/mismatched served recovery proof {"success":false} preserves the old publication
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 untrusted/mismatched served recovery proof {"codeFingerprint":"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"} preserves the old publication
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 untrusted/mismatched served recovery proof {"baseUrl":"https://example.com/"} preserves the old publication
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 untrusted/mismatched served recovery proof {"receipt":{"snapshotId":"wrong","publishedAt":"2026-10-10T03:59:30.000Z"}} preserves the old publication
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 untrusted/mismatched served recovery proof {"catalogueDigest":"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"} preserves the old publication
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 untrusted/mismatched served recovery proof {"shardDigests":{"26241":"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"}} preserves the old publication
+AssertionError: expected { rejected: false, …(1) } to deeply equal { rejected: true, …(1) }
+
+- Expected
++ Received
+
+@@ -853,7 +853,7 @@
+        0,
+        0,
+      ],
+      "type": "Buffer",
+    },
+-   "rejected": true,
++   "rejected": false,
+  }
+
+ ❯ rejectsServedProof tests/unit/acquisition-bootstrap.test.ts:668:85
+    666|   let rejected = false;
+    667|   try { await acquire(input); } catch { rejected = true; }
+    668|   expect({ rejected, output: await readFile(join(disk.out, 'catalogue.…
+       |                                                                                     ^
+    669| }
+    670| test.each([
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[34/91]⎯
+
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 failed source finalization retains old draft status and accepted shard coherently
+AssertionError: expected undefined to match object { catalogue: { sittings: [ …(1) ] } }
+
+- Expected:
+{
+  "catalogue": {
+    "sittings": [
+      {
+        "isFinal": false,
+        "record": {
+          "availability": "retained",
+          "digest": "992b979400a1dede055b77fcb93a077537279486495bd4b1f17fd17c02e812ac",
+        },
+      },
+    ],
+  },
+}
+
++ Received:
+undefined
+
+ ❯ preservesDraftStatusOnFailure tests/unit/acquisition-bootstrap.test.ts:681:15
+    679|   const disk = await paths(); const previous = await baseline(disk, fa…
+    680|   const run = await acquire(options(disk, unavailableRecordFetch)) as …
+    681|   expect(run).toMatchObject({ catalogue: { sittings: [{ isFinal: false…
+       |               ^
+    682|   expect(JSON.parse(gunzipSync(await readFile(join(disk.out, 'sittings…
+    683| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[35/91]⎯
+
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 successful source finalization advances status and payload together
+AssertionError: expected undefined to match object { catalogue: { sittings: [ …(1) ] } }
+
+- Expected:
+{
+  "catalogue": {
+    "sittings": [
+      {
+        "isFinal": true,
+        "record": {
+          "availability": "available",
+        },
+      },
+    ],
+  },
+}
+
++ Received:
+undefined
+
+ ❯ updatesDraftStatusOnSuccess tests/unit/acquisition-bootstrap.test.ts:690:15
+    688|   const disk = await paths(); const previous = await baseline(disk, fa…
+    689|   const run = await acquire(options(disk)) as { catalogue: Catalogue };
+    690|   expect(run).toMatchObject({ catalogue: { sittings: [{ isFinal: true,…
+       |               ^
+    691|   expect(run.catalogue.sittings[0].record.digest).not.toBe(previous.ca…
+    692|   expect(JSON.parse(gunzipSync(await readFile(join(disk.out, 'sittings…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[36/91]⎯
+
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 conflicting date/hierarchy identity cannot relabel accepted source payloads
+AssertionError: expected { rejected: false, …(1) } to deeply equal { rejected: true, …(1) }
+
+- Expected
++ Received
+
+@@ -781,7 +781,7 @@
+        0,
+        0,
+      ],
+      "type": "Buffer",
+    },
+-   "rejected": true,
++   "rejected": false,
+  }
+
+ ❯ rejectsChangedHierarchy tests/unit/acquisition-bootstrap.test.ts:708:85
+    706|   let rejected = false;
+    707|   try { await acquire(options(disk, changedHierarchy)); } catch { reje…
+    708|   expect({ rejected, output: await readFile(join(disk.out, 'catalogue.…
+       |                                                                                     ^
+    709| }
+    710| test('T013 conflicting date/hierarchy identity cannot relabel accepted…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[37/91]⎯
+
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 source access denial stops the whole job and preserves the last output
+AssertionError: expected { rejected: false, …(3) } to deeply equal { rejected: true, …(3) }
+
+- Expected
++ Received
+
+@@ -1,7 +1,7 @@
+  {
+-   "firstRecordRequested": true,
++   "firstRecordRequested": false,
+    "laterRecordRequested": false,
+    "output": {
+      "data": [
+        31,
+        139,
+@@ -783,7 +783,7 @@
+        0,
+        0,
+      ],
+      "type": "Buffer",
+    },
+-   "rejected": true,
++   "rejected": false,
+  }
+
+ ❯ denialStopsWholeRun tests/unit/acquisition-bootstrap.test.ts:723:347
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[38/91]⎯
+
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 symlinked output cannot alias private input state
+AssertionError: promise resolved "undefined" instead of rejecting
+
+- Expected:
+Error {
+  "message": "rejected promise",
+}
+
++ Received:
+undefined
+
+ ❯ rejectsSymlinkAlias tests/unit/acquisition-bootstrap.test.ts:731:50
+    729|   const disk = await paths(); await mkdir(disk.state); await symlink(d…
+    730|   const transport = vi.fn(sourceFetch);
+    731|   await expect(acquire(options(disk, transport))).rejects.toThrow();
+       |                                                  ^
+    732|   expect(transport).not.toHaveBeenCalled();
+    733|   expect(await readdir(disk.state)).toEqual([]);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[39/91]⎯
+
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 physical parent symlink overlap cannot bypass state/output isolation
+AssertionError: promise resolved "undefined" instead of rejecting
+
+- Expected:
+Error {
+  "message": "rejected promise",
+}
+
++ Received:
+undefined
+
+ ❯ rejectsParentAlias tests/unit/acquisition-bootstrap.test.ts:742:94
+    740|   const link = `${disk.out}-link`; await symlink(disk.state, link);
+    741|   const transport = vi.fn(sourceFetch);
+    742|   await expect(acquire(options({ state: disk.state, out: join(link, 'p…
+       |                                                                                              ^
+    743|   expect(transport).not.toHaveBeenCalled();
+    744| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[40/91]⎯
+
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 tampered/foreign private partial checkpoint {"sessionId":"other-session"} cannot be restored as trusted work
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 tampered/foreign private partial checkpoint {"repository":"other/repository"} cannot be restored as trusted work
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 tampered/foreign private partial checkpoint {"branch":"pull-request"} cannot be restored as trusted work
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 tampered/foreign private partial checkpoint {"codeFingerprint":"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"} cannot be restored as trusted work
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 tampered/foreign private partial checkpoint {"schemaVersion":9} cannot be restored as trusted work
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 tampered/foreign private partial checkpoint {"validationSuccess":false} cannot be restored as trusted work
+AssertionError: expected { generatedPartial: false, …(2) } to deeply equal { generatedPartial: true, …(2) }
+
+- Expected
++ Received
+
+@@ -1,7 +1,7 @@
+  {
+-   "generatedPartial": true,
++   "generatedPartial": false,
+    "output": {
+      "data": [
+        31,
+        139,
+        8,
+@@ -782,7 +782,7 @@
+        0,
+        0,
+      ],
+      "type": "Buffer",
+    },
+-   "rejected": true,
++   "rejected": false,
+  }
+
+ ❯ rejectsPartialOrigin tests/unit/acquisition-bootstrap.test.ts:761:121
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[41/91]⎯
+
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 HTTP success with unsupported source bytes <html>not a JSON record</html> cannot replace accepted data
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 HTTP success with unsupported source bytes not-json cannot replace accepted data
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 HTTP success with unsupported source bytes 255,254 cannot replace accepted data
+AssertionError: expected { rejected: false, …(2) } to deeply equal { rejected: true, …(2) }
+
+- Expected
++ Received
+
+@@ -3123,7 +3123,7 @@
+        0,
+        0,
+      ],
+      "type": "Buffer",
+    },
+-   "rejected": true,
++   "rejected": false,
+  }
+
+ ❯ rejectsMalformedBody tests/unit/acquisition-bootstrap.test.ts:775:150
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[42/91]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  91 failed (91)
+   Start at  12:35:14
+   Duration  329ms (tests 85%, transform 10%, import 4%, worker 1%)
+

@@ -1,0 +1,7 @@
+ASYNC_WAIT_VALUE false
+BEFORE_RELOAD { installing: 'installing', active: null, controller: null }
+AFTER_EARLY_RELOAD { installing: 'installing', active: null, controller: null }
+AFTER_AWAITED_POLL { installing: 'installing', active: null, controller: null }
+AFTER_FRESH_NAVIGATION { installing: 'installing', active: null, controller: null }
+REQUESTS ["index.html","assets/index-BlgTHgQY.js","assets/index-BXaHGM-n.css","sw.js","data/catalogue.json.gz","index.html","assets/index-BXaHGM-n.css","assets/index-BlgTHgQY.js","help.html","index.html","assets/index-BXaHGM-n.css","assets/index-BlgTHgQY.js","data/catalogue.json.gz","index.html","assets/index-BXaHGM-n.css","assets/index-BlgTHgQY.js","data/catalogue.json.gz"]
+BROWSER 156.0.8078.4

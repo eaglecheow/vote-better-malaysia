@@ -1,0 +1,9 @@
+{
+  "scope": "Read-only post-failed-bootstrap preservation check; first local run had no prior public output or accepted checkpoint.",
+  "publicDataExists": false,
+  "acceptedCheckpointExists": false,
+  "temporaryWorkDirs": [],
+  "capturedRawReceipts": 4093,
+  "publicationPerformed": false,
+  "recordedAt": "2026-10-10T06:31:12.660525+00:00"
+}

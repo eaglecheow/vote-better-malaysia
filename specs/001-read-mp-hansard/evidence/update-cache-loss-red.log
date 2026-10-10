@@ -1,0 +1,42 @@
+
+> vote-better-malaysia@0.1.0 test
+> vitest --run tests/unit/updates.test.ts -t UPDATE023
+
+
+ RUN  v5.0.3 /Users/eaglecheow/dev/vote-better-malaysia
+
+ ❯ tests/unit/updates.test.ts (33 tests | 1 failed | 32 skipped) 16ms
+   × UPDATE023: actual compatible-cache loss revokes readiness while preserving ordinary reading 15ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/updates.test.ts > UPDATE023: actual compatible-cache loss revokes readiness while preserving ordinary reading
+AssertionError: expected { shellReady: true, …(3) } to deeply equal { shellReady: false, …(3) }
+
+- Expected
++ Received
+
+  {
+    "applying": false,
+    "failed": true,
+-   "shellReady": false,
++   "shellReady": true,
+    "waitingVersion": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+  }
+
+ ❯ tests/unit/updates.test.ts:295:36
+    293|     expect(client.getState().shellReady).toBe(true);
+    294|     container.message(active, { type: 'SHELL_STATUS', base, version: c…
+    295|     expect.soft(client.getState()).toEqual({ shellReady: false, waitin…
+       |                                    ^
+    296|     expect(container.reload).not.toHaveBeenCalled();
+    297|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 32 skipped (33)
+   Start at  19:07:24
+   Duration  101ms (transform 44%, tests 37%, import 15%, worker 4%)
+

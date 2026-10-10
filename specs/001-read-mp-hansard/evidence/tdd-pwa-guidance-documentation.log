@@ -1,0 +1,57 @@
+
+ RUN  v5.0.3 /Users/eaglecheow/dev/vote-better-malaysia
+
+ ✓ tests/unit/documentation.test.ts > DOC-typecheck: undocumented fixture still typechecks 431ms
+ ✓ tests/unit/documentation.test.ts > DOC-complete: exact reviewed fixture passes mechanical checks 6ms
+ ✓ tests/unit/documentation.test.ts > DOC-local: local construction is not an external side effect 4ms
+ ✓ tests/unit/documentation.test.ts > DOC-first-publication: explicit null baseline is valid 2ms
+ ✓ tests/unit/documentation.test.ts > DOC-invalid: rejects undocumented 2ms
+ ✓ tests/unit/documentation.test.ts > DOC-invalid: rejects purpose 2ms
+ ✓ tests/unit/documentation.test.ts > DOC-invalid: rejects parameters 2ms
+ ✓ tests/unit/documentation.test.ts > DOC-invalid: rejects returns 2ms
+ ✓ tests/unit/documentation.test.ts > DOC-invalid: rejects callback 2ms
+ ✓ tests/unit/documentation.test.ts > DOC-invalid: rejects method 2ms
+ ✓ tests/unit/documentation.test.ts > DOC-invalid: rejects errors 2ms
+ ✓ tests/unit/documentation.test.ts > DOC-invalid: rejects sideEffects 3ms
+ ✓ tests/unit/documentation.test.ts > DOC-invalid: rejects arrow-sideEffects 3ms
+ ✓ tests/unit/documentation.test.ts > DOC-invalid: rejects closure-sideEffects 3ms
+ ✓ tests/unit/documentation.test.ts > DOC-invalid: rejects scope-tests/helper.test.ts 3ms
+ ✓ tests/unit/documentation.test.ts > DOC-invalid: rejects scope-worker/service-worker.ts 2ms
+ ✓ tests/unit/documentation.test.ts > DOC-invalid: rejects scope-scripts/tool.ts 3ms
+ ✓ tests/unit/documentation.test.ts > DOC-invalid: rejects scope-vite.config.ts 2ms
+ ✓ tests/unit/documentation.test.ts > DOC-invalid: rejects developer-link 2ms
+ ✓ tests/unit/documentation.test.ts > DOC-invalid: rejects user-link 2ms
+ ✓ tests/unit/documentation.test.ts > DOC-invalid: rejects missing-developer 2ms
+ ✓ tests/unit/documentation.test.ts > DOC-invalid: rejects missing-user 1ms
+ ✓ tests/unit/documentation.test.ts > DOC-invalid: rejects empty-developer 2ms
+ ✓ tests/unit/documentation.test.ts > DOC-invalid: rejects empty-user 2ms
+ ✓ tests/unit/documentation.test.ts > DOC-invalid: rejects language 2ms
+ ✓ tests/unit/documentation.test.ts > DOC-invalid: rejects empty-language 2ms
+ ✓ tests/unit/documentation.test.ts > DOC-invalid: rejects feature 2ms
+ ✓ tests/unit/documentation.test.ts > DOC-invalid: rejects accuracy 2ms
+ ✓ tests/unit/documentation.test.ts > DOC-invalid: rejects reviewer 2ms
+ ✓ tests/unit/documentation.test.ts > DOC-invalid: rejects stale-file 2ms
+ ✓ tests/unit/documentation.test.ts > DOC-invalid: rejects unreviewed-file 2ms
+ ✓ tests/unit/documentation.test.ts > DOC-invalid: rejects expired 2ms
+ ✓ tests/unit/documentation.test.ts > DOC-invalid: rejects future 1ms
+ ✓ tests/unit/documentation.test.ts > DOC-invalid: rejects timestamp 1ms
+ ✓ tests/unit/documentation.test.ts > DOC-invalid: rejects calendar 1ms
+ ✓ tests/unit/documentation.test.ts > DOC-invalid: rejects missing-report 1ms
+ ✓ tests/unit/documentation.test.ts > DOC-invalid: rejects malformed-report 1ms
+ ✓ tests/unit/documentation.test.ts > DOC-invalid: rejects report-shape 2ms
+ ✓ tests/unit/documentation.test.ts > DOC-invalid: rejects candidate-shape 2ms
+ ✓ tests/unit/documentation.test.ts > DOC-invalid: rejects missing-baseline 2ms
+ ✓ tests/unit/documentation.test.ts > DOC-invalid: rejects candidate-sourceRevision 2ms
+ ✓ tests/unit/documentation.test.ts > DOC-invalid: rejects candidate-applicationFingerprint 1ms
+ ✓ tests/unit/documentation.test.ts > DOC-invalid: rejects candidate-artifactDigest 1ms
+ ✓ tests/unit/documentation.test.ts > DOC-invalid: rejects candidate-snapshotId 1ms
+ ✓ tests/unit/documentation.test.ts > DOC-invalid: rejects candidate-fixtureHashes 1ms
+ ✓ tests/unit/documentation.test.ts > DOC-invalid: rejects candidate-conditionsDigest 1ms
+ ✓ tests/unit/documentation.test.ts > DOC-invalid: rejects candidate-priorServedBaselineDigest 1ms
+ ✓ tests/unit/documentation.test.ts > DOC-cli: missing candidate/review fails closed 175ms
+
+ Test Files  1 passed (1)
+      Tests  48 passed (48)
+   Start at  19:47:06
+   Duration  957ms (tests 79%, import 14%, transform 7%)
+

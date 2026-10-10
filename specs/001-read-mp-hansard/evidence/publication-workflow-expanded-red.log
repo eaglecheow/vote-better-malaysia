@@ -1,0 +1,2147 @@
+
+> vote-better-malaysia@0.1.0 test
+> vitest --run tests/unit/publication-workflow.test.ts
+
+
+ RUN  v5.0.3 /Users/eaglecheow/dev/vote-better-malaysia
+
+ ❯ tests/unit/publication-workflow.test.ts (44 tests | 43 failed) 14ms
+   × PUB-WF001: the reviewed workflow runs exactly at minute 17 every four UTC hours 3ms
+   × PUB-WF002: manual dispatch distinguishes preparation from explicit promotion 1ms
+   × PUB-WF003: manual promotion names candidate_run_id 0ms
+   × PUB-WF003: manual promotion names evidence_run_id 0ms
+   × PUB-WF004: the candidate job rejects non-main execution 0ms
+   × PUB-WF005: one repository concurrency group keeps an active publication running 0ms
+   × PUB-WF006: job timeouts bound acquisition plus checks and deployment finalization 0ms
+   × PUB-WF007: ordinary candidate work receives only repository and artifact read permissions 0ms
+   × PUB-WF008: Pages and identity-token writes are confined to the deployment job 0ms
+   × PUB-WF009: only the deployment job enters the github-pages environment 0ms
+   × PUB-WF010: scheduled and manual preparation call the real preparation controller 1ms
+   × PUB-WF011: explicit promotion validates the original candidate without building or acquiring 0ms
+   × PUB-WF012: untrusted run input is passed through environment values rather than shell source 0ms
+   × PUB-WF013: promotion resolves exact immutable artifact IDs before transport 0ms
+   × PUB-WF014: download-candidate checks an exact cross-run artifact digest 0ms
+   × PUB-WF014: download-pages checks an exact cross-run artifact digest 0ms
+   × PUB-WF014: download-evidence checks an exact cross-run artifact digest 0ms
+   × PUB-WF015: candidate metadata is retained outside the deployed file directory 0ms
+   × PUB-WF016: frozen Pages candidate transport is explicitly kept seven days 0ms
+   × PUB-WF017: pending evidence cannot reach the Pages deployment job 0ms
+   × PUB-WF018: promotion reuploads the original artifact.tar with seven-day retention 0ms
+   × PUB-WF019: actual deployment uses the reviewed pinned action without PR previews 0ms
+   × PUB-WF020: finish runs after both candidate and deployment even when either fails 0ms
+   × PUB-WF021: finalization receives real job outcomes and performs the actual receipt controller 0ms
+   × PUB-WF022: private state and reports are uploaded on failure without becoming deployed assets 0ms
+   × PUB-WF023: missing required prepared files fails the upload 0ms
+   × PUB-WF024: all third-party workflow actions are pinned to reviewed immutable revisions 0ms
+   × PUB-WF025: preparation and finalization run Node 24 from the project version file 1ms
+   × PUB-WF026: explicit partial recovery names its producing run without a trust override 0ms
+   × PUB-WF027: private recovery discovers default-branch successful workflow state independently 0ms
+   × PUB-WF028: download-state restores only a concrete independently resolved artifact 0ms
+   × PUB-WF028: download-served restores only a concrete independently resolved artifact 0ms
+   × PUB-WF028: download-resume restores only a concrete independently resolved artifact 0ms
+   × PUB-WF029: accepted state and partial progress are distinct private artifacts retained seven days 0ms
+   × PUB-WF030: HTTPS test hosting comes from repository configuration instead of downloaded evidence 0ms
+   × PUB-WF031: finalization restores original candidate metadata and bytes by their actual producing run 0ms
+   × PUB-WF032: finish receives the actual newly uploaded Pages artifact identity and always attempts finalization 0ms
+   × PUB-WF033: only confirmed served state is uploaded separately from the acquired checkpoint 0ms
+   × PUB-WF034: provider API operations receive the actual runner token without printing it 0ms
+   × PUB-WF035: finalization can read provider Pages and environment proof without deployment writes 0ms
+   × PUB-WF036: both controller jobs restore the checkout and locked dependencies before execution 0ms
+   × PUB-WF037: finish has an always-run shell summary fallback for unavailable Node or dependencies 0ms
+   × PUB-WF038: finish restores newest accepted state separately from the older candidate checkpoint 0ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 43 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF001: the reviewed workflow runs exactly at minute 17 every four UTC hours
+AssertionError: expected undefined to deeply equal [ { cron: '17 */4 * * *' } ]
+
+- Expected:
+[
+  {
+    "cron": "17 */4 * * *",
+  },
+]
+
++ Received:
+undefined
+
+ ❯ tests/unit/publication-workflow.test.ts:54:46
+     52| test('PUB-WF001: the reviewed workflow runs exactly at minute 17 every…
+     53|   /** Checks the real schedule, independently of any local fixture clo…
+     54|   () => { expect(configuration.on?.schedule).toEqual([{ cron: '17 */4 …
+       |                                              ^
+     55|
+     56| test('PUB-WF002: manual dispatch distinguishes preparation from explic…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF002: manual dispatch distinguishes preparation from explicit promotion
+AssertionError: expected undefined to match object { type: 'choice', …(2) }
+
+- Expected:
+{
+  "default": "prepare",
+  "options": [
+    "prepare",
+    "promote",
+  ],
+  "type": "choice",
+}
+
++ Received:
+undefined
+
+ ❯ tests/unit/publication-workflow.test.ts:58:74
+     56| test('PUB-WF002: manual dispatch distinguishes preparation from explic…
+     57|   /** Checks concrete dispatch choices. @returns Nothing after asserti…
+     58|   () => { expect(configuration.on?.workflow_dispatch?.inputs?.operatio…
+       |                                                                          ^
+     59|
+     60| for (const name of ['candidate_run_id', 'evidence_run_id']) test('PUB-…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF003: manual promotion names candidate_run_id
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF003: manual promotion names evidence_run_id
+AssertionError: expected undefined to match object { type: 'string', required: false }
+
+- Expected:
+{
+  "required": false,
+  "type": "string",
+}
+
++ Received:
+undefined
+
+ ❯ tests/unit/publication-workflow.test.ts:64:71
+     62|    * @returns Nothing after the input assertion.
+     63|    */
+     64|   () => { expect(configuration.on?.workflow_dispatch?.inputs?.[name]).…
+       |                                                                       ^
+     65|
+     66| test('PUB-WF004: the candidate job rejects non-main execution',
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF004: the candidate job rejects non-main execution
+AssertionError: expected '' to contain 'github.ref == \'refs/heads/main\''
+
+- Expected
++ Received
+
+- github.ref == 'refs/heads/main'
+
+ ❯ tests/unit/publication-workflow.test.ts:68:47
+     66| test('PUB-WF004: the candidate job rejects non-main execution',
+     67|   /** Checks the outer reviewed-default-branch boundary; runtime authe…
+     68|   () => { expect((job('candidate').if ?? '')).toContain("github.ref ==…
+       |                                               ^
+     69|
+     70| test('PUB-WF005: one repository concurrency group keeps an active publ…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF005: one repository concurrency group keeps an active publication running
+AssertionError: expected '' to contain '${{ github.repository }}'
+
+- Expected
++ Received
+
+- ${{ github.repository }}
+
+ ❯ tests/unit/publication-workflow.test.ts:73:59
+     71|   /** Checks lock scope and explicit noncancellation. @returns Nothing…
+     72|   () => {
+     73|     expect.soft((configuration.concurrency?.group ?? '')).toContain('$…
+       |                                                           ^
+     74|     expect.soft(configuration.concurrency?.['cancel-in-progress']).toB…
+     75|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF005: one repository concurrency group keeps an active publication running
+AssertionError: expected undefined to be false // Object.is equality
+
+- Expected:
+false
+
++ Received:
+undefined
+
+ ❯ tests/unit/publication-workflow.test.ts:74:68
+     72|   () => {
+     73|     expect.soft((configuration.concurrency?.group ?? '')).toContain('$…
+     74|     expect.soft(configuration.concurrency?.['cancel-in-progress']).toB…
+       |                                                                    ^
+     75|   });
+     76|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF006: job timeouts bound acquisition plus checks and deployment finalization
+AssertionError: expected undefined to be 270 // Object.is equality
+
+- Expected:
+270
+
++ Received:
+undefined
+
+ ❯ tests/unit/publication-workflow.test.ts:80:54
+     78|   /** Checks finite workflow caps in addition to the independently tes…
+     79|   () => {
+     80|     expect.soft(job('candidate')['timeout-minutes']).toBe(270);
+       |                                                      ^
+     81|     expect.soft(job('deploy')['timeout-minutes']).toBe(15);
+     82|     expect.soft(job('finish')['timeout-minutes']).toBe(15);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF006: job timeouts bound acquisition plus checks and deployment finalization
+AssertionError: expected undefined to be 15 // Object.is equality
+
+- Expected:
+15
+
++ Received:
+undefined
+
+ ❯ tests/unit/publication-workflow.test.ts:81:51
+     79|   () => {
+     80|     expect.soft(job('candidate')['timeout-minutes']).toBe(270);
+     81|     expect.soft(job('deploy')['timeout-minutes']).toBe(15);
+       |                                                   ^
+     82|     expect.soft(job('finish')['timeout-minutes']).toBe(15);
+     83|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF006: job timeouts bound acquisition plus checks and deployment finalization
+AssertionError: expected undefined to be 15 // Object.is equality
+
+- Expected:
+15
+
++ Received:
+undefined
+
+ ❯ tests/unit/publication-workflow.test.ts:82:51
+     80|     expect.soft(job('candidate')['timeout-minutes']).toBe(270);
+     81|     expect.soft(job('deploy')['timeout-minutes']).toBe(15);
+     82|     expect.soft(job('finish')['timeout-minutes']).toBe(15);
+       |                                                   ^
+     83|   });
+     84|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF007: ordinary candidate work receives only repository and artifact read permissions
+AssertionError: expected undefined to deeply equal { contents: 'read', actions: 'read' }
+
+- Expected:
+{
+  "actions": "read",
+  "contents": "read",
+}
+
++ Received:
+undefined
+
+ ❯ tests/unit/publication-workflow.test.ts:87:45
+     85| test('PUB-WF007: ordinary candidate work receives only repository and …
+     86|   /** Checks no write permission is inherited by acquisition or report…
+     87|   () => { expect(configuration.permissions).toEqual({ contents: 'read'…
+       |                                             ^
+     88|
+     89| test('PUB-WF008: Pages and identity-token writes are confined to the d…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF008: Pages and identity-token writes are confined to the deployment job
+AssertionError: expected undefined to deeply equal { contents: 'read', …(3) }
+
+- Expected:
+{
+  "actions": "read",
+  "contents": "read",
+  "id-token": "write",
+  "pages": "write",
+}
+
++ Received:
+undefined
+
+ ❯ tests/unit/publication-workflow.test.ts:92:39
+     90|   /** Checks the actual privileged role. @returns Nothing after assert…
+     91|   () => {
+     92|     expect(job('deploy').permissions).toEqual({ contents: 'read', acti…
+       |                                       ^
+     93|     for (const name of ['candidate', 'finish']) {
+     94|       expect.soft(job(name).permissions?.pages).not.toBe('write');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF009: only the deployment job enters the github-pages environment
+AssertionError: expected undefined to be 'github-pages' // Object.is equality
+
+- Expected:
+"github-pages"
+
++ Received:
+undefined
+
+ ❯ tests/unit/publication-workflow.test.ts:102:45
+    100|   /** Checks finalization can observe the completed environment deploy…
+    101|   () => {
+    102|     expect(job('deploy').environment?.name).toBe('github-pages');
+       |                                             ^
+    103|     expect.soft(job('candidate').environment).toBeUndefined(); expect.…
+    104|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF010: scheduled and manual preparation call the real preparation controller
+AssertionError: expected undefined to be 'node scripts/publication.ts prepare' // Object.is equality
+
+- Expected:
+"node scripts/publication.ts prepare"
+
++ Received:
+undefined
+
+ ❯ tests/unit/publication-workflow.test.ts:109:51
+    107|   /** Checks the preparation command and its mode condition. @returns …
+    108|   () => {
+    109|     expect.soft(step('candidate', 'prepare').run).toBe('node scripts/p…
+       |                                                   ^
+    110|     expect.soft((step('candidate', 'prepare').if ?? '')).toContain("in…
+    111|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[13/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF010: scheduled and manual preparation call the real preparation controller
+AssertionError: expected '' to contain 'inputs.operation != \'promote\''
+
+- Expected
++ Received
+
+- inputs.operation != 'promote'
+
+ ❯ tests/unit/publication-workflow.test.ts:110:58
+    108|   () => {
+    109|     expect.soft(step('candidate', 'prepare').run).toBe('node scripts/p…
+    110|     expect.soft((step('candidate', 'prepare').if ?? '')).toContain("in…
+       |                                                          ^
+    111|   });
+    112|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[14/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF011: explicit promotion validates the original candidate without building or acquiring
+AssertionError: expected undefined to be 'node scripts/publication.ts promote' // Object.is equality
+
+- Expected:
+"node scripts/publication.ts promote"
+
++ Received:
+undefined
+
+ ❯ tests/unit/publication-workflow.test.ts:116:51
+    114|   /** Checks a separate real promotion command. @returns Nothing after…
+    115|   () => {
+    116|     expect.soft(step('candidate', 'promote').run).toBe('node scripts/p…
+       |                                                   ^
+    117|     expect.soft((step('candidate', 'promote').if ?? '')).toContain("in…
+    118|     expect.soft(step('candidate', 'promote').run ?? '').not.toMatch(/d…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[15/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF011: explicit promotion validates the original candidate without building or acquiring
+AssertionError: expected '' to contain 'inputs.operation == \'promote\''
+
+- Expected
++ Received
+
+- inputs.operation == 'promote'
+
+ ❯ tests/unit/publication-workflow.test.ts:117:58
+    115|   () => {
+    116|     expect.soft(step('candidate', 'promote').run).toBe('node scripts/p…
+    117|     expect.soft((step('candidate', 'promote').if ?? '')).toContain("in…
+       |                                                          ^
+    118|     expect.soft(step('candidate', 'promote').run ?? '').not.toMatch(/d…
+    119|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[16/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF012: untrusted run input is passed through environment values rather than shell source
+AssertionError: expected undefined to be '${{ inputs.candidate_run_id }}' // Object.is equality
+
+- Expected:
+"${{ inputs.candidate_run_id }}"
+
++ Received:
+undefined
+
+ ❯ tests/unit/publication-workflow.test.ts:124:65
+    122|   /** Checks actual input transport and absence of inline expression i…
+    123|   () => {
+    124|     expect.soft(job('candidate').env?.HANSARD_CANDIDATE_RUN_ID).toBe('…
+       |                                                                 ^
+    125|     expect.soft(job('candidate').env?.HANSARD_EVIDENCE_RUN_ID).toBe('$…
+    126|     for (const entry of steps('candidate')) expect.soft(entry.run ?? '…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[17/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF012: untrusted run input is passed through environment values rather than shell source
+AssertionError: expected undefined to be '${{ inputs.evidence_run_id }}' // Object.is equality
+
+- Expected:
+"${{ inputs.evidence_run_id }}"
+
++ Received:
+undefined
+
+ ❯ tests/unit/publication-workflow.test.ts:125:64
+    123|   () => {
+    124|     expect.soft(job('candidate').env?.HANSARD_CANDIDATE_RUN_ID).toBe('…
+    125|     expect.soft(job('candidate').env?.HANSARD_EVIDENCE_RUN_ID).toBe('$…
+       |                                                                ^
+    126|     for (const entry of steps('candidate')) expect.soft(entry.run ?? '…
+    127|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[18/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF013: promotion resolves exact immutable artifact IDs before transport
+AssertionError: expected '' to contain 'gh api'
+
+- Expected
++ Received
+
+- gh api
+
+ ❯ tests/unit/publication-workflow.test.ts:133:34
+    131|   () => {
+    132|     const command = step('candidate', 'resolve-artifacts').run ?? '';
+    133|     expect.soft((command ?? '')).toContain('gh api');
+       |                                  ^
+    134|     expect.soft((command ?? '')).toContain('HANSARD_CANDIDATE_RUN_ID');
+    135|     expect.soft((command ?? '')).toContain('HANSARD_EVIDENCE_RUN_ID');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[19/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF013: promotion resolves exact immutable artifact IDs before transport
+AssertionError: expected '' to contain 'HANSARD_CANDIDATE_RUN_ID'
+
+- Expected
++ Received
+
+- HANSARD_CANDIDATE_RUN_ID
+
+ ❯ tests/unit/publication-workflow.test.ts:134:34
+    132|     const command = step('candidate', 'resolve-artifacts').run ?? '';
+    133|     expect.soft((command ?? '')).toContain('gh api');
+    134|     expect.soft((command ?? '')).toContain('HANSARD_CANDIDATE_RUN_ID');
+       |                                  ^
+    135|     expect.soft((command ?? '')).toContain('HANSARD_EVIDENCE_RUN_ID');
+    136|     expect.soft((command ?? '')).toContain('GITHUB_OUTPUT');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[20/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF013: promotion resolves exact immutable artifact IDs before transport
+AssertionError: expected '' to contain 'HANSARD_EVIDENCE_RUN_ID'
+
+- Expected
++ Received
+
+- HANSARD_EVIDENCE_RUN_ID
+
+ ❯ tests/unit/publication-workflow.test.ts:135:34
+    133|     expect.soft((command ?? '')).toContain('gh api');
+    134|     expect.soft((command ?? '')).toContain('HANSARD_CANDIDATE_RUN_ID');
+    135|     expect.soft((command ?? '')).toContain('HANSARD_EVIDENCE_RUN_ID');
+       |                                  ^
+    136|     expect.soft((command ?? '')).toContain('GITHUB_OUTPUT');
+    137|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[21/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF013: promotion resolves exact immutable artifact IDs before transport
+AssertionError: expected '' to contain 'GITHUB_OUTPUT'
+
+- Expected
++ Received
+
+- GITHUB_OUTPUT
+
+ ❯ tests/unit/publication-workflow.test.ts:136:34
+    134|     expect.soft((command ?? '')).toContain('HANSARD_CANDIDATE_RUN_ID');
+    135|     expect.soft((command ?? '')).toContain('HANSARD_EVIDENCE_RUN_ID');
+    136|     expect.soft((command ?? '')).toContain('GITHUB_OUTPUT');
+       |                                  ^
+    137|   });
+    138|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[22/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF014: download-candidate checks an exact cross-run artifact digest
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF014: download-pages checks an exact cross-run artifact digest
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF014: download-evidence checks an exact cross-run artifact digest
+AssertionError: expected undefined to be 'actions/download-artifact@9000827ccba…' // Object.is equality
+
+- Expected:
+"actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333"
+
++ Received:
+undefined
+
+ ❯ tests/unit/publication-workflow.test.ts:143:29
+    141|   () => {
+    142|     const value = step('candidate', id);
+    143|     expect.soft(value.uses).toBe('actions/download-artifact@9000827ccb…
+       |                             ^
+    144|     expect.soft((value.with?.['artifact-ids'] ?? '')).toContain('steps…
+    145|     expect.soft(value.with?.['digest-mismatch']).toBe('error');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[23/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF014: download-candidate checks an exact cross-run artifact digest
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF014: download-pages checks an exact cross-run artifact digest
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF014: download-evidence checks an exact cross-run artifact digest
+AssertionError: expected '' to contain 'steps.resolve-artifacts.outputs.'
+
+- Expected
++ Received
+
+- steps.resolve-artifacts.outputs.
+
+ ❯ tests/unit/publication-workflow.test.ts:144:55
+    142|     const value = step('candidate', id);
+    143|     expect.soft(value.uses).toBe('actions/download-artifact@9000827ccb…
+    144|     expect.soft((value.with?.['artifact-ids'] ?? '')).toContain('steps…
+       |                                                       ^
+    145|     expect.soft(value.with?.['digest-mismatch']).toBe('error');
+    146|     expect.soft(value.with?.['github-token']).toBe('${{ github.token }…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[24/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF014: download-candidate checks an exact cross-run artifact digest
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF014: download-pages checks an exact cross-run artifact digest
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF014: download-evidence checks an exact cross-run artifact digest
+AssertionError: expected undefined to be 'error' // Object.is equality
+
+- Expected:
+"error"
+
++ Received:
+undefined
+
+ ❯ tests/unit/publication-workflow.test.ts:145:50
+    143|     expect.soft(value.uses).toBe('actions/download-artifact@9000827ccb…
+    144|     expect.soft((value.with?.['artifact-ids'] ?? '')).toContain('steps…
+    145|     expect.soft(value.with?.['digest-mismatch']).toBe('error');
+       |                                                  ^
+    146|     expect.soft(value.with?.['github-token']).toBe('${{ github.token }…
+    147|     expect.soft(value.with?.repository).toBe('${{ github.repository }}…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[25/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF014: download-candidate checks an exact cross-run artifact digest
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF014: download-pages checks an exact cross-run artifact digest
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF014: download-evidence checks an exact cross-run artifact digest
+AssertionError: expected undefined to be '${{ github.token }}' // Object.is equality
+
+- Expected:
+"${{ github.token }}"
+
++ Received:
+undefined
+
+ ❯ tests/unit/publication-workflow.test.ts:146:47
+    144|     expect.soft((value.with?.['artifact-ids'] ?? '')).toContain('steps…
+    145|     expect.soft(value.with?.['digest-mismatch']).toBe('error');
+    146|     expect.soft(value.with?.['github-token']).toBe('${{ github.token }…
+       |                                               ^
+    147|     expect.soft(value.with?.repository).toBe('${{ github.repository }}…
+    148|     expect.soft(value.with?.['run-id']).toBeDefined();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[26/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF014: download-candidate checks an exact cross-run artifact digest
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF014: download-pages checks an exact cross-run artifact digest
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF014: download-evidence checks an exact cross-run artifact digest
+AssertionError: expected undefined to be '${{ github.repository }}' // Object.is equality
+
+- Expected:
+"${{ github.repository }}"
+
++ Received:
+undefined
+
+ ❯ tests/unit/publication-workflow.test.ts:147:41
+    145|     expect.soft(value.with?.['digest-mismatch']).toBe('error');
+    146|     expect.soft(value.with?.['github-token']).toBe('${{ github.token }…
+    147|     expect.soft(value.with?.repository).toBe('${{ github.repository }}…
+       |                                         ^
+    148|     expect.soft(value.with?.['run-id']).toBeDefined();
+    149|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[27/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF014: download-candidate checks an exact cross-run artifact digest
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF014: download-pages checks an exact cross-run artifact digest
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF014: download-evidence checks an exact cross-run artifact digest
+AssertionError: expected undefined to be defined
+ ❯ tests/unit/publication-workflow.test.ts:148:41
+    146|     expect.soft(value.with?.['github-token']).toBe('${{ github.token }…
+    147|     expect.soft(value.with?.repository).toBe('${{ github.repository }}…
+    148|     expect.soft(value.with?.['run-id']).toBeDefined();
+       |                                         ^
+    149|   });
+    150|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[28/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF015: candidate metadata is retained outside the deployed file directory
+AssertionError: expected undefined to be 'hansard-candidate' // Object.is equality
+
+- Expected:
+"hansard-candidate"
+
++ Received:
+undefined
+
+ ❯ tests/unit/publication-workflow.test.ts:155:35
+    153|   () => {
+    154|     const value = step('candidate', 'upload-candidate');
+    155|     expect.soft(value.with?.name).toBe('hansard-candidate');
+       |                                   ^
+    156|     expect.soft((value.with?.path ?? '')).toContain('candidate.json');
+    157|     expect.soft(value.with?.path ?? '').not.toContain('/artifact/');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[29/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF015: candidate metadata is retained outside the deployed file directory
+AssertionError: expected '' to contain 'candidate.json'
+
+- Expected
++ Received
+
+- candidate.json
+
+ ❯ tests/unit/publication-workflow.test.ts:156:43
+    154|     const value = step('candidate', 'upload-candidate');
+    155|     expect.soft(value.with?.name).toBe('hansard-candidate');
+    156|     expect.soft((value.with?.path ?? '')).toContain('candidate.json');
+       |                                           ^
+    157|     expect.soft(value.with?.path ?? '').not.toContain('/artifact/');
+    158|     expect.soft(value.with?.['retention-days']).toBe(7);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[30/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF015: candidate metadata is retained outside the deployed file directory
+AssertionError: expected undefined to be 7 // Object.is equality
+
+- Expected:
+7
+
++ Received:
+undefined
+
+ ❯ tests/unit/publication-workflow.test.ts:158:49
+    156|     expect.soft((value.with?.path ?? '')).toContain('candidate.json');
+    157|     expect.soft(value.with?.path ?? '').not.toContain('/artifact/');
+    158|     expect.soft(value.with?.['retention-days']).toBe(7);
+       |                                                 ^
+    159|   });
+    160|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[31/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF016: frozen Pages candidate transport is explicitly kept seven days
+AssertionError: expected undefined to be 'actions/upload-pages-artifact@7b1f4a7…' // Object.is equality
+
+- Expected:
+"actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b"
+
++ Received:
+undefined
+
+ ❯ tests/unit/publication-workflow.test.ts:165:29
+    163|   () => {
+    164|     const value = step('candidate', 'freeze-pages');
+    165|     expect.soft(value.uses).toBe('actions/upload-pages-artifact@7b1f4a…
+       |                             ^
+    166|     expect.soft(value.with?.name).toBe('hansard-pages-candidate');
+    167|     expect.soft(value.with?.['retention-days']).toBe(7);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[32/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF016: frozen Pages candidate transport is explicitly kept seven days
+AssertionError: expected undefined to be 'hansard-pages-candidate' // Object.is equality
+
+- Expected:
+"hansard-pages-candidate"
+
++ Received:
+undefined
+
+ ❯ tests/unit/publication-workflow.test.ts:166:35
+    164|     const value = step('candidate', 'freeze-pages');
+    165|     expect.soft(value.uses).toBe('actions/upload-pages-artifact@7b1f4a…
+    166|     expect.soft(value.with?.name).toBe('hansard-pages-candidate');
+       |                                   ^
+    167|     expect.soft(value.with?.['retention-days']).toBe(7);
+    168|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[33/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF016: frozen Pages candidate transport is explicitly kept seven days
+AssertionError: expected undefined to be 7 // Object.is equality
+
+- Expected:
+7
+
++ Received:
+undefined
+
+ ❯ tests/unit/publication-workflow.test.ts:167:49
+    165|     expect.soft(value.uses).toBe('actions/upload-pages-artifact@7b1f4a…
+    166|     expect.soft(value.with?.name).toBe('hansard-pages-candidate');
+    167|     expect.soft(value.with?.['retention-days']).toBe(7);
+       |                                                 ^
+    168|   });
+    169|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[34/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF017: pending evidence cannot reach the Pages deployment job
+AssertionError: expected '' to contain 'inputs.operation == \'promote\''
+
+- Expected
++ Received
+
+- inputs.operation == 'promote'
+
+ ❯ tests/unit/publication-workflow.test.ts:173:43
+    171|   /** Checks explicit promotion consent and controller readiness at th…
+    172|   () => {
+    173|     expect.soft((job('deploy').if ?? '')).toContain("inputs.operation …
+       |                                           ^
+    174|     expect.soft((job('deploy').if ?? '')).toContain("needs.candidate.o…
+    175|     expect.soft(job('deploy').needs).toEqual(['candidate']);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[35/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF017: pending evidence cannot reach the Pages deployment job
+AssertionError: expected '' to contain 'needs.candidate.outputs.outcome == \'…'
+
+- Expected
++ Received
+
+- needs.candidate.outputs.outcome == 'ready'
+
+ ❯ tests/unit/publication-workflow.test.ts:174:43
+    172|   () => {
+    173|     expect.soft((job('deploy').if ?? '')).toContain("inputs.operation …
+    174|     expect.soft((job('deploy').if ?? '')).toContain("needs.candidate.o…
+       |                                           ^
+    175|     expect.soft(job('deploy').needs).toEqual(['candidate']);
+    176|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[36/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF017: pending evidence cannot reach the Pages deployment job
+AssertionError: expected undefined to deeply equal [ 'candidate' ]
+
+- Expected:
+[
+  "candidate",
+]
+
++ Received:
+undefined
+
+ ❯ tests/unit/publication-workflow.test.ts:175:38
+    173|     expect.soft((job('deploy').if ?? '')).toContain("inputs.operation …
+    174|     expect.soft((job('deploy').if ?? '')).toContain("needs.candidate.o…
+    175|     expect.soft(job('deploy').needs).toEqual(['candidate']);
+       |                                      ^
+    176|   });
+    177|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[37/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF018: promotion reuploads the original artifact.tar with seven-day retention
+AssertionError: expected undefined to be 'actions/upload-artifact@cf430e030ddbb…' // Object.is equality
+
+- Expected:
+"actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9"
+
++ Received:
+undefined
+
+ ❯ tests/unit/publication-workflow.test.ts:182:29
+    180|   () => {
+    181|     const value = step('candidate', 'upload-promotion');
+    182|     expect.soft(value.uses).toBe('actions/upload-artifact@cf430e030ddb…
+       |                             ^
+    183|     expect.soft(value.with?.name).toBe('github-pages');
+    184|     expect.soft((value.with?.path ?? '')).toContain('artifact.tar');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[38/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF018: promotion reuploads the original artifact.tar with seven-day retention
+AssertionError: expected undefined to be 'github-pages' // Object.is equality
+
+- Expected:
+"github-pages"
+
++ Received:
+undefined
+
+ ❯ tests/unit/publication-workflow.test.ts:183:35
+    181|     const value = step('candidate', 'upload-promotion');
+    182|     expect.soft(value.uses).toBe('actions/upload-artifact@cf430e030ddb…
+    183|     expect.soft(value.with?.name).toBe('github-pages');
+       |                                   ^
+    184|     expect.soft((value.with?.path ?? '')).toContain('artifact.tar');
+    185|     expect.soft(value.with?.['retention-days']).toBe(7);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[39/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF018: promotion reuploads the original artifact.tar with seven-day retention
+AssertionError: expected '' to contain 'artifact.tar'
+
+- Expected
++ Received
+
+- artifact.tar
+
+ ❯ tests/unit/publication-workflow.test.ts:184:43
+    182|     expect.soft(value.uses).toBe('actions/upload-artifact@cf430e030ddb…
+    183|     expect.soft(value.with?.name).toBe('github-pages');
+    184|     expect.soft((value.with?.path ?? '')).toContain('artifact.tar');
+       |                                           ^
+    185|     expect.soft(value.with?.['retention-days']).toBe(7);
+    186|     for (const entry of steps('deploy')) expect.soft(entry.run ?? '').…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[40/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF018: promotion reuploads the original artifact.tar with seven-day retention
+AssertionError: expected undefined to be 7 // Object.is equality
+
+- Expected:
+7
+
++ Received:
+undefined
+
+ ❯ tests/unit/publication-workflow.test.ts:185:49
+    183|     expect.soft(value.with?.name).toBe('github-pages');
+    184|     expect.soft((value.with?.path ?? '')).toContain('artifact.tar');
+    185|     expect.soft(value.with?.['retention-days']).toBe(7);
+       |                                                 ^
+    186|     for (const entry of steps('deploy')) expect.soft(entry.run ?? '').…
+    187|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[41/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF019: actual deployment uses the reviewed pinned action without PR previews
+AssertionError: expected undefined to be 'actions/deploy-pages@d6db90164ac5ed86…' // Object.is equality
+
+- Expected:
+"actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e"
+
++ Received:
+undefined
+
+ ❯ tests/unit/publication-workflow.test.ts:192:52
+    190|   /** Checks the actual Pages submission action. @returns Nothing afte…
+    191|   () => {
+    192|     expect.soft(step('deploy', 'deployment').uses).toBe('actions/deplo…
+       |                                                    ^
+    193|     expect.soft(step('deploy', 'deployment').with?.artifact_name).toBe…
+    194|     expect.soft(step('deploy', 'deployment').with?.preview ?? false).t…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[42/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF019: actual deployment uses the reviewed pinned action without PR previews
+AssertionError: expected undefined to be 'github-pages' // Object.is equality
+
+- Expected:
+"github-pages"
+
++ Received:
+undefined
+
+ ❯ tests/unit/publication-workflow.test.ts:193:67
+    191|   () => {
+    192|     expect.soft(step('deploy', 'deployment').uses).toBe('actions/deplo…
+    193|     expect.soft(step('deploy', 'deployment').with?.artifact_name).toBe…
+       |                                                                   ^
+    194|     expect.soft(step('deploy', 'deployment').with?.preview ?? false).t…
+    195|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[43/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF020: finish runs after both candidate and deployment even when either fails
+AssertionError: expected undefined to be 'always()' // Object.is equality
+
+- Expected:
+"always()"
+
++ Received:
+undefined
+
+ ❯ tests/unit/publication-workflow.test.ts:199:41
+    197| test('PUB-WF020: finish runs after both candidate and deployment even …
+    198|   /** Checks always-run started-outcome reporting. @returns Nothing af…
+    199|   () => { expect.soft(job('finish').if).toBe('always()'); expect.soft(…
+       |                                         ^
+    200|
+    201| test('PUB-WF021: finalization receives real job outcomes and performs …
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[44/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF020: finish runs after both candidate and deployment even when either fails
+AssertionError: expected undefined to deeply equal [ 'candidate', 'deploy' ]
+
+- Expected:
+[
+  "candidate",
+  "deploy",
+]
+
++ Received:
+undefined
+
+ ❯ tests/unit/publication-workflow.test.ts:199:92
+    197| test('PUB-WF020: finish runs after both candidate and deployment even …
+    198|   /** Checks always-run started-outcome reporting. @returns Nothing af…
+    199|   () => { expect.soft(job('finish').if).toBe('always()'); expect.soft(…
+       |                                                                                            ^
+    200|
+    201| test('PUB-WF021: finalization receives real job outcomes and performs …
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[45/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF021: finalization receives real job outcomes and performs the actual receipt controller
+AssertionError: expected undefined to be 'node scripts/publication.ts finalize' // Object.is equality
+
+- Expected:
+"node scripts/publication.ts finalize"
+
++ Received:
+undefined
+
+ ❯ tests/unit/publication-workflow.test.ts:204:49
+    202|   /** Checks completed-deployment versus not-attempted distinctions. @…
+    203|   () => {
+    204|     expect.soft(step('finish', 'finalize').run).toBe('node scripts/pub…
+       |                                                 ^
+    205|     expect.soft(job('finish').env?.HANSARD_CANDIDATE_RESULT).toBe('${{…
+    206|     expect.soft(job('finish').env?.HANSARD_DEPLOY_RESULT).toBe('${{ ne…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[46/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF021: finalization receives real job outcomes and performs the actual receipt controller
+AssertionError: expected undefined to be '${{ needs.candidate.result }}' // Object.is equality
+
+- Expected:
+"${{ needs.candidate.result }}"
+
++ Received:
+undefined
+
+ ❯ tests/unit/publication-workflow.test.ts:205:62
+    203|   () => {
+    204|     expect.soft(step('finish', 'finalize').run).toBe('node scripts/pub…
+    205|     expect.soft(job('finish').env?.HANSARD_CANDIDATE_RESULT).toBe('${{…
+       |                                                              ^
+    206|     expect.soft(job('finish').env?.HANSARD_DEPLOY_RESULT).toBe('${{ ne…
+    207|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[47/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF021: finalization receives real job outcomes and performs the actual receipt controller
+AssertionError: expected undefined to be '${{ needs.deploy.result }}' // Object.is equality
+
+- Expected:
+"${{ needs.deploy.result }}"
+
++ Received:
+undefined
+
+ ❯ tests/unit/publication-workflow.test.ts:206:59
+    204|     expect.soft(step('finish', 'finalize').run).toBe('node scripts/pub…
+    205|     expect.soft(job('finish').env?.HANSARD_CANDIDATE_RESULT).toBe('${{…
+    206|     expect.soft(job('finish').env?.HANSARD_DEPLOY_RESULT).toBe('${{ ne…
+       |                                                           ^
+    207|   });
+    208|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[48/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF022: private state and reports are uploaded on failure without becoming deployed assets
+AssertionError: expected undefined to be 'always()' // Object.is equality
+
+- Expected:
+"always()"
+
++ Received:
+undefined
+
+ ❯ tests/unit/publication-workflow.test.ts:213:27
+    211|   () => {
+    212|     const value = step('finish', 'upload-outcomes');
+    213|     expect.soft(value.if).toBe('always()');
+       |                           ^
+    214|     expect.soft(value.with?.name).toBe('hansard-outcomes');
+    215|     expect.soft(value.with?.['retention-days']).toBe(7);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[49/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF022: private state and reports are uploaded on failure without becoming deployed assets
+AssertionError: expected undefined to be 'hansard-outcomes' // Object.is equality
+
+- Expected:
+"hansard-outcomes"
+
++ Received:
+undefined
+
+ ❯ tests/unit/publication-workflow.test.ts:214:35
+    212|     const value = step('finish', 'upload-outcomes');
+    213|     expect.soft(value.if).toBe('always()');
+    214|     expect.soft(value.with?.name).toBe('hansard-outcomes');
+       |                                   ^
+    215|     expect.soft(value.with?.['retention-days']).toBe(7);
+    216|     expect.soft((value.with?.path ?? '')).toContain('.cache/hansard');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[50/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF022: private state and reports are uploaded on failure without becoming deployed assets
+AssertionError: expected undefined to be 7 // Object.is equality
+
+- Expected:
+7
+
++ Received:
+undefined
+
+ ❯ tests/unit/publication-workflow.test.ts:215:49
+    213|     expect.soft(value.if).toBe('always()');
+    214|     expect.soft(value.with?.name).toBe('hansard-outcomes');
+    215|     expect.soft(value.with?.['retention-days']).toBe(7);
+       |                                                 ^
+    216|     expect.soft((value.with?.path ?? '')).toContain('.cache/hansard');
+    217|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[51/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF022: private state and reports are uploaded on failure without becoming deployed assets
+AssertionError: expected '' to contain '.cache/hansard'
+
+- Expected
++ Received
+
+- .cache/hansard
+
+ ❯ tests/unit/publication-workflow.test.ts:216:43
+    214|     expect.soft(value.with?.name).toBe('hansard-outcomes');
+    215|     expect.soft(value.with?.['retention-days']).toBe(7);
+    216|     expect.soft((value.with?.path ?? '')).toContain('.cache/hansard');
+       |                                           ^
+    217|   });
+    218|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[52/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF023: missing required prepared files fails the upload
+AssertionError: expected undefined to be 'error' // Object.is equality
+
+- Expected:
+"error"
+
++ Received:
+undefined
+
+ ❯ tests/unit/publication-workflow.test.ts:222:84
+    220|   /** Checks mandatory evidence transport cannot silently succeed with…
+    221|   () => {
+    222|     expect.soft(step('candidate', 'upload-candidate').with?.['if-no-fi…
+       |                                                                                    ^
+    223|     expect.soft(step('candidate', 'upload-promotion').with?.['if-no-fi…
+    224|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[53/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF023: missing required prepared files fails the upload
+AssertionError: expected undefined to be 'error' // Object.is equality
+
+- Expected:
+"error"
+
++ Received:
+undefined
+
+ ❯ tests/unit/publication-workflow.test.ts:223:84
+    221|   () => {
+    222|     expect.soft(step('candidate', 'upload-candidate').with?.['if-no-fi…
+    223|     expect.soft(step('candidate', 'upload-promotion').with?.['if-no-fi…
+       |                                                                                    ^
+    224|   });
+    225|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[54/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF024: all third-party workflow actions are pinned to reviewed immutable revisions
+AssertionError: expected 0 to be greater than 0
+ ❯ tests/unit/publication-workflow.test.ts:229:66
+    227|   /** Checks a nonempty complete action set, without treating an empty…
+    228|   () => {
+    229|     const references = actions(); expect.soft(references.length).toBeG…
+       |                                                                  ^
+    230|     for (const reference of references) expect.soft(reference).toMatch…
+    231|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[55/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF025: preparation and finalization run Node 24 from the project version file
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF025: preparation and finalization run Node 24 from the project version file
+AssertionError: expected undefined to be 'actions/setup-node@249970729cb0ef3589…' // Object.is equality
+
+- Expected:
+"actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38"
+
++ Received:
+undefined
+
+ ❯ tests/unit/publication-workflow.test.ts:238:31
+    236|     for (const name of ['candidate', 'finish']) {
+    237|       const value = step(name, 'node');
+    238|       expect.soft(value.uses).toBe('actions/setup-node@249970729cb0ef3…
+       |                               ^
+    239|       expect.soft(value.with?.['node-version-file']).toBe('.nvmrc');
+    240|     }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[56/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF025: preparation and finalization run Node 24 from the project version file
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF025: preparation and finalization run Node 24 from the project version file
+AssertionError: expected undefined to be '.nvmrc' // Object.is equality
+
+- Expected:
+".nvmrc"
+
++ Received:
+undefined
+
+ ❯ tests/unit/publication-workflow.test.ts:239:54
+    237|       const value = step(name, 'node');
+    238|       expect.soft(value.uses).toBe('actions/setup-node@249970729cb0ef3…
+    239|       expect.soft(value.with?.['node-version-file']).toBe('.nvmrc');
+       |                                                      ^
+    240|     }
+    241|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[57/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF026: explicit partial recovery names its producing run without a trust override
+AssertionError: expected undefined to match object { type: 'string', required: false }
+
+- Expected:
+{
+  "required": false,
+  "type": "string",
+}
+
++ Received:
+undefined
+
+ ❯ tests/unit/publication-workflow.test.ts:254:77
+    252|   /** Checks manual recovery input and environment-only transport. @re…
+    253|   () => {
+    254|     expect.soft(configuration.on?.workflow_dispatch?.inputs?.resume_ru…
+       |                                                                             ^
+    255|     expect.soft(job('candidate').env?.HANSARD_RESUME_RUN_ID).toBe('${{…
+    256|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[58/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF026: explicit partial recovery names its producing run without a trust override
+AssertionError: expected undefined to be '${{ inputs.resume_run_id }}' // Object.is equality
+
+- Expected:
+"${{ inputs.resume_run_id }}"
+
++ Received:
+undefined
+
+ ❯ tests/unit/publication-workflow.test.ts:255:62
+    253|   () => {
+    254|     expect.soft(configuration.on?.workflow_dispatch?.inputs?.resume_ru…
+    255|     expect.soft(job('candidate').env?.HANSARD_RESUME_RUN_ID).toBe('${{…
+       |                                                              ^
+    256|   });
+    257|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[59/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF027: private recovery discovers default-branch successful workflow state independently
+AssertionError: expected '' to contain 'gh api'
+
+- Expected
++ Received
+
+- gh api
+
+ ❯ tests/unit/publication-workflow.test.ts:262:26
+    260|   () => {
+    261|     const command = step('candidate', 'resolve-state').run ?? '';
+    262|     expect.soft(command).toContain('gh api'); expect.soft(command).toC…
+       |                          ^
+    263|     expect.soft(command).toContain('branch=main'); expect.soft(command…
+    264|     expect.soft(command).toContain('hansard-state'); expect.soft(comma…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[60/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF027: private recovery discovers default-branch successful workflow state independently
+AssertionError: expected '' to contain 'pages.yml'
+
+- Expected
++ Received
+
+- pages.yml
+
+ ❯ tests/unit/publication-workflow.test.ts:262:68
+    260|   () => {
+    261|     const command = step('candidate', 'resolve-state').run ?? '';
+    262|     expect.soft(command).toContain('gh api'); expect.soft(command).toC…
+       |                                                                    ^
+    263|     expect.soft(command).toContain('branch=main'); expect.soft(command…
+    264|     expect.soft(command).toContain('hansard-state'); expect.soft(comma…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[61/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF027: private recovery discovers default-branch successful workflow state independently
+AssertionError: expected '' to contain 'branch=main'
+
+- Expected
++ Received
+
+- branch=main
+
+ ❯ tests/unit/publication-workflow.test.ts:263:26
+    261|     const command = step('candidate', 'resolve-state').run ?? '';
+    262|     expect.soft(command).toContain('gh api'); expect.soft(command).toC…
+    263|     expect.soft(command).toContain('branch=main'); expect.soft(command…
+       |                          ^
+    264|     expect.soft(command).toContain('hansard-state'); expect.soft(comma…
+    265|     expect.soft(command).toContain('GITHUB_OUTPUT');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[62/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF027: private recovery discovers default-branch successful workflow state independently
+AssertionError: expected '' to contain 'status=success'
+
+- Expected
++ Received
+
+- status=success
+
+ ❯ tests/unit/publication-workflow.test.ts:263:73
+    261|     const command = step('candidate', 'resolve-state').run ?? '';
+    262|     expect.soft(command).toContain('gh api'); expect.soft(command).toC…
+    263|     expect.soft(command).toContain('branch=main'); expect.soft(command…
+       |                                                                         ^
+    264|     expect.soft(command).toContain('hansard-state'); expect.soft(comma…
+    265|     expect.soft(command).toContain('GITHUB_OUTPUT');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[63/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF027: private recovery discovers default-branch successful workflow state independently
+AssertionError: expected '' to contain 'hansard-state'
+
+- Expected
++ Received
+
+- hansard-state
+
+ ❯ tests/unit/publication-workflow.test.ts:264:26
+    262|     expect.soft(command).toContain('gh api'); expect.soft(command).toC…
+    263|     expect.soft(command).toContain('branch=main'); expect.soft(command…
+    264|     expect.soft(command).toContain('hansard-state'); expect.soft(comma…
+       |                          ^
+    265|     expect.soft(command).toContain('GITHUB_OUTPUT');
+    266|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[64/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF027: private recovery discovers default-branch successful workflow state independently
+AssertionError: expected '' to contain 'hansard-served'
+
+- Expected
++ Received
+
+- hansard-served
+
+ ❯ tests/unit/publication-workflow.test.ts:264:75
+    262|     expect.soft(command).toContain('gh api'); expect.soft(command).toC…
+    263|     expect.soft(command).toContain('branch=main'); expect.soft(command…
+    264|     expect.soft(command).toContain('hansard-state'); expect.soft(comma…
+       |                                                                           ^
+    265|     expect.soft(command).toContain('GITHUB_OUTPUT');
+    266|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[65/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF027: private recovery discovers default-branch successful workflow state independently
+AssertionError: expected '' to contain 'GITHUB_OUTPUT'
+
+- Expected
++ Received
+
+- GITHUB_OUTPUT
+
+ ❯ tests/unit/publication-workflow.test.ts:265:26
+    263|     expect.soft(command).toContain('branch=main'); expect.soft(command…
+    264|     expect.soft(command).toContain('hansard-state'); expect.soft(comma…
+    265|     expect.soft(command).toContain('GITHUB_OUTPUT');
+       |                          ^
+    266|   });
+    267|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[66/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF028: download-state restores only a concrete independently resolved artifact
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF028: download-served restores only a concrete independently resolved artifact
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF028: download-resume restores only a concrete independently resolved artifact
+AssertionError: expected undefined to be 'actions/download-artifact@9000827ccba…' // Object.is equality
+
+- Expected:
+"actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333"
+
++ Received:
+undefined
+
+ ❯ tests/unit/publication-workflow.test.ts:272:29
+    270|   () => {
+    271|     const value = step('candidate', id);
+    272|     expect.soft(value.uses).toBe('actions/download-artifact@9000827ccb…
+       |                             ^
+    273|     expect.soft((value.with?.['artifact-ids'] ?? '')).toContain('steps…
+    274|     expect.soft(value.with?.['digest-mismatch']).toBe('error');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[67/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF028: download-state restores only a concrete independently resolved artifact
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF028: download-served restores only a concrete independently resolved artifact
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF028: download-resume restores only a concrete independently resolved artifact
+AssertionError: expected '' to contain 'steps.resolve-state.outputs.'
+
+- Expected
++ Received
+
+- steps.resolve-state.outputs.
+
+ ❯ tests/unit/publication-workflow.test.ts:273:55
+    271|     const value = step('candidate', id);
+    272|     expect.soft(value.uses).toBe('actions/download-artifact@9000827ccb…
+    273|     expect.soft((value.with?.['artifact-ids'] ?? '')).toContain('steps…
+       |                                                       ^
+    274|     expect.soft(value.with?.['digest-mismatch']).toBe('error');
+    275|     expect.soft(value.with?.['github-token']).toBe('${{ github.token }…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[68/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF028: download-state restores only a concrete independently resolved artifact
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF028: download-served restores only a concrete independently resolved artifact
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF028: download-resume restores only a concrete independently resolved artifact
+AssertionError: expected undefined to be 'error' // Object.is equality
+
+- Expected:
+"error"
+
++ Received:
+undefined
+
+ ❯ tests/unit/publication-workflow.test.ts:274:50
+    272|     expect.soft(value.uses).toBe('actions/download-artifact@9000827ccb…
+    273|     expect.soft((value.with?.['artifact-ids'] ?? '')).toContain('steps…
+    274|     expect.soft(value.with?.['digest-mismatch']).toBe('error');
+       |                                                  ^
+    275|     expect.soft(value.with?.['github-token']).toBe('${{ github.token }…
+    276|     expect.soft(value.with?.repository).toBe('${{ github.repository }}…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[69/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF028: download-state restores only a concrete independently resolved artifact
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF028: download-served restores only a concrete independently resolved artifact
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF028: download-resume restores only a concrete independently resolved artifact
+AssertionError: expected undefined to be '${{ github.token }}' // Object.is equality
+
+- Expected:
+"${{ github.token }}"
+
++ Received:
+undefined
+
+ ❯ tests/unit/publication-workflow.test.ts:275:47
+    273|     expect.soft((value.with?.['artifact-ids'] ?? '')).toContain('steps…
+    274|     expect.soft(value.with?.['digest-mismatch']).toBe('error');
+    275|     expect.soft(value.with?.['github-token']).toBe('${{ github.token }…
+       |                                               ^
+    276|     expect.soft(value.with?.repository).toBe('${{ github.repository }}…
+    277|     expect.soft(value.with?.['run-id']).toBeDefined(); expect.soft(val…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[70/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF028: download-state restores only a concrete independently resolved artifact
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF028: download-served restores only a concrete independently resolved artifact
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF028: download-resume restores only a concrete independently resolved artifact
+AssertionError: expected undefined to be '${{ github.repository }}' // Object.is equality
+
+- Expected:
+"${{ github.repository }}"
+
++ Received:
+undefined
+
+ ❯ tests/unit/publication-workflow.test.ts:276:41
+    274|     expect.soft(value.with?.['digest-mismatch']).toBe('error');
+    275|     expect.soft(value.with?.['github-token']).toBe('${{ github.token }…
+    276|     expect.soft(value.with?.repository).toBe('${{ github.repository }}…
+       |                                         ^
+    277|     expect.soft(value.with?.['run-id']).toBeDefined(); expect.soft(val…
+    278|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[71/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF028: download-state restores only a concrete independently resolved artifact
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF028: download-served restores only a concrete independently resolved artifact
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF028: download-resume restores only a concrete independently resolved artifact
+AssertionError: expected undefined to be defined
+ ❯ tests/unit/publication-workflow.test.ts:277:41
+    275|     expect.soft(value.with?.['github-token']).toBe('${{ github.token }…
+    276|     expect.soft(value.with?.repository).toBe('${{ github.repository }}…
+    277|     expect.soft(value.with?.['run-id']).toBeDefined(); expect.soft(val…
+       |                                         ^
+    278|   });
+    279|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[72/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF028: download-state restores only a concrete independently resolved artifact
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF028: download-served restores only a concrete independently resolved artifact
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF028: download-resume restores only a concrete independently resolved artifact
+AssertionError: expected undefined to be defined
+ ❯ tests/unit/publication-workflow.test.ts:277:78
+    275|     expect.soft(value.with?.['github-token']).toBe('${{ github.token }…
+    276|     expect.soft(value.with?.repository).toBe('${{ github.repository }}…
+    277|     expect.soft(value.with?.['run-id']).toBeDefined(); expect.soft(val…
+       |                                                                              ^
+    278|   });
+    279|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[73/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF029: accepted state and partial progress are distinct private artifacts retained seven days
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF029: accepted state and partial progress are distinct private artifacts retained seven days
+AssertionError: expected undefined to be 'actions/upload-artifact@cf430e030ddbb…' // Object.is equality
+
+- Expected:
+"actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9"
+
++ Received:
+undefined
+
+ ❯ tests/unit/publication-workflow.test.ts:285:31
+    283|     for (const [id, name] of [['upload-state', 'hansard-state'], ['upl…
+    284|       const value = step('candidate', id);
+    285|       expect.soft(value.uses).toBe('actions/upload-artifact@cf430e030d…
+       |                               ^
+    286|       expect.soft(value.with?.name).toBe(name); expect.soft(value.with…
+    287|       expect.soft(value.with?.['include-hidden-files']).toBe(true);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[74/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF029: accepted state and partial progress are distinct private artifacts retained seven days
+AssertionError: expected undefined to be 'hansard-state' // Object.is equality
+
+- Expected:
+"hansard-state"
+
++ Received:
+undefined
+
+ ❯ tests/unit/publication-workflow.test.ts:286:37
+    284|       const value = step('candidate', id);
+    285|       expect.soft(value.uses).toBe('actions/upload-artifact@cf430e030d…
+    286|       expect.soft(value.with?.name).toBe(name); expect.soft(value.with…
+       |                                     ^
+    287|       expect.soft(value.with?.['include-hidden-files']).toBe(true);
+    288|       expect.soft(value.if).toBeDefined(); expect.soft(value.with?.pat…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[75/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF029: accepted state and partial progress are distinct private artifacts retained seven days
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF029: accepted state and partial progress are distinct private artifacts retained seven days
+AssertionError: expected undefined to be 7 // Object.is equality
+
+- Expected:
+7
+
++ Received:
+undefined
+
+ ❯ tests/unit/publication-workflow.test.ts:286:93
+    284|       const value = step('candidate', id);
+    285|       expect.soft(value.uses).toBe('actions/upload-artifact@cf430e030d…
+    286|       expect.soft(value.with?.name).toBe(name); expect.soft(value.with…
+       |                                                                                             ^
+    287|       expect.soft(value.with?.['include-hidden-files']).toBe(true);
+    288|       expect.soft(value.if).toBeDefined(); expect.soft(value.with?.pat…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[76/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF029: accepted state and partial progress are distinct private artifacts retained seven days
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF029: accepted state and partial progress are distinct private artifacts retained seven days
+AssertionError: expected undefined to be true // Object.is equality
+
+- Expected:
+true
+
++ Received:
+undefined
+
+ ❯ tests/unit/publication-workflow.test.ts:287:57
+    285|       expect.soft(value.uses).toBe('actions/upload-artifact@cf430e030d…
+    286|       expect.soft(value.with?.name).toBe(name); expect.soft(value.with…
+    287|       expect.soft(value.with?.['include-hidden-files']).toBe(true);
+       |                                                         ^
+    288|       expect.soft(value.if).toBeDefined(); expect.soft(value.with?.pat…
+    289|     }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[77/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF029: accepted state and partial progress are distinct private artifacts retained seven days
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF029: accepted state and partial progress are distinct private artifacts retained seven days
+AssertionError: expected undefined to be defined
+ ❯ tests/unit/publication-workflow.test.ts:288:29
+    286|       expect.soft(value.with?.name).toBe(name); expect.soft(value.with…
+    287|       expect.soft(value.with?.['include-hidden-files']).toBe(true);
+    288|       expect.soft(value.if).toBeDefined(); expect.soft(value.with?.pat…
+       |                             ^
+    289|     }
+    290|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[78/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF029: accepted state and partial progress are distinct private artifacts retained seven days
+AssertionError: expected undefined to be 'hansard-partial' // Object.is equality
+
+- Expected:
+"hansard-partial"
+
++ Received:
+undefined
+
+ ❯ tests/unit/publication-workflow.test.ts:286:37
+    284|       const value = step('candidate', id);
+    285|       expect.soft(value.uses).toBe('actions/upload-artifact@cf430e030d…
+    286|       expect.soft(value.with?.name).toBe(name); expect.soft(value.with…
+       |                                     ^
+    287|       expect.soft(value.with?.['include-hidden-files']).toBe(true);
+    288|       expect.soft(value.if).toBeDefined(); expect.soft(value.with?.pat…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[79/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF030: HTTPS test hosting comes from repository configuration instead of downloaded evidence
+AssertionError: expected undefined to be '${{ vars.HANSARD_TEST_ORIGIN }}' // Object.is equality
+
+- Expected:
+"${{ vars.HANSARD_TEST_ORIGIN }}"
+
++ Received:
+undefined
+
+ ❯ tests/unit/publication-workflow.test.ts:294:61
+    292| test('PUB-WF030: HTTPS test hosting comes from repository configuratio…
+    293|   /** Checks the independent test origin; runtime validates its HTTPS …
+    294|   () => { expect(job('candidate').env?.HANSARD_TEST_ORIGIN).toBe('${{ …
+       |                                                             ^
+    295|
+    296| test('PUB-WF031: finalization restores original candidate metadata and…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[80/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF031: finalization restores original candidate metadata and bytes by their actual producing run
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF031: finalization restores original candidate metadata and bytes by their actual producing run
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF031: finalization restores original candidate metadata and bytes by their actual producing run
+AssertionError: expected undefined to be 'actions/download-artifact@9000827ccba…' // Object.is equality
+
+- Expected:
+"actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333"
+
++ Received:
+undefined
+
+ ❯ tests/unit/publication-workflow.test.ts:301:31
+    299|     for (const id of ['download-candidate', 'download-pages', 'downloa…
+    300|       const value = step('finish', id);
+    301|       expect.soft(value.uses).toBe('actions/download-artifact@9000827c…
+       |                               ^
+    302|       expect.soft((value.with?.['artifact-ids'] ?? '')).toContain('nee…
+    303|       expect.soft(value.with?.['run-id']).toBe('${{ needs.candidate.ou…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[81/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF031: finalization restores original candidate metadata and bytes by their actual producing run
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF031: finalization restores original candidate metadata and bytes by their actual producing run
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF031: finalization restores original candidate metadata and bytes by their actual producing run
+AssertionError: expected '' to contain 'needs.candidate.outputs.'
+
+- Expected
++ Received
+
+- needs.candidate.outputs.
+
+ ❯ tests/unit/publication-workflow.test.ts:302:57
+    300|       const value = step('finish', id);
+    301|       expect.soft(value.uses).toBe('actions/download-artifact@9000827c…
+    302|       expect.soft((value.with?.['artifact-ids'] ?? '')).toContain('nee…
+       |                                                         ^
+    303|       expect.soft(value.with?.['run-id']).toBe('${{ needs.candidate.ou…
+    304|       expect.soft(value.with?.['digest-mismatch']).toBe('error');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[82/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF031: finalization restores original candidate metadata and bytes by their actual producing run
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF031: finalization restores original candidate metadata and bytes by their actual producing run
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF031: finalization restores original candidate metadata and bytes by their actual producing run
+AssertionError: expected undefined to be '${{ needs.candidate.outputs.candidate…' // Object.is equality
+
+- Expected:
+"${{ needs.candidate.outputs.candidate_run_id }}"
+
++ Received:
+undefined
+
+ ❯ tests/unit/publication-workflow.test.ts:303:43
+    301|       expect.soft(value.uses).toBe('actions/download-artifact@9000827c…
+    302|       expect.soft((value.with?.['artifact-ids'] ?? '')).toContain('nee…
+    303|       expect.soft(value.with?.['run-id']).toBe('${{ needs.candidate.ou…
+       |                                           ^
+    304|       expect.soft(value.with?.['digest-mismatch']).toBe('error');
+    305|       expect.soft(value.with?.['github-token']).toBe('${{ github.token…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[83/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF031: finalization restores original candidate metadata and bytes by their actual producing run
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF031: finalization restores original candidate metadata and bytes by their actual producing run
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF031: finalization restores original candidate metadata and bytes by their actual producing run
+AssertionError: expected undefined to be 'error' // Object.is equality
+
+- Expected:
+"error"
+
++ Received:
+undefined
+
+ ❯ tests/unit/publication-workflow.test.ts:304:52
+    302|       expect.soft((value.with?.['artifact-ids'] ?? '')).toContain('nee…
+    303|       expect.soft(value.with?.['run-id']).toBe('${{ needs.candidate.ou…
+    304|       expect.soft(value.with?.['digest-mismatch']).toBe('error');
+       |                                                    ^
+    305|       expect.soft(value.with?.['github-token']).toBe('${{ github.token…
+    306|     }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[84/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF031: finalization restores original candidate metadata and bytes by their actual producing run
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF031: finalization restores original candidate metadata and bytes by their actual producing run
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF031: finalization restores original candidate metadata and bytes by their actual producing run
+AssertionError: expected undefined to be '${{ github.token }}' // Object.is equality
+
+- Expected:
+"${{ github.token }}"
+
++ Received:
+undefined
+
+ ❯ tests/unit/publication-workflow.test.ts:305:49
+    303|       expect.soft(value.with?.['run-id']).toBe('${{ needs.candidate.ou…
+    304|       expect.soft(value.with?.['digest-mismatch']).toBe('error');
+    305|       expect.soft(value.with?.['github-token']).toBe('${{ github.token…
+       |                                                 ^
+    306|     }
+    307|     expect.soft(step('finish', 'download-acquired-state').with?.path ?…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[85/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF031: finalization restores original candidate metadata and bytes by their actual producing run
+AssertionError: expected '' to contain '/acquired-state'
+
+- Expected
++ Received
+
+- /acquired-state
+
+ ❯ tests/unit/publication-workflow.test.ts:307:77
+    305|       expect.soft(value.with?.['github-token']).toBe('${{ github.token…
+    306|     }
+    307|     expect.soft(step('finish', 'download-acquired-state').with?.path ?…
+       |                                                                             ^
+    308|   });
+    309|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[86/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF032: finish receives the actual newly uploaded Pages artifact identity and always attempts finalization
+AssertionError: expected undefined to be '${{ steps.upload-promotion.outputs.ar…' // Object.is equality
+
+- Expected:
+"${{ steps.upload-promotion.outputs.artifact-id }}"
+
++ Received:
+undefined
+
+ ❯ tests/unit/publication-workflow.test.ts:313:62
+    311|   /** Checks provider artifact binding and failure-path outcome collec…
+    312|   () => {
+    313|     expect.soft(job('candidate').outputs?.pages_artifact_id).toBe('${{…
+       |                                                              ^
+    314|     expect.soft(job('finish').env?.HANSARD_PAGES_ARTIFACT_ID).toBe('${…
+    315|     expect.soft(step('finish', 'finalize').if).toBe('always()');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[87/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF032: finish receives the actual newly uploaded Pages artifact identity and always attempts finalization
+AssertionError: expected undefined to be '${{ needs.candidate.outputs.pages_art…' // Object.is equality
+
+- Expected:
+"${{ needs.candidate.outputs.pages_artifact_id }}"
+
++ Received:
+undefined
+
+ ❯ tests/unit/publication-workflow.test.ts:314:63
+    312|   () => {
+    313|     expect.soft(job('candidate').outputs?.pages_artifact_id).toBe('${{…
+    314|     expect.soft(job('finish').env?.HANSARD_PAGES_ARTIFACT_ID).toBe('${…
+       |                                                               ^
+    315|     expect.soft(step('finish', 'finalize').if).toBe('always()');
+    316|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[88/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF032: finish receives the actual newly uploaded Pages artifact identity and always attempts finalization
+AssertionError: expected undefined to be 'always()' // Object.is equality
+
+- Expected:
+"always()"
+
++ Received:
+undefined
+
+ ❯ tests/unit/publication-workflow.test.ts:315:48
+    313|     expect.soft(job('candidate').outputs?.pages_artifact_id).toBe('${{…
+    314|     expect.soft(job('finish').env?.HANSARD_PAGES_ARTIFACT_ID).toBe('${…
+    315|     expect.soft(step('finish', 'finalize').if).toBe('always()');
+       |                                                ^
+    316|   });
+    317|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[89/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF033: only confirmed served state is uploaded separately from the acquired checkpoint
+AssertionError: expected undefined to be 'actions/upload-artifact@cf430e030ddbb…' // Object.is equality
+
+- Expected:
+"actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9"
+
++ Received:
+undefined
+
+ ❯ tests/unit/publication-workflow.test.ts:322:29
+    320|   () => {
+    321|     const value = step('finish', 'upload-served');
+    322|     expect.soft(value.uses).toBe('actions/upload-artifact@cf430e030ddb…
+       |                             ^
+    323|     expect.soft(value.with?.name).toBe('hansard-served'); expect.soft(…
+    324|     expect.soft(value.with?.path ?? '').toContain('served-publication.…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[90/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF033: only confirmed served state is uploaded separately from the acquired checkpoint
+AssertionError: expected undefined to be 'hansard-served' // Object.is equality
+
+- Expected:
+"hansard-served"
+
++ Received:
+undefined
+
+ ❯ tests/unit/publication-workflow.test.ts:323:35
+    321|     const value = step('finish', 'upload-served');
+    322|     expect.soft(value.uses).toBe('actions/upload-artifact@cf430e030ddb…
+    323|     expect.soft(value.with?.name).toBe('hansard-served'); expect.soft(…
+       |                                   ^
+    324|     expect.soft(value.with?.path ?? '').toContain('served-publication.…
+    325|     expect.soft(value.if ?? '').toContain('finalized');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[91/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF033: only confirmed served state is uploaded separately from the acquired checkpoint
+AssertionError: expected undefined to be 7 // Object.is equality
+
+- Expected:
+7
+
++ Received:
+undefined
+
+ ❯ tests/unit/publication-workflow.test.ts:323:103
+    321|     const value = step('finish', 'upload-served');
+    322|     expect.soft(value.uses).toBe('actions/upload-artifact@cf430e030ddb…
+    323|     expect.soft(value.with?.name).toBe('hansard-served'); expect.soft(…
+       |                                                                                                       ^
+    324|     expect.soft(value.with?.path ?? '').toContain('served-publication.…
+    325|     expect.soft(value.if ?? '').toContain('finalized');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[92/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF033: only confirmed served state is uploaded separately from the acquired checkpoint
+AssertionError: expected '' to contain 'served-publication.json'
+
+- Expected
++ Received
+
+- served-publication.json
+
+ ❯ tests/unit/publication-workflow.test.ts:324:41
+    322|     expect.soft(value.uses).toBe('actions/upload-artifact@cf430e030ddb…
+    323|     expect.soft(value.with?.name).toBe('hansard-served'); expect.soft(…
+    324|     expect.soft(value.with?.path ?? '').toContain('served-publication.…
+       |                                         ^
+    325|     expect.soft(value.if ?? '').toContain('finalized');
+    326|     for (const entry of steps('finish')) expect.soft(entry.with?.name)…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[93/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF033: only confirmed served state is uploaded separately from the acquired checkpoint
+AssertionError: expected '' to contain 'finalized'
+
+- Expected
++ Received
+
+- finalized
+
+ ❯ tests/unit/publication-workflow.test.ts:325:33
+    323|     expect.soft(value.with?.name).toBe('hansard-served'); expect.soft(…
+    324|     expect.soft(value.with?.path ?? '').toContain('served-publication.…
+    325|     expect.soft(value.if ?? '').toContain('finalized');
+       |                                 ^
+    326|     for (const entry of steps('finish')) expect.soft(entry.with?.name)…
+    327|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[94/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF034: provider API operations receive the actual runner token without printing it
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF034: provider API operations receive the actual runner token without printing it
+AssertionError: expected undefined to be '${{ github.token }}' // Object.is equality
+
+- Expected:
+"${{ github.token }}"
+
++ Received:
+undefined
+
+ ❯ tests/unit/publication-workflow.test.ts:332:86
+    330|   /** Checks real API authentication at both controller roles. @return…
+    331|   () => {
+    332|     for (const name of ['candidate', 'finish']) expect.soft(job(name).…
+       |                                                                                      ^
+    333|     for (const name of ['candidate', 'finish']) for (const entry of st…
+    334|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[95/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF035: finalization can read provider Pages and environment proof without deployment writes
+AssertionError: expected undefined to deeply equal { contents: 'read', …(3) }
+
+- Expected:
+{
+  "actions": "read",
+  "contents": "read",
+  "deployments": "read",
+  "pages": "read",
+}
+
++ Received:
+undefined
+
+ ❯ tests/unit/publication-workflow.test.ts:338:45
+    336| test('PUB-WF035: finalization can read provider Pages and environment …
+    337|   /** Checks permissions required by the authenticated postdeployment …
+    338|   () => { expect(job('finish').permissions).toEqual({ contents: 'read'…
+       |                                             ^
+    339|
+    340| test('PUB-WF036: both controller jobs restore the checkout and locked …
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[96/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF036: both controller jobs restore the checkout and locked dependencies before execution
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF036: both controller jobs restore the checkout and locked dependencies before execution
+AssertionError: expected undefined to be 'actions/checkout@d23441a48e516b6c34ae…' // Object.is equality
+
+- Expected:
+"actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803"
+
++ Received:
+undefined
+
+ ❯ tests/unit/publication-workflow.test.ts:345:48
+    343|     for (const name of ['candidate', 'finish']) {
+    344|       const entries = steps(name);
+    345|       expect.soft(step(name, 'checkout').uses).toBe('actions/checkout@…
+       |                                                ^
+    346|       expect.soft(step(name, 'dependencies').run).toBe('npm ci');
+    347|       const ids = entries.map(
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[97/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF036: both controller jobs restore the checkout and locked dependencies before execution
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF036: both controller jobs restore the checkout and locked dependencies before execution
+AssertionError: expected undefined to be 'npm ci' // Object.is equality
+
+- Expected:
+"npm ci"
+
++ Received:
+undefined
+
+ ❯ tests/unit/publication-workflow.test.ts:346:51
+    344|       const entries = steps(name);
+    345|       expect.soft(step(name, 'checkout').uses).toBe('actions/checkout@…
+    346|       expect.soft(step(name, 'dependencies').run).toBe('npm ci');
+       |                                                   ^
+    347|       const ids = entries.map(
+    348|         /** Reads stable step ordering without executing a job. @param…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[98/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF036: both controller jobs restore the checkout and locked dependencies before execution
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF036: both controller jobs restore the checkout and locked dependencies before execution
+AssertionError: expected -1 to be greater than or equal to 0
+ ❯ tests/unit/publication-workflow.test.ts:350:44
+    348|         /** Reads stable step ordering without executing a job. @param…
+    349|         (value) => value.id);
+    350|       expect.soft(ids.indexOf('checkout')).toBeGreaterThanOrEqual(0);
+       |                                            ^
+    351|       expect.soft(ids.indexOf('dependencies')).toBeGreaterThan(ids.ind…
+    352|       expect.soft(ids.indexOf(name === 'candidate' ? 'prepare' : 'fina…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[99/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF036: both controller jobs restore the checkout and locked dependencies before execution
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF036: both controller jobs restore the checkout and locked dependencies before execution
+AssertionError: expected -1 to be greater than -1
+ ❯ tests/unit/publication-workflow.test.ts:351:48
+    349|         (value) => value.id);
+    350|       expect.soft(ids.indexOf('checkout')).toBeGreaterThanOrEqual(0);
+    351|       expect.soft(ids.indexOf('dependencies')).toBeGreaterThan(ids.ind…
+       |                                                ^
+    352|       expect.soft(ids.indexOf(name === 'candidate' ? 'prepare' : 'fina…
+    353|     }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[100/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF036: both controller jobs restore the checkout and locked dependencies before execution
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF036: both controller jobs restore the checkout and locked dependencies before execution
+AssertionError: expected -1 to be greater than -1
+ ❯ tests/unit/publication-workflow.test.ts:352:79
+    350|       expect.soft(ids.indexOf('checkout')).toBeGreaterThanOrEqual(0);
+    351|       expect.soft(ids.indexOf('dependencies')).toBeGreaterThan(ids.ind…
+    352|       expect.soft(ids.indexOf(name === 'candidate' ? 'prepare' : 'fina…
+       |                                                                               ^
+    353|     }
+    354|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[101/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF037: finish has an always-run shell summary fallback for unavailable Node or dependencies
+AssertionError: expected undefined to be 'always()' // Object.is equality
+
+- Expected:
+"always()"
+
++ Received:
+undefined
+
+ ❯ tests/unit/publication-workflow.test.ts:360:27
+    358|   () => {
+    359|     const value = step('finish', 'summary');
+    360|     expect.soft(value.if).toBe('always()');
+       |                           ^
+    361|     expect.soft(value.run ?? '').toContain('GITHUB_STEP_SUMMARY');
+    362|     expect.soft(value.run ?? '').toContain('HANSARD_CANDIDATE_RESULT');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[102/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF037: finish has an always-run shell summary fallback for unavailable Node or dependencies
+AssertionError: expected '' to contain 'GITHUB_STEP_SUMMARY'
+
+- Expected
++ Received
+
+- GITHUB_STEP_SUMMARY
+
+ ❯ tests/unit/publication-workflow.test.ts:361:34
+    359|     const value = step('finish', 'summary');
+    360|     expect.soft(value.if).toBe('always()');
+    361|     expect.soft(value.run ?? '').toContain('GITHUB_STEP_SUMMARY');
+       |                                  ^
+    362|     expect.soft(value.run ?? '').toContain('HANSARD_CANDIDATE_RESULT');
+    363|     expect.soft(value.run ?? '').toContain('HANSARD_DEPLOY_RESULT');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[103/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF037: finish has an always-run shell summary fallback for unavailable Node or dependencies
+AssertionError: expected '' to contain 'HANSARD_CANDIDATE_RESULT'
+
+- Expected
++ Received
+
+- HANSARD_CANDIDATE_RESULT
+
+ ❯ tests/unit/publication-workflow.test.ts:362:34
+    360|     expect.soft(value.if).toBe('always()');
+    361|     expect.soft(value.run ?? '').toContain('GITHUB_STEP_SUMMARY');
+    362|     expect.soft(value.run ?? '').toContain('HANSARD_CANDIDATE_RESULT');
+       |                                  ^
+    363|     expect.soft(value.run ?? '').toContain('HANSARD_DEPLOY_RESULT');
+    364|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[104/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF037: finish has an always-run shell summary fallback for unavailable Node or dependencies
+AssertionError: expected '' to contain 'HANSARD_DEPLOY_RESULT'
+
+- Expected
++ Received
+
+- HANSARD_DEPLOY_RESULT
+
+ ❯ tests/unit/publication-workflow.test.ts:363:34
+    361|     expect.soft(value.run ?? '').toContain('GITHUB_STEP_SUMMARY');
+    362|     expect.soft(value.run ?? '').toContain('HANSARD_CANDIDATE_RESULT');
+    363|     expect.soft(value.run ?? '').toContain('HANSARD_DEPLOY_RESULT');
+       |                                  ^
+    364|   });
+    365|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[105/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF038: finish restores newest accepted state separately from the older candidate checkpoint
+AssertionError: expected undefined to be 'actions/download-artifact@9000827ccba…' // Object.is equality
+
+- Expected:
+"actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333"
+
++ Received:
+undefined
+
+ ❯ tests/unit/publication-workflow.test.ts:370:29
+    368|   () => {
+    369|     const value = step('finish', 'download-state');
+    370|     expect.soft(value.uses).toBe('actions/download-artifact@9000827ccb…
+       |                             ^
+    371|     expect.soft(value.with?.['run-id']).toBe('${{ needs.candidate.outp…
+    372|     expect.soft((value.with?.['artifact-ids'] ?? '')).toContain('needs…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[106/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF038: finish restores newest accepted state separately from the older candidate checkpoint
+AssertionError: expected undefined to be '${{ needs.candidate.outputs.state_run…' // Object.is equality
+
+- Expected:
+"${{ needs.candidate.outputs.state_run_id }}"
+
++ Received:
+undefined
+
+ ❯ tests/unit/publication-workflow.test.ts:371:41
+    369|     const value = step('finish', 'download-state');
+    370|     expect.soft(value.uses).toBe('actions/download-artifact@9000827ccb…
+    371|     expect.soft(value.with?.['run-id']).toBe('${{ needs.candidate.outp…
+       |                                         ^
+    372|     expect.soft((value.with?.['artifact-ids'] ?? '')).toContain('needs…
+    373|     expect.soft(value.with?.path ?? '').toContain('.cache/hansard');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[107/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF038: finish restores newest accepted state separately from the older candidate checkpoint
+AssertionError: expected '' to contain 'needs.candidate.outputs.state_artifac…'
+
+- Expected
++ Received
+
+- needs.candidate.outputs.state_artifact_id
+
+ ❯ tests/unit/publication-workflow.test.ts:372:55
+    370|     expect.soft(value.uses).toBe('actions/download-artifact@9000827ccb…
+    371|     expect.soft(value.with?.['run-id']).toBe('${{ needs.candidate.outp…
+    372|     expect.soft((value.with?.['artifact-ids'] ?? '')).toContain('needs…
+       |                                                       ^
+    373|     expect.soft(value.with?.path ?? '').toContain('.cache/hansard');
+    374|     expect.soft(value.with?.['digest-mismatch']).toBe('error');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[108/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF038: finish restores newest accepted state separately from the older candidate checkpoint
+AssertionError: expected '' to contain '.cache/hansard'
+
+- Expected
++ Received
+
+- .cache/hansard
+
+ ❯ tests/unit/publication-workflow.test.ts:373:41
+    371|     expect.soft(value.with?.['run-id']).toBe('${{ needs.candidate.outp…
+    372|     expect.soft((value.with?.['artifact-ids'] ?? '')).toContain('needs…
+    373|     expect.soft(value.with?.path ?? '').toContain('.cache/hansard');
+       |                                         ^
+    374|     expect.soft(value.with?.['digest-mismatch']).toBe('error');
+    375|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[109/159]⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF038: finish restores newest accepted state separately from the older candidate checkpoint
+AssertionError: expected undefined to be 'error' // Object.is equality
+
+- Expected:
+"error"
+
++ Received:
+undefined
+
+ ❯ tests/unit/publication-workflow.test.ts:374:50
+    372|     expect.soft((value.with?.['artifact-ids'] ?? '')).toContain('needs…
+    373|     expect.soft(value.with?.path ?? '').toContain('.cache/hansard');
+    374|     expect.soft(value.with?.['digest-mismatch']).toBe('error');
+       |                                                  ^
+    375|   });
+    376|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[110/159]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  43 failed | 1 passed (44)
+   Start at  17:50:11
+   Duration  333ms (import 72%, tests 14%, transform 12%, worker 1%)
+

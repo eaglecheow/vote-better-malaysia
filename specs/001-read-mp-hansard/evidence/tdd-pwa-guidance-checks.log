@@ -1,0 +1,7 @@
+Global callable findings: []
+Existing local Markdown links checked: 22
+BM/EN guide and help sections: nonempty; help has four saving steps and five official installation links per locale.
+Static HTML: no scripts; locale anchors and repository-relative reader navigation valid. No native layout/device proof.
+docs/user-guide.md: d8452a960224c7fc046bfec5a9cd8f2be22531b4540da1f20679e916d0a6cb67
+public/help.html: ebe057308786ef9c30199234a4ac928aaf595005cdd624b3c742fe1be98f4343
+docs/development.md: 1a18d24527aa5fa5671067856024757b5bce84017848530740e6718c9feb2377

@@ -1,18 +1,27 @@
 # Vote Better Malaysia
 
-A platform dedicated to helping Malaysian voters make informed decisions through accessible voting information and resources.
+A static reader for Malaysian Parliament's Dewan Rakyat Hansard records.
 
 ## About
 
-Vote Better Malaysia is an initiative to improve civic engagement and voter literacy in Malaysia. This project aims to provide voters with clear, accurate, and easy-to-access information about the voting process, candidates, and policies.
+The first implementation lets readers choose a source identity and dated sitting,
+then read the speaking turns attributed to that identity in the original source
+language. It preserves unassigned passages and links to the official record.
+Implementation and acceptance status are recorded in the
+[task list](specs/001-read-mp-hansard/tasks.md) and
+[evidence index](specs/001-read-mp-hansard/evidence/acceptance.md).
 
 ## Features
 
-- **Voter Information Guide** - Step-by-step guides for voting in Malaysia
-- **Candidate Profiles** - Detailed information about candidates and their platforms
-- **Policy Comparison** - Compare different policies side-by-side
-- **Voting Resources** - FAQs, tutorials, and educational materials
-- **Localized Content** - Content tailored to different regions in Malaysia
+- Source-identity and dated-sitting selection with acquisition and coverage details.
+- Original speaking turns, attribution-gap passages and official record links.
+- Bahasa Melayu and English reader controls and guidance.
+- Saving of opened transcripts for offline reading, with separate saved-copy and
+  offline-readiness notices, plus deliberate application updates.
+
+These mechanisms have local unit and native-engine evidence. Physical-device,
+performance, human accessibility/usability, remote CI enforcement and GitHub Pages
+acceptance remain pending; the repository does not yet claim a verified launch.
 
 ## Getting Started
 
@@ -20,6 +29,7 @@ Vote Better Malaysia is an initiative to improve civic engagement and voter lite
 
 - Git, Python 3.11+, [uv](https://docs.astral.sh/uv/), and Codex.
 - Spec Kit **1.1.3**, with the bundled Git extension **1.0.1**.
+- Node.js 24 LTS and npm for application development.
 
 ### Installation
 
@@ -39,8 +49,14 @@ specify check
 3. Open this folder in Codex. Project skills are installed in `.agents/skills/`;
    open a new chat if they are not yet visible.
 
-This repository contains the project setup and documentation. Application dependencies
-and startup commands will be defined by the first feature's implementation plan.
+For application installation, configuration, run/test/build commands and their current
+verification status, see [Developer setup](docs/development.md). The first implementation
+is the [MP Hansard Reader](specs/001-read-mp-hansard/spec.md); its
+[validation guide](specs/001-read-mp-hansard/quickstart.md) preserves the planning command
+contract and required delivery checks.
+
+See the bilingual [Hansard reader guide](docs/user-guide.md) for reading, source
+attribution and current feature limits. The application also links to reading help.
 
 ## Usage
 
@@ -105,7 +121,14 @@ vote-better-malaysia/
 ├── .specify/                   # Templates, workflow, constitution, Git extension
 ├── AGENTS.md                   # Coding and automatic commit guidance
 ├── README.md
-└── specs/                      # Created when the first feature is specified
+├── docs/                       # Developer and bilingual reader guidance
+├── src/                        # Static reader, source model and device storage
+├── worker/                     # Versioned offline shell and update protocol
+├── scripts/                    # Acquisition, checks and candidate controllers
+├── public/                     # Help, install assets and ignored generated data
+├── tests/                      # Unit and native-engine mechanism checks
+├── .github/workflows/          # CI and Pages delivery configuration
+└── specs/                      # Feature specifications, plans, tasks and evidence
 ```
 
 ## Contributing
@@ -126,7 +149,10 @@ Please make sure to:
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE) - see the LICENSE file for details.
+This checkout has no `LICENSE` file. A repository licence and applicability of
+Hansard reuse policy still require confirmation before publication; see the
+[source evidence](specs/001-read-mp-hansard/evidence/source.md) for the verified
+source boundary. No licence is established by the source-access approvals.
 
 ## Contact
 

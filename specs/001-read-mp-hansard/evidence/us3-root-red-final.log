@@ -1,0 +1,5 @@
+
+> vote-better-malaysia@0.1.0 test
+> vitest --run tests/unit/storage.test.ts tests/unit/worker.test.ts tests/unit/build-worker.test.ts tests/unit/updates.test.ts tests/unit/saved-reader.test.ts --reporter=json --outputFile=/private/tmp/hansard-root-us3-red-final.json
+
+JSON report written to /private/tmp/hansard-root-us3-red-final.json

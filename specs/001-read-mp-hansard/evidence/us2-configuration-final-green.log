@@ -1,0 +1,13 @@
+
+> vote-better-malaysia@0.1.0 test
+> vitest --run tests/unit/publication-workflow.test.ts tests/unit/application-fingerprint.test.ts tests/unit/browser-configuration.test.ts tests/unit/documentation.test.ts tests/unit/harness.test.ts
+
+
+ RUN  v5.0.3 /Users/eaglecheow/dev/vote-better-malaysia
+
+
+ Test Files  5 passed (5)
+      Tests  164 passed (164)
+   Start at  18:53:28
+   Duration  869ms (tests 68%, import 20%, transform 11%, worker 1%)
+

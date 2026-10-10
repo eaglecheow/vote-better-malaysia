@@ -1,0 +1,13 @@
+
+> vote-better-malaysia@0.1.0 test
+> vitest --run tests/unit/updates.test.ts
+
+
+ RUN  v5.0.3 /Users/eaglecheow/dev/vote-better-malaysia
+
+
+ Test Files  1 passed (1)
+      Tests  32 passed (32)
+   Start at  19:05:59
+   Duration  143ms (tests 73%, transform 19%, import 7%, worker 2%)
+

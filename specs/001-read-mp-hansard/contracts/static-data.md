@@ -55,7 +55,7 @@ browsers; unit stubs do not establish it.
 
 | Enforced limit | Bytes / accounting |
 |---|---:|
-| Catalogue gzip file | <= 204,800 (200 KiB) |
+| Catalogue gzip file | <= 1,048,576 (1 MiB) |
 | Each sitting gzip file | <= 524,288 (512 KiB) |
 | Decoded individual data resource | <= 5,242,880 (5 MiB) UTF-8 bytes |
 | Entire published artifact | <= 900,000,000 bytes, all output files included |
@@ -113,6 +113,11 @@ are separately nullable. A successful static refresh must not imply a live sourc
    the source gap notice and access to all unassigned passages. Only a fully validated
    record with zero unresolved nonannotation items and zero assigned matches can produce
    `verified-absence`; otherwise an empty subset is `incomplete` or unavailable/error.
+   Real-source acceptance includes a verified-absence sample only when the complete dated
+   archive supplies such an eligible record. If none exists, record the complete archive
+   eligibility search, inventory/record counts, method and result, and disclose that a
+   real-source absence sample is unavailable. Controlled complete-record absence tests
+   remain required; this changes sample availability, never result classification.
 5. Record a successful device `refreshedAt` only after matching-pair validation, including
    unchanged content. It describes the current online result; persist that time only with
    a committed replacement pair. Save the opened

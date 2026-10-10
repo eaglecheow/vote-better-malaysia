@@ -1,0 +1,37 @@
+
+> vote-better-malaysia@0.1.0 test
+> vitest --run tests/unit/acquisition-refresh.test.ts -t REF-EXTRA-REPORT-WRITE
+
+
+ RUN  v5.0.3 /Users/eaglecheow/dev/vote-better-malaysia
+
+ ❯ tests/unit/acquisition-refresh.test.ts (79 tests | 1 failed | 78 skipped) 166ms
+   × REF-EXTRA-REPORT-WRITE: an actual private outcome-write failure cannot commit new output or successful sweep state 165ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-EXTRA-REPORT-WRITE: an actual private outcome-write failure cannot commit new output or successful sweep state
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ failedReportWrite tests/unit/acquisition-refresh.test.ts:1050:22
+    1048|     await mkdir(join(value.state, 'receipts', 'refresh-session', 'refr…
+    1049|     let rejected = false; try { await acquire(options(value)); } catch…
+    1050|     expect(rejected).toBe(true); expect(await acceptedBytes(value)).to…
+       |                      ^
+    1051|   });
+    1052|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 78 skipped (79)
+   Start at  17:15:02
+   Duration  281ms (tests 74%, transform 20%, import 6%, worker 1%)
+

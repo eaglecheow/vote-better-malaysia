@@ -1,0 +1,10 @@
+file:///private/tmp/hansard-clean-MPMMKr/scripts/ci-inputs.ts:46
+function requireInput(condition         , message        )                    { if (!condition) throw new Error(message); }
+                                                                                                      ^
+
+Error: Actual authenticated GitHub CI inputs required
+    at requireInput (file:///private/tmp/hansard-clean-MPMMKr/scripts/ci-inputs.ts:46:103)
+    at cli (file:///private/tmp/hansard-clean-MPMMKr/scripts/ci-inputs.ts:295:126)
+    at file:///private/tmp/hansard-clean-MPMMKr/scripts/ci-inputs.ts:298:96
+
+Node.js v24.21.0

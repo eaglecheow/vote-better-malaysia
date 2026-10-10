@@ -1,0 +1,5 @@
+docs/development.md: SHA-256 f0aed243b1ad6405adbada1e5251ebb7968fe867fbba379c1d1d0e3fe8403afe
+specs/001-read-mp-hansard/quickstart.md: SHA-256 f843e81d44ac080893f7efc6ce790e7c2be9487051e1deaf3cfd45844d6e239a
+Shell syntax: 10 blocks passed; no documented commands executed
+Markdown: 31 local paths and 6 heading fragments exist
+Settled human-only full-report TDD fields present; machine approval remains separate

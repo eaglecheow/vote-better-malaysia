@@ -1,0 +1,42 @@
+[
+  {
+    "name": "performance",
+    "command": "npm run test:performance",
+    "exitCode": 1,
+    "expectedMessage": "artifact, candidate and complete measured report evidence are required",
+    "messageMatched": true,
+    "nativeSpawnError": null
+  },
+  {
+    "name": "documentation",
+    "command": "npm run check:docs",
+    "exitCode": 1,
+    "expectedMessage": "Required candidate and accuracy review report are missing (--candidate, --report)",
+    "messageMatched": true,
+    "nativeSpawnError": null
+  },
+  {
+    "name": "collector",
+    "command": "npm run performance:collect",
+    "exitCode": 1,
+    "expectedMessage": "collection requires frozen artifact, candidate, fixtures, production URL and external output",
+    "messageMatched": true,
+    "nativeSpawnError": null
+  },
+  {
+    "name": "ci",
+    "command": "node scripts/ci-inputs.ts verify",
+    "exitCode": 1,
+    "expectedMessage": "Actual authenticated GitHub CI inputs required",
+    "messageMatched": true,
+    "nativeSpawnError": null
+  },
+  {
+    "name": "acquisition-missing-mode-value",
+    "command": "npm run data:acquire -- --mode",
+    "exitCode": 1,
+    "expectedMessage": "Expected --mode, --state and --out arguments",
+    "messageMatched": true,
+    "nativeSpawnError": null
+  }
+]

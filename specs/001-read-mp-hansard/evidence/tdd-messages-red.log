@@ -1,0 +1,1704 @@
+
+> vote-better-malaysia@0.1.0 test
+> vitest --run tests/unit/messages.test.ts
+
+
+ RUN  v5.0.3 /Users/eaglecheow/dev/vote-better-malaysia
+
+ ❯ tests/unit/messages.test.ts (83 tests | 83 failed) 15ms
+   × MSG-MS-title: supplies the agreed nonblank Malay label 4ms
+   × MSG-MS-description: supplies the agreed nonblank Malay label 1ms
+   × MSG-MS-language: supplies the agreed nonblank Malay label 0ms
+   × MSG-MS-search: supplies the agreed nonblank Malay label 0ms
+   × MSG-MS-member: supplies the agreed nonblank Malay label 0ms
+   × MSG-MS-sitting: supplies the agreed nonblank Malay label 0ms
+   × MSG-MS-read: supplies the agreed nonblank Malay label 0ms
+   × MSG-MS-loadingCatalogue: supplies the agreed nonblank Malay label 0ms
+   × MSG-MS-loading: supplies the agreed nonblank Malay label 0ms
+   × MSG-MS-chooseBoth: supplies the agreed nonblank Malay label 0ms
+   × MSG-MS-resultsReady: supplies the agreed nonblank Malay label 0ms
+   × MSG-MS-gapsIntro: supplies the agreed nonblank Malay label 0ms
+   × MSG-MS-noMatchedGap: supplies the agreed nonblank Malay label 0ms
+   × MSG-MS-verifiedAbsence: supplies the agreed nonblank Malay label 1ms
+   × MSG-MS-unavailable: supplies the agreed nonblank Malay label 0ms
+   × MSG-MS-error: supplies the agreed nonblank Malay label 0ms
+   × MSG-MS-source: supplies the agreed nonblank Malay label 0ms
+   × MSG-MS-historyUnavailable: supplies the agreed nonblank Malay label 0ms
+   × MSG-MS-officialPublishedUnavailable: supplies the agreed nonblank Malay label 0ms
+   × MSG-MS-officialRevisedUnavailable: supplies the agreed nonblank Malay label 0ms
+   × MSG-MS-snapshotPrepared: supplies the agreed nonblank Malay label 0ms
+   × MSG-MS-sitePublished: supplies the agreed nonblank Malay label 0ms
+   × MSG-MS-sourceAcquired: supplies the agreed nonblank Malay label 0ms
+   × MSG-MS-deviceRefreshed: supplies the agreed nonblank Malay label 0ms
+   × MSG-MS-unknownTime: supplies the agreed nonblank Malay label 0ms
+   × MSG-MS-draft: supplies the agreed nonblank Malay label 0ms
+   × MSG-MS-final: supplies the agreed nonblank Malay label 0ms
+   × MSG-MS-statusUnavailable: supplies the agreed nonblank Malay label 0ms
+   × MSG-MS-turns: supplies the agreed nonblank Malay label 0ms
+   × MSG-MS-gaps: supplies the agreed nonblank Malay label 0ms
+   × MSG-MS-annotations: supplies the agreed nonblank Malay label 0ms
+   × MSG-MS-section: supplies the agreed nonblank Malay label 0ms
+   × MSG-MS-time: supplies the agreed nonblank Malay label 0ms
+   × MSG-MS-index: supplies the agreed nonblank Malay label 0ms
+   × MSG-MS-sourceId: supplies the agreed nonblank Malay label 0ms
+   × MSG-MS-help: supplies the agreed nonblank Malay label 0ms
+   × MSG-MS-coverage: supplies the agreed nonblank Malay label 0ms
+   × MSG-MS-parliament: supplies the agreed nonblank Malay label 0ms
+   × MSG-MS-penggal: supplies the agreed nonblank Malay label 0ms
+   × MSG-MS-mesyuarat: supplies the agreed nonblank Malay label 0ms
+   × MSG-EN-title: supplies the agreed nonblank English label 0ms
+   × MSG-EN-description: supplies the agreed nonblank English label 0ms
+   × MSG-EN-language: supplies the agreed nonblank English label 0ms
+   × MSG-EN-search: supplies the agreed nonblank English label 0ms
+   × MSG-EN-member: supplies the agreed nonblank English label 0ms
+   × MSG-EN-sitting: supplies the agreed nonblank English label 0ms
+   × MSG-EN-read: supplies the agreed nonblank English label 0ms
+   × MSG-EN-loadingCatalogue: supplies the agreed nonblank English label 0ms
+   × MSG-EN-loading: supplies the agreed nonblank English label 0ms
+   × MSG-EN-chooseBoth: supplies the agreed nonblank English label 0ms
+   × MSG-EN-resultsReady: supplies the agreed nonblank English label 0ms
+   × MSG-EN-gapsIntro: supplies the agreed nonblank English label 0ms
+   × MSG-EN-noMatchedGap: supplies the agreed nonblank English label 0ms
+   × MSG-EN-verifiedAbsence: supplies the agreed nonblank English label 0ms
+   × MSG-EN-unavailable: supplies the agreed nonblank English label 0ms
+   × MSG-EN-error: supplies the agreed nonblank English label 0ms
+   × MSG-EN-source: supplies the agreed nonblank English label 0ms
+   × MSG-EN-historyUnavailable: supplies the agreed nonblank English label 0ms
+   × MSG-EN-officialPublishedUnavailable: supplies the agreed nonblank English label 0ms
+   × MSG-EN-officialRevisedUnavailable: supplies the agreed nonblank English label 0ms
+   × MSG-EN-snapshotPrepared: supplies the agreed nonblank English label 1ms
+   × MSG-EN-sitePublished: supplies the agreed nonblank English label 0ms
+   × MSG-EN-sourceAcquired: supplies the agreed nonblank English label 0ms
+   × MSG-EN-deviceRefreshed: supplies the agreed nonblank English label 0ms
+   × MSG-EN-unknownTime: supplies the agreed nonblank English label 0ms
+   × MSG-EN-draft: supplies the agreed nonblank English label 0ms
+   × MSG-EN-final: supplies the agreed nonblank English label 0ms
+   × MSG-EN-statusUnavailable: supplies the agreed nonblank English label 0ms
+   × MSG-EN-turns: supplies the agreed nonblank English label 0ms
+   × MSG-EN-gaps: supplies the agreed nonblank English label 0ms
+   × MSG-EN-annotations: supplies the agreed nonblank English label 0ms
+   × MSG-EN-section: supplies the agreed nonblank English label 0ms
+   × MSG-EN-time: supplies the agreed nonblank English label 0ms
+   × MSG-EN-index: supplies the agreed nonblank English label 0ms
+   × MSG-EN-sourceId: supplies the agreed nonblank English label 0ms
+   × MSG-EN-help: supplies the agreed nonblank English label 0ms
+   × MSG-EN-coverage: supplies the agreed nonblank English label 0ms
+   × MSG-EN-parliament: supplies the agreed nonblank English label 0ms
+   × MSG-EN-penggal: supplies the agreed nonblank English label 0ms
+   × MSG-EN-mesyuarat: supplies the agreed nonblank English label 0ms
+   × MSG-KEYS-ms: locale keys are complete and equivalent 1ms
+   × MSG-KEYS-en: locale keys are complete and equivalent 0ms
+   × MSG-SOURCE: both descriptions explain original wording and localization leaves archived bytes unchanged 1ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 83 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-MS-title: supplies the agreed nonblank Malay label
+AssertionError: expected undefined to be 'Pembaca Hansard' // Object.is equality
+
+- Expected:
+"Pembaca Hansard"
+
++ Received:
+undefined
+
+ ❯ checksMalay tests/unit/messages.test.ts:61:18
+     59|   void english;
+     60|   const actual = getMessages('ms')[key];
+     61|   expect(actual).toBe(malay);
+       |                  ^
+     62|   expect(actual.trim().length).toBeGreaterThan(0);
+     63| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-MS-description: supplies the agreed nonblank Malay label
+AssertionError: expected undefined to be 'Baca sumbangan yang dipadankan kepada…' // Object.is equality
+
+- Expected:
+"Baca sumbangan yang dipadankan kepada identiti sumber bagi persidangan pilihan. Teks transkrip kekal dalam bahasa asal."
+
++ Received:
+undefined
+
+ ❯ checksMalay tests/unit/messages.test.ts:61:18
+     59|   void english;
+     60|   const actual = getMessages('ms')[key];
+     61|   expect(actual).toBe(malay);
+       |                  ^
+     62|   expect(actual.trim().length).toBeGreaterThan(0);
+     63| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-MS-language: supplies the agreed nonblank Malay label
+AssertionError: expected undefined to be 'Bahasa antara muka' // Object.is equality
+
+- Expected:
+"Bahasa antara muka"
+
++ Received:
+undefined
+
+ ❯ checksMalay tests/unit/messages.test.ts:61:18
+     59|   void english;
+     60|   const actual = getMessages('ms')[key];
+     61|   expect(actual).toBe(malay);
+       |                  ^
+     62|   expect(actual.trim().length).toBeGreaterThan(0);
+     63| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-MS-search: supplies the agreed nonblank Malay label
+AssertionError: expected undefined to be 'Cari identiti sumber' // Object.is equality
+
+- Expected:
+"Cari identiti sumber"
+
++ Received:
+undefined
+
+ ❯ checksMalay tests/unit/messages.test.ts:61:18
+     59|   void english;
+     60|   const actual = getMessages('ms')[key];
+     61|   expect(actual).toBe(malay);
+       |                  ^
+     62|   expect(actual.trim().length).toBeGreaterThan(0);
+     63| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-MS-member: supplies the agreed nonblank Malay label
+AssertionError: expected undefined to be 'Identiti ahli/sumber' // Object.is equality
+
+- Expected:
+"Identiti ahli/sumber"
+
++ Received:
+undefined
+
+ ❯ checksMalay tests/unit/messages.test.ts:61:18
+     59|   void english;
+     60|   const actual = getMessages('ms')[key];
+     61|   expect(actual).toBe(malay);
+       |                  ^
+     62|   expect(actual.trim().length).toBeGreaterThan(0);
+     63| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-MS-sitting: supplies the agreed nonblank Malay label
+AssertionError: expected undefined to be 'Persidangan' // Object.is equality
+
+- Expected:
+"Persidangan"
+
++ Received:
+undefined
+
+ ❯ checksMalay tests/unit/messages.test.ts:61:18
+     59|   void english;
+     60|   const actual = getMessages('ms')[key];
+     61|   expect(actual).toBe(malay);
+       |                  ^
+     62|   expect(actual.trim().length).toBeGreaterThan(0);
+     63| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-MS-read: supplies the agreed nonblank Malay label
+AssertionError: expected undefined to be 'Baca' // Object.is equality
+
+- Expected:
+"Baca"
+
++ Received:
+undefined
+
+ ❯ checksMalay tests/unit/messages.test.ts:61:18
+     59|   void english;
+     60|   const actual = getMessages('ms')[key];
+     61|   expect(actual).toBe(malay);
+       |                  ^
+     62|   expect(actual.trim().length).toBeGreaterThan(0);
+     63| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-MS-loadingCatalogue: supplies the agreed nonblank Malay label
+AssertionError: expected undefined to be 'Memuatkan senarai identiti dan persid…' // Object.is equality
+
+- Expected:
+"Memuatkan senarai identiti dan persidangan…"
+
++ Received:
+undefined
+
+ ❯ checksMalay tests/unit/messages.test.ts:61:18
+     59|   void english;
+     60|   const actual = getMessages('ms')[key];
+     61|   expect(actual).toBe(malay);
+       |                  ^
+     62|   expect(actual.trim().length).toBeGreaterThan(0);
+     63| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-MS-loading: supplies the agreed nonblank Malay label
+AssertionError: expected undefined to be 'Memuatkan rekod persidangan…' // Object.is equality
+
+- Expected:
+"Memuatkan rekod persidangan…"
+
++ Received:
+undefined
+
+ ❯ checksMalay tests/unit/messages.test.ts:61:18
+     59|   void english;
+     60|   const actual = getMessages('ms')[key];
+     61|   expect(actual).toBe(malay);
+       |                  ^
+     62|   expect(actual.trim().length).toBeGreaterThan(0);
+     63| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-MS-chooseBoth: supplies the agreed nonblank Malay label
+AssertionError: expected undefined to be 'Pilih identiti sumber dan persidangan…' // Object.is equality
+
+- Expected:
+"Pilih identiti sumber dan persidangan untuk membaca rekod."
+
++ Received:
+undefined
+
+ ❯ checksMalay tests/unit/messages.test.ts:61:18
+     59|   void english;
+     60|   const actual = getMessages('ms')[key];
+     61|   expect(actual).toBe(malay);
+       |                  ^
+     62|   expect(actual.trim().length).toBeGreaterThan(0);
+     63| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-MS-resultsReady: supplies the agreed nonblank Malay label
+AssertionError: expected undefined to be 'Rekod sedia untuk dibaca.' // Object.is equality
+
+- Expected:
+"Rekod sedia untuk dibaca."
+
++ Received:
+undefined
+
+ ❯ checksMalay tests/unit/messages.test.ts:61:18
+     59|   void english;
+     60|   const actual = getMessages('ms')[key];
+     61|   expect(actual).toBe(malay);
+       |                  ^
+     62|   expect(actual.trim().length).toBeGreaterThan(0);
+     63| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-MS-gapsIntro: supplies the agreed nonblank Malay label
+AssertionError: expected undefined to be 'Rekod ini mempunyai petikan pertutura…' // Object.is equality
+
+- Expected:
+"Rekod ini mempunyai petikan pertuturan yang tidak dapat dipadankan kepada identiti sumber. Bacaan yang dipadankan mungkin tidak lengkap."
+
++ Received:
+undefined
+
+ ❯ checksMalay tests/unit/messages.test.ts:61:18
+     59|   void english;
+     60|   const actual = getMessages('ms')[key];
+     61|   expect(actual).toBe(malay);
+       |                  ^
+     62|   expect(actual.trim().length).toBeGreaterThan(0);
+     63| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-MS-noMatchedGap: supplies the agreed nonblank Malay label
+AssertionError: expected undefined to be 'Tiada sumbangan yang dapat dipadankan…' // Object.is equality
+
+- Expected:
+"Tiada sumbangan yang dapat dipadankan kepada identiti pilihan. Petikan tanpa padanan masih ada; ketiadaan sumbangan tidak dapat dipastikan."
+
++ Received:
+undefined
+
+ ❯ checksMalay tests/unit/messages.test.ts:61:18
+     59|   void english;
+     60|   const actual = getMessages('ms')[key];
+     61|   expect(actual).toBe(malay);
+       |                  ^
+     62|   expect(actual.trim().length).toBeGreaterThan(0);
+     63| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[13/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-MS-verifiedAbsence: supplies the agreed nonblank Malay label
+AssertionError: expected undefined to be 'Tiada sumbangan daripada identiti pil…' // Object.is equality
+
+- Expected:
+"Tiada sumbangan daripada identiti pilihan dalam rekod sumber lengkap ini."
+
++ Received:
+undefined
+
+ ❯ checksMalay tests/unit/messages.test.ts:61:18
+     59|   void english;
+     60|   const actual = getMessages('ms')[key];
+     61|   expect(actual).toBe(malay);
+       |                  ^
+     62|   expect(actual.trim().length).toBeGreaterThan(0);
+     63| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[14/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-MS-unavailable: supplies the agreed nonblank Malay label
+AssertionError: expected undefined to be 'Rekod persidangan ini tidak tersedia.' // Object.is equality
+
+- Expected:
+"Rekod persidangan ini tidak tersedia."
+
++ Received:
+undefined
+
+ ❯ checksMalay tests/unit/messages.test.ts:61:18
+     59|   void english;
+     60|   const actual = getMessages('ms')[key];
+     61|   expect(actual).toBe(malay);
+       |                  ^
+     62|   expect(actual.trim().length).toBeGreaterThan(0);
+     63| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[15/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-MS-error: supplies the agreed nonblank Malay label
+AssertionError: expected undefined to be 'Data laman tidak dapat dimuatkan atau…' // Object.is equality
+
+- Expected:
+"Data laman tidak dapat dimuatkan atau disahkan."
+
++ Received:
+undefined
+
+ ❯ checksMalay tests/unit/messages.test.ts:61:18
+     59|   void english;
+     60|   const actual = getMessages('ms')[key];
+     61|   expect(actual).toBe(malay);
+       |                  ^
+     62|   expect(actual.trim().length).toBeGreaterThan(0);
+     63| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[16/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-MS-source: supplies the agreed nonblank Malay label
+AssertionError: expected undefined to be 'Rekod rasmi Parlimen' // Object.is equality
+
+- Expected:
+"Rekod rasmi Parlimen"
+
++ Received:
+undefined
+
+ ❯ checksMalay tests/unit/messages.test.ts:61:18
+     59|   void english;
+     60|   const actual = getMessages('ms')[key];
+     61|   expect(actual).toBe(malay);
+       |                  ^
+     62|   expect(actual.trim().length).toBeGreaterThan(0);
+     63| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[17/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-MS-historyUnavailable: supplies the agreed nonblank Malay label
+AssertionError: expected undefined to be 'Keahlian Parlimen atau kawasan piliha…' // Object.is equality
+
+- Expected:
+"Keahlian Parlimen atau kawasan pilihan raya pada tarikh ini tidak tersedia."
+
++ Received:
+undefined
+
+ ❯ checksMalay tests/unit/messages.test.ts:61:18
+     59|   void english;
+     60|   const actual = getMessages('ms')[key];
+     61|   expect(actual).toBe(malay);
+       |                  ^
+     62|   expect(actual.trim().length).toBeGreaterThan(0);
+     63| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[18/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-MS-officialPublishedUnavailable: supplies the agreed nonblank Malay label
+AssertionError: expected undefined to be 'Tarikh penerbitan rasmi sumber tidak …' // Object.is equality
+
+- Expected:
+"Tarikh penerbitan rasmi sumber tidak tersedia."
+
++ Received:
+undefined
+
+ ❯ checksMalay tests/unit/messages.test.ts:61:18
+     59|   void english;
+     60|   const actual = getMessages('ms')[key];
+     61|   expect(actual).toBe(malay);
+       |                  ^
+     62|   expect(actual.trim().length).toBeGreaterThan(0);
+     63| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[19/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-MS-officialRevisedUnavailable: supplies the agreed nonblank Malay label
+AssertionError: expected undefined to be 'Tarikh semakan rasmi sumber tidak ter…' // Object.is equality
+
+- Expected:
+"Tarikh semakan rasmi sumber tidak tersedia."
+
++ Received:
+undefined
+
+ ❯ checksMalay tests/unit/messages.test.ts:61:18
+     59|   void english;
+     60|   const actual = getMessages('ms')[key];
+     61|   expect(actual).toBe(malay);
+       |                  ^
+     62|   expect(actual.trim().length).toBeGreaterThan(0);
+     63| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[20/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-MS-snapshotPrepared: supplies the agreed nonblank Malay label
+AssertionError: expected undefined to be 'Salinan laman disediakan' // Object.is equality
+
+- Expected:
+"Salinan laman disediakan"
+
++ Received:
+undefined
+
+ ❯ checksMalay tests/unit/messages.test.ts:61:18
+     59|   void english;
+     60|   const actual = getMessages('ms')[key];
+     61|   expect(actual).toBe(malay);
+       |                  ^
+     62|   expect(actual.trim().length).toBeGreaterThan(0);
+     63| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[21/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-MS-sitePublished: supplies the agreed nonblank Malay label
+AssertionError: expected undefined to be 'Penerbitan laman disahkan' // Object.is equality
+
+- Expected:
+"Penerbitan laman disahkan"
+
++ Received:
+undefined
+
+ ❯ checksMalay tests/unit/messages.test.ts:61:18
+     59|   void english;
+     60|   const actual = getMessages('ms')[key];
+     61|   expect(actual).toBe(malay);
+       |                  ^
+     62|   expect(actual.trim().length).toBeGreaterThan(0);
+     63| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[22/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-MS-sourceAcquired: supplies the agreed nonblank Malay label
+AssertionError: expected undefined to be 'Rekod sumber berjaya diperoleh' // Object.is equality
+
+- Expected:
+"Rekod sumber berjaya diperoleh"
+
++ Received:
+undefined
+
+ ❯ checksMalay tests/unit/messages.test.ts:61:18
+     59|   void english;
+     60|   const actual = getMessages('ms')[key];
+     61|   expect(actual).toBe(malay);
+       |                  ^
+     62|   expect(actual.trim().length).toBeGreaterThan(0);
+     63| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[23/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-MS-deviceRefreshed: supplies the agreed nonblank Malay label
+AssertionError: expected undefined to be 'Data laman berjaya disahkan pada pera…' // Object.is equality
+
+- Expected:
+"Data laman berjaya disahkan pada peranti"
+
++ Received:
+undefined
+
+ ❯ checksMalay tests/unit/messages.test.ts:61:18
+     59|   void english;
+     60|   const actual = getMessages('ms')[key];
+     61|   expect(actual).toBe(malay);
+       |                  ^
+     62|   expect(actual.trim().length).toBeGreaterThan(0);
+     63| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[24/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-MS-unknownTime: supplies the agreed nonblank Malay label
+AssertionError: expected undefined to be 'Tidak tersedia' // Object.is equality
+
+- Expected:
+"Tidak tersedia"
+
++ Received:
+undefined
+
+ ❯ checksMalay tests/unit/messages.test.ts:61:18
+     59|   void english;
+     60|   const actual = getMessages('ms')[key];
+     61|   expect(actual).toBe(malay);
+       |                  ^
+     62|   expect(actual.trim().length).toBeGreaterThan(0);
+     63| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[25/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-MS-draft: supplies the agreed nonblank Malay label
+AssertionError: expected undefined to be 'Draf' // Object.is equality
+
+- Expected:
+"Draf"
+
++ Received:
+undefined
+
+ ❯ checksMalay tests/unit/messages.test.ts:61:18
+     59|   void english;
+     60|   const actual = getMessages('ms')[key];
+     61|   expect(actual).toBe(malay);
+       |                  ^
+     62|   expect(actual.trim().length).toBeGreaterThan(0);
+     63| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[26/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-MS-final: supplies the agreed nonblank Malay label
+AssertionError: expected undefined to be 'Muktamad' // Object.is equality
+
+- Expected:
+"Muktamad"
+
++ Received:
+undefined
+
+ ❯ checksMalay tests/unit/messages.test.ts:61:18
+     59|   void english;
+     60|   const actual = getMessages('ms')[key];
+     61|   expect(actual).toBe(malay);
+       |                  ^
+     62|   expect(actual.trim().length).toBeGreaterThan(0);
+     63| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[27/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-MS-statusUnavailable: supplies the agreed nonblank Malay label
+AssertionError: expected undefined to be 'Status draf/muktamad tidak tersedia' // Object.is equality
+
+- Expected:
+"Status draf/muktamad tidak tersedia"
+
++ Received:
+undefined
+
+ ❯ checksMalay tests/unit/messages.test.ts:61:18
+     59|   void english;
+     60|   const actual = getMessages('ms')[key];
+     61|   expect(actual).toBe(malay);
+       |                  ^
+     62|   expect(actual.trim().length).toBeGreaterThan(0);
+     63| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[28/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-MS-turns: supplies the agreed nonblank Malay label
+AssertionError: expected undefined to be 'Sumbangan yang dipadankan' // Object.is equality
+
+- Expected:
+"Sumbangan yang dipadankan"
+
++ Received:
+undefined
+
+ ❯ checksMalay tests/unit/messages.test.ts:61:18
+     59|   void english;
+     60|   const actual = getMessages('ms')[key];
+     61|   expect(actual).toBe(malay);
+       |                  ^
+     62|   expect(actual.trim().length).toBeGreaterThan(0);
+     63| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[29/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-MS-gaps: supplies the agreed nonblank Malay label
+AssertionError: expected undefined to be 'Petikan tanpa padanan' // Object.is equality
+
+- Expected:
+"Petikan tanpa padanan"
+
++ Received:
+undefined
+
+ ❯ checksMalay tests/unit/messages.test.ts:61:18
+     59|   void english;
+     60|   const actual = getMessages('ms')[key];
+     61|   expect(actual).toBe(malay);
+       |                  ^
+     62|   expect(actual.trim().length).toBeGreaterThan(0);
+     63| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[30/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-MS-annotations: supplies the agreed nonblank Malay label
+AssertionError: expected undefined to be 'Anotasi sumber' // Object.is equality
+
+- Expected:
+"Anotasi sumber"
+
++ Received:
+undefined
+
+ ❯ checksMalay tests/unit/messages.test.ts:61:18
+     59|   void english;
+     60|   const actual = getMessages('ms')[key];
+     61|   expect(actual).toBe(malay);
+       |                  ^
+     62|   expect(actual.trim().length).toBeGreaterThan(0);
+     63| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[31/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-MS-section: supplies the agreed nonblank Malay label
+AssertionError: expected undefined to be 'Bahagian sumber' // Object.is equality
+
+- Expected:
+"Bahagian sumber"
+
++ Received:
+undefined
+
+ ❯ checksMalay tests/unit/messages.test.ts:61:18
+     59|   void english;
+     60|   const actual = getMessages('ms')[key];
+     61|   expect(actual).toBe(malay);
+       |                  ^
+     62|   expect(actual.trim().length).toBeGreaterThan(0);
+     63| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[32/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-MS-time: supplies the agreed nonblank Malay label
+AssertionError: expected undefined to be 'Cap masa sumber' // Object.is equality
+
+- Expected:
+"Cap masa sumber"
+
++ Received:
+undefined
+
+ ❯ checksMalay tests/unit/messages.test.ts:61:18
+     59|   void english;
+     60|   const actual = getMessages('ms')[key];
+     61|   expect(actual).toBe(malay);
+       |                  ^
+     62|   expect(actual.trim().length).toBeGreaterThan(0);
+     63| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[33/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-MS-index: supplies the agreed nonblank Malay label
+AssertionError: expected undefined to be 'Indeks sumber' // Object.is equality
+
+- Expected:
+"Indeks sumber"
+
++ Received:
+undefined
+
+ ❯ checksMalay tests/unit/messages.test.ts:61:18
+     59|   void english;
+     60|   const actual = getMessages('ms')[key];
+     61|   expect(actual).toBe(malay);
+       |                  ^
+     62|   expect(actual.trim().length).toBeGreaterThan(0);
+     63| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[34/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-MS-sourceId: supplies the agreed nonblank Malay label
+AssertionError: expected undefined to be 'ID sumber' // Object.is equality
+
+- Expected:
+"ID sumber"
+
++ Received:
+undefined
+
+ ❯ checksMalay tests/unit/messages.test.ts:61:18
+     59|   void english;
+     60|   const actual = getMessages('ms')[key];
+     61|   expect(actual).toBe(malay);
+       |                  ^
+     62|   expect(actual.trim().length).toBeGreaterThan(0);
+     63| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[35/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-MS-help: supplies the agreed nonblank Malay label
+AssertionError: expected undefined to be 'Panduan membaca' // Object.is equality
+
+- Expected:
+"Panduan membaca"
+
++ Received:
+undefined
+
+ ❯ checksMalay tests/unit/messages.test.ts:61:18
+     59|   void english;
+     60|   const actual = getMessages('ms')[key];
+     61|   expect(actual).toBe(malay);
+       |                  ^
+     62|   expect(actual.trim().length).toBeGreaterThan(0);
+     63| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[36/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-MS-coverage: supplies the agreed nonblank Malay label
+AssertionError: expected undefined to be 'Liputan arkib sumber' // Object.is equality
+
+- Expected:
+"Liputan arkib sumber"
+
++ Received:
+undefined
+
+ ❯ checksMalay tests/unit/messages.test.ts:61:18
+     59|   void english;
+     60|   const actual = getMessages('ms')[key];
+     61|   expect(actual).toBe(malay);
+       |                  ^
+     62|   expect(actual.trim().length).toBeGreaterThan(0);
+     63| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[37/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-MS-parliament: supplies the agreed nonblank Malay label
+AssertionError: expected undefined to be 'Parlimen' // Object.is equality
+
+- Expected:
+"Parlimen"
+
++ Received:
+undefined
+
+ ❯ checksMalay tests/unit/messages.test.ts:61:18
+     59|   void english;
+     60|   const actual = getMessages('ms')[key];
+     61|   expect(actual).toBe(malay);
+       |                  ^
+     62|   expect(actual.trim().length).toBeGreaterThan(0);
+     63| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[38/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-MS-penggal: supplies the agreed nonblank Malay label
+AssertionError: expected undefined to be 'Penggal' // Object.is equality
+
+- Expected:
+"Penggal"
+
++ Received:
+undefined
+
+ ❯ checksMalay tests/unit/messages.test.ts:61:18
+     59|   void english;
+     60|   const actual = getMessages('ms')[key];
+     61|   expect(actual).toBe(malay);
+       |                  ^
+     62|   expect(actual.trim().length).toBeGreaterThan(0);
+     63| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[39/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-MS-mesyuarat: supplies the agreed nonblank Malay label
+AssertionError: expected undefined to be 'Mesyuarat' // Object.is equality
+
+- Expected:
+"Mesyuarat"
+
++ Received:
+undefined
+
+ ❯ checksMalay tests/unit/messages.test.ts:61:18
+     59|   void english;
+     60|   const actual = getMessages('ms')[key];
+     61|   expect(actual).toBe(malay);
+       |                  ^
+     62|   expect(actual.trim().length).toBeGreaterThan(0);
+     63| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[40/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-EN-title: supplies the agreed nonblank English label
+AssertionError: expected undefined to be 'Hansard reader' // Object.is equality
+
+- Expected:
+"Hansard reader"
+
++ Received:
+undefined
+
+ ❯ checksEnglish tests/unit/messages.test.ts:75:18
+     73|   void malay;
+     74|   const actual = getMessages('en')[key];
+     75|   expect(actual).toBe(english);
+       |                  ^
+     76|   expect(actual.trim().length).toBeGreaterThan(0);
+     77| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[41/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-EN-description: supplies the agreed nonblank English label
+AssertionError: expected undefined to be 'Read contributions attributed to a so…' // Object.is equality
+
+- Expected:
+"Read contributions attributed to a source identity for the selected sitting. Transcript wording stays in its original language."
+
++ Received:
+undefined
+
+ ❯ checksEnglish tests/unit/messages.test.ts:75:18
+     73|   void malay;
+     74|   const actual = getMessages('en')[key];
+     75|   expect(actual).toBe(english);
+       |                  ^
+     76|   expect(actual.trim().length).toBeGreaterThan(0);
+     77| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[42/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-EN-language: supplies the agreed nonblank English label
+AssertionError: expected undefined to be 'Interface language' // Object.is equality
+
+- Expected:
+"Interface language"
+
++ Received:
+undefined
+
+ ❯ checksEnglish tests/unit/messages.test.ts:75:18
+     73|   void malay;
+     74|   const actual = getMessages('en')[key];
+     75|   expect(actual).toBe(english);
+       |                  ^
+     76|   expect(actual.trim().length).toBeGreaterThan(0);
+     77| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[43/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-EN-search: supplies the agreed nonblank English label
+AssertionError: expected undefined to be 'Search source identities' // Object.is equality
+
+- Expected:
+"Search source identities"
+
++ Received:
+undefined
+
+ ❯ checksEnglish tests/unit/messages.test.ts:75:18
+     73|   void malay;
+     74|   const actual = getMessages('en')[key];
+     75|   expect(actual).toBe(english);
+       |                  ^
+     76|   expect(actual.trim().length).toBeGreaterThan(0);
+     77| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[44/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-EN-member: supplies the agreed nonblank English label
+AssertionError: expected undefined to be 'Member/source identity' // Object.is equality
+
+- Expected:
+"Member/source identity"
+
++ Received:
+undefined
+
+ ❯ checksEnglish tests/unit/messages.test.ts:75:18
+     73|   void malay;
+     74|   const actual = getMessages('en')[key];
+     75|   expect(actual).toBe(english);
+       |                  ^
+     76|   expect(actual.trim().length).toBeGreaterThan(0);
+     77| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[45/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-EN-sitting: supplies the agreed nonblank English label
+AssertionError: expected undefined to be 'Sitting' // Object.is equality
+
+- Expected:
+"Sitting"
+
++ Received:
+undefined
+
+ ❯ checksEnglish tests/unit/messages.test.ts:75:18
+     73|   void malay;
+     74|   const actual = getMessages('en')[key];
+     75|   expect(actual).toBe(english);
+       |                  ^
+     76|   expect(actual.trim().length).toBeGreaterThan(0);
+     77| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[46/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-EN-read: supplies the agreed nonblank English label
+AssertionError: expected undefined to be 'Read' // Object.is equality
+
+- Expected:
+"Read"
+
++ Received:
+undefined
+
+ ❯ checksEnglish tests/unit/messages.test.ts:75:18
+     73|   void malay;
+     74|   const actual = getMessages('en')[key];
+     75|   expect(actual).toBe(english);
+       |                  ^
+     76|   expect(actual.trim().length).toBeGreaterThan(0);
+     77| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[47/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-EN-loadingCatalogue: supplies the agreed nonblank English label
+AssertionError: expected undefined to be 'Loading identities and sittings…' // Object.is equality
+
+- Expected:
+"Loading identities and sittings…"
+
++ Received:
+undefined
+
+ ❯ checksEnglish tests/unit/messages.test.ts:75:18
+     73|   void malay;
+     74|   const actual = getMessages('en')[key];
+     75|   expect(actual).toBe(english);
+       |                  ^
+     76|   expect(actual.trim().length).toBeGreaterThan(0);
+     77| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[48/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-EN-loading: supplies the agreed nonblank English label
+AssertionError: expected undefined to be 'Loading sitting record…' // Object.is equality
+
+- Expected:
+"Loading sitting record…"
+
++ Received:
+undefined
+
+ ❯ checksEnglish tests/unit/messages.test.ts:75:18
+     73|   void malay;
+     74|   const actual = getMessages('en')[key];
+     75|   expect(actual).toBe(english);
+       |                  ^
+     76|   expect(actual.trim().length).toBeGreaterThan(0);
+     77| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[49/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-EN-chooseBoth: supplies the agreed nonblank English label
+AssertionError: expected undefined to be 'Choose a source identity and sitting …' // Object.is equality
+
+- Expected:
+"Choose a source identity and sitting to read the record."
+
++ Received:
+undefined
+
+ ❯ checksEnglish tests/unit/messages.test.ts:75:18
+     73|   void malay;
+     74|   const actual = getMessages('en')[key];
+     75|   expect(actual).toBe(english);
+       |                  ^
+     76|   expect(actual.trim().length).toBeGreaterThan(0);
+     77| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[50/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-EN-resultsReady: supplies the agreed nonblank English label
+AssertionError: expected undefined to be 'Record ready to read.' // Object.is equality
+
+- Expected:
+"Record ready to read."
+
++ Received:
+undefined
+
+ ❯ checksEnglish tests/unit/messages.test.ts:75:18
+     73|   void malay;
+     74|   const actual = getMessages('en')[key];
+     75|   expect(actual).toBe(english);
+       |                  ^
+     76|   expect(actual.trim().length).toBeGreaterThan(0);
+     77| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[51/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-EN-gapsIntro: supplies the agreed nonblank English label
+AssertionError: expected undefined to be 'This record has speaking passages wit…' // Object.is equality
+
+- Expected:
+"This record has speaking passages without a resolved source identity. The attributed reading may be incomplete."
+
++ Received:
+undefined
+
+ ❯ checksEnglish tests/unit/messages.test.ts:75:18
+     73|   void malay;
+     74|   const actual = getMessages('en')[key];
+     75|   expect(actual).toBe(english);
+       |                  ^
+     76|   expect(actual.trim().length).toBeGreaterThan(0);
+     77| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[52/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-EN-noMatchedGap: supplies the agreed nonblank English label
+AssertionError: expected undefined to be 'No contributions were confidently att…' // Object.is equality
+
+- Expected:
+"No contributions were confidently attributed to the selected identity. Unassigned passages remain; absence cannot be verified."
+
++ Received:
+undefined
+
+ ❯ checksEnglish tests/unit/messages.test.ts:75:18
+     73|   void malay;
+     74|   const actual = getMessages('en')[key];
+     75|   expect(actual).toBe(english);
+       |                  ^
+     76|   expect(actual.trim().length).toBeGreaterThan(0);
+     77| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[53/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-EN-verifiedAbsence: supplies the agreed nonblank English label
+AssertionError: expected undefined to be 'No contribution from the selected ide…' // Object.is equality
+
+- Expected:
+"No contribution from the selected identity appears in this complete source record."
+
++ Received:
+undefined
+
+ ❯ checksEnglish tests/unit/messages.test.ts:75:18
+     73|   void malay;
+     74|   const actual = getMessages('en')[key];
+     75|   expect(actual).toBe(english);
+       |                  ^
+     76|   expect(actual.trim().length).toBeGreaterThan(0);
+     77| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[54/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-EN-unavailable: supplies the agreed nonblank English label
+AssertionError: expected undefined to be 'This sitting record is unavailable.' // Object.is equality
+
+- Expected:
+"This sitting record is unavailable."
+
++ Received:
+undefined
+
+ ❯ checksEnglish tests/unit/messages.test.ts:75:18
+     73|   void malay;
+     74|   const actual = getMessages('en')[key];
+     75|   expect(actual).toBe(english);
+       |                  ^
+     76|   expect(actual.trim().length).toBeGreaterThan(0);
+     77| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[55/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-EN-error: supplies the agreed nonblank English label
+AssertionError: expected undefined to be 'Site data could not be loaded or vali…' // Object.is equality
+
+- Expected:
+"Site data could not be loaded or validated."
+
++ Received:
+undefined
+
+ ❯ checksEnglish tests/unit/messages.test.ts:75:18
+     73|   void malay;
+     74|   const actual = getMessages('en')[key];
+     75|   expect(actual).toBe(english);
+       |                  ^
+     76|   expect(actual.trim().length).toBeGreaterThan(0);
+     77| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[56/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-EN-source: supplies the agreed nonblank English label
+AssertionError: expected undefined to be 'Official Parliament record' // Object.is equality
+
+- Expected:
+"Official Parliament record"
+
++ Received:
+undefined
+
+ ❯ checksEnglish tests/unit/messages.test.ts:75:18
+     73|   void malay;
+     74|   const actual = getMessages('en')[key];
+     75|   expect(actual).toBe(english);
+       |                  ^
+     76|   expect(actual.trim().length).toBeGreaterThan(0);
+     77| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[57/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-EN-historyUnavailable: supplies the agreed nonblank English label
+AssertionError: expected undefined to be 'Parliamentary membership or constitue…' // Object.is equality
+
+- Expected:
+"Parliamentary membership or constituency on this date is unavailable."
+
++ Received:
+undefined
+
+ ❯ checksEnglish tests/unit/messages.test.ts:75:18
+     73|   void malay;
+     74|   const actual = getMessages('en')[key];
+     75|   expect(actual).toBe(english);
+       |                  ^
+     76|   expect(actual.trim().length).toBeGreaterThan(0);
+     77| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[58/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-EN-officialPublishedUnavailable: supplies the agreed nonblank English label
+AssertionError: expected undefined to be 'Official source publication date is u…' // Object.is equality
+
+- Expected:
+"Official source publication date is unavailable."
+
++ Received:
+undefined
+
+ ❯ checksEnglish tests/unit/messages.test.ts:75:18
+     73|   void malay;
+     74|   const actual = getMessages('en')[key];
+     75|   expect(actual).toBe(english);
+       |                  ^
+     76|   expect(actual.trim().length).toBeGreaterThan(0);
+     77| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[59/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-EN-officialRevisedUnavailable: supplies the agreed nonblank English label
+AssertionError: expected undefined to be 'Official source revision date is unav…' // Object.is equality
+
+- Expected:
+"Official source revision date is unavailable."
+
++ Received:
+undefined
+
+ ❯ checksEnglish tests/unit/messages.test.ts:75:18
+     73|   void malay;
+     74|   const actual = getMessages('en')[key];
+     75|   expect(actual).toBe(english);
+       |                  ^
+     76|   expect(actual.trim().length).toBeGreaterThan(0);
+     77| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[60/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-EN-snapshotPrepared: supplies the agreed nonblank English label
+AssertionError: expected undefined to be 'Site snapshot prepared' // Object.is equality
+
+- Expected:
+"Site snapshot prepared"
+
++ Received:
+undefined
+
+ ❯ checksEnglish tests/unit/messages.test.ts:75:18
+     73|   void malay;
+     74|   const actual = getMessages('en')[key];
+     75|   expect(actual).toBe(english);
+       |                  ^
+     76|   expect(actual.trim().length).toBeGreaterThan(0);
+     77| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[61/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-EN-sitePublished: supplies the agreed nonblank English label
+AssertionError: expected undefined to be 'Site publication confirmed' // Object.is equality
+
+- Expected:
+"Site publication confirmed"
+
++ Received:
+undefined
+
+ ❯ checksEnglish tests/unit/messages.test.ts:75:18
+     73|   void malay;
+     74|   const actual = getMessages('en')[key];
+     75|   expect(actual).toBe(english);
+       |                  ^
+     76|   expect(actual.trim().length).toBeGreaterThan(0);
+     77| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[62/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-EN-sourceAcquired: supplies the agreed nonblank English label
+AssertionError: expected undefined to be 'Source record successfully acquired' // Object.is equality
+
+- Expected:
+"Source record successfully acquired"
+
++ Received:
+undefined
+
+ ❯ checksEnglish tests/unit/messages.test.ts:75:18
+     73|   void malay;
+     74|   const actual = getMessages('en')[key];
+     75|   expect(actual).toBe(english);
+       |                  ^
+     76|   expect(actual.trim().length).toBeGreaterThan(0);
+     77| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[63/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-EN-deviceRefreshed: supplies the agreed nonblank English label
+AssertionError: expected undefined to be 'Site data successfully validated on t…' // Object.is equality
+
+- Expected:
+"Site data successfully validated on this device"
+
++ Received:
+undefined
+
+ ❯ checksEnglish tests/unit/messages.test.ts:75:18
+     73|   void malay;
+     74|   const actual = getMessages('en')[key];
+     75|   expect(actual).toBe(english);
+       |                  ^
+     76|   expect(actual.trim().length).toBeGreaterThan(0);
+     77| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[64/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-EN-unknownTime: supplies the agreed nonblank English label
+AssertionError: expected undefined to be 'Unavailable' // Object.is equality
+
+- Expected:
+"Unavailable"
+
++ Received:
+undefined
+
+ ❯ checksEnglish tests/unit/messages.test.ts:75:18
+     73|   void malay;
+     74|   const actual = getMessages('en')[key];
+     75|   expect(actual).toBe(english);
+       |                  ^
+     76|   expect(actual.trim().length).toBeGreaterThan(0);
+     77| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[65/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-EN-draft: supplies the agreed nonblank English label
+AssertionError: expected undefined to be 'Draft' // Object.is equality
+
+- Expected:
+"Draft"
+
++ Received:
+undefined
+
+ ❯ checksEnglish tests/unit/messages.test.ts:75:18
+     73|   void malay;
+     74|   const actual = getMessages('en')[key];
+     75|   expect(actual).toBe(english);
+       |                  ^
+     76|   expect(actual.trim().length).toBeGreaterThan(0);
+     77| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[66/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-EN-final: supplies the agreed nonblank English label
+AssertionError: expected undefined to be 'Final' // Object.is equality
+
+- Expected:
+"Final"
+
++ Received:
+undefined
+
+ ❯ checksEnglish tests/unit/messages.test.ts:75:18
+     73|   void malay;
+     74|   const actual = getMessages('en')[key];
+     75|   expect(actual).toBe(english);
+       |                  ^
+     76|   expect(actual.trim().length).toBeGreaterThan(0);
+     77| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[67/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-EN-statusUnavailable: supplies the agreed nonblank English label
+AssertionError: expected undefined to be 'Draft/final status unavailable' // Object.is equality
+
+- Expected:
+"Draft/final status unavailable"
+
++ Received:
+undefined
+
+ ❯ checksEnglish tests/unit/messages.test.ts:75:18
+     73|   void malay;
+     74|   const actual = getMessages('en')[key];
+     75|   expect(actual).toBe(english);
+       |                  ^
+     76|   expect(actual.trim().length).toBeGreaterThan(0);
+     77| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[68/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-EN-turns: supplies the agreed nonblank English label
+AssertionError: expected undefined to be 'Attributed contributions' // Object.is equality
+
+- Expected:
+"Attributed contributions"
+
++ Received:
+undefined
+
+ ❯ checksEnglish tests/unit/messages.test.ts:75:18
+     73|   void malay;
+     74|   const actual = getMessages('en')[key];
+     75|   expect(actual).toBe(english);
+       |                  ^
+     76|   expect(actual.trim().length).toBeGreaterThan(0);
+     77| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[69/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-EN-gaps: supplies the agreed nonblank English label
+AssertionError: expected undefined to be 'Unassigned passages' // Object.is equality
+
+- Expected:
+"Unassigned passages"
+
++ Received:
+undefined
+
+ ❯ checksEnglish tests/unit/messages.test.ts:75:18
+     73|   void malay;
+     74|   const actual = getMessages('en')[key];
+     75|   expect(actual).toBe(english);
+       |                  ^
+     76|   expect(actual.trim().length).toBeGreaterThan(0);
+     77| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[70/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-EN-annotations: supplies the agreed nonblank English label
+AssertionError: expected undefined to be 'Source annotations' // Object.is equality
+
+- Expected:
+"Source annotations"
+
++ Received:
+undefined
+
+ ❯ checksEnglish tests/unit/messages.test.ts:75:18
+     73|   void malay;
+     74|   const actual = getMessages('en')[key];
+     75|   expect(actual).toBe(english);
+       |                  ^
+     76|   expect(actual.trim().length).toBeGreaterThan(0);
+     77| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[71/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-EN-section: supplies the agreed nonblank English label
+AssertionError: expected undefined to be 'Source section' // Object.is equality
+
+- Expected:
+"Source section"
+
++ Received:
+undefined
+
+ ❯ checksEnglish tests/unit/messages.test.ts:75:18
+     73|   void malay;
+     74|   const actual = getMessages('en')[key];
+     75|   expect(actual).toBe(english);
+       |                  ^
+     76|   expect(actual.trim().length).toBeGreaterThan(0);
+     77| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[72/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-EN-time: supplies the agreed nonblank English label
+AssertionError: expected undefined to be 'Source timestamp' // Object.is equality
+
+- Expected:
+"Source timestamp"
+
++ Received:
+undefined
+
+ ❯ checksEnglish tests/unit/messages.test.ts:75:18
+     73|   void malay;
+     74|   const actual = getMessages('en')[key];
+     75|   expect(actual).toBe(english);
+       |                  ^
+     76|   expect(actual.trim().length).toBeGreaterThan(0);
+     77| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[73/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-EN-index: supplies the agreed nonblank English label
+AssertionError: expected undefined to be 'Source index' // Object.is equality
+
+- Expected:
+"Source index"
+
++ Received:
+undefined
+
+ ❯ checksEnglish tests/unit/messages.test.ts:75:18
+     73|   void malay;
+     74|   const actual = getMessages('en')[key];
+     75|   expect(actual).toBe(english);
+       |                  ^
+     76|   expect(actual.trim().length).toBeGreaterThan(0);
+     77| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[74/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-EN-sourceId: supplies the agreed nonblank English label
+AssertionError: expected undefined to be 'Source ID' // Object.is equality
+
+- Expected:
+"Source ID"
+
++ Received:
+undefined
+
+ ❯ checksEnglish tests/unit/messages.test.ts:75:18
+     73|   void malay;
+     74|   const actual = getMessages('en')[key];
+     75|   expect(actual).toBe(english);
+       |                  ^
+     76|   expect(actual.trim().length).toBeGreaterThan(0);
+     77| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[75/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-EN-help: supplies the agreed nonblank English label
+AssertionError: expected undefined to be 'Reading help' // Object.is equality
+
+- Expected:
+"Reading help"
+
++ Received:
+undefined
+
+ ❯ checksEnglish tests/unit/messages.test.ts:75:18
+     73|   void malay;
+     74|   const actual = getMessages('en')[key];
+     75|   expect(actual).toBe(english);
+       |                  ^
+     76|   expect(actual.trim().length).toBeGreaterThan(0);
+     77| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[76/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-EN-coverage: supplies the agreed nonblank English label
+AssertionError: expected undefined to be 'Source archive coverage' // Object.is equality
+
+- Expected:
+"Source archive coverage"
+
++ Received:
+undefined
+
+ ❯ checksEnglish tests/unit/messages.test.ts:75:18
+     73|   void malay;
+     74|   const actual = getMessages('en')[key];
+     75|   expect(actual).toBe(english);
+       |                  ^
+     76|   expect(actual.trim().length).toBeGreaterThan(0);
+     77| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[77/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-EN-parliament: supplies the agreed nonblank English label
+AssertionError: expected undefined to be 'Parliament' // Object.is equality
+
+- Expected:
+"Parliament"
+
++ Received:
+undefined
+
+ ❯ checksEnglish tests/unit/messages.test.ts:75:18
+     73|   void malay;
+     74|   const actual = getMessages('en')[key];
+     75|   expect(actual).toBe(english);
+       |                  ^
+     76|   expect(actual.trim().length).toBeGreaterThan(0);
+     77| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[78/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-EN-penggal: supplies the agreed nonblank English label
+AssertionError: expected undefined to be 'Session' // Object.is equality
+
+- Expected:
+"Session"
+
++ Received:
+undefined
+
+ ❯ checksEnglish tests/unit/messages.test.ts:75:18
+     73|   void malay;
+     74|   const actual = getMessages('en')[key];
+     75|   expect(actual).toBe(english);
+       |                  ^
+     76|   expect(actual.trim().length).toBeGreaterThan(0);
+     77| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[79/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-EN-mesyuarat: supplies the agreed nonblank English label
+AssertionError: expected undefined to be 'Meeting' // Object.is equality
+
+- Expected:
+"Meeting"
+
++ Received:
+undefined
+
+ ❯ checksEnglish tests/unit/messages.test.ts:75:18
+     73|   void malay;
+     74|   const actual = getMessages('en')[key];
+     75|   expect(actual).toBe(english);
+       |                  ^
+     76|   expect(actual.trim().length).toBeGreaterThan(0);
+     77| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[80/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-KEYS-ms: locale keys are complete and equivalent
+ FAIL  tests/unit/messages.test.ts > MSG-KEYS-en: locale keys are complete and equivalent
+AssertionError: expected [] to deeply equal [ 'annotations', 'chooseBoth', …(38) ]
+
+- Expected
++ Received
+
+- [
+-   "annotations",
+-   "chooseBoth",
+-   "coverage",
+-   "description",
+-   "deviceRefreshed",
+-   "draft",
+-   "error",
+-   "final",
+-   "gaps",
+-   "gapsIntro",
+-   "help",
+-   "historyUnavailable",
+-   "index",
+-   "language",
+-   "loading",
+-   "loadingCatalogue",
+-   "member",
+-   "mesyuarat",
+-   "noMatchedGap",
+-   "officialPublishedUnavailable",
+-   "officialRevisedUnavailable",
+-   "parliament",
+-   "penggal",
+-   "read",
+-   "resultsReady",
+-   "search",
+-   "section",
+-   "sitePublished",
+-   "sitting",
+-   "snapshotPrepared",
+-   "source",
+-   "sourceAcquired",
+-   "sourceId",
+-   "statusUnavailable",
+-   "time",
+-   "title",
+-   "turns",
+-   "unavailable",
+-   "unknownTime",
+-   "verifiedAbsence",
+- ]
++ []
+
+ ❯ checksKeys tests/unit/messages.test.ts:87:53
+     85|   const expected = [];
+     86|   for (const entry of labels) expected.push(entry[0]);
+     87|   expect(Object.keys(getMessages(language)).sort()).toEqual(expected.s…
+       |                                                     ^
+     88| }
+     89|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[81/83]⎯
+
+ FAIL  tests/unit/messages.test.ts > MSG-SOURCE: both descriptions explain original wording and localization leaves archived bytes unchanged
+AssertionError: expected { Object (malay, english) } to deeply equal { …(2) }
+
+- Expected
++ Received
+
+  {
+-   "english": "Read contributions attributed to a source identity for the selected sitting. Transcript wording stays in its original language.",
+-   "malay": "Baca sumbangan yang dipadankan kepada identiti sumber bagi persidangan pilihan. Teks transkrip kekal dalam bahasa asal.",
++   "english": undefined,
++   "malay": undefined,
+  }
+
+ ❯ checksSourceBoundary tests/unit/messages.test.ts:100:70
+     98|   const malay = getMessages('ms');
+     99|   const english = getMessages('en');
+    100|   expect({ malay: malay.description, english: english.description }).t…
+       |                                                                      ^
+    101|   expect(readFileSync(path)).toEqual(before);
+    102| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[82/83]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  83 failed (83)
+   Start at  12:59:22
+   Duration  231ms (transform 43%, tests 36%, import 17%, worker 4%)
+

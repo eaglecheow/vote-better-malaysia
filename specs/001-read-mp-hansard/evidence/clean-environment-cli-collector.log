@@ -1,0 +1,5 @@
+
+> vote-better-malaysia@0.1.0 performance:collect
+> node scripts/collect-performance.ts
+
+collection requires frozen artifact, candidate, fixtures, production URL and external output

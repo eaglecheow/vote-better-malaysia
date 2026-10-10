@@ -1,0 +1,569 @@
+
+ RUN  v5.0.3 /Users/eaglecheow/dev/vote-better-malaysia
+
+ ❯ tests/unit/pwa-messages.test.ts (28 tests | 28 failed) 8ms
+   × PWA-MSG001 ms/saved: saved, offline and update guidance retains its exact distinct meaning 2ms
+   × PWA-MSG001 ms/unsaved: saved, offline and update guidance retains its exact distinct meaning 0ms
+   × PWA-MSG001 ms/ready: saved, offline and update guidance retains its exact distinct meaning 0ms
+   × PWA-MSG001 ms/limit: saved, offline and update guidance retains its exact distinct meaning 0ms
+   × PWA-MSG001 ms/older: saved, offline and update guidance retains its exact distinct meaning 0ms
+   × PWA-MSG001 ms/connection: saved, offline and update guidance retains its exact distinct meaning 0ms
+   × PWA-MSG001 ms/firstVisit: saved, offline and update guidance retains its exact distinct meaning 0ms
+   × PWA-MSG001 ms/incompatible: saved, offline and update guidance retains its exact distinct meaning 0ms
+   × PWA-MSG001 ms/storage: saved, offline and update guidance retains its exact distinct meaning 0ms
+   × PWA-MSG001 ms/apply: saved, offline and update guidance retains its exact distinct meaning 0ms
+   × PWA-MSG001 ms/continue: saved, offline and update guidance retains its exact distinct meaning 0ms
+   × PWA-MSG001 ms/savedRefreshedAt: saved, offline and update guidance retains its exact distinct meaning 0ms
+   × PWA-MSG001 ms/priorSavedRefreshedAt: saved, offline and update guidance retains its exact distinct meaning 0ms
+   × PWA-MSG001 en/saved: saved, offline and update guidance retains its exact distinct meaning 0ms
+   × PWA-MSG001 en/unsaved: saved, offline and update guidance retains its exact distinct meaning 0ms
+   × PWA-MSG001 en/ready: saved, offline and update guidance retains its exact distinct meaning 0ms
+   × PWA-MSG001 en/limit: saved, offline and update guidance retains its exact distinct meaning 0ms
+   × PWA-MSG001 en/older: saved, offline and update guidance retains its exact distinct meaning 0ms
+   × PWA-MSG001 en/connection: saved, offline and update guidance retains its exact distinct meaning 0ms
+   × PWA-MSG001 en/firstVisit: saved, offline and update guidance retains its exact distinct meaning 0ms
+   × PWA-MSG001 en/incompatible: saved, offline and update guidance retains its exact distinct meaning 0ms
+   × PWA-MSG001 en/storage: saved, offline and update guidance retains its exact distinct meaning 0ms
+   × PWA-MSG001 en/apply: saved, offline and update guidance retains its exact distinct meaning 0ms
+   × PWA-MSG001 en/continue: saved, offline and update guidance retains its exact distinct meaning 1ms
+   × PWA-MSG001 en/savedRefreshedAt: saved, offline and update guidance retains its exact distinct meaning 0ms
+   × PWA-MSG001 en/priorSavedRefreshedAt: saved, offline and update guidance retains its exact distinct meaning 0ms
+   × PWA-MSG002 ms: both locales cover the complete same label set 1ms
+   × PWA-MSG002 en: both locales cover the complete same label set 0ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 28 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/pwa-messages.test.ts > PWA-MSG001 ms/saved: saved, offline and update guidance retains its exact distinct meaning
+AssertionError: expected undefined to be 'Transkrip disimpan pada peranti.' // Object.is equality
+
+- Expected:
+"Transkrip disimpan pada peranti."
+
++ Received:
+undefined
+
+ ❯ tests/unit/pwa-messages.test.ts:42:53
+     40|      * @returns Nothing after the locale/key assertion.
+     41|      */
+     42|     () => { expect(getPwaMessages(language)?.[key]).toBe(labels[langua…
+       |                                                     ^
+     43|
+     44| for (const language of ['ms', 'en'] as const) test(`PWA-MSG002 ${langu…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/28]⎯
+
+ FAIL  tests/unit/pwa-messages.test.ts > PWA-MSG001 ms/unsaved: saved, offline and update guidance retains its exact distinct meaning
+AssertionError: expected undefined to be 'Transkrip belum disimpan pada peranti.' // Object.is equality
+
+- Expected:
+"Transkrip belum disimpan pada peranti."
+
++ Received:
+undefined
+
+ ❯ tests/unit/pwa-messages.test.ts:42:53
+     40|      * @returns Nothing after the locale/key assertion.
+     41|      */
+     42|     () => { expect(getPwaMessages(language)?.[key]).toBe(labels[langua…
+       |                                                     ^
+     43|
+     44| for (const language of ['ms', 'en'] as const) test(`PWA-MSG002 ${langu…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/28]⎯
+
+ FAIL  tests/unit/pwa-messages.test.ts > PWA-MSG001 ms/ready: saved, offline and update guidance retains its exact distinct meaning
+AssertionError: expected undefined to be 'Pembaca sedia dibuka semula tanpa sam…' // Object.is equality
+
+- Expected:
+"Pembaca sedia dibuka semula tanpa sambungan."
+
++ Received:
+undefined
+
+ ❯ tests/unit/pwa-messages.test.ts:42:53
+     40|      * @returns Nothing after the locale/key assertion.
+     41|      */
+     42|     () => { expect(getPwaMessages(language)?.[key]).toBe(labels[langua…
+       |                                                     ^
+     43|
+     44| for (const language of ['ms', 'en'] as const) test(`PWA-MSG002 ${langu…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/28]⎯
+
+ FAIL  tests/unit/pwa-messages.test.ts > PWA-MSG001 ms/limit: saved, offline and update guidance retains its exact distinct meaning
+AssertionError: expected undefined to be 'Pembukaan semula tanpa sambungan belu…' // Object.is equality
+
+- Expected:
+"Pembukaan semula tanpa sambungan belum dapat dipastikan."
+
++ Received:
+undefined
+
+ ❯ tests/unit/pwa-messages.test.ts:42:53
+     40|      * @returns Nothing after the locale/key assertion.
+     41|      */
+     42|     () => { expect(getPwaMessages(language)?.[key]).toBe(labels[langua…
+       |                                                     ^
+     43|
+     44| for (const language of ['ms', 'en'] as const) test(`PWA-MSG002 ${langu…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/28]⎯
+
+ FAIL  tests/unit/pwa-messages.test.ts > PWA-MSG001 ms/older: saved, offline and update guidance retains its exact distinct meaning
+AssertionError: expected undefined to be 'Salinan lama yang disimpan masih ters…' // Object.is equality
+
+- Expected:
+"Salinan lama yang disimpan masih tersedia tanpa sambungan."
+
++ Received:
+undefined
+
+ ❯ tests/unit/pwa-messages.test.ts:42:53
+     40|      * @returns Nothing after the locale/key assertion.
+     41|      */
+     42|     () => { expect(getPwaMessages(language)?.[key]).toBe(labels[langua…
+       |                                                     ^
+     43|
+     44| for (const language of ['ms', 'en'] as const) test(`PWA-MSG002 ${langu…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/28]⎯
+
+ FAIL  tests/unit/pwa-messages.test.ts > PWA-MSG001 ms/connection: saved, offline and update guidance retains its exact distinct meaning
+AssertionError: expected undefined to be 'Sambungan diperlukan untuk membuka pa…' // Object.is equality
+
+- Expected:
+"Sambungan diperlukan untuk membuka pasangan identiti dan persidangan yang belum disimpan."
+
++ Received:
+undefined
+
+ ❯ tests/unit/pwa-messages.test.ts:42:53
+     40|      * @returns Nothing after the locale/key assertion.
+     41|      */
+     42|     () => { expect(getPwaMessages(language)?.[key]).toBe(labels[langua…
+       |                                                     ^
+     43|
+     44| for (const language of ['ms', 'en'] as const) test(`PWA-MSG002 ${langu…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/28]⎯
+
+ FAIL  tests/unit/pwa-messages.test.ts > PWA-MSG001 ms/firstVisit: saved, offline and update guidance retains its exact distinct meaning
+AssertionError: expected undefined to be 'Sambungan diperlukan untuk memuatkan …' // Object.is equality
+
+- Expected:
+"Sambungan diperlukan untuk memuatkan senarai dan rekod yang belum disimpan."
+
++ Received:
+undefined
+
+ ❯ tests/unit/pwa-messages.test.ts:42:53
+     40|      * @returns Nothing after the locale/key assertion.
+     41|      */
+     42|     () => { expect(getPwaMessages(language)?.[key]).toBe(labels[langua…
+       |                                                     ^
+     43|
+     44| for (const language of ['ms', 'en'] as const) test(`PWA-MSG002 ${langu…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/28]⎯
+
+ FAIL  tests/unit/pwa-messages.test.ts > PWA-MSG001 ms/incompatible: saved, offline and update guidance retains its exact distinct meaning
+AssertionError: expected undefined to be 'Data yang disimpan tidak serasi. Samb…' // Object.is equality
+
+- Expected:
+"Data yang disimpan tidak serasi. Sambungan diperlukan untuk mendapatkan salinan yang sah."
+
++ Received:
+undefined
+
+ ❯ tests/unit/pwa-messages.test.ts:42:53
+     40|      * @returns Nothing after the locale/key assertion.
+     41|      */
+     42|     () => { expect(getPwaMessages(language)?.[key]).toBe(labels[langua…
+       |                                                     ^
+     43|
+     44| for (const language of ['ms', 'en'] as const) test(`PWA-MSG002 ${langu…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/28]⎯
+
+ FAIL  tests/unit/pwa-messages.test.ts > PWA-MSG001 ms/storage: saved, offline and update guidance retains its exact distinct meaning
+AssertionError: expected undefined to be 'Storan peranti tidak tersedia. Bacaan…' // Object.is equality
+
+- Expected:
+"Storan peranti tidak tersedia. Bacaan dalam talian masih boleh digunakan."
+
++ Received:
+undefined
+
+ ❯ tests/unit/pwa-messages.test.ts:42:53
+     40|      * @returns Nothing after the locale/key assertion.
+     41|      */
+     42|     () => { expect(getPwaMessages(language)?.[key]).toBe(labels[langua…
+       |                                                     ^
+     43|
+     44| for (const language of ['ms', 'en'] as const) test(`PWA-MSG002 ${langu…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/28]⎯
+
+ FAIL  tests/unit/pwa-messages.test.ts > PWA-MSG001 ms/apply: saved, offline and update guidance retains its exact distinct meaning
+AssertionError: expected undefined to be 'Gunakan kemas kini' // Object.is equality
+
+- Expected:
+"Gunakan kemas kini"
+
++ Received:
+undefined
+
+ ❯ tests/unit/pwa-messages.test.ts:42:53
+     40|      * @returns Nothing after the locale/key assertion.
+     41|      */
+     42|     () => { expect(getPwaMessages(language)?.[key]).toBe(labels[langua…
+       |                                                     ^
+     43|
+     44| for (const language of ['ms', 'en'] as const) test(`PWA-MSG002 ${langu…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/28]⎯
+
+ FAIL  tests/unit/pwa-messages.test.ts > PWA-MSG001 ms/continue: saved, offline and update guidance retains its exact distinct meaning
+AssertionError: expected undefined to be 'Teruskan membaca' // Object.is equality
+
+- Expected:
+"Teruskan membaca"
+
++ Received:
+undefined
+
+ ❯ tests/unit/pwa-messages.test.ts:42:53
+     40|      * @returns Nothing after the locale/key assertion.
+     41|      */
+     42|     () => { expect(getPwaMessages(language)?.[key]).toBe(labels[langua…
+       |                                                     ^
+     43|
+     44| for (const language of ['ms', 'en'] as const) test(`PWA-MSG002 ${langu…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/28]⎯
+
+ FAIL  tests/unit/pwa-messages.test.ts > PWA-MSG001 ms/savedRefreshedAt: saved, offline and update guidance retains its exact distinct meaning
+AssertionError: expected undefined to be 'Data salinan yang disimpan berjaya di…' // Object.is equality
+
+- Expected:
+"Data salinan yang disimpan berjaya disahkan pada peranti"
+
++ Received:
+undefined
+
+ ❯ tests/unit/pwa-messages.test.ts:42:53
+     40|      * @returns Nothing after the locale/key assertion.
+     41|      */
+     42|     () => { expect(getPwaMessages(language)?.[key]).toBe(labels[langua…
+       |                                                     ^
+     43|
+     44| for (const language of ['ms', 'en'] as const) test(`PWA-MSG002 ${langu…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/28]⎯
+
+ FAIL  tests/unit/pwa-messages.test.ts > PWA-MSG001 ms/priorSavedRefreshedAt: saved, offline and update guidance retains its exact distinct meaning
+AssertionError: expected undefined to be 'Data salinan lama yang disimpan berja…' // Object.is equality
+
+- Expected:
+"Data salinan lama yang disimpan berjaya disahkan pada peranti"
+
++ Received:
+undefined
+
+ ❯ tests/unit/pwa-messages.test.ts:42:53
+     40|      * @returns Nothing after the locale/key assertion.
+     41|      */
+     42|     () => { expect(getPwaMessages(language)?.[key]).toBe(labels[langua…
+       |                                                     ^
+     43|
+     44| for (const language of ['ms', 'en'] as const) test(`PWA-MSG002 ${langu…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[13/28]⎯
+
+ FAIL  tests/unit/pwa-messages.test.ts > PWA-MSG001 en/saved: saved, offline and update guidance retains its exact distinct meaning
+AssertionError: expected undefined to be 'Transcript saved on this device.' // Object.is equality
+
+- Expected:
+"Transcript saved on this device."
+
++ Received:
+undefined
+
+ ❯ tests/unit/pwa-messages.test.ts:42:53
+     40|      * @returns Nothing after the locale/key assertion.
+     41|      */
+     42|     () => { expect(getPwaMessages(language)?.[key]).toBe(labels[langua…
+       |                                                     ^
+     43|
+     44| for (const language of ['ms', 'en'] as const) test(`PWA-MSG002 ${langu…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[14/28]⎯
+
+ FAIL  tests/unit/pwa-messages.test.ts > PWA-MSG001 en/unsaved: saved, offline and update guidance retains its exact distinct meaning
+AssertionError: expected undefined to be 'Transcript is not saved on this devic…' // Object.is equality
+
+- Expected:
+"Transcript is not saved on this device."
+
++ Received:
+undefined
+
+ ❯ tests/unit/pwa-messages.test.ts:42:53
+     40|      * @returns Nothing after the locale/key assertion.
+     41|      */
+     42|     () => { expect(getPwaMessages(language)?.[key]).toBe(labels[langua…
+       |                                                     ^
+     43|
+     44| for (const language of ['ms', 'en'] as const) test(`PWA-MSG002 ${langu…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[15/28]⎯
+
+ FAIL  tests/unit/pwa-messages.test.ts > PWA-MSG001 en/ready: saved, offline and update guidance retains its exact distinct meaning
+AssertionError: expected undefined to be 'Reader ready to reopen offline.' // Object.is equality
+
+- Expected:
+"Reader ready to reopen offline."
+
++ Received:
+undefined
+
+ ❯ tests/unit/pwa-messages.test.ts:42:53
+     40|      * @returns Nothing after the locale/key assertion.
+     41|      */
+     42|     () => { expect(getPwaMessages(language)?.[key]).toBe(labels[langua…
+       |                                                     ^
+     43|
+     44| for (const language of ['ms', 'en'] as const) test(`PWA-MSG002 ${langu…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[16/28]⎯
+
+ FAIL  tests/unit/pwa-messages.test.ts > PWA-MSG001 en/limit: saved, offline and update guidance retains its exact distinct meaning
+AssertionError: expected undefined to be 'Offline reopening is not confirmed.' // Object.is equality
+
+- Expected:
+"Offline reopening is not confirmed."
+
++ Received:
+undefined
+
+ ❯ tests/unit/pwa-messages.test.ts:42:53
+     40|      * @returns Nothing after the locale/key assertion.
+     41|      */
+     42|     () => { expect(getPwaMessages(language)?.[key]).toBe(labels[langua…
+       |                                                     ^
+     43|
+     44| for (const language of ['ms', 'en'] as const) test(`PWA-MSG002 ${langu…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[17/28]⎯
+
+ FAIL  tests/unit/pwa-messages.test.ts > PWA-MSG001 en/older: saved, offline and update guidance retains its exact distinct meaning
+AssertionError: expected undefined to be 'The older saved copy remains availabl…' // Object.is equality
+
+- Expected:
+"The older saved copy remains available offline."
+
++ Received:
+undefined
+
+ ❯ tests/unit/pwa-messages.test.ts:42:53
+     40|      * @returns Nothing after the locale/key assertion.
+     41|      */
+     42|     () => { expect(getPwaMessages(language)?.[key]).toBe(labels[langua…
+       |                                                     ^
+     43|
+     44| for (const language of ['ms', 'en'] as const) test(`PWA-MSG002 ${langu…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[18/28]⎯
+
+ FAIL  tests/unit/pwa-messages.test.ts > PWA-MSG001 en/connection: saved, offline and update guidance retains its exact distinct meaning
+AssertionError: expected undefined to be 'A connection is required to open this…' // Object.is equality
+
+- Expected:
+"A connection is required to open this unsaved identity and sitting pair."
+
++ Received:
+undefined
+
+ ❯ tests/unit/pwa-messages.test.ts:42:53
+     40|      * @returns Nothing after the locale/key assertion.
+     41|      */
+     42|     () => { expect(getPwaMessages(language)?.[key]).toBe(labels[langua…
+       |                                                     ^
+     43|
+     44| for (const language of ['ms', 'en'] as const) test(`PWA-MSG002 ${langu…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[19/28]⎯
+
+ FAIL  tests/unit/pwa-messages.test.ts > PWA-MSG001 en/firstVisit: saved, offline and update guidance retains its exact distinct meaning
+AssertionError: expected undefined to be 'A connection is required to load unsa…' // Object.is equality
+
+- Expected:
+"A connection is required to load unsaved lists and records."
+
++ Received:
+undefined
+
+ ❯ tests/unit/pwa-messages.test.ts:42:53
+     40|      * @returns Nothing after the locale/key assertion.
+     41|      */
+     42|     () => { expect(getPwaMessages(language)?.[key]).toBe(labels[langua…
+       |                                                     ^
+     43|
+     44| for (const language of ['ms', 'en'] as const) test(`PWA-MSG002 ${langu…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[20/28]⎯
+
+ FAIL  tests/unit/pwa-messages.test.ts > PWA-MSG001 en/incompatible: saved, offline and update guidance retains its exact distinct meaning
+AssertionError: expected undefined to be 'Saved data is incompatible. A connect…' // Object.is equality
+
+- Expected:
+"Saved data is incompatible. A connection is required to retrieve a valid copy."
+
++ Received:
+undefined
+
+ ❯ tests/unit/pwa-messages.test.ts:42:53
+     40|      * @returns Nothing after the locale/key assertion.
+     41|      */
+     42|     () => { expect(getPwaMessages(language)?.[key]).toBe(labels[langua…
+       |                                                     ^
+     43|
+     44| for (const language of ['ms', 'en'] as const) test(`PWA-MSG002 ${langu…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[21/28]⎯
+
+ FAIL  tests/unit/pwa-messages.test.ts > PWA-MSG001 en/storage: saved, offline and update guidance retains its exact distinct meaning
+AssertionError: expected undefined to be 'Device storage is unavailable. Online…' // Object.is equality
+
+- Expected:
+"Device storage is unavailable. Online reading remains usable."
+
++ Received:
+undefined
+
+ ❯ tests/unit/pwa-messages.test.ts:42:53
+     40|      * @returns Nothing after the locale/key assertion.
+     41|      */
+     42|     () => { expect(getPwaMessages(language)?.[key]).toBe(labels[langua…
+       |                                                     ^
+     43|
+     44| for (const language of ['ms', 'en'] as const) test(`PWA-MSG002 ${langu…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[22/28]⎯
+
+ FAIL  tests/unit/pwa-messages.test.ts > PWA-MSG001 en/apply: saved, offline and update guidance retains its exact distinct meaning
+AssertionError: expected undefined to be 'Apply update' // Object.is equality
+
+- Expected:
+"Apply update"
+
++ Received:
+undefined
+
+ ❯ tests/unit/pwa-messages.test.ts:42:53
+     40|      * @returns Nothing after the locale/key assertion.
+     41|      */
+     42|     () => { expect(getPwaMessages(language)?.[key]).toBe(labels[langua…
+       |                                                     ^
+     43|
+     44| for (const language of ['ms', 'en'] as const) test(`PWA-MSG002 ${langu…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[23/28]⎯
+
+ FAIL  tests/unit/pwa-messages.test.ts > PWA-MSG001 en/continue: saved, offline and update guidance retains its exact distinct meaning
+AssertionError: expected undefined to be 'Continue reading' // Object.is equality
+
+- Expected:
+"Continue reading"
+
++ Received:
+undefined
+
+ ❯ tests/unit/pwa-messages.test.ts:42:53
+     40|      * @returns Nothing after the locale/key assertion.
+     41|      */
+     42|     () => { expect(getPwaMessages(language)?.[key]).toBe(labels[langua…
+       |                                                     ^
+     43|
+     44| for (const language of ['ms', 'en'] as const) test(`PWA-MSG002 ${langu…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[24/28]⎯
+
+ FAIL  tests/unit/pwa-messages.test.ts > PWA-MSG001 en/savedRefreshedAt: saved, offline and update guidance retains its exact distinct meaning
+AssertionError: expected undefined to be 'Saved copy successfully validated on …' // Object.is equality
+
+- Expected:
+"Saved copy successfully validated on this device"
+
++ Received:
+undefined
+
+ ❯ tests/unit/pwa-messages.test.ts:42:53
+     40|      * @returns Nothing after the locale/key assertion.
+     41|      */
+     42|     () => { expect(getPwaMessages(language)?.[key]).toBe(labels[langua…
+       |                                                     ^
+     43|
+     44| for (const language of ['ms', 'en'] as const) test(`PWA-MSG002 ${langu…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[25/28]⎯
+
+ FAIL  tests/unit/pwa-messages.test.ts > PWA-MSG001 en/priorSavedRefreshedAt: saved, offline and update guidance retains its exact distinct meaning
+AssertionError: expected undefined to be 'Older saved copy successfully validat…' // Object.is equality
+
+- Expected:
+"Older saved copy successfully validated on this device"
+
++ Received:
+undefined
+
+ ❯ tests/unit/pwa-messages.test.ts:42:53
+     40|      * @returns Nothing after the locale/key assertion.
+     41|      */
+     42|     () => { expect(getPwaMessages(language)?.[key]).toBe(labels[langua…
+       |                                                     ^
+     43|
+     44| for (const language of ['ms', 'en'] as const) test(`PWA-MSG002 ${langu…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[26/28]⎯
+
+ FAIL  tests/unit/pwa-messages.test.ts > PWA-MSG002 ms: both locales cover the complete same label set
+ FAIL  tests/unit/pwa-messages.test.ts > PWA-MSG002 en: both locales cover the complete same label set
+AssertionError: expected [] to deeply equal [ 'apply', 'connection', …(11) ]
+
+- Expected
++ Received
+
+- [
+-   "apply",
+-   "connection",
+-   "continue",
+-   "firstVisit",
+-   "incompatible",
+-   "limit",
+-   "older",
+-   "priorSavedRefreshedAt",
+-   "ready",
+-   "saved",
+-   "savedRefreshedAt",
+-   "storage",
+-   "unsaved",
+- ]
++ []
+
+ ❯ tests/unit/pwa-messages.test.ts:48:70
+     46|    * @returns Nothing after complete key-set comparison.
+     47|    */
+     48|   () => { expect(Object.keys(getPwaMessages(language) ?? {}).sort()).t…
+       |                                                                      ^
+     49|
+     50|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[27/28]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  28 failed (28)
+   Start at  18:24:35
+   Duration  132ms (transform 46%, tests 28%, import 20%, worker 6%)
+

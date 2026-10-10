@@ -1,0 +1,14 @@
+
+> vote-better-malaysia@0.1.0 build
+> tsc --noEmit && vite build
+
+vite v8.3.4 building client environment for production...
+transforming...
+✓ 7 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                  0.57 kB │ gzip: 0.32 kB
+dist/assets/index-BXaHGM-n.css   1.29 kB │ gzip: 0.64 kB
+dist/assets/index-CrgUH6w7.js   25.79 kB │ gzip: 9.11 kB
+
+✓ built in 2.87s

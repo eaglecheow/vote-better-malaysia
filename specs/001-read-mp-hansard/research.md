@@ -115,6 +115,13 @@ validated and has no unresolved nonannotation items. Otherwise show an incomplet
 state with access to unassigned passages. This describes the supplied official record,
 not proof that the member never participated.
 
+The [2026-10-10 approved source policy](evidence/source-policy.md) requires a real
+verified-absence sample only when the complete source supplies an eligible fully
+validated record with zero unresolved nonannotation items and zero assigned matches
+for a selected identity. When none exists, record the complete dated archive eligibility
+search, inventory/record counts, method and result; report real-source absence as
+unavailable. Controlled complete-record absence tests and the classifier remain unchanged.
+
 **Alternatives considered**: Current-member-only coverage misses history; silent ID-only
 filtering hides the concrete missing-ID question; fuzzy matching risks assigning another
 person's speech. The approved design keeps exact-ID filtering with visible gaps.
@@ -179,7 +186,7 @@ post-deployment receipt, nullable in reader metadata when unavailable.
 
 [Pages limits](https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits)
 cap the published site at 1 GB. Set a stricter 900,000,000-byte whole-artifact budget,
-200 KiB catalogue gzip, 512 KiB per sitting gzip and 5 MiB decoded per sitting. Measure
+1 MiB catalogue gzip (1,048,576 bytes), 512 KiB per sitting gzip and 5 MiB decoded per sitting. Measure
 the entire bootstrap; do not truncate or narrow coverage to fit. Exceeding a limit
 blocks release pending a revised design. The sample multiplied by 4,090 is about
 1.51 GB raw versus 421 MB gzip; this is an illustration, not a measured archive estimate.

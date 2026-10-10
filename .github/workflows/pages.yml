@@ -1,0 +1,661 @@
+---
+name: Hansard acquisition and Pages
+'on':
+  schedule:
+  - cron: 17 */4 * * *
+  workflow_dispatch:
+    inputs:
+      operation:
+        description: Prepare a candidate, collect reviewed reports, or promote exact
+          candidate bytes
+        type: choice
+        default: prepare
+        options:
+        - prepare
+        - evidence
+        - promote
+      candidate_run_id:
+        description: Completed trusted candidate-producing run for promotion
+        type: string
+        required: false
+      evidence_run_id:
+        description: Completed trusted reviewed-report run for promotion
+        type: string
+        required: false
+      resume_run_id:
+        description: Explicit trusted interrupted partial-producing run for preparation
+        type: string
+        required: false
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: hansard-pages-${{ github.repository }}
+  cancel-in-progress: false
+defaults:
+  run:
+    shell: bash
+jobs:
+  candidate:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 270
+    env:
+      GH_TOKEN: "${{ github.token }}"
+      HANSARD_STATE: ".cache/hansard"
+      HANSARD_TEST_ORIGIN: "${{ vars.HANSARD_TEST_ORIGIN }}"
+      HANSARD_CANDIDATE_RUN_ID: "${{ inputs.candidate_run_id }}"
+      HANSARD_EVIDENCE_RUN_ID: "${{ inputs.evidence_run_id }}"
+      HANSARD_RESUME_RUN_ID: "${{ inputs.resume_run_id }}"
+    outputs:
+      outcome: "${{ steps.result.outputs.outcome }}"
+      candidate_run_id: "${{ steps.resolve-artifacts.outputs.candidate_run_id || github.run_id
+        }}"
+      candidate_artifact_id: "${{ steps.resolve-artifacts.outputs.candidate_artifact_id
+        || steps.upload-candidate.outputs.artifact-id }}"
+      pages_candidate_artifact_id: "${{ steps.resolve-artifacts.outputs.pages_candidate_artifact_id
+        || steps.freeze-pages.outputs.artifact_id }}"
+      acquired_state_artifact_id: "${{ steps.resolve-artifacts.outputs.acquired_state_artifact_id
+        || steps.upload-state.outputs.artifact-id }}"
+      state_run_id: "${{ steps.upload-state.outputs.artifact-id && github.run_id ||
+        steps.resolve-state.outputs.state_run_id }}"
+      state_artifact_id: "${{ steps.upload-state.outputs.artifact-id || steps.resolve-state.outputs.state_artifact_id
+        }}"
+      served_run_id: "${{ steps.resolve-state.outputs.served_run_id }}"
+      served_artifact_id: "${{ steps.resolve-state.outputs.served_artifact_id }}"
+      evidence_run_id: "${{ steps.resolve-artifacts.outputs.evidence_run_id }}"
+      evidence_artifact_id: "${{ steps.resolve-artifacts.outputs.evidence_artifact_id
+        }}"
+      pages_artifact_id: "${{ steps.upload-promotion.outputs.artifact-id }}"
+      preparation_outcomes_artifact_id: "${{ steps.upload-preparation-outcomes.outputs.artifact-id
+        }}"
+    steps:
+    - id: checkout
+      uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+    - id: node
+      uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
+      with:
+        node-version-file: ".nvmrc"
+        cache: npm
+    - id: dependencies
+      run: npm ci
+    - id: initialize
+      env:
+        HANSARD_WORK: "${{ runner.temp }}/hansard-publication"
+      run: |
+        mkdir -p "$HANSARD_WORK" "$HANSARD_STATE"
+        printf 'HANSARD_WORK=%s\n' "$HANSARD_WORK" >> "$GITHUB_ENV"
+    - id: resolve-state
+      if: inputs.operation != 'evidence'
+      run: |
+        state_run_id='' state_artifact_id='' served_run_id='' served_artifact_id=''
+        gh api --method GET "repos/$GITHUB_REPOSITORY/actions/workflows/pages.yml/runs" -f branch=main -f status=success -f per_page=100 --paginate --slurp > "$HANSARD_WORK/successful-runs.json"
+        jq -r '.[] | .workflow_runs[] | .id' "$HANSARD_WORK/successful-runs.json" > "$HANSARD_WORK/run-ids.txt"
+        while IFS= read -r run_id; do
+          [[ "$run_id" =~ ^[1-9][0-9]*$ ]] || { echo 'Invalid producing run ID' >&2; exit 1; }
+          gh api "repos/$GITHUB_REPOSITORY/actions/runs/$run_id/artifacts?per_page=100" --paginate --slurp > "$HANSARD_WORK/run-artifacts.json"
+          for role in state served; do
+            if [[ "$role" == state ]]; then
+              [[ -z "$state_artifact_id" ]] || continue
+              name=hansard-state
+            else
+              [[ -z "$served_artifact_id" ]] || continue
+              name=hansard-served
+            fi
+            artifact_id=$(jq -er --arg name "$name" '[.[] | .artifacts[] | select(.name == $name and .expired == false)] | if length == 0 then "" elif length == 1 then .[0].id | tostring else error("Ambiguous recovery artifact") end' "$HANSARD_WORK/run-artifacts.json")
+            [[ -z "$artifact_id" ]] && continue
+            [[ "$artifact_id" =~ ^[1-9][0-9]*$ ]] || { echo 'Invalid recovery artifact ID' >&2; exit 1; }
+            if [[ "$role" == state ]]; then state_run_id="$run_id"; state_artifact_id="$artifact_id"; else served_run_id="$run_id"; served_artifact_id="$artifact_id"; fi
+          done
+          [[ -n "$state_artifact_id" && -n "$served_artifact_id" ]] && break
+        done < "$HANSARD_WORK/run-ids.txt"
+        printf 'state_run_id=%s\nstate_artifact_id=%s\nserved_run_id=%s\nserved_artifact_id=%s\n' "$state_run_id" "$state_artifact_id" "$served_run_id" "$served_artifact_id" >> "$GITHUB_OUTPUT"
+        # Resolves exactly one immutable, unexpired named artifact of a numeric producing run.
+        # Parameters: run ID and fixed role name. Prints only its ID; fails on missing/ambiguous metadata.
+        select_artifact() {
+          local run_id="$1" role="$2" artifact_id
+          [[ "$run_id" =~ ^[1-9][0-9]*$ ]] || { echo 'Invalid numeric run ID' >&2; return 1; }
+          artifact_id=$(gh api "repos/$GITHUB_REPOSITORY/actions/runs/$run_id/artifacts?per_page=100" --paginate --slurp | jq -er --arg role "$role" '[.[] | .artifacts[] | select(.name == $role and .expired == false)] | if length == 1 then .[0].id | tostring else error("Missing or ambiguous artifact role") end') || return 1
+          [[ "$artifact_id" =~ ^[1-9][0-9]*$ ]] || { echo 'Invalid artifact ID' >&2; return 1; }
+          printf '%s' "$artifact_id"
+        }
+        if [[ -n "$HANSARD_RESUME_RUN_ID" ]]; then
+          partial_id=$(select_artifact "$HANSARD_RESUME_RUN_ID" hansard-partial)
+          printf 'resume_run_id=%s\nresume_artifact_id=%s\n' "$HANSARD_RESUME_RUN_ID" "$partial_id" >> "$GITHUB_OUTPUT"
+        fi
+    - id: download-state
+      if: inputs.operation != 'evidence' && steps.resolve-state.outputs.state_artifact_id
+        != ''
+      uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333
+      with:
+        artifact-ids: "${{ steps.resolve-state.outputs.state_artifact_id }}"
+        run-id: "${{ steps.resolve-state.outputs.state_run_id }}"
+        repository: "${{ github.repository }}"
+        github-token: "${{ github.token }}"
+        digest-mismatch: error
+        path: ".cache/hansard"
+    - id: download-served
+      if: inputs.operation != 'evidence' && steps.resolve-state.outputs.served_artifact_id
+        != ''
+      uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333
+      with:
+        artifact-ids: "${{ steps.resolve-state.outputs.served_artifact_id }}"
+        run-id: "${{ steps.resolve-state.outputs.served_run_id }}"
+        repository: "${{ github.repository }}"
+        github-token: "${{ github.token }}"
+        digest-mismatch: error
+        path: "${{ runner.temp }}/hansard-publication/served-state"
+    - id: download-resume
+      if: inputs.operation != 'evidence' && steps.resolve-state.outputs.resume_artifact_id
+        != ''
+      uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333
+      with:
+        artifact-ids: "${{ steps.resolve-state.outputs.resume_artifact_id }}"
+        run-id: "${{ steps.resolve-state.outputs.resume_run_id }}"
+        repository: "${{ github.repository }}"
+        github-token: "${{ github.token }}"
+        digest-mismatch: error
+        path: "${{ runner.temp }}/hansard-publication/resume-state"
+    - id: resolve-artifacts
+      if: inputs.operation == 'promote'
+      run: |
+        # Resolves exactly one immutable, unexpired named artifact of a numeric producing run.
+        # Parameters: run ID and fixed role name. Prints only its ID; fails on missing/ambiguous metadata.
+        select_artifact() {
+          local run_id="$1" role="$2" artifact_id
+          [[ "$run_id" =~ ^[1-9][0-9]*$ ]] || { echo 'Invalid numeric run ID' >&2; return 1; }
+          artifact_id=$(gh api "repos/$GITHUB_REPOSITORY/actions/runs/$run_id/artifacts?per_page=100" --paginate --slurp | jq -er --arg role "$role" '[.[] | .artifacts[] | select(.name == $role and .expired == false)] | if length == 1 then .[0].id | tostring else error("Missing or ambiguous artifact role") end') || return 1
+          [[ "$artifact_id" =~ ^[1-9][0-9]*$ ]] || { echo 'Invalid artifact ID' >&2; return 1; }
+          printf '%s' "$artifact_id"
+        }
+        candidate_id=$(select_artifact "$HANSARD_CANDIDATE_RUN_ID" hansard-candidate)
+        pages_id=$(select_artifact "$HANSARD_CANDIDATE_RUN_ID" hansard-pages-candidate)
+        acquired_state_id=$(select_artifact "$HANSARD_CANDIDATE_RUN_ID" hansard-state)
+        evidence_id=$(select_artifact "$HANSARD_EVIDENCE_RUN_ID" hansard-evidence)
+        printf 'candidate_run_id=%s\ncandidate_artifact_id=%s\npages_candidate_artifact_id=%s\nacquired_state_artifact_id=%s\nevidence_run_id=%s\nevidence_artifact_id=%s\n' "$HANSARD_CANDIDATE_RUN_ID" "$candidate_id" "$pages_id" "$acquired_state_id" "$HANSARD_EVIDENCE_RUN_ID" "$evidence_id" >> "$GITHUB_OUTPUT"
+    - id: download-candidate
+      if: inputs.operation == 'promote'
+      uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333
+      with:
+        artifact-ids: "${{ steps.resolve-artifacts.outputs.candidate_artifact_id }}"
+        run-id: "${{ inputs.candidate_run_id }}"
+        repository: "${{ github.repository }}"
+        github-token: "${{ github.token }}"
+        digest-mismatch: error
+        path: "${{ runner.temp }}/hansard-publication"
+    - id: download-pages
+      if: inputs.operation == 'promote'
+      uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333
+      with:
+        artifact-ids: "${{ steps.resolve-artifacts.outputs.pages_candidate_artifact_id
+          }}"
+        run-id: "${{ inputs.candidate_run_id }}"
+        repository: "${{ github.repository }}"
+        github-token: "${{ github.token }}"
+        digest-mismatch: error
+        path: "${{ runner.temp }}/hansard-publication"
+    - id: download-acquired-state
+      if: inputs.operation == 'promote'
+      uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333
+      with:
+        artifact-ids: "${{ steps.resolve-artifacts.outputs.acquired_state_artifact_id
+          }}"
+        run-id: "${{ inputs.candidate_run_id }}"
+        repository: "${{ github.repository }}"
+        github-token: "${{ github.token }}"
+        digest-mismatch: error
+        path: "${{ runner.temp }}/hansard-publication/acquired-state"
+    - id: download-evidence
+      if: inputs.operation == 'promote'
+      uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333
+      with:
+        artifact-ids: "${{ steps.resolve-artifacts.outputs.evidence_artifact_id }}"
+        run-id: "${{ inputs.evidence_run_id }}"
+        repository: "${{ github.repository }}"
+        github-token: "${{ github.token }}"
+        digest-mismatch: error
+        path: "${{ runner.temp }}/hansard-publication/reports"
+    - id: browsers
+      if: github.event_name == 'schedule' || inputs.operation == 'prepare'
+      run: npx playwright install --with-deps chromium firefox webkit
+    - id: prepare
+      if: github.event_name == 'schedule' || inputs.operation == 'prepare'
+      env:
+        HANSARD_CANDIDATE_ARTIFACT_ID: "${{ steps.resolve-artifacts.outputs.candidate_artifact_id
+          }}"
+        HANSARD_PAGES_CANDIDATE_ARTIFACT_ID: "${{ steps.resolve-artifacts.outputs.pages_candidate_artifact_id
+          }}"
+        HANSARD_EVIDENCE_ARTIFACT_ID: "${{ steps.resolve-artifacts.outputs.evidence_artifact_id
+          }}"
+        HANSARD_STATE_RUN_ID: "${{ steps.resolve-state.outputs.state_run_id }}"
+        HANSARD_STATE_ARTIFACT_ID: "${{ steps.resolve-state.outputs.state_artifact_id
+          }}"
+        HANSARD_SERVED_RUN_ID: "${{ steps.resolve-state.outputs.served_run_id }}"
+        HANSARD_SERVED_ARTIFACT_ID: "${{ steps.resolve-state.outputs.served_artifact_id
+          }}"
+        HANSARD_RESUME_ARTIFACT_ID: "${{ steps.resolve-state.outputs.resume_artifact_id
+          }}"
+      run: node scripts/publication.ts prepare
+    - id: promote
+      if: inputs.operation == 'promote'
+      env:
+        HANSARD_CANDIDATE_ARTIFACT_ID: "${{ steps.resolve-artifacts.outputs.candidate_artifact_id
+          }}"
+        HANSARD_PAGES_CANDIDATE_ARTIFACT_ID: "${{ steps.resolve-artifacts.outputs.pages_candidate_artifact_id
+          }}"
+        HANSARD_EVIDENCE_ARTIFACT_ID: "${{ steps.resolve-artifacts.outputs.evidence_artifact_id
+          }}"
+        HANSARD_STATE_RUN_ID: "${{ steps.resolve-state.outputs.state_run_id }}"
+        HANSARD_STATE_ARTIFACT_ID: "${{ steps.resolve-state.outputs.state_artifact_id
+          }}"
+        HANSARD_SERVED_RUN_ID: "${{ steps.resolve-state.outputs.served_run_id }}"
+        HANSARD_SERVED_ARTIFACT_ID: "${{ steps.resolve-state.outputs.served_artifact_id
+          }}"
+        HANSARD_RESUME_ARTIFACT_ID: "${{ steps.resolve-state.outputs.resume_artifact_id
+          }}"
+      run: node scripts/publication.ts promote
+    - id: check-evidence
+      if: github.event_name == 'workflow_dispatch' && inputs.operation == 'evidence'
+      run: |
+        for report in performance documentation automated source; do
+          test -f "specs/001-read-mp-hansard/evidence/publication-reports/$report.json"
+        done
+        printf '%s\n' '{"outcome":"evidence-collected","ready":false,"snapshotId":null,"artifactDigest":null,"candidate":null,"receipt":null,"reason":null}' > "$HANSARD_WORK/result.json"
+    - id: upload-evidence
+      if: github.event_name == 'workflow_dispatch' && inputs.operation == 'evidence'
+      uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+      with:
+        name: hansard-evidence
+        path: |
+          specs/001-read-mp-hansard/evidence/publication-reports/performance.json
+          specs/001-read-mp-hansard/evidence/publication-reports/documentation.json
+          specs/001-read-mp-hansard/evidence/publication-reports/automated.json
+          specs/001-read-mp-hansard/evidence/publication-reports/source.json
+        retention-days: 7
+        include-hidden-files: true
+        if-no-files-found: error
+    - id: result
+      if: always()
+      run: |
+        outcome=failed
+        if [[ -f "$HANSARD_WORK/result.json" ]]; then
+          outcome=$(jq -er '.outcome | select(. == "prepared" or . == "ready" or . == "awaiting-evidence" or . == "finalized" or . == "failed" or . == "evidence-collected")' "$HANSARD_WORK/result.json")
+        fi
+        printf 'outcome=%s\n' "$outcome" >> "$GITHUB_OUTPUT"
+      env:
+        HANSARD_WORK: "${{ runner.temp }}/hansard-publication"
+    - id: upload-state
+      if: "(github.event_name == 'schedule' || inputs.operation == 'prepare') && steps.prepare.outcome
+        == 'success'"
+      uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+      with:
+        name: hansard-state
+        path: |
+          ${{ runner.temp }}/hansard-publication/acquired-state/checkpoint.json
+          ${{ runner.temp }}/hansard-publication/acquired-state/origin.json
+          ${{ runner.temp }}/hansard-publication/acquired-state/snapshots/
+        retention-days: 7
+        include-hidden-files: true
+        if-no-files-found: error
+    - id: upload-partial
+      if: always() && (github.event_name == 'schedule' || inputs.operation == 'prepare')
+        && hashFiles('.cache/hansard/partial-checkpoint.json') != ''
+      uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+      with:
+        name: hansard-partial
+        path: |
+          .cache/hansard/partial-checkpoint.json
+          .cache/hansard/partial/
+          .cache/hansard/checkpoint.json
+          .cache/hansard/snapshots/
+          .cache/hansard/origin.json
+          .cache/hansard/receipts/**/failure.json
+          .cache/hansard/receipts/**/refresh.json
+        retention-days: 7
+        include-hidden-files: true
+        if-no-files-found: error
+    - id: upload-candidate
+      if: "(github.event_name == 'schedule' || inputs.operation == 'prepare') && steps.prepare.outcome
+        == 'success'"
+      uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+      with:
+        name: hansard-candidate
+        path: |
+          ${{ runner.temp }}/hansard-publication/candidate.json
+          ${{ runner.temp }}/hansard-publication/fixtures.json
+          ${{ runner.temp }}/hansard-publication/origin.json
+          ${{ runner.temp }}/hansard-publication/reports/automated.json
+        retention-days: 7
+        include-hidden-files: true
+        if-no-files-found: error
+    - id: freeze-pages
+      if: "(github.event_name == 'schedule' || inputs.operation == 'prepare') && steps.prepare.outcome
+        == 'success'"
+      uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b
+      with:
+        name: hansard-pages-candidate
+        path: "${{ runner.temp }}/hansard-publication/artifact"
+        retention-days: 7
+    - id: upload-promotion
+      if: inputs.operation == 'promote' && steps.result.outputs.outcome == 'ready'
+      uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+      with:
+        name: github-pages
+        path: "${{ runner.temp }}/hansard-publication/artifact.tar"
+        retention-days: 7
+        include-hidden-files: true
+        if-no-files-found: error
+    - id: summary
+      if: always()
+      run: |
+        mkdir -p "$HANSARD_STATE/publication-runs"
+        {
+          printf 'Workflow: https://github.com/%s/actions/runs/%s\n' "$GITHUB_REPOSITORY" "$GITHUB_RUN_ID"
+          printf 'Operation: %s; preparation step: %s; promotion step: %s\n' "$HANSARD_OPERATION" "$PREPARE_OUTCOME" "$PROMOTE_OUTCOME"
+          printf 'Controller outcome: %s. Acquisition/staging detail is in available controller receipts; an absent report is unavailable.\n' "$CONTROLLER_OUTCOME"
+        } | tee "$HANSARD_STATE/publication-runs/preparation-summary.txt" >> "$GITHUB_STEP_SUMMARY"
+      env:
+        HANSARD_OPERATION: "${{ inputs.operation || github.event_name }}"
+        PREPARE_OUTCOME: "${{ steps.prepare.outcome }}"
+        PROMOTE_OUTCOME: "${{ steps.promote.outcome }}"
+        CONTROLLER_OUTCOME: "${{ steps.result.outputs.outcome }}"
+    - id: upload-preparation-outcomes
+      if: always()
+      uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+      with:
+        name: hansard-preparation-outcomes
+        path: |
+          .cache/hansard/publication-runs/
+          .cache/hansard/receipts/**/refresh.json
+        retention-days: 7
+        include-hidden-files: true
+        if-no-files-found: error
+  deploy:
+    if: github.event_name == 'workflow_dispatch' && inputs.operation == 'promote'
+      && needs.candidate.outputs.outcome == 'ready'
+    needs:
+    - candidate
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      actions: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: "${{ steps.deployment.outputs.page_url }}"
+    env:
+      GH_TOKEN: "${{ github.token }}"
+      HANSARD_STATE: ".cache/hansard"
+      HANSARD_TEST_ORIGIN: "${{ vars.HANSARD_TEST_ORIGIN }}"
+      HANSARD_CANDIDATE_RUN_ID: "${{ needs.candidate.outputs.candidate_run_id }}"
+      HANSARD_CANDIDATE_ARTIFACT_ID: "${{ needs.candidate.outputs.candidate_artifact_id
+        }}"
+      HANSARD_PAGES_CANDIDATE_ARTIFACT_ID: "${{ needs.candidate.outputs.pages_candidate_artifact_id
+        }}"
+      HANSARD_EVIDENCE_RUN_ID: "${{ needs.candidate.outputs.evidence_run_id }}"
+      HANSARD_EVIDENCE_ARTIFACT_ID: "${{ needs.candidate.outputs.evidence_artifact_id
+        }}"
+      HANSARD_STATE_RUN_ID: "${{ needs.candidate.outputs.state_run_id }}"
+      HANSARD_STATE_ARTIFACT_ID: "${{ needs.candidate.outputs.state_artifact_id }}"
+      HANSARD_SERVED_RUN_ID: "${{ needs.candidate.outputs.served_run_id }}"
+      HANSARD_SERVED_ARTIFACT_ID: "${{ needs.candidate.outputs.served_artifact_id
+        }}"
+      HANSARD_PAGES_ARTIFACT_ID: "${{ needs.candidate.outputs.pages_artifact_id }}"
+    steps:
+    - id: checkout
+      uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+      with:
+        ref: main
+    - id: node
+      uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
+      with:
+        node-version-file: ".nvmrc"
+        cache: npm
+    - id: dependencies
+      run: npm ci
+    - id: initialize
+      env:
+        HANSARD_WORK: "${{ runner.temp }}/hansard-publication"
+      run: |
+        mkdir -p "$HANSARD_WORK" "$HANSARD_STATE"
+        printf 'HANSARD_WORK=%s\n' "$HANSARD_WORK" >> "$GITHUB_ENV"
+    - id: download-state
+      if: needs.candidate.outputs.state_artifact_id != ''
+      uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333
+      with:
+        artifact-ids: "${{ needs.candidate.outputs.state_artifact_id }}"
+        run-id: "${{ needs.candidate.outputs.state_run_id }}"
+        repository: "${{ github.repository }}"
+        github-token: "${{ github.token }}"
+        digest-mismatch: error
+        path: ".cache/hansard"
+    - id: download-served
+      if: needs.candidate.outputs.served_artifact_id != ''
+      uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333
+      with:
+        artifact-ids: "${{ needs.candidate.outputs.served_artifact_id }}"
+        run-id: "${{ needs.candidate.outputs.served_run_id }}"
+        repository: "${{ github.repository }}"
+        github-token: "${{ github.token }}"
+        digest-mismatch: error
+        path: "${{ runner.temp }}/hansard-publication/served-state"
+    - id: download-candidate
+      if: needs.candidate.outputs.candidate_artifact_id != ''
+      uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333
+      with:
+        artifact-ids: "${{ needs.candidate.outputs.candidate_artifact_id }}"
+        run-id: "${{ needs.candidate.outputs.candidate_run_id }}"
+        repository: "${{ github.repository }}"
+        github-token: "${{ github.token }}"
+        digest-mismatch: error
+        path: "${{ runner.temp }}/hansard-publication"
+    - id: download-pages
+      if: needs.candidate.outputs.pages_candidate_artifact_id != ''
+      uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333
+      with:
+        artifact-ids: "${{ needs.candidate.outputs.pages_candidate_artifact_id }}"
+        run-id: "${{ needs.candidate.outputs.candidate_run_id }}"
+        repository: "${{ github.repository }}"
+        github-token: "${{ github.token }}"
+        digest-mismatch: error
+        path: "${{ runner.temp }}/hansard-publication"
+    - id: download-acquired-state
+      if: needs.candidate.outputs.acquired_state_artifact_id != ''
+      uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333
+      with:
+        artifact-ids: "${{ needs.candidate.outputs.acquired_state_artifact_id }}"
+        run-id: "${{ needs.candidate.outputs.candidate_run_id }}"
+        repository: "${{ github.repository }}"
+        github-token: "${{ github.token }}"
+        digest-mismatch: error
+        path: "${{ runner.temp }}/hansard-publication/acquired-state"
+    - id: download-evidence
+      if: needs.candidate.outputs.evidence_artifact_id != ''
+      uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333
+      with:
+        artifact-ids: "${{ needs.candidate.outputs.evidence_artifact_id }}"
+        run-id: "${{ needs.candidate.outputs.evidence_run_id }}"
+        repository: "${{ github.repository }}"
+        github-token: "${{ github.token }}"
+        digest-mismatch: error
+        path: "${{ runner.temp }}/hansard-publication/reports"
+    - id: recheck
+      run: node scripts/publication.ts promote
+    - id: recheck-result
+      run: |
+        outcome=failed
+        if [[ -f "$HANSARD_WORK/result.json" ]]; then
+          outcome=$(jq -er '.outcome | select(. == "prepared" or . == "ready" or . == "awaiting-evidence" or . == "finalized" or . == "failed" or . == "evidence-collected")' "$HANSARD_WORK/result.json")
+        fi
+        printf 'outcome=%s\n' "$outcome" >> "$GITHUB_OUTPUT"
+      env:
+        HANSARD_WORK: "${{ runner.temp }}/hansard-publication"
+    - id: deployment
+      name: Deploy exact candidate
+      if: steps.recheck-result.outputs.outcome == 'ready'
+      uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e
+      with:
+        artifact_name: github-pages
+        preview: false
+  finish:
+    if: always()
+    needs:
+    - candidate
+    - deploy
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      actions: read
+      pages: read
+      deployments: read
+    env:
+      GH_TOKEN: "${{ github.token }}"
+      HANSARD_STATE: ".cache/hansard"
+      HANSARD_TEST_ORIGIN: "${{ vars.HANSARD_TEST_ORIGIN }}"
+      HANSARD_CANDIDATE_RUN_ID: "${{ needs.candidate.outputs.candidate_run_id }}"
+      HANSARD_CANDIDATE_ARTIFACT_ID: "${{ needs.candidate.outputs.candidate_artifact_id
+        }}"
+      HANSARD_PAGES_CANDIDATE_ARTIFACT_ID: "${{ needs.candidate.outputs.pages_candidate_artifact_id
+        }}"
+      HANSARD_EVIDENCE_RUN_ID: "${{ needs.candidate.outputs.evidence_run_id }}"
+      HANSARD_EVIDENCE_ARTIFACT_ID: "${{ needs.candidate.outputs.evidence_artifact_id
+        }}"
+      HANSARD_STATE_RUN_ID: "${{ needs.candidate.outputs.state_run_id }}"
+      HANSARD_STATE_ARTIFACT_ID: "${{ needs.candidate.outputs.state_artifact_id }}"
+      HANSARD_SERVED_RUN_ID: "${{ needs.candidate.outputs.served_run_id }}"
+      HANSARD_SERVED_ARTIFACT_ID: "${{ needs.candidate.outputs.served_artifact_id
+        }}"
+      HANSARD_PAGES_ARTIFACT_ID: "${{ needs.candidate.outputs.pages_artifact_id }}"
+      HANSARD_CANDIDATE_RESULT: "${{ needs.candidate.result }}"
+      HANSARD_DEPLOY_RESULT: "${{ needs.deploy.result }}"
+    steps:
+    - id: checkout
+      uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+    - id: node
+      uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
+      with:
+        node-version-file: ".nvmrc"
+        cache: npm
+    - id: dependencies
+      run: npm ci
+    - id: initialize
+      if: always()
+      env:
+        HANSARD_WORK: "${{ runner.temp }}/hansard-publication"
+      run: |
+        mkdir -p "$HANSARD_WORK" "$HANSARD_STATE"
+        printf 'HANSARD_WORK=%s\n' "$HANSARD_WORK" >> "$GITHUB_ENV"
+    - id: download-state
+      if: always() && needs.candidate.outputs.state_artifact_id != ''
+      uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333
+      with:
+        artifact-ids: "${{ needs.candidate.outputs.state_artifact_id }}"
+        run-id: "${{ needs.candidate.outputs.state_run_id }}"
+        repository: "${{ github.repository }}"
+        github-token: "${{ github.token }}"
+        digest-mismatch: error
+        path: ".cache/hansard"
+    - id: download-served
+      if: always() && needs.candidate.outputs.served_artifact_id != ''
+      uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333
+      with:
+        artifact-ids: "${{ needs.candidate.outputs.served_artifact_id }}"
+        run-id: "${{ needs.candidate.outputs.served_run_id }}"
+        repository: "${{ github.repository }}"
+        github-token: "${{ github.token }}"
+        digest-mismatch: error
+        path: "${{ runner.temp }}/hansard-publication/served-state"
+    - id: download-candidate
+      if: always() && needs.candidate.outputs.candidate_artifact_id != ''
+      uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333
+      with:
+        artifact-ids: "${{ needs.candidate.outputs.candidate_artifact_id }}"
+        run-id: "${{ needs.candidate.outputs.candidate_run_id }}"
+        repository: "${{ github.repository }}"
+        github-token: "${{ github.token }}"
+        digest-mismatch: error
+        path: "${{ runner.temp }}/hansard-publication"
+    - id: download-pages
+      if: always() && needs.candidate.outputs.pages_candidate_artifact_id != ''
+      uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333
+      with:
+        artifact-ids: "${{ needs.candidate.outputs.pages_candidate_artifact_id }}"
+        run-id: "${{ needs.candidate.outputs.candidate_run_id }}"
+        repository: "${{ github.repository }}"
+        github-token: "${{ github.token }}"
+        digest-mismatch: error
+        path: "${{ runner.temp }}/hansard-publication"
+    - id: download-acquired-state
+      if: always() && needs.candidate.outputs.acquired_state_artifact_id != ''
+      uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333
+      with:
+        artifact-ids: "${{ needs.candidate.outputs.acquired_state_artifact_id }}"
+        run-id: "${{ needs.candidate.outputs.candidate_run_id }}"
+        repository: "${{ github.repository }}"
+        github-token: "${{ github.token }}"
+        digest-mismatch: error
+        path: "${{ runner.temp }}/hansard-publication/acquired-state"
+    - id: download-preparation-outcomes
+      if: always() && needs.candidate.outputs.preparation_outcomes_artifact_id !=
+        ''
+      uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333
+      with:
+        artifact-ids: "${{ needs.candidate.outputs.preparation_outcomes_artifact_id
+          }}"
+        run-id: "${{ github.run_id }}"
+        repository: "${{ github.repository }}"
+        github-token: "${{ github.token }}"
+        digest-mismatch: error
+        path: ".cache/hansard"
+    - id: finalize
+      if: always()
+      run: node scripts/publication.ts finalize
+    - id: result
+      if: always()
+      run: |
+        outcome=failed
+        if [[ -f "$HANSARD_WORK/result.json" ]]; then
+          outcome=$(jq -er '.outcome | select(. == "prepared" or . == "ready" or . == "awaiting-evidence" or . == "finalized" or . == "failed" or . == "evidence-collected")' "$HANSARD_WORK/result.json")
+        fi
+        printf 'outcome=%s\n' "$outcome" >> "$GITHUB_OUTPUT"
+      env:
+        HANSARD_WORK: "${{ runner.temp }}/hansard-publication"
+    - id: upload-served
+      if: steps.result.outputs.outcome == 'finalized'
+      uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+      with:
+        name: hansard-served
+        path: |
+          ${{ runner.temp }}/hansard-publication/confirmed-served/served-publication.json
+          ${{ runner.temp }}/hansard-publication/confirmed-served/origin.json
+          ${{ runner.temp }}/hansard-publication/confirmed-served/checkpoint.json
+          ${{ runner.temp }}/hansard-publication/confirmed-served/snapshots/
+        retention-days: 7
+        include-hidden-files: true
+        if-no-files-found: error
+    - id: summary
+      if: always()
+      run: |
+        mkdir -p "$HANSARD_STATE/publication-runs"
+        {
+          printf 'Workflow: https://github.com/%s/actions/runs/%s\n' "$GITHUB_REPOSITORY" "$GITHUB_RUN_ID"
+          printf 'Candidate job: %s; deployment job: %s.\n' "$HANSARD_CANDIDATE_RESULT" "$HANSARD_DEPLOY_RESULT"
+          printf 'Final controller outcome: %s. Confirmed publication exists only when its matching receipt and live probe succeeded.\n' "$CONTROLLER_OUTCOME"
+          printf 'See available publication-runs and refresh receipts for actual acquisition/staging outcomes; unavailable controller evidence remains unavailable.\n'
+        } | tee "$HANSARD_STATE/publication-runs/finish-summary.txt" >> "$GITHUB_STEP_SUMMARY"
+      env:
+        CONTROLLER_OUTCOME: "${{ steps.result.outputs.outcome }}"
+    - id: upload-outcomes
+      if: always()
+      uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+      with:
+        name: hansard-outcomes
+        path: |
+          .cache/hansard/publication-runs/
+          .cache/hansard/receipts/**/refresh.json
+        retention-days: 7
+        include-hidden-files: true
+        if-no-files-found: error

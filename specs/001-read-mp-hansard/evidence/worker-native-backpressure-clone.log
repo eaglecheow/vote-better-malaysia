@@ -1,0 +1,8 @@
+DIAGNOSTIC_ONLY_DRAIN_CLONE true
+ASYNC_WAIT_VALUE false
+BEFORE_RELOAD { installing: 'installing', active: null, controller: null }
+AFTER_EARLY_RELOAD { installing: 'installing', active: null, controller: null }
+AFTER_AWAITED_POLL { installing: null, active: 'activated', controller: null }
+AFTER_FRESH_NAVIGATION { installing: null, active: 'activated', controller: 'activated' }
+REQUESTS ["index.html","assets/index-BlgTHgQY.js","assets/index-BXaHGM-n.css","sw.js","index.html","assets/index-BXaHGM-n.css","assets/index-BlgTHgQY.js","data/catalogue.json.gz","help.html","icons/icon-192.png","index.html","assets/index-BlgTHgQY.js","assets/index-BXaHGM-n.css","data/catalogue.json.gz","icons/icon-512.png","index.html","manifest.webmanifest","sw.js","data/catalogue.json.gz"]
+BROWSER 156.0.8078.4

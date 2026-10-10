@@ -1,0 +1,21 @@
+{
+  "sourceUrl": "https://api.github.com/repos/actions/checkout/actions/runs/36514614210",
+  "acquiredAt": "2026-10-10T11:36:47.515263+00:00",
+  "verifiedAt": "2026-10-10T11:36:52.189731+00:00",
+  "rawSha256": "f4287a201ba840a4191166240ece78bc8460b65cfcb2a0e63b92f8e75c17d564",
+  "rawPrivatePath": "/private/tmp/hansard-ci-public-pr-run.json",
+  "selectedNativeFields": {
+    "id": 36514614210,
+    "event": "pull_request",
+    "run_attempt": 1,
+    "head_sha": "384ec1874287eccce8e9af4362bf8096f614c5f8",
+    "pull_requests": [
+      {
+        "number": 2590,
+        "head_sha": "384ec1874287eccce8e9af4362bf8096f614c5f8",
+        "base_sha": "f548e57e544e1ff5a4c46bf1e1b8685f8e4a348a"
+      }
+    ]
+  },
+  "derivation": "Exact selected native fields from the public REST body. It demonstrates head_sha equals PR head.sha for this observed run; GITHUB_SHA merge semantics come separately from official event/PR docs. No synthetic workflow_sha or checked-out native field is inferred."
+}

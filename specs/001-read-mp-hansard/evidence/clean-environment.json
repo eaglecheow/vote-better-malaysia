@@ -1,0 +1,172 @@
+{
+  "scope": "T075 partial independent local developer environment; no physical, full-source candidate, hosted CI, publication or deployment-command acceptance",
+  "recordedAt": "2026-10-10T12:15:59.513247+00:00",
+  "root": "/private/tmp/hansard-clean-MPMMKr",
+  "originalRepository": "/Users/eaglecheow/dev/vote-better-malaysia",
+  "originalWorkingTreeUncommitted": true,
+  "toolchain": {
+    "node": "24.21.0",
+    "executable": "/private/tmp/hansard-node24/node_modules/node/bin/node",
+    "npm": "11.17.0",
+    "ruby": "2.6.10",
+    "platform": "macOS arm64",
+    "rubyYamlJsonProbePassed": true
+  },
+  "install": {
+    "initialCopiedFiles": [
+      "package.json",
+      "package-lock.json",
+      ".nvmrc"
+    ],
+    "offlineExitCode": 1,
+    "offlineFailure": "ENOTCACHED fake-indexeddb-6.2.5 public registry tarball",
+    "command": "npm ci --prefer-offline --cache /private/tmp/hansard-npm-cache --registry https://registry.npmjs.org",
+    "exitCode": 0,
+    "installedPackageCount": 78,
+    "auditedPackageCount": 79,
+    "optionalScriptWarning": "fsevents@2.3.3 optional install script not covered by allowScripts; no approval/config change made",
+    "inputHashes": {
+      "package.json": "941d2c48c4387d3d14d3ede458fbcc2c01c2873c2f1b520ecf62f7e2d94d7ad6",
+      "package-lock.json": "65ee9af9092fdc689d9fea1dfe37fd540a6d9a476a7cc581220857bcd2ccf7f9",
+      ".nvmrc": "73fb1b615e2043a933be1c0895cde4358036acc28d785692509b822aa53c761f"
+    }
+  },
+  "copy": {
+    "method": "git ls-files --cached --others --exclude-standard -z; current regular-file bytes",
+    "excludedPrefixes": [
+      ".git",
+      "node_modules",
+      "public/data",
+      "dist",
+      ".cache",
+      "privatecache"
+    ],
+    "copiedFiles": 455,
+    "copiedBytes": 14643046,
+    "copiedInputsDigest": "1fa4e17ed48d996b8fd1d165dcb50f8cd972240252939e56396cae874adcf7b4",
+    "gitMetadataCopied": false,
+    "originalNodeModulesCopied": false,
+    "publicDataCopied": false,
+    "distCopied": false
+  },
+  "fingerprints": {
+    "applicationFingerprint": "4727ea13b65363e2621813c998e00a25c052cdd2bed0f2543267ffe6b110e06e",
+    "acquisitionFingerprint": "aefa091d7ae3e19bc72bf628be2ede7b48330616b90bd5df222a3314ef1f81d4"
+  },
+  "beforeCopiedAfterAndAfterChecksMatched": true,
+  "releasedSourceHashes": {
+    "scripts/ci-inputs.ts": "91e4c76a2cde3dad07944dba8b7627b22403227624772e7a3635949c1f84adac",
+    "scripts/publication.ts": "54639557994a8b8e8099b4e7ac6300da7ecaba7fa75afac624476d309ebd1ae4"
+  },
+  "checks": {
+    "typecheck": {
+      "command": "npm run typecheck",
+      "exitCode": 0
+    },
+    "unit": {
+      "command": "npm test -- --run",
+      "env": {
+        "PLAYWRIGHT_BROWSERS_PATH": "/private/tmp/hansard-browsers"
+      },
+      "exitCode": 0,
+      "files": 34,
+      "passed": 2021,
+      "startLocal": "2026-10-10 20:11:47 MYT",
+      "durationSeconds": 11.95,
+      "nativeChromiumUnitBoundaryCasesIncluded": true,
+      "browserJourneySuiteInvoked": false
+    },
+    "build": {
+      "command": "npm run build",
+      "exitCode": 0,
+      "completePublicSourceIncluded": false
+    },
+    "callable": {
+      "command": "checkCodeDocumentation(\".\")",
+      "exitCode": 0,
+      "findings": []
+    }
+  },
+  "cliSmoke": [
+    {
+      "name": "performance",
+      "command": "npm run test:performance",
+      "exitCode": 1,
+      "expectedMessage": "artifact, candidate and complete measured report evidence are required",
+      "messageMatched": true,
+      "nativeSpawnError": null
+    },
+    {
+      "name": "documentation",
+      "command": "npm run check:docs",
+      "exitCode": 1,
+      "expectedMessage": "Required candidate and accuracy review report are missing (--candidate, --report)",
+      "messageMatched": true,
+      "nativeSpawnError": null
+    },
+    {
+      "name": "collector",
+      "command": "npm run performance:collect",
+      "exitCode": 1,
+      "expectedMessage": "collection requires frozen artifact, candidate, fixtures, production URL and external output",
+      "messageMatched": true,
+      "nativeSpawnError": null
+    },
+    {
+      "name": "ci",
+      "command": "node scripts/ci-inputs.ts verify",
+      "exitCode": 1,
+      "expectedMessage": "Actual authenticated GitHub CI inputs required",
+      "messageMatched": true,
+      "nativeSpawnError": null
+    },
+    {
+      "name": "acquisition-missing-mode-value",
+      "command": "npm run data:acquire -- --mode",
+      "exitCode": 1,
+      "expectedMessage": "Expected --mode, --state and --out arguments",
+      "messageMatched": true,
+      "nativeSpawnError": null
+    }
+  ],
+  "cliInitialHarnessCorrection": "Expected documentation error string was corrected to the actual documented missing-report message; every initial CLI already exited1. No production change or behavioral RED claim.",
+  "dev": {
+    "command": "npm run dev -- --host 127.0.0.1 --port 5177 --strictPort",
+    "ownedProcessGroup": 85573,
+    "portProbedFree": true,
+    "url": "http://127.0.0.1:5177/vote-better-malaysia/",
+    "httpStatus": 200,
+    "applicationRootPresent": true,
+    "repositoryBaseSourceScriptPresent": true,
+    "htmlBytes": 555,
+    "browserOpened": false,
+    "completeSourceDataPresent": false,
+    "ownedProcessGroupStopped": true,
+    "portFreeAfterCleanup": true
+  },
+  "noLiveAcquisitionNetwork": true,
+  "noGitHubMutation": true,
+  "noBrowserJourneySuite": true,
+  "noPort4173Use": true,
+  "evidenceHashes": {
+    "clean-environment-install.log": "6ffe3b6d0ed3b5bf0e64184be8a6ac6b4fbd0a21f2580be962699cb84ff8ff73",
+    "clean-environment-offline-install.log": "d9bd29fe7cff6838efafab9960785f7db7e89a3074d858ad1a03d463112bb0b1",
+    "clean-environment-tools.log": "b242ca1a0a90b334e3cebed4ec0121694da9df41231d5cfdd6692b87974e4dd8",
+    "clean-environment-dependencies.log": "f9be89f224856bb1d398ddc02da5925113e2e2fb123fc3e75b220b03e99fc920",
+    "clean-environment-typecheck.log": "fd8bb326033f2422cfbc6c69b48c9ac55b991152b2268bd45ac42a457e7fea5b",
+    "clean-environment-unit.log": "dba717c280c284b841fc9cc729aba0c28a732fbca32a3630660dfb91913515af",
+    "clean-environment-build.log": "80b0f909d97eef16a3ba4bb4bc24b642aaa074329f0d9df350c00f6b3dd7f344",
+    "clean-environment-callable.log": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "clean-environment-cli-initial.json": "bd01b892687770220fad0e06253418bf2afb1d615241737c44b6a644298bca71",
+    "clean-environment-cli.json": "46b728d2c603bc72e4750bf1673fdc537fe24ede9841d05240c38aaab2562db3",
+    "clean-environment-dev.log": "e87b7b34dd4a02470bffe9afe0ccf947c0ac7ec79b97370a3d3badf09065fbd6",
+    "clean-environment-dev.json": "248b1d4c2ce302559d10be497354ffee90651000c530310c56cd2c9217d866f9",
+    "clean-environment-copy.json": "e4ddaf314245f18f8b4f7d2c73b430ddc35b32347ef993b07a8a2bc8ef3a2f41",
+    "clean-environment-fingerprints.json": "cdbccdf2e2ee20d844643c9bf5648b9959a401517da1799e7e76c1acddf9f417",
+    "clean-environment-cli-performance.log": "cd387a5e12bda28af4aedf5bbfe5dbceb7417fcb1ee1ddc44a496f77555c666a",
+    "clean-environment-cli-documentation.log": "dca0c32be0236b2721ce9e642933cfe939e68a3a5a87261c1a6b2b713eaa45b5",
+    "clean-environment-cli-collector.log": "06975d88e7373f492b5f0f4b5bccd9968fd898c9ae1d10fd3345ed31b05764ea",
+    "clean-environment-cli-ci.log": "c8262ef5f4eecb61df650aa0e9fca3ebf0f274c12771fb203cae37dd7c2b5b04",
+    "clean-environment-cli-acquisition-missing-mode-value.log": "570b75a8259cbf67ff47ff4c059a36ba7d1d4c9ad7e527632de44299beb59e29"
+  }
+}

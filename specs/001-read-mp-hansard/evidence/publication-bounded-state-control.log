@@ -1,0 +1,203 @@
+
+> vote-better-malaysia@0.1.0 test
+> vitest --run tests/unit/publication.test.ts -t ^PUB-BOUNDED-STATE-CONTROL --reporter=verbose --reporter=json --outputFile=specs/001-read-mp-hansard/evidence/publication-bounded-state-control.json
+
+
+ RUN  v5.0.3 /Users/eaglecheow/dev/vote-better-malaysia
+
+ ↓ tests/unit/publication.test.ts > PUB-HARNESS: controlled real files satisfy existing authoritative checks (positive harness control, not RED)
+ ↓ tests/unit/publication.test.ts > PUB-ORIGIN-ACCEPT: origin is authenticated separately from payload flags
+ ↓ tests/unit/publication.test.ts > PUB-ORIGIN-REJECT: repository cannot authenticate imported state/candidate/report
+ ↓ tests/unit/publication.test.ts > PUB-ORIGIN-REJECT: head-repository cannot authenticate imported state/candidate/report
+ ↓ tests/unit/publication.test.ts > PUB-ORIGIN-REJECT: branch cannot authenticate imported state/candidate/report
+ ↓ tests/unit/publication.test.ts > PUB-ORIGIN-REJECT: event-pr cannot authenticate imported state/candidate/report
+ ↓ tests/unit/publication.test.ts > PUB-ORIGIN-REJECT: status cannot authenticate imported state/candidate/report
+ ↓ tests/unit/publication.test.ts > PUB-ORIGIN-REJECT: conclusion cannot authenticate imported state/candidate/report
+ ↓ tests/unit/publication.test.ts > PUB-ORIGIN-REJECT: workflow-path cannot authenticate imported state/candidate/report
+ ↓ tests/unit/publication.test.ts > PUB-ORIGIN-REJECT: workflow-id cannot authenticate imported state/candidate/report
+ ↓ tests/unit/publication.test.ts > PUB-ORIGIN-REJECT: source-revision cannot authenticate imported state/candidate/report
+ ↓ tests/unit/publication.test.ts > PUB-ORIGIN-REJECT: run-id cannot authenticate imported state/candidate/report
+ ↓ tests/unit/publication.test.ts > PUB-ORIGIN-REJECT: run-attempt cannot authenticate imported state/candidate/report
+ ↓ tests/unit/publication.test.ts > PUB-ORIGIN-REJECT: artifact-run cannot authenticate imported state/candidate/report
+ ↓ tests/unit/publication.test.ts > PUB-ORIGIN-REJECT: artifact-repository cannot authenticate imported state/candidate/report
+ ↓ tests/unit/publication.test.ts > PUB-ORIGIN-REJECT: artifact-head-repository cannot authenticate imported state/candidate/report
+ ↓ tests/unit/publication.test.ts > PUB-ORIGIN-REJECT: artifact-branch cannot authenticate imported state/candidate/report
+ ↓ tests/unit/publication.test.ts > PUB-ORIGIN-REJECT: artifact-sha cannot authenticate imported state/candidate/report
+ ↓ tests/unit/publication.test.ts > PUB-ORIGIN-REJECT: artifact-id cannot authenticate imported state/candidate/report
+ ↓ tests/unit/publication.test.ts > PUB-ORIGIN-REJECT: artifact-name cannot authenticate imported state/candidate/report
+ ↓ tests/unit/publication.test.ts > PUB-ORIGIN-REJECT: expired cannot authenticate imported state/candidate/report
+ ↓ tests/unit/publication.test.ts > PUB-ORIGIN-REJECT: created-future cannot authenticate imported state/candidate/report
+ ↓ tests/unit/publication.test.ts > PUB-ORIGIN-REJECT: seven-days-over cannot authenticate imported state/candidate/report
+ ↓ tests/unit/publication.test.ts > PUB-ORIGIN-REJECT: digest cannot authenticate imported state/candidate/report
+ ↓ tests/unit/publication.test.ts > PUB-ORIGIN-REJECT: downloaded-trusted-flag cannot authenticate imported state/candidate/report
+ ↓ tests/unit/publication.test.ts > PUB-PROMOTE-EXACT: later documentation-only evidence run promotes exact older candidate without reacquisition/rebuild
+ ↓ tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: sourceRevision cannot publish or change accepted/served state
+ ↓ tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: applicationFingerprint cannot publish or change accepted/served state
+ ↓ tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: artifactDigest cannot publish or change accepted/served state
+ ↓ tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: snapshotId cannot publish or change accepted/served state
+ ↓ tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: fixtureHashes cannot publish or change accepted/served state
+ ↓ tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: conditionsDigest cannot publish or change accepted/served state
+ ↓ tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: priorServedBaselineDigest cannot publish or change accepted/served state
+ ↓ tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: current-application cannot publish or change accepted/served state
+ ↓ tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: superseded-baseline cannot publish or change accepted/served state
+ ↓ tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: changed-asset cannot publish or change accepted/served state
+ ↓ tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: provenance-only cannot publish or change accepted/served state
+ ↓ tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: missing-performance cannot publish or change accepted/served state
+ ↓ tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: failed-performance cannot publish or change accepted/served state
+ ↓ tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: missing-device cannot publish or change accepted/served state
+ ↓ tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: expired-device cannot publish or change accepted/served state
+ ↓ tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: wrong-device-candidate cannot publish or change accepted/served state
+ ↓ tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: missing-documentation cannot publish or change accepted/served state
+ ↓ tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: failed-documentation cannot publish or change accepted/served state
+ ↓ tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: changed-documentation cannot publish or change accepted/served state
+ ↓ tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: missing-automated cannot publish or change accepted/served state
+ ↓ tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: failed-automated cannot publish or change accepted/served state
+ ↓ tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: missing-source cannot publish or change accepted/served state
+ ↓ tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: failed-source cannot publish or change accepted/served state
+ ↓ tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: expired-report cannot publish or change accepted/served state
+ ↓ tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: untrusted-evidence-run cannot publish or change accepted/served state
+ ↓ tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: untrusted-candidate-run cannot publish or change accepted/served state
+ ↓ tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: metadata-inside-artifact cannot publish or change accepted/served state
+ ↓ tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: fixture-missing cannot publish or change accepted/served state
+ ↓ tests/unit/publication.test.ts > PUB-PROMOTE-BLOCK: fixture-changed cannot publish or change accepted/served state
+ ↓ tests/unit/publication.test.ts > PUB-WAIT: missing evidence records awaiting-evidence and terminates without deployment or an open human wait
+ ↓ tests/unit/publication.test.ts > PUB-FINALIZE-ACCEPT: completed deployment job supplies confirmed time while current workflow remains in progress
+ ↓ tests/unit/publication.test.ts > PUB-FINALIZE-REJECT: deployment-id cannot confirm publication
+ ↓ tests/unit/publication.test.ts > PUB-FINALIZE-REJECT: deployment-run cannot confirm publication
+ ↓ tests/unit/publication.test.ts > PUB-FINALIZE-REJECT: deployment-attempt cannot confirm publication
+ ↓ tests/unit/publication.test.ts > PUB-FINALIZE-REJECT: deployment-artifact cannot confirm publication
+ ↓ tests/unit/publication.test.ts > PUB-FINALIZE-REJECT: deployment-sha cannot confirm publication
+ ↓ tests/unit/publication.test.ts > PUB-FINALIZE-REJECT: deployment-environment cannot confirm publication
+ ↓ tests/unit/publication.test.ts > PUB-FINALIZE-REJECT: deployment-base cannot confirm publication
+ ↓ tests/unit/publication.test.ts > PUB-FINALIZE-REJECT: deployment-log cannot confirm publication
+ ↓ tests/unit/publication.test.ts > PUB-FINALIZE-REJECT: status-pending cannot confirm publication
+ ↓ tests/unit/publication.test.ts > PUB-FINALIZE-REJECT: status-failed cannot confirm publication
+ ↓ tests/unit/publication.test.ts > PUB-FINALIZE-REJECT: status-missing-time cannot confirm publication
+ ↓ tests/unit/publication.test.ts > PUB-FINALIZE-REJECT: status-before-preparation cannot confirm publication
+ ↓ tests/unit/publication.test.ts > PUB-FINALIZE-REJECT: status-future cannot confirm publication
+ ↓ tests/unit/publication.test.ts > PUB-FINALIZE-REJECT: pages-incomplete cannot confirm publication
+ ↓ tests/unit/publication.test.ts > PUB-FINALIZE-REJECT: pages-artifact cannot confirm publication
+ ↓ tests/unit/publication.test.ts > PUB-FINALIZE-REJECT: pages-id cannot confirm publication
+ ↓ tests/unit/publication.test.ts > PUB-FINALIZE-REJECT: live-snapshot cannot confirm publication
+ ↓ tests/unit/publication.test.ts > PUB-FINALIZE-REJECT: live-digest cannot confirm publication
+ ↓ tests/unit/publication.test.ts > PUB-FINALIZE-REJECT: live-http cannot confirm publication
+ ↓ tests/unit/publication.test.ts > PUB-FINALIZE-REJECT: wrong-current-repository cannot confirm publication
+ ↓ tests/unit/publication.test.ts > PUB-FINALIZE-REJECT: wrong-current-branch cannot confirm publication
+ ↓ tests/unit/publication.test.ts > PUB-FINALIZE-REJECT: untrusted-current-workflow cannot confirm publication
+ ↓ tests/unit/publication.test.ts > PUB-FINALIZE-REJECT: untrusted-current-event cannot confirm publication
+ ↓ tests/unit/publication.test.ts > PUB-FINALIZE-REJECT: forged-upload-time cannot confirm publication
+ ↓ tests/unit/publication.test.ts > PUB-OUTCOME: started finish records candidate=success deployment=skipped as not-attempted without receipt
+ ↓ tests/unit/publication.test.ts > PUB-OUTCOME: started finish records candidate=success deployment=failure as failed without receipt
+ ↓ tests/unit/publication.test.ts > PUB-OUTCOME: started finish records candidate=failure deployment=skipped as not-attempted without receipt
+ ↓ tests/unit/publication.test.ts > PUB-OUTCOME: started finish records candidate=cancelled deployment=cancelled as not-attempted without receipt
+ ↓ tests/unit/publication.test.ts > PUB-ACQUIRED-VS-SERVED: older manual candidate receipt never relabels a newer acquired checkpoint
+ ↓ tests/unit/publication.test.ts > PUB-PREPARE: acquire/build/check once, freeze complete candidate, then end awaiting fresh physical evidence
+ ↓ tests/unit/publication.test.ts > PUB-PREPARE-FAIL: source-denial records failure and preserves prior served state
+ ↓ tests/unit/publication.test.ts > PUB-PREPARE-FAIL: source-schema records failure and preserves prior served state
+ ↓ tests/unit/publication.test.ts > PUB-PREPARE-FAIL: source-four-hour-cap records failure and preserves prior served state
+ ↓ tests/unit/publication.test.ts > PUB-PREPARE-FAIL: build-failed records failure and preserves prior served state
+ ↓ tests/unit/publication.test.ts > PUB-PREPARE-FAIL: automated-failed records failure and preserves prior served state
+ ↓ tests/unit/publication.test.ts > PUB-PREPARE-FAIL: size-failed records failure and preserves prior served state
+ ↓ tests/unit/publication.test.ts > PUB-PREPARE-FAIL: metadata-path-overlap records failure and preserves prior served state
+ ↓ tests/unit/publication.test.ts > PUB-PREPARE-FAIL: untrusted-current-run records failure and preserves prior served state
+ ↓ tests/unit/publication.test.ts > PUB-PREPARE-FAIL: foreign-state records failure and preserves prior served state
+ ↓ tests/unit/publication.test.ts > PUB-PREPARE-FAIL: expired-state-no-baseline records failure and preserves prior served state
+ ↓ tests/unit/publication.test.ts > PUB-PREPARE-FAIL: incompatible-state-no-baseline records failure and preserves prior served state
+ ↓ tests/unit/publication.test.ts > PUB-PREPARE-FAIL: foreign-partial-session records failure and preserves prior served state
+ ↓ tests/unit/publication.test.ts > PUB-CHECKPOINT-ACCEPT: receipt lives outside immutable original catalogue and checksum
+ ↓ tests/unit/publication.test.ts > PUB-CHECKPOINT-REJECT: snapshot cannot relabel acquired data as served
+ ↓ tests/unit/publication.test.ts > PUB-CHECKPOINT-REJECT: catalogue-digest cannot relabel acquired data as served
+ ↓ tests/unit/publication.test.ts > PUB-CHECKPOINT-REJECT: artifact-digest cannot relabel acquired data as served
+ ↓ tests/unit/publication.test.ts > PUB-CHECKPOINT-REJECT: receipt-time cannot relabel acquired data as served
+ ↓ tests/unit/publication.test.ts > PUB-CHECKPOINT-REJECT: verification-time cannot relabel acquired data as served
+ ↓ tests/unit/publication.test.ts > PUB-CHECKPOINT-REJECT: workflow-url cannot relabel acquired data as served
+ ↓ tests/unit/publication.test.ts > PUB-CHECKPOINT-REJECT: local-state cannot relabel acquired data as served
+ ↓ tests/unit/publication.test.ts > PUB-CHECKPOINT-REJECT: schema cannot relabel acquired data as served
+ ↓ tests/unit/publication.test.ts > PUB-CHECKPOINT-REJECT: checksum cannot relabel acquired data as served
+ ↓ tests/unit/publication.test.ts > PUB-CHECKPOINT-REJECT: missing-shard cannot relabel acquired data as served
+ ↓ tests/unit/publication.test.ts > PUB-CHECKPOINT-REJECT: unreferenced-shard cannot relabel acquired data as served
+ ↓ tests/unit/publication.test.ts > PUB-BASELINE-HISTORICAL: independently authenticated old code fingerprint stays honest during compatible current-code recovery
+ ↓ tests/unit/publication.test.ts > PUB-BASELINE-REJECT: no-authentication never relaxes exact checkpoint or authenticated historical trust
+ ↓ tests/unit/publication.test.ts > PUB-BASELINE-REJECT: self-trusted never relaxes exact checkpoint or authenticated historical trust
+ ↓ tests/unit/publication.test.ts > PUB-BASELINE-REJECT: substituted-fingerprint never relaxes exact checkpoint or authenticated historical trust
+ ↓ tests/unit/publication.test.ts > PUB-BASELINE-REJECT: wrong-repository never relaxes exact checkpoint or authenticated historical trust
+ ↓ tests/unit/publication.test.ts > PUB-BASELINE-REJECT: wrong-branch never relaxes exact checkpoint or authenticated historical trust
+ ↓ tests/unit/publication.test.ts > PUB-BASELINE-REJECT: wrong-run never relaxes exact checkpoint or authenticated historical trust
+ ↓ tests/unit/publication.test.ts > PUB-BASELINE-REJECT: wrong-base never relaxes exact checkpoint or authenticated historical trust
+ ↓ tests/unit/publication.test.ts > PUB-BASELINE-REJECT: wrong-snapshot never relaxes exact checkpoint or authenticated historical trust
+ ↓ tests/unit/publication.test.ts > PUB-BASELINE-REJECT: wrong-catalogue-digest never relaxes exact checkpoint or authenticated historical trust
+ ↓ tests/unit/publication.test.ts > PUB-BASELINE-REJECT: wrong-shard-digest never relaxes exact checkpoint or authenticated historical trust
+ ↓ tests/unit/publication.test.ts > PUB-BASELINE-REJECT: missing-shard-reference never relaxes exact checkpoint or authenticated historical trust
+ ↓ tests/unit/publication.test.ts > PUB-BASELINE-REJECT: unreferenced-shard never relaxes exact checkpoint or authenticated historical trust
+ ↓ tests/unit/publication.test.ts > PUB-BASELINE-REJECT: unsupported-schema never relaxes exact checkpoint or authenticated historical trust
+ ↓ tests/unit/publication.test.ts > PUB-BASELINE-REJECT: unrecoverable-http never relaxes exact checkpoint or authenticated historical trust
+ ↓ tests/unit/publication.test.ts > PUB-PROOF-REUSE: json-clone cannot preserve authenticated authorization for new claims
+ ↓ tests/unit/publication.test.ts > PUB-PROOF-REUSE: codeFingerprint cannot preserve authenticated authorization for new claims
+ ↓ tests/unit/publication.test.ts > PUB-PROOF-REUSE: runId cannot preserve authenticated authorization for new claims
+ ↓ tests/unit/publication.test.ts > PUB-PROOF-REUSE: artifactId cannot preserve authenticated authorization for new claims
+ ↓ tests/unit/publication.test.ts > PUB-CHECKPOINT-READ: trusted external served receipt survives reload without relabeling original catalogue publication time
+ ↓ tests/unit/publication.test.ts > PUB-CHECKPOINT-READ-REJECT: snapshot cannot survive restoration as served metadata
+ ↓ tests/unit/publication.test.ts > PUB-CHECKPOINT-READ-REJECT: catalogue-digest cannot survive restoration as served metadata
+ ↓ tests/unit/publication.test.ts > PUB-CHECKPOINT-READ-REJECT: artifact-digest cannot survive restoration as served metadata
+ ↓ tests/unit/publication.test.ts > PUB-CHECKPOINT-READ-REJECT: publication-time cannot survive restoration as served metadata
+ ↓ tests/unit/publication.test.ts > PUB-CHECKPOINT-READ-REJECT: verified-time cannot survive restoration as served metadata
+ ↓ tests/unit/publication.test.ts > PUB-CHECKPOINT-READ-REJECT: local-context cannot survive restoration as served metadata
+ ↓ tests/unit/publication.test.ts > PUB-TEST-ORIGIN: missing cannot establish prepublication physical evidence
+ ↓ tests/unit/publication.test.ts > PUB-TEST-ORIGIN: http cannot establish prepublication physical evidence
+ ↓ tests/unit/publication.test.ts > PUB-TEST-ORIGIN: wrong-subpath cannot establish prepublication physical evidence
+ ↓ tests/unit/publication.test.ts > PUB-TEST-ORIGIN: device-url cannot establish prepublication physical evidence
+ ↓ tests/unit/publication.test.ts > PUB-TEST-ORIGIN: missing-device-url cannot establish prepublication physical evidence
+ ↓ tests/unit/publication.test.ts > PUB-TEST-ORIGIN: candidate-mismatch cannot establish prepublication physical evidence
+ ↓ tests/unit/publication.test.ts > PUB-TEST-ORIGIN: unavailable-origin cannot establish prepublication physical evidence
+ ↓ tests/unit/publication.test.ts > PUB-FIRST-PUBLISH: prepublication checks use trusted test origin and do not require nonexistent production live result
+ ↓ tests/unit/publication.test.ts > PUB-RESUME: explicit API-verified capped partial adopts original session while current run remains independently recorded
+ ↓ tests/unit/publication.test.ts > PUB-RESUME-REJECT: foreign-run cannot restore partial progress as a complete/served baseline
+ ↓ tests/unit/publication.test.ts > PUB-RESUME-REJECT: pr-origin cannot restore partial progress as a complete/served baseline
+ ↓ tests/unit/publication.test.ts > PUB-RESUME-REJECT: wrong-session cannot restore partial progress as a complete/served baseline
+ ↓ tests/unit/publication.test.ts > PUB-RESUME-REJECT: wrong-code cannot restore partial progress as a complete/served baseline
+ ↓ tests/unit/publication.test.ts > PUB-RESUME-REJECT: expired cannot restore partial progress as a complete/served baseline
+ ↓ tests/unit/publication.test.ts > PUB-RESUME-REJECT: baseline-mismatch cannot restore partial progress as a complete/served baseline
+ ↓ tests/unit/publication.test.ts > PUB-RESUME-REJECT: missing-payload cannot restore partial progress as a complete/served baseline
+ ↓ tests/unit/publication.test.ts > PUB-RESUME-REJECT: payload-digest cannot restore partial progress as a complete/served baseline
+ ↓ tests/unit/publication.test.ts > PUB-CLI-REJECT: unknown cannot silently succeed outside reviewed workflow context
+ ↓ tests/unit/publication.test.ts > PUB-CLI-REJECT: prepare-local cannot silently succeed outside reviewed workflow context
+ ↓ tests/unit/publication.test.ts > PUB-CLI-REJECT: promote-missing-ids cannot silently succeed outside reviewed workflow context
+ ↓ tests/unit/publication.test.ts > PUB-CLI-REJECT: finalize-invalid-job-result cannot silently succeed outside reviewed workflow context
+ ↓ tests/unit/publication.test.ts > PUB-ARCHIVE-REJECT: path-traversal cannot be extracted before authenticated safe-path verification
+ ↓ tests/unit/publication.test.ts > PUB-ARCHIVE-REJECT: absolute-path cannot be extracted before authenticated safe-path verification
+ ↓ tests/unit/publication.test.ts > PUB-ARCHIVE-REJECT: symlink cannot be extracted before authenticated safe-path verification
+ ↓ tests/unit/publication.test.ts > PUB-ARCHIVE-REJECT: hardlink cannot be extracted before authenticated safe-path verification
+ ↓ tests/unit/publication.test.ts > PUB-ARCHIVE-REJECT: untrusted-origin cannot be extracted before authenticated safe-path verification
+ ↓ tests/unit/publication.test.ts > PUB-APPROVAL-RECHECK: environment approval delay cannot bypass current baseline/application/evidence revalidation
+ ↓ tests/unit/publication.test.ts > PUB-HARNESS-PARTIAL: selected partial input is native capped accepted work (positive setup control, not RED)
+ ↓ tests/unit/publication.test.ts > PUB-ARCHIVE-RESTORE: fresh authenticated runner restores original tar without rebuilding or changing any deployed file
+ ↓ tests/unit/publication.test.ts > PUB-STATE-IMPORT: exact newest selected successful artifact is authenticated before acquire uses it
+ ↓ tests/unit/publication.test.ts > PUB-STATE-IMPORT-REJECT: foreign-artifact cannot certify a successful retention baseline
+ ↓ tests/unit/publication.test.ts > PUB-STATE-IMPORT-REJECT: failed-run cannot certify a successful retention baseline
+ ↓ tests/unit/publication.test.ts > PUB-STATE-IMPORT-REJECT: pr-run cannot certify a successful retention baseline
+ ↓ tests/unit/publication.test.ts > PUB-STATE-IMPORT-REJECT: wrong-branch cannot certify a successful retention baseline
+ ↓ tests/unit/publication.test.ts > PUB-STATE-IMPORT-REJECT: expired cannot certify a successful retention baseline
+ ↓ tests/unit/publication.test.ts > PUB-STATE-IMPORT-REJECT: malformed-latest-no-skip cannot certify a successful retention baseline
+ ↓ tests/unit/publication.test.ts > PUB-STATE-SERVED-RECOVERY: missing checkpoint uses authenticated historical served compatibility
+ ↓ tests/unit/publication.test.ts > PUB-STATE-SERVED-RECOVERY: expired checkpoint uses authenticated historical served compatibility
+ ↓ tests/unit/publication.test.ts > PUB-STATE-SERVED-RECOVERY: incompatible checkpoint uses authenticated historical served compatibility
+ ↓ tests/unit/publication.test.ts > PUB-NEXT-CANDIDATE: restored confirmed receipt enters known history without rewriting its original served artifact
+ ↓ tests/unit/publication.test.ts > PUB-APPROVAL-CURRENT: application change while waiting blocks previously eligible deployment
+ ↓ tests/unit/publication.test.ts > PUB-APPROVAL-CURRENT: evidence-expiry change while waiting blocks previously eligible deployment
+ ↓ tests/unit/publication.test.ts > PUB-HARNESS-HISTORICAL: acquisition101 and publication299 chronology precede uploaded served proof (positive control, not RED)
+ ↓ tests/unit/publication.test.ts > PUB-POSTDEPLOY-REPORT: successful deployment plus failed live probe records unconfirmed site honestly without a receipt
+ ↓ tests/unit/publication.test.ts > PUB-CURRENT-SITE: superseded live Pages content blocks promotion while old confirmed private metadata remains unchanged
+ ↓ tests/unit/publication.test.ts > PUB-HARNESS-PRIOR: original live site has exact catalogue/artifact hashes and complete controlled source accounting (positive control, not RED)
+ ↓ tests/unit/publication.test.ts > PUB-DOCUMENTED-JOBS: exact attempt endpoint and actual provider job URL confirm publication without guessed fields
+ ↓ tests/unit/publication.test.ts > PUB-EXECUTED-ACTION: missing step cannot confirm a new publication from a merely successful job
+ ↓ tests/unit/publication.test.ts > PUB-EXECUTED-ACTION: skipped step cannot confirm a new publication from a merely successful job
+ ↓ tests/unit/publication.test.ts > PUB-EXECUTED-ACTION: failed step cannot confirm a new publication from a merely successful job
+ ↓ tests/unit/publication.test.ts > PUB-EXECUTED-ACTION: foreign step cannot confirm a new publication from a merely successful job
+ ✓ tests/unit/publication.test.ts > PUB-BOUNDED-STATE-CONTROL: two actual successful preparations emit only current referenced checkpoint payloads (later GREEN control, not RED) 92ms
+
+ Test Files  1 passed (1)
+      Tests  1 passed | 188 skipped (189)
+   Start at  18:51:23
+   Duration  375ms (transform 35%, import 35%, tests 29%, worker 1%)
+
+JSON report written to /Users/eaglecheow/dev/vote-better-malaysia/specs/001-read-mp-hansard/evidence/publication-bounded-state-control.json

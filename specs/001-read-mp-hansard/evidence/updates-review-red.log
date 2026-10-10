@@ -1,0 +1,128 @@
+
+> vote-better-malaysia@0.1.0 test
+> vitest --run tests/unit/updates.test.ts -t UPDATE020|UPDATE021|UPDATE022
+
+
+ RUN  v5.0.3 /Users/eaglecheow/dev/vote-better-malaysia
+
+ ❯ tests/unit/updates.test.ts (32 tests | 8 failed | 24 skipped) 10ms
+   × UPDATE020: invalid current application stamp "" cannot register a worker 5ms
+   × UPDATE020: invalid current application stamp "invalid" cannot register a worker 0ms
+   × UPDATE020: invalid current application stamp "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" cannot register a worker 0ms
+   × UPDATE021: malformed repository base cannot register ftp://example.test/vote-better-malaysia/ 0ms
+   × UPDATE021: malformed repository base cannot register https://example.test/vote-better-malaysia/?foreign=1 0ms
+   × UPDATE021: malformed repository base cannot register https://example.test/vote-better-malaysia/#foreign 0ms
+   × UPDATE021: malformed repository base cannot register https://user:password@example.test/vote-better-malaysia/ 0ms
+   × UPDATE022: a changed controller learns this nonconsenting tab's unchanged application version 2ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 8 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/updates.test.ts > UPDATE020: invalid current application stamp "" cannot register a worker
+ FAIL  tests/unit/updates.test.ts > UPDATE020: invalid current application stamp "invalid" cannot register a worker
+ FAIL  tests/unit/updates.test.ts > UPDATE020: invalid current application stamp "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" cannot register a worker
+AssertionError: promise resolved "{ getState: [Function getState], …(4) }" instead of rejecting
+
+- Expected
++ Received
+
+- Error {
+-   "message": "rejected promise",
++ {
++   "apply": [Function apply],
++   "close": [Function close],
++   "continue": [Function continue],
++   "getState": [Function getState],
++   "subscribe": [Function subscribe],
+  }
+
+ ❯ tests/unit/updates.test.ts:260:123
+    258|   async () => {
+    259|     const container = new Container();
+    260|     await expect.soft(connectUpdates({ baseUrl, version, serviceWorker…
+       |                                                                                                                           ^
+    261|     expect(container.register).not.toHaveBeenCalled();
+    262|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/9]⎯
+
+ FAIL  tests/unit/updates.test.ts > UPDATE021: malformed repository base cannot register ftp://example.test/vote-better-malaysia/
+ FAIL  tests/unit/updates.test.ts > UPDATE021: malformed repository base cannot register https://example.test/vote-better-malaysia/?foreign=1
+ FAIL  tests/unit/updates.test.ts > UPDATE021: malformed repository base cannot register https://example.test/vote-better-malaysia/#foreign
+ FAIL  tests/unit/updates.test.ts > UPDATE021: malformed repository base cannot register https://user:password@example.test/vote-better-malaysia/
+AssertionError: promise resolved "{ getState: [Function getState], …(4) }" instead of rejecting
+
+- Expected
++ Received
+
+- Error {
+-   "message": "rejected promise",
++ {
++   "apply": [Function apply],
++   "close": [Function close],
++   "continue": [Function continue],
++   "getState": [Function getState],
++   "subscribe": [Function subscribe],
+  }
+
+ ❯ tests/unit/updates.test.ts:270:145
+    268|   async () => {
+    269|     const container = new Container();
+    270|     await expect.soft(connectUpdates({ baseUrl: invalidBase, version: …
+       |                                                                                                                                                 ^
+    271|     expect(container.register).not.toHaveBeenCalled();
+    272|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/9]⎯
+
+ FAIL  tests/unit/updates.test.ts > UPDATE022: a changed controller learns this nonconsenting tab's unchanged application version
+AssertionError: expected [] to deep equally contain { type: 'CLIENT_VERSION', …(2) }
+
+- Expected:
+{
+  "base": "/vote-better-malaysia/",
+  "type": "CLIENT_VERSION",
+  "version": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+}
+
++ Received:
+[]
+
+ ❯ tests/unit/updates.test.ts:282:33
+    280|     container.controller = waiting; waiting!.posts.length = 0;
+    281|     container.dispatchEvent(new Event('controllerchange')); await sett…
+    282|     expect.soft(waiting!.posts).toContainEqual({ type: 'CLIENT_VERSION…
+       |                                 ^
+    283|     expect.soft(waiting!.posts).toContainEqual({ type: 'SHELL_STATUS',…
+    284|     expect(container.reload).not.toHaveBeenCalled();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/9]⎯
+
+ FAIL  tests/unit/updates.test.ts > UPDATE022: a changed controller learns this nonconsenting tab's unchanged application version
+AssertionError: expected [] to deep equally contain { type: 'SHELL_STATUS', …(2) }
+
+- Expected:
+{
+  "base": "/vote-better-malaysia/",
+  "type": "SHELL_STATUS",
+  "version": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+}
+
++ Received:
+[]
+
+ ❯ tests/unit/updates.test.ts:283:33
+    281|     container.dispatchEvent(new Event('controllerchange')); await sett…
+    282|     expect.soft(waiting!.posts).toContainEqual({ type: 'CLIENT_VERSION…
+    283|     expect.soft(waiting!.posts).toContainEqual({ type: 'SHELL_STATUS',…
+       |                                 ^
+    284|     expect(container.reload).not.toHaveBeenCalled();
+    285|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/9]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  8 failed | 24 skipped (32)
+   Start at  17:53:44
+   Duration  100ms (transform 47%, tests 33%, import 16%, worker 5%)
+

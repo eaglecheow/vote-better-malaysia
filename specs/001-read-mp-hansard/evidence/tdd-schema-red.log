@@ -1,0 +1,1323 @@
+
+> vote-better-malaysia@0.1.0 test
+> vitest --run tests/unit/source-schema.test.ts
+
+
+ RUN  v5.0.3 /Users/eaglecheow/dev/vote-better-malaysia
+
+ ❯ tests/unit/source-schema.test.ts (148 tests | 148 failed) 18ms
+   ❯ source schema and exact identity (148)
+     × SCHEMA-ID accepts lossless positive ID 1 3ms
+     × SCHEMA-ID accepts lossless positive ID 1839 0ms
+     × SCHEMA-ID accepts lossless positive ID 9007199254740991 0ms
+     × SCHEMA-ID accepts lossless positive ID 1 0ms
+     × SCHEMA-ID accepts lossless positive ID 1839 0ms
+     × SCHEMA-ID accepts lossless positive ID 9007199254740993 0ms
+     × SCHEMA-ID rejects ambiguous ID 0 1ms
+     × SCHEMA-ID rejects ambiguous ID -1 0ms
+     × SCHEMA-ID rejects ambiguous ID 1.5 0ms
+     × SCHEMA-ID rejects ambiguous ID NaN 0ms
+     × SCHEMA-ID rejects ambiguous ID Infinity 0ms
+     × SCHEMA-ID rejects ambiguous ID 9007199254740992 0ms
+     × SCHEMA-ID rejects ambiguous ID  0ms
+     × SCHEMA-ID rejects ambiguous ID 0 0ms
+     × SCHEMA-ID rejects ambiguous ID 01 0ms
+     × SCHEMA-ID rejects ambiguous ID +1 0ms
+     × SCHEMA-ID rejects ambiguous ID 1.0 0ms
+     × SCHEMA-ID rejects ambiguous ID 1e3 0ms
+     × SCHEMA-ID rejects ambiguous ID  1 0ms
+     × SCHEMA-ID rejects ambiguous ID 1  0ms
+     × SCHEMA-ID rejects ambiguous ID null 0ms
+     × SCHEMA-ID rejects ambiguous ID undefined 0ms
+     × SCHEMA-ID rejects ambiguous ID true 0ms
+     × SCHEMA-ID rejects ambiguous ID {} 0ms
+     × SCHEMA-CATALOGUE accepts a coherent source-derived Mesyuarat 0 identity with null historical/official metadata 1ms
+     × SCHEMA-MEMBER preserves similar names, exact strings and supplied historical context 0ms
+     × SCHEMA-REJECT rejects constrained field schemaVersion = 2 0ms
+     × SCHEMA-REJECT rejects constrained field snapshotId = "" 0ms
+     × SCHEMA-REJECT rejects constrained field snapshotId = null 0ms
+     × SCHEMA-REJECT rejects constrained field preparedAt = "2026-10-10" 0ms
+     × SCHEMA-REJECT rejects constrained field preparedAt = "2026-02-30T04:00:00.000Z" 0ms
+     × SCHEMA-REJECT rejects constrained field preparedAt = "2026-10-10T04:00:00+00:00" 1ms
+     × SCHEMA-REJECT rejects constrained field publishedAt = "not-a-time" 0ms
+     × SCHEMA-REJECT rejects constrained field publishedAt = undefined 0ms
+     × SCHEMA-REJECT rejects constrained field provenance.interface = "third-party" 0ms
+     × SCHEMA-REJECT rejects constrained field provenance.sourceBuildId = "../build" 0ms
+     × SCHEMA-REJECT rejects constrained field provenance.inventoryAcquiredAt = "2026-10-10T05:00:00.000Z" 0ms
+     × SCHEMA-REJECT rejects constrained field provenance.membersAcquiredAt = "2026-10-10T05:00:00.000Z" 0ms
+     × SCHEMA-REJECT rejects constrained field provenance.inventoryRawDigest = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" 0ms
+     × SCHEMA-REJECT rejects constrained field provenance.membersRawDigest = "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB" 0ms
+     × SCHEMA-REJECT rejects constrained field coverage.parliaments = [13,13] 0ms
+     × SCHEMA-REJECT rejects constrained field coverage.parliaments = [14] 0ms
+     × SCHEMA-REJECT rejects constrained field coverage.startDate = "2014-07-22" 0ms
+     × SCHEMA-REJECT rejects constrained field coverage.endDate = "2014-07-24" 0ms
+     × SCHEMA-REJECT rejects constrained field coverage.latestInventoryCount = 0 0ms
+     × SCHEMA-REJECT rejects constrained field coverage.retainedSittingCount = 1 0ms
+     × SCHEMA-REJECT rejects constrained field coverage.unavailableSittingCount = 1 0ms
+     × SCHEMA-REJECT rejects constrained field coverage.attributionGapCount = 1 0ms
+     × SCHEMA-REJECT rejects constrained field status.acquisitionOutcome = "unknown" 0ms
+     × SCHEMA-REJECT rejects constrained field status.stagingOutcome = "failed" 0ms
+     × SCHEMA-REJECT rejects constrained field status.workflowUrl = "javascript:alert(1)" 0ms
+     × SCHEMA-REJECT rejects constrained field status.completedAt = "yesterday" 0ms
+     × SCHEMA-REJECT rejects constrained field status.lastConfirmedDeployment = {} 0ms
+     × SCHEMA-REJECT rejects constrained field members.0.id = "01" 0ms
+     × SCHEMA-REJECT rejects constrained field members.0.name = null 0ms
+     × SCHEMA-REJECT rejects constrained field members.0.name = "   " 0ms
+     × SCHEMA-REJECT rejects constrained field members.0.historicalContext = undefined 0ms
+     × SCHEMA-REJECT rejects constrained field members.0.historicalContext = {} 0ms
+     × SCHEMA-REJECT rejects constrained field members.0.listedInLatestSource = 1 0ms
+     × SCHEMA-REJECT rejects constrained field members.0.birth_year = 1960 0ms
+     × SCHEMA-REJECT rejects constrained field sittings.0.id = "0" 0ms
+     × SCHEMA-REJECT rejects constrained field sittings.0.date = "2014-02-30" 0ms
+     × SCHEMA-REJECT rejects constrained field sittings.0.parliament = 0 0ms
+     × SCHEMA-REJECT rejects constrained field sittings.0.parliament = 1.5 0ms
+     × SCHEMA-REJECT rejects constrained field sittings.0.penggal = 0 0ms
+     × SCHEMA-REJECT rejects constrained field sittings.0.mesyuarat = -1 0ms
+     × SCHEMA-REJECT rejects constrained field sittings.0.house = "dewan-negara" 0ms
+     × SCHEMA-REJECT rejects constrained field sittings.0.filename = "dr_2014-07-24" 0ms
+     × SCHEMA-REJECT rejects constrained field sittings.0.sourceUrl = "https://evil.example/hansard/dewan-rakyat/2014-07-23" 0ms
+     × SCHEMA-REJECT rejects constrained field sittings.0.sourceUrl = "https://hansard.parlimen.gov.my/hansard/dewan-rakyat/2014-07-24" 0ms
+     × SCHEMA-REJECT rejects constrained field sittings.0.isFinal = "final" 0ms
+     × SCHEMA-REJECT rejects constrained field sittings.0.listedInLatestInventory = undefined 0ms
+     × SCHEMA-REJECT rejects constrained field sittings.0.record.availability = "partial" 0ms
+     × SCHEMA-REJECT rejects constrained field sittings.0.record.path = "data/sittings/2.json.gz" 0ms
+     × SCHEMA-REJECT rejects constrained field sittings.0.record.path = "../data/sittings/26241.json.gz" 0ms
+     × SCHEMA-REJECT rejects constrained field sittings.0.record.digest = "bad" 0ms
+     × SCHEMA-REJECT rejects constrained field sittings.0.record.compressedBytes = 524289 0ms
+     × SCHEMA-REJECT rejects constrained field sittings.0.record.compressedBytes = 0 0ms
+     × SCHEMA-REJECT rejects constrained field sittings.0.record.decodedBytes = 5242881 0ms
+     × SCHEMA-REJECT rejects constrained field sittings.0.record.decodedBytes = -1 0ms
+     × SCHEMA-REJECT rejects constrained field sittings.0.record.acquiredAt = undefined 0ms
+     × SCHEMA-REJECT rejects constrained field sittings.0.record.lastAttemptAt = "2026-10-10T03:00:00.000Z" 0ms
+     × SCHEMA-REJECT rejects constrained field sittings.0.record.lastAttemptOutcome = "unknown" 0ms
+     × SCHEMA-REJECT rejects constrained field sittings.0.record.sourceBuildId = null 0ms
+     × SCHEMA-REJECT rejects constrained field sittings.0.record.rawSourceDigest = undefined 0ms
+     × SCHEMA-REJECT rejects constrained field sittings.0.record.sourcePublishedAt = "unknown" 0ms
+     × SCHEMA-REJECT rejects constrained field sittings.0.record.sourceRevisedAt = undefined 0ms
+     × SCHEMA-REJECT rejects constrained field sittings.0.record.accounting = null 0ms
+     × SCHEMA-REJECT rejects constrained field sittings.0.record.accounting.total = 3 0ms
+     × SCHEMA-REJECT rejects constrained field sittings.0.record.accounting.assigned = 1.5 0ms
+     × SCHEMA-REJECT rejects constrained field sittings.0.record.accounting.unassigned = -1 0ms
+     × SCHEMA-REJECT rejects constrained field sittings.0.record.accounting.annotations = -1 0ms
+     × SCHEMA-REQUIRED rejects absent provenance 0ms
+     × SCHEMA-REQUIRED rejects absent coverage 0ms
+     × SCHEMA-REQUIRED rejects absent status 0ms
+     × SCHEMA-REQUIRED rejects absent members 0ms
+     × SCHEMA-REQUIRED rejects absent sittings 0ms
+     × SCHEMA-UNIQUE rejects duplicate members identities 0ms
+     × SCHEMA-UNIQUE rejects duplicate sittings identities 0ms
+     × SCHEMA-CONFLICT rejects a conflicting member replacement without mutating the old catalogue 0ms
+     × SCHEMA-RETAINED preserves an omitted sitting, old identity and accepted descriptor on a dated failure 0ms
+     × SCHEMA-UNAVAILABLE accepts explicit unavailable metadata without invented successful times 0ms
+     × SCHEMA-UNAVAILABLE rejects payload field path on unavailable records 0ms
+     × SCHEMA-UNAVAILABLE rejects payload field digest on unavailable records 0ms
+     × SCHEMA-UNAVAILABLE rejects payload field compressedBytes on unavailable records 0ms
+     × SCHEMA-UNAVAILABLE rejects payload field decodedBytes on unavailable records 0ms
+     × SCHEMA-UNAVAILABLE rejects payload field acquiredAt on unavailable records 0ms
+     × SCHEMA-UNAVAILABLE rejects payload field sourceBuildId on unavailable records 0ms
+     × SCHEMA-UNAVAILABLE rejects payload field rawSourceDigest on unavailable records 0ms
+     × SCHEMA-UNAVAILABLE rejects payload field accounting on unavailable records 0ms
+     × SCHEMA-SIZES accepts descriptor limits and exhaustive source accounting 0ms
+     × SCHEMA-PUBLICATION accepts matching confirmed deployment times distinct from preparation 0ms
+     × SCHEMA-PUBLICATION rejects missing publication evidence 0ms
+     × SCHEMA-PUBLICATION rejects wrong-snapshot publication evidence 0ms
+     × SCHEMA-PUBLICATION rejects wrong-time publication evidence 0ms
+     × SCHEMA-PUBLICATION rejects unverified-served publication evidence 0ms
+     × SCHEMA-PUBLICATION rejects before-preparation publication evidence 0ms
+     × SCHEMA-TIMES preserves independently supplied official dates and current attempt metadata 0ms
+     × SCHEMA-RECEIPT rejects malformed snapshotId = "" 0ms
+     × SCHEMA-RECEIPT rejects malformed deploymentId = "" 0ms
+     × SCHEMA-RECEIPT rejects malformed publishedAt = "unknown" 0ms
+     × SCHEMA-RECEIPT rejects malformed verifiedServedAt = undefined 0ms
+     × SCHEMA-RECEIPT rejects malformed workflowUrl = "https://evil.example/actions/runs/123" 0ms
+     × SCHEMA-RAW-MEMBERS preserves sampled exact identities and leaves context null 1ms
+     × SCHEMA-RAW-MEMBERS preserves explicitly supplied context and similar names without merging 0ms
+     × SCHEMA-RAW-MEMBERS rejects malformed replacement {} 0ms
+     × SCHEMA-RAW-MEMBERS rejects malformed replacement {"pageProps":{}} 0ms
+     × SCHEMA-RAW-MEMBERS rejects malformed replacement {"pageProps":{"speakers":[]}} 0ms
+     × SCHEMA-RAW-MEMBERS rejects malformed replacement {"pageProps":{"speakers":[{"new_author_id":"1839","name":"LIM GUAN ENG"}]}} 0ms
+     × SCHEMA-RAW-MEMBERS rejects malformed replacement {"pageProps":{"speakers":[{"new_author_id":0,"name":"LIM GUAN ENG"}]}} 0ms
+     × SCHEMA-RAW-MEMBERS rejects malformed replacement {"pageProps":{"speakers":[{"new_author_id":9007199254740992,"name":"Name"}]}} 0ms
+     × SCHEMA-RAW-MEMBERS rejects malformed replacement {"pageProps":{"speakers":[{"new_author_id":1,"name":null}]}} 0ms
+     × SCHEMA-RAW-MEMBERS rejects malformed replacement {"pageProps":{"speakers":[{"new_author_id":1,"name":"Name","historicalContext":{}}]}} 0ms
+     × SCHEMA-RAW-MEMBERS rejects malformed replacement {"pageProps":{"speakers":[{"new_author_id":1,"name":"Name"},{"new_author_id":1,"name":"Other"}]}} 0ms
+     × SCHEMA-RAW-INVENTORY recursively preserves complete selected inventory and exact source hierarchy 0ms
+     × SCHEMA-RAW-INVENTORY rejects malformed hierarchy {} 0ms
+     × SCHEMA-RAW-INVENTORY rejects malformed hierarchy {"unexpected":[]} 0ms
+     × SCHEMA-RAW-INVENTORY rejects malformed hierarchy {"0":{}} 0ms
+     × SCHEMA-RAW-INVENTORY rejects malformed hierarchy {"13":{"2":{},"start_date":"bad-date","end_date":"2014-07-23"}} 0ms
+     × SCHEMA-RAW-INVENTORY rejects source sitting sitting_id = "26241" 0ms
+     × SCHEMA-RAW-INVENTORY rejects source sitting sitting_id = 0 0ms
+     × SCHEMA-RAW-INVENTORY rejects source sitting date = "2014-02-30" 0ms
+     × SCHEMA-RAW-INVENTORY rejects source sitting filename = "../dr_2014-07-23" 0ms
+     × SCHEMA-RAW-INVENTORY rejects source sitting is_final = "true" 0ms
+     × SCHEMA-RAW-INVENTORY rejects duplicate sitting identity across catalogue hierarchy 0ms
+     × SCHEMA-RAW-INVENTORY rejects conflicting IDs for one dated record 0ms
+     × SCHEMA-CONFLICT rejects separate sitting IDs claiming the same source record 0ms
+     × SCHEMA-RAW-INVENTORY keeps absent source status null 0ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 148 ⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-ID accepts lossless positive ID 1
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-ID accepts lossless positive ID 1
+AssertionError: expected undefined to be '1' // Object.is equality
+
+- Expected:
+"1"
+
++ Received:
+undefined
+
+ ❯ tests/unit/source-schema.test.ts:36:29
+     34|   /** Confirms canonical source IDs preserve safe integer and decimal-…
+     35|   it.each([1, 1839, Number.MAX_SAFE_INTEGER, '1', '1839', '90071992547…
+     36|     expect(sourceId(value)).toBe(String(value));
+       |                             ^
+     37|   });
+     38|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/148]⎯
+
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-ID accepts lossless positive ID 1839
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-ID accepts lossless positive ID 1839
+AssertionError: expected undefined to be '1839' // Object.is equality
+
+- Expected:
+"1839"
+
++ Received:
+undefined
+
+ ❯ tests/unit/source-schema.test.ts:36:29
+     34|   /** Confirms canonical source IDs preserve safe integer and decimal-…
+     35|   it.each([1, 1839, Number.MAX_SAFE_INTEGER, '1', '1839', '90071992547…
+     36|     expect(sourceId(value)).toBe(String(value));
+       |                             ^
+     37|   });
+     38|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/148]⎯
+
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-ID accepts lossless positive ID 9007199254740991
+AssertionError: expected undefined to be '9007199254740991' // Object.is equality
+
+- Expected:
+"9007199254740991"
+
++ Received:
+undefined
+
+ ❯ tests/unit/source-schema.test.ts:36:29
+     34|   /** Confirms canonical source IDs preserve safe integer and decimal-…
+     35|   it.each([1, 1839, Number.MAX_SAFE_INTEGER, '1', '1839', '90071992547…
+     36|     expect(sourceId(value)).toBe(String(value));
+       |                             ^
+     37|   });
+     38|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/148]⎯
+
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-ID accepts lossless positive ID 9007199254740993
+AssertionError: expected undefined to be '9007199254740993' // Object.is equality
+
+- Expected:
+"9007199254740993"
+
++ Received:
+undefined
+
+ ❯ tests/unit/source-schema.test.ts:36:29
+     34|   /** Confirms canonical source IDs preserve safe integer and decimal-…
+     35|   it.each([1, 1839, Number.MAX_SAFE_INTEGER, '1', '1839', '90071992547…
+     36|     expect(sourceId(value)).toBe(String(value));
+       |                             ^
+     37|   });
+     38|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/148]⎯
+
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-ID rejects ambiguous ID 0
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-ID rejects ambiguous ID -1
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-ID rejects ambiguous ID 1.5
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-ID rejects ambiguous ID NaN
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-ID rejects ambiguous ID Infinity
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-ID rejects ambiguous ID 9007199254740992
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-ID rejects ambiguous ID 
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-ID rejects ambiguous ID 0
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-ID rejects ambiguous ID 01
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-ID rejects ambiguous ID +1
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-ID rejects ambiguous ID 1.0
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-ID rejects ambiguous ID 1e3
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-ID rejects ambiguous ID  1
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-ID rejects ambiguous ID 1 
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-ID rejects ambiguous ID null
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-ID rejects ambiguous ID undefined
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-ID rejects ambiguous ID true
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-ID rejects ambiguous ID {}
+AssertionError: expected [Function] to throw an error
+ ❯ tests/unit/source-schema.test.ts:41:35
+     39|   /** Rejects coercion, ambiguous spelling and already-rounded numeric…
+     40|   it.each([0, -1, 1.5, NaN, Infinity, Number.MAX_SAFE_INTEGER + 1, '',…
+     41|     expect(() => sourceId(value)).toThrow();
+       |                                   ^
+     42|   });
+     43|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/148]⎯
+
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-CATALOGUE accepts a coherent source-derived Mesyuarat 0 identity with null historical/official metadata
+AssertionError: expected undefined to deeply equal { schemaVersion: 1, …(8) }
+
+- Expected:
+{
+  "coverage": {
+    "attributionGapCount": 0,
+    "endDate": "2014-07-23",
+    "latestInventoryCount": 1,
+    "parliaments": [
+      13,
+    ],
+    "retainedSittingCount": 0,
+    "startDate": "2014-07-23",
+    "unavailableSittingCount": 0,
+  },
+  "members": [
+    {
+      "historicalContext": null,
+      "id": "1839",
+      "listedInLatestSource": true,
+      "name": "LIM GUAN ENG",
+    },
+    {
+      "historicalContext": null,
+      "id": "22462",
+      "listedInLatestSource": false,
+      "name": "TEOH CHZE CHONG",
+    },
+  ],
+  "preparedAt": "2026-10-10T04:00:00.000Z",
+  "provenance": {
+    "interface": "official-next-page-data",
+    "inventoryAcquiredAt": "2026-10-10T03:00:00.000Z",
+    "inventoryRawDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "membersAcquiredAt": "2026-10-10T03:00:01.000Z",
+    "membersRawDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "sourceBuildId": "source-build",
+  },
+  "publishedAt": null,
+  "schemaVersion": 1,
+  "sittings": [
+    {
+      "date": "2014-07-23",
+      "filename": "dr_2014-07-23",
+      "house": "dewan-rakyat",
+      "id": "26241",
+      "isFinal": true,
+      "listedInLatestInventory": true,
+      "mesyuarat": 0,
+      "parliament": 13,
+      "penggal": 2,
+      "record": {
+        "accounting": {
+          "annotations": 0,
+          "assigned": 2,
+          "total": 2,
+          "unassigned": 0,
+        },
+        "acquiredAt": "2026-10-10T03:01:00.000Z",
+        "availability": "available",
+        "compressedBytes": 120,
+        "decodedBytes": 250,
+        "digest": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "lastAttemptAt": "2026-10-10T03:01:00.000Z",
+        "lastAttemptOutcome": "success",
+        "path": "data/sittings/26241.json.gz",
+        "rawSourceDigest": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+        "sourceBuildId": "source-build",
+        "sourcePublishedAt": null,
+        "sourceRevisedAt": null,
+      },
+      "sourceUrl": "https://hansard.parlimen.gov.my/hansard/dewan-rakyat/2014-07-23",
+    },
+  ],
+  "snapshotId": "controlled-snapshot",
+  "status": {
+    "acquisitionOutcome": "success",
+    "completedAt": "2026-10-10T03:59:00.000Z",
+    "lastConfirmedDeployment": null,
+    "stagingOutcome": "success",
+    "workflowUrl": null,
+  },
+}
+
++ Received:
+undefined
+
+ ❯ tests/unit/source-schema.test.ts:47:40
+     45|   it('SCHEMA-CATALOGUE accepts a coherent source-derived Mesyuarat 0 i…
+     46|     const fixture = catalogueFixture();
+     47|     expect(validateCatalogue(fixture)).toEqual(fixture);
+       |                                        ^
+     48|   });
+     49|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/148]⎯
+
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-MEMBER preserves similar names, exact strings and supplied historical context
+AssertionError: expected undefined to deeply equal { schemaVersion: 1, …(8) }
+
+- Expected:
+{
+  "coverage": {
+    "attributionGapCount": 0,
+    "endDate": "2014-07-23",
+    "latestInventoryCount": 1,
+    "parliaments": [
+      13,
+    ],
+    "retainedSittingCount": 0,
+    "startDate": "2014-07-23",
+    "unavailableSittingCount": 0,
+  },
+  "members": [
+    {
+      "historicalContext": "Source-supplied historical detail",
+      "id": "1839",
+      "listedInLatestSource": true,
+      "name": "  Tuan Lim Guan Eng [Bagan]  ",
+    },
+    {
+      "historicalContext": null,
+      "id": "22462",
+      "listedInLatestSource": false,
+      "name": "TEOH CHZE CHONG",
+    },
+    {
+      "historicalContext": null,
+      "id": "2",
+      "listedInLatestSource": false,
+      "name": "  Tuan Lim Guan Eng [Bagan]  ",
+    },
+  ],
+  "preparedAt": "2026-10-10T04:00:00.000Z",
+  "provenance": {
+    "interface": "official-next-page-data",
+    "inventoryAcquiredAt": "2026-10-10T03:00:00.000Z",
+    "inventoryRawDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "membersAcquiredAt": "2026-10-10T03:00:01.000Z",
+    "membersRawDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "sourceBuildId": "source-build",
+  },
+  "publishedAt": null,
+  "schemaVersion": 1,
+  "sittings": [
+    {
+      "date": "2014-07-23",
+      "filename": "dr_2014-07-23",
+      "house": "dewan-rakyat",
+      "id": "26241",
+      "isFinal": true,
+      "listedInLatestInventory": true,
+      "mesyuarat": 0,
+      "parliament": 13,
+      "penggal": 2,
+      "record": {
+        "accounting": {
+          "annotations": 0,
+          "assigned": 2,
+          "total": 2,
+          "unassigned": 0,
+        },
+        "acquiredAt": "2026-10-10T03:01:00.000Z",
+        "availability": "available",
+        "compressedBytes": 120,
+        "decodedBytes": 250,
+        "digest": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "lastAttemptAt": "2026-10-10T03:01:00.000Z",
+        "lastAttemptOutcome": "success",
+        "path": "data/sittings/26241.json.gz",
+        "rawSourceDigest": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+        "sourceBuildId": "source-build",
+        "sourcePublishedAt": null,
+        "sourceRevisedAt": null,
+      },
+      "sourceUrl": "https://hansard.parlimen.gov.my/hansard/dewan-rakyat/2014-07-23",
+    },
+  ],
+  "snapshotId": "controlled-snapshot",
+  "status": {
+    "acquisitionOutcome": "success",
+    "completedAt": "2026-10-10T03:59:00.000Z",
+    "lastConfirmedDeployment": null,
+    "stagingOutcome": "success",
+    "workflowUrl": null,
+  },
+}
+
++ Received:
+undefined
+
+ ❯ tests/unit/source-schema.test.ts:56:40
+     54|     fixture.members[0].historicalContext = 'Source-supplied historical…
+     55|     fixture.members.push({ id: '2', name: '  Tuan Lim Guan Eng [Bagan]…
+     56|     expect(validateCatalogue(fixture)).toEqual(fixture);
+       |                                        ^
+     57|   });
+     58|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/148]⎯
+
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field schemaVersion = 2
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field snapshotId = ""
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field snapshotId = null
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field preparedAt = "2026-10-10"
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field preparedAt = "2026-02-30T04:00:00.000Z"
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field preparedAt = "2026-10-10T04:00:00+00:00"
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field publishedAt = "not-a-time"
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field publishedAt = undefined
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field provenance.interface = "third-party"
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field provenance.sourceBuildId = "../build"
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field provenance.inventoryAcquiredAt = "2026-10-10T05:00:00.000Z"
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field provenance.membersAcquiredAt = "2026-10-10T05:00:00.000Z"
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field provenance.inventoryRawDigest = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field provenance.membersRawDigest = "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB"
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field coverage.parliaments = [13,13]
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field coverage.parliaments = [14]
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field coverage.startDate = "2014-07-22"
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field coverage.endDate = "2014-07-24"
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field coverage.latestInventoryCount = 0
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field coverage.retainedSittingCount = 1
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field coverage.unavailableSittingCount = 1
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field coverage.attributionGapCount = 1
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field status.acquisitionOutcome = "unknown"
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field status.stagingOutcome = "failed"
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field status.workflowUrl = "javascript:alert(1)"
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field status.completedAt = "yesterday"
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field status.lastConfirmedDeployment = {}
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field members.0.id = "01"
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field members.0.name = null
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field members.0.name = "   "
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field members.0.historicalContext = undefined
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field members.0.historicalContext = {}
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field members.0.listedInLatestSource = 1
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field members.0.birth_year = 1960
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field sittings.0.id = "0"
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field sittings.0.date = "2014-02-30"
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field sittings.0.parliament = 0
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field sittings.0.parliament = 1.5
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field sittings.0.penggal = 0
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field sittings.0.mesyuarat = -1
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field sittings.0.house = "dewan-negara"
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field sittings.0.filename = "dr_2014-07-24"
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field sittings.0.sourceUrl = "https://evil.example/hansard/dewan-rakyat/2014-07-23"
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field sittings.0.sourceUrl = "https://hansard.parlimen.gov.my/hansard/dewan-rakyat/2014-07-24"
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field sittings.0.isFinal = "final"
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field sittings.0.listedInLatestInventory = undefined
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field sittings.0.record.availability = "partial"
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field sittings.0.record.path = "data/sittings/2.json.gz"
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field sittings.0.record.path = "../data/sittings/26241.json.gz"
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field sittings.0.record.digest = "bad"
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field sittings.0.record.compressedBytes = 524289
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field sittings.0.record.compressedBytes = 0
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field sittings.0.record.decodedBytes = 5242881
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field sittings.0.record.decodedBytes = -1
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field sittings.0.record.acquiredAt = undefined
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field sittings.0.record.lastAttemptAt = "2026-10-10T03:00:00.000Z"
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field sittings.0.record.lastAttemptOutcome = "unknown"
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field sittings.0.record.sourceBuildId = null
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field sittings.0.record.rawSourceDigest = undefined
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field sittings.0.record.sourcePublishedAt = "unknown"
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field sittings.0.record.sourceRevisedAt = undefined
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field sittings.0.record.accounting = null
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field sittings.0.record.accounting.total = 3
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field sittings.0.record.accounting.assigned = 1.5
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field sittings.0.record.accounting.unassigned = -1
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field sittings.0.record.accounting.annotations = -1
+AssertionError: expected [Function] to throw an error
+ ❯ tests/unit/source-schema.test.ts:96:69
+     94|     ['sittings.0.record.accounting.unassigned', -1], ['sittings.0.reco…
+     95|   ])('SCHEMA-REJECT rejects constrained field %s = %j', (path, value) …
+     96|     expect(() => validateCatalogue(changed(path as string, value))).to…
+       |                                                                     ^
+     97|   });
+     98|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/148]⎯
+
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REQUIRED rejects absent provenance
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REQUIRED rejects absent coverage
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REQUIRED rejects absent status
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REQUIRED rejects absent members
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REQUIRED rejects absent sittings
+AssertionError: expected [Function] to throw an error
+ ❯ tests/unit/source-schema.test.ts:103:46
+    101|     const fixture = catalogueFixture() as unknown as Record<string, un…
+    102|     delete fixture[field];
+    103|     expect(() => validateCatalogue(fixture)).toThrow();
+       |                                              ^
+    104|   });
+    105|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/148]⎯
+
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-UNIQUE rejects duplicate members identities
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-UNIQUE rejects duplicate sittings identities
+AssertionError: expected [Function] to throw an error
+ ❯ tests/unit/source-schema.test.ts:110:46
+    108|     const fixture = catalogueFixture();
+    109|     fixture[field].push(structuredClone(fixture[field][0]) as never);
+    110|     expect(() => validateCatalogue(fixture)).toThrow();
+       |                                              ^
+    111|   });
+    112|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/148]⎯
+
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-CONFLICT rejects a conflicting member replacement without mutating the old catalogue
+AssertionError: expected [Function] to throw an error
+ ❯ tests/unit/source-schema.test.ts:119:50
+    117|     const replacement = structuredClone(accepted);
+    118|     replacement.members.push({ ...replacement.members[0], name: 'Anoth…
+    119|     expect(() => validateCatalogue(replacement)).toThrow();
+       |                                                  ^
+    120|     expect(accepted).toEqual(before);
+    121|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/148]⎯
+
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-RETAINED preserves an omitted sitting, old identity and accepted descriptor on a dated failure
+AssertionError: expected undefined to deeply equal { schemaVersion: 1, …(8) }
+
+- Expected:
+{
+  "coverage": {
+    "attributionGapCount": 0,
+    "endDate": "2014-07-23",
+    "latestInventoryCount": 0,
+    "parliaments": [
+      13,
+    ],
+    "retainedSittingCount": 1,
+    "startDate": "2014-07-23",
+    "unavailableSittingCount": 0,
+  },
+  "members": [
+    {
+      "historicalContext": null,
+      "id": "1839",
+      "listedInLatestSource": true,
+      "name": "LIM GUAN ENG",
+    },
+    {
+      "historicalContext": null,
+      "id": "22462",
+      "listedInLatestSource": false,
+      "name": "TEOH CHZE CHONG",
+    },
+  ],
+  "preparedAt": "2026-10-10T04:00:00.000Z",
+  "provenance": {
+    "interface": "official-next-page-data",
+    "inventoryAcquiredAt": "2026-10-10T03:00:00.000Z",
+    "inventoryRawDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "membersAcquiredAt": "2026-10-10T03:00:01.000Z",
+    "membersRawDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "sourceBuildId": "source-build",
+  },
+  "publishedAt": null,
+  "schemaVersion": 1,
+  "sittings": [
+    {
+      "date": "2014-07-23",
+      "filename": "dr_2014-07-23",
+      "house": "dewan-rakyat",
+      "id": "26241",
+      "isFinal": true,
+      "listedInLatestInventory": false,
+      "mesyuarat": 0,
+      "parliament": 13,
+      "penggal": 2,
+      "record": {
+        "accounting": {
+          "annotations": 0,
+          "assigned": 2,
+          "total": 2,
+          "unassigned": 0,
+        },
+        "acquiredAt": "2026-10-10T03:01:00.000Z",
+        "availability": "retained",
+        "compressedBytes": 120,
+        "decodedBytes": 250,
+        "digest": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "lastAttemptAt": "2026-10-10T03:30:00.000Z",
+        "lastAttemptOutcome": "failed",
+        "path": "data/sittings/26241.json.gz",
+        "rawSourceDigest": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+        "sourceBuildId": "source-build",
+        "sourcePublishedAt": null,
+        "sourceRevisedAt": null,
+      },
+      "sourceUrl": "https://hansard.parlimen.gov.my/hansard/dewan-rakyat/2014-07-23",
+    },
+  ],
+  "snapshotId": "controlled-snapshot",
+  "status": {
+    "acquisitionOutcome": "degraded",
+    "completedAt": "2026-10-10T03:59:00.000Z",
+    "lastConfirmedDeployment": null,
+    "stagingOutcome": "success",
+    "workflowUrl": null,
+  },
+}
+
++ Received:
+undefined
+
+ ❯ tests/unit/source-schema.test.ts:133:40
+    131|     fixture.coverage.latestInventoryCount = 0;
+    132|     fixture.coverage.retainedSittingCount = 1;
+    133|     expect(validateCatalogue(fixture)).toEqual(fixture);
+       |                                        ^
+    134|   });
+    135|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/148]⎯
+
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-UNAVAILABLE accepts explicit unavailable metadata without invented successful times
+AssertionError: expected undefined to deeply equal { schemaVersion: 1, …(8) }
+
+- Expected:
+{
+  "coverage": {
+    "attributionGapCount": 0,
+    "endDate": "2014-07-23",
+    "latestInventoryCount": 1,
+    "parliaments": [
+      13,
+    ],
+    "retainedSittingCount": 0,
+    "startDate": "2014-07-23",
+    "unavailableSittingCount": 1,
+  },
+  "members": [
+    {
+      "historicalContext": null,
+      "id": "1839",
+      "listedInLatestSource": true,
+      "name": "LIM GUAN ENG",
+    },
+    {
+      "historicalContext": null,
+      "id": "22462",
+      "listedInLatestSource": false,
+      "name": "TEOH CHZE CHONG",
+    },
+  ],
+  "preparedAt": "2026-10-10T04:00:00.000Z",
+  "provenance": {
+    "interface": "official-next-page-data",
+    "inventoryAcquiredAt": "2026-10-10T03:00:00.000Z",
+    "inventoryRawDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "membersAcquiredAt": "2026-10-10T03:00:01.000Z",
+    "membersRawDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "sourceBuildId": "source-build",
+  },
+  "publishedAt": null,
+  "schemaVersion": 1,
+  "sittings": [
+    {
+      "date": "2014-07-23",
+      "filename": "dr_2014-07-23",
+      "house": "dewan-rakyat",
+      "id": "26241",
+      "isFinal": null,
+      "listedInLatestInventory": true,
+      "mesyuarat": 0,
+      "parliament": 13,
+      "penggal": 2,
+      "record": {
+        "accounting": null,
+        "acquiredAt": null,
+        "availability": "unavailable",
+        "compressedBytes": null,
+        "decodedBytes": null,
+        "digest": null,
+        "lastAttemptAt": "2026-10-10T03:01:00.000Z",
+        "lastAttemptOutcome": "failed",
+        "path": null,
+        "rawSourceDigest": null,
+        "sourceBuildId": null,
+        "sourcePublishedAt": null,
+        "sourceRevisedAt": null,
+      },
+      "sourceUrl": "https://hansard.parlimen.gov.my/hansard/dewan-rakyat/2014-07-23",
+    },
+  ],
+  "snapshotId": "controlled-snapshot",
+  "status": {
+    "acquisitionOutcome": "degraded",
+    "completedAt": "2026-10-10T03:59:00.000Z",
+    "lastConfirmedDeployment": null,
+    "stagingOutcome": "success",
+    "workflowUrl": null,
+  },
+}
+
++ Received:
+undefined
+
+ ❯ tests/unit/source-schema.test.ts:143:40
+    141|     fixture.coverage.unavailableSittingCount = 1;
+    142|     fixture.status.acquisitionOutcome = 'degraded';
+    143|     expect(validateCatalogue(fixture)).toEqual(fixture);
+       |                                        ^
+    144|   });
+    145|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[13/148]⎯
+
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-UNAVAILABLE rejects payload field path on unavailable records
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-UNAVAILABLE rejects payload field digest on unavailable records
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-UNAVAILABLE rejects payload field compressedBytes on unavailable records
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-UNAVAILABLE rejects payload field decodedBytes on unavailable records
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-UNAVAILABLE rejects payload field acquiredAt on unavailable records
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-UNAVAILABLE rejects payload field sourceBuildId on unavailable records
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-UNAVAILABLE rejects payload field rawSourceDigest on unavailable records
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-UNAVAILABLE rejects payload field accounting on unavailable records
+AssertionError: expected [Function] to throw an error
+ ❯ tests/unit/source-schema.test.ts:157:46
+    155|     fixture.coverage.unavailableSittingCount = 1;
+    156|     fixture.status.acquisitionOutcome = 'degraded';
+    157|     expect(() => validateCatalogue(fixture)).toThrow();
+       |                                              ^
+    158|   });
+    159|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[14/148]⎯
+
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-SIZES accepts descriptor limits and exhaustive source accounting
+AssertionError: expected undefined to deeply equal { schemaVersion: 1, …(8) }
+
+- Expected:
+{
+  "coverage": {
+    "attributionGapCount": 1,
+    "endDate": "2014-07-23",
+    "latestInventoryCount": 1,
+    "parliaments": [
+      13,
+    ],
+    "retainedSittingCount": 0,
+    "startDate": "2014-07-23",
+    "unavailableSittingCount": 0,
+  },
+  "members": [
+    {
+      "historicalContext": null,
+      "id": "1839",
+      "listedInLatestSource": true,
+      "name": "LIM GUAN ENG",
+    },
+    {
+      "historicalContext": null,
+      "id": "22462",
+      "listedInLatestSource": false,
+      "name": "TEOH CHZE CHONG",
+    },
+  ],
+  "preparedAt": "2026-10-10T04:00:00.000Z",
+  "provenance": {
+    "interface": "official-next-page-data",
+    "inventoryAcquiredAt": "2026-10-10T03:00:00.000Z",
+    "inventoryRawDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "membersAcquiredAt": "2026-10-10T03:00:01.000Z",
+    "membersRawDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "sourceBuildId": "source-build",
+  },
+  "publishedAt": null,
+  "schemaVersion": 1,
+  "sittings": [
+    {
+      "date": "2014-07-23",
+      "filename": "dr_2014-07-23",
+      "house": "dewan-rakyat",
+      "id": "26241",
+      "isFinal": true,
+      "listedInLatestInventory": true,
+      "mesyuarat": 0,
+      "parliament": 13,
+      "penggal": 2,
+      "record": {
+        "accounting": {
+          "annotations": 1,
+          "assigned": 1,
+          "total": 3,
+          "unassigned": 1,
+        },
+        "acquiredAt": "2026-10-10T03:01:00.000Z",
+        "availability": "available",
+        "compressedBytes": 524288,
+        "decodedBytes": 5242880,
+        "digest": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "lastAttemptAt": "2026-10-10T03:01:00.000Z",
+        "lastAttemptOutcome": "success",
+        "path": "data/sittings/26241.json.gz",
+        "rawSourceDigest": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+        "sourceBuildId": "source-build",
+        "sourcePublishedAt": null,
+        "sourceRevisedAt": null,
+      },
+      "sourceUrl": "https://hansard.parlimen.gov.my/hansard/dewan-rakyat/2014-07-23",
+    },
+  ],
+  "snapshotId": "controlled-snapshot",
+  "status": {
+    "acquisitionOutcome": "success",
+    "completedAt": "2026-10-10T03:59:00.000Z",
+    "lastConfirmedDeployment": null,
+    "stagingOutcome": "success",
+    "workflowUrl": null,
+  },
+}
+
++ Received:
+undefined
+
+ ❯ tests/unit/source-schema.test.ts:167:40
+    165|     fixture.sittings[0].record.accounting = { total: 3, assigned: 1, u…
+    166|     fixture.coverage.attributionGapCount = 1;
+    167|     expect(validateCatalogue(fixture)).toEqual(fixture);
+       |                                        ^
+    168|   });
+    169|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[15/148]⎯
+
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-PUBLICATION accepts matching confirmed deployment times distinct from preparation
+AssertionError: expected undefined to deeply equal { schemaVersion: 1, …(8) }
+
+- Expected:
+{
+  "coverage": {
+    "attributionGapCount": 0,
+    "endDate": "2014-07-23",
+    "latestInventoryCount": 1,
+    "parliaments": [
+      13,
+    ],
+    "retainedSittingCount": 0,
+    "startDate": "2014-07-23",
+    "unavailableSittingCount": 0,
+  },
+  "members": [
+    {
+      "historicalContext": null,
+      "id": "1839",
+      "listedInLatestSource": true,
+      "name": "LIM GUAN ENG",
+    },
+    {
+      "historicalContext": null,
+      "id": "22462",
+      "listedInLatestSource": false,
+      "name": "TEOH CHZE CHONG",
+    },
+  ],
+  "preparedAt": "2026-10-10T04:00:00.000Z",
+  "provenance": {
+    "interface": "official-next-page-data",
+    "inventoryAcquiredAt": "2026-10-10T03:00:00.000Z",
+    "inventoryRawDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "membersAcquiredAt": "2026-10-10T03:00:01.000Z",
+    "membersRawDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "sourceBuildId": "source-build",
+  },
+  "publishedAt": "2026-10-10T04:10:00.000Z",
+  "schemaVersion": 1,
+  "sittings": [
+    {
+      "date": "2014-07-23",
+      "filename": "dr_2014-07-23",
+      "house": "dewan-rakyat",
+      "id": "26241",
+      "isFinal": true,
+      "listedInLatestInventory": true,
+      "mesyuarat": 0,
+      "parliament": 13,
+      "penggal": 2,
+      "record": {
+        "accounting": {
+          "annotations": 0,
+          "assigned": 2,
+          "total": 2,
+          "unassigned": 0,
+        },
+        "acquiredAt": "2026-10-10T03:01:00.000Z",
+        "availability": "available",
+        "compressedBytes": 120,
+        "decodedBytes": 250,
+        "digest": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "lastAttemptAt": "2026-10-10T03:01:00.000Z",
+        "lastAttemptOutcome": "success",
+        "path": "data/sittings/26241.json.gz",
+        "rawSourceDigest": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+        "sourceBuildId": "source-build",
+        "sourcePublishedAt": null,
+        "sourceRevisedAt": null,
+      },
+      "sourceUrl": "https://hansard.parlimen.gov.my/hansard/dewan-rakyat/2014-07-23",
+    },
+  ],
+  "snapshotId": "controlled-snapshot",
+  "status": {
+    "acquisitionOutcome": "success",
+    "completedAt": "2026-10-10T03:59:00.000Z",
+    "lastConfirmedDeployment": {
+      "deploymentId": "deployment-1",
+      "publishedAt": "2026-10-10T04:10:00.000Z",
+      "snapshotId": "controlled-snapshot",
+      "verifiedServedAt": "2026-10-10T04:11:00.000Z",
+      "workflowUrl": "https://github.com/eaglecheow/vote-better-malaysia/actions/runs/123",
+    },
+    "stagingOutcome": "success",
+    "workflowUrl": "https://github.com/eaglecheow/vote-better-malaysia/actions/runs/123",
+  },
+}
+
++ Received:
+undefined
+
+ ❯ tests/unit/source-schema.test.ts:176:40
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[16/148]⎯
+
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-PUBLICATION rejects missing publication evidence
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-PUBLICATION rejects wrong-snapshot publication evidence
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-PUBLICATION rejects wrong-time publication evidence
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-PUBLICATION rejects unverified-served publication evidence
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-PUBLICATION rejects before-preparation publication evidence
+AssertionError: expected [Function] to throw an error
+ ❯ tests/unit/source-schema.test.ts:185:46
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[17/148]⎯
+
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-TIMES preserves independently supplied official dates and current attempt metadata
+AssertionError: expected undefined to deeply equal { schemaVersion: 1, …(8) }
+
+- Expected:
+{
+  "coverage": {
+    "attributionGapCount": 0,
+    "endDate": "2014-07-23",
+    "latestInventoryCount": 1,
+    "parliaments": [
+      13,
+    ],
+    "retainedSittingCount": 0,
+    "startDate": "2014-07-23",
+    "unavailableSittingCount": 0,
+  },
+  "members": [
+    {
+      "historicalContext": null,
+      "id": "1839",
+      "listedInLatestSource": true,
+      "name": "LIM GUAN ENG",
+    },
+    {
+      "historicalContext": null,
+      "id": "22462",
+      "listedInLatestSource": false,
+      "name": "TEOH CHZE CHONG",
+    },
+  ],
+  "preparedAt": "2026-10-10T04:00:00.000Z",
+  "provenance": {
+    "interface": "official-next-page-data",
+    "inventoryAcquiredAt": "2026-10-10T03:00:00.000Z",
+    "inventoryRawDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "membersAcquiredAt": "2026-10-10T03:00:01.000Z",
+    "membersRawDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "sourceBuildId": "source-build",
+  },
+  "publishedAt": null,
+  "schemaVersion": 1,
+  "sittings": [
+    {
+      "date": "2014-07-23",
+      "filename": "dr_2014-07-23",
+      "house": "dewan-rakyat",
+      "id": "26241",
+      "isFinal": true,
+      "listedInLatestInventory": true,
+      "mesyuarat": 0,
+      "parliament": 13,
+      "penggal": 2,
+      "record": {
+        "accounting": {
+          "annotations": 0,
+          "assigned": 2,
+          "total": 2,
+          "unassigned": 0,
+        },
+        "acquiredAt": "2026-10-10T03:01:00.000Z",
+        "availability": "available",
+        "compressedBytes": 120,
+        "decodedBytes": 250,
+        "digest": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "lastAttemptAt": "2026-10-10T03:01:00.000Z",
+        "lastAttemptOutcome": "success",
+        "path": "data/sittings/26241.json.gz",
+        "rawSourceDigest": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+        "sourceBuildId": "source-build",
+        "sourcePublishedAt": "2014-07-24T04:00:00Z",
+        "sourceRevisedAt": "2014-07-25T04:00:00.000Z",
+      },
+      "sourceUrl": "https://hansard.parlimen.gov.my/hansard/dewan-rakyat/2014-07-23",
+    },
+  ],
+  "snapshotId": "controlled-snapshot",
+  "status": {
+    "acquisitionOutcome": "success",
+    "completedAt": "2026-10-10T03:59:00.000Z",
+    "lastConfirmedDeployment": null,
+    "stagingOutcome": "success",
+    "workflowUrl": null,
+  },
+}
+
++ Received:
+undefined
+
+ ❯ tests/unit/source-schema.test.ts:193:40
+    191|     fixture.sittings[0].record.sourcePublishedAt = '2014-07-24T04:00:0…
+    192|     fixture.sittings[0].record.sourceRevisedAt = '2014-07-25T04:00:00.…
+    193|     expect(validateCatalogue(fixture)).toEqual(fixture);
+       |                                        ^
+    194|   });
+    195|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[18/148]⎯
+
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-RECEIPT rejects malformed snapshotId = ""
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-RECEIPT rejects malformed deploymentId = ""
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-RECEIPT rejects malformed publishedAt = "unknown"
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-RECEIPT rejects malformed verifiedServedAt = undefined
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-RECEIPT rejects malformed workflowUrl = "https://evil.example/actions/runs/123"
+AssertionError: expected [Function] to throw an error
+ ❯ tests/unit/source-schema.test.ts:205:46
+    203|     receipt[field] = value;
+    204|     fixture.status.lastConfirmedDeployment = receipt as unknown as Non…
+    205|     expect(() => validateCatalogue(fixture)).toThrow();
+       |                                              ^
+    206|   });
+    207|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[19/148]⎯
+
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-RAW-MEMBERS preserves sampled exact identities and leaves context null
+AssertionError: expected [] to deeply equal [ { id: '1839', …(3) }, …(5) ]
+
+- Expected
++ Received
+
+- [
+-   {
+-     "historicalContext": null,
+-     "id": "1839",
+-     "listedInLatestSource": true,
+-     "name": "LIM GUAN ENG",
+-   },
+-   {
+-     "historicalContext": null,
+-     "id": "2857",
+-     "listedInLatestSource": true,
+-     "name": "RONALD KIANDEE",
+-   },
+-   {
+-     "historicalContext": null,
+-     "id": "2928",
+-     "listedInLatestSource": true,
+-     "name": "MAHFUZ BIN HAJI OMAR",
+-   },
+-   {
+-     "historicalContext": null,
+-     "id": "4463",
+-     "listedInLatestSource": true,
+-     "name": "MOHAMMED TAUFIQ BIN JOHARI",
+-   },
+-   {
+-     "historicalContext": null,
+-     "id": "22462",
+-     "listedInLatestSource": true,
+-     "name": "TEOH CHZE CHONG",
+-   },
+-   {
+-     "historicalContext": null,
+-     "id": "22547",
+-     "listedInLatestSource": true,
+-     "name": "MOHD KURNIAWAN NAIM MOKTAR",
+-   },
+- ]
++ []
+
+ ❯ tests/unit/source-schema.test.ts:211:78
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[20/148]⎯
+
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-RAW-MEMBERS preserves explicitly supplied context and similar names without merging
+AssertionError: expected [] to deeply equal [ Array(2) ]
+
+- Expected
++ Received
+
+- [
+-   {
+-     "historicalContext": "Explicit source detail",
+-     "id": "1",
+-     "listedInLatestSource": true,
+-     "name": "Same name",
+-   },
+-   {
+-     "historicalContext": null,
+-     "id": "2",
+-     "listedInLatestSource": true,
+-     "name": "Same name",
+-   },
+- ]
++ []
+
+ ❯ tests/unit/source-schema.test.ts:216:190
+    214|   /** Source-supplied historical context remains supplied data, with n…
+    215|   it('SCHEMA-RAW-MEMBERS preserves explicitly supplied context and sim…
+    216|     expect(parseSourceMembers({ pageProps: { speakers: [{ new_author_i…
+       |                                                                                                                                                                                              ^
+    217|       { id: '1', name: 'Same name', historicalContext: 'Explicit sourc…
+    218|       { id: '2', name: 'Same name', historicalContext: null, listedInL…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[21/148]⎯
+
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-RAW-MEMBERS rejects malformed replacement {}
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-RAW-MEMBERS rejects malformed replacement {"pageProps":{}}
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-RAW-MEMBERS rejects malformed replacement {"pageProps":{"speakers":[]}}
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-RAW-MEMBERS rejects malformed replacement {"pageProps":{"speakers":[{"new_author_id":"1839","name":"LIM GUAN ENG"}]}}
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-RAW-MEMBERS rejects malformed replacement {"pageProps":{"speakers":[{"new_author_id":0,"name":"LIM GUAN ENG"}]}}
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-RAW-MEMBERS rejects malformed replacement {"pageProps":{"speakers":[{"new_author_id":9007199254740992,"name":"Name"}]}}
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-RAW-MEMBERS rejects malformed replacement {"pageProps":{"speakers":[{"new_author_id":1,"name":null}]}}
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-RAW-MEMBERS rejects malformed replacement {"pageProps":{"speakers":[{"new_author_id":1,"name":"Name","historicalContext":{}}]}}
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-RAW-MEMBERS rejects malformed replacement {"pageProps":{"speakers":[{"new_author_id":1,"name":"Name"},{"new_author_id":1,"name":"Other"}]}}
+AssertionError: expected [Function] to throw an error
+ ❯ tests/unit/source-schema.test.ts:232:47
+    230|     { pageProps: { speakers: [{ new_author_id: 1, name: 'Name' }, { ne…
+    231|   ])('SCHEMA-RAW-MEMBERS rejects malformed replacement %j', (payload) …
+    232|     expect(() => parseSourceMembers(payload)).toThrow();
+       |                                               ^
+    233|   });
+    234|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[22/148]⎯
+
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-RAW-INVENTORY recursively preserves complete selected inventory and exact source hierarchy
+AssertionError: expected [] to have a length of 18 but got +0
+
+- Expected
++ Received
+
+- 18
++ 0
+
+ ❯ tests/unit/source-schema.test.ts:238:20
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[23/148]⎯
+
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-RAW-INVENTORY rejects malformed hierarchy {}
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-RAW-INVENTORY rejects malformed hierarchy {"unexpected":[]}
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-RAW-INVENTORY rejects malformed hierarchy {"0":{}}
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-RAW-INVENTORY rejects malformed hierarchy {"13":{"2":{},"start_date":"bad-date","end_date":"2014-07-23"}}
+AssertionError: expected [Function] to throw an error
+ ❯ tests/unit/source-schema.test.ts:245:63
+    243|   /** An invalid raw shape or unknown hierarchy field cannot be silent…
+    244|   it.each([{}, { unexpected: [] }, { '0': {} }, { '13': { start_date: …
+    245|     expect(() => parseSourceInventory(rawInventory(archive))).toThrow(…
+       |                                                               ^
+    246|   });
+    247|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[24/148]⎯
+
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-RAW-INVENTORY rejects source sitting sitting_id = "26241"
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-RAW-INVENTORY rejects source sitting sitting_id = 0
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-RAW-INVENTORY rejects source sitting date = "2014-02-30"
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-RAW-INVENTORY rejects source sitting filename = "../dr_2014-07-23"
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-RAW-INVENTORY rejects source sitting is_final = "true"
+AssertionError: expected [Function] to throw an error
+ ❯ tests/unit/source-schema.test.ts:255:63
+    253|     const archive = structuredClone(samples.archive);
+    254|     archive['13']['2']['0'].sitting_list[0][field] = value;
+    255|     expect(() => parseSourceInventory(rawInventory(archive))).toThrow(…
+       |                                                               ^
+    256|   });
+    257|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[25/148]⎯
+
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-RAW-INVENTORY rejects duplicate sitting identity across catalogue hierarchy
+AssertionError: expected [Function] to throw an error
+ ❯ tests/unit/source-schema.test.ts:262:63
+    260|     const archive = structuredClone(samples.archive);
+    261|     archive['13']['2']['0'].sitting_list.push(structuredClone(archive[…
+    262|     expect(() => parseSourceInventory(rawInventory(archive))).toThrow(…
+       |                                                               ^
+    263|   });
+    264|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[26/148]⎯
+
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-RAW-INVENTORY rejects conflicting IDs for one dated record
+AssertionError: expected [Function] to throw an error
+ ❯ tests/unit/source-schema.test.ts:269:63
+    267|     const archive = structuredClone(samples.archive);
+    268|     archive['13']['2']['0'].sitting_list.push({ ...archive['13']['2'][…
+    269|     expect(() => parseSourceInventory(rawInventory(archive))).toThrow(…
+       |                                                               ^
+    270|   });
+    271|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[27/148]⎯
+
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-CONFLICT rejects separate sitting IDs claiming the same source record
+AssertionError: expected [Function] to throw an error
+ ❯ tests/unit/source-schema.test.ts:280:46
+    278|     fixture.sittings.push(extra);
+    279|     fixture.coverage.latestInventoryCount = 2;
+    280|     expect(() => validateCatalogue(fixture)).toThrow();
+       |                                              ^
+    281|   });
+    282|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[28/148]⎯
+
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-RAW-INVENTORY keeps absent source status null
+AssertionError: expected undefined to be null
+
+- Expected:
+null
+
++ Received:
+undefined
+
+ ❯ tests/unit/source-schema.test.ts:288:191
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[29/148]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  148 failed (148)
+   Start at  12:17:07
+   Duration  401ms (tests 42%, transform 38%, import 17%, worker 3%)
+

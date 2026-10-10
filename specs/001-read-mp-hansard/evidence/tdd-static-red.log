@@ -1,0 +1,774 @@
+
+> vote-better-malaysia@0.1.0 test
+> vitest --run tests/unit/static-data.test.ts
+
+
+ RUN  v5.0.3 /Users/eaglecheow/dev/vote-better-malaysia
+
+ ❯ tests/unit/static-data.test.ts (41 tests | 41 failed) 51ms
+   × T017 validates gzip catalogue and selected shard with identical exact content 13ms
+   × T017 validates decoded catalogue and selected shard with identical exact content 2ms
+   × T017 requests only fixed base resources with bypass, manual redirects and the supplied signal 1ms
+   × T017 standalone catalogue validates without fetching any sitting 0ms
+   × T017 advances current refresh on unchanged content only after validation 1ms
+   × T017 rejects invalid selected member before fetching a shard 1ms
+   × T017 rejects invalid selected sitting before fetching a shard 0ms
+   × T017 rejects invalid selected noncanonical before fetching a shard 0ms
+   × T017 rejects catalogue network without an empty transcript or automatic loop 0ms
+   × T017 rejects catalogue http without an empty transcript or automatic loop 0ms
+   × T017 rejects catalogue html without an empty transcript or automatic loop 0ms
+   × T017 rejects catalogue gzip without an empty transcript or automatic loop 0ms
+   × T017 rejects catalogue utf8 without an empty transcript or automatic loop 0ms
+   × T017 rejects catalogue json without an empty transcript or automatic loop 0ms
+   × T017 rejects catalogue schema without an empty transcript or automatic loop 0ms
+   × T017 rejects catalogue off-base without an empty transcript or automatic loop 0ms
+   × T017 rejects catalogue off-origin without an empty transcript or automatic loop 0ms
+   × T017 rejects catalogue redirect without an empty transcript or automatic loop 0ms
+   × T017 rejects catalogue path without an empty transcript or automatic loop 0ms
+   × T017 rejects sitting hash without stamping successful refresh 0ms
+   × T017 rejects sitting schema without stamping successful refresh 0ms
+   × T017 rejects sitting identity without stamping successful refresh 0ms
+   × T017 rejects sitting accounting without stamping successful refresh 0ms
+   × T017 rejects sitting utf8 without stamping successful refresh 0ms
+   × T017 rejects sitting html without stamping successful refresh 0ms
+   × T017 retries only a digest mismatch against one newest coherent catalogue 0ms
+   × T017 revalidates member after mismatch instead of reusing an obsolete pair 0ms
+   × T017 revalidates sitting after mismatch instead of reusing an obsolete pair 0ms
+   × T017 accepts the exact decoded ceiling while rejecting one additional byte 5ms
+   × T017 cancels an oversized response before pulling an unlimited tail 1ms
+   × T017 unavailable descriptor remains selectable without a successful time or shard request 0ms
+   × T017 bounds catalogue-gzip before unbounded buffering 3ms
+   × T017 bounds sitting-gzip before unbounded buffering 8ms
+   × T017 bounds catalogue-decoded before unbounded buffering 2ms
+   × T017 bounds sitting-decoded before unbounded buffering 2ms
+   × T017 bounds inflated before unbounded buffering 7ms
+   × T017 forwards abort signal and detects gzip magic split across first chunks 0ms
+   × T017 rejects ambiguous base query before issuing requests 0ms
+   × T017 rejects ambiguous base fragment before issuing requests 0ms
+   × T017 rejects ambiguous base credentials before issuing requests 0ms
+   × T017 rejects ambiguous base scheme before issuing requests 0ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 41 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/static-data.test.ts > T017 validates gzip catalogue and selected shard with identical exact content
+ FAIL  tests/unit/static-data.test.ts > T017 validates decoded catalogue and selected shard with identical exact content
+AssertionError: expected undefined to deeply equal ObjectContaining{…}
+
+- Expected:
+ObjectContaining {
+  "catalogue": {
+    "coverage": {
+      "attributionGapCount": 0,
+      "endDate": "2014-07-23",
+      "latestInventoryCount": 1,
+      "parliaments": [
+        13,
+      ],
+      "retainedSittingCount": 0,
+      "startDate": "2014-07-23",
+      "unavailableSittingCount": 0,
+    },
+    "members": [
+      {
+        "historicalContext": null,
+        "id": "1839",
+        "listedInLatestSource": true,
+        "name": "LIM GUAN ENG",
+      },
+      {
+        "historicalContext": null,
+        "id": "2857",
+        "listedInLatestSource": true,
+        "name": "RONALD KIANDEE",
+      },
+      {
+        "historicalContext": null,
+        "id": "2928",
+        "listedInLatestSource": true,
+        "name": "MAHFUZ BIN HAJI OMAR",
+      },
+      {
+        "historicalContext": null,
+        "id": "4463",
+        "listedInLatestSource": true,
+        "name": "MOHAMMED TAUFIQ BIN JOHARI",
+      },
+      {
+        "historicalContext": null,
+        "id": "22462",
+        "listedInLatestSource": true,
+        "name": "TEOH CHZE CHONG",
+      },
+      {
+        "historicalContext": null,
+        "id": "22547",
+        "listedInLatestSource": true,
+        "name": "MOHD KURNIAWAN NAIM MOKTAR",
+      },
+    ],
+    "preparedAt": "2026-10-10T04:00:00.000Z",
+    "provenance": {
+      "interface": "official-next-page-data",
+      "inventoryAcquiredAt": "2026-10-10T03:00:00.000Z",
+      "inventoryRawDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "membersAcquiredAt": "2026-10-10T03:00:01.000Z",
+      "membersRawDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "sourceBuildId": "source-build",
+    },
+    "publishedAt": null,
+    "schemaVersion": 1,
+    "sittings": [
+      {
+        "date": "2014-07-23",
+        "filename": "dr_2014-07-23",
+        "house": "dewan-rakyat",
+        "id": "26241",
+        "isFinal": true,
+        "listedInLatestInventory": true,
+        "mesyuarat": 0,
+        "parliament": 13,
+        "penggal": 2,
+        "record": {
+          "accounting": {
+            "annotations": 0,
+            "assigned": 2,
+            "total": 2,
+            "unassigned": 0,
+          },
+          "acquiredAt": "2026-10-10T03:01:00.000Z",
+          "availability": "available",
+          "compressedBytes": 489,
+          "decodedBytes": 895,
+          "digest": "62eedb2aea32a874112d9605248e609f6732238e0c52c4480f72275273216708",
+          "lastAttemptAt": "2026-10-10T03:01:00.000Z",
+          "lastAttemptOutcome": "success",
+          "path": "data/sittings/26241.json.gz",
+          "rawSourceDigest": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+          "sourceBuildId": "source-build",
+          "sourcePublishedAt": null,
+          "sourceRevisedAt": null,
+        },
+        "sourceUrl": "https://hansard.parlimen.gov.my/hansard/dewan-rakyat/2014-07-23",
+      },
+    ],
+    "snapshotId": "controlled-snapshot",
+    "status": {
+      "acquisitionOutcome": "success",
+      "completedAt": "2026-10-10T03:59:00.000Z",
+      "lastConfirmedDeployment": null,
+      "stagingOutcome": "success",
+      "workflowUrl": null,
+    },
+  },
+}
+
++ Received:
+undefined
+
+ ❯ tests/unit/static-data.test.ts:72:25
+     70|       response(representation === 'gzip' ? fixture.recordGzip : fixtur…
+     71|     ], calls));
+     72|     expect.soft(result).toEqual(expect.objectContaining({ catalogue: f…
+       |                         ^
+     73|     expect.soft(result?.result.turns).toEqual([fixture.record.items[0]…
+     74|     expect.soft(result?.result.recordDigest).toBe(fixture.catalogue.si…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/53]⎯
+
+ FAIL  tests/unit/static-data.test.ts > T017 validates gzip catalogue and selected shard with identical exact content
+ FAIL  tests/unit/static-data.test.ts > T017 validates decoded catalogue and selected shard with identical exact content
+AssertionError: expected undefined to deeply equal [ { ordinal: +0, …(9) } ]
+
+- Expected:
+[
+  {
+    "attribution": "assigned",
+    "gapReason": null,
+    "memberId": "2928",
+    "ordinal": 0,
+    "rawAuthor": "Dato’ Haji Mahfuz bin Haji Omar [Pokok Sena]",
+    "sectionPath": [
+      "USUL",
+      "WAKTU MESYUARAT DAN URUSAN DIBEBASKAN DARIPADA PERATURAN MESYUARAT",
+    ],
+    "sourceAuthorId": "2928",
+    "sourceIndex": 52,
+    "text": "Ya.",
+    "timestamp": 1210,
+  },
+]
+
++ Received:
+undefined
+
+ ❯ tests/unit/static-data.test.ts:73:39
+     71|     ], calls));
+     72|     expect.soft(result).toEqual(expect.objectContaining({ catalogue: f…
+     73|     expect.soft(result?.result.turns).toEqual([fixture.record.items[0]…
+       |                                       ^
+     74|     expect.soft(result?.result.recordDigest).toBe(fixture.catalogue.si…
+     75|     expect.soft(result?.result.refreshedAt).toBe(refreshed);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/53]⎯
+
+ FAIL  tests/unit/static-data.test.ts > T017 validates gzip catalogue and selected shard with identical exact content
+ FAIL  tests/unit/static-data.test.ts > T017 validates decoded catalogue and selected shard with identical exact content
+AssertionError: expected undefined to be '62eedb2aea32a874112d9605248e609f67322…' // Object.is equality
+
+- Expected:
+"62eedb2aea32a874112d9605248e609f6732238e0c52c4480f72275273216708"
+
++ Received:
+undefined
+
+ ❯ tests/unit/static-data.test.ts:74:46
+     72|     expect.soft(result).toEqual(expect.objectContaining({ catalogue: f…
+     73|     expect.soft(result?.result.turns).toEqual([fixture.record.items[0]…
+     74|     expect.soft(result?.result.recordDigest).toBe(fixture.catalogue.si…
+       |                                              ^
+     75|     expect.soft(result?.result.refreshedAt).toBe(refreshed);
+     76|     expect.soft(result?.result.saved).toBe(false);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/53]⎯
+
+ FAIL  tests/unit/static-data.test.ts > T017 validates gzip catalogue and selected shard with identical exact content
+ FAIL  tests/unit/static-data.test.ts > T017 validates decoded catalogue and selected shard with identical exact content
+AssertionError: expected undefined to be '2026-10-10T05:00:00.000Z' // Object.is equality
+
+- Expected:
+"2026-10-10T05:00:00.000Z"
+
++ Received:
+undefined
+
+ ❯ tests/unit/static-data.test.ts:75:45
+     73|     expect.soft(result?.result.turns).toEqual([fixture.record.items[0]…
+     74|     expect.soft(result?.result.recordDigest).toBe(fixture.catalogue.si…
+     75|     expect.soft(result?.result.refreshedAt).toBe(refreshed);
+       |                                             ^
+     76|     expect.soft(result?.result.saved).toBe(false);
+     77|     expect.soft(calls.map(requestUrl)).toEqual([
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/53]⎯
+
+ FAIL  tests/unit/static-data.test.ts > T017 validates gzip catalogue and selected shard with identical exact content
+ FAIL  tests/unit/static-data.test.ts > T017 validates decoded catalogue and selected shard with identical exact content
+AssertionError: expected undefined to be false // Object.is equality
+
+- Expected:
+false
+
++ Received:
+undefined
+
+ ❯ tests/unit/static-data.test.ts:76:39
+     74|     expect.soft(result?.result.recordDigest).toBe(fixture.catalogue.si…
+     75|     expect.soft(result?.result.refreshedAt).toBe(refreshed);
+     76|     expect.soft(result?.result.saved).toBe(false);
+       |                                       ^
+     77|     expect.soft(calls.map(requestUrl)).toEqual([
+     78|       baseUrl + 'data/catalogue.json.gz',
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/53]⎯
+
+ FAIL  tests/unit/static-data.test.ts > T017 validates gzip catalogue and selected shard with identical exact content
+ FAIL  tests/unit/static-data.test.ts > T017 validates decoded catalogue and selected shard with identical exact content
+AssertionError: expected [] to deeply equal [ …(2) ]
+
+- Expected
++ Received
+
+- [
+-   "https://example.test/vote-better-malaysia/data/catalogue.json.gz",
+-   "https://example.test/vote-better-malaysia/data/sittings/26241.json.gz?v=62eedb2aea32a874112d9605248e609f6732238e0c52c4480f72275273216708",
+- ]
++ []
+
+ ❯ tests/unit/static-data.test.ts:77:40
+     75|     expect.soft(result?.result.refreshedAt).toBe(refreshed);
+     76|     expect.soft(result?.result.saved).toBe(false);
+     77|     expect.soft(calls.map(requestUrl)).toEqual([
+       |                                        ^
+     78|       baseUrl + 'data/catalogue.json.gz',
+     79|       baseUrl + 'data/sittings/26241.json.gz?v=' + fixture.catalogue.s…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/53]⎯
+
+ FAIL  tests/unit/static-data.test.ts > T017 requests only fixed base resources with bypass, manual redirects and the supplied signal
+AssertionError: expected [] to deeply equal [ { …(2) }, { …(2) } ]
+
+- Expected
++ Received
+
+- [
+-   {
+-     "init": ObjectContaining {
+-       "cache": "no-store",
+-       "method": "GET",
+-       "redirect": "manual",
+-       "signal": AbortSignal {
+-         Symbol(kEvents): undefined,
+-         Symbol(events.maxEventTargetListeners): 0,
+-         Symbol(events.maxEventTargetListenersWarned): false,
+-         Symbol(kHandlers): undefined,
+-         Symbol(kAborted): false,
+-         Symbol(kReason): undefined,
+-         Symbol(kComposite): false,
+-       },
+-     },
+-     "url": "https://example.test/vote-better-malaysia/data/catalogue.json.gz",
+-   },
+-   {
+-     "init": ObjectContaining {
+-       "cache": "no-store",
+-       "method": "GET",
+-       "redirect": "manual",
+-       "signal": AbortSignal {
+-         Symbol(kEvents): undefined,
+-         Symbol(events.maxEventTargetListeners): 0,
+-         Symbol(events.maxEventTargetListenersWarned): false,
+-         Symbol(kHandlers): undefined,
+-         Symbol(kAborted): false,
+-         Symbol(kReason): undefined,
+-         Symbol(kComposite): false,
+-       },
+-     },
+-     "url": "https://example.test/vote-better-malaysia/data/sittings/26241.json.gz?v=62eedb2aea32a874112d9605248e609f6732238e0c52c4480f72275273216708",
+-   },
+- ]
++ []
+
+ ❯ tests/unit/static-data.test.ts:97:19
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/53]⎯
+
+ FAIL  tests/unit/static-data.test.ts > T017 standalone catalogue validates without fetching any sitting
+AssertionError: expected undefined to deeply equal { schemaVersion: 1, …(8) }
+
+- Expected:
+{
+  "coverage": {
+    "attributionGapCount": 0,
+    "endDate": "2014-07-23",
+    "latestInventoryCount": 1,
+    "parliaments": [
+      13,
+    ],
+    "retainedSittingCount": 0,
+    "startDate": "2014-07-23",
+    "unavailableSittingCount": 0,
+  },
+  "members": [
+    {
+      "historicalContext": null,
+      "id": "1839",
+      "listedInLatestSource": true,
+      "name": "LIM GUAN ENG",
+    },
+    {
+      "historicalContext": null,
+      "id": "2857",
+      "listedInLatestSource": true,
+      "name": "RONALD KIANDEE",
+    },
+    {
+      "historicalContext": null,
+      "id": "2928",
+      "listedInLatestSource": true,
+      "name": "MAHFUZ BIN HAJI OMAR",
+    },
+    {
+      "historicalContext": null,
+      "id": "4463",
+      "listedInLatestSource": true,
+      "name": "MOHAMMED TAUFIQ BIN JOHARI",
+    },
+    {
+      "historicalContext": null,
+      "id": "22462",
+      "listedInLatestSource": true,
+      "name": "TEOH CHZE CHONG",
+    },
+    {
+      "historicalContext": null,
+      "id": "22547",
+      "listedInLatestSource": true,
+      "name": "MOHD KURNIAWAN NAIM MOKTAR",
+    },
+  ],
+  "preparedAt": "2026-10-10T04:00:00.000Z",
+  "provenance": {
+    "interface": "official-next-page-data",
+    "inventoryAcquiredAt": "2026-10-10T03:00:00.000Z",
+    "inventoryRawDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "membersAcquiredAt": "2026-10-10T03:00:01.000Z",
+    "membersRawDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "sourceBuildId": "source-build",
+  },
+  "publishedAt": null,
+  "schemaVersion": 1,
+  "sittings": [
+    {
+      "date": "2014-07-23",
+      "filename": "dr_2014-07-23",
+      "house": "dewan-rakyat",
+      "id": "26241",
+      "isFinal": true,
+      "listedInLatestInventory": true,
+      "mesyuarat": 0,
+      "parliament": 13,
+      "penggal": 2,
+      "record": {
+        "accounting": {
+          "annotations": 0,
+          "assigned": 2,
+          "total": 2,
+          "unassigned": 0,
+        },
+        "acquiredAt": "2026-10-10T03:01:00.000Z",
+        "availability": "available",
+        "compressedBytes": 489,
+        "decodedBytes": 895,
+        "digest": "62eedb2aea32a874112d9605248e609f6732238e0c52c4480f72275273216708",
+        "lastAttemptAt": "2026-10-10T03:01:00.000Z",
+        "lastAttemptOutcome": "success",
+        "path": "data/sittings/26241.json.gz",
+        "rawSourceDigest": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+        "sourceBuildId": "source-build",
+        "sourcePublishedAt": null,
+        "sourceRevisedAt": null,
+      },
+      "sourceUrl": "https://hansard.parlimen.gov.my/hansard/dewan-rakyat/2014-07-23",
+    },
+  ],
+  "snapshotId": "controlled-snapshot",
+  "status": {
+    "acquisitionOutcome": "success",
+    "completedAt": "2026-10-10T03:59:00.000Z",
+    "lastConfirmedDeployment": null,
+    "stagingOutcome": "success",
+    "workflowUrl": null,
+  },
+}
+
++ Received:
+undefined
+
+ ❯ tests/unit/static-data.test.ts:110:115
+    108|   async () => {
+    109|     const fixture = publishedFixture(); const calls: Call[] = [];
+    110|     expect(await loadPublishedCatalogue({ baseUrl, fetch: transport([r…
+       |                                                                                                                   ^
+    111|     expect(calls).toHaveLength(1);
+    112|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/53]⎯
+
+ FAIL  tests/unit/static-data.test.ts > T017 advances current refresh on unchanged content only after validation
+AssertionError: expected undefined to be '2026-10-10T05:00:00.000Z' // Object.is equality
+
+- Expected:
+"2026-10-10T05:00:00.000Z"
+
++ Received:
+undefined
+
+ ❯ tests/unit/static-data.test.ts:128:44
+    126|     function mark(name: string): void { marks.push(name); }
+    127|     const first = await loadPublishedPair({ ...options([response(fixtu…
+    128|     expect.soft(first?.result.refreshedAt).toBe(refreshed);
+       |                                            ^
+    129|     expect.soft(marks).toEqual(['hansard.processing-start', 'hansard.p…
+    130|     const second = await loadPublishedPair({ ...options([response(fixt…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/53]⎯
+
+ FAIL  tests/unit/static-data.test.ts > T017 advances current refresh on unchanged content only after validation
+AssertionError: expected [] to deeply equal [ 'hansard.processing-start', …(1) ]
+
+- Expected
++ Received
+
+- [
+-   "hansard.processing-start",
+-   "hansard.processing-end",
+- ]
++ []
+
+ ❯ tests/unit/static-data.test.ts:129:24
+    127|     const first = await loadPublishedPair({ ...options([response(fixtu…
+    128|     expect.soft(first?.result.refreshedAt).toBe(refreshed);
+    129|     expect.soft(marks).toEqual(['hansard.processing-start', 'hansard.p…
+       |                        ^
+    130|     const second = await loadPublishedPair({ ...options([response(fixt…
+    131|     expect.soft(second?.result.refreshedAt).toBe('2026-10-10T05:01:00.…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/53]⎯
+
+ FAIL  tests/unit/static-data.test.ts > T017 advances current refresh on unchanged content only after validation
+AssertionError: expected undefined to be '2026-10-10T05:01:00.000Z' // Object.is equality
+
+- Expected:
+"2026-10-10T05:01:00.000Z"
+
++ Received:
+undefined
+
+ ❯ tests/unit/static-data.test.ts:131:45
+    129|     expect.soft(marks).toEqual(['hansard.processing-start', 'hansard.p…
+    130|     const second = await loadPublishedPair({ ...options([response(fixt…
+    131|     expect.soft(second?.result.refreshedAt).toBe('2026-10-10T05:01:00.…
+       |                                             ^
+    132|     if (first && second) expect(second.result.recordDigest).toBe(first…
+    133|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/53]⎯
+
+ FAIL  tests/unit/static-data.test.ts > T017 rejects invalid selected member before fetching a shard
+ FAIL  tests/unit/static-data.test.ts > T017 rejects invalid selected sitting before fetching a shard
+ FAIL  tests/unit/static-data.test.ts > T017 rejects invalid selected noncanonical before fetching a shard
+AssertionError: promise resolved "undefined" instead of rejecting
+
+- Expected:
+Error {
+  "message": "rejected promise",
+}
+
++ Received:
+undefined
+
+ ❯ tests/unit/static-data.test.ts:150:46
+    148|     if (field === 'sitting') supplied.sittingId = '99999';
+    149|     else supplied.memberId = field === 'member' ? '99999' : '02928';
+    150|     await expect(loadPublishedPair(supplied)).rejects.toThrow();
+       |                                              ^
+    151|     expect(calls.every(isCatalogue)).toBe(true);
+    152|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/53]⎯
+
+ FAIL  tests/unit/static-data.test.ts > T017 rejects catalogue network without an empty transcript or automatic loop
+ FAIL  tests/unit/static-data.test.ts > T017 rejects catalogue http without an empty transcript or automatic loop
+ FAIL  tests/unit/static-data.test.ts > T017 rejects catalogue html without an empty transcript or automatic loop
+ FAIL  tests/unit/static-data.test.ts > T017 rejects catalogue gzip without an empty transcript or automatic loop
+ FAIL  tests/unit/static-data.test.ts > T017 rejects catalogue utf8 without an empty transcript or automatic loop
+ FAIL  tests/unit/static-data.test.ts > T017 rejects catalogue json without an empty transcript or automatic loop
+ FAIL  tests/unit/static-data.test.ts > T017 rejects catalogue schema without an empty transcript or automatic loop
+ FAIL  tests/unit/static-data.test.ts > T017 rejects catalogue off-base without an empty transcript or automatic loop
+ FAIL  tests/unit/static-data.test.ts > T017 rejects catalogue off-origin without an empty transcript or automatic loop
+ FAIL  tests/unit/static-data.test.ts > T017 rejects catalogue redirect without an empty transcript or automatic loop
+ FAIL  tests/unit/static-data.test.ts > T017 rejects catalogue path without an empty transcript or automatic loop
+AssertionError: promise resolved "undefined" instead of rejecting
+
+- Expected:
+Error {
+  "message": "rejected promise",
+}
+
++ Received:
+undefined
+
+ ❯ tests/unit/static-data.test.ts:183:61
+    181|       reply = response(new TextEncoder().encode(JSON.stringify(fixture…
+    182|     }
+    183|     await expect(loadPublishedPair(options([reply], calls))).rejects.t…
+       |                                                             ^
+    184|     expect(calls).toHaveLength(1);
+    185|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[13/53]⎯
+
+ FAIL  tests/unit/static-data.test.ts > T017 rejects sitting hash without stamping successful refresh
+ FAIL  tests/unit/static-data.test.ts > T017 rejects sitting schema without stamping successful refresh
+ FAIL  tests/unit/static-data.test.ts > T017 rejects sitting identity without stamping successful refresh
+ FAIL  tests/unit/static-data.test.ts > T017 rejects sitting accounting without stamping successful refresh
+ FAIL  tests/unit/static-data.test.ts > T017 rejects sitting utf8 without stamping successful refresh
+ FAIL  tests/unit/static-data.test.ts > T017 rejects sitting html without stamping successful refresh
+AssertionError: promise resolved "undefined" instead of rejecting
+
+- Expected:
+Error {
+  "message": "rejected promise",
+}
+
++ Received:
+undefined
+
+ ❯ tests/unit/static-data.test.ts:210:61
+    208|       ? [response(catalogueBytes), response(bytes), response(catalogue…
+    209|       : [response(catalogueBytes), response(bytes)];
+    210|     await expect(loadPublishedPair(options(replies, calls))).rejects.t…
+       |                                                             ^
+    211|     expect(calls).toHaveLength(failure === 'hash' ? 4 : 2);
+    212|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[14/53]⎯
+
+ FAIL  tests/unit/static-data.test.ts > T017 retries only a digest mismatch against one newest coherent catalogue
+AssertionError: expected undefined to be 'newest-snapshot' // Object.is equality
+
+- Expected:
+"newest-snapshot"
+
++ Received:
+undefined
+
+ ❯ tests/unit/static-data.test.ts:227:39
+    225|       response(new TextEncoder().encode(JSON.stringify(latest.catalogu…
+    226|     ], calls));
+    227|     expect(result?.result.snapshotId).toBe('newest-snapshot');
+       |                                       ^
+    228|     expect(calls).toHaveLength(4);
+    229|     expect(calls[3].url).toContain('?v=' + latest.catalogue.sittings[0…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[15/53]⎯
+
+ FAIL  tests/unit/static-data.test.ts > T017 revalidates member after mismatch instead of reusing an obsolete pair
+ FAIL  tests/unit/static-data.test.ts > T017 revalidates sitting after mismatch instead of reusing an obsolete pair
+AssertionError: promise resolved "undefined" instead of rejecting
+
+- Expected:
+Error {
+  "message": "rejected promise",
+}
+
++ Received:
+undefined
+
+ ❯ tests/unit/static-data.test.ts:246:16
+    244|       response(new TextEncoder().encode(JSON.stringify(old.catalogue))…
+    245|       response(new TextEncoder().encode(JSON.stringify(latest.catalogu…
+    246|     ], calls))).rejects.toThrow();
+       |                ^
+    247|     expect(calls).toHaveLength(3);
+    248|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[16/53]⎯
+
+ FAIL  tests/unit/static-data.test.ts > T017 accepts the exact decoded ceiling while rejecting one additional byte
+AssertionError: expected undefined to be 'controlled-snapshot' // Object.is equality
+
+- Expected:
+"controlled-snapshot"
+
++ Received:
+undefined
+
+ ❯ tests/unit/static-data.test.ts:266:35
+    264|     expect(bytes.length).toBe(DATA_LIMITS.decoded);
+    265|     const catalogue = await loadPublishedCatalogue({ baseUrl, fetch: t…
+    266|     expect(catalogue?.snapshotId).toBe(fixture.catalogue.snapshotId);
+       |                                   ^
+    267|     const oneMore = new Uint8Array(bytes.length + 1); oneMore.set(byte…
+    268|     await expect(loadPublishedCatalogue({ baseUrl, fetch: transport([r…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[17/53]⎯
+
+ FAIL  tests/unit/static-data.test.ts > T017 cancels an oversized response before pulling an unlimited tail
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ tests/unit/static-data.test.ts:293:23
+    291|     const body = new ReadableStream({ pull, cancel }, { highWaterMark:…
+    292|     try { await loadPublishedCatalogue({ baseUrl, fetch: transport([ne…
+    293|     expect(cancelled).toBe(true); expect(pulls).toBe(1);
+       |                       ^
+    294|   });
+    295|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[18/53]⎯
+
+ FAIL  tests/unit/static-data.test.ts > T017 unavailable descriptor remains selectable without a successful time or shard request
+AssertionError: expected undefined to be 'unavailable' // Object.is equality
+
+- Expected:
+"unavailable"
+
++ Received:
+undefined
+
+ ❯ tests/unit/static-data.test.ts:306:36
+    304|     fixture.catalogue.coverage.unavailableSittingCount = 1;
+    305|     const result = await loadPublishedPair(options([response(new TextE…
+    306|     expect(result?.result.outcome).toBe('unavailable');
+       |                                    ^
+    307|     expect(result?.result.refreshedAt).toBeNull();
+    308|     expect(calls).toHaveLength(1);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[19/53]⎯
+
+ FAIL  tests/unit/static-data.test.ts > T017 bounds catalogue-gzip before unbounded buffering
+ FAIL  tests/unit/static-data.test.ts > T017 bounds sitting-gzip before unbounded buffering
+ FAIL  tests/unit/static-data.test.ts > T017 bounds catalogue-decoded before unbounded buffering
+ FAIL  tests/unit/static-data.test.ts > T017 bounds sitting-decoded before unbounded buffering
+ FAIL  tests/unit/static-data.test.ts > T017 bounds inflated before unbounded buffering
+AssertionError: promise resolved "undefined" instead of rejecting
+
+- Expected:
+Error {
+  "message": "rejected promise",
+}
+
++ Received:
+undefined
+
+ ❯ tests/unit/static-data.test.ts:322:54
+    320|     const bytes = bound.endsWith('-gzip') ? gzipSync(randomBytes(limit…
+    321|     const replies = bound.startsWith('catalogue') ? [response(bytes)] …
+    322|     await expect(loadPublishedPair(options(replies))).rejects.toThrow(…
+       |                                                      ^
+    323|   });
+    324|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[20/53]⎯
+
+ FAIL  tests/unit/static-data.test.ts > T017 forwards abort signal and detects gzip magic split across first chunks
+AssertionError: expected undefined to be 'ready' // Object.is equality
+
+- Expected:
+"ready"
+
++ Received:
+undefined
+
+ ❯ tests/unit/static-data.test.ts:341:36
+    339|     }
+    340|     const result = await loadPublishedPair({ ...options([new Response(…
+    341|     expect(result?.result.outcome).toBe('ready');
+       |                                    ^
+    342|     for (const call of calls) expect(call.init?.signal).toBe(controlle…
+    343|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[21/53]⎯
+
+ FAIL  tests/unit/static-data.test.ts > T017 rejects ambiguous base query before issuing requests
+ FAIL  tests/unit/static-data.test.ts > T017 rejects ambiguous base fragment before issuing requests
+ FAIL  tests/unit/static-data.test.ts > T017 rejects ambiguous base credentials before issuing requests
+ FAIL  tests/unit/static-data.test.ts > T017 rejects ambiguous base scheme before issuing requests
+AssertionError: promise resolved "undefined" instead of rejecting
+
+- Expected:
+Error {
+  "message": "rejected promise",
+}
+
++ Received:
+undefined
+
+ ❯ tests/unit/static-data.test.ts:354:89
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[22/53]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  41 failed (41)
+   Start at  13:02:05
+   Duration  212ms (tests 59%, transform 30%, import 10%, worker 2%)
+

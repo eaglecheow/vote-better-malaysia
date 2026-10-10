@@ -1,0 +1,5 @@
+
+> vote-better-malaysia@0.1.0 test:performance
+> node scripts/check-performance.ts
+
+artifact, candidate and complete measured report evidence are required

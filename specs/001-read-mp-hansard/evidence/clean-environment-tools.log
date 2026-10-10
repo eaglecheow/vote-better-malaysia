@@ -1,0 +1,3 @@
+{"node":"v24.21.0","executable":"/private/tmp/hansard-node24/node_modules/node/bin/node","platform":"darwin","arch":"arm64"}
+11.17.0
+{"ruby":"2.6.10","platform":"universal.arm64e-darwin26","parser":{"on":{"pull_request":null},"jobs":{"smoke":{"run":"npm ci"}}}}

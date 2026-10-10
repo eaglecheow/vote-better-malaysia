@@ -1,0 +1,143 @@
+
+> vote-better-malaysia@0.1.0 test
+> vitest --run tests/unit/recovery.test.ts
+
+
+ RUN  v5.0.3 /Users/eaglecheow/dev/vote-better-malaysia
+
+ ❯ tests/unit/recovery.test.ts (9 tests | 9 failed) 12ms
+   × T029 source check overdue at 2026-10-11T03:00:59.999Z is false, independently of device/snapshot times 6ms
+   × T029 source check overdue at 2026-10-11T03:01:00.000Z is false, independently of device/snapshot times 1ms
+   × T029 source check overdue at 2026-10-11T03:01:00.001Z is true, independently of device/snapshot times 0ms
+   × T029 failed source attempt preserves accepted successful age and reports only its known date 1ms
+   × T029 old successful snapshot age does not invent a later pipeline failure 1ms
+   × T029 unknown source success cannot be replaced by attempt/preparation/device times 1ms
+   × T029 rejects invalid independent current clock invalid 1ms
+   × T029 rejects invalid independent current clock 2026-02-30T00:00:00.000Z 0ms
+   × T029 rejects invalid independent current clock 2026-10-10T04:00:00+00:00 0ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 9 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/recovery.test.ts > T029 source check overdue at 2026-10-11T03:00:59.999Z is false, independently of device/snapshot times
+ FAIL  tests/unit/recovery.test.ts > T029 source check overdue at 2026-10-11T03:01:00.000Z is false, independently of device/snapshot times
+AssertionError: expected undefined to be false // Object.is equality
+
+- Expected:
+false
+
++ Received:
+undefined
+
+ ❯ tests/unit/recovery.test.ts:32:84
+     30|    * @remarks Assertion fails when the age boundary is absent or uses …
+     31|    */
+     32|   (now, overdue) => { expect(publishedSourceStatus(resultFixture(), no…
+       |                                                                                    ^
+     33|
+     34| test('T029 failed source attempt preserves accepted successful age and…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/9]⎯
+
+ FAIL  tests/unit/recovery.test.ts > T029 source check overdue at 2026-10-11T03:01:00.001Z is true, independently of device/snapshot times
+AssertionError: expected undefined to be true // Object.is equality
+
+- Expected:
+true
+
++ Received:
+undefined
+
+ ❯ tests/unit/recovery.test.ts:32:84
+     30|    * @remarks Assertion fails when the age boundary is absent or uses …
+     31|    */
+     32|   (now, overdue) => { expect(publishedSourceStatus(resultFixture(), no…
+       |                                                                                    ^
+     33|
+     34| test('T029 failed source attempt preserves accepted successful age and…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/9]⎯
+
+ FAIL  tests/unit/recovery.test.ts > T029 failed source attempt preserves accepted successful age and reports only its known date
+AssertionError: expected undefined to deeply equal { overdue: true, …(2) }
+
+- Expected:
+{
+  "knownFailureAt": "2026-10-10T03:50:00.000Z",
+  "overdue": true,
+  "workflowUrl": "https://github.com/eaglecheow/vote-better-malaysia/actions/runs/12345",
+}
+
++ Received:
+undefined
+
+ ❯ tests/unit/recovery.test.ts:41:71
+     39|   () => {
+     40|     const result = resultFixture(true);
+     41|     expect(publishedSourceStatus(result, '2026-10-11T03:02:00.000Z')).…
+       |                                                                       ^
+     42|     expect(result.sitting.record.acquiredAt).toBe('2026-10-10T03:01:00…
+     43|     expect(result.refreshedAt).toBe('2026-10-10T04:01:00.000Z');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/9]⎯
+
+ FAIL  tests/unit/recovery.test.ts > T029 old successful snapshot age does not invent a later pipeline failure
+AssertionError: expected undefined to be null
+
+- Expected:
+null
+
++ Received:
+undefined
+
+ ❯ tests/unit/recovery.test.ts:51:102
+     49|    * @remarks Assertion rejects unsupported specific failure claims fr…
+     50|    */
+     51|   () => { expect(publishedSourceStatus(resultFixture(), '2026-10-20T04…
+       |                                                                                                      ^
+     52|
+     53| test('T029 unknown source success cannot be replaced by attempt/prepar…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/9]⎯
+
+ FAIL  tests/unit/recovery.test.ts > T029 unknown source success cannot be replaced by attempt/preparation/device times
+AssertionError: expected undefined to deeply equal { overdue: false, …(2) }
+
+- Expected:
+{
+  "knownFailureAt": "2026-10-10T03:50:00.000Z",
+  "overdue": false,
+  "workflowUrl": null,
+}
+
++ Received:
+undefined
+
+ ❯ tests/unit/recovery.test.ts:63:71
+     61|     fixture.catalogue.coverage.unavailableSittingCount = 1;
+     62|     const result = buildTranscriptResult(fixture.catalogue, '2928', '2…
+     63|     expect(publishedSourceStatus(result, '2026-10-20T04:00:00.000Z')).…
+       |                                                                       ^
+     64|     expect(result.refreshedAt).toBeNull();
+     65|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/9]⎯
+
+ FAIL  tests/unit/recovery.test.ts > T029 rejects invalid independent current clock invalid
+ FAIL  tests/unit/recovery.test.ts > T029 rejects invalid independent current clock 2026-02-30T00:00:00.000Z
+ FAIL  tests/unit/recovery.test.ts > T029 rejects invalid independent current clock 2026-10-10T04:00:00+00:00
+AssertionError: expected [Function bound publishedSourceStatus] to throw an error
+ ❯ tests/unit/recovery.test.ts:74:77
+     72|    * @remarks Assertion rejects malformed date/format acceptance.
+     73|    */
+     74|   (now) => { expect(publishedSourceStatus.bind(null, resultFixture(), …
+       |                                                                             ^
+     75|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/9]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  9 failed (9)
+   Start at  13:05:04
+   Duration  131ms (transform 53%, tests 23%, import 20%, worker 4%)
+

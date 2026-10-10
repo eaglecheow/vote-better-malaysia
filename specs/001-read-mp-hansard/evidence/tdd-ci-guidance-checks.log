@@ -1,0 +1,7 @@
+docs/development.md: SHA-256 74b860efac718bfeca716258b14ab08e188f7bcfb83ae59f91c17e2ee6220c6e
+specs/001-read-mp-hansard/quickstart.md: SHA-256 f843e81d44ac080893f7efc6ce790e7c2be9487051e1deaf3cfd45844d6e239a
+10 documented shell blocks pass bash -n; commands not executed
+30 local Markdown paths and 5 Markdown heading fragments exist
+Seven named checks and both dispatch fields match the actual parsed CI workflow
+.github/workflows/ci.yml: SHA-256 1866c0f11ddd290f1c8f40102a4c57bdfd04c697e17c8ecc0f6770ad52dbf871
+scripts/publication.ts: SHA-256 f8192e540c76c081672443ca26429235eacbf5b51ecfc4eff172af9404634892

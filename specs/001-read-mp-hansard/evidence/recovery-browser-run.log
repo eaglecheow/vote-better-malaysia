@@ -1,0 +1,85 @@
+
+> vote-better-malaysia@0.1.0 test:browser
+> playwright test tests/browser/harness.spec.ts tests/browser/reading.spec.ts tests/browser/failures.spec.ts --project=chromium --project=webkit
+
+[WebServer] (node:51764) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:51813) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 60 tests using 5 workers
+
+(node:51822) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:51824) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:51826) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:51823) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:51825) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   4 [chromium] › tests/browser/harness.spec.ts:15:1 › harness: opens the production application shell (451ms)
+  ✓   1 [chromium] › tests/browser/reading.spec.ts:42:60 › gzip: complete source words, paragraph breaks, gaps, annotations, and provenance remain accessible (569ms)
+(node:51865) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   6 [chromium] › tests/browser/reading.spec.ts:42:60 › decoded: complete source words, paragraph breaks, gaps, annotations, and provenance remain accessible (329ms)
+  ✓   3 [chromium] › tests/browser/failures.spec.ts:84:3 › ms: controlled complete absence, incomplete empty subset and inaccessible record are distinct (1.1s)
+  ✓   9 [chromium] › tests/browser/failures.spec.ts:105:3 › ms: failed initial lists expose an announced keyboard Retry and recover the full choices (187ms)
+  ✓   7 [chromium] › tests/browser/reading.spec.ts:66:1 › native keyboard and language controls preserve source IDs, exact words, focus, and bilingual announcements (430ms)
+  ✓  11 [chromium] › tests/browser/reading.spec.ts:87:1 › untrusted source strings are literal text without image/script elements or handler execution (380ms)
+  ✓  10 [chromium] › tests/browser/failures.spec.ts:117:114 › ms: catalogue-schema retains known context and retries the selected pair without inventing absence (584ms)
+  ✓  12 [chromium] › tests/browser/reading.spec.ts:99:1 › a delayed old sitting response cannot overwrite the newer chosen source identity (320ms)
+  ✓  13 [chromium] › tests/browser/failures.spec.ts:117:114 › ms: shard-http retains known context and retries the selected pair without inventing absence (354ms)
+  ✓  14 [chromium] › tests/browser/reading.spec.ts:135:1 › 320 CSS pixels: both UI languages preserve full source text with no horizontal page scroll (338ms)
+  ✓  15 [chromium] › tests/browser/failures.spec.ts:117:114 › ms: shard-body retains known context and retries the selected pair without inventing absence (308ms)
+  ✓  16 [chromium] › tests/browser/reading.spec.ts:153:1 › reading help is reachable at the production repository base in both languages (212ms)
+  ✓  17 [chromium] › tests/browser/failures.spec.ts:117:114 › ms: shard-digest retains known context and retries the selected pair without inventing absence (283ms)
+  ✓   2 [webkit] › tests/browser/harness.spec.ts:15:1 › harness: opens the production application shell (2.2s)
+  ✓  18 [chromium] › tests/browser/failures.spec.ts:117:114 › ms: shard-schema retains known context and retries the selected pair without inventing absence (286ms)
+  ✓   8 [webkit] › tests/browser/reading.spec.ts:42:60 › gzip: complete source words, paragraph breaks, gaps, annotations, and provenance remain accessible (1.9s)
+  ✓  19 [chromium] › tests/browser/failures.spec.ts:133:48 › ms: a delayed failed Retry cannot replace a newer same-pair Read (359ms)
+  ✓   5 [webkit] › tests/browser/failures.spec.ts:84:3 › ms: controlled complete absence, incomplete empty subset and inaccessible record are distinct (2.9s)
+  ✓  20 [webkit] › tests/browser/reading.spec.ts:42:60 › decoded: complete source words, paragraph breaks, gaps, annotations, and provenance remain accessible (373ms)
+  ✓  22 [webkit] › tests/browser/failures.spec.ts:105:3 › ms: failed initial lists expose an announced keyboard Retry and recover the full choices (240ms)
+  ✓  21 [chromium] › tests/browser/failures.spec.ts:133:48 › ms: a delayed failed Retry cannot replace a newer selection (361ms)
+  ✓  23 [webkit] › tests/browser/reading.spec.ts:66:1 › native keyboard and language controls preserve source IDs, exact words, focus, and bilingual announcements (362ms)
+  ✓  25 [chromium] › tests/browser/failures.spec.ts:153:3 › ms: source age, dated known failure and snapshot knowledge remain distinct at 320 CSS pixels (270ms)
+  ✓  24 [webkit] › tests/browser/failures.spec.ts:117:114 › ms: catalogue-schema retains known context and retries the selected pair without inventing absence (410ms)
+  ✓  27 [chromium] › tests/browser/failures.spec.ts:172:3 › ms: an old successful snapshot can disclose age but cannot invent a later workflow failure (229ms)
+  ✓  26 [webkit] › tests/browser/reading.spec.ts:87:1 › untrusted source strings are literal text without image/script elements or handler execution (286ms)
+  ✓  28 [webkit] › tests/browser/failures.spec.ts:117:114 › ms: shard-http retains known context and retries the selected pair without inventing absence (403ms)
+  ✓  30 [webkit] › tests/browser/reading.spec.ts:99:1 › a delayed old sitting response cannot overwrite the newer chosen source identity (313ms)
+  ✓  29 [chromium] › tests/browser/failures.spec.ts:84:3 › en: controlled complete absence, incomplete empty subset and inaccessible record are distinct (546ms)
+  ✓  33 [chromium] › tests/browser/failures.spec.ts:105:3 › en: failed initial lists expose an announced keyboard Retry and recover the full choices (113ms)
+  ✓  31 [webkit] › tests/browser/failures.spec.ts:117:114 › ms: shard-body retains known context and retries the selected pair without inventing absence (387ms)
+  ✓  32 [webkit] › tests/browser/reading.spec.ts:135:1 › 320 CSS pixels: both UI languages preserve full source text with no horizontal page scroll (379ms)
+  ✓  34 [chromium] › tests/browser/failures.spec.ts:117:114 › en: catalogue-schema retains known context and retries the selected pair without inventing absence (322ms)
+  ✓  36 [webkit] › tests/browser/reading.spec.ts:153:1 › reading help is reachable at the production repository base in both languages (329ms)
+  ✓  35 [webkit] › tests/browser/failures.spec.ts:117:114 › ms: shard-digest retains known context and retries the selected pair without inventing absence (413ms)
+  ✓  37 [chromium] › tests/browser/failures.spec.ts:117:114 › en: shard-http retains known context and retries the selected pair without inventing absence (293ms)
+  ✓  38 [webkit] › tests/browser/failures.spec.ts:117:114 › ms: shard-schema retains known context and retries the selected pair without inventing absence (321ms)
+  ✓  39 [chromium] › tests/browser/failures.spec.ts:117:114 › en: shard-body retains known context and retries the selected pair without inventing absence (249ms)
+  ✓  40 [webkit] › tests/browser/failures.spec.ts:133:48 › ms: a delayed failed Retry cannot replace a newer same-pair Read (309ms)
+  ✓  41 [chromium] › tests/browser/failures.spec.ts:117:114 › en: shard-digest retains known context and retries the selected pair without inventing absence (266ms)
+  ✓  43 [chromium] › tests/browser/failures.spec.ts:117:114 › en: shard-schema retains known context and retries the selected pair without inventing absence (235ms)
+  ✓  42 [webkit] › tests/browser/failures.spec.ts:133:48 › ms: a delayed failed Retry cannot replace a newer selection (302ms)
+  ✓  45 [webkit] › tests/browser/failures.spec.ts:153:3 › ms: source age, dated known failure and snapshot knowledge remain distinct at 320 CSS pixels (266ms)
+  ✓  44 [chromium] › tests/browser/failures.spec.ts:133:48 › en: a delayed failed Retry cannot replace a newer same-pair Read (299ms)
+  ✓  46 [webkit] › tests/browser/failures.spec.ts:172:3 › ms: an old successful snapshot can disclose age but cannot invent a later workflow failure (250ms)
+  ✓  47 [chromium] › tests/browser/failures.spec.ts:133:48 › en: a delayed failed Retry cannot replace a newer selection (292ms)
+  ✓  49 [chromium] › tests/browser/failures.spec.ts:153:3 › en: source age, dated known failure and snapshot knowledge remain distinct at 320 CSS pixels (209ms)
+  ✓  48 [webkit] › tests/browser/failures.spec.ts:84:3 › en: controlled complete absence, incomplete empty subset and inaccessible record are distinct (467ms)
+  ✓  50 [chromium] › tests/browser/failures.spec.ts:172:3 › en: an old successful snapshot can disclose age but cannot invent a later workflow failure (216ms)
+  ✓  51 [webkit] › tests/browser/failures.spec.ts:105:3 › en: failed initial lists expose an announced keyboard Retry and recover the full choices (203ms)
+  ✓  52 [webkit] › tests/browser/failures.spec.ts:117:114 › en: catalogue-schema retains known context and retries the selected pair without inventing absence (299ms)
+  ✓  53 [webkit] › tests/browser/failures.spec.ts:117:114 › en: shard-http retains known context and retries the selected pair without inventing absence (292ms)
+  ✓  54 [webkit] › tests/browser/failures.spec.ts:117:114 › en: shard-body retains known context and retries the selected pair without inventing absence (301ms)
+  ✓  55 [webkit] › tests/browser/failures.spec.ts:117:114 › en: shard-digest retains known context and retries the selected pair without inventing absence (326ms)
+  ✓  56 [webkit] › tests/browser/failures.spec.ts:117:114 › en: shard-schema retains known context and retries the selected pair without inventing absence (319ms)
+  ✓  57 [webkit] › tests/browser/failures.spec.ts:133:48 › en: a delayed failed Retry cannot replace a newer same-pair Read (277ms)
+  ✓  58 [webkit] › tests/browser/failures.spec.ts:133:48 › en: a delayed failed Retry cannot replace a newer selection (287ms)
+  ✓  59 [webkit] › tests/browser/failures.spec.ts:153:3 › en: source age, dated known failure and snapshot knowledge remain distinct at 320 CSS pixels (253ms)
+  ✓  60 [webkit] › tests/browser/failures.spec.ts:172:3 › en: an old successful snapshot can disclose age but cannot invent a later workflow failure (242ms)
+
+  60 passed (15.9s)

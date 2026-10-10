@@ -1,0 +1,39 @@
+
+ RUN  v5.0.3 /Users/eaglecheow/dev/vote-better-malaysia
+
+ ✓ tests/unit/recovery.test.ts > T029 source check overdue at 2026-10-11T03:00:59.999Z is false, independently of device/snapshot times 3ms
+ ✓ tests/unit/recovery.test.ts > T029 source check overdue at 2026-10-11T03:01:00.000Z is false, independently of device/snapshot times 0ms
+ ✓ tests/unit/recovery.test.ts > T029 source check overdue at 2026-10-11T03:01:00.001Z is true, independently of device/snapshot times 0ms
+ ✓ tests/unit/recovery.test.ts > T029 failed source attempt preserves accepted successful age and reports only its known date 1ms
+ ✓ tests/unit/recovery.test.ts > T029 old successful snapshot age does not invent a later pipeline failure 0ms
+ ✓ tests/unit/recovery.test.ts > T029 unknown source success cannot be replaced by attempt/preparation/device times 0ms
+ ✓ tests/unit/recovery.test.ts > T029 rejects invalid independent current clock invalid 0ms
+ ✓ tests/unit/recovery.test.ts > T029 rejects invalid independent current clock 2026-02-30T00:00:00.000Z 0ms
+ ✓ tests/unit/recovery.test.ts > T029 rejects invalid independent current clock 2026-10-10T04:00:00+00:00 0ms
+ ↓ tests/unit/recovery.test.ts > REC-LIST-ms: failed initial list can be retried through labeled native controls
+ ↓ tests/unit/recovery.test.ts > REC-LIST-en: failed initial list can be retried through labeled native controls
+ ↓ tests/unit/recovery.test.ts > REC-PAIR-ms: retry keeps exact selections/focus and yields the matching complete supplied pair
+ ↓ tests/unit/recovery.test.ts > REC-PAIR-en: retry keeps exact selections/focus and yields the matching complete supplied pair
+ ↓ tests/unit/recovery.test.ts > REC-LOADING-ms: native retry is keyboard-focusable and announces its actual pending request
+ ↓ tests/unit/recovery.test.ts > REC-LOADING-en: native retry is keyboard-focusable and announces its actual pending request
+ ↓ tests/unit/recovery.test.ts > REC-RACE-SAME-ms: late same-pair Retry cannot replace a newer successful Read
+ ↓ tests/unit/recovery.test.ts > REC-RACE-SAME-en: late same-pair Retry cannot replace a newer successful Read
+ ↓ tests/unit/recovery.test.ts > REC-RACE-CHANGE-ms: an old retry completion cannot follow new identity controls
+ ↓ tests/unit/recovery.test.ts > REC-RACE-CHANGE-en: an old retry completion cannot follow new identity controls
+ ↓ tests/unit/recovery.test.ts > REC-AGE-ms: overdue uses accepted source success despite a newer failure/snapshot/device check
+ ↓ tests/unit/recovery.test.ts > REC-AGE-en: overdue uses accepted source success despite a newer failure/snapshot/device check
+ ↓ tests/unit/recovery.test.ts > REC-KNOWN-ms: only the published snapshot supplies a dated failure and workflow evidence link
+ ↓ tests/unit/recovery.test.ts > REC-KNOWN-en: only the published snapshot supplies a dated failure and workflow evidence link
+ ↓ tests/unit/recovery.test.ts > REC-KNOWLEDGE-ms: age cannot become a specific future workflow failure
+ ↓ tests/unit/recovery.test.ts > REC-KNOWLEDGE-en: age cannot become a specific future workflow failure
+ ↓ tests/unit/recovery.test.ts > REC-UNKNOWN-ms: failed-attempt age cannot create source success or a device check
+ ↓ tests/unit/recovery.test.ts > REC-UNKNOWN-en: failed-attempt age cannot create source success or a device check
+ ↓ tests/unit/recovery.test.ts > REC-ERROR-CONTEXT-ms: site-data failure preserves known pair/draft/source without claiming absence or pipeline failure
+ ↓ tests/unit/recovery.test.ts > REC-ERROR-CONTEXT-en: site-data failure preserves known pair/draft/source without claiming absence or pipeline failure
+ ↓ tests/unit/recovery.test.ts > REC-LANGUAGE: recovery notices switch to English while original source bytes and valid choices remain
+
+ Test Files  1 passed (1)
+      Tests  9 passed | 21 skipped (30)
+   Start at  17:10:25
+   Duration  430ms (environment 85%, transform 10%, import 3%, tests 2%, worker 1%)
+

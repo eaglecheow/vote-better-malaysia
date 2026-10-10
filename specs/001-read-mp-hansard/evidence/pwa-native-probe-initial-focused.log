@@ -1,0 +1,17 @@
+
+> vote-better-malaysia@0.1.0 test:browser
+> playwright test tests/browser/updates.spec.ts --grep UPDATES-BROWSER002 --project=chromium --project=webkit --workers=1
+
+[WebServer] (node:77006) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 2 tests using 1 worker
+
+(node:77008) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [chromium] › tests/browser/updates.spec.ts:28:1 › UPDATES-BROWSER002: native preference commit precedes actual waiting-target Apply and only the consenting tab reloads (2.1s)
+(node:77025) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  2 [webkit] › tests/browser/updates.spec.ts:28:1 › UPDATES-BROWSER002: native preference commit precedes actual waiting-target Apply and only the consenting tab reloads (1.5s)
+
+  2 passed (4.9s)

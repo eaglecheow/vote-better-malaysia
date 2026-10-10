@@ -252,8 +252,13 @@ Acquisition checks cover annotation-marker classification and bootstrap without 
 checkpoint state; an unrecoverable published retention baseline must block replacement.
 
 Manually compare ten pairs across five sittings, including the 2026-02-10 missing-ID
-question and an actually verified no-contribution case. Verify all source leaves, exact
-words/order, gaps and provenance. Fixtures cannot invent real absence. Run ten-user
+question and an actually verified no-contribution case when the complete source supplies
+an eligible fully validated record with zero unresolved nonannotation items and zero
+assigned matches for the selected identity. Otherwise record the complete dated archive
+eligibility search, inventory/record counts, method and no-eligible-record result, and
+report real-source absence as unavailable. Controlled complete-record absence tests
+remain required and cannot invent real absence. Verify all source leaves, exact
+words/order, gaps and provenance. Run ten-user
 usability, keyboard/screen-reader and 320-pixel checks. Exercise controlled new/historical
 revision acquisition and live observations where available; distinguish mechanism tests
 from measured official-source publication latency.
@@ -270,7 +275,7 @@ Include all application assets, including any fonts/images later introduced.
 | HTML + JS + CSS + manifest + worker | ≤150 KiB gzip total; JS subset ≤100 KiB | Sum all required shell assets every production build; no remote dependencies |
 | Install icons | ≤60 KiB combined stored/delivered bytes | All icons every build, separately counted |
 | Whole deployed artifact | ≤900,000,000 stored bytes | Sum every file, including all data/retained public assets, every full snapshot |
-| Complete catalogue | ≤200 KiB gzip; decoded ≤5 MiB | Every snapshot: all members/sittings/status/provenance/references |
+| Complete catalogue | ≤1 MiB gzip (1,048,576 bytes); decoded ≤5 MiB | Every snapshot: all members/sittings/status/provenance/references |
 | Each sitting | ≤512 KiB gzip; decoded ≤5 MiB | Every sitting; no truncation/coverage reduction |
 | Cold shell | p75 LCP ≤2.5 s, CLS ≤0.1, TBT ≤200 ms | 20 fresh runs per lab profile; browser trace/Web Vitals collection |
 | Cold catalogue ready | p95 ≤5 s | 20 fresh runs per profile; User Timing after complete validated catalogue is usable |
@@ -279,6 +284,11 @@ Include all application assets, including any fonts/images later introduced.
 | Online Read → matching subset/gaps or verified absence | ≤5 s in ≥29/30 attempts per actual baseline/browser | ≥5 sittings of different lengths; separate target/mobile/desktop results; time complete text/provenance; failures remain in denominator |
 | Offline reopen → complete saved result | ≤2 s in all ten attempts per actual target | Saved pairs including largest/gaps; close reader, disable network, reopen and verify complete text/provenance |
 | Selection/language/read → next paint | p95 ≤200 ms | 20 scripted interactions per profile, including long/gap results; not field INP |
+
+The [2026-10-10 source policy decision](evidence/source-policy.md) revises only the
+catalogue gzip ceiling and availability of the real-source absence sample. All other
+budgets, complete archive coverage, classification, controlled tests and release gates
+remain required; the prior rejected staging run is not a pass under the revised policy.
 
 Lab runner baseline: standard GitHub-hosted `ubuntu-24.04` x64 for this public repository,
 with four vCPUs and 16 GB RAM, as documented in the
@@ -359,6 +369,7 @@ public/
 └── data/                   # Generated catalogue.json.gz and sittings/{id}.json.gz
 scripts/
 ├── acquire.ts              # Official discovery, requests, state and receipts
+├── publication.ts          # Authenticated frozen-candidate promotion and receipt coordination
 ├── build-worker.ts         # Versioned shell list and worker output
 └── check-performance.ts    # Size accounting and repeatable timings
 worker/                    # Worker source; generated into static build
@@ -375,6 +386,14 @@ links directly to developer and bilingual user documentation. Verify documented 
 commands against implemented tooling. Every introduced/changed function/method, including
 worker/scripts/tests, requires JSDoc/TSDoc for purpose, parameters, returns and relevant
 errors/side effects.
+
+Publication coordination has a separate script because it authenticates GitHub
+artifacts, matches external acceptance reports and confirms deployment, while
+`acquire.ts` owns source acquisition and its atomic accepted-state boundary. The
+controller calls those existing acquisition/checker APIs; it does not define a
+second source validator or deployed-file hasher. This implementation layout adds
+no deployed server and keeps the candidate/report/receipt metadata outside the
+immutable public file set.
 
 ## Complexity Tracking
 

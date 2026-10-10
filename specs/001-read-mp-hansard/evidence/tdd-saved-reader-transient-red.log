@@ -1,0 +1,54 @@
+
+ RUN  v5.0.3 /Users/eaglecheow/dev/vote-better-malaysia
+
+ ✓ tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-CATALOGUE ms: committed content is readable while initial latest catalogue retrieval remains pending 19ms
+ ✓ tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-PAIR ms: committed content is readable while the newest matching pair retrieval remains pending 8ms
+ ✓ tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-RETRY ms: explicit Retry retains the same committed source content during its pending latest check 42ms
+ ✓ tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-CATALOGUE en: committed content is readable while initial latest catalogue retrieval remains pending 6ms
+ ✓ tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-PAIR en: committed content is readable while the newest matching pair retrieval remains pending 8ms
+ ✓ tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-RETRY en: explicit Retry retains the same committed source content during its pending latest check 10ms
+ × tests/unit/saved-reader-pending.test.ts > SAVED-TRANSIENT-STATE ms: a successful pair commit acknowledges saving after an earlier state-write failure 7ms
+   → expected 'Storan peranti tidak tersedia. Bacaan…' to be 'Transkrip disimpan pada peranti.' // Object.is equality
+ × tests/unit/saved-reader-pending.test.ts > SAVED-TRANSIENT-STATE en: a successful pair commit acknowledges saving after an earlier state-write failure 5ms
+   → expected 'Device storage is unavailable. Online…' to be 'Transcript saved on this device.' // Object.is equality
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-TRANSIENT-STATE ms: a successful pair commit acknowledges saving after an earlier state-write failure
+AssertionError: expected 'Storan peranti tidak tersedia. Bacaan…' to be 'Transkrip disimpan pada peranti.' // Object.is equality
+
+Expected: "Transkrip disimpan pada peranti."
+Received: "Storan peranti tidak tersedia. Bacaan dalam talian masih boleh digunakan."
+
+ ❯ recoveredStateWrite tests/unit/saved-reader-pending.test.ts:192:89
+    190|       commit.resolve({ ...structuredClone(context.fresh.result), saved…
+    191|       const expected = language === 'ms' ? 'Transkrip disimpan pada pe…
+    192|       expect.soft(context.root.querySelector('#reader-save-status')?.t…
+       |                                                                                         ^
+    193|       expect.soft(context.root.querySelector('#reader-save-status')?.g…
+    194|       expect.soft(context.root.querySelector('#reader-offline-status')…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-TRANSIENT-STATE en: a successful pair commit acknowledges saving after an earlier state-write failure
+AssertionError: expected 'Device storage is unavailable. Online…' to be 'Transcript saved on this device.' // Object.is equality
+
+Expected: "Transcript saved on this device."
+Received: "Device storage is unavailable. Online reading remains usable."
+
+ ❯ recoveredStateWrite tests/unit/saved-reader-pending.test.ts:192:89
+    190|       commit.resolve({ ...structuredClone(context.fresh.result), saved…
+    191|       const expected = language === 'ms' ? 'Transkrip disimpan pada pe…
+    192|       expect.soft(context.root.querySelector('#reader-save-status')?.t…
+       |                                                                                         ^
+    193|       expect.soft(context.root.querySelector('#reader-save-status')?.g…
+    194|       expect.soft(context.root.querySelector('#reader-offline-status')…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 6 passed (8)
+   Start at  19:21:40
+   Duration  546ms (environment 68%, tests 21%, transform 8%, import 2%)
+

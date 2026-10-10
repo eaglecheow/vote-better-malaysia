@@ -1,0 +1,14 @@
+{
+  "scope": "local-frozen-integrity-after-browser",
+  "recordedAt": "2026-10-10T12:22:47.690Z",
+  "artifact": "/Users/eaglecheow/dev/vote-better-malaysia/.cache/hansard/local-final-site-20261010-help",
+  "expectedDigest": "faf20d1973136a334eb51cf549c4490796ff8ed7f1d0733dded49324a2b08b0f",
+  "currentDigest": "faf20d1973136a334eb51cf549c4490796ff8ed7f1d0733dded49324a2b08b0f",
+  "canonicalFilesEqual": true,
+  "fileCount": 4099,
+  "applicationFingerprint": "fbe830313009c0b417a1169c592957dd5e8f550c4e48319cbbcfb4e8ceac6c3d",
+  "applicationUnchanged": true,
+  "distAbsent": true,
+  "largestSittingGzip": 295108,
+  "largestSittingDecoded": 1745574
+}

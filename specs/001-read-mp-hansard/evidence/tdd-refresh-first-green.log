@@ -1,0 +1,34 @@
+
+> vote-better-malaysia@0.1.0 test
+> vitest --run tests/unit/acquisition-refresh.test.ts tests/unit/acquisition-bootstrap.test.ts
+
+
+ RUN  v5.0.3 /Users/eaglecheow/dev/vote-better-malaysia
+
+ ❯ tests/unit/acquisition-bootstrap.test.ts (99 tests | 1 failed) 555ms
+   × T013 successful source finalization advances status and payload together 10ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 successful source finalization advances status and payload together
+Error: Invalid source data: selected sitting isFinal
+ ❯ requireValue src/source.ts:320:25
+    318|  */
+    319| function requireValue(condition: unknown, label: string): asserts cond…
+    320|   if (!condition) throw new Error(`Invalid source data: ${label}`);
+       |                         ^
+    321| }
+    322|
+ ❯ reconciledSitting src/source.ts:729:5
+ ❯ normalizeSourceRecord src/source.ts:830:20
+ ❯ acquire scripts/acquire.ts:1028:24
+ ❯ updatesDraftStatusOnSuccess tests/unit/acquisition-bootstrap.test.ts:692:15
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 1 passed (2)
+      Tests  1 failed | 179 passed (180)
+   Start at  17:22:41
+   Duration  6.95s (tests 98%, transform 2%)
+

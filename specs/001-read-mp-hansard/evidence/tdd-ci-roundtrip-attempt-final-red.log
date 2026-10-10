@@ -1,0 +1,5 @@
+
+> vote-better-malaysia@0.1.0 test
+> vitest --run tests/unit/ci-inputs.test.ts -t CI-GAP-ROUNDTRIP|CI-ATTEMPT --reporter=json --outputFile=specs/001-read-mp-hansard/evidence/tdd-ci-roundtrip-attempt-final-red.json
+
+JSON report written to /Users/eaglecheow/dev/vote-better-malaysia/specs/001-read-mp-hansard/evidence/tdd-ci-roundtrip-attempt-final-red.json

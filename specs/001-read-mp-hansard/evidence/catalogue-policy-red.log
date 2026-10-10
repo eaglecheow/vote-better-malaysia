@@ -1,0 +1,80 @@
+
+> vote-better-malaysia@0.1.0 test
+> vitest --run tests/unit/catalogue-policy.test.ts tests/unit/acquisition-bootstrap.test.ts
+
+
+ RUN  v5.0.3 /Users/eaglecheow/dev/vote-better-malaysia
+
+ ❯ tests/unit/catalogue-policy.test.ts (3 tests | 3 failed) 69ms
+   × POLICY-SIZES: measured complete archive fits the approved 1 MiB catalogue budget 3ms
+   × POLICY-RETRIEVE: valid complete catalogue above 200 KiB remains intact through native gzip retrieval 28ms
+   × POLICY-STAGE: native staging commits complete larger catalogue, shard and local checkpoint together 37ms
+ ❯ tests/unit/acquisition-bootstrap.test.ts (99 tests | 1 failed) 368ms
+   × T013 accepts exact catalogue-gzip byte ceiling 1ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 accepts exact catalogue-gzip byte ceiling
+Error: Compressed resource exceeds acquisition budget
+ ❯ failure scripts/acquire.ts:139:24
+    137|  */
+    138| function failure(kind: string, message: string): Error & { kind: strin…
+    139|   return Object.assign(new Error(message), { kind });
+       |                        ^
+    140| }
+    141|
+ ❯ check scripts/acquire.ts:128:25
+ ❯ validateSizes scripts/acquire.ts:345:5
+ ❯ acceptsLimit tests/unit/acquisition-bootstrap.test.ts:216:10
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+
+ FAIL  tests/unit/catalogue-policy.test.ts > POLICY-SIZES: measured complete archive fits the approved 1 MiB catalogue budget
+Error: Compressed resource exceeds acquisition budget
+ ❯ failure scripts/acquire.ts:139:24
+    137|  */
+    138| function failure(kind: string, message: string): Error & { kind: strin…
+    139|   return Object.assign(new Error(message), { kind });
+       |                        ^
+    140| }
+    141|
+ ❯ check scripts/acquire.ts:128:25
+ ❯ validateSizes scripts/acquire.ts:345:5
+ ❯ acceptsMeasuredArchive tests/unit/catalogue-policy.test.ts:16:10
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯
+
+ FAIL  tests/unit/catalogue-policy.test.ts > POLICY-RETRIEVE: valid complete catalogue above 200 KiB remains intact through native gzip retrieval
+Error: Published resource byte limit exceeded (204800 bytes)
+ ❯ boundedStream src/source.ts:264:33
+    262|       length += next.value.length;
+    263|       const limit = gzipMaximum !== undefined && prefix[0] === 31 && p…
+    264|       if (length > limit) throw new Error(`Published resource byte lim…
+       |                                 ^
+    265|       chunks.push(next.value);
+    266|     }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/4]⎯
+
+ FAIL  tests/unit/catalogue-policy.test.ts > POLICY-STAGE: native staging commits complete larger catalogue, shard and local checkpoint together
+Error: Compressed resource exceeds acquisition budget
+ ❯ failure scripts/acquire.ts:139:24
+    137|  */
+    138| function failure(kind: string, message: string): Error & { kind: strin…
+    139|   return Object.assign(new Error(message), { kind });
+       |                        ^
+    140| }
+    141|
+ ❯ check scripts/acquire.ts:128:25
+ ❯ validateSizes scripts/acquire.ts:345:5
+ ❯ stageSnapshot scripts/acquire.ts:666:5
+ ❯ stagesLargerCatalogue tests/unit/catalogue-policy.test.ts:54:20
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/4]⎯
+
+
+ Test Files  2 failed (2)
+      Tests  4 failed | 98 passed (102)
+   Start at  17:00:31
+   Duration  499ms (tests 77%, transform 18%, import 5%, worker 1%)
+
