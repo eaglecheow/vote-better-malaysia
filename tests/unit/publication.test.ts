@@ -10,7 +10,7 @@ import { validateCatalogue, validateSittingRecord, type Catalogue, type Deployme
 import { checkDocumentation, type DocumentationCandidate } from '../../scripts/check-documentation.ts';
 import { evaluateBudgets, measureArtifact, type ArtifactSizes } from '../../scripts/check-performance.ts';
 import { acquire, finalizeAcquiredCheckpoint, readPublicationCheckpoint, validateHistoricalServedBaseline, type AcquisitionOptions } from '../../scripts/acquire.ts';
-import { finalizePublication, preparePublication, promotePublication, verifyPublicationOrigin, type PublicationOptions, type PublicationOrigin, type PublicationResult } from '../../scripts/publication.ts';
+import { finalizePublication, preparePublication, promotePublication, validateFixtureManifest, verifyPublicationOrigin, type PublicationOptions, type PublicationOrigin, type PublicationResult } from '../../scripts/publication.ts';
 
 type Json = Record<string, any>;
 const repository = 'eaglecheow/vote-better-malaysia';
@@ -143,14 +143,16 @@ async function fixture(): Promise<Fixture> {
       identity: { date, parliament: sitting.parliament, penggal: sitting.penggal, mesyuarat: sitting.mesyuarat, house: sitting.house, filename: sitting.filename, isFinal: true },
       items: [{ ordinal: 0, sourceIndex: 7, sectionPath: ['Synthetic section'], text: 'Synthetic original paragraphs.\n\n'.repeat(index * 10), rawAuthor: 'Synthetic speaker',
         sourceAuthorId: catalogue.members[0].id, memberId: catalogue.members[0].id, attribution: 'assigned', timestamp: null, gapReason: null }] };
+    if (index === 5) record.items.push({ ordinal: 1, sourceIndex: 8, sectionPath: ['Synthetic section'], text: 'Synthetic actual source gap.', rawAuthor: null, sourceAuthorId: null,
+      memberId: null, attribution: 'unassigned', timestamp: null, gapReason: 'missing-id' });
     const decoded = Buffer.from(JSON.stringify(record)); const stored = gzipSync(decoded, { level: 9 });
     sitting.record = { availability: 'available', path: `data/sittings/${index}.json.gz`, digest: hash(decoded), decodedBytes: decoded.length, compressedBytes: stored.length,
       acquiredAt: iso(now - 4_100_000), lastAttemptAt: iso(now - 4_100_000), lastAttemptOutcome: 'success', sourceBuildId: 'synthetic-build', rawSourceDigest: hash('synthetic raw ' + index),
-      sourcePublishedAt: null, sourceRevisedAt: null, accounting: { total: 1, assigned: 1, unassigned: 0, annotations: 0 } };
+      sourcePublishedAt: null, sourceRevisedAt: null, accounting: { total: record.items.length, assigned: 1, unassigned: index === 5 ? 1 : 0, annotations: 0 } };
     catalogue.sittings.push(sitting); shardDigests[sitting.id] = hash(stored);
     await put(artifactPath, sitting.record.path!, stored); await put(state, 'snapshots/controlled/sittings/' + index + '.json.gz', stored);
   }
-  catalogue.coverage = { parliaments: [template.parliament], startDate: '2026-10-01', endDate: '2026-10-05', latestInventoryCount: 5, retainedSittingCount: 0, unavailableSittingCount: 0, attributionGapCount: 0 };
+  catalogue.coverage = { parliaments: [template.parliament], startDate: '2026-10-01', endDate: '2026-10-05', latestInventoryCount: 5, retainedSittingCount: 0, unavailableSittingCount: 0, attributionGapCount: 1 };
   validateCatalogue(catalogue);
   const catalogueBytes = Buffer.from(JSON.stringify(catalogue)); await put(artifactPath, 'data/catalogue.json.gz', gzipSync(catalogueBytes, { level: 9 }));
   for (const [path, contents] of [['index.html', '<!doctype html><title>Synthetic reader</title>'], ['assets/app.js', 'console.log("synthetic")'], ['assets/app.css', 'body{color:#111}'],
@@ -209,7 +211,9 @@ async function fixture(): Promise<Fixture> {
  * @remarks Replaces only fixture-private evidence files.
  */
 async function save(value: Fixture): Promise<void> {
-  await put(value.work, 'candidate.json', JSON.stringify(value.candidate)); await put(value.work, 'fixtures.json', JSON.stringify(value.candidate.fixtureHashes));
+  const selected = { path: 'data/sittings/5.json.gz', memberId: value.catalogue.members[0].id };
+  const manifest = { datasets: { median: { path: 'data/sittings/3.json.gz', memberId: value.catalogue.members[0].id }, p95: selected, largest: selected }, interactions: [selected] };
+  await put(value.work, 'candidate.json', JSON.stringify(value.candidate)); await put(value.work, 'fixtures.json', JSON.stringify(manifest));
   await put(value.work, 'origin.json', JSON.stringify({ repository, branch: 'main', sourceRevision: revision, codeFingerprint: value.options.codeFingerprint, runId: '101', runAttempt: 1, trusted: true }));
   for (const [name, report] of [['performance', value.performance], ['documentation', value.documentation], ['automated', value.automated], ['source', value.source]]) await put(value.work, 'reports/' + name + '.json', JSON.stringify(report));
 }
@@ -283,7 +287,9 @@ async function transport(value: Fixture, input: string | URL | Request, _init?: 
     const date = url.searchParams.get('date');
     for (const sitting of value.catalogue.sittings) if (sitting.date === date) { const record = JSON.parse(gunzipSync(await readFile(join(value.artifact, sitting.record.path!))).toString('utf8')) as SittingRecord;
       return Response.json({ pageProps: { meta: { id: '/hansard/dewan-rakyat/' + date }, cycle: { house: 0, term: sitting.parliament, session: sitting.penggal, meeting: sitting.mesyuarat }, date, filename: sitting.filename, is_final: sitting.isFinal,
-        speeches: [{ speech: record.items[0].text, author: record.items[0].rawAuthor, author_id: Number(record.items[0].sourceAuthorId), timestamp: null, is_annotation: false, index: 7 }] } }); }
+        speeches: record.items.map(
+          /** Returns the original controlled leaf for actual acquisition normalization. @param item Stored source leaf. @returns Equivalent official-shaped speech. */
+          (item) => ({ speech: item.text, author: item.rawAuthor, author_id: item.sourceAuthorId === null ? null : Number(item.sourceAuthorId), timestamp: null, is_annotation: false, index: item.sourceIndex })) } }); }
     return new Response('controlled absent route', { status: 404 });
   }
   throw new Error('Unsafe publication URL');
@@ -530,6 +536,64 @@ async function preparesCompleteCandidate(): Promise<void> {
     officialChangeAt: null, officialChangeToPublicationLatency: null }));
 }
 test('PUB-PREPARE: acquire/build/check once, freeze complete candidate, then end awaiting fresh physical evidence', preparesCompleteCandidate);
+
+/** Moves the controlled source gap outside the ranked datasets while retaining coherent accepted source bytes.
+ * @param value Isolated main-publication fixture.
+ * @returns Completion after source descriptors/checkpoint hashes match actual files.
+ * @throws On genuine native/source validation failure.
+ * @remarks Writes only the controlled sitting/canonical catalogue and accepted checkpoint.
+ */
+async function gapOutsideRanks(value: Fixture): Promise<void> {
+  for (const id of ['2', '5']) {
+    const sitting = value.catalogue.sittings[Number(id) - 1]; const record = JSON.parse(gunzipSync(await readFile(join(value.artifact, sitting.record.path!))).toString('utf8')) as SittingRecord;
+    if (id === '5') record.items.pop();
+    else record.items.push({ ordinal: 1, sourceIndex: 8, sectionPath: ['Synthetic section'], text: 'Synthetic actual separate gap.', rawAuthor: null, sourceAuthorId: null, memberId: null, attribution: 'unassigned', timestamp: null, gapReason: 'missing-id' });
+    const decoded = Buffer.from(JSON.stringify(record)); const stored = gzipSync(decoded, { level: 9 });
+    sitting.record.digest = hash(decoded); sitting.record.decodedBytes = decoded.length; sitting.record.compressedBytes = stored.length;
+    sitting.record.accounting = { total: record.items.length, assigned: 1, unassigned: id === '2' ? 1 : 0, annotations: 0 };
+    await put(value.artifact, sitting.record.path!, stored); await put(value.state, 'snapshots/controlled/sittings/' + id + '.json.gz', stored); value.checkpoint.shardDigests[id] = hash(stored);
+  }
+  validateCatalogue(value.catalogue); const decoded = JSON.stringify(value.catalogue); value.checkpoint.catalogue = value.catalogue; value.checkpoint.catalogueDigest = hash(decoded);
+  await put(value.state, 'checkpoint.json', JSON.stringify(value.checkpoint)); await put(value.artifact, 'data/catalogue.json.gz', gzipSync(decoded, { level: 9 }));
+  expect((await measureArtifact(value.artifact)).complete).toBe(true);
+}
+
+test('PUB-COLLECTOR-FIXTURES: main preparation freezes source-backed collector roles and an out-of-rank gap',
+  /** Exercises actual acquisition/build/freeze with a gap outside the measured rank files. @returns Completion after manifest and all selected byte bindings are asserted. */
+  async () => {
+    const value = await fixture(); await gapOutsideRanks(value); const observed = await observe(preparePublication, value.options);
+    expect(observed.result?.outcome).toBe('awaiting-evidence'); const candidate = observed.result!.candidate!;
+    const manifest = await json(join(value.work, 'fixtures.json'));
+    expect.soft(manifest).toMatchObject({ datasets: { median: { path: 'data/sittings/3.json.gz', memberId: value.catalogue.members[0].id }, p95: { path: 'data/sittings/5.json.gz', memberId: value.catalogue.members[0].id }, largest: { path: 'data/sittings/5.json.gz', memberId: value.catalogue.members[0].id } },
+      interactions: [{ path: 'data/sittings/5.json.gz', memberId: value.catalogue.members[0].id }, { path: 'data/sittings/2.json.gz', memberId: value.catalogue.members[0].id }] });
+    const measured = await measureArtifact(value.artifact); expect.soft(measured.complete).toBe(true);
+    for (const path of ['data/catalogue.json.gz', 'data/sittings/2.json.gz', 'data/sittings/3.json.gz', 'data/sittings/5.json.gz']) expect.soft(candidate.fixtureHashes[path]).toBe(hash(await readFile(join(value.artifact, path))));
+    expect.soft(Object.keys(candidate.fixtureHashes).sort()).toEqual(['data/catalogue.json.gz', 'data/sittings/2.json.gz', 'data/sittings/3.json.gz', 'data/sittings/5.json.gz']);
+    expect(measured.artifactDigest).toBe(candidate.artifactDigest);
+    await expect(validateFixtureManifest(manifest, candidate, measured, value.checkpoint.catalogue, value.artifact)).resolves.toEqual(manifest);
+    value.candidate = candidate; value.sizes = measured; value.performance = performance(value); value.documentation.candidate = candidate; value.automated.candidate = candidate; value.source.candidate = candidate;
+    for (const [name, report] of [['performance', value.performance], ['documentation', value.documentation], ['automated', value.automated], ['source', value.source]]) await put(value.work, 'reports/' + name + '.json', JSON.stringify(report));
+    value.runs['300'].status = 'completed'; value.runs['300'].conclusion = 'success'; value.runs['400'] = run('400', laterRevision, true);
+    value.artifacts['501'] = artifact('501', '300', 'hansard-candidate', laterRevision); value.artifacts['502'] = artifact('502', '300', 'hansard-pages-candidate', laterRevision);
+    value.options.runId = '400'; value.options.candidateRunId = '300'; const commandCount = value.commands.length;
+    const promoted = await observe(promotePublication, promotionOptions(value));
+    expect.soft(promoted.result?.outcome, promoted.result?.reason ?? undefined).toBe('ready'); expect(value.commands.length).toBe(commandCount);
+  });
+
+for (const fault of ['wrong-rank', 'absent-member', 'missing-largest', 'missing-gap', 'omitted-gap-hash', 'extra-hash'] as const) test(`PUB-COLLECTOR-MANIFEST-REJECT: ${fault} cannot authorize a main candidate`,
+  /** Reaches the shared strict main fixture boundary with otherwise valid prepared source-backed selections. @returns Completion after the malformed selection/hash is rejected. */
+  async () => {
+    const value = await fixture(); await gapOutsideRanks(value); const prepared = await preparePublication(value.options); expect(prepared.outcome).toBe('awaiting-evidence');
+    const candidate = structuredClone(prepared.candidate!); const manifest = (await json(join(value.work, 'fixtures.json')))!; const measured = await measureArtifact(value.artifact);
+    await expect(validateFixtureManifest(manifest, candidate, measured, value.checkpoint.catalogue, value.artifact)).resolves.toEqual(manifest);
+    if (fault === 'wrong-rank') manifest.datasets.median.path = 'data/sittings/5.json.gz';
+    if (fault === 'absent-member') manifest.datasets.median.memberId = '999999';
+    if (fault === 'missing-largest') manifest.interactions.shift();
+    if (fault === 'missing-gap') manifest.interactions.pop();
+    if (fault === 'omitted-gap-hash') delete candidate.fixtureHashes['data/sittings/2.json.gz'];
+    if (fault === 'extra-hash') candidate.fixtureHashes['data/sittings/1.json.gz'] = hash(await readFile(join(value.artifact, 'data/sittings/1.json.gz')));
+    await expect(validateFixtureManifest(manifest, candidate, measured, value.checkpoint.catalogue, value.artifact)).rejects.toThrow();
+  });
 
 const preparationFaults = ['source-denial', 'source-schema', 'source-four-hour-cap', 'build-failed', 'automated-failed', 'size-failed', 'metadata-path-overlap', 'untrusted-current-run', 'foreign-state', 'expired-state-no-baseline', 'incompatible-state-no-baseline', 'foreign-partial-session'] as const;
 /** Requires failed preparation to retain prior served state and record every started run honestly.

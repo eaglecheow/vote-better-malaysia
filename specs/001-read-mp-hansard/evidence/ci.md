@@ -1,5 +1,18 @@
 # CI and repository enforcement evidence
 
+## Public preview repair, 2026-10-10
+
+The merged feature's [first hosted CI run](https://github.com/eaglecheow/vote-better-malaysia/actions/runs/38052361819)
+failed on missing native Chromium, an implicit local acquisition context and absent
+immutable full-release inputs. The user approved a public preview stage. The repair
+installs Chromium before native units, makes controlled local context explicit,
+runs independent production/browser checks on ordinary PRs and selects the strict
+immutable release gates with `release-acceptance`. Genuine missing release inputs
+continue to fail with actionable guidance. [Local verification](ci-pages-preview-verification.md)
+records passing tests and its hosted boundary. Earlier counts and inspection below
+retain their original scope; no repaired hosted run, protection change or merge
+enforcement pass has been fabricated.
+
 ## Completed local configuration, 2026-10-10
 
 T073 is complete in its controlled configuration scope. The implemented

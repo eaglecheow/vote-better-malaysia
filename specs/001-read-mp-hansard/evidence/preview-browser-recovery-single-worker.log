@@ -1,0 +1,19 @@
+
+> vote-better-malaysia@0.1.0 test:browser
+> playwright test --project=webkit --workers=1 --grep OFFLINE002|OFFLINE004|OFFLINE005 schemaVersion|OFFLINE006|STORAGE-BROWSER005 identity|UPDATES-BROWSER004 --output=/private/tmp/hansard-preview-recovery-red
+
+[WebServer] (node:97260) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 6 tests using 1 worker
+
+(node:97261) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [webkit] › tests/browser/offline.spec.ts:27:1 › OFFLINE002: fetching one sitting never saves an unopened different-member pair (923ms)
+  ✓  2 [webkit] › tests/browser/offline.spec.ts:59:1 › OFFLINE004: real pair-store eviction loses that transcript without claiming verified absence (586ms)
+  ✓  3 [webkit] › tests/browser/offline.spec.ts:72:77 › OFFLINE005 schemaVersion: incompatible real saved data stays unavailable without destructive repair (595ms)
+  ✓  4 [webkit] › tests/browser/offline.spec.ts:87:1 › OFFLINE006: an explicitly opened zero-turn incomplete pair retains gaps rather than claiming absence (680ms)
+  ✓  5 [webkit] › tests/browser/storage.spec.ts:80:66 › STORAGE-BROWSER005 identity: invalid online replacement cannot overwrite a previously committed pair or its time (691ms)
+  ✓  6 [webkit] › tests/browser/updates.spec.ts:108:1 › UPDATES-BROWSER004: an actual failed new-shell install preserves confirmed old readiness and closed-reader offline content (636ms)
+
+  6 passed (5.0s)

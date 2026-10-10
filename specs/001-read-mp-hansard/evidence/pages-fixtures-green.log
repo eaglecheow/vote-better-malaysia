@@ -1,0 +1,13 @@
+
+> vote-better-malaysia@0.1.0 test
+> vitest --run tests/unit/publication.test.ts -t PUB-COLLECTOR
+
+
+ RUN  v5.0.3 /Users/eaglecheow/dev/vote-better-malaysia
+
+
+ Test Files  1 passed (1)
+      Tests  7 passed | 207 skipped (214)
+   Start at  20:43:54
+   Duration  604ms (tests 61%, import 20%, transform 18%)
+

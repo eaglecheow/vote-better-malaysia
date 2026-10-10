@@ -1,0 +1,42 @@
+
+> vote-better-malaysia@0.1.0 test
+> vitest --run
+
+
+ RUN  v5.0.3 /Users/eaglecheow/dev/vote-better-malaysia
+
+ ❯ tests/unit/performance-collector.test.ts (74 tests | 2 failed) 1997ms
+   × C050 native Chromium observes metrics, UserTiming and actual trace paint on a controlled shell 7ms
+   × C051 native collection rejects a response different from its frozen candidate body 2ms
+ ❯ tests/unit/served-representation.test.ts (7 tests | 7 failed) 42ms
+   × REPRESENTATION001: accepts frozen decoded JSON via identity-small and records actual wire body bytes 5ms
+   × REPRESENTATION001: accepts frozen decoded JSON via identity-large and records actual wire body bytes 26ms
+   × REPRESENTATION001: accepts frozen decoded JSON via gzip-json and records actual wire body bytes 6ms
+   × REPRESENTATION001: accepts frozen decoded JSON via br-json and records actual wire body bytes 3ms
+   × REPRESENTATION002: existing identity-stored-gzip acceptance retains actual wire counts as a GREEN control 0ms
+   × REPRESENTATION002: existing transport-gzip-stored-gzip acceptance retains actual wire counts as a GREEN control 0ms
+   × REPRESENTATION003: same-length altered JSON remains rejected as a GREEN integrity control 1ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 9 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/performance-collector.test.ts > C050 native Chromium observes metrics, UserTiming and actual trace paint on a controlled shell
+ FAIL  tests/unit/performance-collector.test.ts > C051 native collection rejects a response different from its frozen candidate body
+ FAIL  tests/unit/served-representation.test.ts > REPRESENTATION001: accepts frozen decoded JSON via identity-small and records actual wire body bytes
+ FAIL  tests/unit/served-representation.test.ts > REPRESENTATION001: accepts frozen decoded JSON via identity-large and records actual wire body bytes
+ FAIL  tests/unit/served-representation.test.ts > REPRESENTATION001: accepts frozen decoded JSON via gzip-json and records actual wire body bytes
+ FAIL  tests/unit/served-representation.test.ts > REPRESENTATION001: accepts frozen decoded JSON via br-json and records actual wire body bytes
+ FAIL  tests/unit/served-representation.test.ts > REPRESENTATION002: existing identity-stored-gzip acceptance retains actual wire counts as a GREEN control
+ FAIL  tests/unit/served-representation.test.ts > REPRESENTATION002: existing transport-gzip-stored-gzip acceptance retains actual wire counts as a GREEN control
+ FAIL  tests/unit/served-representation.test.ts > REPRESENTATION003: same-length altered JSON remains rejected as a GREEN integrity control
+Error: listen EPERM: operation not permitted 127.0.0.1
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/9]⎯
+
+
+ Test Files  2 failed | 33 passed (35)
+      Tests  9 failed | 2029 passed (2038)
+   Start at  20:44:49
+   Duration  14.32s (tests 79%, environment 10%, import 9%, transform 2%)
+
+    Isolate  35 workers spawned · ~307ms startup each (spawn + environment, per file)
+             at least ~886ms faster with isolate: false — reuses workers across files instead of one per file
+

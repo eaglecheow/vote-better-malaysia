@@ -1,0 +1,8 @@
+Historical full-source preview artifact: PASS
+{"preview":true,"snapshot":{"snapshotId":"46deaa63-9074-408c-a1df-7fd687af312c","preparedAt":"2026-10-10T06:24:11.774Z","publishedAt":null,"coverage":{"parliaments":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],"startDate":"1959-09-11","endDate":"2026-10-08","latestInventoryCount":4090,"retainedSittingCount":0,"unavailableSittingCount":0,"attributionGapCount":533456},"status":{"acquisitionOutcome":"success","stagingOutcome":"success","workflowUrl":null,"completedAt":"2026-10-10T06:24:11.774Z","lastConfirmedDeployment":null},"sittingCount":4090},"shellGzip":24188,"jsGzip":15168,"iconBytes":3998,"artifactBytes":357817772,"availableRecords":4090}
+
+oversized-shell.bin: rejected by actual workflow size step (Shell gzip exceeds)
+assets/oversized-preview.js: rejected by actual workflow size step (JavaScript gzip exceeds)
+icons/oversized-preview.bin: rejected by actual workflow size step (Icons exceed)
+Missing one of 4090 actual available shards: rejected by workflow completeness check
+All controlled byte mutations removed; restored artifact: PASS

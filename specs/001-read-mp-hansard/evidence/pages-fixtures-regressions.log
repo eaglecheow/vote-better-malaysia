@@ -1,0 +1,13 @@
+
+> vote-better-malaysia@0.1.0 test
+> vitest --run tests/unit/publication.test.ts tests/unit/ci-inputs.test.ts
+
+
+ RUN  v5.0.3 /Users/eaglecheow/dev/vote-better-malaysia
+
+
+ Test Files  2 passed (2)
+      Tests  415 passed (415)
+   Start at  20:44:15
+   Duration  6.17s (tests 94%, import 4%, transform 2%)
+

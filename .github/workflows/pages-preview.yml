@@ -1,0 +1,82 @@
+name: Hansard public preview
+'on':
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: hansard-pages-${{ github.repository }}
+  cancel-in-progress: false
+defaults:
+  run:
+    shell: bash
+jobs:
+  build:
+    if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 270
+    steps:
+    - id: checkout
+      uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+      with:
+        ref: ${{ github.sha }}
+    - id: node
+      uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
+      with:
+        node-version-file: .nvmrc
+        cache: npm
+    - id: dependencies
+      run: npm ci
+    - id: browsers
+      run: npx playwright install --with-deps chromium firefox webkit
+    - id: unit
+      run: |
+        npm run typecheck
+        npm test -- --run
+    - id: acquire
+      run: npm run data:acquire -- --mode bootstrap --state .cache/hansard-preview --out public/data
+    - id: build
+      run: npm run build
+    - id: sizes
+      name: Check full-source preview artifact sizes
+      run: |
+        node --input-type=module <<'NODE'
+        import assert from 'node:assert/strict';
+        import { measureArtifact } from './scripts/check-performance.ts';
+        const sizes = await measureArtifact('dist');
+        assert(sizes.complete && sizes.layoutComplete && sizes.sourceVerified, 'Complete validated source/layout required');
+        assert(sizes.shellGzip <= 153600, 'Shell gzip exceeds 153600 bytes');
+        assert(sizes.jsGzip <= 102400, 'JavaScript gzip exceeds 102400 bytes');
+        assert(sizes.iconBytes <= 61440, 'Icons exceed 61440 bytes');
+        assert(sizes.snapshot.coverage.latestInventoryCount > 0, 'Official inventory required');
+        assert.equal(sizes.snapshot.sittingCount, sizes.snapshot.coverage.latestInventoryCount + sizes.snapshot.coverage.retainedSittingCount, 'Full inventory accounting required');
+        assert.equal(sizes.sittings.length, sizes.snapshot.sittingCount - sizes.snapshot.coverage.unavailableSittingCount, 'All available records must be measured');
+        console.log(JSON.stringify({ preview: true, snapshot: sizes.snapshot, shellGzip: sizes.shellGzip, jsGzip: sizes.jsGzip, iconBytes: sizes.iconBytes, artifactBytes: sizes.artifactBytes, availableRecords: sizes.sittings.length }));
+        NODE
+    - id: browser
+      env:
+        HANSARD_FROZEN_SITE: ${{ github.workspace }}/dist
+      run: npm run test:browser
+    - id: upload
+      uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b
+      with:
+        name: github-pages
+        path: dist
+  deploy:
+    if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main' && needs.build.result == 'success'
+    needs:
+    - build
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+    - id: deployment
+      name: Deploy public preview
+      uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e
+      with:
+        artifact_name: github-pages
+        preview: false

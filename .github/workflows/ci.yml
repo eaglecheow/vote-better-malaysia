@@ -2,6 +2,7 @@
 name: Hansard merge gates
 'on':
   pull_request:
+    types: [opened, synchronize, reopened, labeled, unlabeled]
   workflow_dispatch:
     inputs:
       pull_request_number:
@@ -23,7 +24,7 @@ defaults:
 jobs:
   inputs:
     name: Hansard immutable inputs
-    if: github.event_name == 'pull_request'
+    if: github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'release-acceptance')
     runs-on: ubuntu-24.04
     timeout-minutes: 30
     env:
@@ -53,6 +54,10 @@ jobs:
     - id: selection
       run: |-
         locator=specs/001-read-mp-hansard/evidence/ci-inputs.json
+        if [[ ! -f "$locator" ]]; then
+          echo "::error file=$locator::Full release acceptance requires authenticated candidate, laboratory and reviewed evidence artifacts. Follow docs/development.md#merge-checks-and-immutable-ci-inputs before adding the release-acceptance label."
+          exit 1
+        fi
         jq -e --arg repository "$GITHUB_REPOSITORY" '.schemaVersion == 1 and .repository == $repository' "$locator" >/dev/null
         for role in candidate laboratory evidence; do
           run_id=$(jq -er --arg role "$role" '.[$role].runId' "$locator")
@@ -116,12 +121,32 @@ jobs:
         node-version-file: ".nvmrc"
         cache: npm
     - run: npm ci
+    - run: npx playwright install --with-deps chromium
     - run: |-
         npm run typecheck
         npm test -- --run
+  preview:
+    name: Hansard preview build and browser
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+    - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+      with:
+        ref: "${{ github.event.pull_request.head.sha }}"
+        repository: "${{ github.event.pull_request.head.repo.full_name }}"
+        persist-credentials: false
+    - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
+      with:
+        node-version-file: ".nvmrc"
+        cache: npm
+    - run: npm ci
+    - run: npx playwright install --with-deps chromium firefox webkit
+    - run: npm run build
+    - run: HANSARD_FROZEN_SITE="$GITHUB_WORKSPACE/dist" npm run test:browser
   production:
     name: Hansard production and browser
-    if: always() && github.event_name == 'pull_request'
+    if: always() && github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'release-acceptance')
     needs:
     - inputs
     runs-on: ubuntu-24.04
@@ -163,7 +188,7 @@ jobs:
     - run: HANSARD_FROZEN_SITE="$HANSARD_CI_WORK/candidate/site" npm run test:browser
   review:
     name: Hansard RED and source review
-    if: always() && github.event_name == 'pull_request'
+    if: always() && github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'release-acceptance')
     needs:
     - inputs
     runs-on: ubuntu-24.04
@@ -204,7 +229,7 @@ jobs:
     - run: node scripts/ci-inputs.ts verify
   size:
     name: Hansard size budgets
-    if: always() && github.event_name == 'pull_request'
+    if: always() && github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'release-acceptance')
     needs:
     - inputs
     runs-on: ubuntu-24.04
@@ -246,7 +271,7 @@ jobs:
         --candidate "$HANSARD_CI_WORK/candidate/candidate.json" --report "$HANSARD_CI_WORK/reports/performance.json"
   laboratory:
     name: Hansard laboratory budgets
-    if: always() && github.event_name == 'pull_request'
+    if: always() && github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'release-acceptance')
     needs:
     - inputs
     runs-on: ubuntu-24.04
@@ -288,7 +313,7 @@ jobs:
         --candidate "$HANSARD_CI_WORK/candidate/candidate.json" --report "$HANSARD_CI_WORK/reports/performance.json"
   targets:
     name: Hansard actual targets
-    if: always() && github.event_name == 'pull_request'
+    if: always() && github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'release-acceptance')
     needs:
     - inputs
     runs-on: ubuntu-24.04
@@ -330,7 +355,7 @@ jobs:
         --candidate "$HANSARD_CI_WORK/candidate/candidate.json" --report "$HANSARD_CI_WORK/reports/performance.json"
   documentation:
     name: Hansard documentation
-    if: always() && github.event_name == 'pull_request'
+    if: always() && github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'release-acceptance')
     needs:
     - inputs
     runs-on: ubuntu-24.04

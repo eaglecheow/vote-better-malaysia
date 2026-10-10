@@ -1,0 +1,496 @@
+{
+  "checks": 70,
+  "passed": 70,
+  "results": [
+    {
+      "workflow": ".github/workflows/ci.yml",
+      "job": "inputs",
+      "step": "initialize",
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "workflow": ".github/workflows/ci.yml",
+      "job": "inputs",
+      "step": 3,
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "workflow": ".github/workflows/ci.yml",
+      "job": "inputs",
+      "step": "selection",
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "workflow": ".github/workflows/ci.yml",
+      "job": "inputs",
+      "step": 8,
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "workflow": ".github/workflows/ci.yml",
+      "job": "unit",
+      "step": 2,
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "workflow": ".github/workflows/ci.yml",
+      "job": "unit",
+      "step": 3,
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "workflow": ".github/workflows/ci.yml",
+      "job": "unit",
+      "step": 4,
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "workflow": ".github/workflows/ci.yml",
+      "job": "preview",
+      "step": 2,
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "workflow": ".github/workflows/ci.yml",
+      "job": "preview",
+      "step": 3,
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "workflow": ".github/workflows/ci.yml",
+      "job": "preview",
+      "step": 4,
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "workflow": ".github/workflows/ci.yml",
+      "job": "preview",
+      "step": 5,
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "workflow": ".github/workflows/ci.yml",
+      "job": "production",
+      "step": 0,
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "workflow": ".github/workflows/ci.yml",
+      "job": "production",
+      "step": "initialize",
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "workflow": ".github/workflows/ci.yml",
+      "job": "production",
+      "step": 4,
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "workflow": ".github/workflows/ci.yml",
+      "job": "production",
+      "step": 6,
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "workflow": ".github/workflows/ci.yml",
+      "job": "production",
+      "step": 7,
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "workflow": ".github/workflows/ci.yml",
+      "job": "review",
+      "step": 0,
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "workflow": ".github/workflows/ci.yml",
+      "job": "review",
+      "step": "initialize",
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "workflow": ".github/workflows/ci.yml",
+      "job": "review",
+      "step": 4,
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "workflow": ".github/workflows/ci.yml",
+      "job": "review",
+      "step": 6,
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "workflow": ".github/workflows/ci.yml",
+      "job": "size",
+      "step": 0,
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "workflow": ".github/workflows/ci.yml",
+      "job": "size",
+      "step": "initialize",
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "workflow": ".github/workflows/ci.yml",
+      "job": "size",
+      "step": 4,
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "workflow": ".github/workflows/ci.yml",
+      "job": "size",
+      "step": 6,
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "workflow": ".github/workflows/ci.yml",
+      "job": "laboratory",
+      "step": 0,
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "workflow": ".github/workflows/ci.yml",
+      "job": "laboratory",
+      "step": "initialize",
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "workflow": ".github/workflows/ci.yml",
+      "job": "laboratory",
+      "step": 4,
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "workflow": ".github/workflows/ci.yml",
+      "job": "laboratory",
+      "step": 6,
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "workflow": ".github/workflows/ci.yml",
+      "job": "targets",
+      "step": 0,
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "workflow": ".github/workflows/ci.yml",
+      "job": "targets",
+      "step": "initialize",
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "workflow": ".github/workflows/ci.yml",
+      "job": "targets",
+      "step": 4,
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "workflow": ".github/workflows/ci.yml",
+      "job": "targets",
+      "step": 6,
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "workflow": ".github/workflows/ci.yml",
+      "job": "documentation",
+      "step": 0,
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "workflow": ".github/workflows/ci.yml",
+      "job": "documentation",
+      "step": "initialize",
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "workflow": ".github/workflows/ci.yml",
+      "job": "documentation",
+      "step": 4,
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "workflow": ".github/workflows/ci.yml",
+      "job": "documentation",
+      "step": 6,
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "workflow": ".github/workflows/ci.yml",
+      "job": "prepare",
+      "step": "initialize",
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "workflow": ".github/workflows/ci.yml",
+      "job": "prepare",
+      "step": "context",
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "workflow": ".github/workflows/ci.yml",
+      "job": "prepare",
+      "step": 5,
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "workflow": ".github/workflows/ci.yml",
+      "job": "prepare",
+      "step": 7,
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "workflow": ".github/workflows/ci.yml",
+      "job": "prepare",
+      "step": 8,
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "workflow": ".github/workflows/ci.yml",
+      "job": "prepare",
+      "step": 10,
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "workflow": ".github/workflows/ci.yml",
+      "job": "prepare",
+      "step": 11,
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "workflow": ".github/workflows/ci.yml",
+      "job": "prepare",
+      "step": 13,
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "workflow": ".github/workflows/pages-preview.yml",
+      "job": "build",
+      "step": "dependencies",
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "workflow": ".github/workflows/pages-preview.yml",
+      "job": "build",
+      "step": "browsers",
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "workflow": ".github/workflows/pages-preview.yml",
+      "job": "build",
+      "step": "unit",
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "workflow": ".github/workflows/pages-preview.yml",
+      "job": "build",
+      "step": "acquire",
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "workflow": ".github/workflows/pages-preview.yml",
+      "job": "build",
+      "step": "build",
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "workflow": ".github/workflows/pages-preview.yml",
+      "job": "build",
+      "step": "sizes",
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "workflow": ".github/workflows/pages-preview.yml",
+      "job": "build",
+      "step": "browser",
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "workflow": ".github/workflows/pages.yml",
+      "job": "candidate",
+      "step": "dependencies",
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "workflow": ".github/workflows/pages.yml",
+      "job": "candidate",
+      "step": "initialize",
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "workflow": ".github/workflows/pages.yml",
+      "job": "candidate",
+      "step": "resolve-state",
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "workflow": ".github/workflows/pages.yml",
+      "job": "candidate",
+      "step": "resolve-artifacts",
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "workflow": ".github/workflows/pages.yml",
+      "job": "candidate",
+      "step": "browsers",
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "workflow": ".github/workflows/pages.yml",
+      "job": "candidate",
+      "step": "prepare",
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "workflow": ".github/workflows/pages.yml",
+      "job": "candidate",
+      "step": "promote",
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "workflow": ".github/workflows/pages.yml",
+      "job": "candidate",
+      "step": "check-evidence",
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "workflow": ".github/workflows/pages.yml",
+      "job": "candidate",
+      "step": "result",
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "workflow": ".github/workflows/pages.yml",
+      "job": "candidate",
+      "step": "summary",
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "workflow": ".github/workflows/pages.yml",
+      "job": "deploy",
+      "step": "dependencies",
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "workflow": ".github/workflows/pages.yml",
+      "job": "deploy",
+      "step": "initialize",
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "workflow": ".github/workflows/pages.yml",
+      "job": "deploy",
+      "step": "recheck",
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "workflow": ".github/workflows/pages.yml",
+      "job": "deploy",
+      "step": "recheck-result",
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "workflow": ".github/workflows/pages.yml",
+      "job": "finish",
+      "step": "dependencies",
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "workflow": ".github/workflows/pages.yml",
+      "job": "finish",
+      "step": "initialize",
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "workflow": ".github/workflows/pages.yml",
+      "job": "finish",
+      "step": "finalize",
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "workflow": ".github/workflows/pages.yml",
+      "job": "finish",
+      "step": "result",
+      "exit": 0,
+      "error": ""
+    },
+    {
+      "workflow": ".github/workflows/pages.yml",
+      "job": "finish",
+      "step": "summary",
+      "exit": 0,
+      "error": ""
+    }
+  ]
+}

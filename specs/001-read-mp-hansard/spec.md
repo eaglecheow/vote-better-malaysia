@@ -18,6 +18,26 @@
 - Q: Which browsers must pass the MVP’s reading, offline, and application-update checks? → A: Android Chrome, iPhone Safari, and desktop Chrome, Edge, Firefox, and Safari, using stable releases at acceptance time; installation is checked where supported.
 - Q: May the reader use the official portal's internal JSON endpoints through publication-time data preparation, despite missing public API support, revision timestamps, and some speaker attribution? → A: Yes. Use build-time acquisition from the official JSON endpoints, best-effort 24-hour refresh, and clearly labeled attribution gaps. Preserve original words and reliably attributed turns; do not guess missing identities, invent revision times, or convert uncertain attribution into a no-contributions claim.
 - Q: May the complete catalogue gzip ceiling increase to 1 MiB, with a real verified-absence sample required only when the complete source supplies an eligible record? → A: "Approve 1 MiB and conditional absence." The ceiling is 1,048,576 bytes; all other limits and classification rules remain unchanged. If no eligible complete record exists, record the complete archive eligibility search and its result while retaining controlled absence tests. See the dated [source policy decision](evidence/source-policy.md).
+- Q: Should Pages preparation preserve the full release checklist or prepare an explicitly labeled public preview with a smaller acceptance checklist? → A: "Prepare a public preview." The preview stage below is authorized; original release acceptance remains pending.
+
+### Public preview stage — 2026-10-10
+
+The public preview must visibly identify itself in Bahasa Melayu and English.
+Its publication checklist is pinned dependency installation, TypeScript, all unit
+tests, complete official-source acquisition and validation, production build,
+artifact byte limits, and authored Chromium/Firefox/WebKit reading/offline/update
+checks against the built bytes. Only validated static output may be uploaded.
+Failed acquisition or checks must stop publication and retain the existing site.
+Preparation and deployment are manual; the preview does not promise the full
+release's best-effort refresh schedule, physical-device acceptance, laboratory or
+field performance results, human accessibility/usability review, or a confirmed
+full-release deployment receipt. Existing source attribution and reuse-policy
+limits remain visible. Preview approval does not establish an external licence.
+
+Ordinary PRs require type/unit and production browser checks. An explicit
+`release-acceptance` label additionally enables the immutable full-release
+candidate/report checks. Missing release evidence must still fail those checks.
+Preview evidence must not mark the original FR/DV/SC release requirements complete.
 
 ## User Scenarios & Testing *(mandatory)*
 

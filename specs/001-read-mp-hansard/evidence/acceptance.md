@@ -1,5 +1,10 @@
 # Acceptance traceability — implementation in progress
 
+The user approved an explicitly labeled **public preview** on 2026-10-10.
+[Preview repair verification](ci-pages-preview-verification.md) records its
+completed local checks and pending hosted rollout. This preview stage does not
+complete the original release acceptance mapped below.
+
 This is a working evidence index for the uncommitted `001-read-mp-hansard` checkout,
 not a release acceptance or T080 pass. Checked implementation tasks do not establish
 physical hardware, human usability, remote CI enforcement or a live deployment.

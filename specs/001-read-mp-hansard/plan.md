@@ -400,3 +400,24 @@ immutable public file set.
 No constitution violations or extra architecture are required. Per-sitting compression
 addresses concrete hosting/transfer limits; shared rules maintain build/browser consistency.
 Full bootstrap measurements and runtime evidence remain delivery work.
+
+## Public preview implementation amendment — 2026-10-10
+
+The user approved the specification's public preview stage while fixing hosted CI.
+Keep the existing full-release candidate/promotion tooling. Ordinary PRs run all
+units with installed native Chromium and build/test the production shell across
+the three authored browser engines. Full evidence jobs run on PRs carrying the
+explicit `release-acceptance` label, including label-change retriggers.
+
+Use one separate manual `pages-preview.yml` workflow on `main`: install pinned
+dependencies and browsers, run type/unit checks, bootstrap the complete official
+source, build, validate all source files and existing byte limits, run browser
+journeys on the built directory, then upload/deploy that static directory through
+GitHub Pages. Reuse existing acquisition and artifact measurement; add no proxy,
+backend, fabricated report, or private public-file state. A failed job cannot deploy.
+Use the existing Pages concurrency group to serialize both publication workflows.
+Show a static bilingual preview notice outside the reader's rerendered root.
+
+The smaller preview checklist is an explicit user-approved scope exception; it
+does not waive or complete the original full-release tasks. Record repair RED,
+GREEN, code review, exact local verification and pending hosted/deployed checks.

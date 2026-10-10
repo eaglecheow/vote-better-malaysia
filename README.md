@@ -23,6 +23,12 @@ These mechanisms have local unit and native-engine evidence. Physical-device,
 performance, human accessibility/usability, remote CI enforcement and GitHub Pages
 acceptance remain pending; the repository does not yet claim a verified launch.
 
+The next publication stage is an explicitly labeled public preview, as approved
+on 2026-10-10. Its manual workflow checks the complete source, build, unit tests,
+artifact byte limits and authored browser journeys before deployment. Full release
+acceptance remains pending. See [Public preview deployment](docs/development.md#public-preview-deployment)
+for GitHub Pages configuration, launch and refresh instructions.
+
 ## Getting Started
 
 ### Prerequisites
