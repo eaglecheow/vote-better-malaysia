@@ -358,8 +358,12 @@ and runs the authored browser journeys on the exact built directory. Only succes
 checks permit uploading `dist/` and deploying it. Private acquisition state stays
 outside that directory; a failed build/acquisition/check leaves the prior site served.
 
-Once the reviewed changes are merged into `main`, open repository **Settings →
-Pages → Build and deployment → Source**, select **GitHub Actions**, and invoke:
+Pages is configured to use **GitHub Actions**. The
+[2026-10-10 preview deployment](../specs/001-read-mp-hansard/evidence/deployment.md)
+passed hosted checks and live Chromium/WebKit reading/offline checks. Its captured
+inventory contains 4,089 sittings through October 7 and lacks the independently
+observed October 8 sitting; it is not freshest full-release source acceptance.
+To manually refresh the preview from the reviewed `main` revision, invoke:
 
 ```sh
 gh workflow run pages-preview.yml --ref main

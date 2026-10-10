@@ -1,0 +1,80 @@
+{
+  "investigationDateUTC": "2026-10-10",
+  "scope": "Read-only comparison of published preview inventory provenance with narrowly sampled official catalogue responses. No acquisition edits, record insertion or deployment mutation.",
+  "publishedPreview": {
+    "url": "https://eaglecheow.github.io/vote-better-malaysia/data/catalogue.json.gz",
+    "savedSummaryObservedAtUTC": "2026-10-10T14:20:06.500Z",
+    "workflowUrl": "https://github.com/eaglecheow/vote-better-malaysia/actions/runs/38054189881",
+    "snapshotId": "cc1b416a-e31a-4990-88d3-311e9e85e3bf",
+    "preparedAtUTC": "2026-10-10T14:13:46.782Z",
+    "inventoryAcquiredAtUTC": "2026-10-10T13:04:03.542Z",
+    "membersAcquiredAtUTC": "2026-10-10T13:04:03.125Z",
+    "sourceBuildId": "Zlu4qRDxrOCEM-7h59E5o",
+    "inventoryRawDigest": "b9e73c964c47f9a70e3eda0ec7463a83301494d8f36424cec55ad40e55c8033b",
+    "membersRawDigest": "16591062f73226e56bddad100e4fc834d3a79ca2cbe34192ed6ad65d675dfcea",
+    "latestInventoryCount": 4089,
+    "unavailableSittingCount": 0,
+    "retainedSittingCount": 0,
+    "endDate": "2026-10-07",
+    "lastSittingId": "29686",
+    "hasSitting29687": false,
+    "accounting": "The deployed snapshot accounts for all 4,089 entries in its recorded upstream inventory; its recorded source outcome is success. This does not establish freshest official inventory coverage."
+  },
+  "officialCatalogueComparison": {
+    "discoveryUrl": "https://hansard.parlimen.gov.my/",
+    "catalogueUrl": "https://hansard.parlimen.gov.my/_next/data/Zlu4qRDxrOCEM-7h59E5o/en-GB/katalog/dewan-rakyat.json",
+    "sourceBuildId": "Zlu4qRDxrOCEM-7h59E5o",
+    "inventoryRawDigest": "3758f5a22783914b6a8b7bd58847189ccc10023cee898c698c39fa158dc3813f",
+    "latestInventoryCount": 4090,
+    "endDate": "2026-10-08",
+    "newestObservedSitting": {
+      "id": "29687",
+      "date": "2026-10-08",
+      "parliament": 15,
+      "penggal": 5,
+      "mesyuarat": 3,
+      "filename": "dr_2026-10-08",
+      "isFinal": false,
+      "sourceUrl": "https://hansard.parlimen.gov.my/hansard/dewan-rakyat/2026-10-08"
+    },
+    "requests": [
+      { "observedAtUTC": "2026-10-10T14:21:43.118Z", "requestCache": "default", "status": 200, "responseAgeSeconds": 23482 },
+      { "observedAtUTC": "2026-10-10T14:21:44.284Z", "requestCache": "no-store", "status": 200, "responseAgeSeconds": 23483 },
+      { "observedAtUTC": "2026-10-10T14:21:45.472Z", "requestCache": "default", "status": 200, "responseAgeSeconds": 23484 },
+      { "observedAtUTC": "2026-10-10T14:21:46.643Z", "requestCache": "no-store", "status": 200, "responseAgeSeconds": 23485 }
+    ],
+    "requestMethod": "Four serial catalogue GETs, separated by at least 1,100 milliseconds. Native Node 24 fetch; clean approved source URL; 15-second abort deadline. All four had the same inventory digest and count.",
+    "commonResponseHeaders": {
+      "cache-control": "s-maxage=28800, stale-while-revalidate=31507200",
+      "date": "Sat, 10 Oct 2026 07:50:21 GMT",
+      "vary": "Accept-Encoding",
+      "via": "1.1 28f4312ba92ebf9ced1e09522c830dde.cloudfront.net (CloudFront)",
+      "x-amz-cf-pop": "SIN3-P2",
+      "x-cache": "Hit from cloudfront",
+      "x-nextjs-cache": "MISS",
+      "x-nextjs-matched-path": "/en-GB/katalog/dewan-rakyat"
+    },
+    "priorLocalSnapshot": {
+      "path": "/Users/eaglecheow/dev/vote-better-malaysia/public/data/catalogue.json.gz",
+      "snapshotId": "46deaa63-9074-408c-a1df-7fd687af312c",
+      "inventoryAcquiredAtUTC": "2026-10-10T05:14:45.084Z",
+      "preparedAtUTC": "2026-10-10T06:24:11.774Z",
+      "sourceBuildId": "Zlu4qRDxrOCEM-7h59E5o",
+      "inventoryRawDigest": "3758f5a22783914b6a8b7bd58847189ccc10023cee898c698c39fa158dc3813f",
+      "latestInventoryCount": 4090,
+      "endDate": "2026-10-08",
+      "hasSitting29687": true
+    }
+  },
+  "implementationObservations": [
+    "scripts/acquire.ts requests the official inventory once before crawling sitting records; it does not resample inventory before final staging.",
+    "Source fetch options currently contain redirect:manual and AbortSignal, without explicit cache mode or cache request headers.",
+    "The recorded raw inventory hashes differ despite an identical source build ID. Source response cache headers were not retained in the hosted public-preview artifact."
+  ],
+  "interpretation": {
+    "confirmed": "The preview is missing the newest sitting observed in local official reads, but fully accounts for its own captured 4,089-entry inventory. Different raw source inventory bytes were recorded by the hosted run.",
+    "inference": "Divergent or stale official CDN edge responses are a plausible explanation. This is not proven because hosted source response headers and original raw inventory bytes were not retained for inspection. A transient legitimate source response difference cannot be excluded.",
+    "noStoreBoundary": "Both local no-store reads remained CloudFront hits with the same 4,090-entry body as default reads. Adding no-store alone cannot be claimed to guarantee current origin inventory.",
+    "publicationDecision": "Retain the explicitly labeled public preview and disclose that it covers the captured inventory through 2026-10-07 and lacks the independently observed 2026-10-08 sitting. Freshest full-release acceptance remains pending. Do not insert the missing record manually or manufacture publication/source receipts."
+  }
+}

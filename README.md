@@ -19,15 +19,17 @@ Implementation and acceptance status are recorded in the
 - Saving of opened transcripts for offline reading, with separate saved-copy and
   offline-readiness notices, plus deliberate application updates.
 
-These mechanisms have local unit and native-engine evidence. Physical-device,
-performance, human accessibility/usability, remote CI enforcement and GitHub Pages
-acceptance remain pending; the repository does not yet claim a verified launch.
+The labeled [public preview is live](https://eaglecheow.github.io/vote-better-malaysia/).
+Hosted CI passed 2,038 unit tests and 162 Chromium/Firefox/WebKit cases; live
+Chromium/WebKit checks verified both languages and saved offline reopen/reload.
+The 2026-10-10 preview contains 4,089 sittings through October 7 and currently
+lacks the independently observed October 8 sitting. [Deployment evidence](specs/001-read-mp-hansard/evidence/deployment.md)
+records the exact source snapshot and verification scope.
 
-The next publication stage is an explicitly labeled public preview, as approved
-on 2026-10-10. Its manual workflow checks the complete source, build, unit tests,
-artifact byte limits and authored browser journeys before deployment. Full release
-acceptance remains pending. See [Public preview deployment](docs/development.md#public-preview-deployment)
-for GitHub Pages configuration, launch and refresh instructions.
+Full-release physical-device, performance, human accessibility/usability and
+repository-enforcement acceptance remain pending. See
+[Public preview deployment](docs/development.md#public-preview-deployment) for
+the manual refresh workflow and its source, byte-limit and browser checks.
 
 ## Getting Started
 
