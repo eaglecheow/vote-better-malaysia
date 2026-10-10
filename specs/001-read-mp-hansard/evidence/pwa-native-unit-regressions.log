@@ -1,0 +1,13 @@
+
+> vote-better-malaysia@0.1.0 test
+> vitest --run tests/unit/performance-collector.test.ts tests/unit/served-representation.test.ts
+
+
+ RUN  v5.0.3 /Users/eaglecheow/dev/vote-better-malaysia
+
+
+ Test Files  2 passed (2)
+      Tests  81 passed (81)
+   Start at  19:19:16
+   Duration  7.00s (tests 91%, import 7%, transform 2%)
+

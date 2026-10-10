@@ -1,0 +1,19 @@
+
+> vote-better-malaysia@0.1.0 test:browser
+> playwright test tests/browser/updates.spec.ts --grep UPDATES-BROWSER00[23] --project=chromium --project=webkit --workers=1
+
+[WebServer] (node:77177) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 4 tests using 1 worker
+
+(node:77185) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [chromium] › tests/browser/updates.spec.ts:28:1 › UPDATES-BROWSER002: native preference commit precedes actual waiting-target Apply and only the consenting tab reloads (2.0s)
+  ✓  2 [chromium] › tests/browser/updates.spec.ts:85:1 › UPDATES-BROWSER003: real preference transaction abort prevents Apply and preserves both active and waiting workers (789ms)
+(node:77224) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  3 [webkit] › tests/browser/updates.spec.ts:28:1 › UPDATES-BROWSER002: native preference commit precedes actual waiting-target Apply and only the consenting tab reloads (1.8s)
+  ✓  4 [webkit] › tests/browser/updates.spec.ts:85:1 › UPDATES-BROWSER003: real preference transaction abort prevents Apply and preserves both active and waiting workers (937ms)
+
+  4 passed (6.9s)

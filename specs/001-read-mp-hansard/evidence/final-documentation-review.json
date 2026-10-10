@@ -1,0 +1,20 @@
+{
+  "recordedAt": "2026-10-10T12:27:47.746Z",
+  "scope": "final-local-documentation-and-status-review",
+  "mechanicalDocumentationCases": 48,
+  "callableFindings": [],
+  "originalMarkdownScope": {
+    "files": 12,
+    "resolvingLinksAndFragments": 215
+  },
+  "followupIndexTddQuickstartTaskScope": {
+    "resolvingLinksAndFragments": 136,
+    "overlapsOriginal": true
+  },
+  "remainingBrokenActiveLinks": [],
+  "remainingContradictoryCurrentClaims": [],
+  "quickstartStaleRuntimeSentenceCorrected": true,
+  "peerReviewOnly": true,
+  "hostedEnforcement": false,
+  "humanAccuracyAcceptance": false
+}

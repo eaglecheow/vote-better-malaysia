@@ -1,0 +1,44 @@
+
+> vote-better-malaysia@0.1.0 test
+> vitest --run tests/unit/source-schema.test.ts
+
+
+ RUN  v5.0.3 /Users/eaglecheow/dev/vote-better-malaysia
+
+ ❯ tests/unit/source-schema.test.ts (150 tests | 2 failed) 13ms
+   ❯ source schema and exact identity (150)
+     × SCHEMA-REJECT rejects constrained field sittings.0.record.availability = ["available"] 2ms
+     × SCHEMA-RAW-INVENTORY rejects unsupported root date metadata rather than silently discarding it 0ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-REJECT rejects constrained field sittings.0.record.availability = ["available"]
+AssertionError: expected [Function] to throw an error
+ ❯ tests/unit/source-schema.test.ts:96:69
+     94|     ['sittings.0.record.accounting.unassigned', -1], ['sittings.0.reco…
+     95|   ])('SCHEMA-REJECT rejects constrained field %s = %j', (path, value) …
+     96|     expect(() => validateCatalogue(changed(path as string, value))).to…
+       |                                                                     ^
+     97|   });
+     98|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  tests/unit/source-schema.test.ts > source schema and exact identity > SCHEMA-RAW-INVENTORY rejects unsupported root date metadata rather than silently discarding it
+AssertionError: expected [Function] to throw an error
+ ❯ tests/unit/source-schema.test.ts:295:63
+    293|     const archive = structuredClone(samples.archive);
+    294|     archive.start_date = [{ sitting_id: 999, date: '2014-07-23' }];
+    295|     expect(() => parseSourceInventory(rawInventory(archive))).toThrow(…
+       |                                                               ^
+    296|   });
+    297| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 148 passed (150)
+   Start at  12:19:58
+   Duration  99ms (transform 48%, tests 30%, import 18%, worker 4%)
+

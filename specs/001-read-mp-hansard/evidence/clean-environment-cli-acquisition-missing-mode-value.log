@@ -1,0 +1,17 @@
+
+> vote-better-malaysia@0.1.0 data:acquire
+> node scripts/acquire.ts --mode
+
+file:///private/tmp/hansard-clean-MPMMKr/scripts/acquire.ts:343
+  return Object.assign(new Error(message), { kind });
+                       ^
+
+Error: Expected --mode, --state and --out arguments
+    at failure (file:///private/tmp/hansard-clean-MPMMKr/scripts/acquire.ts:343:24)
+    at check (file:///private/tmp/hansard-clean-MPMMKr/scripts/acquire.ts:332:25)
+    at cli (file:///private/tmp/hansard-clean-MPMMKr/scripts/acquire.ts:1194:5)
+    at file:///private/tmp/hansard-clean-MPMMKr/scripts/acquire.ts:1209:87 {
+  kind: 'structural'
+}
+
+Node.js v24.21.0

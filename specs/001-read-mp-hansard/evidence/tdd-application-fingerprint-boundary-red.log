@@ -1,0 +1,154 @@
+
+> vote-better-malaysia@0.1.0 test
+> vitest --run tests/unit/application-fingerprint.test.ts
+
+
+ RUN  v5.0.3 /Users/eaglecheow/dev/vote-better-malaysia
+
+ ❯ tests/unit/application-fingerprint.test.ts (57 tests | 25 failed) 338ms
+   × AFP001 exact input byte changes invalidate scripts/acquire.ts 7ms
+   × AFP001 exact input byte changes invalidate scripts/check-performance.ts 5ms
+   × AFP001 exact input byte changes invalidate scripts/build-worker.ts 5ms
+   × AFP001 exact input byte changes invalidate scripts/check-documentation.ts 5ms
+   × AFP001 exact input byte changes invalidate scripts/collect-performance.ts 5ms
+   × AFP001 exact input byte changes invalidate scripts/publication.ts 8ms
+   × AFP001 exact input byte changes invalidate .github/workflows/pages.yml 9ms
+   × AFP001 exact input byte changes invalidate .github/workflows/ci.yml 10ms
+   × AFP001 exact input byte changes invalidate .nvmrc 9ms
+   × AFP001 exact input byte changes invalidate playwright.config.ts 5ms
+   × AFP001 exact input byte changes invalidate vitest.config.ts 5ms
+   × AFP001 exact input byte changes invalidate public/help.html 5ms
+   × AFP001 exact input byte changes invalidate public/manifest.webmanifest 5ms
+   × AFP001 exact input byte changes invalidate public/icons/icon-192.png 5ms
+   × AFP001 exact input byte changes invalidate public/icons/icon-512.png 5ms
+   × AFP002 canonical digest includes the sorted path, byte length and hash of every intended input 6ms
+   × AFP003 adding an application input invalidates scripts/nested/validation.ts 5ms
+   × AFP003 adding an application input invalidates .github/workflows/another-check.yml 6ms
+   × AFP003 adding an application input invalidates public/fonts/reader.woff2 5ms
+   × AFP007 symbolic application inputs are rejected at scripts/unsafe.ts 5ms
+   × AFP007 symbolic application inputs are rejected at .github/workflows/unsafe.yml 4ms
+   × AFP007 symbolic application inputs are rejected at public/unsafe.html 5ms
+   × AFP008 nonregular application inputs are rejected at scripts/unsafe.ts 7ms
+   × AFP008 nonregular application inputs are rejected at .github/workflows/unsafe.yml 7ms
+   × AFP008 nonregular application inputs are rejected at public/unsafe.html 7ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 25 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/application-fingerprint.test.ts > AFP001 exact input byte changes invalidate scripts/acquire.ts
+ FAIL  tests/unit/application-fingerprint.test.ts > AFP001 exact input byte changes invalidate scripts/check-performance.ts
+ FAIL  tests/unit/application-fingerprint.test.ts > AFP001 exact input byte changes invalidate scripts/build-worker.ts
+ FAIL  tests/unit/application-fingerprint.test.ts > AFP001 exact input byte changes invalidate scripts/check-documentation.ts
+ FAIL  tests/unit/application-fingerprint.test.ts > AFP001 exact input byte changes invalidate scripts/collect-performance.ts
+ FAIL  tests/unit/application-fingerprint.test.ts > AFP001 exact input byte changes invalidate scripts/publication.ts
+ FAIL  tests/unit/application-fingerprint.test.ts > AFP001 exact input byte changes invalidate .github/workflows/pages.yml
+ FAIL  tests/unit/application-fingerprint.test.ts > AFP001 exact input byte changes invalidate .github/workflows/ci.yml
+ FAIL  tests/unit/application-fingerprint.test.ts > AFP001 exact input byte changes invalidate .nvmrc
+ FAIL  tests/unit/application-fingerprint.test.ts > AFP001 exact input byte changes invalidate playwright.config.ts
+ FAIL  tests/unit/application-fingerprint.test.ts > AFP001 exact input byte changes invalidate vitest.config.ts
+ FAIL  tests/unit/application-fingerprint.test.ts > AFP001 exact input byte changes invalidate public/help.html
+ FAIL  tests/unit/application-fingerprint.test.ts > AFP001 exact input byte changes invalidate public/manifest.webmanifest
+ FAIL  tests/unit/application-fingerprint.test.ts > AFP001 exact input byte changes invalidate public/icons/icon-192.png
+ FAIL  tests/unit/application-fingerprint.test.ts > AFP001 exact input byte changes invalidate public/icons/icon-512.png
+AssertionError: expected '2faad5320c0f229c3750696a30c16aab49768…' not to be '2faad5320c0f229c3750696a30c16aab49768…' // Object.is equality
+ ❯ compare tests/unit/application-fingerprint.test.ts:96:66
+     94|       if (typeof inputs[path] !== 'string') changed[changed.length - 1…
+     95|       put(root, path, changed); const after = await applicationFingerp…
+     96|       expect(after).toMatch(/^[a-f0-9]{64}$/); expect(after).not.toBe(…
+       |                                                                  ^
+     97|     }); });
+     98|
+ ❯ withFixture tests/unit/application-fingerprint.test.ts:77:33
+ ❯ changesInput tests/unit/application-fingerprint.test.ts:84:35
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/25]⎯
+
+ FAIL  tests/unit/application-fingerprint.test.ts > AFP002 canonical digest includes the sorted path, byte length and hash of every intended input
+AssertionError: expected '2faad5320c0f229c3750696a30c16aab49768…' to be 'be476dcdd08373acf587c61c2fa873312f7ed…' // Object.is equality
+
+Expected: "be476dcdd08373acf587c61c2fa873312f7ed5ba81e64641026e436a686cdd7b"
+Received: "2faad5320c0f229c3750696a30c16aab497689d1dda287455c76b275b7a71515"
+
+ ❯ compare tests/unit/application-fingerprint.test.ts:111:50
+    109|       const expected: Array<[string, number, string]> = [];
+    110|       for (const path of Object.keys(inputs).sort()) { const bytes = B…
+    111|       expect(await applicationFingerprint(root)).toBe(digest(JSON.stri…
+       |                                                  ^
+    112|     }); });
+    113|
+ ❯ withFixture tests/unit/application-fingerprint.test.ts:77:33
+ ❯ canonicalInputs tests/unit/application-fingerprint.test.ts:103:38
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/25]⎯
+
+ FAIL  tests/unit/application-fingerprint.test.ts > AFP003 adding an application input invalidates scripts/nested/validation.ts
+ FAIL  tests/unit/application-fingerprint.test.ts > AFP003 adding an application input invalidates .github/workflows/another-check.yml
+ FAIL  tests/unit/application-fingerprint.test.ts > AFP003 adding an application input invalidates public/fonts/reader.woff2
+AssertionError: expected '2faad5320c0f229c3750696a30c16aab49768…' not to be '2faad5320c0f229c3750696a30c16aab49768…' // Object.is equality
+ ❯ compare tests/unit/application-fingerprint.test.ts:128:116
+    126|     async function compare(root) {
+    127|       const before = await applicationFingerprint(root); put(root, pat…
+    128|       const after = await applicationFingerprint(root); expect(after).…
+       |                                                                                                                    ^
+    129|     }); });
+    130|
+ ❯ withFixture tests/unit/application-fingerprint.test.ts:77:33
+ ❯ addsInput tests/unit/application-fingerprint.test.ts:120:32
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/25]⎯
+
+ FAIL  tests/unit/application-fingerprint.test.ts > AFP007 symbolic application inputs are rejected at scripts/unsafe.ts
+ FAIL  tests/unit/application-fingerprint.test.ts > AFP007 symbolic application inputs are rejected at .github/workflows/unsafe.yml
+ FAIL  tests/unit/application-fingerprint.test.ts > AFP007 symbolic application inputs are rejected at public/unsafe.html
+AssertionError: promise resolved "'2faad5320c0f229c3750696a30c16aab49768…'" instead of rejecting
+
+- Expected:
+Error {
+  "message": "rejected promise",
+}
+
++ Received:
+"2faad5320c0f229c3750696a30c16aab497689d1dda287455c76b275b7a71515"
+
+ ❯ reject tests/unit/application-fingerprint.test.ts:192:49
+    190|     async function reject(root) {
+    191|       symlinkSync(join(root, 'src/main.ts'), join(root, path));
+    192|       await expect(applicationFingerprint(root)).rejects.toThrow(/symb…
+       |                                                 ^
+    193|     }); });
+    194|
+ ❯ withFixture tests/unit/application-fingerprint.test.ts:77:39
+ ❯ rejectsSymbolicInput tests/unit/application-fingerprint.test.ts:184:49
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/25]⎯
+
+ FAIL  tests/unit/application-fingerprint.test.ts > AFP008 nonregular application inputs are rejected at scripts/unsafe.ts
+ FAIL  tests/unit/application-fingerprint.test.ts > AFP008 nonregular application inputs are rejected at .github/workflows/unsafe.yml
+ FAIL  tests/unit/application-fingerprint.test.ts > AFP008 nonregular application inputs are rejected at public/unsafe.html
+AssertionError: promise resolved "'2faad5320c0f229c3750696a30c16aab49768…'" instead of rejecting
+
+- Expected:
+Error {
+  "message": "rejected promise",
+}
+
++ Received:
+"2faad5320c0f229c3750696a30c16aab497689d1dda287455c76b275b7a71515"
+
+ ❯ reject tests/unit/application-fingerprint.test.ts:208:49
+    206|     async function reject(root) {
+    207|       execFileSync('mkfifo', [join(root, path)]);
+    208|       await expect(applicationFingerprint(root)).rejects.toThrow(/nonr…
+       |                                                 ^
+    209|     }); });
+    210|
+ ❯ withFixture tests/unit/application-fingerprint.test.ts:77:39
+ ❯ rejectsNonregularInput tests/unit/application-fingerprint.test.ts:199:51
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/25]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  25 failed | 32 passed (57)
+   Start at  18:40:30
+   Duration  569ms (tests 66%, import 20%, transform 14%)
+

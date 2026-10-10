@@ -1,0 +1,852 @@
+
+> vote-better-malaysia@0.1.0 test
+> vitest --run tests/unit/recovery.test.ts tests/unit/recovery-messages.test.ts
+
+
+ RUN  v5.0.3 /Users/eaglecheow/dev/vote-better-malaysia
+
+ ❯ tests/unit/recovery-messages.test.ts (14 tests | 14 failed) 10ms
+   × REC-MSG-MS-retry: complete nonblank Malay recovery wording 3ms
+   × REC-MSG-MS-retryCatalogue: complete nonblank Malay recovery wording 1ms
+   × REC-MSG-MS-overdue: complete nonblank Malay recovery wording 0ms
+   × REC-MSG-MS-knownSourceFailure: complete nonblank Malay recovery wording 0ms
+   × REC-MSG-MS-pipelineEvidence: complete nonblank Malay recovery wording 0ms
+   × REC-MSG-MS-staticKnowledgeLimit: complete nonblank Malay recovery wording 0ms
+   × REC-MSG-EN-retry: complete nonblank English recovery wording 0ms
+   × REC-MSG-EN-retryCatalogue: complete nonblank English recovery wording 0ms
+   × REC-MSG-EN-overdue: complete nonblank English recovery wording 0ms
+   × REC-MSG-EN-knownSourceFailure: complete nonblank English recovery wording 1ms
+   × REC-MSG-EN-pipelineEvidence: complete nonblank English recovery wording 0ms
+   × REC-MSG-EN-staticKnowledgeLimit: complete nonblank English recovery wording 0ms
+   × REC-MSG-KEYS-ms: new recovery key sets are complete and equivalent 2ms
+   × REC-MSG-KEYS-en: new recovery key sets are complete and equivalent 0ms
+ ❯ tests/unit/recovery.test.ts (30 tests | 30 failed) 311ms
+   × T029 source check overdue at 2026-10-11T03:00:59.999Z is false, independently of device/snapshot times 6ms
+   × T029 source check overdue at 2026-10-11T03:01:00.000Z is false, independently of device/snapshot times 1ms
+   × T029 source check overdue at 2026-10-11T03:01:00.001Z is true, independently of device/snapshot times 1ms
+   × T029 failed source attempt preserves accepted successful age and reports only its known date 1ms
+   × T029 old successful snapshot age does not invent a later pipeline failure 0ms
+   × T029 unknown source success cannot be replaced by attempt/preparation/device times 0ms
+   × T029 rejects invalid independent current clock invalid 1ms
+   × T029 rejects invalid independent current clock 2026-02-30T00:00:00.000Z 0ms
+   × T029 rejects invalid independent current clock 2026-10-10T04:00:00+00:00 0ms
+   × REC-LIST-ms: failed initial list can be retried through labeled native controls 19ms
+   × REC-LIST-en: failed initial list can be retried through labeled native controls 10ms
+   × REC-PAIR-ms: retry keeps exact selections/focus and yields the matching complete supplied pair 79ms
+   × REC-PAIR-en: retry keeps exact selections/focus and yields the matching complete supplied pair 23ms
+   × REC-LOADING-ms: native retry is keyboard-focusable and announces its actual pending request 8ms
+   × REC-LOADING-en: native retry is keyboard-focusable and announces its actual pending request 8ms
+   × REC-RACE-SAME-ms: late same-pair Retry cannot replace a newer successful Read 15ms
+   × REC-RACE-SAME-en: late same-pair Retry cannot replace a newer successful Read 16ms
+   × REC-RACE-CHANGE-ms: an old retry completion cannot follow new identity controls 15ms
+   × REC-RACE-CHANGE-en: an old retry completion cannot follow new identity controls 15ms
+   × REC-AGE-ms: overdue uses accepted source success despite a newer failure/snapshot/device check 10ms
+   × REC-AGE-en: overdue uses accepted source success despite a newer failure/snapshot/device check 9ms
+   × REC-KNOWN-ms: only the published snapshot supplies a dated failure and workflow evidence link 9ms
+   × REC-KNOWN-en: only the published snapshot supplies a dated failure and workflow evidence link 7ms
+   × REC-KNOWLEDGE-ms: age cannot become a specific future workflow failure 7ms
+   × REC-KNOWLEDGE-en: age cannot become a specific future workflow failure 6ms
+   × REC-UNKNOWN-ms: failed-attempt age cannot create source success or a device check 8ms
+   × REC-UNKNOWN-en: failed-attempt age cannot create source success or a device check 8ms
+   × REC-ERROR-CONTEXT-ms: site-data failure preserves known pair/draft/source without claiming absence or pipeline failure 9ms
+   × REC-ERROR-CONTEXT-en: site-data failure preserves known pair/draft/source without claiming absence or pipeline failure 8ms
+   × REC-LANGUAGE: recovery notices switch to English while original source bytes and valid choices remain 11ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 44 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/recovery-messages.test.ts > REC-MSG-MS-retry: complete nonblank Malay recovery wording
+AssertionError: expected undefined to be 'Cuba lagi' // Object.is equality
+
+- Expected:
+"Cuba lagi"
+
++ Received:
+undefined
+
+ ❯ checksMalay tests/unit/recovery-messages.test.ts:22:18
+     20| function checksMalay(key: keyof RecoveryMessages, malay: string, engli…
+     21|   void english; const actual = getRecoveryMessages('ms')[key];
+     22|   expect(actual).toBe(malay); expect(actual.trim().length).toBeGreater…
+       |                  ^
+     23| }
+     24|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/44]⎯
+
+ FAIL  tests/unit/recovery-messages.test.ts > REC-MSG-MS-retryCatalogue: complete nonblank Malay recovery wording
+AssertionError: expected undefined to be 'Muatkan semula senarai' // Object.is equality
+
+- Expected:
+"Muatkan semula senarai"
+
++ Received:
+undefined
+
+ ❯ checksMalay tests/unit/recovery-messages.test.ts:22:18
+     20| function checksMalay(key: keyof RecoveryMessages, malay: string, engli…
+     21|   void english; const actual = getRecoveryMessages('ms')[key];
+     22|   expect(actual).toBe(malay); expect(actual.trim().length).toBeGreater…
+       |                  ^
+     23| }
+     24|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/44]⎯
+
+ FAIL  tests/unit/recovery-messages.test.ts > REC-MSG-MS-overdue: complete nonblank Malay recovery wording
+AssertionError: expected undefined to be 'Lebih 24 jam sejak rekod sumber berja…' // Object.is equality
+
+- Expected:
+"Lebih 24 jam sejak rekod sumber berjaya diperoleh."
+
++ Received:
+undefined
+
+ ❯ checksMalay tests/unit/recovery-messages.test.ts:22:18
+     20| function checksMalay(key: keyof RecoveryMessages, malay: string, engli…
+     21|   void english; const actual = getRecoveryMessages('ms')[key];
+     22|   expect(actual).toBe(malay); expect(actual.trim().length).toBeGreater…
+       |                  ^
+     23| }
+     24|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/44]⎯
+
+ FAIL  tests/unit/recovery-messages.test.ts > REC-MSG-MS-knownSourceFailure: complete nonblank Malay recovery wording
+AssertionError: expected undefined to be 'Percubaan memperoleh rekod sumber gag…' // Object.is equality
+
+- Expected:
+"Percubaan memperoleh rekod sumber gagal pada masa yang direkodkan."
+
++ Received:
+undefined
+
+ ❯ checksMalay tests/unit/recovery-messages.test.ts:22:18
+     20| function checksMalay(key: keyof RecoveryMessages, malay: string, engli…
+     21|   void english; const actual = getRecoveryMessages('ms')[key];
+     22|   expect(actual).toBe(malay); expect(actual.trim().length).toBeGreater…
+       |                  ^
+     23| }
+     24|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/44]⎯
+
+ FAIL  tests/unit/recovery-messages.test.ts > REC-MSG-MS-pipelineEvidence: complete nonblank Malay recovery wording
+AssertionError: expected undefined to be 'Bukti proses data' // Object.is equality
+
+- Expected:
+"Bukti proses data"
+
++ Received:
+undefined
+
+ ❯ checksMalay tests/unit/recovery-messages.test.ts:22:18
+     20| function checksMalay(key: keyof RecoveryMessages, malay: string, engli…
+     21|   void english; const actual = getRecoveryMessages('ms')[key];
+     22|   expect(actual).toBe(malay); expect(actual.trim().length).toBeGreater…
+       |                  ^
+     23| }
+     24|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/44]⎯
+
+ FAIL  tests/unit/recovery-messages.test.ts > REC-MSG-MS-staticKnowledgeLimit: complete nonblank Malay recovery wording
+AssertionError: expected undefined to be 'Salinan laman ini hanya menunjukkan s…' // Object.is equality
+
+- Expected:
+"Salinan laman ini hanya menunjukkan status yang diketahui ketika disediakan. Ia tidak dapat mengesan proses atau perubahan sumber yang tidak terkandung dalam salinan ini."
+
++ Received:
+undefined
+
+ ❯ checksMalay tests/unit/recovery-messages.test.ts:22:18
+     20| function checksMalay(key: keyof RecoveryMessages, malay: string, engli…
+     21|   void english; const actual = getRecoveryMessages('ms')[key];
+     22|   expect(actual).toBe(malay); expect(actual.trim().length).toBeGreater…
+       |                  ^
+     23| }
+     24|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/44]⎯
+
+ FAIL  tests/unit/recovery-messages.test.ts > REC-MSG-EN-retry: complete nonblank English recovery wording
+AssertionError: expected undefined to be 'Retry' // Object.is equality
+
+- Expected:
+"Retry"
+
++ Received:
+undefined
+
+ ❯ checksEnglish tests/unit/recovery-messages.test.ts:34:18
+     32| function checksEnglish(key: keyof RecoveryMessages, malay: string, eng…
+     33|   void malay; const actual = getRecoveryMessages('en')[key];
+     34|   expect(actual).toBe(english); expect(actual.trim().length).toBeGreat…
+       |                  ^
+     35| }
+     36|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/44]⎯
+
+ FAIL  tests/unit/recovery-messages.test.ts > REC-MSG-EN-retryCatalogue: complete nonblank English recovery wording
+AssertionError: expected undefined to be 'Reload lists' // Object.is equality
+
+- Expected:
+"Reload lists"
+
++ Received:
+undefined
+
+ ❯ checksEnglish tests/unit/recovery-messages.test.ts:34:18
+     32| function checksEnglish(key: keyof RecoveryMessages, malay: string, eng…
+     33|   void malay; const actual = getRecoveryMessages('en')[key];
+     34|   expect(actual).toBe(english); expect(actual.trim().length).toBeGreat…
+       |                  ^
+     35| }
+     36|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/44]⎯
+
+ FAIL  tests/unit/recovery-messages.test.ts > REC-MSG-EN-overdue: complete nonblank English recovery wording
+AssertionError: expected undefined to be 'More than 24 hours since the source r…' // Object.is equality
+
+- Expected:
+"More than 24 hours since the source record was successfully acquired."
+
++ Received:
+undefined
+
+ ❯ checksEnglish tests/unit/recovery-messages.test.ts:34:18
+     32| function checksEnglish(key: keyof RecoveryMessages, malay: string, eng…
+     33|   void malay; const actual = getRecoveryMessages('en')[key];
+     34|   expect(actual).toBe(english); expect(actual.trim().length).toBeGreat…
+       |                  ^
+     35| }
+     36|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/44]⎯
+
+ FAIL  tests/unit/recovery-messages.test.ts > REC-MSG-EN-knownSourceFailure: complete nonblank English recovery wording
+AssertionError: expected undefined to be 'A source record acquisition attempt f…' // Object.is equality
+
+- Expected:
+"A source record acquisition attempt failed at the recorded time."
+
++ Received:
+undefined
+
+ ❯ checksEnglish tests/unit/recovery-messages.test.ts:34:18
+     32| function checksEnglish(key: keyof RecoveryMessages, malay: string, eng…
+     33|   void malay; const actual = getRecoveryMessages('en')[key];
+     34|   expect(actual).toBe(english); expect(actual.trim().length).toBeGreat…
+       |                  ^
+     35| }
+     36|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/44]⎯
+
+ FAIL  tests/unit/recovery-messages.test.ts > REC-MSG-EN-pipelineEvidence: complete nonblank English recovery wording
+AssertionError: expected undefined to be 'Data pipeline evidence' // Object.is equality
+
+- Expected:
+"Data pipeline evidence"
+
++ Received:
+undefined
+
+ ❯ checksEnglish tests/unit/recovery-messages.test.ts:34:18
+     32| function checksEnglish(key: keyof RecoveryMessages, malay: string, eng…
+     33|   void malay; const actual = getRecoveryMessages('en')[key];
+     34|   expect(actual).toBe(english); expect(actual.trim().length).toBeGreat…
+       |                  ^
+     35| }
+     36|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/44]⎯
+
+ FAIL  tests/unit/recovery-messages.test.ts > REC-MSG-EN-staticKnowledgeLimit: complete nonblank English recovery wording
+AssertionError: expected undefined to be 'This site snapshot shows only status …' // Object.is equality
+
+- Expected:
+"This site snapshot shows only status known when it was prepared. It cannot observe later runs or source changes that are not included in this snapshot."
+
++ Received:
+undefined
+
+ ❯ checksEnglish tests/unit/recovery-messages.test.ts:34:18
+     32| function checksEnglish(key: keyof RecoveryMessages, malay: string, eng…
+     33|   void malay; const actual = getRecoveryMessages('en')[key];
+     34|   expect(actual).toBe(english); expect(actual.trim().length).toBeGreat…
+       |                  ^
+     35| }
+     36|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/44]⎯
+
+ FAIL  tests/unit/recovery-messages.test.ts > REC-MSG-KEYS-ms: new recovery key sets are complete and equivalent
+ FAIL  tests/unit/recovery-messages.test.ts > REC-MSG-KEYS-en: new recovery key sets are complete and equivalent
+AssertionError: expected [] to deeply equal [ 'knownSourceFailure', …(5) ]
+
+- Expected
++ Received
+
+- [
+-   "knownSourceFailure",
+-   "overdue",
+-   "pipelineEvidence",
+-   "retry",
+-   "retryCatalogue",
+-   "staticKnowledgeLimit",
+- ]
++ []
+
+ ❯ checksKeys tests/unit/recovery-messages.test.ts:44:61
+     42| function checksKeys(language: 'ms' | 'en'): void {
+     43|   const expected: string[] = []; for (const row of labels) expected.pu…
+     44|   expect(Object.keys(getRecoveryMessages(language)).sort()).toEqual(ex…
+       |                                                             ^
+     45| }
+     46|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[13/44]⎯
+
+ FAIL  tests/unit/recovery.test.ts > T029 source check overdue at 2026-10-11T03:00:59.999Z is false, independently of device/snapshot times
+ FAIL  tests/unit/recovery.test.ts > T029 source check overdue at 2026-10-11T03:01:00.000Z is false, independently of device/snapshot times
+AssertionError: expected undefined to be false // Object.is equality
+
+- Expected:
+false
+
++ Received:
+undefined
+
+ ❯ tests/unit/recovery.test.ts:38:84
+     36|    * @remarks Assertion fails when the age boundary is absent or uses …
+     37|    */
+     38|   (now, overdue) => { expect(publishedSourceStatus(resultFixture(), no…
+       |                                                                                    ^
+     39|
+     40| test('T029 failed source attempt preserves accepted successful age and…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[14/44]⎯
+
+ FAIL  tests/unit/recovery.test.ts > T029 source check overdue at 2026-10-11T03:01:00.001Z is true, independently of device/snapshot times
+AssertionError: expected undefined to be true // Object.is equality
+
+- Expected:
+true
+
++ Received:
+undefined
+
+ ❯ tests/unit/recovery.test.ts:38:84
+     36|    * @remarks Assertion fails when the age boundary is absent or uses …
+     37|    */
+     38|   (now, overdue) => { expect(publishedSourceStatus(resultFixture(), no…
+       |                                                                                    ^
+     39|
+     40| test('T029 failed source attempt preserves accepted successful age and…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[15/44]⎯
+
+ FAIL  tests/unit/recovery.test.ts > T029 failed source attempt preserves accepted successful age and reports only its known date
+AssertionError: expected undefined to deeply equal { overdue: true, …(2) }
+
+- Expected:
+{
+  "knownFailureAt": "2026-10-10T03:50:00.000Z",
+  "overdue": true,
+  "workflowUrl": "https://github.com/eaglecheow/vote-better-malaysia/actions/runs/12345",
+}
+
++ Received:
+undefined
+
+ ❯ tests/unit/recovery.test.ts:47:71
+     45|   () => {
+     46|     const result = resultFixture(true);
+     47|     expect(publishedSourceStatus(result, '2026-10-11T03:02:00.000Z')).…
+       |                                                                       ^
+     48|     expect(result.sitting.record.acquiredAt).toBe('2026-10-10T03:01:00…
+     49|     expect(result.refreshedAt).toBe('2026-10-10T04:01:00.000Z');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[16/44]⎯
+
+ FAIL  tests/unit/recovery.test.ts > T029 old successful snapshot age does not invent a later pipeline failure
+AssertionError: expected undefined to be null
+
+- Expected:
+null
+
++ Received:
+undefined
+
+ ❯ tests/unit/recovery.test.ts:57:102
+     55|    * @remarks Assertion rejects unsupported specific failure claims fr…
+     56|    */
+     57|   () => { expect(publishedSourceStatus(resultFixture(), '2026-10-20T04…
+       |                                                                                                      ^
+     58|
+     59| test('T029 unknown source success cannot be replaced by attempt/prepar…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[17/44]⎯
+
+ FAIL  tests/unit/recovery.test.ts > T029 unknown source success cannot be replaced by attempt/preparation/device times
+AssertionError: expected undefined to deeply equal { overdue: false, …(2) }
+
+- Expected:
+{
+  "knownFailureAt": "2026-10-10T03:50:00.000Z",
+  "overdue": false,
+  "workflowUrl": null,
+}
+
++ Received:
+undefined
+
+ ❯ tests/unit/recovery.test.ts:69:71
+     67|     fixture.catalogue.coverage.unavailableSittingCount = 1;
+     68|     const result = buildTranscriptResult(fixture.catalogue, '2928', '2…
+     69|     expect(publishedSourceStatus(result, '2026-10-20T04:00:00.000Z')).…
+       |                                                                       ^
+     70|     expect(result.refreshedAt).toBeNull();
+     71|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[18/44]⎯
+
+ FAIL  tests/unit/recovery.test.ts > T029 rejects invalid independent current clock invalid
+ FAIL  tests/unit/recovery.test.ts > T029 rejects invalid independent current clock 2026-02-30T00:00:00.000Z
+ FAIL  tests/unit/recovery.test.ts > T029 rejects invalid independent current clock 2026-10-10T04:00:00+00:00
+AssertionError: expected [Function bound publishedSourceStatus] to throw an error
+ ❯ tests/unit/recovery.test.ts:80:77
+     78|    * @remarks Assertion rejects malformed date/format acceptance.
+     79|    */
+     80|   (now) => { expect(publishedSourceStatus.bind(null, resultFixture(), …
+       |                                                                             ^
+     81|
+     82| type Language = 'ms' | 'en';
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[19/44]⎯
+
+ FAIL  tests/unit/recovery.test.ts > REC-LIST-ms: failed initial list can be retried through labeled native controls
+AssertionError: expected { label: null, calls: 1, …(3) } to deeply equal { …(5) }
+
+- Expected
++ Received
+
+  {
+-   "calls": 2,
+-   "enabled": true,
+-   "label": "Muatkan semula senarai",
+-   "optionCount": 3,
+-   "status": "Pilih identiti sumber dan persidangan untuk membaca rekod.",
++   "calls": 1,
++   "enabled": false,
++   "label": null,
++   "optionCount": 1,
++   "status": "Data laman tidak dapat dimuatkan atau disahkan.",
+  }
+
+ ❯ checksListRetry tests/unit/recovery.test.ts:238:230
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[20/44]⎯
+
+ FAIL  tests/unit/recovery.test.ts > REC-LIST-en: failed initial list can be retried through labeled native controls
+AssertionError: expected { label: null, calls: 1, …(3) } to deeply equal { label: 'Reload lists', …(4) }
+
+- Expected
++ Received
+
+  {
+-   "calls": 2,
+-   "enabled": true,
+-   "label": "Reload lists",
+-   "optionCount": 3,
+-   "status": "Choose a source identity and sitting to read the record.",
++   "calls": 1,
++   "enabled": false,
++   "label": null,
++   "optionCount": 1,
++   "status": "Site data could not be loaded or validated.",
+  }
+
+ ❯ checksListRetry tests/unit/recovery.test.ts:238:230
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[21/44]⎯
+
+ FAIL  tests/unit/recovery.test.ts > REC-PAIR-ms: retry keeps exact selections/focus and yields the matching complete supplied pair
+AssertionError: expected { label: null, …(5) } to deeply equal { label: 'Cuba lagi', …(5) }
+
+- Expected
++ Received
+
+  {
+    "calls": [
+      "1839/29326",
+-     "1839/29326",
+    ],
+-   "label": "Cuba lagi",
++   "label": null,
+    "member": "1839",
+-   "outcome": "incomplete",
++   "outcome": null,
+    "sitting": "29326",
+-   "status": "Rekod sedia untuk dibaca.",
++   "status": "Data laman tidak dapat dimuatkan atau disahkan.",
+  }
+
+ ❯ checksPairRetry tests/unit/recovery.test.ts:255:318
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[22/44]⎯
+
+ FAIL  tests/unit/recovery.test.ts > REC-PAIR-en: retry keeps exact selections/focus and yields the matching complete supplied pair
+AssertionError: expected { label: null, …(5) } to deeply equal { label: 'Retry', …(5) }
+
+- Expected
++ Received
+
+  {
+    "calls": [
+      "1839/29326",
+-     "1839/29326",
+    ],
+-   "label": "Retry",
++   "label": null,
+    "member": "1839",
+-   "outcome": "incomplete",
++   "outcome": null,
+    "sitting": "29326",
+-   "status": "Record ready to read.",
++   "status": "Site data could not be loaded or validated.",
+  }
+
+ ❯ checksPairRetry tests/unit/recovery.test.ts:255:318
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[23/44]⎯
+
+ FAIL  tests/unit/recovery.test.ts > REC-LOADING-ms: native retry is keyboard-focusable and announces its actual pending request
+AssertionError: expected { nativeButton: false, …(6) } to deeply equal { nativeButton: true, …(6) }
+
+- Expected
++ Received
+
+  {
+-   "calls": 2,
+-   "label": "Cuba lagi",
++   "calls": 1,
++   "label": null,
+    "live": "polite",
+-   "nativeButton": true,
+-   "status": "Memuatkan rekod persidangan…",
+-   "tabIndex": 0,
+-   "type": "button",
++   "nativeButton": false,
++   "status": "Data laman tidak dapat dimuatkan atau disahkan.",
++   "tabIndex": null,
++   "type": null,
+  }
+
+ ❯ checksRetryLoading tests/unit/recovery.test.ts:272:288
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[24/44]⎯
+
+ FAIL  tests/unit/recovery.test.ts > REC-LOADING-en: native retry is keyboard-focusable and announces its actual pending request
+AssertionError: expected { nativeButton: false, …(6) } to deeply equal { nativeButton: true, …(6) }
+
+- Expected
++ Received
+
+  {
+-   "calls": 2,
+-   "label": "Retry",
++   "calls": 1,
++   "label": null,
+    "live": "polite",
+-   "nativeButton": true,
+-   "status": "Loading sitting record…",
+-   "tabIndex": 0,
+-   "type": "button",
++   "nativeButton": false,
++   "status": "Site data could not be loaded or validated.",
++   "tabIndex": null,
++   "type": null,
+  }
+
+ ❯ checksRetryLoading tests/unit/recovery.test.ts:272:288
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[25/44]⎯
+
+ FAIL  tests/unit/recovery.test.ts > REC-RACE-SAME-ms: late same-pair Retry cannot replace a newer successful Read
+ FAIL  tests/unit/recovery.test.ts > REC-RACE-SAME-en: late same-pair Retry cannot replace a newer successful Read
+AssertionError: expected { calls: 2, …(3) } to deeply equal { calls: 3, …(3) }
+
+- Expected
++ Received
+
+@@ -1,9 +1,9 @@
+  {
+-   "calls": 3,
++   "calls": 2,
+    "member": "1839",
+-   "outcome": "ready",
++   "outcome": "incomplete",
+    "texts": [
+      "Terima kasih Tan Sri Yang di-Pertua. Saya ingin ucapkan terima kasih kepada Yang Berhormat Menteri atas jawapan yang menyeluruh ini.
+
+  Hubungan di antara Malaysia dan India seperti yang disebut oleh Yang Berhormat Menteri telah sampai ke tahap rakan kongsi strategik. Kalau rakan kongsi strategik ini dilihat membawa manfaat, ia mesti boleh dipercayai (*trusted*) dan juga dapat menunjukkan penyampaian barangan ataupun kegunaan awam dengan izin Tan Sri Yang di-Pertua, *delivery of public good*.
+
+
+ ❯ checksSamePairRace tests/unit/recovery.test.ts:289:183
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[26/44]⎯
+
+ FAIL  tests/unit/recovery.test.ts > REC-RACE-CHANGE-ms: an old retry completion cannot follow new identity controls
+AssertionError: expected { calls: [ '1839', '2928' ], …(3) } to deeply equal { …(4) }
+
+- Expected
++ Received
+
+@@ -1,9 +1,8 @@
+  {
+    "calls": [
+      "1839",
+-     "1839",
+      "2928",
+    ],
+    "selectedMember": "2928",
+    "shownMember": "2928",
+    "texts": [],
+
+ ❯ checksChangedSelectionRace tests/unit/recovery.test.ts:306:197
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[27/44]⎯
+
+ FAIL  tests/unit/recovery.test.ts > REC-RACE-CHANGE-en: an old retry completion cannot follow new identity controls
+AssertionError: expected { calls: [ '1839', '2928' ], …(3) } to deeply equal { …(4) }
+
+- Expected
++ Received
+
+@@ -1,9 +1,8 @@
+  {
+    "calls": [
+      "1839",
+-     "1839",
+      "2928",
+    ],
+    "selectedMember": "2928",
+    "shownMember": "2928",
+    "texts": [],
+
+ ❯ checksChangedSelectionRace tests/unit/recovery.test.ts:306:197
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[28/44]⎯
+
+ FAIL  tests/unit/recovery.test.ts > REC-AGE-ms: overdue uses accepted source success despite a newer failure/snapshot/device check
+AssertionError: expected null to be 'Lebih 24 jam sejak rekod sumber berja…' // Object.is equality
+
+- Expected:
+"Lebih 24 jam sejak rekod sumber berjaya diperoleh."
+
++ Received:
+null
+
+ ❯ checksSourceAge tests/unit/recovery.test.ts:320:42
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[29/44]⎯
+
+ FAIL  tests/unit/recovery.test.ts > REC-AGE-en: overdue uses accepted source success despite a newer failure/snapshot/device check
+AssertionError: expected null to be 'More than 24 hours since the source r…' // Object.is equality
+
+- Expected:
+"More than 24 hours since the source record was successfully acquired."
+
++ Received:
+null
+
+ ❯ checksSourceAge tests/unit/recovery.test.ts:320:42
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[30/44]⎯
+
+ FAIL  tests/unit/recovery.test.ts > REC-KNOWN-ms: only the published snapshot supplies a dated failure and workflow evidence link
+AssertionError: expected { failure: null, evidence: null, …(2) } to deeply equal { …(4) }
+
+- Expected
++ Received
+
+  {
+-   "evidence": "https://github.com/eaglecheow/vote-better-malaysia/actions/runs/12345",
+-   "evidenceLabel": "Bukti proses data",
+-   "failure": "Percubaan memperoleh rekod sumber gagal pada masa yang direkodkan. 2026-10-10T03:50:00.000Z",
+-   "knowledge": "Salinan laman ini hanya menunjukkan status yang diketahui ketika disediakan. Ia tidak dapat mengesan proses atau perubahan sumber yang tidak terkandung dalam salinan ini.",
++   "evidence": null,
++   "evidenceLabel": null,
++   "failure": null,
++   "knowledge": null,
+  }
+
+ ❯ checksKnownFailure tests/unit/recovery.test.ts:340:260
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[31/44]⎯
+
+ FAIL  tests/unit/recovery.test.ts > REC-KNOWN-en: only the published snapshot supplies a dated failure and workflow evidence link
+AssertionError: expected { failure: null, evidence: null, …(2) } to deeply equal { …(4) }
+
+- Expected
++ Received
+
+  {
+-   "evidence": "https://github.com/eaglecheow/vote-better-malaysia/actions/runs/12345",
+-   "evidenceLabel": "Data pipeline evidence",
+-   "failure": "A source record acquisition attempt failed at the recorded time. 2026-10-10T03:50:00.000Z",
+-   "knowledge": "This site snapshot shows only status known when it was prepared. It cannot observe later runs or source changes that are not included in this snapshot.",
++   "evidence": null,
++   "evidenceLabel": null,
++   "failure": null,
++   "knowledge": null,
+  }
+
+ ❯ checksKnownFailure tests/unit/recovery.test.ts:340:260
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[32/44]⎯
+
+ FAIL  tests/unit/recovery.test.ts > REC-KNOWLEDGE-ms: age cannot become a specific future workflow failure
+AssertionError: expected { overdue: null, failure: null, …(1) } to deeply equal { …(3) }
+
+- Expected
++ Received
+
+  {
+    "failure": null,
+-   "knowledge": "Salinan laman ini hanya menunjukkan status yang diketahui ketika disediakan. Ia tidak dapat mengesan proses atau perubahan sumber yang tidak terkandung dalam salinan ini.",
+-   "overdue": "Lebih 24 jam sejak rekod sumber berjaya diperoleh.",
++   "knowledge": null,
++   "overdue": null,
+  }
+
+ ❯ checksOldKnowledge tests/unit/recovery.test.ts:351:153
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[33/44]⎯
+
+ FAIL  tests/unit/recovery.test.ts > REC-KNOWLEDGE-en: age cannot become a specific future workflow failure
+AssertionError: expected { overdue: null, failure: null, …(1) } to deeply equal { …(3) }
+
+- Expected
++ Received
+
+  {
+    "failure": null,
+-   "knowledge": "This site snapshot shows only status known when it was prepared. It cannot observe later runs or source changes that are not included in this snapshot.",
+-   "overdue": "More than 24 hours since the source record was successfully acquired.",
++   "knowledge": null,
++   "overdue": null,
+  }
+
+ ❯ checksOldKnowledge tests/unit/recovery.test.ts:351:153
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[34/44]⎯
+
+ FAIL  tests/unit/recovery.test.ts > REC-UNKNOWN-ms: failed-attempt age cannot create source success or a device check
+AssertionError: expected { overdue: null, failure: null, …(1) } to deeply equal { overdue: null, …(2) }
+
+- Expected
++ Received
+
+  {
+-   "failure": "Percubaan memperoleh rekod sumber gagal pada masa yang direkodkan. 2026-10-10T03:01:00.000Z",
+-   "knowledge": "Salinan laman ini hanya menunjukkan status yang diketahui ketika disediakan. Ia tidak dapat mengesan proses atau perubahan sumber yang tidak terkandung dalam salinan ini.",
++   "failure": null,
++   "knowledge": null,
+    "overdue": null,
+  }
+
+ ❯ checksUnknownSuccess tests/unit/recovery.test.ts:366:153
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[35/44]⎯
+
+ FAIL  tests/unit/recovery.test.ts > REC-UNKNOWN-en: failed-attempt age cannot create source success or a device check
+AssertionError: expected { overdue: null, failure: null, …(1) } to deeply equal { overdue: null, …(2) }
+
+- Expected
++ Received
+
+  {
+-   "failure": "A source record acquisition attempt failed at the recorded time. 2026-10-10T03:01:00.000Z",
+-   "knowledge": "This site snapshot shows only status known when it was prepared. It cannot observe later runs or source changes that are not included in this snapshot.",
++   "failure": null,
++   "knowledge": null,
+    "overdue": null,
+  }
+
+ ❯ checksUnknownSuccess tests/unit/recovery.test.ts:366:153
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[36/44]⎯
+
+ FAIL  tests/unit/recovery.test.ts > REC-ERROR-CONTEXT-ms: site-data failure preserves known pair/draft/source without claiming absence or pipeline failure
+ FAIL  tests/unit/recovery.test.ts > REC-ERROR-CONTEXT-en: site-data failure preserves known pair/draft/source without claiming absence or pipeline failure
+AssertionError: expected { source: null, memberId: null, …(2) } to deeply equal { …(4) }
+
+- Expected
++ Received
+
+  {
+    "knownFailure": null,
+-   "memberId": "1839",
+-   "sittingId": "29326",
+-   "source": "https://hansard.parlimen.gov.my/hansard/dewan-rakyat/2026-02-10",
++   "memberId": null,
++   "sittingId": null,
++   "source": null,
+  }
+
+ ❯ checksErrorContext tests/unit/recovery.test.ts:383:313
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[37/44]⎯
+
+ FAIL  tests/unit/recovery.test.ts > REC-LANGUAGE: recovery notices switch to English while original source bytes and valid choices remain
+AssertionError: expected { Object (knowledge, overdue, ...) } to deeply equal { …(5) }
+
+- Expected
++ Received
+
+@@ -1,9 +1,9 @@
+  {
+-   "knowledge": "This site snapshot shows only status known when it was prepared. It cannot observe later runs or source changes that are not included in this snapshot.",
++   "knowledge": null,
+    "member": "1839",
+-   "overdue": "More than 24 hours since the source record was successfully acquired.",
++   "overdue": null,
+    "sitting": "29326",
+    "text": [
+      "Terima kasih Tan Sri Yang di-Pertua. Saya ingin ucapkan terima kasih kepada Yang Berhormat Menteri atas jawapan yang menyeluruh ini.
+
+  Hubungan di antara Malaysia dan India seperti yang disebut oleh Yang Berhormat Menteri telah sampai ke tahap rakan kongsi strategik. Kalau rakan kongsi strategik ini dilihat membawa manfaat, ia mesti boleh dipercayai (*trusted*) dan juga dapat menunjukkan penyampaian barangan ataupun kegunaan awam dengan izin Tan Sri Yang di-Pertua, *delivery of public good*.
+
+ ❯ checksRecoveryLanguageSwitch tests/unit/recovery.test.ts:398:257
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[38/44]⎯
+
+
+ Test Files  2 failed (2)
+      Tests  44 failed (44)
+   Start at  13:45:07
+   Duration  1.01s (environment 54%, tests 34%, transform 9%, import 3%)
+

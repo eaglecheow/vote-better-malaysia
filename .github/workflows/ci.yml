@@ -1,0 +1,484 @@
+---
+name: Hansard merge gates
+'on':
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      pull_request_number:
+        description: Open PR whose explicit head will be tested; artifacts remain
+          merge-only
+        type: string
+        required: true
+      source_run_id:
+        description: Successful reviewed-main Pages run supplying a complete compatible
+          hansard-state archive
+        type: string
+        required: true
+permissions:
+  contents: read
+  actions: read
+defaults:
+  run:
+    shell: bash
+jobs:
+  inputs:
+    name: Hansard immutable inputs
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    env:
+      GH_TOKEN: "${{ github.token }}"
+      HANSARD_PR_NUMBER: "${{ github.event.pull_request.number }}"
+      HANSARD_PR_BASE_REVISION: "${{ github.event.pull_request.base.sha }}"
+      HANSARD_TEST_ORIGIN: "${{ vars.HANSARD_TEST_ORIGIN }}"
+    outputs:
+      artifact_id: "${{ steps.verified-upload.outputs.artifact-id }}"
+    steps:
+    - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+      with:
+        ref: "${{ github.event.pull_request.head.sha }}"
+        repository: "${{ github.event.pull_request.head.repo.full_name }}"
+        persist-credentials: false
+    - id: initialize
+      env:
+        HANSARD_CI_WORK: "${{ runner.temp }}/hansard-ci"
+      run: |-
+        mkdir -p "$HANSARD_CI_WORK"
+        printf 'HANSARD_CI_WORK=%s\n' "$HANSARD_CI_WORK" >> "$GITHUB_ENV"
+    - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
+      with:
+        node-version-file: ".nvmrc"
+        cache: npm
+    - run: npm ci
+    - id: selection
+      run: |-
+        locator=specs/001-read-mp-hansard/evidence/ci-inputs.json
+        jq -e --arg repository "$GITHUB_REPOSITORY" '.schemaVersion == 1 and .repository == $repository' "$locator" >/dev/null
+        for role in candidate laboratory evidence; do
+          run_id=$(jq -er --arg role "$role" '.[$role].runId' "$locator")
+          artifact_id=$(jq -er --arg role "$role" '.[$role].artifactId' "$locator")
+          attempt=$(jq -er --arg role "$role" '.[$role].runAttempt' "$locator")
+          digest=$(jq -er --arg role "$role" '.[$role].archiveDigest' "$locator")
+          [[ "$run_id" =~ ^[1-9][0-9]*$ && "$artifact_id" =~ ^[1-9][0-9]*$ && "$attempt" =~ ^[1-9][0-9]*$ && "$digest" =~ ^[a-f0-9]{64}$ ]] || { echo 'Invalid immutable CI artifact selection' >&2; exit 1; }
+          printf '%s_run_id=%s\n%s_artifact_id=%s\n' "$role" "$run_id" "$role" "$artifact_id" >> "$GITHUB_OUTPUT"
+        done
+    - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333
+      with:
+        artifact-ids: "${{ steps.selection.outputs.candidate_artifact_id }}"
+        run-id: "${{ steps.selection.outputs.candidate_run_id }}"
+        repository: "${{ github.repository }}"
+        github-token: "${{ github.token }}"
+        digest-mismatch: error
+        path: "${{ env.HANSARD_CI_WORK }}/candidate"
+    - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333
+      with:
+        artifact-ids: "${{ steps.selection.outputs.laboratory_artifact_id }}"
+        run-id: "${{ steps.selection.outputs.laboratory_run_id }}"
+        repository: "${{ github.repository }}"
+        github-token: "${{ github.token }}"
+        digest-mismatch: error
+        path: "${{ env.HANSARD_CI_WORK }}/lab"
+    - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333
+      with:
+        artifact-ids: "${{ steps.selection.outputs.evidence_artifact_id }}"
+        run-id: "${{ steps.selection.outputs.evidence_run_id }}"
+        repository: "${{ github.repository }}"
+        github-token: "${{ github.token }}"
+        digest-mismatch: error
+        path: "${{ env.HANSARD_CI_WORK }}/reports"
+    - run: node scripts/ci-inputs.ts verify
+    - id: verified-upload
+      uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+      with:
+        name: hansard-ci-verified
+        path: |-
+          ${{ env.HANSARD_CI_WORK }}/candidate
+          ${{ env.HANSARD_CI_WORK }}/lab
+          ${{ env.HANSARD_CI_WORK }}/reports
+          ${{ env.HANSARD_CI_WORK }}/result.json
+        retention-days: 7
+        if-no-files-found: error
+        include-hidden-files: true
+        compression-level: 0
+  unit:
+    name: Hansard type and unit
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+    - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+      with:
+        ref: "${{ github.event.pull_request.head.sha }}"
+        repository: "${{ github.event.pull_request.head.repo.full_name }}"
+        persist-credentials: false
+    - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
+      with:
+        node-version-file: ".nvmrc"
+        cache: npm
+    - run: npm ci
+    - run: |-
+        npm run typecheck
+        npm test -- --run
+  production:
+    name: Hansard production and browser
+    if: always() && github.event_name == 'pull_request'
+    needs:
+    - inputs
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    env:
+      GH_TOKEN: "${{ github.token }}"
+      HANSARD_PR_NUMBER: "${{ github.event.pull_request.number }}"
+      HANSARD_PR_BASE_REVISION: "${{ github.event.pull_request.base.sha }}"
+      HANSARD_TEST_ORIGIN: "${{ vars.HANSARD_TEST_ORIGIN }}"
+    steps:
+    - name: Reject failed or missing immutable inputs
+      run: |-
+        if [[ "${{ needs.inputs.result }}" != success ]]; then
+          echo 'Required immutable candidate and full reports did not pass authentication' >&2
+          exit 1
+        fi
+    - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+      with:
+        ref: "${{ github.event.pull_request.head.sha }}"
+        repository: "${{ github.event.pull_request.head.repo.full_name }}"
+        persist-credentials: false
+    - id: initialize
+      env:
+        HANSARD_CI_WORK: "${{ runner.temp }}/hansard-ci"
+      run: |-
+        mkdir -p "$HANSARD_CI_WORK"
+        printf 'HANSARD_CI_WORK=%s\n' "$HANSARD_CI_WORK" >> "$GITHUB_ENV"
+    - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
+      with:
+        node-version-file: ".nvmrc"
+        cache: npm
+    - run: npm ci
+    - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333
+      with:
+        artifact-ids: "${{ needs.inputs.outputs.artifact_id }}"
+        digest-mismatch: error
+        path: "${{ env.HANSARD_CI_WORK }}"
+    - run: npx playwright install --with-deps chromium firefox webkit
+    - run: HANSARD_FROZEN_SITE="$HANSARD_CI_WORK/candidate/site" npm run test:browser
+  review:
+    name: Hansard RED and source review
+    if: always() && github.event_name == 'pull_request'
+    needs:
+    - inputs
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    env:
+      GH_TOKEN: "${{ github.token }}"
+      HANSARD_PR_NUMBER: "${{ github.event.pull_request.number }}"
+      HANSARD_PR_BASE_REVISION: "${{ github.event.pull_request.base.sha }}"
+      HANSARD_TEST_ORIGIN: "${{ vars.HANSARD_TEST_ORIGIN }}"
+    steps:
+    - name: Reject failed or missing immutable inputs
+      run: |-
+        if [[ "${{ needs.inputs.result }}" != success ]]; then
+          echo 'Required immutable candidate and full reports did not pass authentication' >&2
+          exit 1
+        fi
+    - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+      with:
+        ref: "${{ github.event.pull_request.head.sha }}"
+        repository: "${{ github.event.pull_request.head.repo.full_name }}"
+        persist-credentials: false
+    - id: initialize
+      env:
+        HANSARD_CI_WORK: "${{ runner.temp }}/hansard-ci"
+      run: |-
+        mkdir -p "$HANSARD_CI_WORK"
+        printf 'HANSARD_CI_WORK=%s\n' "$HANSARD_CI_WORK" >> "$GITHUB_ENV"
+    - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
+      with:
+        node-version-file: ".nvmrc"
+        cache: npm
+    - run: npm ci
+    - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333
+      with:
+        artifact-ids: "${{ needs.inputs.outputs.artifact_id }}"
+        digest-mismatch: error
+        path: "${{ env.HANSARD_CI_WORK }}"
+    - run: node scripts/ci-inputs.ts verify
+  size:
+    name: Hansard size budgets
+    if: always() && github.event_name == 'pull_request'
+    needs:
+    - inputs
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    env:
+      GH_TOKEN: "${{ github.token }}"
+      HANSARD_PR_NUMBER: "${{ github.event.pull_request.number }}"
+      HANSARD_PR_BASE_REVISION: "${{ github.event.pull_request.base.sha }}"
+      HANSARD_TEST_ORIGIN: "${{ vars.HANSARD_TEST_ORIGIN }}"
+    steps:
+    - name: Reject failed or missing immutable inputs
+      run: |-
+        if [[ "${{ needs.inputs.result }}" != success ]]; then
+          echo 'Required immutable candidate and full reports did not pass authentication' >&2
+          exit 1
+        fi
+    - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+      with:
+        ref: "${{ github.event.pull_request.head.sha }}"
+        repository: "${{ github.event.pull_request.head.repo.full_name }}"
+        persist-credentials: false
+    - id: initialize
+      env:
+        HANSARD_CI_WORK: "${{ runner.temp }}/hansard-ci"
+      run: |-
+        mkdir -p "$HANSARD_CI_WORK"
+        printf 'HANSARD_CI_WORK=%s\n' "$HANSARD_CI_WORK" >> "$GITHUB_ENV"
+    - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
+      with:
+        node-version-file: ".nvmrc"
+        cache: npm
+    - run: npm ci
+    - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333
+      with:
+        artifact-ids: "${{ needs.inputs.outputs.artifact_id }}"
+        digest-mismatch: error
+        path: "${{ env.HANSARD_CI_WORK }}"
+    - run: npm run test:performance -- --artifact "$HANSARD_CI_WORK/candidate/site"
+        --candidate "$HANSARD_CI_WORK/candidate/candidate.json" --report "$HANSARD_CI_WORK/reports/performance.json"
+  laboratory:
+    name: Hansard laboratory budgets
+    if: always() && github.event_name == 'pull_request'
+    needs:
+    - inputs
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    env:
+      GH_TOKEN: "${{ github.token }}"
+      HANSARD_PR_NUMBER: "${{ github.event.pull_request.number }}"
+      HANSARD_PR_BASE_REVISION: "${{ github.event.pull_request.base.sha }}"
+      HANSARD_TEST_ORIGIN: "${{ vars.HANSARD_TEST_ORIGIN }}"
+    steps:
+    - name: Reject failed or missing immutable inputs
+      run: |-
+        if [[ "${{ needs.inputs.result }}" != success ]]; then
+          echo 'Required immutable candidate and full reports did not pass authentication' >&2
+          exit 1
+        fi
+    - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+      with:
+        ref: "${{ github.event.pull_request.head.sha }}"
+        repository: "${{ github.event.pull_request.head.repo.full_name }}"
+        persist-credentials: false
+    - id: initialize
+      env:
+        HANSARD_CI_WORK: "${{ runner.temp }}/hansard-ci"
+      run: |-
+        mkdir -p "$HANSARD_CI_WORK"
+        printf 'HANSARD_CI_WORK=%s\n' "$HANSARD_CI_WORK" >> "$GITHUB_ENV"
+    - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
+      with:
+        node-version-file: ".nvmrc"
+        cache: npm
+    - run: npm ci
+    - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333
+      with:
+        artifact-ids: "${{ needs.inputs.outputs.artifact_id }}"
+        digest-mismatch: error
+        path: "${{ env.HANSARD_CI_WORK }}"
+    - run: npm run test:performance -- --artifact "$HANSARD_CI_WORK/candidate/site"
+        --candidate "$HANSARD_CI_WORK/candidate/candidate.json" --report "$HANSARD_CI_WORK/reports/performance.json"
+  targets:
+    name: Hansard actual targets
+    if: always() && github.event_name == 'pull_request'
+    needs:
+    - inputs
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    env:
+      GH_TOKEN: "${{ github.token }}"
+      HANSARD_PR_NUMBER: "${{ github.event.pull_request.number }}"
+      HANSARD_PR_BASE_REVISION: "${{ github.event.pull_request.base.sha }}"
+      HANSARD_TEST_ORIGIN: "${{ vars.HANSARD_TEST_ORIGIN }}"
+    steps:
+    - name: Reject failed or missing immutable inputs
+      run: |-
+        if [[ "${{ needs.inputs.result }}" != success ]]; then
+          echo 'Required immutable candidate and full reports did not pass authentication' >&2
+          exit 1
+        fi
+    - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+      with:
+        ref: "${{ github.event.pull_request.head.sha }}"
+        repository: "${{ github.event.pull_request.head.repo.full_name }}"
+        persist-credentials: false
+    - id: initialize
+      env:
+        HANSARD_CI_WORK: "${{ runner.temp }}/hansard-ci"
+      run: |-
+        mkdir -p "$HANSARD_CI_WORK"
+        printf 'HANSARD_CI_WORK=%s\n' "$HANSARD_CI_WORK" >> "$GITHUB_ENV"
+    - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
+      with:
+        node-version-file: ".nvmrc"
+        cache: npm
+    - run: npm ci
+    - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333
+      with:
+        artifact-ids: "${{ needs.inputs.outputs.artifact_id }}"
+        digest-mismatch: error
+        path: "${{ env.HANSARD_CI_WORK }}"
+    - run: npm run test:performance -- --artifact "$HANSARD_CI_WORK/candidate/site"
+        --candidate "$HANSARD_CI_WORK/candidate/candidate.json" --report "$HANSARD_CI_WORK/reports/performance.json"
+  documentation:
+    name: Hansard documentation
+    if: always() && github.event_name == 'pull_request'
+    needs:
+    - inputs
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    env:
+      GH_TOKEN: "${{ github.token }}"
+      HANSARD_PR_NUMBER: "${{ github.event.pull_request.number }}"
+      HANSARD_PR_BASE_REVISION: "${{ github.event.pull_request.base.sha }}"
+      HANSARD_TEST_ORIGIN: "${{ vars.HANSARD_TEST_ORIGIN }}"
+    steps:
+    - name: Reject failed or missing immutable inputs
+      run: |-
+        if [[ "${{ needs.inputs.result }}" != success ]]; then
+          echo 'Required immutable candidate and full reports did not pass authentication' >&2
+          exit 1
+        fi
+    - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+      with:
+        ref: "${{ github.event.pull_request.head.sha }}"
+        repository: "${{ github.event.pull_request.head.repo.full_name }}"
+        persist-credentials: false
+    - id: initialize
+      env:
+        HANSARD_CI_WORK: "${{ runner.temp }}/hansard-ci"
+      run: |-
+        mkdir -p "$HANSARD_CI_WORK"
+        printf 'HANSARD_CI_WORK=%s\n' "$HANSARD_CI_WORK" >> "$GITHUB_ENV"
+    - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
+      with:
+        node-version-file: ".nvmrc"
+        cache: npm
+    - run: npm ci
+    - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333
+      with:
+        artifact-ids: "${{ needs.inputs.outputs.artifact_id }}"
+        digest-mismatch: error
+        path: "${{ env.HANSARD_CI_WORK }}"
+    - run: npm run check:docs -- --root . --candidate "$HANSARD_CI_WORK/candidate/candidate.json"
+        --report "$HANSARD_CI_WORK/reports/documentation.json"
+  prepare:
+    name: Hansard merge-only candidate preparation
+    if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 240
+    concurrency:
+      group: hansard-laboratory-${{ github.repository }}
+      cancel-in-progress: false
+    env:
+      GH_TOKEN: "${{ github.token }}"
+      HANSARD_PR_NUMBER: "${{ inputs.pull_request_number }}"
+      HANSARD_SOURCE_RUN_ID: "${{ inputs.source_run_id }}"
+      HANSARD_TEST_ORIGIN: "${{ vars.HANSARD_TEST_ORIGIN }}"
+    steps:
+    - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+      with:
+        persist-credentials: false
+    - id: initialize
+      env:
+        HANSARD_CI_WORK: "${{ runner.temp }}/hansard-ci"
+      run: |-
+        mkdir -p "$HANSARD_CI_WORK"
+        printf 'HANSARD_CI_WORK=%s\n' "$HANSARD_CI_WORK" >> "$GITHUB_ENV"
+    - id: context
+      run: |-
+        [[ "$HANSARD_PR_NUMBER" =~ ^[1-9][0-9]*$ && "$HANSARD_SOURCE_RUN_ID" =~ ^[1-9][0-9]*$ ]] || { echo 'Numeric PR and source run IDs are required' >&2; exit 1; }
+        gh api "repos/$GITHUB_REPOSITORY/pulls/$HANSARD_PR_NUMBER" > "$HANSARD_CI_WORK/pull.json"
+        jq -e --arg repository "$GITHUB_REPOSITORY" '.state == "open" and .base.ref == "main" and .base.repo.full_name == $repository' "$HANSARD_CI_WORK/pull.json" >/dev/null
+        head_revision=$(jq -er '.head.sha' "$HANSARD_CI_WORK/pull.json")
+        head_repository=$(jq -er '.head.repo.full_name' "$HANSARD_CI_WORK/pull.json")
+        base_revision=$(jq -er '.base.sha' "$HANSARD_CI_WORK/pull.json")
+        [[ "$head_revision" =~ ^[a-f0-9]{40}$ && "$base_revision" =~ ^[a-f0-9]{40}$ && "$head_repository" =~ ^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$ ]] || { echo 'Invalid actual PR context' >&2; exit 1; }
+        printf 'head_revision=%s\nhead_repository=%s\n' "$head_revision" "$head_repository" >> "$GITHUB_OUTPUT"
+        printf 'HANSARD_PR_BASE_REVISION=%s\n' "$base_revision" >> "$GITHUB_ENV"
+        gh api "repos/$GITHUB_REPOSITORY/actions/runs/$HANSARD_SOURCE_RUN_ID" > "$HANSARD_CI_WORK/source-run.json"
+        gh api "repos/$GITHUB_REPOSITORY/actions/runs/$HANSARD_SOURCE_RUN_ID/artifacts?per_page=100" --paginate --slurp > "$HANSARD_CI_WORK/source-artifacts.json"
+        source_artifact_id=$(jq -er '[.[] | .artifacts[] | select(.name == "hansard-state" and .expired == false)] | if length == 1 then .[0].id | tostring else error("Missing or ambiguous complete source archive") end' "$HANSARD_CI_WORK/source-artifacts.json")
+        source_digest=$(jq -er --arg id "$source_artifact_id" '[.[] | .artifacts[] | select((.id | tostring) == $id)] | .[0].digest' "$HANSARD_CI_WORK/source-artifacts.json")
+        source_attempt=$(jq -er '.run_attempt' "$HANSARD_CI_WORK/source-run.json")
+        [[ "$source_artifact_id" =~ ^[1-9][0-9]*$ && "$source_attempt" =~ ^[1-9][0-9]*$ && "$source_digest" =~ ^sha256:[a-f0-9]{64}$ ]] || { echo 'Invalid source archive identity' >&2; exit 1; }
+        printf 'source_artifact_id=%s\n' "$source_artifact_id" >> "$GITHUB_OUTPUT"
+        printf 'HANSARD_SOURCE_ARTIFACT_ID=%s\nHANSARD_SOURCE_RUN_ATTEMPT=%s\nHANSARD_SOURCE_ARCHIVE_DIGEST=%s\n' "$source_artifact_id" "$source_attempt" "${source_digest#sha256:}" >> "$GITHUB_ENV"
+    - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+      with:
+        ref: "${{ steps.context.outputs.head_revision }}"
+        repository: "${{ steps.context.outputs.head_repository }}"
+        persist-credentials: false
+    - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
+      with:
+        node-version-file: ".nvmrc"
+        cache: npm
+    - run: npm ci
+    - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333
+      with:
+        artifact-ids: "${{ steps.context.outputs.source_artifact_id }}"
+        run-id: "${{ inputs.source_run_id }}"
+        repository: "${{ github.repository }}"
+        github-token: "${{ github.token }}"
+        digest-mismatch: error
+        path: "${{ env.HANSARD_CI_WORK }}/source-state"
+    - run: npx playwright install --with-deps chromium firefox webkit
+    - run: node scripts/ci-inputs.ts prepare
+    - id: candidate-upload
+      uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+      with:
+        name: hansard-ci-candidate
+        path: "${{ env.HANSARD_CI_WORK }}/candidate"
+        retention-days: 7
+        if-no-files-found: error
+        include-hidden-files: true
+        compression-level: 0
+    - run: |-
+        mkdir -p "$HANSARD_CI_WORK/lab"
+        lab_url=http://127.0.0.1:4173/vote-better-malaysia/
+        node node_modules/vite/bin/vite.js preview --outDir "$HANSARD_CI_WORK/candidate/site" --host 127.0.0.1 --port 4173 --strictPort > "$HANSARD_CI_WORK/preview.log" 2>&1 &
+        preview_pid=$!
+        trap 'kill "$preview_pid" 2>/dev/null || true; wait "$preview_pid" 2>/dev/null || true' EXIT
+        ready=false
+        for attempt in $(seq 1 60); do
+          kill -0 "$preview_pid" 2>/dev/null || { cat "$HANSARD_CI_WORK/preview.log" >&2; exit 1; }
+          if curl -fs --max-time 2 "$lab_url" >/dev/null; then ready=true; break; fi
+          sleep 1
+        done
+        [[ "$ready" == true ]] || { echo 'Frozen candidate preview did not become ready' >&2; exit 1; }
+        npm run performance:collect -- --artifact "$HANSARD_CI_WORK/candidate/site" --candidate "$HANSARD_CI_WORK/candidate/candidate.json" --fixtures "$HANSARD_CI_WORK/candidate/fixtures.json" --url "$lab_url" --output "$HANSARD_CI_WORK/lab/lab.json"
+    - name: Bind actual laboratory origin to the uploaded immutable candidate
+      env:
+        CANDIDATE_ARTIFACT_ID: "${{ steps.candidate-upload.outputs.artifact-id }}"
+        CANDIDATE_ARCHIVE_DIGEST: "${{ steps.candidate-upload.outputs.artifact-digest
+          }}"
+      run: |-
+        candidate_digest=${CANDIDATE_ARCHIVE_DIGEST#sha256:}
+        checked_out=$(git rev-parse HEAD)
+        [[ "$CANDIDATE_ARTIFACT_ID" =~ ^[1-9][0-9]*$ && "$candidate_digest" =~ ^[a-f0-9]{64}$ ]] || { echo 'Actual candidate upload identity is required' >&2; exit 1; }
+        jq -e --arg producing "$GITHUB_SHA" --arg tested "$checked_out" --slurpfile origin "$HANSARD_CI_WORK/candidate/origin.json" --slurpfile candidate "$HANSARD_CI_WORK/candidate/candidate.json" '.candidate == $candidate[0] and $origin[0].producingRevision == $producing and $origin[0].checkedOutRevision == $tested' "$HANSARD_CI_WORK/lab/lab.json" >/dev/null
+        jq --arg repository "$GITHUB_REPOSITORY" --arg run "$GITHUB_RUN_ID" --argjson attempt "$GITHUB_RUN_ATTEMPT" --arg producing "$GITHUB_SHA" --arg tested "$checked_out" --arg artifact "$CANDIDATE_ARTIFACT_ID" --arg digest "$candidate_digest" --slurpfile origin "$HANSARD_CI_WORK/candidate/origin.json" '{repository:$repository,runId:$run,runAttempt:$attempt,producingRevision:$producing,checkedOutRevision:$tested,pullRequest:$origin[0].pullRequest,candidate:.candidate,candidateArtifact:{runId:$run,runAttempt:$attempt,artifactId:$artifact,archiveDigest:$digest}}' "$HANSARD_CI_WORK/lab/lab.json" > "$HANSARD_CI_WORK/lab/origin.json"
+    - id: lab-upload
+      uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+      with:
+        name: hansard-ci-lab
+        path: "${{ env.HANSARD_CI_WORK }}/lab"
+        retention-days: 7
+        if-no-files-found: error
+        include-hidden-files: true
+        compression-level: 0
+    - name: Retain genuine merge-only producer identities
+      run: 'printf ''Candidate archive: %s\nLaboratory archive: %s\nProducing run:
+        %s attempt %s\n'' "$CANDIDATE_ARTIFACT_ID" "$LAB_ARTIFACT_ID" "$GITHUB_RUN_ID"
+        "$GITHUB_RUN_ATTEMPT" >> "$GITHUB_STEP_SUMMARY"'
+      env:
+        CANDIDATE_ARTIFACT_ID: "${{ steps.candidate-upload.outputs.artifact-id }}"
+        LAB_ARTIFACT_ID: "${{ steps.lab-upload.outputs.artifact-id }}"

@@ -1,0 +1,14 @@
+{
+  "command": "npm run dev -- --host 127.0.0.1 --port 5177 --strictPort",
+  "ownedProcessGroup": 85573,
+  "portProbedFree": true,
+  "url": "http://127.0.0.1:5177/vote-better-malaysia/",
+  "httpStatus": 200,
+  "applicationRootPresent": true,
+  "repositoryBaseSourceScriptPresent": true,
+  "htmlBytes": 555,
+  "browserOpened": false,
+  "completeSourceDataPresent": false,
+  "ownedProcessGroupStopped": true,
+  "portFreeAfterCleanup": true
+}

@@ -3,6 +3,20 @@
 .env.*
 !.env.example
 
+# Generated dependencies, application data, private acquisition state and builds.
+node_modules/
+public/data/
+dist/
+build/
+.cache/
+*.log
+!specs/**/evidence/*.log
+
+# Generated test output; committed feature evidence remains under specs/.
+coverage/
+playwright-report/
+test-results/
+
 # Keep shared Codex skills; ignore local credentials and session state.
 .codex/
 .agents/*

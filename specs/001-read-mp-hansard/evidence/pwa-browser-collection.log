@@ -1,0 +1,74 @@
+Listing tests:
+  [chromium] › install.spec.ts:3:1 › INSTALL-BROWSER001: real base-scoped manifest/start/scope and native decoded icon dimensions stay bounded
+  [chromium] › install.spec.ts:34:1 › INSTALL-BROWSER002: real native registration and complete versioned CacheStorage confirm shell readiness without data caching
+  [chromium] › install.spec.ts:60:1 › INSTALL-BROWSER003: an actual first-shell install failure leaves online reading/saving available with no offline-ready promise
+  [chromium] › install.spec.ts:91:1 › INSTALL-BROWSER004: the manifest reader entry remains a usable website with preserved saved content without a prompt event
+  [chromium] › offline.spec.ts:4:47 › OFFLINE001 ms: a closed reader reopens exact committed words, gaps, annotations and provenance offline
+  [chromium] › offline.spec.ts:4:47 › OFFLINE001 en: a closed reader reopens exact committed words, gaps, annotations and provenance offline
+  [chromium] › offline.spec.ts:27:1 › OFFLINE002: fetching one sitting never saves an unopened different-member pair
+  [chromium] › offline.spec.ts:44:1 › OFFLINE003: a cached shell and catalogue without an opened transcript require a connection
+  [chromium] › offline.spec.ts:59:1 › OFFLINE004: real pair-store eviction loses that transcript without claiming verified absence
+  [chromium] › offline.spec.ts:72:77 › OFFLINE005 schemaVersion: incompatible real saved data stays unavailable without destructive repair
+  [chromium] › offline.spec.ts:72:77 › OFFLINE005 memberId: incompatible real saved data stays unavailable without destructive repair
+  [chromium] › offline.spec.ts:72:77 › OFFLINE005 recordDigest: incompatible real saved data stays unavailable without destructive repair
+  [chromium] › offline.spec.ts:87:1 › OFFLINE006: an explicitly opened zero-turn incomplete pair retains gaps rather than claiming absence
+  [chromium] › storage.spec.ts:3:1 › STORAGE-BROWSER001: native request success precedes commit and cannot acknowledge the new saved time
+  [chromium] › storage.spec.ts:26:1 › STORAGE-BROWSER002: native abort after real put success rolls back all stores and preserves the older offline copy
+  [chromium] › storage.spec.ts:46:1 › STORAGE-BROWSER003: unchanged source bytes still get a new successful validation and committed saved time
+  [chromium] › storage.spec.ts:66:1 › STORAGE-BROWSER004: a changed coherent record replaces all native saved source partitions after validation
+  [chromium] › storage.spec.ts:80:66 › STORAGE-BROWSER005 digest: invalid online replacement cannot overwrite a previously committed pair or its time
+  [chromium] › storage.spec.ts:80:66 › STORAGE-BROWSER005 identity: invalid online replacement cannot overwrite a previously committed pair or its time
+  [chromium] › storage.spec.ts:80:66 › STORAGE-BROWSER005 schema: invalid online replacement cannot overwrite a previously committed pair or its time
+  [chromium] › updates.spec.ts:5:1 › UPDATES-BROWSER001: native waiting-version discovery and Continue preserve two current reading tabs
+  [chromium] › updates.spec.ts:28:1 › UPDATES-BROWSER002: native preference commit precedes actual waiting-target Apply and only the consenting tab reloads
+  [chromium] › updates.spec.ts:85:1 › UPDATES-BROWSER003: real preference transaction abort prevents Apply and preserves both active and waiting workers
+  [chromium] › updates.spec.ts:108:1 › UPDATES-BROWSER004: an actual failed new-shell install preserves confirmed old readiness and closed-reader offline content
+  [firefox] › install.spec.ts:3:1 › INSTALL-BROWSER001: real base-scoped manifest/start/scope and native decoded icon dimensions stay bounded
+  [firefox] › install.spec.ts:34:1 › INSTALL-BROWSER002: real native registration and complete versioned CacheStorage confirm shell readiness without data caching
+  [firefox] › install.spec.ts:60:1 › INSTALL-BROWSER003: an actual first-shell install failure leaves online reading/saving available with no offline-ready promise
+  [firefox] › install.spec.ts:91:1 › INSTALL-BROWSER004: the manifest reader entry remains a usable website with preserved saved content without a prompt event
+  [firefox] › offline.spec.ts:4:47 › OFFLINE001 ms: a closed reader reopens exact committed words, gaps, annotations and provenance offline
+  [firefox] › offline.spec.ts:4:47 › OFFLINE001 en: a closed reader reopens exact committed words, gaps, annotations and provenance offline
+  [firefox] › offline.spec.ts:27:1 › OFFLINE002: fetching one sitting never saves an unopened different-member pair
+  [firefox] › offline.spec.ts:44:1 › OFFLINE003: a cached shell and catalogue without an opened transcript require a connection
+  [firefox] › offline.spec.ts:59:1 › OFFLINE004: real pair-store eviction loses that transcript without claiming verified absence
+  [firefox] › offline.spec.ts:72:77 › OFFLINE005 schemaVersion: incompatible real saved data stays unavailable without destructive repair
+  [firefox] › offline.spec.ts:72:77 › OFFLINE005 memberId: incompatible real saved data stays unavailable without destructive repair
+  [firefox] › offline.spec.ts:72:77 › OFFLINE005 recordDigest: incompatible real saved data stays unavailable without destructive repair
+  [firefox] › offline.spec.ts:87:1 › OFFLINE006: an explicitly opened zero-turn incomplete pair retains gaps rather than claiming absence
+  [firefox] › storage.spec.ts:3:1 › STORAGE-BROWSER001: native request success precedes commit and cannot acknowledge the new saved time
+  [firefox] › storage.spec.ts:26:1 › STORAGE-BROWSER002: native abort after real put success rolls back all stores and preserves the older offline copy
+  [firefox] › storage.spec.ts:46:1 › STORAGE-BROWSER003: unchanged source bytes still get a new successful validation and committed saved time
+  [firefox] › storage.spec.ts:66:1 › STORAGE-BROWSER004: a changed coherent record replaces all native saved source partitions after validation
+  [firefox] › storage.spec.ts:80:66 › STORAGE-BROWSER005 digest: invalid online replacement cannot overwrite a previously committed pair or its time
+  [firefox] › storage.spec.ts:80:66 › STORAGE-BROWSER005 identity: invalid online replacement cannot overwrite a previously committed pair or its time
+  [firefox] › storage.spec.ts:80:66 › STORAGE-BROWSER005 schema: invalid online replacement cannot overwrite a previously committed pair or its time
+  [firefox] › updates.spec.ts:5:1 › UPDATES-BROWSER001: native waiting-version discovery and Continue preserve two current reading tabs
+  [firefox] › updates.spec.ts:28:1 › UPDATES-BROWSER002: native preference commit precedes actual waiting-target Apply and only the consenting tab reloads
+  [firefox] › updates.spec.ts:85:1 › UPDATES-BROWSER003: real preference transaction abort prevents Apply and preserves both active and waiting workers
+  [firefox] › updates.spec.ts:108:1 › UPDATES-BROWSER004: an actual failed new-shell install preserves confirmed old readiness and closed-reader offline content
+  [webkit] › install.spec.ts:3:1 › INSTALL-BROWSER001: real base-scoped manifest/start/scope and native decoded icon dimensions stay bounded
+  [webkit] › install.spec.ts:34:1 › INSTALL-BROWSER002: real native registration and complete versioned CacheStorage confirm shell readiness without data caching
+  [webkit] › install.spec.ts:60:1 › INSTALL-BROWSER003: an actual first-shell install failure leaves online reading/saving available with no offline-ready promise
+  [webkit] › install.spec.ts:91:1 › INSTALL-BROWSER004: the manifest reader entry remains a usable website with preserved saved content without a prompt event
+  [webkit] › offline.spec.ts:4:47 › OFFLINE001 ms: a closed reader reopens exact committed words, gaps, annotations and provenance offline
+  [webkit] › offline.spec.ts:4:47 › OFFLINE001 en: a closed reader reopens exact committed words, gaps, annotations and provenance offline
+  [webkit] › offline.spec.ts:27:1 › OFFLINE002: fetching one sitting never saves an unopened different-member pair
+  [webkit] › offline.spec.ts:44:1 › OFFLINE003: a cached shell and catalogue without an opened transcript require a connection
+  [webkit] › offline.spec.ts:59:1 › OFFLINE004: real pair-store eviction loses that transcript without claiming verified absence
+  [webkit] › offline.spec.ts:72:77 › OFFLINE005 schemaVersion: incompatible real saved data stays unavailable without destructive repair
+  [webkit] › offline.spec.ts:72:77 › OFFLINE005 memberId: incompatible real saved data stays unavailable without destructive repair
+  [webkit] › offline.spec.ts:72:77 › OFFLINE005 recordDigest: incompatible real saved data stays unavailable without destructive repair
+  [webkit] › offline.spec.ts:87:1 › OFFLINE006: an explicitly opened zero-turn incomplete pair retains gaps rather than claiming absence
+  [webkit] › storage.spec.ts:3:1 › STORAGE-BROWSER001: native request success precedes commit and cannot acknowledge the new saved time
+  [webkit] › storage.spec.ts:26:1 › STORAGE-BROWSER002: native abort after real put success rolls back all stores and preserves the older offline copy
+  [webkit] › storage.spec.ts:46:1 › STORAGE-BROWSER003: unchanged source bytes still get a new successful validation and committed saved time
+  [webkit] › storage.spec.ts:66:1 › STORAGE-BROWSER004: a changed coherent record replaces all native saved source partitions after validation
+  [webkit] › storage.spec.ts:80:66 › STORAGE-BROWSER005 digest: invalid online replacement cannot overwrite a previously committed pair or its time
+  [webkit] › storage.spec.ts:80:66 › STORAGE-BROWSER005 identity: invalid online replacement cannot overwrite a previously committed pair or its time
+  [webkit] › storage.spec.ts:80:66 › STORAGE-BROWSER005 schema: invalid online replacement cannot overwrite a previously committed pair or its time
+  [webkit] › updates.spec.ts:5:1 › UPDATES-BROWSER001: native waiting-version discovery and Continue preserve two current reading tabs
+  [webkit] › updates.spec.ts:28:1 › UPDATES-BROWSER002: native preference commit precedes actual waiting-target Apply and only the consenting tab reloads
+  [webkit] › updates.spec.ts:85:1 › UPDATES-BROWSER003: real preference transaction abort prevents Apply and preserves both active and waiting workers
+  [webkit] › updates.spec.ts:108:1 › UPDATES-BROWSER004: an actual failed new-shell install preserves confirmed old readiness and closed-reader offline content
+Total: 72 tests in 4 files

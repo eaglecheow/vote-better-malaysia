@@ -1,0 +1,244 @@
+
+ RUN  v5.0.3 /Users/eaglecheow/dev/vote-better-malaysia
+
+ ✓ tests/unit/performance.test.ts > T063 accepts every exact numeric ceiling and exact unchanged-candidate evidence 2ms
+ ✓ tests/unit/performance.test.ts > T063 rejects exceeded or incomplete artifact size shellGzip 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects exceeded or incomplete artifact size jsGzip 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects exceeded or incomplete artifact size iconBytes 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects exceeded or incomplete artifact size artifactBytes 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects exceeded or incomplete artifact size catalogueGzip 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects exceeded or incomplete artifact size catalogueDecoded 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects exceeded or incomplete artifact size complete 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects sitting gzip one byte over 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects sitting decoded one byte over 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects laboratory lcpMs ceiling exceedance 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects laboratory cls ceiling exceedance 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects laboratory tbtMs ceiling exceedance 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects laboratory coldCatalogueMs ceiling exceedance 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects laboratory repeatReaderMs ceiling exceedance 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects laboratory interactionMs ceiling exceedance 0ms
+ ✓ tests/unit/performance.test.ts > T063 requires twenty raw laboratory runs 0ms
+ ✓ tests/unit/performance.test.ts > T063 applies nearest-rank p75 to cold LCP 0ms
+ ✓ tests/unit/performance.test.ts > T063 enforces desktop largest-record p95 processing ceiling 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing actual target android-chrome 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing actual target iphone-safari 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing actual target desktop-chrome 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing actual target desktop-edge 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing actual target desktop-firefox 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing actual target desktop-safari 0ms
+ ✓ tests/unit/performance.test.ts > T063 cannot average away one failed offline attempt 0ms
+ ✓ tests/unit/performance.test.ts > T063 requires at least 29 of 30 successful online attempts within five seconds 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects candidate mismatch applicationFingerprint including provenance-only artifact changes 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects candidate mismatch artifactDigest including provenance-only artifact changes 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects candidate mismatch snapshotId including provenance-only artifact changes 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects candidate mismatch fixtureHashes including provenance-only artifact changes 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects candidate mismatch conditionsDigest including provenance-only artifact changes 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects candidate mismatch priorServedBaselineDigest including provenance-only artifact changes 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects substituted laboratory runner label 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects substituted laboratory runner arch 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects substituted laboratory runner vcpus 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects substituted laboratory runner memoryGiB 1ms
+ ✓ tests/unit/performance.test.ts > T063 rejects substitute physical hardware 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects evidence older than seven days 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects untrusted report origin 0ms
+ ✓ tests/unit/performance.test.ts > T063 measures every deployed file including retained assets and stored gzip bytes 8ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence expectedCandidate (undefined) 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence candidate.sourceRevision ("2222222222222222222222222222222222222222") 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence candidate.sourceRevision ("main") 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence candidate.priorServedBaselineDigest (undefined) 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence sizes (undefined) 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence sizes.shellGzip (-1) 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence sizes.jsGzip (null) 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence sizes.iconBytes (null) 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence sizes.artifactBytes ("900000000") 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence sizes.sittings ([]) 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence sizes.layoutComplete (false) 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence sizes.sourceVerified (false) 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence sourceCoverage (undefined) 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence sourceCoverage.expected (6) 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence sourceCoverage.availableRecords (4) 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence sourceCoverage.snapshotId ("wrong") 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence sizes.sittings.1.path ("data/sittings/1.json.gz") 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence servedBytes (undefined) 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence servedBytes ({"data/catalogue.json.gz":204800}) 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence runner.cpu ("") 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence runner.image ("") 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence runner.node ("26.0.0") 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence runner.browser ("") 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence runner.os ("Windows") 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence runner.browserProcesses (2) 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence runner.concurrentMeasurements (2) 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence runner.tools (undefined) 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence profiles ([]) 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence profiles.1.profile ("mobile") 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence profiles.0.viewport ([1440,900]) 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence profiles.1.viewport ([390,844]) 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence profiles.0.downloadKbps (1638.4) 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence profiles.0.uploadKbps (768) 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence profiles.0.rttMs (151) 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence profiles.0.cpuSlowdown (1) 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence profiles.1.downloadKbps (10240) 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence profiles.1.uploadKbps (2048) 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence profiles.1.rttMs (41) 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence profiles.1.cpuSlowdown (4) 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence profiles.0.coldCacheCleared (false) 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence profiles.1.repeatPrepopulated (false) 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence profiles.0.completeValidatedResults (false) 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence profiles.0.interactionKinds (["selection"]) 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence profiles.0.lcpMs (undefined) 1ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence profiles.0.lcpMs ([null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]) 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence profiles.0.cls ([-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1]) 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence profiles.1.processing ([]) 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence profiles.0.processing.1.dataset ("median") 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence profiles.0.processing.0.fixtureHash ("eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee") 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence profiles.0.processing.1.fixturePath ("data/sittings/unknown.json.gz") 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence profiles.0.processing.0.fixturePath ("data/sittings/1.json.gz") 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence profiles.0.processing.2.ms ([500,500,500,500,500,500,500,500,500,500,500,500,500,500,500,500,500,500,500]) 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence devices.0.offlineMs ([2000,2000,2000,2000,2000,2000,2000,2000,2000]) 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence devices.0.offlineMs ([2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000]) 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence devices.1.offlineMs ([-1,-1,-1,-1,-1,-1,-1,-1,-1,-1]) 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence devices.2.online ([]) 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence devices.0.downloadKbps (1638.4) 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence devices.1.uploadKbps (768) 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence devices.2.downloadKbps (10240) 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence devices.0.rttMs (151) 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence devices.2.cpuSlowdown (4) 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence devices.0.viewport ([390,844]) 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence devices.2.viewport ([390,844]) 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence devices.2.power ("battery") 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence devices.0.batterySaver (true) 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence devices.0.unrelatedApplicationsClosed (false) 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence devices.0.offlineClosed (false) 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence devices.0.offlineNetworkDisabled (false) 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence devices.0.savedComplete (false) 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence devices.0.onlineComplete (false) 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence devices.0.offlineScenarios (["largest"]) 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence devices.0.stableAtAcceptance (false) 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence devices.0.browserVersion ("") 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence devices.0.os ("") 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence devices.0.localeChecks (["en"]) 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence devices.0.candidate.artifactDigest ("eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee") 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence devices.0.candidate.snapshotId ("wrong") 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence devices.0.reviewedAt ("2026-10-01T04:00:00.000Z") 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence devices.0.reviewedAt ("2026-10-11T04:00:00.000Z") 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence reviewedAt ("2026-10-03T03:59:59.999Z") 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence reviewedAt ("2026-10-10T04:00:00.001Z") 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence reviewedAt ("not UTC") 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence origin.trusted (false) 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence origin.repository ("another/repository") 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence field.mobile (undefined) 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects missing or mismatched evidence field.desktop ("passed") 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects profile 0 dataset 0 p95 processing exceedance 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects profile 0 dataset 1 p95 processing exceedance 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects profile 0 dataset 2 p95 processing exceedance 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects profile 1 dataset 0 p95 processing exceedance 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects profile 1 dataset 1 p95 processing exceedance 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects profile 1 dataset 2 p95 processing exceedance 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects desktop lcpMs ceiling exceedance 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects desktop cls ceiling exceedance 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects desktop tbtMs ceiling exceedance 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects desktop coldCatalogueMs ceiling exceedance 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects desktop repeatReaderMs ceiling exceedance 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects desktop interactionMs ceiling exceedance 0ms
+ ✓ tests/unit/performance.test.ts > T063 uses nearest-rank p95 rather than averaging or requiring every lab run 0ms
+ ✓ tests/unit/performance.test.ts > T063 preserves untimed retrieval failures in each target denominator 0ms
+ ✓ tests/unit/performance.test.ts > T063 requires five differently sized sittings (sameSize=false) 0ms
+ ✓ tests/unit/performance.test.ts > T063 requires five differently sized sittings (sameSize=true) 0ms
+ ✓ tests/unit/performance.test.ts > T063 accepts exactly seven-day unchanged evidence and separate unavailable/insufficient field data 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects impossible calendar dates normalized by Date.parse 0ms
+ ✓ tests/unit/performance.test.ts > T063 rejects omitted required artifact asset index.html 3ms
+ ✓ tests/unit/performance.test.ts > T063 rejects omitted required artifact asset app.js 2ms
+ ✓ tests/unit/performance.test.ts > T063 rejects omitted required artifact asset app.css 2ms
+ ✓ tests/unit/performance.test.ts > T063 rejects omitted required artifact asset sw.js 2ms
+ ✓ tests/unit/performance.test.ts > T063 rejects omitted required artifact asset manifest.webmanifest 2ms
+ ✓ tests/unit/performance.test.ts > T063 rejects omitted required artifact asset icons/icon-192.png 2ms
+ ✓ tests/unit/performance.test.ts > T063 rejects omitted required artifact asset icons/icon-512.png 2ms
+ ✓ tests/unit/performance.test.ts > T063 rejects omitted required artifact asset data/catalogue.json.gz 2ms
+ ✓ tests/unit/performance.test.ts > T063 rejects omitted required artifact asset data/sittings/1.json.gz 2ms
+ ✓ tests/unit/performance.test.ts > T063 rejects resource representation/bounds gzip 6ms
+ ✓ tests/unit/performance.test.ts > T063 rejects resource representation/bounds utf8 2ms
+ ✓ tests/unit/performance.test.ts > T063 rejects resource representation/bounds json 2ms
+ ✓ tests/unit/performance.test.ts > T063 rejects resource representation/bounds catalogue-gzip 3ms
+ ✓ tests/unit/performance.test.ts > T063 rejects resource representation/bounds sitting-gzip 2ms
+ ✓ tests/unit/performance.test.ts > T063 rejects resource representation/bounds decoded 11ms
+ ✓ tests/unit/performance.test.ts > T063 measures bounded catalogue-gzip resource without calling layout source-verified 4ms
+ ✓ tests/unit/performance.test.ts > T063 measures bounded sitting-gzip resource without calling layout source-verified 3ms
+ ✓ tests/unit/performance.test.ts > T063 measures bounded decoded resource without calling layout source-verified 15ms
+ ✓ tests/unit/performance.test.ts > T063 rejects escaped/private artifact paths symlink rather than omitting them from its hash 4ms
+ ✓ tests/unit/performance.test.ts > T063 rejects escaped/private artifact paths private-state rather than omitting them from its hash 4ms
+ ✓ tests/unit/performance.test.ts > T063 rejects escaped/private artifact paths report rather than omitting them from its hash 2ms
+ ✓ tests/unit/performance.test.ts > T063 rejects escaped/private artifact paths candidate rather than omitting them from its hash 2ms
+ ✓ tests/unit/performance.test.ts > T063 verifies complete schema/reference/digest coverage separately from layout 7ms
+ ✓ tests/unit/performance.test.ts > T063 incomplete source snapshot cannot borrow a layout pass (digest) 5ms
+ ✓ tests/unit/performance.test.ts > T063 incomplete source snapshot cannot borrow a layout pass (catalogue-schema) 4ms
+ ✓ tests/unit/performance.test.ts > T063 incomplete source snapshot cannot borrow a layout pass (missing-shard) 5ms
+ ✓ tests/unit/performance.test.ts > T063 incomplete source snapshot cannot borrow a layout pass (extra-shard) 5ms
+ ✓ tests/unit/performance.test.ts > T063 CLI compares measured bytes/counters with the frozen candidate (pass) 171ms
+ ✓ tests/unit/performance.test.ts > T063 CLI compares measured bytes/counters with the frozen candidate (changed) 171ms
+ ✓ tests/unit/performance.test.ts > T063 CLI compares measured bytes/counters with the frozen candidate (false-sizes) 199ms
+ ✓ tests/unit/performance.test.ts > T063 CLI compares measured bytes/counters with the frozen candidate (budget) 171ms
+ ✓ tests/unit/performance.test.ts > T063 CLI compares measured bytes/counters with the frozen candidate (runner) 170ms
+ ✓ tests/unit/performance.test.ts > T063 CLI compares measured bytes/counters with the frozen candidate (hardware) 166ms
+ ✓ tests/unit/performance.test.ts > T063 CLI compares measured bytes/counters with the frozen candidate (missing-android-chrome) 173ms
+ ✓ tests/unit/performance.test.ts > T063 CLI compares measured bytes/counters with the frozen candidate (missing-iphone-safari) 171ms
+ ✓ tests/unit/performance.test.ts > T063 CLI compares measured bytes/counters with the frozen candidate (missing-desktop-chrome) 171ms
+ ✓ tests/unit/performance.test.ts > T063 CLI compares measured bytes/counters with the frozen candidate (missing-desktop-edge) 173ms
+ ✓ tests/unit/performance.test.ts > T063 CLI compares measured bytes/counters with the frozen candidate (missing-desktop-firefox) 172ms
+ ✓ tests/unit/performance.test.ts > T063 CLI compares measured bytes/counters with the frozen candidate (missing-desktop-safari) 164ms
+ ✓ tests/unit/performance.test.ts > T063 regression rejects omitted frozen hash and served bytes for ranked dataset data/sittings/4.json.gz 0ms
+ ✓ tests/unit/performance.test.ts > T063 regression rejects omitted frozen hash and served bytes for ranked dataset data/sittings/1.json.gz 0ms
+ × tests/unit/performance.test.ts > Catalogue policy accepts stored gzip size 204801 through 1 MiB 2ms
+   → expected [Function bound evaluateBudgets] to not throw an error but 'Error: catalogueGzip bytes: exceeded …' was thrown
+ × tests/unit/performance.test.ts > Catalogue policy accepts stored gzip size 1048576 through 1 MiB 0ms
+   → expected [Function bound evaluateBudgets] to not throw an error but 'Error: catalogueGzip bytes: exceeded …' was thrown
+ × tests/unit/performance.test.ts > Catalogue policy measures the full 1-MiB stored gzip allowance 5ms
+   → promise rejected "Error: data/catalogue.json.gz compressed …" instead of resolving
+ ✓ tests/unit/performance.test.ts > Catalogue policy rejects reported stored gzip one byte above 1 MiB 0ms
+ ✓ tests/unit/performance.test.ts > Catalogue policy rejects measured stored gzip one byte above 1 MiB 4ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/performance.test.ts > Catalogue policy accepts stored gzip size 204801 through 1 MiB
+ FAIL  tests/unit/performance.test.ts > Catalogue policy accepts stored gzip size 1048576 through 1 MiB
+AssertionError: expected [Function bound evaluateBudgets] to not throw an error but 'Error: catalogueGzip bytes: exceeded …' was thrown
+
+- Expected:
+undefined
+
++ Received:
+"Error: catalogueGzip bytes: exceeded 204800"
+
+ ❯ acceptsCataloguePolicy tests/unit/performance.test.ts:691:49
+    689| function acceptsCataloguePolicy(bytes: number): void {
+    690|   const input = report(); input.sizes.catalogueGzip = bytes;
+    691|   expect(evaluateBudgets.bind(null, input)).not.toThrow();
+       |                                                 ^
+    692| }
+    693| test.each([204801, 1048576])('Catalogue policy accepts stored gzip siz…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  tests/unit/performance.test.ts > Catalogue policy measures the full 1-MiB stored gzip allowance
+AssertionError: promise rejected "Error: data/catalogue.json.gz compressed …" instead of resolving
+ ❯ measuresCataloguePolicyCap tests/unit/performance.test.ts:703:38
+    701|   const root = await artifactFixture(); const gzip = gzipSync('{}', { …
+    702|   await writeFile(join(root, 'data/catalogue.json.gz'), Buffer.concat(…
+    703|   await expect(measureArtifact(root)).resolves.toMatchObject({ catalog…
+       |                                      ^
+    704| }
+    705| test('Catalogue policy measures the full 1-MiB stored gzip allowance',…
+
+Caused by: Error: data/catalogue.json.gz compressed bytes: exceeded 204800
+ ❯ requireValue scripts/check-performance.ts:34:25
+ ❯ ceiling scripts/check-performance.ts:65:3
+ ❯ measureArtifact scripts/check-performance.ts:276:35
+ ❯ measuresCataloguePolicyCap tests/unit/performance.test.ts:703:3
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  3 failed | 188 passed (191)
+   Start at  17:02:19
+   Duration  2.46s (tests 93%, import 5%, transform 3%)
+

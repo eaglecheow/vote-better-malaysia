@@ -1,0 +1,32 @@
+
+ RUN  v5.0.3 /Users/eaglecheow/dev/vote-better-malaysia
+
+ ❯ tests/unit/publication-workflow.test.ts (54 tests | 1 failed | 53 skipped) 4ms
+   × PUB-WF048: finalization can identify the actually executed Pages action independently of job success 3ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/publication-workflow.test.ts > PUB-WF048: finalization can identify the actually executed Pages action independently of job success
+AssertionError: expected undefined to be 'Deploy exact candidate' // Object.is equality
+
+- Expected:
+"Deploy exact candidate"
+
++ Received:
+undefined
+
+ ❯ tests/unit/publication-workflow.test.ts:497:53
+    495| test('PUB-WF048: finalization can identify the actually executed Pages…
+    496|   /** Checks a stable provider step name for distinguishing a skipped …
+    497|   () => { expect(step('deploy', 'deployment').name).toBe('Deploy exact…
+       |                                                     ^
+    498|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 53 skipped (54)
+   Start at  18:41:00
+   Duration  153ms (import 78%, transform 16%, tests 4%, worker 2%)
+

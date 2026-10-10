@@ -1,0 +1,100 @@
+{
+  "startedAt": "2026-10-10T09:05:52.805Z",
+  "stageStartedAt": "2026-10-10T09:07:53.639Z",
+  "stageCompletedAt": "2026-10-10T09:08:44.384Z",
+  "finishedAt": "2026-10-10T09:08:45.666Z",
+  "scope": "Receipt-based local development revalidation and actual staging, no reacquisition or publication. Source timestamps and the frozen snapshot are unchanged.",
+  "initialAbsence": {
+    "output": true,
+    "checkpoint": true
+  },
+  "repository": "eaglecheow/vote-better-malaysia",
+  "branch": "001-read-mp-hansard",
+  "currentRuntime": {
+    "hashes": {
+      "src/source.ts": "ab5b02ac7dc3a3d484572ba1dba6a1a2818ae29d105130f83b2cb7246b8c6896",
+      "scripts/acquire.ts": "3b98a97d721f00e63eff0126d790bffe01c269118351e04d15b1fb076be98910",
+      "package-lock.json": "65ee9af9092fdc689d9fea1dfe37fd540a6d9a476a7cc581220857bcd2ccf7f9"
+    },
+    "fingerprint": "cd4df307b5fa75be9695df7bf5d720b3d50e789b4f2ef5a8eb73137b3cf89fa2"
+  },
+  "archivedRuntime": {
+    "hashes": {
+      "src/source.ts": "59e42f8f7da4c170bc156573f9310b85c0fa1d93a3b48c6a4351f16899748b7d",
+      "scripts/acquire.ts": "abed2917b0a8a273118f7b305ae4b3fa47fde793f285f7b589554dfb826b7c5d",
+      "package-lock.json": "bae6ba449e28849a3a7b0651230a37918eae5d20087eee5b8897ac570526c7cb"
+    },
+    "fingerprint": "ebd608a3a69718dd4faff58f23f980ec442302716a52d1870e2cbf3a87f31756"
+  },
+  "sourceRequests": 0,
+  "receiptCount": 4093,
+  "receiptMetadataSnapshotDigest": "100a42b3da1a26d23face437d2ce1fb1cf6b238bcbdc115d439d66353492cbd3",
+  "receiptMetadataDigest": "7bb4b593f40a2552eb2c08e7a23878b4388291181c815a4e5c84e4ade8118918",
+  "snapshotId": "46deaa63-9074-408c-a1df-7fd687af312c",
+  "preparedAt": "2026-10-10T06:24:11.774Z",
+  "publishedAt": null,
+  "provenance": {
+    "interface": "official-next-page-data",
+    "sourceBuildId": "Zlu4qRDxrOCEM-7h59E5o",
+    "inventoryAcquiredAt": "2026-10-10T05:14:45.084Z",
+    "membersAcquiredAt": "2026-10-10T05:14:44.434Z",
+    "inventoryRawDigest": "3758f5a22783914b6a8b7bd58847189ccc10023cee898c698c39fa158dc3813f",
+    "membersRawDigest": "16591062f73226e56bddad100e4fc834d3a79ca2cbe34192ed6ad65d675dfcea"
+  },
+  "verification": {
+    "completedAt": "2026-10-10T09:07:53.639Z",
+    "records": 4090,
+    "leafTotal": 1695818,
+    "assigned": 1145711,
+    "gaps": 533456,
+    "annotations": 16651,
+    "actualCatalogueStoredBytes": 519418,
+    "actualCatalogueDecodedBytes": 3431888,
+    "storedTotal": 357744140,
+    "peakRssBytes": 532381696,
+    "allRawHashesAndDescriptorsMatched": true
+  },
+  "actualStagedSizes": {
+    "catalogue": {
+      "compressedBytes": 519418,
+      "decodedBytes": 3431888
+    },
+    "shardCount": 4090,
+    "maxShardCompressedBytes": 295108,
+    "maxShardDecodedBytes": 1745574,
+    "totalBytes": 357744140
+  },
+  "outputCatalogue": {
+    "path": "/Users/eaglecheow/dev/vote-better-malaysia/public/data/catalogue.json.gz",
+    "digest": "d5891d1a67bb1659a5e134e6d477b4697415e6876ce8bdcd5e8d315a8471fed9",
+    "decodedDigest": "9ba0c5c332a39026a4d067b56d57982ada0c1025e0cbabc2ec84bfe807718e80"
+  },
+  "checkpoint": {
+    "path": "/Users/eaglecheow/dev/vote-better-malaysia/.cache/hansard/checkpoint.json",
+    "digest": "f8bc6b83c055296b7bf4154f5ef8631ab3597890a4adb8c557729ab744ad9422",
+    "originKind": "local-development",
+    "publicationEligible": false,
+    "success": true,
+    "createdAt": "2026-10-10T09:08:44.370Z",
+    "codeFingerprint": "cd4df307b5fa75be9695df7bf5d720b3d50e789b4f2ef5a8eb73137b3cf89fa2",
+    "shardRoot": "snapshots/7f6bc0d7-5cde-4a59-b23a-168470be7cf2"
+  },
+  "postCommitAllPublicAndPrivateShardHashesMatched": true,
+  "fullPrivateReport": {
+    "path": "/private/tmp/hansard-restaging-report-20261010T090552805Z.json",
+    "sha256": "1c835ce655e567a6389297abf712555a93ee2e37029a73017707d57698f764b4",
+    "orderedRecordRowsDigest": "770f4366c34d2c4559d91219112dd3820c43d1119ef45d89efa43e10b381c099"
+  },
+  "privateScript": {
+    "path": "/private/tmp/hansard-restage-captured.ts",
+    "sha256": "5c71f7b20e4967ff30683dd71c78594c9e5e2ec187ac63011cef29cf7c1404aa"
+  },
+  "approvedCatalogueCapBytes": 1048576,
+  "realAbsenceEvidence": {
+    "zeroGapRecordCount": 0,
+    "sampleAvailable": false,
+    "classificationUnchanged": true,
+    "scope": "The user made this actual-source sample conditional on suitable complete records; controlled classifier tests remain separate."
+  },
+  "runtimeApplicability": "Executing inputs at 2026-10-10T09:08:44Z; later source/acquisition/lock changes invalidate checkpoint code compatibility and do not rewrite this recorded fingerprint."
+}

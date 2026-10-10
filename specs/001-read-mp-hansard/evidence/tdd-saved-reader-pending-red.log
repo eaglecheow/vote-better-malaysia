@@ -1,0 +1,1026 @@
+
+ RUN  v5.0.3 /Users/eaglecheow/dev/vote-better-malaysia
+
+ × tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-CATALOGUE ms: committed content is readable while initial latest catalogue retrieval remains pending 22ms
+   → expected "vi.fn()" to be called with arguments: [ '1839', '29326' ]
+
+Number of calls: 0
+
+   → expected "vi.fn()" to be called with arguments: [ 'hansard.catalogue-ready' ]
+
+Number of calls: 0
+
+   → expected '' to be '1839' // Object.is equality
+   → expected '' to be '29326' // Object.is equality
+   → expected '' to be 'true' // Object.is equality
+   → expected [] to deeply equal [ Array(1) ]
+   → expected [] to deeply equal [ …(2) ]
+   → expected [] to deeply equal [ Array(1) ]
+   → expected '' to contain '2026-10-10T04:00:00.000Z'
+   → expected '' to contain '2026-10-10T06:00:00.000Z'
+   → expected '' to contain '2026-10-10T06:00:00.000Z'
+   → expected 'false' to be 'true' // Object.is equality
+   → expected 'false' to be 'true' // Object.is equality
+   → expected "vi.fn()" to be called with arguments: [ 'hansard.reader-ready' ]
+
+Number of calls: 0
+
+ × tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-PAIR ms: committed content is readable while the newest matching pair retrieval remains pending 7ms
+   → expected '' to be '1839' // Object.is equality
+   → expected '' to be '29326' // Object.is equality
+   → expected '' to be 'true' // Object.is equality
+   → expected [] to deeply equal [ Array(1) ]
+   → expected [] to deeply equal [ …(2) ]
+   → expected [] to deeply equal [ Array(1) ]
+   → expected '' to contain '2026-10-10T04:00:00.000Z'
+   → expected '' to contain '2026-10-10T06:00:00.000Z'
+   → expected '' to contain '2026-10-10T06:00:00.000Z'
+   → expected 'false' to be 'true' // Object.is equality
+   → expected 'false' to be 'true' // Object.is equality
+   → expected "vi.fn()" to be called with arguments: [ 'hansard.reader-ready' ]
+
+Received:
+
+  1st vi.fn() call:
+
+  [
+-   "hansard.reader-ready",
++   "hansard.catalogue-ready",
+  ]
+
+  2nd vi.fn() call:
+
+  [
+-   "hansard.reader-ready",
++   "hansard.interaction-start",
+  ]
+
+  3rd vi.fn() call:
+
+  [
+-   "hansard.reader-ready",
++   "hansard.interaction-end",
+  ]
+
+
+Number of calls: 3
+
+ × tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-RETRY ms: explicit Retry retains the same committed source content during its pending latest check 43ms
+   → expected '' to be '1839' // Object.is equality
+   → expected '' to be '29326' // Object.is equality
+   → expected '' to be 'true' // Object.is equality
+   → expected [] to deeply equal [ Array(1) ]
+   → expected [] to deeply equal [ …(2) ]
+   → expected [] to deeply equal [ Array(1) ]
+   → expected '' to contain '2026-10-10T04:00:00.000Z'
+   → expected '' to contain '2026-10-10T06:00:00.000Z'
+   → expected '' to contain '2026-10-10T06:00:00.000Z'
+   → expected 'false' to be 'true' // Object.is equality
+   → expected 'false' to be 'true' // Object.is equality
+   → expected "vi.fn()" to be called with arguments: [ 'hansard.reader-ready' ]
+
+Received:
+
+  1st vi.fn() call:
+
+  [
+-   "hansard.reader-ready",
++   "hansard.interaction-start",
+  ]
+
+  2nd vi.fn() call:
+
+  [
+-   "hansard.reader-ready",
++   "hansard.interaction-end",
+  ]
+
+
+Number of calls: 2
+
+ × tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-CATALOGUE en: committed content is readable while initial latest catalogue retrieval remains pending 6ms
+   → expected "vi.fn()" to be called with arguments: [ '1839', '29326' ]
+
+Number of calls: 0
+
+   → expected "vi.fn()" to be called with arguments: [ 'hansard.catalogue-ready' ]
+
+Number of calls: 0
+
+   → expected '' to be '1839' // Object.is equality
+   → expected '' to be '29326' // Object.is equality
+   → expected '' to be 'true' // Object.is equality
+   → expected [] to deeply equal [ Array(1) ]
+   → expected [] to deeply equal [ …(2) ]
+   → expected [] to deeply equal [ Array(1) ]
+   → expected '' to contain '2026-10-10T04:00:00.000Z'
+   → expected '' to contain '2026-10-10T06:00:00.000Z'
+   → expected '' to contain '2026-10-10T06:00:00.000Z'
+   → expected 'false' to be 'true' // Object.is equality
+   → expected 'false' to be 'true' // Object.is equality
+   → expected "vi.fn()" to be called with arguments: [ 'hansard.reader-ready' ]
+
+Number of calls: 0
+
+ × tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-PAIR en: committed content is readable while the newest matching pair retrieval remains pending 6ms
+   → expected '' to be '1839' // Object.is equality
+   → expected '' to be '29326' // Object.is equality
+   → expected '' to be 'true' // Object.is equality
+   → expected [] to deeply equal [ Array(1) ]
+   → expected [] to deeply equal [ …(2) ]
+   → expected [] to deeply equal [ Array(1) ]
+   → expected '' to contain '2026-10-10T04:00:00.000Z'
+   → expected '' to contain '2026-10-10T06:00:00.000Z'
+   → expected '' to contain '2026-10-10T06:00:00.000Z'
+   → expected 'false' to be 'true' // Object.is equality
+   → expected 'false' to be 'true' // Object.is equality
+   → expected "vi.fn()" to be called with arguments: [ 'hansard.reader-ready' ]
+
+Received:
+
+  1st vi.fn() call:
+
+  [
+-   "hansard.reader-ready",
++   "hansard.catalogue-ready",
+  ]
+
+  2nd vi.fn() call:
+
+  [
+-   "hansard.reader-ready",
++   "hansard.interaction-start",
+  ]
+
+  3rd vi.fn() call:
+
+  [
+-   "hansard.reader-ready",
++   "hansard.interaction-end",
+  ]
+
+
+Number of calls: 3
+
+ × tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-RETRY en: explicit Retry retains the same committed source content during its pending latest check 10ms
+   → expected '' to be '1839' // Object.is equality
+   → expected '' to be '29326' // Object.is equality
+   → expected '' to be 'true' // Object.is equality
+   → expected [] to deeply equal [ Array(1) ]
+   → expected [] to deeply equal [ …(2) ]
+   → expected [] to deeply equal [ Array(1) ]
+   → expected '' to contain '2026-10-10T04:00:00.000Z'
+   → expected '' to contain '2026-10-10T06:00:00.000Z'
+   → expected '' to contain '2026-10-10T06:00:00.000Z'
+   → expected 'false' to be 'true' // Object.is equality
+   → expected 'false' to be 'true' // Object.is equality
+   → expected "vi.fn()" to be called with arguments: [ 'hansard.reader-ready' ]
+
+Received:
+
+  1st vi.fn() call:
+
+  [
+-   "hansard.reader-ready",
++   "hansard.interaction-start",
+  ]
+
+  2nd vi.fn() call:
+
+  [
+-   "hansard.reader-ready",
++   "hansard.interaction-end",
+  ]
+
+
+Number of calls: 2
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 6 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-CATALOGUE ms: committed content is readable while initial latest catalogue retrieval remains pending
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-CATALOGUE en: committed content is readable while initial latest catalogue retrieval remains pending
+AssertionError: expected "vi.fn()" to be called with arguments: [ '1839', '29326' ]
+
+Number of calls: 0
+
+ ❯ pendingCatalogue tests/unit/saved-reader-pending.test.ts:131:47
+    129|         await settle();
+    130|         expect.soft(context.loadCatalogue).toHaveBeenCalledOnce();
+    131|         expect.soft(context.storage.readPair).toHaveBeenCalledWith(con…
+       |                                               ^
+    132|         expect.soft(context.marks).toHaveBeenCalledWith('hansard.catal…
+    133|         savedStillReadable(context, language);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/76]⎯
+
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-CATALOGUE ms: committed content is readable while initial latest catalogue retrieval remains pending
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-CATALOGUE en: committed content is readable while initial latest catalogue retrieval remains pending
+AssertionError: expected "vi.fn()" to be called with arguments: [ 'hansard.catalogue-ready' ]
+
+Number of calls: 0
+
+ ❯ pendingCatalogue tests/unit/saved-reader-pending.test.ts:132:36
+    130|         expect.soft(context.loadCatalogue).toHaveBeenCalledOnce();
+    131|         expect.soft(context.storage.readPair).toHaveBeenCalledWith(con…
+    132|         expect.soft(context.marks).toHaveBeenCalledWith('hansard.catal…
+       |                                    ^
+    133|         savedStillReadable(context, language);
+    134|         expect(context.loadPair).not.toHaveBeenCalled();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/76]⎯
+
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-CATALOGUE ms: committed content is readable while initial latest catalogue retrieval remains pending
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-CATALOGUE en: committed content is readable while initial latest catalogue retrieval remains pending
+AssertionError: expected '' to be '1839' // Object.is equality
+
+- Expected
++ Received
+
+- 1839
+
+ ❯ savedStillReadable tests/unit/saved-reader-pending.test.ts:99:47
+     97|   const region = root.querySelector<HTMLElement>('#reader-result');
+     98|   expect.soft(document.documentElement.lang).toBe(language);
+     99|   expect.soft(region?.dataset.memberId ?? '').toBe(saved.memberId);
+       |                                               ^
+    100|   expect.soft(region?.dataset.sittingId ?? '').toBe(saved.sittingId);
+    101|   expect.soft(region?.dataset.resultComplete ?? '').toBe('true');
+ ❯ pendingCatalogue tests/unit/saved-reader-pending.test.ts:133:9
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/76]⎯
+
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-CATALOGUE ms: committed content is readable while initial latest catalogue retrieval remains pending
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-CATALOGUE en: committed content is readable while initial latest catalogue retrieval remains pending
+AssertionError: expected '' to be '29326' // Object.is equality
+
+- Expected
++ Received
+
+- 29326
+
+ ❯ savedStillReadable tests/unit/saved-reader-pending.test.ts:100:48
+     98|   expect.soft(document.documentElement.lang).toBe(language);
+     99|   expect.soft(region?.dataset.memberId ?? '').toBe(saved.memberId);
+    100|   expect.soft(region?.dataset.sittingId ?? '').toBe(saved.sittingId);
+       |                                                ^
+    101|   expect.soft(region?.dataset.resultComplete ?? '').toBe('true');
+    102|   for (const [category, kind] of [['turns', 'turn'], ['gaps', 'gap'], …
+ ❯ pendingCatalogue tests/unit/saved-reader-pending.test.ts:133:9
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/76]⎯
+
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-CATALOGUE ms: committed content is readable while initial latest catalogue retrieval remains pending
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-CATALOGUE en: committed content is readable while initial latest catalogue retrieval remains pending
+AssertionError: expected '' to be 'true' // Object.is equality
+
+- Expected
++ Received
+
+- true
+
+ ❯ savedStillReadable tests/unit/saved-reader-pending.test.ts:101:53
+     99|   expect.soft(region?.dataset.memberId ?? '').toBe(saved.memberId);
+    100|   expect.soft(region?.dataset.sittingId ?? '').toBe(saved.sittingId);
+    101|   expect.soft(region?.dataset.resultComplete ?? '').toBe('true');
+       |                                                     ^
+    102|   for (const [category, kind] of [['turns', 'turn'], ['gaps', 'gap'], …
+    103|     const actual: string[] = [];
+ ❯ pendingCatalogue tests/unit/saved-reader-pending.test.ts:133:9
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/76]⎯
+
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-CATALOGUE ms: committed content is readable while initial latest catalogue retrieval remains pending
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-CATALOGUE en: committed content is readable while initial latest catalogue retrieval remains pending
+AssertionError: expected [] to deeply equal [ Array(1) ]
+
+- Expected
++ Received
+
+- [
+-   "Terima kasih Tan Sri Yang di-Pertua. Saya ingin ucapkan terima kasih kepada Yang Berhormat Menteri atas jawapan yang menyeluruh ini.
+-
+- Hubungan di antara Malaysia dan India seperti yang disebut oleh Yang Berhormat Menteri telah sampai ke tahap rakan kongsi strategik. Kalau rakan kongsi strategik ini dilihat membawa manfaat, ia mesti boleh dipercayai (*trusted*) dan juga dapat menunjukkan penyampaian barangan ataupun kegunaan awam dengan izin Tan Sri Yang di-Pertua, *delivery of public good*.
+-
+- Jadi, di sini saya nak tanya, apakah bentuk yang ada dalam kedua-dua konteks ini. Berkaitan dengan tarif Amerika Syarikat, bolehkah Malaysia bertukar pandangan macam mana dia boleh turunkan tarif daripada 50 peratus kepada 18, sedangkan kita sungguhpun ada hubungan baik dengan Amerika Syarikat, masih lebih tinggi dengan 19 peratus. Kalau boleh, bersama supaya kita dapat sama rata. Kalau tidak, dia ada sedikit kelebihan.
+-
+- Dan akhirnya berkaitan dengan Myanmar, apakah langkah seterusnya baik oleh India dan Malaysia, yang boleh membawa kepada keamanan atau menuju ke arah keamanan di Myanmar, iaitu apakah adakah mesyuarat yang akan datang, adakah inisiatif yang akan datang, apakah langkah seterusnya. Takkan kita hanya tunggu dan lihat? Sekian, terima kasih.",
+- ]
++ []
+
+ ❯ savedStillReadable tests/unit/saved-reader-pending.test.ts:107:25
+    105|     const expected: string[] = [];
+    106|     for (const item of saved[category]) expected.push(item.text);
+    107|     expect.soft(actual).toEqual(expected);
+       |                         ^
+    108|   }
+    109|   expect.soft(root.querySelector('[data-field="prepared-at"]')?.textCo…
+ ❯ pendingCatalogue tests/unit/saved-reader-pending.test.ts:133:9
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/76]⎯
+
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-CATALOGUE ms: committed content is readable while initial latest catalogue retrieval remains pending
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-CATALOGUE en: committed content is readable while initial latest catalogue retrieval remains pending
+AssertionError: expected [] to deeply equal [ …(2) ]
+
+- Expected
++ Received
+
+- [
+-   "*[Tuan Yang di-Pertua* ***mempengerusikan Mesyuarat****]*",
+-   "**1. Tuan Lim Guan Eng [Bagan]** Terima kasih, Tan Sri Yang di-Pertua. Bagan minta Yang Berhormat Menteri Luar Negeri menyatakan hasil perdagangan dan keselamatan serantau susulan lawatan Perdana Menteri India, Narendra Modi baru-baru ini ke Malaysia dan sejauh manakah langkah-langkah bersama yang boleh diambil oleh Malaysia dan India terhadap pelaksanaan tarif oleh Amerika Syarikat dan usaha memulihkan demokrasi dan keamanan di Myanmar. Terima kasih.",
+- ]
++ []
+
+ ❯ savedStillReadable tests/unit/saved-reader-pending.test.ts:107:25
+    105|     const expected: string[] = [];
+    106|     for (const item of saved[category]) expected.push(item.text);
+    107|     expect.soft(actual).toEqual(expected);
+       |                         ^
+    108|   }
+    109|   expect.soft(root.querySelector('[data-field="prepared-at"]')?.textCo…
+ ❯ pendingCatalogue tests/unit/saved-reader-pending.test.ts:133:9
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/76]⎯
+
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-CATALOGUE ms: committed content is readable while initial latest catalogue retrieval remains pending
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-CATALOGUE en: committed content is readable while initial latest catalogue retrieval remains pending
+AssertionError: expected [] to deeply equal [ Array(1) ]
+
+- Expected
++ Received
+
+- [
+-   "[Soalan No. 5 - YB Tuan Prabakaran a/l M. Parameswaran (Batu) tidak hadir]",
+- ]
++ []
+
+ ❯ savedStillReadable tests/unit/saved-reader-pending.test.ts:107:25
+    105|     const expected: string[] = [];
+    106|     for (const item of saved[category]) expected.push(item.text);
+    107|     expect.soft(actual).toEqual(expected);
+       |                         ^
+    108|   }
+    109|   expect.soft(root.querySelector('[data-field="prepared-at"]')?.textCo…
+ ❯ pendingCatalogue tests/unit/saved-reader-pending.test.ts:133:9
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/76]⎯
+
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-CATALOGUE ms: committed content is readable while initial latest catalogue retrieval remains pending
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-CATALOGUE en: committed content is readable while initial latest catalogue retrieval remains pending
+AssertionError: expected '' to contain '2026-10-10T04:00:00.000Z'
+
+- Expected
++ Received
+
+- 2026-10-10T04:00:00.000Z
+
+ ❯ savedStillReadable tests/unit/saved-reader-pending.test.ts:109:84
+    107|     expect.soft(actual).toEqual(expected);
+    108|   }
+    109|   expect.soft(root.querySelector('[data-field="prepared-at"]')?.textCo…
+       |                                                                                    ^
+    110|   expect.soft(root.querySelector('[data-field="refreshed-at"]')?.textC…
+    111|   expect.soft(root.querySelector('[data-field="saved-refreshed-at"]')?…
+ ❯ pendingCatalogue tests/unit/saved-reader-pending.test.ts:133:9
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/76]⎯
+
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-CATALOGUE ms: committed content is readable while initial latest catalogue retrieval remains pending
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-CATALOGUE en: committed content is readable while initial latest catalogue retrieval remains pending
+AssertionError: expected '' to contain '2026-10-10T06:00:00.000Z'
+
+- Expected
++ Received
+
+- 2026-10-10T06:00:00.000Z
+
+ ❯ savedStillReadable tests/unit/saved-reader-pending.test.ts:110:85
+    108|   }
+    109|   expect.soft(root.querySelector('[data-field="prepared-at"]')?.textCo…
+    110|   expect.soft(root.querySelector('[data-field="refreshed-at"]')?.textC…
+       |                                                                                     ^
+    111|   expect.soft(root.querySelector('[data-field="saved-refreshed-at"]')?…
+    112|   expect.soft(root.querySelector('#reader-save-status')?.getAttribute(…
+ ❯ pendingCatalogue tests/unit/saved-reader-pending.test.ts:133:9
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/76]⎯
+
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-CATALOGUE ms: committed content is readable while initial latest catalogue retrieval remains pending
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-CATALOGUE en: committed content is readable while initial latest catalogue retrieval remains pending
+AssertionError: expected '' to contain '2026-10-10T06:00:00.000Z'
+
+- Expected
++ Received
+
+- 2026-10-10T06:00:00.000Z
+
+ ❯ savedStillReadable tests/unit/saved-reader-pending.test.ts:111:91
+    109|   expect.soft(root.querySelector('[data-field="prepared-at"]')?.textCo…
+    110|   expect.soft(root.querySelector('[data-field="refreshed-at"]')?.textC…
+    111|   expect.soft(root.querySelector('[data-field="saved-refreshed-at"]')?…
+       |                                                                                           ^
+    112|   expect.soft(root.querySelector('#reader-save-status')?.getAttribute(…
+    113|   expect.soft(root.querySelector('#reader-offline-status')?.getAttribu…
+ ❯ pendingCatalogue tests/unit/saved-reader-pending.test.ts:133:9
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/76]⎯
+
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-CATALOGUE ms: committed content is readable while initial latest catalogue retrieval remains pending
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-CATALOGUE en: committed content is readable while initial latest catalogue retrieval remains pending
+AssertionError: expected 'false' to be 'true' // Object.is equality
+
+Expected: "true"
+Received: "false"
+
+ ❯ savedStillReadable tests/unit/saved-reader-pending.test.ts:112:86
+    110|   expect.soft(root.querySelector('[data-field="refreshed-at"]')?.textC…
+    111|   expect.soft(root.querySelector('[data-field="saved-refreshed-at"]')?…
+    112|   expect.soft(root.querySelector('#reader-save-status')?.getAttribute(…
+       |                                                                                      ^
+    113|   expect.soft(root.querySelector('#reader-offline-status')?.getAttribu…
+    114|   expect.soft(region?.textContent ?? '').not.toContain(fresh.result.re…
+ ❯ pendingCatalogue tests/unit/saved-reader-pending.test.ts:133:9
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/76]⎯
+
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-CATALOGUE ms: committed content is readable while initial latest catalogue retrieval remains pending
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-CATALOGUE en: committed content is readable while initial latest catalogue retrieval remains pending
+AssertionError: expected 'false' to be 'true' // Object.is equality
+
+Expected: "true"
+Received: "false"
+
+ ❯ savedStillReadable tests/unit/saved-reader-pending.test.ts:113:97
+    111|   expect.soft(root.querySelector('[data-field="saved-refreshed-at"]')?…
+    112|   expect.soft(root.querySelector('#reader-save-status')?.getAttribute(…
+    113|   expect.soft(root.querySelector('#reader-offline-status')?.getAttribu…
+       |                                                                                                 ^
+    114|   expect.soft(region?.textContent ?? '').not.toContain(fresh.result.re…
+    115|   expect.soft(context.marks).toHaveBeenCalledWith('hansard.reader-read…
+ ❯ pendingCatalogue tests/unit/saved-reader-pending.test.ts:133:9
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[13/76]⎯
+
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-CATALOGUE ms: committed content is readable while initial latest catalogue retrieval remains pending
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-CATALOGUE en: committed content is readable while initial latest catalogue retrieval remains pending
+AssertionError: expected "vi.fn()" to be called with arguments: [ 'hansard.reader-ready' ]
+
+Number of calls: 0
+
+ ❯ savedStillReadable tests/unit/saved-reader-pending.test.ts:115:30
+    113|   expect.soft(root.querySelector('#reader-offline-status')?.getAttribu…
+    114|   expect.soft(region?.textContent ?? '').not.toContain(fresh.result.re…
+    115|   expect.soft(context.marks).toHaveBeenCalledWith('hansard.reader-read…
+       |                              ^
+    116|   expect(context.storage.savePair).not.toHaveBeenCalled();
+    117| }
+ ❯ pendingCatalogue tests/unit/saved-reader-pending.test.ts:133:9
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[14/76]⎯
+
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-PAIR ms: committed content is readable while the newest matching pair retrieval remains pending
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-PAIR en: committed content is readable while the newest matching pair retrieval remains pending
+AssertionError: expected '' to be '1839' // Object.is equality
+
+- Expected
++ Received
+
+- 1839
+
+ ❯ savedStillReadable tests/unit/saved-reader-pending.test.ts:99:47
+     97|   const region = root.querySelector<HTMLElement>('#reader-result');
+     98|   expect.soft(document.documentElement.lang).toBe(language);
+     99|   expect.soft(region?.dataset.memberId ?? '').toBe(saved.memberId);
+       |                                               ^
+    100|   expect.soft(region?.dataset.sittingId ?? '').toBe(saved.sittingId);
+    101|   expect.soft(region?.dataset.resultComplete ?? '').toBe('true');
+ ❯ pendingPair tests/unit/saved-reader-pending.test.ts:149:9
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[15/76]⎯
+
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-PAIR ms: committed content is readable while the newest matching pair retrieval remains pending
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-PAIR en: committed content is readable while the newest matching pair retrieval remains pending
+AssertionError: expected '' to be '29326' // Object.is equality
+
+- Expected
++ Received
+
+- 29326
+
+ ❯ savedStillReadable tests/unit/saved-reader-pending.test.ts:100:48
+     98|   expect.soft(document.documentElement.lang).toBe(language);
+     99|   expect.soft(region?.dataset.memberId ?? '').toBe(saved.memberId);
+    100|   expect.soft(region?.dataset.sittingId ?? '').toBe(saved.sittingId);
+       |                                                ^
+    101|   expect.soft(region?.dataset.resultComplete ?? '').toBe('true');
+    102|   for (const [category, kind] of [['turns', 'turn'], ['gaps', 'gap'], …
+ ❯ pendingPair tests/unit/saved-reader-pending.test.ts:149:9
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[16/76]⎯
+
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-PAIR ms: committed content is readable while the newest matching pair retrieval remains pending
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-PAIR en: committed content is readable while the newest matching pair retrieval remains pending
+AssertionError: expected '' to be 'true' // Object.is equality
+
+- Expected
++ Received
+
+- true
+
+ ❯ savedStillReadable tests/unit/saved-reader-pending.test.ts:101:53
+     99|   expect.soft(region?.dataset.memberId ?? '').toBe(saved.memberId);
+    100|   expect.soft(region?.dataset.sittingId ?? '').toBe(saved.sittingId);
+    101|   expect.soft(region?.dataset.resultComplete ?? '').toBe('true');
+       |                                                     ^
+    102|   for (const [category, kind] of [['turns', 'turn'], ['gaps', 'gap'], …
+    103|     const actual: string[] = [];
+ ❯ pendingPair tests/unit/saved-reader-pending.test.ts:149:9
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[17/76]⎯
+
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-PAIR ms: committed content is readable while the newest matching pair retrieval remains pending
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-PAIR en: committed content is readable while the newest matching pair retrieval remains pending
+AssertionError: expected [] to deeply equal [ Array(1) ]
+
+- Expected
++ Received
+
+- [
+-   "Terima kasih Tan Sri Yang di-Pertua. Saya ingin ucapkan terima kasih kepada Yang Berhormat Menteri atas jawapan yang menyeluruh ini.
+-
+- Hubungan di antara Malaysia dan India seperti yang disebut oleh Yang Berhormat Menteri telah sampai ke tahap rakan kongsi strategik. Kalau rakan kongsi strategik ini dilihat membawa manfaat, ia mesti boleh dipercayai (*trusted*) dan juga dapat menunjukkan penyampaian barangan ataupun kegunaan awam dengan izin Tan Sri Yang di-Pertua, *delivery of public good*.
+-
+- Jadi, di sini saya nak tanya, apakah bentuk yang ada dalam kedua-dua konteks ini. Berkaitan dengan tarif Amerika Syarikat, bolehkah Malaysia bertukar pandangan macam mana dia boleh turunkan tarif daripada 50 peratus kepada 18, sedangkan kita sungguhpun ada hubungan baik dengan Amerika Syarikat, masih lebih tinggi dengan 19 peratus. Kalau boleh, bersama supaya kita dapat sama rata. Kalau tidak, dia ada sedikit kelebihan.
+-
+- Dan akhirnya berkaitan dengan Myanmar, apakah langkah seterusnya baik oleh India dan Malaysia, yang boleh membawa kepada keamanan atau menuju ke arah keamanan di Myanmar, iaitu apakah adakah mesyuarat yang akan datang, adakah inisiatif yang akan datang, apakah langkah seterusnya. Takkan kita hanya tunggu dan lihat? Sekian, terima kasih.",
+- ]
++ []
+
+ ❯ savedStillReadable tests/unit/saved-reader-pending.test.ts:107:25
+    105|     const expected: string[] = [];
+    106|     for (const item of saved[category]) expected.push(item.text);
+    107|     expect.soft(actual).toEqual(expected);
+       |                         ^
+    108|   }
+    109|   expect.soft(root.querySelector('[data-field="prepared-at"]')?.textCo…
+ ❯ pendingPair tests/unit/saved-reader-pending.test.ts:149:9
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[18/76]⎯
+
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-PAIR ms: committed content is readable while the newest matching pair retrieval remains pending
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-PAIR en: committed content is readable while the newest matching pair retrieval remains pending
+AssertionError: expected [] to deeply equal [ …(2) ]
+
+- Expected
++ Received
+
+- [
+-   "*[Tuan Yang di-Pertua* ***mempengerusikan Mesyuarat****]*",
+-   "**1. Tuan Lim Guan Eng [Bagan]** Terima kasih, Tan Sri Yang di-Pertua. Bagan minta Yang Berhormat Menteri Luar Negeri menyatakan hasil perdagangan dan keselamatan serantau susulan lawatan Perdana Menteri India, Narendra Modi baru-baru ini ke Malaysia dan sejauh manakah langkah-langkah bersama yang boleh diambil oleh Malaysia dan India terhadap pelaksanaan tarif oleh Amerika Syarikat dan usaha memulihkan demokrasi dan keamanan di Myanmar. Terima kasih.",
+- ]
++ []
+
+ ❯ savedStillReadable tests/unit/saved-reader-pending.test.ts:107:25
+    105|     const expected: string[] = [];
+    106|     for (const item of saved[category]) expected.push(item.text);
+    107|     expect.soft(actual).toEqual(expected);
+       |                         ^
+    108|   }
+    109|   expect.soft(root.querySelector('[data-field="prepared-at"]')?.textCo…
+ ❯ pendingPair tests/unit/saved-reader-pending.test.ts:149:9
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[19/76]⎯
+
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-PAIR ms: committed content is readable while the newest matching pair retrieval remains pending
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-PAIR en: committed content is readable while the newest matching pair retrieval remains pending
+AssertionError: expected [] to deeply equal [ Array(1) ]
+
+- Expected
++ Received
+
+- [
+-   "[Soalan No. 5 - YB Tuan Prabakaran a/l M. Parameswaran (Batu) tidak hadir]",
+- ]
++ []
+
+ ❯ savedStillReadable tests/unit/saved-reader-pending.test.ts:107:25
+    105|     const expected: string[] = [];
+    106|     for (const item of saved[category]) expected.push(item.text);
+    107|     expect.soft(actual).toEqual(expected);
+       |                         ^
+    108|   }
+    109|   expect.soft(root.querySelector('[data-field="prepared-at"]')?.textCo…
+ ❯ pendingPair tests/unit/saved-reader-pending.test.ts:149:9
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[20/76]⎯
+
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-PAIR ms: committed content is readable while the newest matching pair retrieval remains pending
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-PAIR en: committed content is readable while the newest matching pair retrieval remains pending
+AssertionError: expected '' to contain '2026-10-10T04:00:00.000Z'
+
+- Expected
++ Received
+
+- 2026-10-10T04:00:00.000Z
+
+ ❯ savedStillReadable tests/unit/saved-reader-pending.test.ts:109:84
+    107|     expect.soft(actual).toEqual(expected);
+    108|   }
+    109|   expect.soft(root.querySelector('[data-field="prepared-at"]')?.textCo…
+       |                                                                                    ^
+    110|   expect.soft(root.querySelector('[data-field="refreshed-at"]')?.textC…
+    111|   expect.soft(root.querySelector('[data-field="saved-refreshed-at"]')?…
+ ❯ pendingPair tests/unit/saved-reader-pending.test.ts:149:9
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[21/76]⎯
+
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-PAIR ms: committed content is readable while the newest matching pair retrieval remains pending
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-PAIR en: committed content is readable while the newest matching pair retrieval remains pending
+AssertionError: expected '' to contain '2026-10-10T06:00:00.000Z'
+
+- Expected
++ Received
+
+- 2026-10-10T06:00:00.000Z
+
+ ❯ savedStillReadable tests/unit/saved-reader-pending.test.ts:110:85
+    108|   }
+    109|   expect.soft(root.querySelector('[data-field="prepared-at"]')?.textCo…
+    110|   expect.soft(root.querySelector('[data-field="refreshed-at"]')?.textC…
+       |                                                                                     ^
+    111|   expect.soft(root.querySelector('[data-field="saved-refreshed-at"]')?…
+    112|   expect.soft(root.querySelector('#reader-save-status')?.getAttribute(…
+ ❯ pendingPair tests/unit/saved-reader-pending.test.ts:149:9
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[22/76]⎯
+
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-PAIR ms: committed content is readable while the newest matching pair retrieval remains pending
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-PAIR en: committed content is readable while the newest matching pair retrieval remains pending
+AssertionError: expected '' to contain '2026-10-10T06:00:00.000Z'
+
+- Expected
++ Received
+
+- 2026-10-10T06:00:00.000Z
+
+ ❯ savedStillReadable tests/unit/saved-reader-pending.test.ts:111:91
+    109|   expect.soft(root.querySelector('[data-field="prepared-at"]')?.textCo…
+    110|   expect.soft(root.querySelector('[data-field="refreshed-at"]')?.textC…
+    111|   expect.soft(root.querySelector('[data-field="saved-refreshed-at"]')?…
+       |                                                                                           ^
+    112|   expect.soft(root.querySelector('#reader-save-status')?.getAttribute(…
+    113|   expect.soft(root.querySelector('#reader-offline-status')?.getAttribu…
+ ❯ pendingPair tests/unit/saved-reader-pending.test.ts:149:9
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[23/76]⎯
+
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-PAIR ms: committed content is readable while the newest matching pair retrieval remains pending
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-PAIR en: committed content is readable while the newest matching pair retrieval remains pending
+AssertionError: expected 'false' to be 'true' // Object.is equality
+
+Expected: "true"
+Received: "false"
+
+ ❯ savedStillReadable tests/unit/saved-reader-pending.test.ts:112:86
+    110|   expect.soft(root.querySelector('[data-field="refreshed-at"]')?.textC…
+    111|   expect.soft(root.querySelector('[data-field="saved-refreshed-at"]')?…
+    112|   expect.soft(root.querySelector('#reader-save-status')?.getAttribute(…
+       |                                                                                      ^
+    113|   expect.soft(root.querySelector('#reader-offline-status')?.getAttribu…
+    114|   expect.soft(region?.textContent ?? '').not.toContain(fresh.result.re…
+ ❯ pendingPair tests/unit/saved-reader-pending.test.ts:149:9
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[24/76]⎯
+
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-PAIR ms: committed content is readable while the newest matching pair retrieval remains pending
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-PAIR en: committed content is readable while the newest matching pair retrieval remains pending
+AssertionError: expected 'false' to be 'true' // Object.is equality
+
+Expected: "true"
+Received: "false"
+
+ ❯ savedStillReadable tests/unit/saved-reader-pending.test.ts:113:97
+    111|   expect.soft(root.querySelector('[data-field="saved-refreshed-at"]')?…
+    112|   expect.soft(root.querySelector('#reader-save-status')?.getAttribute(…
+    113|   expect.soft(root.querySelector('#reader-offline-status')?.getAttribu…
+       |                                                                                                 ^
+    114|   expect.soft(region?.textContent ?? '').not.toContain(fresh.result.re…
+    115|   expect.soft(context.marks).toHaveBeenCalledWith('hansard.reader-read…
+ ❯ pendingPair tests/unit/saved-reader-pending.test.ts:149:9
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[25/76]⎯
+
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-PAIR ms: committed content is readable while the newest matching pair retrieval remains pending
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-PAIR en: committed content is readable while the newest matching pair retrieval remains pending
+AssertionError: expected "vi.fn()" to be called with arguments: [ 'hansard.reader-ready' ]
+
+Received:
+
+  1st vi.fn() call:
+
+  [
+-   "hansard.reader-ready",
++   "hansard.catalogue-ready",
+  ]
+
+  2nd vi.fn() call:
+
+  [
+-   "hansard.reader-ready",
++   "hansard.interaction-start",
+  ]
+
+  3rd vi.fn() call:
+
+  [
+-   "hansard.reader-ready",
++   "hansard.interaction-end",
+  ]
+
+
+Number of calls: 3
+
+ ❯ savedStillReadable tests/unit/saved-reader-pending.test.ts:115:30
+    113|   expect.soft(root.querySelector('#reader-offline-status')?.getAttribu…
+    114|   expect.soft(region?.textContent ?? '').not.toContain(fresh.result.re…
+    115|   expect.soft(context.marks).toHaveBeenCalledWith('hansard.reader-read…
+       |                              ^
+    116|   expect(context.storage.savePair).not.toHaveBeenCalled();
+    117| }
+ ❯ pendingPair tests/unit/saved-reader-pending.test.ts:149:9
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[26/76]⎯
+
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-RETRY ms: explicit Retry retains the same committed source content during its pending latest check
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-RETRY en: explicit Retry retains the same committed source content during its pending latest check
+AssertionError: expected '' to be '1839' // Object.is equality
+
+- Expected
++ Received
+
+- 1839
+
+ ❯ savedStillReadable tests/unit/saved-reader-pending.test.ts:99:47
+     97|   const region = root.querySelector<HTMLElement>('#reader-result');
+     98|   expect.soft(document.documentElement.lang).toBe(language);
+     99|   expect.soft(region?.dataset.memberId ?? '').toBe(saved.memberId);
+       |                                               ^
+    100|   expect.soft(region?.dataset.sittingId ?? '').toBe(saved.sittingId);
+    101|   expect.soft(region?.dataset.resultComplete ?? '').toBe('true');
+ ❯ pendingRetry tests/unit/saved-reader-pending.test.ts:168:9
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[27/76]⎯
+
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-RETRY ms: explicit Retry retains the same committed source content during its pending latest check
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-RETRY en: explicit Retry retains the same committed source content during its pending latest check
+AssertionError: expected '' to be '29326' // Object.is equality
+
+- Expected
++ Received
+
+- 29326
+
+ ❯ savedStillReadable tests/unit/saved-reader-pending.test.ts:100:48
+     98|   expect.soft(document.documentElement.lang).toBe(language);
+     99|   expect.soft(region?.dataset.memberId ?? '').toBe(saved.memberId);
+    100|   expect.soft(region?.dataset.sittingId ?? '').toBe(saved.sittingId);
+       |                                                ^
+    101|   expect.soft(region?.dataset.resultComplete ?? '').toBe('true');
+    102|   for (const [category, kind] of [['turns', 'turn'], ['gaps', 'gap'], …
+ ❯ pendingRetry tests/unit/saved-reader-pending.test.ts:168:9
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[28/76]⎯
+
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-RETRY ms: explicit Retry retains the same committed source content during its pending latest check
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-RETRY en: explicit Retry retains the same committed source content during its pending latest check
+AssertionError: expected '' to be 'true' // Object.is equality
+
+- Expected
++ Received
+
+- true
+
+ ❯ savedStillReadable tests/unit/saved-reader-pending.test.ts:101:53
+     99|   expect.soft(region?.dataset.memberId ?? '').toBe(saved.memberId);
+    100|   expect.soft(region?.dataset.sittingId ?? '').toBe(saved.sittingId);
+    101|   expect.soft(region?.dataset.resultComplete ?? '').toBe('true');
+       |                                                     ^
+    102|   for (const [category, kind] of [['turns', 'turn'], ['gaps', 'gap'], …
+    103|     const actual: string[] = [];
+ ❯ pendingRetry tests/unit/saved-reader-pending.test.ts:168:9
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[29/76]⎯
+
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-RETRY ms: explicit Retry retains the same committed source content during its pending latest check
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-RETRY en: explicit Retry retains the same committed source content during its pending latest check
+AssertionError: expected [] to deeply equal [ Array(1) ]
+
+- Expected
++ Received
+
+- [
+-   "Terima kasih Tan Sri Yang di-Pertua. Saya ingin ucapkan terima kasih kepada Yang Berhormat Menteri atas jawapan yang menyeluruh ini.
+-
+- Hubungan di antara Malaysia dan India seperti yang disebut oleh Yang Berhormat Menteri telah sampai ke tahap rakan kongsi strategik. Kalau rakan kongsi strategik ini dilihat membawa manfaat, ia mesti boleh dipercayai (*trusted*) dan juga dapat menunjukkan penyampaian barangan ataupun kegunaan awam dengan izin Tan Sri Yang di-Pertua, *delivery of public good*.
+-
+- Jadi, di sini saya nak tanya, apakah bentuk yang ada dalam kedua-dua konteks ini. Berkaitan dengan tarif Amerika Syarikat, bolehkah Malaysia bertukar pandangan macam mana dia boleh turunkan tarif daripada 50 peratus kepada 18, sedangkan kita sungguhpun ada hubungan baik dengan Amerika Syarikat, masih lebih tinggi dengan 19 peratus. Kalau boleh, bersama supaya kita dapat sama rata. Kalau tidak, dia ada sedikit kelebihan.
+-
+- Dan akhirnya berkaitan dengan Myanmar, apakah langkah seterusnya baik oleh India dan Malaysia, yang boleh membawa kepada keamanan atau menuju ke arah keamanan di Myanmar, iaitu apakah adakah mesyuarat yang akan datang, adakah inisiatif yang akan datang, apakah langkah seterusnya. Takkan kita hanya tunggu dan lihat? Sekian, terima kasih.",
+- ]
++ []
+
+ ❯ savedStillReadable tests/unit/saved-reader-pending.test.ts:107:25
+    105|     const expected: string[] = [];
+    106|     for (const item of saved[category]) expected.push(item.text);
+    107|     expect.soft(actual).toEqual(expected);
+       |                         ^
+    108|   }
+    109|   expect.soft(root.querySelector('[data-field="prepared-at"]')?.textCo…
+ ❯ pendingRetry tests/unit/saved-reader-pending.test.ts:168:9
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[30/76]⎯
+
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-RETRY ms: explicit Retry retains the same committed source content during its pending latest check
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-RETRY en: explicit Retry retains the same committed source content during its pending latest check
+AssertionError: expected [] to deeply equal [ …(2) ]
+
+- Expected
++ Received
+
+- [
+-   "*[Tuan Yang di-Pertua* ***mempengerusikan Mesyuarat****]*",
+-   "**1. Tuan Lim Guan Eng [Bagan]** Terima kasih, Tan Sri Yang di-Pertua. Bagan minta Yang Berhormat Menteri Luar Negeri menyatakan hasil perdagangan dan keselamatan serantau susulan lawatan Perdana Menteri India, Narendra Modi baru-baru ini ke Malaysia dan sejauh manakah langkah-langkah bersama yang boleh diambil oleh Malaysia dan India terhadap pelaksanaan tarif oleh Amerika Syarikat dan usaha memulihkan demokrasi dan keamanan di Myanmar. Terima kasih.",
+- ]
++ []
+
+ ❯ savedStillReadable tests/unit/saved-reader-pending.test.ts:107:25
+    105|     const expected: string[] = [];
+    106|     for (const item of saved[category]) expected.push(item.text);
+    107|     expect.soft(actual).toEqual(expected);
+       |                         ^
+    108|   }
+    109|   expect.soft(root.querySelector('[data-field="prepared-at"]')?.textCo…
+ ❯ pendingRetry tests/unit/saved-reader-pending.test.ts:168:9
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[31/76]⎯
+
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-RETRY ms: explicit Retry retains the same committed source content during its pending latest check
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-RETRY en: explicit Retry retains the same committed source content during its pending latest check
+AssertionError: expected [] to deeply equal [ Array(1) ]
+
+- Expected
++ Received
+
+- [
+-   "[Soalan No. 5 - YB Tuan Prabakaran a/l M. Parameswaran (Batu) tidak hadir]",
+- ]
++ []
+
+ ❯ savedStillReadable tests/unit/saved-reader-pending.test.ts:107:25
+    105|     const expected: string[] = [];
+    106|     for (const item of saved[category]) expected.push(item.text);
+    107|     expect.soft(actual).toEqual(expected);
+       |                         ^
+    108|   }
+    109|   expect.soft(root.querySelector('[data-field="prepared-at"]')?.textCo…
+ ❯ pendingRetry tests/unit/saved-reader-pending.test.ts:168:9
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[32/76]⎯
+
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-RETRY ms: explicit Retry retains the same committed source content during its pending latest check
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-RETRY en: explicit Retry retains the same committed source content during its pending latest check
+AssertionError: expected '' to contain '2026-10-10T04:00:00.000Z'
+
+- Expected
++ Received
+
+- 2026-10-10T04:00:00.000Z
+
+ ❯ savedStillReadable tests/unit/saved-reader-pending.test.ts:109:84
+    107|     expect.soft(actual).toEqual(expected);
+    108|   }
+    109|   expect.soft(root.querySelector('[data-field="prepared-at"]')?.textCo…
+       |                                                                                    ^
+    110|   expect.soft(root.querySelector('[data-field="refreshed-at"]')?.textC…
+    111|   expect.soft(root.querySelector('[data-field="saved-refreshed-at"]')?…
+ ❯ pendingRetry tests/unit/saved-reader-pending.test.ts:168:9
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[33/76]⎯
+
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-RETRY ms: explicit Retry retains the same committed source content during its pending latest check
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-RETRY en: explicit Retry retains the same committed source content during its pending latest check
+AssertionError: expected '' to contain '2026-10-10T06:00:00.000Z'
+
+- Expected
++ Received
+
+- 2026-10-10T06:00:00.000Z
+
+ ❯ savedStillReadable tests/unit/saved-reader-pending.test.ts:110:85
+    108|   }
+    109|   expect.soft(root.querySelector('[data-field="prepared-at"]')?.textCo…
+    110|   expect.soft(root.querySelector('[data-field="refreshed-at"]')?.textC…
+       |                                                                                     ^
+    111|   expect.soft(root.querySelector('[data-field="saved-refreshed-at"]')?…
+    112|   expect.soft(root.querySelector('#reader-save-status')?.getAttribute(…
+ ❯ pendingRetry tests/unit/saved-reader-pending.test.ts:168:9
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[34/76]⎯
+
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-RETRY ms: explicit Retry retains the same committed source content during its pending latest check
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-RETRY en: explicit Retry retains the same committed source content during its pending latest check
+AssertionError: expected '' to contain '2026-10-10T06:00:00.000Z'
+
+- Expected
++ Received
+
+- 2026-10-10T06:00:00.000Z
+
+ ❯ savedStillReadable tests/unit/saved-reader-pending.test.ts:111:91
+    109|   expect.soft(root.querySelector('[data-field="prepared-at"]')?.textCo…
+    110|   expect.soft(root.querySelector('[data-field="refreshed-at"]')?.textC…
+    111|   expect.soft(root.querySelector('[data-field="saved-refreshed-at"]')?…
+       |                                                                                           ^
+    112|   expect.soft(root.querySelector('#reader-save-status')?.getAttribute(…
+    113|   expect.soft(root.querySelector('#reader-offline-status')?.getAttribu…
+ ❯ pendingRetry tests/unit/saved-reader-pending.test.ts:168:9
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[35/76]⎯
+
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-RETRY ms: explicit Retry retains the same committed source content during its pending latest check
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-RETRY en: explicit Retry retains the same committed source content during its pending latest check
+AssertionError: expected 'false' to be 'true' // Object.is equality
+
+Expected: "true"
+Received: "false"
+
+ ❯ savedStillReadable tests/unit/saved-reader-pending.test.ts:112:86
+    110|   expect.soft(root.querySelector('[data-field="refreshed-at"]')?.textC…
+    111|   expect.soft(root.querySelector('[data-field="saved-refreshed-at"]')?…
+    112|   expect.soft(root.querySelector('#reader-save-status')?.getAttribute(…
+       |                                                                                      ^
+    113|   expect.soft(root.querySelector('#reader-offline-status')?.getAttribu…
+    114|   expect.soft(region?.textContent ?? '').not.toContain(fresh.result.re…
+ ❯ pendingRetry tests/unit/saved-reader-pending.test.ts:168:9
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[36/76]⎯
+
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-RETRY ms: explicit Retry retains the same committed source content during its pending latest check
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-RETRY en: explicit Retry retains the same committed source content during its pending latest check
+AssertionError: expected 'false' to be 'true' // Object.is equality
+
+Expected: "true"
+Received: "false"
+
+ ❯ savedStillReadable tests/unit/saved-reader-pending.test.ts:113:97
+    111|   expect.soft(root.querySelector('[data-field="saved-refreshed-at"]')?…
+    112|   expect.soft(root.querySelector('#reader-save-status')?.getAttribute(…
+    113|   expect.soft(root.querySelector('#reader-offline-status')?.getAttribu…
+       |                                                                                                 ^
+    114|   expect.soft(region?.textContent ?? '').not.toContain(fresh.result.re…
+    115|   expect.soft(context.marks).toHaveBeenCalledWith('hansard.reader-read…
+ ❯ pendingRetry tests/unit/saved-reader-pending.test.ts:168:9
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[37/76]⎯
+
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-RETRY ms: explicit Retry retains the same committed source content during its pending latest check
+ FAIL  tests/unit/saved-reader-pending.test.ts > SAVED-PENDING-RETRY en: explicit Retry retains the same committed source content during its pending latest check
+AssertionError: expected "vi.fn()" to be called with arguments: [ 'hansard.reader-ready' ]
+
+Received:
+
+  1st vi.fn() call:
+
+  [
+-   "hansard.reader-ready",
++   "hansard.interaction-start",
+  ]
+
+  2nd vi.fn() call:
+
+  [
+-   "hansard.reader-ready",
++   "hansard.interaction-end",
+  ]
+
+
+Number of calls: 2
+
+ ❯ savedStillReadable tests/unit/saved-reader-pending.test.ts:115:30
+    113|   expect.soft(root.querySelector('#reader-offline-status')?.getAttribu…
+    114|   expect.soft(region?.textContent ?? '').not.toContain(fresh.result.re…
+    115|   expect.soft(context.marks).toHaveBeenCalledWith('hansard.reader-read…
+       |                              ^
+    116|   expect(context.storage.savePair).not.toHaveBeenCalled();
+    117| }
+ ❯ pendingRetry tests/unit/saved-reader-pending.test.ts:168:9
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[38/76]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  6 failed (6)
+   Start at  19:19:14
+   Duration  447ms (environment 58%, tests 26%, transform 12%, import 3%)
+

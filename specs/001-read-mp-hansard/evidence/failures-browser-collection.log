@@ -1,0 +1,68 @@
+Listing tests:
+  [chromium] › failures.spec.ts:84:3 › ms: controlled complete absence, incomplete empty subset and inaccessible record are distinct
+  [chromium] › failures.spec.ts:105:3 › ms: failed initial lists expose an announced keyboard Retry and recover the full choices
+  [chromium] › failures.spec.ts:117:114 › ms: catalogue-schema retains known context and retries the selected pair without inventing absence
+  [chromium] › failures.spec.ts:117:114 › ms: shard-http retains known context and retries the selected pair without inventing absence
+  [chromium] › failures.spec.ts:117:114 › ms: shard-body retains known context and retries the selected pair without inventing absence
+  [chromium] › failures.spec.ts:117:114 › ms: shard-digest retains known context and retries the selected pair without inventing absence
+  [chromium] › failures.spec.ts:117:114 › ms: shard-schema retains known context and retries the selected pair without inventing absence
+  [chromium] › failures.spec.ts:133:48 › ms: a delayed failed Retry cannot replace a newer same-pair Read
+  [chromium] › failures.spec.ts:133:48 › ms: a delayed failed Retry cannot replace a newer selection
+  [chromium] › failures.spec.ts:153:3 › ms: source age, dated known failure and snapshot knowledge remain distinct at 320 CSS pixels
+  [chromium] › failures.spec.ts:172:3 › ms: an old successful snapshot can disclose age but cannot invent a later workflow failure
+  [chromium] › failures.spec.ts:84:3 › en: controlled complete absence, incomplete empty subset and inaccessible record are distinct
+  [chromium] › failures.spec.ts:105:3 › en: failed initial lists expose an announced keyboard Retry and recover the full choices
+  [chromium] › failures.spec.ts:117:114 › en: catalogue-schema retains known context and retries the selected pair without inventing absence
+  [chromium] › failures.spec.ts:117:114 › en: shard-http retains known context and retries the selected pair without inventing absence
+  [chromium] › failures.spec.ts:117:114 › en: shard-body retains known context and retries the selected pair without inventing absence
+  [chromium] › failures.spec.ts:117:114 › en: shard-digest retains known context and retries the selected pair without inventing absence
+  [chromium] › failures.spec.ts:117:114 › en: shard-schema retains known context and retries the selected pair without inventing absence
+  [chromium] › failures.spec.ts:133:48 › en: a delayed failed Retry cannot replace a newer same-pair Read
+  [chromium] › failures.spec.ts:133:48 › en: a delayed failed Retry cannot replace a newer selection
+  [chromium] › failures.spec.ts:153:3 › en: source age, dated known failure and snapshot knowledge remain distinct at 320 CSS pixels
+  [chromium] › failures.spec.ts:172:3 › en: an old successful snapshot can disclose age but cannot invent a later workflow failure
+  [firefox] › failures.spec.ts:84:3 › ms: controlled complete absence, incomplete empty subset and inaccessible record are distinct
+  [firefox] › failures.spec.ts:105:3 › ms: failed initial lists expose an announced keyboard Retry and recover the full choices
+  [firefox] › failures.spec.ts:117:114 › ms: catalogue-schema retains known context and retries the selected pair without inventing absence
+  [firefox] › failures.spec.ts:117:114 › ms: shard-http retains known context and retries the selected pair without inventing absence
+  [firefox] › failures.spec.ts:117:114 › ms: shard-body retains known context and retries the selected pair without inventing absence
+  [firefox] › failures.spec.ts:117:114 › ms: shard-digest retains known context and retries the selected pair without inventing absence
+  [firefox] › failures.spec.ts:117:114 › ms: shard-schema retains known context and retries the selected pair without inventing absence
+  [firefox] › failures.spec.ts:133:48 › ms: a delayed failed Retry cannot replace a newer same-pair Read
+  [firefox] › failures.spec.ts:133:48 › ms: a delayed failed Retry cannot replace a newer selection
+  [firefox] › failures.spec.ts:153:3 › ms: source age, dated known failure and snapshot knowledge remain distinct at 320 CSS pixels
+  [firefox] › failures.spec.ts:172:3 › ms: an old successful snapshot can disclose age but cannot invent a later workflow failure
+  [firefox] › failures.spec.ts:84:3 › en: controlled complete absence, incomplete empty subset and inaccessible record are distinct
+  [firefox] › failures.spec.ts:105:3 › en: failed initial lists expose an announced keyboard Retry and recover the full choices
+  [firefox] › failures.spec.ts:117:114 › en: catalogue-schema retains known context and retries the selected pair without inventing absence
+  [firefox] › failures.spec.ts:117:114 › en: shard-http retains known context and retries the selected pair without inventing absence
+  [firefox] › failures.spec.ts:117:114 › en: shard-body retains known context and retries the selected pair without inventing absence
+  [firefox] › failures.spec.ts:117:114 › en: shard-digest retains known context and retries the selected pair without inventing absence
+  [firefox] › failures.spec.ts:117:114 › en: shard-schema retains known context and retries the selected pair without inventing absence
+  [firefox] › failures.spec.ts:133:48 › en: a delayed failed Retry cannot replace a newer same-pair Read
+  [firefox] › failures.spec.ts:133:48 › en: a delayed failed Retry cannot replace a newer selection
+  [firefox] › failures.spec.ts:153:3 › en: source age, dated known failure and snapshot knowledge remain distinct at 320 CSS pixels
+  [firefox] › failures.spec.ts:172:3 › en: an old successful snapshot can disclose age but cannot invent a later workflow failure
+  [webkit] › failures.spec.ts:84:3 › ms: controlled complete absence, incomplete empty subset and inaccessible record are distinct
+  [webkit] › failures.spec.ts:105:3 › ms: failed initial lists expose an announced keyboard Retry and recover the full choices
+  [webkit] › failures.spec.ts:117:114 › ms: catalogue-schema retains known context and retries the selected pair without inventing absence
+  [webkit] › failures.spec.ts:117:114 › ms: shard-http retains known context and retries the selected pair without inventing absence
+  [webkit] › failures.spec.ts:117:114 › ms: shard-body retains known context and retries the selected pair without inventing absence
+  [webkit] › failures.spec.ts:117:114 › ms: shard-digest retains known context and retries the selected pair without inventing absence
+  [webkit] › failures.spec.ts:117:114 › ms: shard-schema retains known context and retries the selected pair without inventing absence
+  [webkit] › failures.spec.ts:133:48 › ms: a delayed failed Retry cannot replace a newer same-pair Read
+  [webkit] › failures.spec.ts:133:48 › ms: a delayed failed Retry cannot replace a newer selection
+  [webkit] › failures.spec.ts:153:3 › ms: source age, dated known failure and snapshot knowledge remain distinct at 320 CSS pixels
+  [webkit] › failures.spec.ts:172:3 › ms: an old successful snapshot can disclose age but cannot invent a later workflow failure
+  [webkit] › failures.spec.ts:84:3 › en: controlled complete absence, incomplete empty subset and inaccessible record are distinct
+  [webkit] › failures.spec.ts:105:3 › en: failed initial lists expose an announced keyboard Retry and recover the full choices
+  [webkit] › failures.spec.ts:117:114 › en: catalogue-schema retains known context and retries the selected pair without inventing absence
+  [webkit] › failures.spec.ts:117:114 › en: shard-http retains known context and retries the selected pair without inventing absence
+  [webkit] › failures.spec.ts:117:114 › en: shard-body retains known context and retries the selected pair without inventing absence
+  [webkit] › failures.spec.ts:117:114 › en: shard-digest retains known context and retries the selected pair without inventing absence
+  [webkit] › failures.spec.ts:117:114 › en: shard-schema retains known context and retries the selected pair without inventing absence
+  [webkit] › failures.spec.ts:133:48 › en: a delayed failed Retry cannot replace a newer same-pair Read
+  [webkit] › failures.spec.ts:133:48 › en: a delayed failed Retry cannot replace a newer selection
+  [webkit] › failures.spec.ts:153:3 › en: source age, dated known failure and snapshot knowledge remain distinct at 320 CSS pixels
+  [webkit] › failures.spec.ts:172:3 › en: an old successful snapshot can disclose age but cannot invent a later workflow failure
+Total: 66 tests in 1 file

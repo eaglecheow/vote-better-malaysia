@@ -1,0 +1,13 @@
+
+> vote-better-malaysia@0.1.0 test
+> vitest --run tests/unit/source-schema.test.ts tests/unit/source-items.test.ts tests/unit/acquisition-bootstrap.test.ts tests/unit/static-data.test.ts tests/unit/reader.test.ts tests/unit/messages.test.ts tests/unit/performance.test.ts tests/unit/documentation.test.ts tests/unit/performance-collector.test.ts tests/unit/harness.test.ts tests/unit/dom-harness.test.ts tests/unit/source-retention.test.ts tests/unit/acquisition-regressions.test.ts
+
+
+ RUN  v5.0.3 /Users/eaglecheow/dev/vote-better-malaysia
+
+
+ Test Files  13 passed (13)
+      Tests  875 passed (875)
+   Start at  14:13:09
+   Duration  7.51s (tests 80%, import 7%, transform 6%, environment 6%)
+

@@ -1,0 +1,5 @@
+
+> vote-better-malaysia@0.1.0 typecheck
+> tsc --noEmit
+
+tests/fixtures/pwa.ts(524,13): error TS2630: Cannot assign to 'observedPut' because it is a function.

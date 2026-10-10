@@ -1,0 +1,917 @@
+
+> vote-better-malaysia@0.1.0 test
+> vitest --run tests/unit/worker.test.ts tests/unit/build-worker.test.ts -t WREV|BREV
+
+
+ RUN  v5.0.3 /Users/eaglecheow/dev/vote-better-malaysia
+
+ ❯ tests/unit/worker.test.ts (125 tests | 33 failed | 87 skipped) 38ms
+   × WREV001 install cache population and requests are reachable independently of its returned status 22ms
+   × WREV002 safe cleanup deletes the obsolete cache without an earlier status assertion guard 2ms
+   × WREV003 exact Apply invokes native skipWaiting without an acknowledgement assertion guard 0ms
+   × WREV004 client handshake changes only the actual source map entry without an acknowledgement guard 0ms
+   × WREV005 an independently seeded mixed current entry stamp cannot confirm readiness 1ms
+   × WREV006 an independently seeded opaque required response cannot confirm readiness 0ms
+   × WREV008 cleanup explicitly includes an uncontrolled own unknown window 1ms
+   × WREV008 cleanup explicitly includes an uncontrolled own older window 1ms
+   × WREV009 restarted worker discovers readiness from persistent bytes without another install or activation 2ms
+   × WREV010 restarted worker serves the exact old hashed asset with empty version tracking 1ms
+   × WREV012 explicit invalid status version "" is never omitted-version discovery 0ms
+   × WREV012 explicit invalid status version null is never omitted-version discovery 0ms
+   × WREV012 explicit invalid status version "bad" is never omitted-version discovery 0ms
+   × WREV012 explicit invalid status version "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" is never omitted-version discovery 0ms
+   × WREV012 explicit invalid status version 7 is never omitted-version discovery 0ms
+   × WREV012 explicit invalid status version false is never omitted-version discovery 0ms
+   × WREV013 client-version query rejects missing native source 0ms
+   × WREV013 client-version query rejects foreign native source 0ms
+   × WREV013 client-version query rejects lookalike native source 0ms
+   × WREV014 native source reply is reachable independently of listener and lifetime assertion guards 1ms
+   × WREV015 native install lifetime independently reaches rejection on an injected cache-put failure 1ms
+   × WREV017 native fetch response and data body are reachable without a required-listener guard 0ms
+   × WREV018 native successful install lifetime populates caches without earlier listener/status guards 1ms
+   × WREV019 native safe activation lifetime deletes only obsolete own cache without earlier guards 1ms
+   × WREV020 an omitted mandatory shell declaration /vote-better-malaysia/ cannot produce a partial installed shell 0ms
+   × WREV020 an omitted mandatory shell declaration /vote-better-malaysia/index.html cannot produce a partial installed shell 0ms
+   × WREV020 an omitted mandatory shell declaration /vote-better-malaysia/help.html cannot produce a partial installed shell 0ms
+   × WREV020 an omitted mandatory shell declaration /vote-better-malaysia/manifest.webmanifest cannot produce a partial installed shell 0ms
+   × WREV020 an omitted mandatory shell declaration /vote-better-malaysia/assets/reader-A1B2C3D4.js cannot produce a partial installed shell 0ms
+   × WREV020 an omitted mandatory shell declaration /vote-better-malaysia/assets/reader-A1B2C3D4.css cannot produce a partial installed shell 0ms
+   × WREV020 an omitted mandatory shell declaration /vote-better-malaysia/icons/icon-192.png cannot produce a partial installed shell 0ms
+   × WREV020 an omitted mandatory shell declaration /vote-better-malaysia/icons/icon-512.png cannot produce a partial installed shell 0ms
+   × WREV020 an omitted mandatory shell declaration /vote-better-malaysia/sw.js cannot produce a partial installed shell 0ms
+ ❯ tests/unit/build-worker.test.ts (81 tests | 23 failed | 58 skipped) 205ms
+   × BREV001 complete sorted shell list and index stamp are reachable without a manifest-presence guard 13ms
+   × BREV002 src/main.ts invalidates the shell without a first-build guard 7ms
+   × BREV002 src/source.ts invalidates the shell without a first-build guard 7ms
+   × BREV002 src/messages.ts invalidates the shell without a first-build guard 13ms
+   × BREV002 src/styles.css invalidates the shell without a first-build guard 10ms
+   × BREV002 worker/service-worker.ts invalidates the shell without a first-build guard 10ms
+   × BREV002 scripts/build-worker.ts invalidates the shell without a first-build guard 7ms
+   × BREV002 vite.config.ts invalidates the shell without a first-build guard 10ms
+   × BREV002 package-lock.json invalidates the shell without a first-build guard 7ms
+   × BREV002 src/storage.ts invalidates the shell without a first-build guard 9ms
+   × BREV002 src/updates.ts invalidates the shell without a first-build guard 9ms
+   × BREV002 package.json invalidates the shell without a first-build guard 10ms
+   × BREV002 tsconfig.json invalidates the shell without a first-build guard 10ms
+   × BREV003 actual index.html bytes invalidate the shell without a first-build guard 8ms
+   × BREV003 actual help.html bytes invalidate the shell without a first-build guard 6ms
+   × BREV003 actual assets/main-A1B2C3D4.js bytes invalidate the shell without a first-build guard 6ms
+   × BREV003 actual assets/main-A1B2C3D4.css bytes invalidate the shell without a first-build guard 8ms
+   × BREV003 actual manifest.webmanifest bytes invalidate the shell without a first-build guard 8ms
+   × BREV003 actual icons/icon-192.png bytes invalidate the shell without a first-build guard 7ms
+   × BREV004 added nondata resources are included independently of earlier successful generation 7ms
+   × BREV005 repeated builds expose version/output checks without absent-file harness errors 10ms
+   × BREV006 data and prose changes expose valid stable-shell checks without a first-build guard 7ms
+   × BREV007 the generated classic worker bootstraps actual production event bindings without lifecycle side effects 16ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 56 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/build-worker.test.ts > BREV001 complete sorted shell list and index stamp are reachable without a manifest-presence guard
+AssertionError: expected undefined to deeply equal [ '/vote-better-malaysia/', …(8) ]
+
+- Expected:
+[
+  "/vote-better-malaysia/",
+  "/vote-better-malaysia/assets/main-A1B2C3D4.css",
+  "/vote-better-malaysia/assets/main-A1B2C3D4.js",
+  "/vote-better-malaysia/help.html",
+  "/vote-better-malaysia/icons/icon-192.png",
+  "/vote-better-malaysia/icons/icon-512.png",
+  "/vote-better-malaysia/index.html",
+  "/vote-better-malaysia/manifest.webmanifest",
+  "/vote-better-malaysia/sw.js",
+]
+
++ Received:
+undefined
+
+ ❯ check tests/unit/build-worker.test.ts:368:35
+
+ ❯ withFixture tests/unit/build-worker.test.ts:83:36
+ ❯ observableShellOutput tests/unit/build-worker.test.ts:360:44
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/94]⎯
+
+ FAIL  tests/unit/build-worker.test.ts > BREV001 complete sorted shell list and index stamp are reachable without a manifest-presence guard
+AssertionError: expected '<!doctype html><html lang="ms"><head>…' to match /<meta\s+name="hansard-shell-vers…/?\s*>
+
+- Expected:
+/<meta\s+name="hansard-shell-version"\s+content="[a-f0-9]{64}"\s*\/?\s*>/
+
++ Received:
+"<!doctype html><html lang=\"ms\"><head><link rel=\"manifest\" href=\"/vote-better-malaysia/manifest.webmanifest\"><title>Fixture reader</title></head><body><script type=\"module\" src=\"/vote-better-malaysia/assets/main-A1B2C3D4.js\"></script></body></html>"
+
+ ❯ check tests/unit/build-worker.test.ts:369:53
+
+ ❯ withFixture tests/unit/build-worker.test.ts:83:36
+ ❯ observableShellOutput tests/unit/build-worker.test.ts:360:44
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/94]⎯
+
+ FAIL  tests/unit/build-worker.test.ts > BREV001 complete sorted shell list and index stamp are reachable without a manifest-presence guard
+AssertionError: expected null to be type of 'string'
+
+Expected: "string"
+Received: "object"
+
+ ❯ check tests/unit/build-worker.test.ts:370:48
+    368|       expect.soft(result?.assets).toEqual(assets.sort());
+    369|       expect.soft(generated(context, 'index.html')).toMatch(/<meta\s+n…
+    370|       expect.soft(generated(context, 'sw.js')).toBeTypeOf('string');
+       |                                                ^
+    371|     }); });
+    372|
+ ❯ withFixture tests/unit/build-worker.test.ts:83:36
+ ❯ observableShellOutput tests/unit/build-worker.test.ts:360:44
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/94]⎯
+
+ FAIL  tests/unit/build-worker.test.ts > BREV002 src/main.ts invalidates the shell without a first-build guard
+ FAIL  tests/unit/build-worker.test.ts > BREV002 src/source.ts invalidates the shell without a first-build guard
+ FAIL  tests/unit/build-worker.test.ts > BREV002 src/messages.ts invalidates the shell without a first-build guard
+ FAIL  tests/unit/build-worker.test.ts > BREV002 src/styles.css invalidates the shell without a first-build guard
+ FAIL  tests/unit/build-worker.test.ts > BREV002 worker/service-worker.ts invalidates the shell without a first-build guard
+ FAIL  tests/unit/build-worker.test.ts > BREV002 scripts/build-worker.ts invalidates the shell without a first-build guard
+ FAIL  tests/unit/build-worker.test.ts > BREV002 vite.config.ts invalidates the shell without a first-build guard
+ FAIL  tests/unit/build-worker.test.ts > BREV002 package-lock.json invalidates the shell without a first-build guard
+ FAIL  tests/unit/build-worker.test.ts > BREV002 src/storage.ts invalidates the shell without a first-build guard
+ FAIL  tests/unit/build-worker.test.ts > BREV002 src/updates.ts invalidates the shell without a first-build guard
+ FAIL  tests/unit/build-worker.test.ts > BREV002 package.json invalidates the shell without a first-build guard
+ FAIL  tests/unit/build-worker.test.ts > BREV002 tsconfig.json invalidates the shell without a first-build guard
+AssertionError: expected undefined not to be undefined // Object.is equality
+ ❯ check tests/unit/build-worker.test.ts:389:76
+    387|       const before = await buildWorker(context); const file = join(con…
+    388|       writeFileSync(file, path.endsWith('.json') ? JSON.stringify({ ..…
+    389|       const after = await buildWorker(context); expect(after?.version)…
+       |                                                                            ^
+    390|     }); });
+    391|
+ ❯ withFixture tests/unit/build-worker.test.ts:83:36
+ ❯ observableSourceInvalidation tests/unit/build-worker.test.ts:378:51
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/94]⎯
+
+ FAIL  tests/unit/build-worker.test.ts > BREV003 actual index.html bytes invalidate the shell without a first-build guard
+ FAIL  tests/unit/build-worker.test.ts > BREV003 actual help.html bytes invalidate the shell without a first-build guard
+ FAIL  tests/unit/build-worker.test.ts > BREV003 actual assets/main-A1B2C3D4.js bytes invalidate the shell without a first-build guard
+ FAIL  tests/unit/build-worker.test.ts > BREV003 actual assets/main-A1B2C3D4.css bytes invalidate the shell without a first-build guard
+ FAIL  tests/unit/build-worker.test.ts > BREV003 actual manifest.webmanifest bytes invalidate the shell without a first-build guard
+ FAIL  tests/unit/build-worker.test.ts > BREV003 actual icons/icon-192.png bytes invalidate the shell without a first-build guard
+AssertionError: expected undefined not to be undefined // Object.is equality
+ ❯ check tests/unit/build-worker.test.ts:412:76
+    410|         function change(manifest): void { manifest.name = 'Changed con…
+    411|       else writeFileSync(file, `${readFileSync(file, 'utf8')}\n${path.…
+    412|       const after = await buildWorker(context); expect(after?.version)…
+       |                                                                            ^
+    413|     }); });
+    414|
+ ❯ withFixture tests/unit/build-worker.test.ts:83:36
+ ❯ observableDeployedInvalidation tests/unit/build-worker.test.ts:396:53
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/94]⎯
+
+ FAIL  tests/unit/build-worker.test.ts > BREV004 added nondata resources are included independently of earlier successful generation
+AssertionError: expected [] to include '/vote-better-malaysia/assets/font-X1X…'
+ ❯ check tests/unit/build-worker.test.ts:429:67
+    427|       for (const path of paths) put(context.outDir, path, path.endsWit…
+    428|       const result = await buildWorker(context);
+    429|       for (const path of paths) expect.soft(result?.assets ?? []).toCo…
+       |                                                                   ^
+    430|     }); });
+    431|
+ ❯ withFixture tests/unit/build-worker.test.ts:83:36
+ ❯ observableNewAssets tests/unit/build-worker.test.ts:419:42
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/94]⎯
+
+ FAIL  tests/unit/build-worker.test.ts > BREV004 added nondata resources are included independently of earlier successful generation
+AssertionError: expected [] to include '/vote-better-malaysia/assets/logo-X1X…'
+ ❯ check tests/unit/build-worker.test.ts:429:67
+    427|       for (const path of paths) put(context.outDir, path, path.endsWit…
+    428|       const result = await buildWorker(context);
+    429|       for (const path of paths) expect.soft(result?.assets ?? []).toCo…
+       |                                                                   ^
+    430|     }); });
+    431|
+ ❯ withFixture tests/unit/build-worker.test.ts:83:36
+ ❯ observableNewAssets tests/unit/build-worker.test.ts:419:42
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/94]⎯
+
+ FAIL  tests/unit/build-worker.test.ts > BREV004 added nondata resources are included independently of earlier successful generation
+AssertionError: expected [] to include '/vote-better-malaysia/extra.html'
+ ❯ check tests/unit/build-worker.test.ts:429:67
+    427|       for (const path of paths) put(context.outDir, path, path.endsWit…
+    428|       const result = await buildWorker(context);
+    429|       for (const path of paths) expect.soft(result?.assets ?? []).toCo…
+       |                                                                   ^
+    430|     }); });
+    431|
+ ❯ withFixture tests/unit/build-worker.test.ts:83:36
+ ❯ observableNewAssets tests/unit/build-worker.test.ts:419:42
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/94]⎯
+
+ FAIL  tests/unit/build-worker.test.ts > BREV005 repeated builds expose version/output checks without absent-file harness errors
+AssertionError: expected '' to match /^[a-f0-9]{64}$/
+
+- Expected:
+/^[a-f0-9]{64}$/
+
++ Received:
+""
+
+ ❯ check tests/unit/build-worker.test.ts:444:41
+    442|       const first = await buildWorker(context); const firstWorker = ge…
+    443|       const second = await buildWorker(context); const secondWorker = …
+    444|       expect.soft(first?.version ?? '').toMatch(/^[a-f0-9]{64}$/); exp…
+       |                                         ^
+    445|       expect.soft(firstWorker).toBeTypeOf('string'); expect.soft(secon…
+    446|       expect.soft(second).toEqual(first); expect.soft(secondWorker).to…
+ ❯ withFixture tests/unit/build-worker.test.ts:83:36
+ ❯ observableRepeat tests/unit/build-worker.test.ts:436:39
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/94]⎯
+
+ FAIL  tests/unit/build-worker.test.ts > BREV005 repeated builds expose version/output checks without absent-file harness errors
+AssertionError: expected '' to match /^[a-f0-9]{64}$/
+
+- Expected:
+/^[a-f0-9]{64}$/
+
++ Received:
+""
+
+ ❯ check tests/unit/build-worker.test.ts:444:103
+    442|       const first = await buildWorker(context); const firstWorker = ge…
+    443|       const second = await buildWorker(context); const secondWorker = …
+    444|       expect.soft(first?.version ?? '').toMatch(/^[a-f0-9]{64}$/); exp…
+       |                                                                                                       ^
+    445|       expect.soft(firstWorker).toBeTypeOf('string'); expect.soft(secon…
+    446|       expect.soft(second).toEqual(first); expect.soft(secondWorker).to…
+ ❯ withFixture tests/unit/build-worker.test.ts:83:36
+ ❯ observableRepeat tests/unit/build-worker.test.ts:436:39
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/94]⎯
+
+ FAIL  tests/unit/build-worker.test.ts > BREV005 repeated builds expose version/output checks without absent-file harness errors
+AssertionError: expected null to be type of 'string'
+
+Expected: "string"
+Received: "object"
+
+ ❯ check tests/unit/build-worker.test.ts:445:32
+    443|       const second = await buildWorker(context); const secondWorker = …
+    444|       expect.soft(first?.version ?? '').toMatch(/^[a-f0-9]{64}$/); exp…
+    445|       expect.soft(firstWorker).toBeTypeOf('string'); expect.soft(secon…
+       |                                ^
+    446|       expect.soft(second).toEqual(first); expect.soft(secondWorker).to…
+    447|     }); });
+ ❯ withFixture tests/unit/build-worker.test.ts:83:36
+ ❯ observableRepeat tests/unit/build-worker.test.ts:436:39
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/94]⎯
+
+ FAIL  tests/unit/build-worker.test.ts > BREV005 repeated builds expose version/output checks without absent-file harness errors
+AssertionError: expected null to be type of 'string'
+
+Expected: "string"
+Received: "object"
+
+ ❯ check tests/unit/build-worker.test.ts:445:80
+    443|       const second = await buildWorker(context); const secondWorker = …
+    444|       expect.soft(first?.version ?? '').toMatch(/^[a-f0-9]{64}$/); exp…
+    445|       expect.soft(firstWorker).toBeTypeOf('string'); expect.soft(secon…
+       |                                                                                ^
+    446|       expect.soft(second).toEqual(first); expect.soft(secondWorker).to…
+    447|     }); });
+ ❯ withFixture tests/unit/build-worker.test.ts:83:36
+ ❯ observableRepeat tests/unit/build-worker.test.ts:436:39
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/94]⎯
+
+ FAIL  tests/unit/build-worker.test.ts > BREV006 data and prose changes expose valid stable-shell checks without a first-build guard
+AssertionError: expected '' to match /^[a-f0-9]{64}$/
+
+- Expected:
+/^[a-f0-9]{64}$/
+
++ Received:
+""
+
+ ❯ check tests/unit/build-worker.test.ts:465:41
+    463|       put(context.projectRoot, 'README.md', 'changed developer prose')…
+    464|       const after = await buildWorker(context);
+    465|       expect.soft(after?.version ?? '').toMatch(/^[a-f0-9]{64}$/); exp…
+       |                                         ^
+    466|       expect.soft(after).toEqual(before); expect.soft(generated(contex…
+    467|     }); });
+ ❯ withFixture tests/unit/build-worker.test.ts:83:36
+ ❯ observableDataExclusion tests/unit/build-worker.test.ts:453:46
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[13/94]⎯
+
+ FAIL  tests/unit/build-worker.test.ts > BREV007 the generated classic worker bootstraps actual production event bindings without lifecycle side effects
+AssertionError: expected '' not to be '' // Object.is equality
+ ❯ check tests/unit/build-worker.test.ts:501:31
+    499|         clients: scope.clients, fetch: scope.fetch, skipWaiting: scope…
+    500|         URL, Request, Response, Map, Promise, console });
+    501|       expect.soft(worker).not.toBe(''); expect.soft([...listeners.keys…
+       |                               ^
+    502|       for (const type of ['activate', 'fetch', 'install', 'message']) …
+    503|       expect(scope.fetch).not.toHaveBeenCalled(); expect(scope.caches.…
+ ❯ withFixture tests/unit/build-worker.test.ts:83:36
+ ❯ productionBootstrap tests/unit/build-worker.test.ts:473:42
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[14/94]⎯
+
+ FAIL  tests/unit/build-worker.test.ts > BREV007 the generated classic worker bootstraps actual production event bindings without lifecycle side effects
+AssertionError: expected [] to deeply equal [ Array(4) ]
+
+- Expected
++ Received
+
+- [
+-   "activate",
+-   "fetch",
+-   "install",
+-   "message",
+- ]
++ []
+
+ ❯ check tests/unit/build-worker.test.ts:501:83
+    499|         clients: scope.clients, fetch: scope.fetch, skipWaiting: scope…
+    500|         URL, Request, Response, Map, Promise, console });
+    501|       expect.soft(worker).not.toBe(''); expect.soft([...listeners.keys…
+       |                                                                                   ^
+    502|       for (const type of ['activate', 'fetch', 'install', 'message']) …
+    503|       expect(scope.fetch).not.toHaveBeenCalled(); expect(scope.caches.…
+ ❯ withFixture tests/unit/build-worker.test.ts:83:36
+ ❯ productionBootstrap tests/unit/build-worker.test.ts:473:42
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[15/94]⎯
+
+ FAIL  tests/unit/build-worker.test.ts > BREV007 the generated classic worker bootstraps actual production event bindings without lifecycle side effects
+ FAIL  tests/unit/build-worker.test.ts > BREV007 the generated classic worker bootstraps actual production event bindings without lifecycle side effects
+ FAIL  tests/unit/build-worker.test.ts > BREV007 the generated classic worker bootstraps actual production event bindings without lifecycle side effects
+ FAIL  tests/unit/build-worker.test.ts > BREV007 the generated classic worker bootstraps actual production event bindings without lifecycle side effects
+AssertionError: expected undefined to be type of 'function'
+
+Expected: "function"
+Received: "undefined"
+
+ ❯ check tests/unit/build-worker.test.ts:502:104
+    500|         URL, Request, Response, Map, Promise, console });
+    501|       expect.soft(worker).not.toBe(''); expect.soft([...listeners.keys…
+    502|       for (const type of ['activate', 'fetch', 'install', 'message']) …
+       |                                                                                                        ^
+    503|       expect(scope.fetch).not.toHaveBeenCalled(); expect(scope.caches.…
+    504|       expect(scope.clients.claim).not.toHaveBeenCalled(); expect(scope…
+ ❯ withFixture tests/unit/build-worker.test.ts:83:36
+ ❯ productionBootstrap tests/unit/build-worker.test.ts:473:42
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[16/94]⎯
+
+ FAIL  tests/unit/worker.test.ts > WREV001 install cache population and requests are reachable independently of its returned status
+AssertionError: expected undefined to be defined
+ ❯ observableInstall tests/unit/worker.test.ts:610:83
+    608|   async function observableInstall() {
+    609|     const host = new FakeHost(); await installShell(manifest, host);
+    610|     const cache = host.caches.entries.get(cacheKey(manifest)); expect.…
+       |                                                                                   ^
+    611|     for (const asset of manifest.assets) expect.soft(cache?.entries.ge…
+    612|     const urls: string[] = []; for (const request of host.fetched) url…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[17/94]⎯
+
+ FAIL  tests/unit/worker.test.ts > WREV001 install cache population and requests are reachable independently of its returned status
+ FAIL  tests/unit/worker.test.ts > WREV001 install cache population and requests are reachable independently of its returned status
+ FAIL  tests/unit/worker.test.ts > WREV001 install cache population and requests are reachable independently of its returned status
+ FAIL  tests/unit/worker.test.ts > WREV001 install cache population and requests are reachable independently of its returned status
+ FAIL  tests/unit/worker.test.ts > WREV001 install cache population and requests are reachable independently of its returned status
+ FAIL  tests/unit/worker.test.ts > WREV001 install cache population and requests are reachable independently of its returned status
+ FAIL  tests/unit/worker.test.ts > WREV001 install cache population and requests are reachable independently of its returned status
+ FAIL  tests/unit/worker.test.ts > WREV001 install cache population and requests are reachable independently of its returned status
+ FAIL  tests/unit/worker.test.ts > WREV001 install cache population and requests are reachable independently of its returned status
+AssertionError: expected undefined to be an instance of Response
+ ❯ observableInstall tests/unit/worker.test.ts:611:89
+    609|     const host = new FakeHost(); await installShell(manifest, host);
+    610|     const cache = host.caches.entries.get(cacheKey(manifest)); expect.…
+    611|     for (const asset of manifest.assets) expect.soft(cache?.entries.ge…
+       |                                                                                         ^
+    612|     const urls: string[] = []; for (const request of host.fetched) url…
+    613|     expect.soft(urls.sort()).toEqual(manifest.assets.map(
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[18/94]⎯
+
+ FAIL  tests/unit/worker.test.ts > WREV001 install cache population and requests are reachable independently of its returned status
+AssertionError: expected [] to deeply equal [ …(9) ]
+
+- Expected
++ Received
+
+- [
+-   "https://eaglecheow.github.io/vote-better-malaysia/",
+-   "https://eaglecheow.github.io/vote-better-malaysia/assets/reader-A1B2C3D4.css",
+-   "https://eaglecheow.github.io/vote-better-malaysia/assets/reader-A1B2C3D4.js",
+-   "https://eaglecheow.github.io/vote-better-malaysia/help.html",
+-   "https://eaglecheow.github.io/vote-better-malaysia/icons/icon-192.png",
+-   "https://eaglecheow.github.io/vote-better-malaysia/icons/icon-512.png",
+-   "https://eaglecheow.github.io/vote-better-malaysia/index.html",
+-   "https://eaglecheow.github.io/vote-better-malaysia/manifest.webmanifest",
+-   "https://eaglecheow.github.io/vote-better-malaysia/sw.js",
+- ]
++ []
+
+ ❯ observableInstall tests/unit/worker.test.ts:613:30
+    611|     for (const asset of manifest.assets) expect.soft(cache?.entries.ge…
+    612|     const urls: string[] = []; for (const request of host.fetched) url…
+    613|     expect.soft(urls.sort()).toEqual(manifest.assets.map(
+       |                              ^
+    614|       /** Resolves independently specified required network URLs.
+    615|        * @param asset Base-scoped required resource.
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[19/94]⎯
+
+ FAIL  tests/unit/worker.test.ts > WREV002 safe cleanup deletes the obsolete cache without an earlier status assertion guard
+AssertionError: expected true to be false // Object.is equality
+
+- Expected
++ Received
+
+- false
++ true
+
+ ❯ observableCleanup tests/unit/worker.test.ts:629:61
+    627|     const foreign = { ...older(), base: '/other/' }; host.seed(foreign…
+    628|     await activateShell(manifest, host);
+    629|     expect.soft(host.caches.entries.has(cacheKey(older()))).toBe(false…
+       |                                                             ^
+    630|     expect.soft(host.calls).toContain(`delete:${cacheKey(older())}`);
+    631|     expect(host.caches.entries.has(cacheKey(manifest))).toBe(true); ex…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[20/94]⎯
+
+ FAIL  tests/unit/worker.test.ts > WREV002 safe cleanup deletes the obsolete cache without an earlier status assertion guard
+AssertionError: expected [] to include 'delete:hansard-shell:%2Fvote-better-m…'
+ ❯ observableCleanup tests/unit/worker.test.ts:630:29
+    628|     await activateShell(manifest, host);
+    629|     expect.soft(host.caches.entries.has(cacheKey(older()))).toBe(false…
+    630|     expect.soft(host.calls).toContain(`delete:${cacheKey(older())}`);
+       |                             ^
+    631|     expect(host.caches.entries.has(cacheKey(manifest))).toBe(true); ex…
+    632|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[21/94]⎯
+
+ FAIL  tests/unit/worker.test.ts > WREV003 exact Apply invokes native skipWaiting without an acknowledgement assertion guard
+AssertionError: expected +0 to be 1 // Object.is equality
+
+- Expected
++ Received
+
+- 1
++ 0
+
+ ❯ observableApply tests/unit/worker.test.ts:640:28
+    638|     const host = new FakeHost(); host.client(); host.seed(manifest);
+    639|     await handleShellMessage({ type: 'APPLY_UPDATE', base, version: cu…
+    640|     expect(host.skipCount).toBe(1);
+       |                            ^
+    641|   });
+    642| test('WREV004 client handshake changes only the actual source map entr…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[22/94]⎯
+
+ FAIL  tests/unit/worker.test.ts > WREV004 client handshake changes only the actual source map entry without an acknowledgement guard
+AssertionError: expected undefined to be 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb…' // Object.is equality
+
+- Expected:
+"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+
++ Received:
+undefined
+
+ ❯ observableHandshake tests/unit/worker.test.ts:649:56
+    647|     const host = new FakeHost(); host.client('old-reader'); host.clien…
+    648|     await handleShellMessage({ type: 'CLIENT_VERSION', base, version: …
+    649|     expect.soft(host.clientVersions.get('old-reader')).toBe(oldVersion…
+       |                                                        ^
+    650|   });
+    651| test('WREV005 an independently seeded mixed current entry stamp cannot…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[23/94]⎯
+
+ FAIL  tests/unit/worker.test.ts > WREV005 an independently seeded mixed current entry stamp cannot confirm readiness
+AssertionError: expected undefined to deeply equal { type: 'SHELL_STATUS', …(3) }
+
+- Expected:
+{
+  "base": "/vote-better-malaysia/",
+  "ready": false,
+  "type": "SHELL_STATUS",
+  "version": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+}
+
++ Received:
+undefined
+
+ ❯ mixedStamp tests/unit/worker.test.ts:658:47
+    656|     const host = new FakeHost(); const cache = host.seed(manifest);
+    657|     cache.entries.set(urlKey(base), response(base, body(base, oldVersi…
+    658|     expect(await shellStatus(manifest, host)).toEqual(status(manifest,…
+       |                                               ^
+    659|   });
+    660| test('WREV006 an independently seeded opaque required response cannot …
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[24/94]⎯
+
+ FAIL  tests/unit/worker.test.ts > WREV006 an independently seeded opaque required response cannot confirm readiness
+AssertionError: expected undefined to deeply equal { type: 'SHELL_STATUS', …(3) }
+
+- Expected:
+{
+  "base": "/vote-better-malaysia/",
+  "ready": false,
+  "type": "SHELL_STATUS",
+  "version": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+}
+
++ Received:
+undefined
+
+ ❯ opaqueCache tests/unit/worker.test.ts:667:47
+    665|     const host = new FakeHost(); const cache = host.seed(manifest);
+    666|     cache.entries.set(urlKey(manifest.assets[3]), response(manifest.as…
+    667|     expect(await shellStatus(manifest, host)).toEqual(status(manifest,…
+       |                                               ^
+    668|   });
+    669| test('WREV007 native-boundary client enumeration hides uncontrolled wi…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[25/94]⎯
+
+ FAIL  tests/unit/worker.test.ts > WREV008 cleanup explicitly includes an uncontrolled own unknown window
+ FAIL  tests/unit/worker.test.ts > WREV008 cleanup explicitly includes an uncontrolled own older window
+AssertionError: expected [] to deep equally contain { includeUncontrolled: true, …(1) }
+
+- Expected:
+{
+  "includeUncontrolled": true,
+  "type": "window",
+}
+
++ Received:
+[]
+
+ ❯ uncontrolledReader tests/unit/worker.test.ts:686:37
+    684|     if (stamp === 'older') host.clientVersions.set('uncontrolled', old…
+    685|     await activateShell(manifest, host);
+    686|     expect.soft(host.clientQueries).toContainEqual({ includeUncontroll…
+       |                                     ^
+    687|     expect(host.caches.entries.has(cacheKey(older()))).toBe(true);
+    688|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[26/94]⎯
+
+ FAIL  tests/unit/worker.test.ts > WREV009 restarted worker discovers readiness from persistent bytes without another install or activation
+AssertionError: expected [] to deeply equal [ { type: 'SHELL_STATUS', …(3) } ]
+
+- Expected
++ Received
+
+- [
+-   {
+-     "base": "/vote-better-malaysia/",
+-     "ready": true,
+-     "type": "SHELL_STATUS",
+-     "version": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+-   },
+- ]
++ []
+
+ ❯ restartedDiscovery tests/unit/worker.test.ts:699:34
+    697|     const event = new Lifetime(new Request(`${origin}${base}`), source…
+    698|     scope.handlers.get('message')?.(event); await Promise.all(event.pr…
+    699|     expect.soft(source.messages).toEqual([status(manifest, true)]); ex…
+       |                                  ^
+    700|     expect(host.caches.entries.has(cacheKey(older()))).toBe(true); exp…
+    701|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[27/94]⎯
+
+ FAIL  tests/unit/worker.test.ts > WREV010 restarted worker serves the exact old hashed asset with empty version tracking
+AssertionError: expected undefined to be an instance of Response
+ ❯ restartedAsset tests/unit/worker.test.ts:710:25
+    708|     const host = restarted(previous); host.online = false; const url =…
+    709|     const result = await fetchShell(new Request(url), manifest, host);
+    710|     expect.soft(result).toBeInstanceOf(Response); expect.soft(result i…
+       |                         ^
+    711|     expect(host.clientVersions.size).toBe(0); expect(host.fetched).toH…
+    712|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[28/94]⎯
+
+ FAIL  tests/unit/worker.test.ts > WREV010 restarted worker serves the exact old hashed asset with empty version tracking
+AssertionError: expected null to be 'shell:/vote-better-malaysia/assets/re…' // Object.is equality
+
+- Expected:
+"shell:/vote-better-malaysia/assets/reader-OLDHASH8.js:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+
++ Received:
+null
+
+ ❯ restartedAsset tests/unit/worker.test.ts:710:120
+    708|     const host = restarted(previous); host.online = false; const url =…
+    709|     const result = await fetchShell(new Request(url), manifest, host);
+    710|     expect.soft(result).toBeInstanceOf(Response); expect.soft(result i…
+       |                                                                                                                        ^
+    711|     expect(host.clientVersions.size).toBe(0); expect(host.fetched).toH…
+    712|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[29/94]⎯
+
+ FAIL  tests/unit/worker.test.ts > WREV012 explicit invalid status version "" is never omitted-version discovery
+ FAIL  tests/unit/worker.test.ts > WREV012 explicit invalid status version null is never omitted-version discovery
+ FAIL  tests/unit/worker.test.ts > WREV012 explicit invalid status version "bad" is never omitted-version discovery
+ FAIL  tests/unit/worker.test.ts > WREV012 explicit invalid status version "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" is never omitted-version discovery
+ FAIL  tests/unit/worker.test.ts > WREV012 explicit invalid status version 7 is never omitted-version discovery
+ FAIL  tests/unit/worker.test.ts > WREV012 explicit invalid status version false is never omitted-version discovery
+AssertionError: expected undefined to be null
+
+- Expected:
+null
+
++ Received:
+undefined
+
+ ❯ invalidStatusVersion tests/unit/worker.test.ts:728:110
+    726|   async function invalidStatusVersion() {
+    727|     const host = new FakeHost(); host.client(); host.seed(manifest); h…
+    728|     expect.soft(await handleShellMessage({ type: 'SHELL_STATUS', base,…
+       |                                                                                                              ^
+    729|     expect(host.clientVersions.get('reader')).toBe(oldVersion); expect…
+    730|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[30/94]⎯
+
+ FAIL  tests/unit/worker.test.ts > WREV013 client-version query rejects missing native source
+ FAIL  tests/unit/worker.test.ts > WREV013 client-version query rejects foreign native source
+ FAIL  tests/unit/worker.test.ts > WREV013 client-version query rejects lookalike native source
+AssertionError: expected undefined to be null
+
+- Expected:
+null
+
++ Received:
+undefined
+
+ ❯ invalidHandshakeSource tests/unit/worker.test.ts:738:128
+    736|     const host = new FakeHost();
+    737|     if (source !== 'missing') host.client('reader', source === 'foreig…
+    738|     expect.soft(await handleShellMessage({ type: 'CLIENT_VERSION', bas…
+       |                                                                                                                                ^
+    739|     expect(host.clientVersions.size).toBe(0); expect(host.skipCount).t…
+    740|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[31/94]⎯
+
+ FAIL  tests/unit/worker.test.ts > WREV014 native source reply is reachable independently of listener and lifetime assertion guards
+AssertionError: expected [] to have a length of 1 but got +0
+
+- Expected
++ Received
+
+- 1
++ 0
+
+ ❯ observableNativeReply tests/unit/worker.test.ts:750:33
+    748|     const event = new Lifetime(new Request(`${origin}${base}`), source…
+    749|     scope.handlers.get('message')?.(event); await Promise.all(event.pr…
+    750|     expect.soft(event.promises).toHaveLength(1); expect.soft(source.me…
+       |                                 ^
+    751|   });
+    752| test('WREV015 native install lifetime independently reaches rejection …
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[32/94]⎯
+
+ FAIL  tests/unit/worker.test.ts > WREV014 native source reply is reachable independently of listener and lifetime assertion guards
+AssertionError: expected [] to deeply equal [ { type: 'SHELL_STATUS', …(3) } ]
+
+- Expected
++ Received
+
+- [
+-   {
+-     "base": "/vote-better-malaysia/",
+-     "ready": true,
+-     "type": "SHELL_STATUS",
+-     "version": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+-   },
+- ]
++ []
+
+ ❯ observableNativeReply tests/unit/worker.test.ts:750:79
+    748|     const event = new Lifetime(new Request(`${origin}${base}`), source…
+    749|     scope.handlers.get('message')?.(event); await Promise.all(event.pr…
+    750|     expect.soft(event.promises).toHaveLength(1); expect.soft(source.me…
+       |                                                                               ^
+    751|   });
+    752| test('WREV015 native install lifetime independently reaches rejection …
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[33/94]⎯
+
+ FAIL  tests/unit/worker.test.ts > WREV015 native install lifetime independently reaches rejection on an injected cache-put failure
+AssertionError: expected [] to have a length of 1 but got +0
+
+- Expected
++ Received
+
+- 1
++ 0
+
+ ❯ observableInstallRejection tests/unit/worker.test.ts:760:33
+    758|     const scope = new EventScope(); bindWorkerEvents(scope, manifest, …
+    759|     const event = new Lifetime(new Request(`${origin}${base}`), host.c…
+    760|     expect.soft(event.promises).toHaveLength(1); await expect.soft(Pro…
+       |                                 ^
+    761|     expect(host.caches.entries.has(cacheKey(older()))).toBe(true); exp…
+    762|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[34/94]⎯
+
+ FAIL  tests/unit/worker.test.ts > WREV015 native install lifetime independently reaches rejection on an injected cache-put failure
+AssertionError: promise resolved "[]" instead of rejecting
+
+- Expected:
+Error {
+  "message": "rejected promise",
+}
+
++ Received:
+[]
+
+ ❯ observableInstallRejection tests/unit/worker.test.ts:760:96
+    758|     const scope = new EventScope(); bindWorkerEvents(scope, manifest, …
+    759|     const event = new Lifetime(new Request(`${origin}${base}`), host.c…
+    760|     expect.soft(event.promises).toHaveLength(1); await expect.soft(Pro…
+       |                                                                                                ^
+    761|     expect(host.caches.entries.has(cacheKey(older()))).toBe(true); exp…
+    762|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[35/94]⎯
+
+ FAIL  tests/unit/worker.test.ts > WREV017 native fetch response and data body are reachable without a required-listener guard
+AssertionError: expected undefined to be defined
+ ❯ observableNativeFetch tests/unit/worker.test.ts:786:33
+    784|     const url = `${origin}${base}data/catalogue.json.gz`; const event …
+    785|     scope.handlers.get('fetch')?.(event); const result = await event.r…
+    786|     expect.soft(event.response).toBeDefined(); expect.soft(result).toB…
+       |                                 ^
+    787|     expect.soft(result instanceof Response ? await result.text() : nul…
+    788|     expect(host.calls.filter(isCacheCall)).toHaveLength(0);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[36/94]⎯
+
+ FAIL  tests/unit/worker.test.ts > WREV017 native fetch response and data body are reachable without a required-listener guard
+AssertionError: expected undefined to be an instance of Response
+ ❯ observableNativeFetch tests/unit/worker.test.ts:786:68
+    784|     const url = `${origin}${base}data/catalogue.json.gz`; const event …
+    785|     scope.handlers.get('fetch')?.(event); const result = await event.r…
+    786|     expect.soft(event.response).toBeDefined(); expect.soft(result).toB…
+       |                                                                    ^
+    787|     expect.soft(result instanceof Response ? await result.text() : nul…
+    788|     expect(host.calls.filter(isCacheCall)).toHaveLength(0);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[37/94]⎯
+
+ FAIL  tests/unit/worker.test.ts > WREV017 native fetch response and data body are reachable without a required-listener guard
+AssertionError: expected null to be 'fresh-network:https://eaglecheow.gith…' // Object.is equality
+
+- Expected:
+"fresh-network:https://eaglecheow.github.io/vote-better-malaysia/data/catalogue.json.gz"
+
++ Received:
+null
+
+ ❯ observableNativeFetch tests/unit/worker.test.ts:787:74
+    785|     scope.handlers.get('fetch')?.(event); const result = await event.r…
+    786|     expect.soft(event.response).toBeDefined(); expect.soft(result).toB…
+    787|     expect.soft(result instanceof Response ? await result.text() : nul…
+       |                                                                          ^
+    788|     expect(host.calls.filter(isCacheCall)).toHaveLength(0);
+    789|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[38/94]⎯
+
+ FAIL  tests/unit/worker.test.ts > WREV018 native successful install lifetime populates caches without earlier listener/status guards
+AssertionError: expected [] to have a length of 1 but got +0
+
+- Expected
++ Received
+
+- 1
++ 0
+
+ ❯ observableNativeInstall tests/unit/worker.test.ts:797:68
+    795|     const host = new FakeHost(); const scope = new EventScope(); bindW…
+    796|     const event = new Lifetime(new Request(`${origin}${base}`), host.c…
+    797|     await Promise.all(event.promises); expect.soft(event.promises).toH…
+       |                                                                    ^
+    798|     const cache = host.caches.entries.get(cacheKey(manifest));
+    799|     for (const asset of manifest.assets) expect.soft(cache?.entries.ge…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[39/94]⎯
+
+ FAIL  tests/unit/worker.test.ts > WREV018 native successful install lifetime populates caches without earlier listener/status guards
+ FAIL  tests/unit/worker.test.ts > WREV018 native successful install lifetime populates caches without earlier listener/status guards
+ FAIL  tests/unit/worker.test.ts > WREV018 native successful install lifetime populates caches without earlier listener/status guards
+ FAIL  tests/unit/worker.test.ts > WREV018 native successful install lifetime populates caches without earlier listener/status guards
+ FAIL  tests/unit/worker.test.ts > WREV018 native successful install lifetime populates caches without earlier listener/status guards
+ FAIL  tests/unit/worker.test.ts > WREV018 native successful install lifetime populates caches without earlier listener/status guards
+ FAIL  tests/unit/worker.test.ts > WREV018 native successful install lifetime populates caches without earlier listener/status guards
+ FAIL  tests/unit/worker.test.ts > WREV018 native successful install lifetime populates caches without earlier listener/status guards
+ FAIL  tests/unit/worker.test.ts > WREV018 native successful install lifetime populates caches without earlier listener/status guards
+AssertionError: expected undefined to be an instance of Response
+ ❯ observableNativeInstall tests/unit/worker.test.ts:799:89
+    797|     await Promise.all(event.promises); expect.soft(event.promises).toH…
+    798|     const cache = host.caches.entries.get(cacheKey(manifest));
+    799|     for (const asset of manifest.assets) expect.soft(cache?.entries.ge…
+       |                                                                                         ^
+    800|     expect(host.skipCount).toBe(0);
+    801|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[40/94]⎯
+
+ FAIL  tests/unit/worker.test.ts > WREV019 native safe activation lifetime deletes only obsolete own cache without earlier guards
+AssertionError: expected [] to have a length of 1 but got +0
+
+- Expected
++ Received
+
+- 1
++ 0
+
+ ❯ observableNativeActivation tests/unit/worker.test.ts:810:68
+    808|     const scope = new EventScope(); bindWorkerEvents(scope, manifest, …
+    809|     const event = new Lifetime(new Request(`${origin}${base}`), source…
+    810|     await Promise.all(event.promises); expect.soft(event.promises).toH…
+       |                                                                    ^
+    811|     expect.soft(host.caches.entries.has(cacheKey(older()))).toBe(false…
+    812|     expect(host.caches.entries.has(cacheKey(manifest))).toBe(true); ex…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[41/94]⎯
+
+ FAIL  tests/unit/worker.test.ts > WREV019 native safe activation lifetime deletes only obsolete own cache without earlier guards
+AssertionError: expected true to be false // Object.is equality
+
+- Expected
++ Received
+
+- false
++ true
+
+ ❯ observableNativeActivation tests/unit/worker.test.ts:811:61
+    809|     const event = new Lifetime(new Request(`${origin}${base}`), source…
+    810|     await Promise.all(event.promises); expect.soft(event.promises).toH…
+    811|     expect.soft(host.caches.entries.has(cacheKey(older()))).toBe(false…
+       |                                                             ^
+    812|     expect(host.caches.entries.has(cacheKey(manifest))).toBe(true); ex…
+    813|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[42/94]⎯
+
+ FAIL  tests/unit/worker.test.ts > WREV020 an omitted mandatory shell declaration /vote-better-malaysia/ cannot produce a partial installed shell
+ FAIL  tests/unit/worker.test.ts > WREV020 an omitted mandatory shell declaration /vote-better-malaysia/index.html cannot produce a partial installed shell
+ FAIL  tests/unit/worker.test.ts > WREV020 an omitted mandatory shell declaration /vote-better-malaysia/help.html cannot produce a partial installed shell
+ FAIL  tests/unit/worker.test.ts > WREV020 an omitted mandatory shell declaration /vote-better-malaysia/manifest.webmanifest cannot produce a partial installed shell
+ FAIL  tests/unit/worker.test.ts > WREV020 an omitted mandatory shell declaration /vote-better-malaysia/assets/reader-A1B2C3D4.js cannot produce a partial installed shell
+ FAIL  tests/unit/worker.test.ts > WREV020 an omitted mandatory shell declaration /vote-better-malaysia/assets/reader-A1B2C3D4.css cannot produce a partial installed shell
+ FAIL  tests/unit/worker.test.ts > WREV020 an omitted mandatory shell declaration /vote-better-malaysia/icons/icon-192.png cannot produce a partial installed shell
+ FAIL  tests/unit/worker.test.ts > WREV020 an omitted mandatory shell declaration /vote-better-malaysia/icons/icon-512.png cannot produce a partial installed shell
+ FAIL  tests/unit/worker.test.ts > WREV020 an omitted mandatory shell declaration /vote-better-malaysia/sw.js cannot produce a partial installed shell
+AssertionError: promise resolved "undefined" instead of rejecting
+
+- Expected:
+Error {
+  "message": "rejected promise",
+}
+
++ Received:
+undefined
+
+ ❯ omittedMandatoryDeclaration tests/unit/worker.test.ts:820:78
+    818|   async function omittedMandatoryDeclaration() {
+    819|     const shell = structuredClone(manifest); const position = shell.as…
+    820|     const host = new FakeHost(); await expect.soft(installShell(shell,…
+       |                                                                              ^
+    821|     expect(host.fetched).toHaveLength(0); expect(host.caches.entries.s…
+    822|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[43/94]⎯
+
+
+ Test Files  2 failed (2)
+      Tests  56 failed | 5 passed | 145 skipped (206)
+   Start at  17:54:26
+   Duration  556ms (tests 44%, import 29%, transform 26%, worker 1%)
+

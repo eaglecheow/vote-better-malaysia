@@ -1,0 +1,248 @@
+{
+  "checkedAt": "2026-10-10T05:39:31.366Z",
+  "scope": "VERIFICATION COHORT: recorded official sitting 1966-10-25; one sitting only; no full archive or publication claim.",
+  "sourceHttpRequests": 0,
+  "comparisonCheckedAt": "2026-10-10T05:21:36.878Z",
+  "comparisonDigest": "06e81ecbebc0165f7f77b26fb4ebbb34c4659b9803453a6b63cf61fabadc393c",
+  "sourceRevision": "1c4b079935bc5b7604474c1ba55def43ed6f0270",
+  "sourceModuleDigest": "59e42f8f7da4c170bc156573f9310b85c0fa1d93a3b48c6a4351f16899748b7d",
+  "build": {
+    "indexDigest": "d0c1dea87302358b53ca7fdee092c364e10b54eb5bc577c1a2aad28db7aa180a",
+    "assets": {
+      "index-BXaHGM-n.css": "bbbcebf1689066f0669a01422254fa295b38a0df128c53ad2ee5e01f47d8a773",
+      "index-x__Td23t.js": "d0582a4001fc1b82bab761510e797b576fd7be48ce1c824327ae923ee87d091c"
+    }
+  },
+  "source": {
+    "memberId": "21375",
+    "name": "TAN CHEE KHOON",
+    "sittingId": "23251",
+    "date": "1966-10-25",
+    "sourceUrl": "https://hansard.parlimen.gov.my/hansard/dewan-rakyat/1966-10-25",
+    "rawUrl": "https://hansard.parlimen.gov.my/_next/data/Zlu4qRDxrOCEM-7h59E5o/en-GB/hansard/dewan-rakyat/1966-10-25.json?date=1966-10-25",
+    "rawPath": "/Users/eaglecheow/dev/vote-better-malaysia/.cache/hansard/receipts/implement-001-20261010/9955ae9c-f4de-42c5-b48e-b5c9e047fc0a.bin",
+    "rawDigest": "f68cc43cf9e050cb26060ebb711d159b730fb89da041ebe0963ec45e65964ae7",
+    "acquiredAt": "2026-10-10T05:19:52.591Z",
+    "membersReceipt": {
+      "path": "/Users/eaglecheow/dev/vote-better-malaysia/.cache/hansard/receipts/implement-001-20261010/474c1050-1508-47e5-9b35-e2fedff1f188.bin",
+      "rawDigest": "16591062f73226e56bddad100e4fc834d3a79ca2cbe34192ed6ad65d675dfcea",
+      "url": "https://hansard.parlimen.gov.my/_next/data/Zlu4qRDxrOCEM-7h59E5o/en-GB/cari-mp.json",
+      "startedAt": "2026-10-10T05:14:43.999Z",
+      "acquiredAt": "2026-10-10T05:14:44.434Z",
+      "status": 200
+    },
+    "inventoryReceipt": {
+      "path": "/Users/eaglecheow/dev/vote-better-malaysia/.cache/hansard/receipts/implement-001-20261010/c74fe004-2939-4b55-9bc3-8cc95cc7dde8.bin",
+      "rawDigest": "3758f5a22783914b6a8b7bd58847189ccc10023cee898c698c39fa158dc3813f",
+      "url": "https://hansard.parlimen.gov.my/_next/data/Zlu4qRDxrOCEM-7h59E5o/en-GB/katalog/dewan-rakyat.json",
+      "startedAt": "2026-10-10T05:14:45.001Z",
+      "acquiredAt": "2026-10-10T05:14:45.084Z",
+      "status": 200
+    },
+    "accounting": {
+      "total": 344,
+      "assigned": 161,
+      "unassigned": 183,
+      "annotations": 0
+    },
+    "selectedTurns": 33,
+    "renderedGaps": 183,
+    "renderedAnnotations": 0,
+    "outcome": "incomplete",
+    "normalizedDigest": "0ad66bc8a151e283bac3089c1c506a9bf80425e667509820ec34d8b5925387dc",
+    "recordDecodedBytes": 344444,
+    "recordGzipBytes": 91202,
+    "recordGzipDigest": "04dc179f880d860f6b15d16bf922a17b5169fdf24a68951b0c31a8132b736445",
+    "catalogueDecodedBytes": 194725,
+    "catalogueGzipBytes": 27002,
+    "catalogueGzipDigest": "3463c8a9ee8fa5ea8bfe7c1f5c1ddf999c72a4d38ed9537ec79ecbec041d3b3f",
+    "publishedAt": null
+  },
+  "nativeRuns": [
+    {
+      "engine": "chromium",
+      "version": "156.0.8078.4",
+      "pageUrl": "http://127.0.0.1:4173/vote-better-malaysia/",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "delivery": "actual gzip magic bytes without Content-Encoding; production native DecompressionStream path",
+      "controlExecution": {
+        "memberSelect": "#member-select",
+        "memberId": "21375",
+        "sittingSelect": "#sitting-select",
+        "sittingId": "23251",
+        "readButton": "#read-button",
+        "languageSelect": "#language-select",
+        "languages": [
+          "ms",
+          "en"
+        ],
+        "allDisclosureSummariesClicked": true
+      },
+      "requests": [
+        "http://127.0.0.1:4173/vote-better-malaysia/",
+        "http://127.0.0.1:4173/vote-better-malaysia/assets/index-x__Td23t.js",
+        "http://127.0.0.1:4173/vote-better-malaysia/assets/index-BXaHGM-n.css",
+        "http://127.0.0.1:4173/vote-better-malaysia/data/catalogue.json.gz",
+        "http://127.0.0.1:4173/vote-better-malaysia/data/catalogue.json.gz",
+        "http://127.0.0.1:4173/vote-better-malaysia/data/sittings/23251.json.gz?v=0ad66bc8a151e283bac3089c1c506a9bf80425e667509820ec34d8b5925387dc"
+      ],
+      "forbiddenRequests": [],
+      "pageErrors": [],
+      "languages": [
+        {
+          "language": "ms",
+          "counts": {
+            "turn": 33,
+            "gap": 183,
+            "annotation": 0
+          },
+          "exactTextAndOrder": true,
+          "originalHeadingsAndAuthors": true,
+          "paragraphCss": "pre-wrap",
+          "disclosures": {
+            "total": 2,
+            "open": 2
+          },
+          "layout": {
+            "viewport": 320,
+            "document": 320,
+            "body": 320
+          }
+        },
+        {
+          "language": "en",
+          "counts": {
+            "turn": 33,
+            "gap": 183,
+            "annotation": 0
+          },
+          "exactTextAndOrder": true,
+          "originalHeadingsAndAuthors": true,
+          "paragraphCss": "pre-wrap",
+          "disclosures": {
+            "total": 2,
+            "open": 2
+          },
+          "layout": {
+            "viewport": 320,
+            "document": 320,
+            "body": 320
+          }
+        }
+      ],
+      "screenshots": [
+        "/private/tmp/hansard-real-reader-chromium-320-ms.png",
+        "/private/tmp/hansard-real-reader-chromium-320-en.png",
+        "/private/tmp/hansard-real-reader-chromium-desktop.png"
+      ],
+      "passed": true
+    },
+    {
+      "engine": "webkit",
+      "version": "27.2",
+      "pageUrl": "http://127.0.0.1:4173/vote-better-malaysia/",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "delivery": "actual gzip magic bytes without Content-Encoding; production native DecompressionStream path",
+      "controlExecution": {
+        "memberSelect": "#member-select",
+        "memberId": "21375",
+        "sittingSelect": "#sitting-select",
+        "sittingId": "23251",
+        "readButton": "#read-button",
+        "languageSelect": "#language-select",
+        "languages": [
+          "ms",
+          "en"
+        ],
+        "allDisclosureSummariesClicked": true
+      },
+      "requests": [
+        "http://127.0.0.1:4173/vote-better-malaysia/",
+        "http://127.0.0.1:4173/vote-better-malaysia/assets/index-x__Td23t.js",
+        "http://127.0.0.1:4173/vote-better-malaysia/assets/index-BXaHGM-n.css",
+        "http://127.0.0.1:4173/vote-better-malaysia/data/catalogue.json.gz",
+        "http://127.0.0.1:4173/vote-better-malaysia/data/catalogue.json.gz",
+        "http://127.0.0.1:4173/vote-better-malaysia/data/sittings/23251.json.gz?v=0ad66bc8a151e283bac3089c1c506a9bf80425e667509820ec34d8b5925387dc"
+      ],
+      "forbiddenRequests": [],
+      "pageErrors": [],
+      "languages": [
+        {
+          "language": "ms",
+          "counts": {
+            "turn": 33,
+            "gap": 183,
+            "annotation": 0
+          },
+          "exactTextAndOrder": true,
+          "originalHeadingsAndAuthors": true,
+          "paragraphCss": "pre-wrap",
+          "disclosures": {
+            "total": 2,
+            "open": 2
+          },
+          "layout": {
+            "viewport": 320,
+            "document": 320,
+            "body": 320
+          }
+        },
+        {
+          "language": "en",
+          "counts": {
+            "turn": 33,
+            "gap": 183,
+            "annotation": 0
+          },
+          "exactTextAndOrder": true,
+          "originalHeadingsAndAuthors": true,
+          "paragraphCss": "pre-wrap",
+          "disclosures": {
+            "total": 2,
+            "open": 2
+          },
+          "layout": {
+            "viewport": 320,
+            "document": 320,
+            "body": 320
+          }
+        }
+      ],
+      "screenshots": [],
+      "passed": true
+    }
+  ],
+  "limitations": [
+    "Headless Playwright engines, not stable branded-device acceptance.",
+    "Route-injected native gzip cohort is local analysis only; no archive files are staged or published.",
+    "The recorded real sitting has zero annotations; zero rendered annotations is verified, not a fabricated real-source annotation scenario.",
+    "No performance budget, physical-device, offline-storage, or deployed-address claim.",
+    "The selected historical record has no paragraph-break leaves; no synthetic paragraph source evidence is claimed."
+  ],
+  "completedAt": "2026-10-10T05:39:34.937Z",
+  "analysisScriptDigest": "60ced115b1502829e9bf83dd30f041c21f96c09fc8c095bab896880641b1efcb",
+  "visualReview": {
+    "checkedAt": "2026-10-10T05:39:59.634Z",
+    "screenshotsInspected": [
+      "/private/tmp/hansard-real-reader-chromium-320-ms.png",
+      "/private/tmp/hansard-real-reader-chromium-320-en.png",
+      "/private/tmp/hansard-real-reader-chromium-desktop.png"
+    ],
+    "observations": [
+      "Explicit verification-cohort label visible in all screenshots.",
+      "320px screenshots show wrapped complete headings and original text with distinct attribution warning.",
+      "Desktop overview exposes exact source identity, sitting date, draft flag, acquisition time, nullable publication time and native reader controls."
+    ]
+  },
+  "screenshotDigests": {
+    "/private/tmp/hansard-real-reader-chromium-320-ms.png": "d87e3be7101cc8611ec7a84902350e23c17a0d655238fca587eea6532782fa4b",
+    "/private/tmp/hansard-real-reader-chromium-320-en.png": "5c1d267e9be70cadddeda875c26617b24f97ac1e2dee5b7538a3d8b66541d67a",
+    "/private/tmp/hansard-real-reader-chromium-desktop.png": "c328bf081860f74399d194acfe973be4a7b66272b18b8fe66b259330d40e367e"
+  }
+}

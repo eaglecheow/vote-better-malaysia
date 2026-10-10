@@ -1,0 +1,16 @@
+{
+  "recordedAt": "2026-10-10T06:16:39.546244+00:00",
+  "scope": "Foundation repairs and Chromium/WebKit online reader; original bootstrap run remains separately frozen.",
+  "files": {
+    "src/source.ts": "8732d0bdd0964c538bfa2c3fb7fbad26ca90b833336849e48ff428fe93f84043",
+    "scripts/acquire.ts": "3b98a97d721f00e63eff0126d790bffe01c269118351e04d15b1fb076be98910",
+    "scripts/check-performance.ts": "fa9c3c5643507908b55fa8880a7f6c4be8b89b8df7031dfd7ffb8cddf25d561d",
+    "src/main.ts": "26484c98643148f5bdfa71f87b287cb527173d025716c4753144c41b691c498f",
+    "src/messages.ts": "a5a4f18bba88b4688229af4b0643ae778f251ace045d211ea83bb2c0fe48883d",
+    "dist/index.html": "29aaccdae138ccc762be0c3ef9d9bf3c05e53926eae9b165a730cace5c7cd5b7",
+    "dist/assets/index-BXaHGM-n.css": "bbbcebf1689066f0669a01422254fa295b38a0df128c53ad2ee5e01f47d8a773",
+    "dist/assets/index-DBCsvo1U.js": "b8d0a7d9adc0b20c69dfbefc55ad6f8fa75096f1794087de6ba048e1cc2ef1b1",
+    "scripts/collect-performance.ts": "1a825f9134b566c4b3c06b7b9ec236ac64b4f7cf5b7115cbbea6998ca8140ac6"
+  },
+  "collectorHashRecordedAfterRepair": "2026-10-10T06:20:29.393883+00:00"
+}

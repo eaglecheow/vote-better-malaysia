@@ -1,0 +1,39 @@
+{
+  "observedAt": "2026-10-10T06:25:04.088Z",
+  "scope": "Read-only capture of actual temporary bootstrap staging bytes; no successful staging or publication claim.",
+  "originalPath": "/Users/eaglecheow/dev/vote-better-malaysia/.cache/hansard/work/1422b9bc-35d1-4ee8-99ac-35a49b4d9a13/public/catalogue.json.gz",
+  "snapshotId": "46deaa63-9074-408c-a1df-7fd687af312c",
+  "storedBytes": 519418,
+  "decodedBytes": 3431888,
+  "storedDigest": "d5891d1a67bb1659a5e134e6d477b4697415e6876ce8bdcd5e8d315a8471fed9",
+  "decodedDigest": "9ba0c5c332a39026a4d067b56d57982ada0c1025e0cbabc2ec84bfe807718e80",
+  "coverage": {
+    "parliaments": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "startDate": "1959-09-11",
+    "endDate": "2026-10-08",
+    "latestInventoryCount": 4090,
+    "retainedSittingCount": 0,
+    "unavailableSittingCount": 0,
+    "attributionGapCount": 533456
+  },
+  "members": 1246,
+  "sittings": 4090,
+  "describedShardStoredBytes": 357224722,
+  "describedTotalStoredBytes": 357744140
+}

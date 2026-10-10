@@ -1,0 +1,469 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-10-10T04:08:45.111Z",
+  "sourceBuildId": "Zlu4qRDxrOCEM-7h59E5o",
+  "discovery": {
+    "url": "https://hansard.parlimen.gov.my/",
+    "buildIdPointer": "/__NEXT_DATA__/buildId",
+    "acquiredAt": "2026-10-10T04:06:08.670Z",
+    "rawSourceDigest": "9da2db636af3c6f6077a9b103990a82183b8c0d95fee48e8abd060461de45dea",
+    "rawBytes": 69487
+  },
+  "fixtureFile": "source-samples.json",
+  "fixtureFileSha256": "60efab60d09b2b8553d3615bd4afa930b683d943d1012853757771876e41e526",
+  "excerptHashSerialization": "UTF-8 JSON with ensure_ascii=false, compact comma/colon separators, original field order; decoded text hashes use exact UTF-8 speech bytes.",
+  "scope": "Partial source-derived excerpts for schema/identity, mixed heading-array traversal, original source indices/text/paragraphs, missing-ID index 2, explicit annotation, historical nulls/empty timestamps and Mesyuarat 0. No full-sitting or full-archive completeness, real-source absence, browser, TDD or deployment claim.",
+  "sources": {
+    "members": {
+      "acquiredAt": "2026-10-10T04:06:22.097Z",
+      "rawSourceDigest": "16591062f73226e56bddad100e4fc834d3a79ca2cbe34192ed6ad65d675dfcea",
+      "rawBytes": 242774,
+      "kind": "source-derived",
+      "url": "https://hansard.parlimen.gov.my/_next/data/Zlu4qRDxrOCEM-7h59E5o/en-GB/cari-mp.json",
+      "sourcePageUrl": "https://hansard.parlimen.gov.my/cari-mp",
+      "officialPublicationTime": null,
+      "officialRevisionTime": null,
+      "timestampMeaning": "Local successful retrieval completion, derived from the raw response output file modification time; not an official publication or revision timestamp.",
+      "privateEvidencePath": "/private/tmp/hansard-recon/members.json"
+    },
+    "catalogue": {
+      "acquiredAt": "2026-10-10T04:06:23.904Z",
+      "rawSourceDigest": "3758f5a22783914b6a8b7bd58847189ccc10023cee898c698c39fa158dc3813f",
+      "rawBytes": 374375,
+      "kind": "source-derived",
+      "url": "https://hansard.parlimen.gov.my/_next/data/Zlu4qRDxrOCEM-7h59E5o/en-GB/katalog/dewan-rakyat.json",
+      "sourcePageUrl": "https://hansard.parlimen.gov.my/katalog/dewan-rakyat",
+      "officialPublicationTime": null,
+      "officialRevisionTime": null,
+      "timestampMeaning": "Local successful retrieval completion, derived from the raw response output file modification time; not an official publication or revision timestamp.",
+      "privateEvidencePath": "/private/tmp/hansard-recon/catalogue.json"
+    },
+    "record-2026-02-10": {
+      "acquiredAt": "2026-10-10T04:06:26.393Z",
+      "rawSourceDigest": "2f0b3f1e0b3f6889bde11633fa334423e1230964457eebdf046721e79e85c2bf",
+      "rawBytes": 370245,
+      "kind": "source-derived",
+      "url": "https://hansard.parlimen.gov.my/_next/data/Zlu4qRDxrOCEM-7h59E5o/en-GB/hansard/dewan-rakyat/2026-02-10.json?date=2026-02-10",
+      "sourcePageUrl": "https://hansard.parlimen.gov.my/hansard/dewan-rakyat/2026-02-10",
+      "officialPublicationTime": null,
+      "officialRevisionTime": null,
+      "timestampMeaning": "Local successful retrieval completion, derived from the raw response output file modification time; not an official publication or revision timestamp.",
+      "privateEvidencePath": "/private/tmp/hansard-recon/record-2026-02-10.json"
+    },
+    "record-2014-07-23": {
+      "acquiredAt": "2026-10-10T04:07:13.951Z",
+      "rawSourceDigest": "94607e18d33f2d29a76031e3e7882f587d15acab7b460e6b4ab4189eb3993dc5",
+      "rawBytes": 309937,
+      "kind": "source-derived",
+      "url": "https://hansard.parlimen.gov.my/_next/data/Zlu4qRDxrOCEM-7h59E5o/en-GB/hansard/dewan-rakyat/2014-07-23.json?date=2014-07-23",
+      "sourcePageUrl": "https://hansard.parlimen.gov.my/hansard/dewan-rakyat/2014-07-23",
+      "officialPublicationTime": null,
+      "officialRevisionTime": null,
+      "timestampMeaning": "Local successful retrieval completion, derived from the raw response output file modification time; not an official publication or revision timestamp.",
+      "privateEvidencePath": "/private/tmp/hansard-recon/record-2014-07-23.json"
+    },
+    "record-1959-09-11": {
+      "acquiredAt": "2026-10-10T04:07:16.234Z",
+      "rawSourceDigest": "6de60f46bd97b947571f7faa162a8833e5d20b12f1fff78025c445c99eccc297",
+      "rawBytes": 20683,
+      "kind": "source-derived",
+      "url": "https://hansard.parlimen.gov.my/_next/data/Zlu4qRDxrOCEM-7h59E5o/en-GB/hansard/dewan-rakyat/1959-09-11.json?date=1959-09-11",
+      "sourcePageUrl": "https://hansard.parlimen.gov.my/hansard/dewan-rakyat/1959-09-11",
+      "officialPublicationTime": null,
+      "officialRevisionTime": null,
+      "timestampMeaning": "Local successful retrieval completion, derived from the raw response output file modification time; not an official publication or revision timestamp.",
+      "privateEvidencePath": "/private/tmp/hansard-recon/record-1959-09-11.json"
+    }
+  },
+  "memberExcerpts": [
+    {
+      "id": "1839",
+      "kind": "source-derived",
+      "sourceKey": "members",
+      "excerptSha256": "2f07c2342dbc88abf5aed64a81fca5914fbf723a51e8d14a73762f5bff3347a4",
+      "derivation": "Complete source speaker entry copied unchanged for a selected exact author_id. Demographic fields are test-source shape only and are not reader publishing fields."
+    },
+    {
+      "id": "2857",
+      "kind": "source-derived",
+      "sourceKey": "members",
+      "excerptSha256": "4f87f9cc17cc50c56fbe515f3952cc8eb066c0f2ca486da5d66458ce3e218152",
+      "derivation": "Complete source speaker entry copied unchanged for a selected exact author_id. Demographic fields are test-source shape only and are not reader publishing fields."
+    },
+    {
+      "id": "2928",
+      "kind": "source-derived",
+      "sourceKey": "members",
+      "excerptSha256": "884423a8e01df3162f0ae45cd18fd940f507168da7374f0574e576c5fcd83e62",
+      "derivation": "Complete source speaker entry copied unchanged for a selected exact author_id. Demographic fields are test-source shape only and are not reader publishing fields."
+    },
+    {
+      "id": "4463",
+      "kind": "source-derived",
+      "sourceKey": "members",
+      "excerptSha256": "1dafb6eda99c862d09bc2abfd32fb68403fef768716acd843a45b1918ef345a9",
+      "derivation": "Complete source speaker entry copied unchanged for a selected exact author_id. Demographic fields are test-source shape only and are not reader publishing fields."
+    },
+    {
+      "id": "22462",
+      "kind": "source-derived",
+      "sourceKey": "members",
+      "excerptSha256": "666595d5d83c4baa9331adf284abfe95ddf8c2b97eec835eac713c36bb38a2d9",
+      "derivation": "Complete source speaker entry copied unchanged for a selected exact author_id. Demographic fields are test-source shape only and are not reader publishing fields."
+    },
+    {
+      "id": "22547",
+      "kind": "source-derived",
+      "sourceKey": "members",
+      "excerptSha256": "fa1c82fc08824ddf29f4d80e5e361eec4a6b36411b843dd79ef6405e0a0adf12",
+      "derivation": "Complete source speaker entry copied unchanged for a selected exact author_id. Demographic fields are test-source shape only and are not reader publishing fields."
+    }
+  ],
+  "inventoryExcerpts": [
+    {
+      "id": "22942",
+      "kind": "source-derived",
+      "sourceKey": "catalogue",
+      "sourcePointer": "/pageProps/archive/1/1/1/sitting_list",
+      "parliament": 1,
+      "penggal": 1,
+      "mesyuarat": 1,
+      "excerptSha256": "cb63e881248b0e7958fe8257d714658e81f65d227d0cbc05ecec61be01094624",
+      "derivation": "Complete dated sitting entry copied unchanged; numeric hierarchy comes only from the original ancestor dictionary keys. All source Mesyuarat 0 entries are included; this is a partial archive fixture."
+    },
+    {
+      "id": "26241",
+      "kind": "source-derived",
+      "sourceKey": "catalogue",
+      "sourcePointer": "/pageProps/archive/13/2/0/sitting_list",
+      "parliament": 13,
+      "penggal": 2,
+      "mesyuarat": 0,
+      "excerptSha256": "2ee1db4bdf6d210df7bfce28b3dceedd5190621c643bd1e9880cbceb0946f1ca",
+      "derivation": "Complete dated sitting entry copied unchanged; numeric hierarchy comes only from the original ancestor dictionary keys. All source Mesyuarat 0 entries are included; this is a partial archive fixture."
+    },
+    {
+      "id": "26299",
+      "kind": "source-derived",
+      "sourceKey": "catalogue",
+      "sourcePointer": "/pageProps/archive/13/3/0/sitting_list",
+      "parliament": 13,
+      "penggal": 3,
+      "mesyuarat": 0,
+      "excerptSha256": "0691ed2ef813331edec3c68dd813ea141ef205f08eecafb01927bba80137c27a",
+      "derivation": "Complete dated sitting entry copied unchanged; numeric hierarchy comes only from the original ancestor dictionary keys. All source Mesyuarat 0 entries are included; this is a partial archive fixture."
+    },
+    {
+      "id": "26298",
+      "kind": "source-derived",
+      "sourceKey": "catalogue",
+      "sourcePointer": "/pageProps/archive/13/3/0/sitting_list",
+      "parliament": 13,
+      "penggal": 3,
+      "mesyuarat": 0,
+      "excerptSha256": "98db8a6c68ec86f7953fc679654d6160adaf9d12af29d424dd43e6b358bb723b",
+      "derivation": "Complete dated sitting entry copied unchanged; numeric hierarchy comes only from the original ancestor dictionary keys. All source Mesyuarat 0 entries are included; this is a partial archive fixture."
+    },
+    {
+      "id": "26611",
+      "kind": "source-derived",
+      "sourceKey": "catalogue",
+      "sourcePointer": "/pageProps/archive/14/3/0/sitting_list",
+      "parliament": 14,
+      "penggal": 3,
+      "mesyuarat": 0,
+      "excerptSha256": "8acc2e514f42567b83112c1f11c9aaae3265acd1673616e8d3b89fabdaa069bf",
+      "derivation": "Complete dated sitting entry copied unchanged; numeric hierarchy comes only from the original ancestor dictionary keys. All source Mesyuarat 0 entries are included; this is a partial archive fixture."
+    },
+    {
+      "id": "26612",
+      "kind": "source-derived",
+      "sourceKey": "catalogue",
+      "sourcePointer": "/pageProps/archive/14/3/0/sitting_list",
+      "parliament": 14,
+      "penggal": 3,
+      "mesyuarat": 0,
+      "excerptSha256": "5d7b8bdfa99105ef9196295a789b2aeadea0a0f714bd75600aee0237af7bd2c5",
+      "derivation": "Complete dated sitting entry copied unchanged; numeric hierarchy comes only from the original ancestor dictionary keys. All source Mesyuarat 0 entries are included; this is a partial archive fixture."
+    },
+    {
+      "id": "26610",
+      "kind": "source-derived",
+      "sourceKey": "catalogue",
+      "sourcePointer": "/pageProps/archive/14/3/0/sitting_list",
+      "parliament": 14,
+      "penggal": 3,
+      "mesyuarat": 0,
+      "excerptSha256": "9405c8dd940126dfed46e641ca117c6dc206dd907364856784fe4da1804e9ccf",
+      "derivation": "Complete dated sitting entry copied unchanged; numeric hierarchy comes only from the original ancestor dictionary keys. All source Mesyuarat 0 entries are included; this is a partial archive fixture."
+    },
+    {
+      "id": "26609",
+      "kind": "source-derived",
+      "sourceKey": "catalogue",
+      "sourcePointer": "/pageProps/archive/14/3/0/sitting_list",
+      "parliament": 14,
+      "penggal": 3,
+      "mesyuarat": 0,
+      "excerptSha256": "963f9948e0fc4e35c140cd2d562f33e6858395d744800076e1b7a117235baa8a",
+      "derivation": "Complete dated sitting entry copied unchanged; numeric hierarchy comes only from the original ancestor dictionary keys. All source Mesyuarat 0 entries are included; this is a partial archive fixture."
+    },
+    {
+      "id": "26668",
+      "kind": "source-derived",
+      "sourceKey": "catalogue",
+      "sourcePointer": "/pageProps/archive/14/4/0/sitting_list",
+      "parliament": 14,
+      "penggal": 4,
+      "mesyuarat": 0,
+      "excerptSha256": "5620802373426ca94c215ff0a27c075ddddd56777bc282362ac8709ff41e65f8",
+      "derivation": "Complete dated sitting entry copied unchanged; numeric hierarchy comes only from the original ancestor dictionary keys. All source Mesyuarat 0 entries are included; this is a partial archive fixture."
+    },
+    {
+      "id": "26719",
+      "kind": "source-derived",
+      "sourceKey": "catalogue",
+      "sourcePointer": "/pageProps/archive/14/5/0/sitting_list",
+      "parliament": 14,
+      "penggal": 5,
+      "mesyuarat": 0,
+      "excerptSha256": "cda122fcac62cf48d87eaf18e6234299b9ab54ea98142c2b5dc527987bbc934a",
+      "derivation": "Complete dated sitting entry copied unchanged; numeric hierarchy comes only from the original ancestor dictionary keys. All source Mesyuarat 0 entries are included; this is a partial archive fixture."
+    },
+    {
+      "id": "26760",
+      "kind": "source-derived",
+      "sourceKey": "catalogue",
+      "sourcePointer": "/pageProps/archive/15/2/0/sitting_list",
+      "parliament": 15,
+      "penggal": 2,
+      "mesyuarat": 0,
+      "excerptSha256": "586a753821aff822ff9964d7c24aa2a5c1197c4a822a0d15c44604b87ed19066",
+      "derivation": "Complete dated sitting entry copied unchanged; numeric hierarchy comes only from the original ancestor dictionary keys. All source Mesyuarat 0 entries are included; this is a partial archive fixture."
+    },
+    {
+      "id": "26757",
+      "kind": "source-derived",
+      "sourceKey": "catalogue",
+      "sourcePointer": "/pageProps/archive/15/2/0/sitting_list",
+      "parliament": 15,
+      "penggal": 2,
+      "mesyuarat": 0,
+      "excerptSha256": "a1b442828ec4fbde3553b52a44ad7d25fdd309a193a2a3eb558a8dfb9690024c",
+      "derivation": "Complete dated sitting entry copied unchanged; numeric hierarchy comes only from the original ancestor dictionary keys. All source Mesyuarat 0 entries are included; this is a partial archive fixture."
+    },
+    {
+      "id": "26755",
+      "kind": "source-derived",
+      "sourceKey": "catalogue",
+      "sourcePointer": "/pageProps/archive/15/2/0/sitting_list",
+      "parliament": 15,
+      "penggal": 2,
+      "mesyuarat": 0,
+      "excerptSha256": "103acff723c22137fe7ebede20ba54596276373fc164a2e188340b3f943854c9",
+      "derivation": "Complete dated sitting entry copied unchanged; numeric hierarchy comes only from the original ancestor dictionary keys. All source Mesyuarat 0 entries are included; this is a partial archive fixture."
+    },
+    {
+      "id": "26759",
+      "kind": "source-derived",
+      "sourceKey": "catalogue",
+      "sourcePointer": "/pageProps/archive/15/2/0/sitting_list",
+      "parliament": 15,
+      "penggal": 2,
+      "mesyuarat": 0,
+      "excerptSha256": "50e2221683a6519c1a2279368de28315e5efde9c34b371ff83ef9b2eb1fdb12c",
+      "derivation": "Complete dated sitting entry copied unchanged; numeric hierarchy comes only from the original ancestor dictionary keys. All source Mesyuarat 0 entries are included; this is a partial archive fixture."
+    },
+    {
+      "id": "26756",
+      "kind": "source-derived",
+      "sourceKey": "catalogue",
+      "sourcePointer": "/pageProps/archive/15/2/0/sitting_list",
+      "parliament": 15,
+      "penggal": 2,
+      "mesyuarat": 0,
+      "excerptSha256": "5cd75b5cad9767986fa6448fb79a8696cd06adb53c00b558acb550f7c4bccf15",
+      "derivation": "Complete dated sitting entry copied unchanged; numeric hierarchy comes only from the original ancestor dictionary keys. All source Mesyuarat 0 entries are included; this is a partial archive fixture."
+    },
+    {
+      "id": "26758",
+      "kind": "source-derived",
+      "sourceKey": "catalogue",
+      "sourcePointer": "/pageProps/archive/15/2/0/sitting_list",
+      "parliament": 15,
+      "penggal": 2,
+      "mesyuarat": 0,
+      "excerptSha256": "9164c714b686760e5743b807fe9784aff17c2a60da8bf3af6a9b1a17a92eb854",
+      "derivation": "Complete dated sitting entry copied unchanged; numeric hierarchy comes only from the original ancestor dictionary keys. All source Mesyuarat 0 entries are included; this is a partial archive fixture."
+    },
+    {
+      "id": "28921",
+      "kind": "source-derived",
+      "sourceKey": "catalogue",
+      "sourcePointer": "/pageProps/archive/15/4/0/sitting_list",
+      "parliament": 15,
+      "penggal": 4,
+      "mesyuarat": 0,
+      "excerptSha256": "98327923426fcf98990389dbc56cf20514e4a47528495b53cb44a9699fa6e454",
+      "derivation": "Complete dated sitting entry copied unchanged; numeric hierarchy comes only from the original ancestor dictionary keys. All source Mesyuarat 0 entries are included; this is a partial archive fixture."
+    },
+    {
+      "id": "29326",
+      "kind": "source-derived",
+      "sourceKey": "catalogue",
+      "sourcePointer": "/pageProps/archive/15/5/1/sitting_list",
+      "parliament": 15,
+      "penggal": 5,
+      "mesyuarat": 1,
+      "excerptSha256": "a96dd6f5dfd4fa810b32ad90819a361cf4cae5722e77fc65257149786d3fdbf3",
+      "derivation": "Complete dated sitting entry copied unchanged; numeric hierarchy comes only from the original ancestor dictionary keys. All source Mesyuarat 0 entries are included; this is a partial archive fixture."
+    }
+  ],
+  "recordLeafExcerpts": [
+    {
+      "id": "2026-02-10:index:0",
+      "kind": "source-derived",
+      "sourceKey": "record-2026-02-10",
+      "sourceIndex": 0,
+      "sectionPath": [],
+      "excerptSha256": "f3371f77db42921e7ba1ff2962d924b12c2de44c0fba29937a78d18bf34327db",
+      "speechSha256": "0dd71a0ff75866dc2fc42db46116a8faa353c61649b42868d0487cba642bd7e2",
+      "derivation": "Copied the complete decoded source leaf without text edits; ancestor heading dictionaries retained. The fixture omits other leaves and cannot establish sitting completeness or absence."
+    },
+    {
+      "id": "2026-02-10:index:2",
+      "kind": "source-derived",
+      "sourceKey": "record-2026-02-10",
+      "sourceIndex": 2,
+      "sectionPath": [
+        "WAKTU PERTANYAAN-PERTANYAAN MENTERI"
+      ],
+      "excerptSha256": "607102a0e84759db35cc9dc0f9f1fc62a8625fad065f33f1ae0ab331ab91ec3e",
+      "speechSha256": "a98b466e397bda851e58bc039a823d78368cdd482b2c3801b06da340ab9a6f2b",
+      "derivation": "Copied the complete decoded source leaf without text edits; ancestor heading dictionaries retained. The fixture omits other leaves and cannot establish sitting completeness or absence."
+    },
+    {
+      "id": "2026-02-10:index:7",
+      "kind": "source-derived",
+      "sourceKey": "record-2026-02-10",
+      "sourceIndex": 7,
+      "sectionPath": [
+        "WAKTU PERTANYAAN-PERTANYAAN MENTERI"
+      ],
+      "excerptSha256": "e6583012ea8aa1fdb39ce8171b7e148181d3abcb5d59883e52f031f88704f2a6",
+      "speechSha256": "d898753a7c05ead4cb26ebf79cd4e5649de02517afc22101bcb87e8dd8ec5b1b",
+      "derivation": "Copied the complete decoded source leaf without text edits; ancestor heading dictionaries retained. The fixture omits other leaves and cannot establish sitting completeness or absence."
+    },
+    {
+      "id": "2026-02-10:index:108",
+      "kind": "source-derived",
+      "sourceKey": "record-2026-02-10",
+      "sourceIndex": 108,
+      "sectionPath": [
+        "PERTANYAAN-PERTANYAAN BAGI JAWAB LISAN"
+      ],
+      "excerptSha256": "6be0bf65d2ba81c3b28dd5f1a500845f6871a3aa01efc9b8c049554a6c9c6155",
+      "speechSha256": "19c7ba168ee7fa0f3ae3009f261729df1e461481c901086ef2d769e4eb7bd604",
+      "derivation": "Copied the complete decoded source leaf without text edits; ancestor heading dictionaries retained. The fixture omits other leaves and cannot establish sitting completeness or absence."
+    },
+    {
+      "id": "2026-02-10:index:277",
+      "kind": "source-derived",
+      "sourceKey": "record-2026-02-10",
+      "sourceIndex": 277,
+      "sectionPath": [
+        "USUL",
+        "USUL MENJUNJUNG KASIH TITAH SERI PADUKA BAGINDA YANG DI-PERTUAN AGONG"
+      ],
+      "excerptSha256": "6a3ec137ed0736cfb71b5874c36f773fdd9fe1af4788306f0a2b2abec16f12c1",
+      "speechSha256": "54a1b0b8e5f6fa3275546c1869b86830c10ee6fa9dccd1046db52a0f717b1d90",
+      "derivation": "Copied the complete decoded source leaf without text edits; ancestor heading dictionaries retained. The fixture omits other leaves and cannot establish sitting completeness or absence."
+    },
+    {
+      "id": "2026-02-10:index:304",
+      "kind": "source-derived",
+      "sourceKey": "record-2026-02-10",
+      "sourceIndex": 304,
+      "sectionPath": [
+        "USUL",
+        "USUL MENJUNJUNG KASIH TITAH SERI PADUKA BAGINDA YANG DI-PERTUAN AGONG"
+      ],
+      "excerptSha256": "84909dca7ff7c49837ea4edab1ae3922068d699f05ed2fbacb4e719063c6be40",
+      "speechSha256": "ca9dc0ad2a6e664c3f012b67b9b25fa4b6a8bd7f86f8a5a3005ce1b83a7df27e",
+      "derivation": "Copied the complete decoded source leaf without text edits; ancestor heading dictionaries retained. The fixture omits other leaves and cannot establish sitting completeness or absence."
+    },
+    {
+      "id": "2014-07-23:index:52",
+      "kind": "source-derived",
+      "sourceKey": "record-2014-07-23",
+      "sourceIndex": 52,
+      "sectionPath": [
+        "USUL",
+        "WAKTU MESYUARAT DAN URUSAN DIBEBASKAN DARIPADA PERATURAN MESYUARAT"
+      ],
+      "excerptSha256": "9549e73d3a3e04c345ba7e548a52df026df9cf80df5f30774b45b9b970cf7d43",
+      "speechSha256": "54a1b0b8e5f6fa3275546c1869b86830c10ee6fa9dccd1046db52a0f717b1d90",
+      "derivation": "Copied the complete decoded source leaf without text edits; ancestor heading dictionaries retained. The fixture omits other leaves and cannot establish sitting completeness or absence."
+    },
+    {
+      "id": "2014-07-23:index:197",
+      "kind": "source-derived",
+      "sourceKey": "record-2014-07-23",
+      "sourceIndex": 197,
+      "sectionPath": [
+        "USUL",
+        "WAKTU MESYUARAT DAN URUSAN DIBEBASKAN DARIPADA PERATURAN MESYUARAT"
+      ],
+      "excerptSha256": "3d195b722318b5e742e46c08514b30b245ab41f472929c1221ac9f44605f088b",
+      "speechSha256": "4e70cf9e8d1e7e1339746755add1a0c5f9060eb55a7edc2ae8626f2b1ca1e783",
+      "derivation": "Copied the complete decoded source leaf without text edits; ancestor heading dictionaries retained. The fixture omits other leaves and cannot establish sitting completeness or absence."
+    },
+    {
+      "id": "1959-09-11:index:0",
+      "kind": "source-derived",
+      "sourceKey": "record-1959-09-11",
+      "sourceIndex": 0,
+      "sectionPath": [
+        "ELECTION OF SPEAKER"
+      ],
+      "excerptSha256": "a5ce957d0fe843908ce7ecb119c491c8153e6fcb055812671a37480c08a06d80",
+      "speechSha256": "81a7f4aad1bce4d9bfb040d7faa4327795672300abf9789fa1543079e745a142",
+      "derivation": "Copied the complete decoded source leaf without text edits; ancestor heading dictionaries retained. The fixture omits other leaves and cannot establish sitting completeness or absence."
+    }
+  ],
+  "syntheticCases": [
+    {
+      "id": "test-created-controlled-cases",
+      "kind": "synthetic",
+      "location": "Future unit tests construct each case explicitly.",
+      "scope": "Duplicate/conflicting IDs, unknown IDs, invalid structures/markers/indices, HTTP/digest/size/error/retention boundaries and gap-free absence are controlled test cases, never real-source findings.",
+      "claimedRealAbsence": false
+    }
+  ],
+  "observedSourceChecks": {
+    "archiveEntries": 4090,
+    "archiveParliaments": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "members": 2017,
+    "mesyuaratZeroNodes": 7,
+    "mesyuaratZeroSittings": 16,
+    "allSampledRecordsHaveUnresolvedNonannotationItems": true,
+    "fullArchiveFetched": false,
+    "officialTimesUnavailable": true
+  }
+}

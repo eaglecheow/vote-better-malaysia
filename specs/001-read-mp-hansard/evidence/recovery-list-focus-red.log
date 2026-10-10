@@ -1,0 +1,36 @@
+
+> vote-better-malaysia@0.1.0 test
+> vitest --run tests/unit/recovery.test.ts -t REC-REVIEW-LIST-FOCUS
+
+
+ RUN  v5.0.3 /Users/eaglecheow/dev/vote-better-malaysia
+
+ ❯ tests/unit/recovery.test.ts (34 tests | 2 failed | 32 skipped) 69ms
+   × REC-REVIEW-LIST-FOCUS-ms: completed focused list recovery focuses stable member search 57ms
+   × REC-REVIEW-LIST-FOCUS-en: completed focused list recovery focuses stable member search 11ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/recovery.test.ts > REC-REVIEW-LIST-FOCUS-ms: completed focused list recovery focuses stable member search
+ FAIL  tests/unit/recovery.test.ts > REC-REVIEW-LIST-FOCUS-en: completed focused list recovery focuses stable member search
+AssertionError: expected 'retry-catalogue-button' to be 'member-search' // Object.is equality
+
+Expected: "member-search"
+Received: "retry-catalogue-button"
+
+ ❯ checksSuccessfulListRetryFocus tests/unit/recovery.test.ts:443:38
+    441|   expect(control<HTMLSelectElement>(root, 'member-select').disabled).t…
+    442|   expect(button.hidden).toBe(true);
+    443|   expect(document.activeElement?.id).toBe('member-search');
+       |                                      ^
+    444| }
+    445| test.each(['ms', 'en'] as const)('REC-REVIEW-LIST-FOCUS-%s: completed …
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 32 skipped (34)
+   Start at  17:27:26
+   Duration  533ms (environment 72%, tests 15%, transform 10%, import 3%, worker 1%)
+

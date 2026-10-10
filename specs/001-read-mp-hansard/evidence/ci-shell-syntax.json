@@ -1,0 +1,242 @@
+{
+  "workflowSha256": "1866c0f11ddd290f1c8f40102a4c57bdfd04c697e17c8ecc0f6770ad52dbf871",
+  "yamlParsed": true,
+  "runBodies": 39,
+  "passed": 39,
+  "results": [
+    {
+      "job": "inputs",
+      "step": "initialize",
+      "exitCode": 0,
+      "error": ""
+    },
+    {
+      "job": "inputs",
+      "step": 4,
+      "exitCode": 0,
+      "error": ""
+    },
+    {
+      "job": "inputs",
+      "step": "selection",
+      "exitCode": 0,
+      "error": ""
+    },
+    {
+      "job": "inputs",
+      "step": 9,
+      "exitCode": 0,
+      "error": ""
+    },
+    {
+      "job": "unit",
+      "step": 3,
+      "exitCode": 0,
+      "error": ""
+    },
+    {
+      "job": "unit",
+      "step": 4,
+      "exitCode": 0,
+      "error": ""
+    },
+    {
+      "job": "production",
+      "step": "Reject failed or missing immutable inputs",
+      "exitCode": 0,
+      "error": ""
+    },
+    {
+      "job": "production",
+      "step": "initialize",
+      "exitCode": 0,
+      "error": ""
+    },
+    {
+      "job": "production",
+      "step": 5,
+      "exitCode": 0,
+      "error": ""
+    },
+    {
+      "job": "production",
+      "step": 7,
+      "exitCode": 0,
+      "error": ""
+    },
+    {
+      "job": "production",
+      "step": 8,
+      "exitCode": 0,
+      "error": ""
+    },
+    {
+      "job": "review",
+      "step": "Reject failed or missing immutable inputs",
+      "exitCode": 0,
+      "error": ""
+    },
+    {
+      "job": "review",
+      "step": "initialize",
+      "exitCode": 0,
+      "error": ""
+    },
+    {
+      "job": "review",
+      "step": 5,
+      "exitCode": 0,
+      "error": ""
+    },
+    {
+      "job": "review",
+      "step": 7,
+      "exitCode": 0,
+      "error": ""
+    },
+    {
+      "job": "size",
+      "step": "Reject failed or missing immutable inputs",
+      "exitCode": 0,
+      "error": ""
+    },
+    {
+      "job": "size",
+      "step": "initialize",
+      "exitCode": 0,
+      "error": ""
+    },
+    {
+      "job": "size",
+      "step": 5,
+      "exitCode": 0,
+      "error": ""
+    },
+    {
+      "job": "size",
+      "step": 7,
+      "exitCode": 0,
+      "error": ""
+    },
+    {
+      "job": "laboratory",
+      "step": "Reject failed or missing immutable inputs",
+      "exitCode": 0,
+      "error": ""
+    },
+    {
+      "job": "laboratory",
+      "step": "initialize",
+      "exitCode": 0,
+      "error": ""
+    },
+    {
+      "job": "laboratory",
+      "step": 5,
+      "exitCode": 0,
+      "error": ""
+    },
+    {
+      "job": "laboratory",
+      "step": 7,
+      "exitCode": 0,
+      "error": ""
+    },
+    {
+      "job": "targets",
+      "step": "Reject failed or missing immutable inputs",
+      "exitCode": 0,
+      "error": ""
+    },
+    {
+      "job": "targets",
+      "step": "initialize",
+      "exitCode": 0,
+      "error": ""
+    },
+    {
+      "job": "targets",
+      "step": 5,
+      "exitCode": 0,
+      "error": ""
+    },
+    {
+      "job": "targets",
+      "step": 7,
+      "exitCode": 0,
+      "error": ""
+    },
+    {
+      "job": "documentation",
+      "step": "Reject failed or missing immutable inputs",
+      "exitCode": 0,
+      "error": ""
+    },
+    {
+      "job": "documentation",
+      "step": "initialize",
+      "exitCode": 0,
+      "error": ""
+    },
+    {
+      "job": "documentation",
+      "step": 5,
+      "exitCode": 0,
+      "error": ""
+    },
+    {
+      "job": "documentation",
+      "step": 7,
+      "exitCode": 0,
+      "error": ""
+    },
+    {
+      "job": "prepare",
+      "step": "initialize",
+      "exitCode": 0,
+      "error": ""
+    },
+    {
+      "job": "prepare",
+      "step": "context",
+      "exitCode": 0,
+      "error": ""
+    },
+    {
+      "job": "prepare",
+      "step": 6,
+      "exitCode": 0,
+      "error": ""
+    },
+    {
+      "job": "prepare",
+      "step": 8,
+      "exitCode": 0,
+      "error": ""
+    },
+    {
+      "job": "prepare",
+      "step": 9,
+      "exitCode": 0,
+      "error": ""
+    },
+    {
+      "job": "prepare",
+      "step": 11,
+      "exitCode": 0,
+      "error": ""
+    },
+    {
+      "job": "prepare",
+      "step": "Bind actual laboratory origin to the uploaded immutable candidate",
+      "exitCode": 0,
+      "error": ""
+    },
+    {
+      "job": "prepare",
+      "step": "Retain genuine merge-only producer identities",
+      "exitCode": 0,
+      "error": ""
+    }
+  ]
+}

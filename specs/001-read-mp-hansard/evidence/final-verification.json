@@ -1,0 +1,139 @@
+{
+  "scope": "local-implementation-verification-only",
+  "recordedAt": "2026-10-10T12:23:59.516Z",
+  "publicationEligible": false,
+  "baseRevision": "1c4b079935bc5b7604474c1ba55def43ed6f0270",
+  "uncommitted": true,
+  "applicationFingerprint": "fbe830313009c0b417a1169c592957dd5e8f550c4e48319cbbcfb4e8ceac6c3d",
+  "artifact": "/Users/eaglecheow/dev/vote-better-malaysia/.cache/hansard/local-final-site-20261010-help",
+  "artifactDigest": "faf20d1973136a334eb51cf549c4490796ff8ed7f1d0733dded49324a2b08b0f",
+  "snapshot": {
+    "snapshotId": "46deaa63-9074-408c-a1df-7fd687af312c",
+    "preparedAt": "2026-10-10T06:24:11.774Z",
+    "publishedAt": null,
+    "coverage": {
+      "parliaments": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "startDate": "1959-09-11",
+      "endDate": "2026-10-08",
+      "latestInventoryCount": 4090,
+      "retainedSittingCount": 0,
+      "unavailableSittingCount": 0,
+      "attributionGapCount": 533456
+    },
+    "status": {
+      "acquisitionOutcome": "success",
+      "stagingOutcome": "success",
+      "workflowUrl": null,
+      "completedAt": "2026-10-10T06:24:11.774Z",
+      "lastConfirmedDeployment": null
+    },
+    "sittingCount": 4090
+  },
+  "unit": {
+    "total": 2021,
+    "passed": 2021,
+    "failed": 0,
+    "files": 34,
+    "success": true
+  },
+  "browser": {
+    "projects": [
+      "chromium",
+      "webkit"
+    ],
+    "passed": 108,
+    "durationSeconds": 20.5,
+    "distAbsent": true,
+    "frozenFilesUnchanged": true
+  },
+  "sizeBudgets": {
+    "shellGzip": true,
+    "jsGzip": true,
+    "iconBytes": true,
+    "artifactBytes": true,
+    "catalogueGzip": true,
+    "catalogueDecoded": true,
+    "allSittingGzip": true,
+    "allSittingDecoded": true
+  },
+  "tasks": {
+    "total": 80,
+    "checked": 64,
+    "unchecked": [
+      "T028",
+      "T057",
+      "T058",
+      "T059",
+      "T060",
+      "T061",
+      "T062",
+      "T071",
+      "T072",
+      "T074",
+      "T075",
+      "T076",
+      "T077",
+      "T078",
+      "T079",
+      "T080"
+    ]
+  },
+  "reports": {
+    "final-unit-green.json": "c581b4f6e125450fb9de3143ea2bec4a1345e0718135d74ec28a8e9297485345",
+    "final-unit-green.log": "87b8a4ed11c6e53907fe079dadbbab9328c57c95398f5fab407a443738e21dab",
+    "final-build.log": "9bd2aa539f7adfaa1956d59e3ff730a69af8b6c5d6d14041b81c8df10db33327",
+    "final-frozen-browser.log": "d9b2650c54cc211ac95f0e733d6280d4222ed4a568fb80656c854ec953eafd1f",
+    "final-local-build-binding.json": "8e126bbe14d88c16ae849a1439c889444d9febcff2ce274aa2e10d436059b961",
+    "performance-local-sizes.json": "c540f4a93e45fd1177c9f7a67a4fad5847f58a578e56263707a320245f79a0d2",
+    "final-frozen-integrity.json": "2eb31ba6376bd23064e07ef3c61032700676be36dadd1f0e7a5ec955920c0211",
+    "final-full-source-browser.json": "9a36ed17f7a8959b361a2b954fbe697d5ab74d2028211a85d03f2a7c8a509238",
+    "final-help-browser.json": "f236d616254daac68f56fd5aae0a32ea8d5e3598502709837f4b5d1f891df858",
+    "clean-environment.json": "0d99c833665f98858fd9b865365a93ef3f66fd475ae70681e1c7efd3413872be",
+    "clean-environment-final-help.json": "4379090c1745f19cacc5cb59c4c6db25529c0ea54c9d8b0a414a60489c4e44cf",
+    "clean-environment.md": "ec329b6f68903b32dba5e7b0b48870b7fde52493cec1284ef6455aabc536e1f3",
+    "tdd-ci-reviewed-base-green.json": "51ca7bd24f5d376c29394d0bca1a9ae2648e383090512be99cc191024aef8343",
+    "tdd-ci-acquisition-final-green.json": "d1f53487ee1fd06992030624765797852c2dd5e508b895d2742a573fdf53b811",
+    "ci-workflow-first-green.json": "46e88f6fc71130b672848ba0dfa0419b0929f54dab04f0d4fee0355669f83efa",
+    "ci-shell-syntax.json": "f7291729485bce30c0ec8a64da28132d492e712612067b14e4738f649200b40d",
+    "ci-workflow-review.md": "f01b9dd87d9c79121631c43fd3eb0cb0aa1debcb88a902d22895a1330e28d0c7",
+    "final-unit-browser-path-failed.json": "6fc9747f3438189dbec71ada4ca477a0142ec5c6f3450f5b754575ac911e7cf9",
+    "final-documentation-green.log": "69b3fbf064290f8e22052374253ffe5bfbe5a18d58b743e8e367ee9c6b7b0515",
+    "final-callable-green.json": "a7444d90f0135722ddbc2ca3d0cd52f940c9c44c7da2ed4652916b5086e5e599",
+    "final-documentation-review.json": "9421fd1aed1cd7bb4a3e424b808b43cd152f08d11cf31f0a70a77564b5740fd4"
+  },
+  "releaseAcceptance": false,
+  "unverified": [
+    "Firefox macOS-host gate",
+    "reviewed-main immutable candidate and served baseline",
+    "Ubuntu laboratory timings and actual transport bytes",
+    "six named physical browser targets",
+    "real remote CI blocking and required review/protection rules",
+    "full candidate-bound documentation accuracy and deployment commands",
+    "GitHub Pages publication, deployed repetition, scheduling and recovery",
+    "assistive technology and ten-first-time-user study",
+    "independent mobile and desktop field Web Vitals"
+  ],
+  "finalDocumentation": {
+    "passed": 48,
+    "failed": 0
+  },
+  "finalCallable": {
+    "findings": []
+  }
+}

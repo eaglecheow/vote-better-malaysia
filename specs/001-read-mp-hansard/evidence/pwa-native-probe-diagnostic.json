@@ -1,0 +1,106 @@
+[
+  {
+    "engine": "chromium",
+    "events": [
+      "late:request-success",
+      "late:application-complete",
+      "late:application-continuation:observed=false",
+      "late:observer-complete",
+      "capture:request-success",
+      "capture:application-complete",
+      "capture:application-continuation:observed=false",
+      "capture:observer-complete",
+      "early:request-success",
+      "early:observer-complete",
+      "early:application-complete",
+      "early:application-continuation:observed=true",
+      "abort:request-success",
+      "abort:application-abort",
+      "abort:continuation-rejected"
+    ],
+    "scenarios": [
+      {
+        "mode": "late",
+        "observedAtContinuation": false,
+        "finalObserved": true,
+        "value": {
+          "value": "late"
+        }
+      },
+      {
+        "mode": "capture",
+        "observedAtContinuation": false,
+        "finalObserved": true,
+        "value": {
+          "value": "capture"
+        }
+      },
+      {
+        "mode": "early",
+        "observedAtContinuation": true,
+        "finalObserved": true,
+        "value": {
+          "value": "early"
+        }
+      },
+      {
+        "mode": "abort",
+        "observedAtContinuation": null,
+        "finalObserved": false,
+        "value": null
+      }
+    ]
+  },
+  {
+    "engine": "webkit",
+    "events": [
+      "late:request-success",
+      "late:application-complete",
+      "late:application-continuation:observed=false",
+      "late:observer-complete",
+      "capture:request-success",
+      "capture:observer-complete",
+      "capture:application-complete",
+      "capture:application-continuation:observed=true",
+      "early:request-success",
+      "early:observer-complete",
+      "early:application-complete",
+      "early:application-continuation:observed=true",
+      "abort:request-success",
+      "abort:application-abort",
+      "abort:continuation-rejected"
+    ],
+    "scenarios": [
+      {
+        "mode": "late",
+        "observedAtContinuation": false,
+        "finalObserved": true,
+        "value": {
+          "value": "late"
+        }
+      },
+      {
+        "mode": "capture",
+        "observedAtContinuation": true,
+        "finalObserved": true,
+        "value": {
+          "value": "capture"
+        }
+      },
+      {
+        "mode": "early",
+        "observedAtContinuation": true,
+        "finalObserved": true,
+        "value": {
+          "value": "early"
+        }
+      },
+      {
+        "mode": "abort",
+        "observedAtContinuation": null,
+        "finalObserved": false,
+        "value": null
+      }
+    ]
+  }
+]

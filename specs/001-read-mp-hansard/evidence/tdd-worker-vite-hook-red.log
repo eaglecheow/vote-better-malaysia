@@ -1,0 +1,57 @@
+
+> vote-better-malaysia@0.1.0 test
+> vitest --run tests/unit/build-worker.test.ts -t BHOOK001
+
+
+ RUN  v5.0.3 /Users/eaglecheow/dev/vote-better-malaysia
+
+ ❯ tests/unit/build-worker.test.ts (82 tests | 1 failed | 81 skipped) 12ms
+   × BHOOK001 production Vite close hooks generate the worker and version stamp in the resolved build output 12ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/build-worker.test.ts > BHOOK001 production Vite close hooks generate the worker and version stamp in the resolved build output
+AssertionError: expected null to be type of 'string'
+
+Expected: "string"
+Received: "object"
+
+ ❯ check tests/unit/build-worker.test.ts:525:48
+    523|         if (typeof plugin.closeBundle === 'function') await plugin.clo…
+    524|       }
+    525|       expect.soft(generated(context, 'sw.js')).toBeTypeOf('string');
+       |                                                ^
+    526|       expect.soft(generated(context, 'index.html') ?? '').toMatch(/nam…
+    527|     }); });
+ ❯ withFixture tests/unit/build-worker.test.ts:84:42
+ ❯ productionBuildHook tests/unit/build-worker.test.ts:512:48
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  tests/unit/build-worker.test.ts > BHOOK001 production Vite close hooks generate the worker and version stamp in the resolved build output
+AssertionError: expected '<!doctype html><html lang="ms"><head>…' to match /name="hansard-shell-version"\s+conten…/
+
+- Expected:
+/name="hansard-shell-version"\s+content="[a-f0-9]{64}"/
+
++ Received:
+"<!doctype html><html lang=\"ms\"><head><link rel=\"manifest\" href=\"/vote-better-malaysia/manifest.webmanifest\"><title>Fixture reader</title></head><body><script type=\"module\" src=\"/vote-better-malaysia/assets/main-A1B2C3D4.js\"></script></body></html>"
+
+ ❯ check tests/unit/build-worker.test.ts:526:59
+    524|       }
+    525|       expect.soft(generated(context, 'sw.js')).toBeTypeOf('string');
+    526|       expect.soft(generated(context, 'index.html') ?? '').toMatch(/nam…
+       |                                                           ^
+    527|     }); });
+    528|
+ ❯ withFixture tests/unit/build-worker.test.ts:84:42
+ ❯ productionBuildHook tests/unit/build-worker.test.ts:512:48
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 81 skipped (82)
+   Start at  19:06:13
+   Duration  298ms (import 73%, transform 20%, tests 6%, worker 1%)
+

@@ -1,0 +1,51 @@
+
+ RUN  v5.0.3 /Users/eaglecheow/dev/vote-better-malaysia
+
+ × tests/unit/reader-initial-network.test.ts > INITIAL-NETWORK ms: online initial catalogue failure announces retrieval error and native Retry restores choices/focus 57ms
+   → expected 'Sambungan diperlukan untuk memuatkan …' to be 'Data laman tidak dapat dimuatkan atau…' // Object.is equality
+ ✓ tests/unit/reader-initial-network.test.ts > INITIAL-OFFLINE-CONTROL ms: a first offline visit retains its existing connection-required message 3ms
+ × tests/unit/reader-initial-network.test.ts > INITIAL-NETWORK en: online initial catalogue failure announces retrieval error and native Retry restores choices/focus 8ms
+   → expected 'A connection is required to load unsa…' to be 'Site data could not be loaded or vali…' // Object.is equality
+ ✓ tests/unit/reader-initial-network.test.ts > INITIAL-OFFLINE-CONTROL en: a first offline visit retains its existing connection-required message 4ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/reader-initial-network.test.ts > INITIAL-NETWORK ms: online initial catalogue failure announces retrieval error and native Retry restores choices/focus
+AssertionError: expected 'Sambungan diperlukan untuk memuatkan …' to be 'Data laman tidak dapat dimuatkan atau…' // Object.is equality
+
+Expected: "Data laman tidak dapat dimuatkan atau disahkan."
+Received: "Sambungan diperlukan untuk memuatkan senarai dan rekod yang belum disimpan."
+
+ ❯ onlineFailure tests/unit/reader-initial-network.test.ts:75:86
+     73|       try {
+     74|         await settle();
+     75|         expect.soft(context.root.querySelector('#reader-status')?.text…
+       |                                                                                      ^
+     76|         failedListControls(context.root);
+     77|         expect.soft(context.loadCatalogue).toHaveBeenCalledOnce(); exp…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  tests/unit/reader-initial-network.test.ts > INITIAL-NETWORK en: online initial catalogue failure announces retrieval error and native Retry restores choices/focus
+AssertionError: expected 'A connection is required to load unsa…' to be 'Site data could not be loaded or vali…' // Object.is equality
+
+Expected: "Site data could not be loaded or validated."
+Received: "A connection is required to load unsaved lists and records."
+
+ ❯ onlineFailure tests/unit/reader-initial-network.test.ts:75:86
+     73|       try {
+     74|         await settle();
+     75|         expect.soft(context.root.querySelector('#reader-status')?.text…
+       |                                                                                      ^
+     76|         failedListControls(context.root);
+     77|         expect.soft(context.loadCatalogue).toHaveBeenCalledOnce(); exp…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 2 passed (4)
+   Start at  19:40:57
+   Duration  503ms (environment 72%, tests 16%, transform 9%, import 2%)
+
+JSON report written to /Users/eaglecheow/dev/vote-better-malaysia/specs/001-read-mp-hansard/evidence/tdd-initial-network-red.json

@@ -1,0 +1,9 @@
+
+ RUN  v5.0.3 /Users/eaglecheow/dev/vote-better-malaysia
+
+
+ Test Files  1 passed (1)
+      Tests  55 passed (55)
+   Start at  18:49:16
+   Duration  144ms (import 77%, transform 15%, tests 6%, worker 1%)
+

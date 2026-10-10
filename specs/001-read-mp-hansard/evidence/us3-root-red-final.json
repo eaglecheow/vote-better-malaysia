@@ -1,0 +1,2369 @@
+{
+  "recordedAt": "2026-10-10T06:03:33.520070+00:00",
+  "command": "npm test -- --run tests/unit/storage.test.ts tests/unit/worker.test.ts tests/unit/build-worker.test.ts tests/unit/updates.test.ts tests/unit/saved-reader.test.ts --reporter=json --outputFile=/private/tmp/hansard-root-us3-red-final.json",
+  "node": "24.21.0",
+  "exitCode": 1,
+  "total": 301,
+  "passed": 0,
+  "failed": 301,
+  "pending": 0,
+  "scope": "Final future behavior RED preparation only; no production, native storage/worker/browser, source or physical acceptance.",
+  "fileDigestsRecordedAfterRun": {
+    "src/storage.ts": "234dcdcd3b8b46e58d86702bd6789a5d3862866c7565b0219c82670ff08b82ec",
+    "src/updates.ts": "fd20c577239e028a834f01e09d993c3c3995133e7642d658cec71ece6020d9aa",
+    "src/main.ts": "26484c98643148f5bdfa71f87b287cb527173d025716c4753144c41b691c498f",
+    "worker/service-worker.ts": "f4e25f0690859c67a2c94fa7fe0a601d69177fd1c0eeb2899bb79664b52bd5a1",
+    "scripts/build-worker.ts": "1ad036446efe924744febfdcb0594150b269a2646e1e7a08dddab9a9b376790b",
+    "tests/unit/storage.test.ts": "66f54226123d52dc598add5f5e0d97facbb516b34b5ade347f3e500ac0bd66f8",
+    "tests/unit/worker.test.ts": "19a0608cbdd7d1da975b97ac20ad0eed6389c96b118075fead570c6948182bb3",
+    "tests/unit/build-worker.test.ts": "df21fbca59e01fb6cc856dcba133b91ff4f14e13f8f9fbe1b144d3d1adbd2721",
+    "tests/unit/updates.test.ts": "6328e0eaf9ca5a73e2ae357a71c376ed98e433d71620f104d298ad2a22083885",
+    "tests/unit/saved-reader.test.ts": "d4bba3316a5411d66fb52c9b8244d96d0754c9b708b530de4890f72166d3a832"
+  },
+  "suites": [
+    {
+      "file": "tests/unit/build-worker.test.ts",
+      "cases": [
+        {
+          "name": "B001 emits a versioned complete base-scoped shell and classic single-file worker",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to be defined"
+          ]
+        },
+        {
+          "name": "B002 repeat generation excludes its own index stamp and generated worker bytes",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to be defined"
+          ]
+        },
+        {
+          "name": "B003 application input src/main.ts changes shell version",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to be defined"
+          ]
+        },
+        {
+          "name": "B003 application input src/source.ts changes shell version",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to be defined"
+          ]
+        },
+        {
+          "name": "B003 application input src/messages.ts changes shell version",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to be defined"
+          ]
+        },
+        {
+          "name": "B003 application input src/styles.css changes shell version",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to be defined"
+          ]
+        },
+        {
+          "name": "B003 application input worker/service-worker.ts changes shell version",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to be defined"
+          ]
+        },
+        {
+          "name": "B003 application input scripts/build-worker.ts changes shell version",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to be defined"
+          ]
+        },
+        {
+          "name": "B003 application input vite.config.ts changes shell version",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to be defined"
+          ]
+        },
+        {
+          "name": "B003 application input package-lock.json changes shell version",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to be defined"
+          ]
+        },
+        {
+          "name": "B004 shell byte index.html changes version",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to be defined"
+          ]
+        },
+        {
+          "name": "B004 shell byte help.html changes version",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to be defined"
+          ]
+        },
+        {
+          "name": "B004 shell byte assets/main-A1B2C3D4.js changes version",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to be defined"
+          ]
+        },
+        {
+          "name": "B004 shell byte assets/main-A1B2C3D4.css changes version",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to be defined"
+          ]
+        },
+        {
+          "name": "B005 source-data and evidence changes do not recache the archive or alter shell version",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to be defined"
+          ]
+        },
+        {
+          "name": "B006 additional shell assets are listed and invalidate version without omission",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to be defined"
+          ]
+        },
+        {
+          "name": "B010 rejects invalid base vote-better-malaysia/",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting"
+          ]
+        },
+        {
+          "name": "B010 rejects invalid base /vote-better-malaysia",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting"
+          ]
+        },
+        {
+          "name": "B010 rejects invalid base //other/",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting"
+          ]
+        },
+        {
+          "name": "B010 rejects invalid base /vote-better-malaysia/../other/",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting"
+          ]
+        },
+        {
+          "name": "B010 rejects invalid base /vote-better-malaysia/?x=1",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting"
+          ]
+        },
+        {
+          "name": "B010 rejects invalid base /vote-better-malaysia/#x",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting"
+          ]
+        },
+        {
+          "name": "B010 rejects invalid base /vote-better-malaysia/%2e%2e/",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting"
+          ]
+        },
+        {
+          "name": "B010 rejects invalid base /vote-better-malaysia/\\other/",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting"
+          ]
+        },
+        {
+          "name": "B011 rejects missing required shell index.html",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting"
+          ]
+        },
+        {
+          "name": "B011 rejects missing required shell help.html",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting"
+          ]
+        },
+        {
+          "name": "B011 rejects missing required shell manifest.webmanifest",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting"
+          ]
+        },
+        {
+          "name": "B011 rejects missing required shell icons/icon-192.png",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting"
+          ]
+        },
+        {
+          "name": "B011 rejects missing required shell icons/icon-512.png",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting"
+          ]
+        },
+        {
+          "name": "B011 rejects missing required shell assets/main-A1B2C3D4.js",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting"
+          ]
+        },
+        {
+          "name": "B011 rejects missing required shell assets/main-A1B2C3D4.css",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting"
+          ]
+        },
+        {
+          "name": "B012 rejects off-base manifest start_url=/",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting"
+          ]
+        },
+        {
+          "name": "B012 rejects off-base manifest start_url=/other/",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting"
+          ]
+        },
+        {
+          "name": "B012 rejects off-base manifest start_url=https://other.test/app/",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting"
+          ]
+        },
+        {
+          "name": "B012 rejects off-base manifest scope=/",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting"
+          ]
+        },
+        {
+          "name": "B012 rejects off-base manifest scope=/other/",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting"
+          ]
+        },
+        {
+          "name": "B012 rejects off-base manifest scope=https://other.test/app/",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting"
+          ]
+        },
+        {
+          "name": "B012 rejects off-base manifest id=/",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting"
+          ]
+        },
+        {
+          "name": "B012 rejects off-base manifest id=/other/",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting"
+          ]
+        },
+        {
+          "name": "B012 rejects off-base manifest id=https://other.test/app/",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting"
+          ]
+        },
+        {
+          "name": "B013 rejects invalid required icon declaration src",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting"
+          ]
+        },
+        {
+          "name": "B013 rejects invalid required icon declaration sizes",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting"
+          ]
+        },
+        {
+          "name": "B013 rejects invalid required icon declaration type",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting"
+          ]
+        },
+        {
+          "name": "B013 rejects invalid required icon declaration missing-icon",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting"
+          ]
+        },
+        {
+          "name": "B014 rejects invalid PNG/dimensions icons/icon-192.png:593",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting"
+          ]
+        },
+        {
+          "name": "B014 rejects invalid PNG/dimensions icons/icon-512.png:2196",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting"
+          ]
+        },
+        {
+          "name": "B014 rejects invalid PNG/dimensions icons/icon-192.png:7",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting"
+          ]
+        },
+        {
+          "name": "B014 rejects invalid PNG/dimensions icons/icon-512.png:20",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting"
+          ]
+        },
+        {
+          "name": "B015 accepts exactly 61440 combined icon bytes without reducing icon dimensions",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to be defined"
+          ]
+        },
+        {
+          "name": "B019 rejects 61441 combined icon bytes directly and preserves prior generated worker/index",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting"
+          ]
+        },
+        {
+          "name": "B016 rejects private deployed metadata .env",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting"
+          ]
+        },
+        {
+          "name": "B016 rejects private deployed metadata .cache/private.json",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting"
+          ]
+        },
+        {
+          "name": "B016 rejects private deployed metadata evidence/report.json",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting"
+          ]
+        },
+        {
+          "name": "B016 rejects private deployed metadata candidate.json",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting"
+          ]
+        },
+        {
+          "name": "B017 rejects symlink escape output-file",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting"
+          ]
+        },
+        {
+          "name": "B017 rejects symlink escape output-root",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting"
+          ]
+        },
+        {
+          "name": "B017 rejects symlink escape application-source",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting"
+          ]
+        },
+        {
+          "name": "B018 rejected manifest generation preserves already accepted worker and stamped index",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "tests/unit/saved-reader.test.ts",
+      "cases": [
+        {
+          "name": "SAVED001 ms: offline reopening restores valid catalogue, exact saved pair, locale and selections",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected [] to deeply equal [ Array(1) ]",
+            "AssertionError: expected [] to deeply equal [ \u2026(2) ]",
+            "AssertionError: expected [] to deeply equal [ Array(1) ]",
+            "AssertionError: expected null to be '1839' // Object.is equality",
+            "AssertionError: expected null to be '29326' // Object.is equality",
+            "AssertionError: expected '' to be '1839' // Object.is equality",
+            "AssertionError: expected '' to be '29326' // Object.is equality",
+            "AssertionError: expected '' to be 'Transkrip disimpan pada peranti.' // Object.is equality",
+            "AssertionError: expected '' to be 'Pembaca sedia dibuka semula tanpa sam\u2026' // Object.is equality",
+            "AssertionError: expected undefined to be 'true' // Object.is equality",
+            "AssertionError: expected undefined to be 'true' // Object.is equality",
+            "AssertionError: expected '' to contain '2026-10-10T06:00:00.000Z'"
+          ]
+        },
+        {
+          "name": "SAVED002 ms: another member from a fetched sitting remains offline-unsaved and requires a connection",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected 'Data laman tidak dapat dimuatkan atau\u2026' to be 'Sambungan diperlukan untuk membuka pa\u2026' // Object.is equality",
+            "AssertionError: expected \"vi.fn()\" to be called with arguments: [ '4463', '29326' ]",
+            "AssertionError: expected undefined to be 'false' // Object.is equality"
+          ]
+        },
+        {
+          "name": "SAVED003 ms: incompatible saved content is unavailable and requires valid online retrieval",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected 'Data laman tidak dapat dimuatkan atau\u2026' to be 'Data yang disimpan tidak serasi. Samb\u2026' // Object.is equality",
+            "AssertionError: expected '' to be 'Transkrip belum disimpan pada peranti.' // Object.is equality"
+          ]
+        },
+        {
+          "name": "SAVED004 ms: a committed transcript and compatible shell produce distinct saved/offline notices",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected [] to deeply equal [ Array(1) ]",
+            "AssertionError: expected [] to deeply equal [ \u2026(2) ]",
+            "AssertionError: expected [] to deeply equal [ Array(1) ]",
+            "AssertionError: expected null to be '1839' // Object.is equality",
+            "AssertionError: expected null to be '29326' // Object.is equality",
+            "AssertionError: expected \"vi.fn()\" to be called with arguments: [ '1839', '29326', Any<AbortSignal> ]",
+            "AssertionError: expected \"vi.fn()\" to be called with arguments: [ { schemaVersion: 1, \u2026(8) }, \u2026(2) ]",
+            "AssertionError: expected '' to be 'Transkrip disimpan pada peranti.' // Object.is equality",
+            "AssertionError: expected '' to be 'Pembaca sedia dibuka semula tanpa sam\u2026' // Object.is equality",
+            "AssertionError: expected undefined to be 'true' // Object.is equality",
+            "AssertionError: expected undefined to be 'true' // Object.is equality",
+            "AssertionError: expected '' to contain '2026-10-10T07:00:00.000Z'",
+            "AssertionError: expected '' to contain '2026-10-10T07:00:00.000Z'"
+          ]
+        },
+        {
+          "name": "SAVED005 ms: unchanged bytes still advance current validation time and committed saved time",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected \"vi.fn()\" to be called with arguments: [ { schemaVersion: 1, \u2026(8) }, \u2026(2) ]",
+            "AssertionError: expected '' to contain '2026-10-10T07:00:00.000Z'",
+            "AssertionError: expected '' to contain '2026-10-10T07:00:00.000Z'"
+          ]
+        },
+        {
+          "name": "SAVED006 ms: changed validated content commits every new turn and every source gap/annotation",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected [] to deeply equal [ Array(1) ]",
+            "AssertionError: expected [] to deeply equal [ \u2026(2) ]",
+            "AssertionError: expected [] to deeply equal [ Array(1) ]",
+            "AssertionError: expected null to be '1839' // Object.is equality",
+            "AssertionError: expected null to be '29326' // Object.is equality",
+            "AssertionError: expected \"vi.fn()\" to be called with arguments: [ { schemaVersion: 1, \u2026(8) }, \u2026(2) ]"
+          ]
+        },
+        {
+          "name": "SAVED007 ms: failed saving keeps new online content unsaved and identifies the older offline copy separately",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected [] to deeply equal [ Array(1) ]",
+            "AssertionError: expected [] to deeply equal [ \u2026(2) ]",
+            "AssertionError: expected [] to deeply equal [ Array(1) ]",
+            "AssertionError: expected null to be '1839' // Object.is equality",
+            "AssertionError: expected null to be '29326' // Object.is equality",
+            "AssertionError: expected '' to be 'Transkrip belum disimpan pada peranti.' // Object.is equality",
+            "AssertionError: expected '' to be 'Salinan lama yang disimpan masih ters\u2026' // Object.is equality",
+            "AssertionError: expected undefined to be 'false' // Object.is equality",
+            "AssertionError: expected '' to contain '2026-10-10T07:00:00.000Z'",
+            "AssertionError: expected '' to contain '2026-10-10T06:00:00.000Z'"
+          ]
+        },
+        {
+          "name": "SAVED008 ms: pair saving remains pending until transaction acknowledgement and does not advance saved time early",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected '' to be 'Transkrip belum disimpan pada peranti.' // Object.is equality",
+            "AssertionError: expected '' to contain '2026-10-10T06:00:00.000Z'",
+            "AssertionError: expected '' to be 'Transkrip disimpan pada peranti.' // Object.is equality",
+            "AssertionError: expected '' to contain '2026-10-10T07:00:00.000Z'"
+          ]
+        },
+        {
+          "name": "SAVED009 ms: committed pair with unconfirmed shell stays transcript-saved without an offline-reopening promise",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected '' to be 'Transkrip disimpan pada peranti.' // Object.is equality",
+            "AssertionError: expected '' to be 'Pembukaan semula tanpa sambungan belu\u2026' // Object.is equality",
+            "AssertionError: expected undefined to be 'false' // Object.is equality"
+          ]
+        },
+        {
+          "name": "SAVED010 ms: new-shell failure preserves an already confirmed compatible saved reader",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected [] to deeply equal [ Array(1) ]",
+            "AssertionError: expected [] to deeply equal [ \u2026(2) ]",
+            "AssertionError: expected [] to deeply equal [ Array(1) ]",
+            "AssertionError: expected null to be '1839' // Object.is equality",
+            "AssertionError: expected null to be '29326' // Object.is equality",
+            "AssertionError: expected '' to be 'Transkrip disimpan pada peranti.' // Object.is equality",
+            "AssertionError: expected '' to be 'Pembaca sedia dibuka semula tanpa sam\u2026' // Object.is equality"
+          ]
+        },
+        {
+          "name": "SAVED011 ms: failed hash validation keeps the prior accepted result/time and never saves failed data",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected [] to deeply equal [ Array(1) ]",
+            "AssertionError: expected [] to deeply equal [ \u2026(2) ]",
+            "AssertionError: expected [] to deeply equal [ Array(1) ]",
+            "AssertionError: expected null to be '1839' // Object.is equality",
+            "AssertionError: expected null to be '29326' // Object.is equality",
+            "AssertionError: expected '' to contain '2026-10-10T06:00:00.000Z'",
+            "AssertionError: expected '' to contain '2026-10-10T06:00:00.000Z'"
+          ]
+        },
+        {
+          "name": "SAVED011 ms: failed identity validation keeps the prior accepted result/time and never saves failed data",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected [] to deeply equal [ Array(1) ]",
+            "AssertionError: expected [] to deeply equal [ \u2026(2) ]",
+            "AssertionError: expected [] to deeply equal [ Array(1) ]",
+            "AssertionError: expected null to be '1839' // Object.is equality",
+            "AssertionError: expected null to be '29326' // Object.is equality",
+            "AssertionError: expected '' to contain '2026-10-10T06:00:00.000Z'",
+            "AssertionError: expected '' to contain '2026-10-10T06:00:00.000Z'"
+          ]
+        },
+        {
+          "name": "SAVED011 ms: failed schema validation keeps the prior accepted result/time and never saves failed data",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected [] to deeply equal [ Array(1) ]",
+            "AssertionError: expected [] to deeply equal [ \u2026(2) ]",
+            "AssertionError: expected [] to deeply equal [ Array(1) ]",
+            "AssertionError: expected null to be '1839' // Object.is equality",
+            "AssertionError: expected null to be '29326' // Object.is equality",
+            "AssertionError: expected '' to contain '2026-10-10T06:00:00.000Z'",
+            "AssertionError: expected '' to contain '2026-10-10T06:00:00.000Z'"
+          ]
+        },
+        {
+          "name": "SAVED012 ms: device storage opening failure preserves ordinary online reading with an honest limit",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected '' to be 'Storan peranti tidak tersedia. Bacaan\u2026' // Object.is equality",
+            "AssertionError: expected '' to be 'Pembukaan semula tanpa sambungan belu\u2026' // Object.is equality"
+          ]
+        },
+        {
+          "name": "SAVED013 ms: saved result metadata is not relabeled from a newer cached catalogue",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected '' to contain 'LIM GUAN ENG'",
+            "AssertionError: expected '' to contain '2026-10-10T04:00:00.000Z'",
+            "AssertionError: expected '' to contain '2026-10-10T03:01:00.000Z'",
+            "AssertionError: expected [] to deeply equal [ Array(1) ]",
+            "AssertionError: expected [] to deeply equal [ \u2026(2) ]",
+            "AssertionError: expected [] to deeply equal [ Array(1) ]",
+            "AssertionError: expected null to be '1839' // Object.is equality",
+            "AssertionError: expected null to be '29326' // Object.is equality"
+          ]
+        },
+        {
+          "name": "SAVED014 ms: language and valid changed selections are persisted before deliberate Apply",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected '' to be 'Gunakan kemas kini' // Object.is equality",
+            "AssertionError: expected '' to be 'Teruskan membaca' // Object.is equality",
+            "AssertionError: expected null not to be null",
+            "AssertionError: expected \"vi.fn()\" to be called once, but got 0 times",
+            "AssertionError: expected undefined to be type of 'function'",
+            "AssertionError: expected \"vi.fn()\" to be called with arguments: [ { schemaVersion: 1, \u2026(8) }, \u2026(1) ]"
+          ]
+        },
+        {
+          "name": "SAVED015 ms: Continue preserves exact reading, preferences and native control focus",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected null not to be null",
+            "AssertionError: expected [] to deeply equal [ Array(1) ]",
+            "AssertionError: expected [] to deeply equal [ \u2026(2) ]",
+            "AssertionError: expected [] to deeply equal [ Array(1) ]",
+            "AssertionError: expected null to be '1839' // Object.is equality",
+            "AssertionError: expected null to be '29326' // Object.is equality",
+            "AssertionError: expected \"vi.fn()\" to be called once, but got 0 times"
+          ]
+        },
+        {
+          "name": "SAVED016 ms: complete saved-reader readiness mark waits until the matching saved pair is usable",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected [] to include 'hansard.reader-ready'"
+          ]
+        },
+        {
+          "name": "SAVED018 ms: first offline visit without committed lists cannot invent a readable source archive",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected 'Data laman tidak dapat dimuatkan atau\u2026' to be 'Sambungan diperlukan untuk memuatkan \u2026' // Object.is equality"
+          ]
+        },
+        {
+          "name": "SAVED001 en: offline reopening restores valid catalogue, exact saved pair, locale and selections",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected [] to deeply equal [ Array(1) ]",
+            "AssertionError: expected [] to deeply equal [ \u2026(2) ]",
+            "AssertionError: expected [] to deeply equal [ Array(1) ]",
+            "AssertionError: expected null to be '1839' // Object.is equality",
+            "AssertionError: expected null to be '29326' // Object.is equality",
+            "AssertionError: expected 'ms' to be 'en' // Object.is equality",
+            "AssertionError: expected '' to be '1839' // Object.is equality",
+            "AssertionError: expected '' to be '29326' // Object.is equality",
+            "AssertionError: expected '' to be 'Transcript saved on this device.' // Object.is equality",
+            "AssertionError: expected '' to be 'Reader ready to reopen offline.' // Object.is equality",
+            "AssertionError: expected undefined to be 'true' // Object.is equality",
+            "AssertionError: expected undefined to be 'true' // Object.is equality",
+            "AssertionError: expected '' to contain '2026-10-10T06:00:00.000Z'"
+          ]
+        },
+        {
+          "name": "SAVED002 en: another member from a fetched sitting remains offline-unsaved and requires a connection",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected 'Data laman tidak dapat dimuatkan atau\u2026' to be 'A connection is required to open this\u2026' // Object.is equality",
+            "AssertionError: expected \"vi.fn()\" to be called with arguments: [ '4463', '29326' ]",
+            "AssertionError: expected undefined to be 'false' // Object.is equality"
+          ]
+        },
+        {
+          "name": "SAVED003 en: incompatible saved content is unavailable and requires valid online retrieval",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected 'Data laman tidak dapat dimuatkan atau\u2026' to be 'Saved data is incompatible. A connect\u2026' // Object.is equality",
+            "AssertionError: expected '' to be 'Transcript is not saved on this devic\u2026' // Object.is equality"
+          ]
+        },
+        {
+          "name": "SAVED004 en: a committed transcript and compatible shell produce distinct saved/offline notices",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected [] to deeply equal [ Array(1) ]",
+            "AssertionError: expected [] to deeply equal [ \u2026(2) ]",
+            "AssertionError: expected [] to deeply equal [ Array(1) ]",
+            "AssertionError: expected null to be '1839' // Object.is equality",
+            "AssertionError: expected null to be '29326' // Object.is equality",
+            "AssertionError: expected \"vi.fn()\" to be called with arguments: [ '1839', '29326', Any<AbortSignal> ]",
+            "AssertionError: expected \"vi.fn()\" to be called with arguments: [ { schemaVersion: 1, \u2026(8) }, \u2026(2) ]",
+            "AssertionError: expected '' to be 'Transcript saved on this device.' // Object.is equality",
+            "AssertionError: expected '' to be 'Reader ready to reopen offline.' // Object.is equality",
+            "AssertionError: expected undefined to be 'true' // Object.is equality",
+            "AssertionError: expected undefined to be 'true' // Object.is equality",
+            "AssertionError: expected '' to contain '2026-10-10T07:00:00.000Z'",
+            "AssertionError: expected '' to contain '2026-10-10T07:00:00.000Z'"
+          ]
+        },
+        {
+          "name": "SAVED005 en: unchanged bytes still advance current validation time and committed saved time",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected \"vi.fn()\" to be called with arguments: [ { schemaVersion: 1, \u2026(8) }, \u2026(2) ]",
+            "AssertionError: expected '' to contain '2026-10-10T07:00:00.000Z'",
+            "AssertionError: expected '' to contain '2026-10-10T07:00:00.000Z'"
+          ]
+        },
+        {
+          "name": "SAVED006 en: changed validated content commits every new turn and every source gap/annotation",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected [] to deeply equal [ Array(1) ]",
+            "AssertionError: expected [] to deeply equal [ \u2026(2) ]",
+            "AssertionError: expected [] to deeply equal [ Array(1) ]",
+            "AssertionError: expected null to be '1839' // Object.is equality",
+            "AssertionError: expected null to be '29326' // Object.is equality",
+            "AssertionError: expected \"vi.fn()\" to be called with arguments: [ { schemaVersion: 1, \u2026(8) }, \u2026(2) ]"
+          ]
+        },
+        {
+          "name": "SAVED007 en: failed saving keeps new online content unsaved and identifies the older offline copy separately",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected [] to deeply equal [ Array(1) ]",
+            "AssertionError: expected [] to deeply equal [ \u2026(2) ]",
+            "AssertionError: expected [] to deeply equal [ Array(1) ]",
+            "AssertionError: expected null to be '1839' // Object.is equality",
+            "AssertionError: expected null to be '29326' // Object.is equality",
+            "AssertionError: expected '' to be 'Transcript is not saved on this devic\u2026' // Object.is equality",
+            "AssertionError: expected '' to be 'The older saved copy remains availabl\u2026' // Object.is equality",
+            "AssertionError: expected undefined to be 'false' // Object.is equality",
+            "AssertionError: expected '' to contain '2026-10-10T07:00:00.000Z'",
+            "AssertionError: expected '' to contain '2026-10-10T06:00:00.000Z'"
+          ]
+        },
+        {
+          "name": "SAVED008 en: pair saving remains pending until transaction acknowledgement and does not advance saved time early",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected '' to be 'Transcript is not saved on this devic\u2026' // Object.is equality",
+            "AssertionError: expected '' to contain '2026-10-10T06:00:00.000Z'",
+            "AssertionError: expected '' to be 'Transcript saved on this device.' // Object.is equality",
+            "AssertionError: expected '' to contain '2026-10-10T07:00:00.000Z'"
+          ]
+        },
+        {
+          "name": "SAVED009 en: committed pair with unconfirmed shell stays transcript-saved without an offline-reopening promise",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected '' to be 'Transcript saved on this device.' // Object.is equality",
+            "AssertionError: expected '' to be 'Offline reopening is not confirmed.' // Object.is equality",
+            "AssertionError: expected undefined to be 'false' // Object.is equality"
+          ]
+        },
+        {
+          "name": "SAVED010 en: new-shell failure preserves an already confirmed compatible saved reader",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected [] to deeply equal [ Array(1) ]",
+            "AssertionError: expected [] to deeply equal [ \u2026(2) ]",
+            "AssertionError: expected [] to deeply equal [ Array(1) ]",
+            "AssertionError: expected null to be '1839' // Object.is equality",
+            "AssertionError: expected null to be '29326' // Object.is equality",
+            "AssertionError: expected '' to be 'Transcript saved on this device.' // Object.is equality",
+            "AssertionError: expected '' to be 'Reader ready to reopen offline.' // Object.is equality"
+          ]
+        },
+        {
+          "name": "SAVED011 en: failed hash validation keeps the prior accepted result/time and never saves failed data",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected [] to deeply equal [ Array(1) ]",
+            "AssertionError: expected [] to deeply equal [ \u2026(2) ]",
+            "AssertionError: expected [] to deeply equal [ Array(1) ]",
+            "AssertionError: expected null to be '1839' // Object.is equality",
+            "AssertionError: expected null to be '29326' // Object.is equality",
+            "AssertionError: expected '' to contain '2026-10-10T06:00:00.000Z'",
+            "AssertionError: expected '' to contain '2026-10-10T06:00:00.000Z'"
+          ]
+        },
+        {
+          "name": "SAVED011 en: failed identity validation keeps the prior accepted result/time and never saves failed data",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected [] to deeply equal [ Array(1) ]",
+            "AssertionError: expected [] to deeply equal [ \u2026(2) ]",
+            "AssertionError: expected [] to deeply equal [ Array(1) ]",
+            "AssertionError: expected null to be '1839' // Object.is equality",
+            "AssertionError: expected null to be '29326' // Object.is equality",
+            "AssertionError: expected '' to contain '2026-10-10T06:00:00.000Z'",
+            "AssertionError: expected '' to contain '2026-10-10T06:00:00.000Z'"
+          ]
+        },
+        {
+          "name": "SAVED011 en: failed schema validation keeps the prior accepted result/time and never saves failed data",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected [] to deeply equal [ Array(1) ]",
+            "AssertionError: expected [] to deeply equal [ \u2026(2) ]",
+            "AssertionError: expected [] to deeply equal [ Array(1) ]",
+            "AssertionError: expected null to be '1839' // Object.is equality",
+            "AssertionError: expected null to be '29326' // Object.is equality",
+            "AssertionError: expected '' to contain '2026-10-10T06:00:00.000Z'",
+            "AssertionError: expected '' to contain '2026-10-10T06:00:00.000Z'"
+          ]
+        },
+        {
+          "name": "SAVED012 en: device storage opening failure preserves ordinary online reading with an honest limit",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected '' to be 'Device storage is unavailable. Online\u2026' // Object.is equality",
+            "AssertionError: expected '' to be 'Offline reopening is not confirmed.' // Object.is equality"
+          ]
+        },
+        {
+          "name": "SAVED013 en: saved result metadata is not relabeled from a newer cached catalogue",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected '' to contain 'LIM GUAN ENG'",
+            "AssertionError: expected '' to contain '2026-10-10T04:00:00.000Z'",
+            "AssertionError: expected '' to contain '2026-10-10T03:01:00.000Z'",
+            "AssertionError: expected [] to deeply equal [ Array(1) ]",
+            "AssertionError: expected [] to deeply equal [ \u2026(2) ]",
+            "AssertionError: expected [] to deeply equal [ Array(1) ]",
+            "AssertionError: expected null to be '1839' // Object.is equality",
+            "AssertionError: expected null to be '29326' // Object.is equality"
+          ]
+        },
+        {
+          "name": "SAVED014 en: language and valid changed selections are persisted before deliberate Apply",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected '' to be 'Apply update' // Object.is equality",
+            "AssertionError: expected '' to be 'Continue reading' // Object.is equality",
+            "AssertionError: expected null not to be null",
+            "AssertionError: expected \"vi.fn()\" to be called once, but got 0 times",
+            "AssertionError: expected undefined to be type of 'function'",
+            "AssertionError: expected \"vi.fn()\" to be called with arguments: [ { schemaVersion: 1, \u2026(8) }, \u2026(1) ]"
+          ]
+        },
+        {
+          "name": "SAVED015 en: Continue preserves exact reading, preferences and native control focus",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected null not to be null",
+            "AssertionError: expected [] to deeply equal [ Array(1) ]",
+            "AssertionError: expected [] to deeply equal [ \u2026(2) ]",
+            "AssertionError: expected [] to deeply equal [ Array(1) ]",
+            "AssertionError: expected null to be '1839' // Object.is equality",
+            "AssertionError: expected null to be '29326' // Object.is equality",
+            "AssertionError: expected \"vi.fn()\" to be called once, but got 0 times"
+          ]
+        },
+        {
+          "name": "SAVED016 en: complete saved-reader readiness mark waits until the matching saved pair is usable",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected [] to include 'hansard.reader-ready'"
+          ]
+        },
+        {
+          "name": "SAVED018 en: first offline visit without committed lists cannot invent a readable source archive",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected 'Site data could not be loaded or vali\u2026' to be 'A connection is required to load unsa\u2026' // Object.is equality"
+          ]
+        },
+        {
+          "name": "SAVED017: applying an update in one reader does not alter another mounted tab reading its complete pair",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected null not to be null",
+            "AssertionError: expected \"vi.fn()\" to be called once, but got 0 times",
+            "AssertionError: expected [] to deeply equal [ Array(1) ]",
+            "AssertionError: expected [] to deeply equal [ \u2026(2) ]",
+            "AssertionError: expected [] to deeply equal [ Array(1) ]",
+            "AssertionError: expected null to be '1839' // Object.is equality",
+            "AssertionError: expected null to be '29326' // Object.is equality"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "tests/unit/storage.test.ts",
+      "cases": [
+        {
+          "name": "STORAGE001: database names are scoped to the complete origin and repository base",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to be 'hansard:https://example.test/vote-bet\u2026' // Object.is equality",
+            "AssertionError: expected undefined to be 'hansard:https://example.test/other/' // Object.is equality",
+            "AssertionError: expected undefined to be 'hansard:https://other.test/vote-bette\u2026' // Object.is equality"
+          ]
+        },
+        {
+          "name": "STORAGE002: opening an application initializes exactly its own native database",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected [] to deeply equal [ { \u2026(2) } ]"
+          ]
+        },
+        {
+          "name": "STORAGE003: missing state is explicitly null and an unopened pair is missing",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to deeply equal { catalogue: null, preferences: null }",
+            "AssertionError: expected undefined to deeply equal { status: 'missing' }"
+          ]
+        },
+        {
+          "name": "STORAGE004: catalogue and valid language/source selections persist together",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to deeply equal { catalogue: { \u2026(9) }, \u2026(1) }"
+          ]
+        },
+        {
+          "name": "STORAGE005: complete source turns, gaps, annotations and accepted snapshot metadata commit as one opened pair",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to deeply equal { schemaVersion: 1, \u2026(14) }",
+            "AssertionError: expected undefined to deeply equal { status: 'saved', result: { \u2026(15) } }",
+            "AssertionError: expected undefined to deeply equal { catalogue: { \u2026(9) }, \u2026(1) }"
+          ]
+        },
+        {
+          "name": "STORAGE006: saving one member never saves a different member from the same fetched sitting",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to deeply equal { status: 'missing' }"
+          ]
+        },
+        {
+          "name": "STORAGE007: saving only catalogue/preferences never marks a transcript pair as saved",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to deeply equal { status: 'missing' }"
+          ]
+        },
+        {
+          "name": "STORAGE008: successful replacement advances saved refresh time only to the accepted result time",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to deeply equal { status: 'saved', result: { \u2026(15) } }"
+          ]
+        },
+        {
+          "name": "STORAGE009: local results retain original identities and snapshot metadata when newer catalogue state changes",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to deeply equal { status: 'saved', result: { \u2026(15) } }"
+          ]
+        },
+        {
+          "name": "STORAGE010: repository namespaces isolate saved pairs and language preferences",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to deeply equal { catalogue: null, preferences: null }",
+            "AssertionError: expected undefined to deeply equal { status: 'missing' }"
+          ]
+        },
+        {
+          "name": "STORAGE011: transaction request success is not commit completion",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected true to be false // Object.is equality"
+          ]
+        },
+        {
+          "name": "STORAGE012: transaction abort rejects instead of acknowledging a saved transcript",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting"
+          ]
+        },
+        {
+          "name": "STORAGE013: quota/write failure propagates and never changes the current online result to saved",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting"
+          ]
+        },
+        {
+          "name": "STORAGE014: failed replacement preserves the previous saved content and successful refresh time",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to deeply equal { status: 'saved', result: { \u2026(15) } }"
+          ]
+        },
+        {
+          "name": "STORAGE015: native transaction abort preserves previous catalogue, preferences and pair together",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to deeply equal { catalogue: { \u2026(9) }, \u2026(1) }",
+            "AssertionError: expected undefined to deeply equal { status: 'saved', result: { \u2026(15) } }"
+          ]
+        },
+        {
+          "name": "STORAGE016: eviction or deletion makes the exact pair missing without inventing recovery or absence",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to deeply equal { status: 'missing' }"
+          ]
+        },
+        {
+          "name": "STORAGE017: malformed saved field schemaVersion rejects compatible-content validation",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected [Function] to throw an error"
+          ]
+        },
+        {
+          "name": "STORAGE017: malformed saved field memberId rejects compatible-content validation",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected [Function] to throw an error"
+          ]
+        },
+        {
+          "name": "STORAGE017: malformed saved field member.id rejects compatible-content validation",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected [Function] to throw an error"
+          ]
+        },
+        {
+          "name": "STORAGE017: malformed saved field member.name rejects compatible-content validation",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected [Function] to throw an error"
+          ]
+        },
+        {
+          "name": "STORAGE017: malformed saved field member.historicalContext rejects compatible-content validation",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected [Function] to throw an error"
+          ]
+        },
+        {
+          "name": "STORAGE017: malformed saved field snapshotId rejects compatible-content validation",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected [Function] to throw an error"
+          ]
+        },
+        {
+          "name": "STORAGE017: malformed saved field sittingId rejects compatible-content validation",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected [Function] to throw an error"
+          ]
+        },
+        {
+          "name": "STORAGE017: malformed saved field sitting.id rejects compatible-content validation",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected [Function] to throw an error"
+          ]
+        },
+        {
+          "name": "STORAGE017: malformed saved field sitting.date rejects compatible-content validation",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected [Function] to throw an error"
+          ]
+        },
+        {
+          "name": "STORAGE017: malformed saved field sitting.house rejects compatible-content validation",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected [Function] to throw an error"
+          ]
+        },
+        {
+          "name": "STORAGE017: malformed saved field sitting.filename rejects compatible-content validation",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected [Function] to throw an error"
+          ]
+        },
+        {
+          "name": "STORAGE017: malformed saved field recordDigest rejects compatible-content validation",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected [Function] to throw an error"
+          ]
+        },
+        {
+          "name": "STORAGE017: malformed saved field sitting.record.digest rejects compatible-content validation",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected [Function] to throw an error"
+          ]
+        },
+        {
+          "name": "STORAGE017: malformed saved field recordDigest rejects compatible-content validation",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected [Function] to throw an error"
+          ]
+        },
+        {
+          "name": "STORAGE017: malformed saved field snapshot.preparedAt rejects compatible-content validation",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected [Function] to throw an error"
+          ]
+        },
+        {
+          "name": "STORAGE017: malformed saved field snapshot.publishedAt rejects compatible-content validation",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected [Function] to throw an error"
+          ]
+        },
+        {
+          "name": "STORAGE017: malformed saved field snapshot.status.acquisitionOutcome rejects compatible-content validation",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected [Function] to throw an error"
+          ]
+        },
+        {
+          "name": "STORAGE017: malformed saved field snapshot.coverage.startDate rejects compatible-content validation",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected [Function] to throw an error"
+          ]
+        },
+        {
+          "name": "STORAGE017: malformed saved field snapshot.coverage.latestInventoryCount rejects compatible-content validation",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected [Function] to throw an error"
+          ]
+        },
+        {
+          "name": "STORAGE017: malformed saved field provenance.membersRawDigest rejects compatible-content validation",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected [Function] to throw an error"
+          ]
+        },
+        {
+          "name": "STORAGE017: malformed saved field refreshedAt rejects compatible-content validation",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected [Function] to throw an error"
+          ]
+        },
+        {
+          "name": "STORAGE017: malformed saved field saved rejects compatible-content validation",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected [Function] to throw an error"
+          ]
+        },
+        {
+          "name": "STORAGE017: malformed saved field outcome rejects compatible-content validation",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected [Function] to throw an error"
+          ]
+        },
+        {
+          "name": "STORAGE017: malformed saved field turns.0.memberId rejects compatible-content validation",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected [Function] to throw an error"
+          ]
+        },
+        {
+          "name": "STORAGE017: malformed saved field turns.0.sourceAuthorId rejects compatible-content validation",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected [Function] to throw an error"
+          ]
+        },
+        {
+          "name": "STORAGE017: malformed saved field turns.0.text rejects compatible-content validation",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected [Function] to throw an error"
+          ]
+        },
+        {
+          "name": "STORAGE017: malformed saved field turns.0.sectionPath rejects compatible-content validation",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected [Function] to throw an error"
+          ]
+        },
+        {
+          "name": "STORAGE017: malformed saved field turns.0.timestamp rejects compatible-content validation",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected [Function] to throw an error"
+          ]
+        },
+        {
+          "name": "STORAGE017: malformed saved field turns.0.ordinal rejects compatible-content validation",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected [Function] to throw an error"
+          ]
+        },
+        {
+          "name": "STORAGE017: malformed saved field gaps.0.gapReason rejects compatible-content validation",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected [Function] to throw an error"
+          ]
+        },
+        {
+          "name": "STORAGE017: malformed saved field gaps.0.memberId rejects compatible-content validation",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected [Function] to throw an error"
+          ]
+        },
+        {
+          "name": "STORAGE017: malformed saved field turns.0.attribution rejects compatible-content validation",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected [Function] to throw an error"
+          ]
+        },
+        {
+          "name": "STORAGE017: malformed saved field turns.0.gapReason rejects compatible-content validation",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected [Function] to throw an error"
+          ]
+        },
+        {
+          "name": "STORAGE017: malformed saved field gaps.0.ordinal rejects compatible-content validation",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected [Function] to throw an error"
+          ]
+        },
+        {
+          "name": "STORAGE017: malformed saved field annotations.0.attribution rejects compatible-content validation",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected [Function] to throw an error"
+          ]
+        },
+        {
+          "name": "STORAGE017: malformed saved field annotations.0.memberId rejects compatible-content validation",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected [Function] to throw an error"
+          ]
+        },
+        {
+          "name": "STORAGE017: malformed saved field gaps rejects compatible-content validation",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected [Function] to throw an error"
+          ]
+        },
+        {
+          "name": "STORAGE017: malformed saved field annotations rejects compatible-content validation",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected [Function] to throw an error"
+          ]
+        },
+        {
+          "name": "STORAGE018: a compatible saved pair preserves exact historical nulls, original strings and source metadata",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to deeply equal { schemaVersion: 1, \u2026(14) }"
+          ]
+        },
+        {
+          "name": "STORAGE019: incompatible stored schemaVersion returns unavailable compatibility state without deleting it",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to deeply equal { status: 'incompatible' }"
+          ]
+        },
+        {
+          "name": "STORAGE019: incompatible stored recordDigest returns unavailable compatibility state without deleting it",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to deeply equal { status: 'incompatible' }"
+          ]
+        },
+        {
+          "name": "STORAGE019: incompatible stored member.id returns unavailable compatibility state without deleting it",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to deeply equal { status: 'incompatible' }"
+          ]
+        },
+        {
+          "name": "STORAGE019: incompatible stored turns.0.text returns unavailable compatibility state without deleting it",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to deeply equal { status: 'incompatible' }"
+          ]
+        },
+        {
+          "name": "STORAGE020: a stored result under another pair key is incompatible rather than relabeled",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to deeply equal { status: 'incompatible' }"
+          ]
+        },
+        {
+          "name": "STORAGE021: invalid preferences {\"language\":\"de\",\"memberId\":\"1839\",\"sittingId\":\"29326\"} reject before replacing accepted state",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting",
+            "AssertionError: expected undefined to deeply equal { catalogue: { \u2026(9) }, \u2026(1) }"
+          ]
+        },
+        {
+          "name": "STORAGE021: invalid preferences {\"language\":\"ms\",\"memberId\":\"999\",\"sittingId\":\"29326\"} reject before replacing accepted state",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting",
+            "AssertionError: expected undefined to deeply equal { catalogue: { \u2026(9) }, \u2026(1) }"
+          ]
+        },
+        {
+          "name": "STORAGE021: invalid preferences {\"language\":\"en\",\"memberId\":\"1839\",\"sittingId\":\"999\"} reject before replacing accepted state",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting",
+            "AssertionError: expected undefined to deeply equal { catalogue: { \u2026(9) }, \u2026(1) }"
+          ]
+        },
+        {
+          "name": "STORAGE021: invalid preferences {\"language\":\"en\",\"memberId\":1839,\"sittingId\":\"29326\"} reject before replacing accepted state",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting",
+            "AssertionError: expected undefined to deeply equal { catalogue: { \u2026(9) }, \u2026(1) }"
+          ]
+        },
+        {
+          "name": "STORAGE022: language and absent selections can persist before any catalogue exists",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to deeply equal { catalogue: null, \u2026(1) }"
+          ]
+        },
+        {
+          "name": "STORAGE023: null-catalogue preferences never erase an already accepted catalogue",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to deeply equal { catalogue: { \u2026(9) }, \u2026(1) }"
+          ]
+        },
+        {
+          "name": "STORAGE024: selected IDs cannot be persisted without their validated catalogue",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting"
+          ]
+        },
+        {
+          "name": "STORAGE025: invalid replacement catalogue cannot overwrite previously accepted state",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting",
+            "AssertionError: expected undefined to deeply equal { catalogue: { \u2026(9) }, \u2026(1) }"
+          ]
+        },
+        {
+          "name": "STORAGE026: an unavailable source result cannot be acknowledged as a saved transcript",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting"
+          ]
+        },
+        {
+          "name": "STORAGE027: opening denied device storage rejects without changing online source content",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"{ \u2026(5) }\" instead of rejecting"
+          ]
+        },
+        {
+          "name": "STORAGE028: opening an incompatible future database version preserves its raw data",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"{ \u2026(5) }\" instead of rejecting"
+          ]
+        },
+        {
+          "name": "STORAGE029: a validated ready semantic outcome saves without changing its meaning",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to deeply equal { status: 'saved', result: { \u2026(15) } }"
+          ]
+        },
+        {
+          "name": "STORAGE029: a validated absence semantic outcome saves without changing its meaning",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to deeply equal { status: 'saved', result: { \u2026(15) } }"
+          ]
+        },
+        {
+          "name": "STORAGE030: invalid opened schemaVersion rejects before replacing a saved copy",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting",
+            "AssertionError: expected undefined to deeply equal { status: 'saved', result: { \u2026(15) } }"
+          ]
+        },
+        {
+          "name": "STORAGE030: invalid opened member.id rejects before replacing a saved copy",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting",
+            "AssertionError: expected undefined to deeply equal { status: 'saved', result: { \u2026(15) } }"
+          ]
+        },
+        {
+          "name": "STORAGE030: invalid opened recordDigest rejects before replacing a saved copy",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting",
+            "AssertionError: expected undefined to deeply equal { status: 'saved', result: { \u2026(15) } }"
+          ]
+        },
+        {
+          "name": "STORAGE030: invalid opened gaps rejects before replacing a saved copy",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting",
+            "AssertionError: expected undefined to deeply equal { status: 'saved', result: { \u2026(15) } }"
+          ]
+        },
+        {
+          "name": "STORAGE031: mismatched snapshot catalogue cannot be atomically saved with an older result",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting"
+          ]
+        },
+        {
+          "name": "STORAGE031: mismatched member catalogue cannot be atomically saved with an older result",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting"
+          ]
+        },
+        {
+          "name": "STORAGE031: mismatched sitting catalogue cannot be atomically saved with an older result",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting"
+          ]
+        },
+        {
+          "name": "STORAGE031: mismatched digest catalogue cannot be atomically saved with an older result",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting"
+          ]
+        },
+        {
+          "name": "STORAGE032: storing an online-unsaved result cannot make the exact pair locally saved",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to deeply equal { status: 'incompatible' }"
+          ]
+        },
+        {
+          "name": "STORAGE033: pair save preferences cannot silently select another member",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting"
+          ]
+        },
+        {
+          "name": "STORAGE034: valid absent selection null/\"29326\" persists beside its accepted catalogue",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to deeply equal { catalogue: { \u2026(9) }, \u2026(1) }"
+          ]
+        },
+        {
+          "name": "STORAGE034: valid absent selection \"1839\"/null persists beside its accepted catalogue",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to deeply equal { catalogue: { \u2026(9) }, \u2026(1) }"
+          ]
+        },
+        {
+          "name": "STORAGE034: valid absent selection null/null persists beside its accepted catalogue",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to deeply equal { catalogue: { \u2026(9) }, \u2026(1) }"
+          ]
+        },
+        {
+          "name": "STORAGE035: an incompatible stored catalogue exposes neither a validated list nor dependent selected IDs",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to deeply equal { catalogue: null, preferences: null }"
+          ]
+        },
+        {
+          "name": "STORAGE036: invalid stored preferences {\"language\":\"de\",\"memberId\":\"1839\",\"sittingId\":\"29326\"} are not exposed as valid selections",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to deeply equal { catalogue: { \u2026(9) }, \u2026(1) }"
+          ]
+        },
+        {
+          "name": "STORAGE036: invalid stored preferences {\"language\":\"ms\",\"memberId\":\"999\",\"sittingId\":\"29326\"} are not exposed as valid selections",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to deeply equal { catalogue: { \u2026(9) }, \u2026(1) }"
+          ]
+        },
+        {
+          "name": "STORAGE036: invalid stored preferences {\"language\":\"en\",\"memberId\":\"1839\",\"sittingId\":\"999\"} are not exposed as valid selections",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to deeply equal { catalogue: { \u2026(9) }, \u2026(1) }"
+          ]
+        },
+        {
+          "name": "STORAGE036: invalid stored preferences {\"language\":\"en\",\"memberId\":1839,\"sittingId\":\"29326\"} are not exposed as valid selections",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to deeply equal { catalogue: { \u2026(9) }, \u2026(1) }"
+          ]
+        },
+        {
+          "name": "STORAGE037: valid stored language and null selections survive absent catalogue data",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to deeply equal { catalogue: null, \u2026(1) }"
+          ]
+        },
+        {
+          "name": "STORAGE038: savePair acknowledges saved content only after its native three-store transaction completes",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected null to be false // Object.is equality",
+            "AssertionError: expected false to be true // Object.is equality",
+            "AssertionError: expected undefined to deeply equal { schemaVersion: 1, \u2026(14) }"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "tests/unit/updates.test.ts",
+      "cases": [
+        {
+          "name": "UPDATE001: native registration is scoped to this repository and reports the current client version",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected \"vi.fn()\" to be called with arguments: [ \u2026(2) ]",
+            "AssertionError: expected [] to deep equally contain { type: 'CLIENT_VERSION', \u2026(2) }"
+          ]
+        },
+        {
+          "name": "UPDATE002: complete current-shell readiness is separate from the discovered waiting version",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected [] to deep equally contain { type: 'SHELL_STATUS', \u2026(2) }",
+            "AssertionError: expected [] to deep equally contain { type: 'SHELL_STATUS', \u2026(1) }",
+            "AssertionError: expected undefined to deeply equal { shellReady: true, \u2026(3) }"
+          ]
+        },
+        {
+          "name": "UPDATE003: unsupported workers return explicit unavailable readiness without breaking ordinary reading",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to deeply equal { shellReady: false, \u2026(3) }"
+          ]
+        },
+        {
+          "name": "UPDATE004: registration failure becomes unavailable readiness rather than fabricated shell success",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to deeply equal { shellReady: false, \u2026(3) }"
+          ]
+        },
+        {
+          "name": "UPDATE005: Continue dismisses only the offer and never activates, persists or reloads a tab",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to deeply equal { shellReady: true, \u2026(3) }"
+          ]
+        },
+        {
+          "name": "UPDATE006: Apply commits preferences before messaging the actual still-waiting version",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected \"vi.fn()\" to be called once, but got 0 times",
+            "AssertionError: expected undefined to deeply equal { shellReady: true, \u2026(3) }",
+            "AssertionError: expected [] to deep equally contain { type: 'APPLY_UPDATE', \u2026(2) }"
+          ]
+        },
+        {
+          "name": "UPDATE007: failed preference commit rejects Apply and preserves the current compatible shell",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting",
+            "AssertionError: expected undefined to deeply equal { shellReady: true, \u2026(3) }"
+          ]
+        },
+        {
+          "name": "UPDATE008: a replaced waiting object during preference commit cannot receive stale Apply consent",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting"
+          ]
+        },
+        {
+          "name": "UPDATE009: accepted target activation reloads only its consenting instance without clients.claim",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected \"vi.fn()\" to be called once, but got 0 times"
+          ]
+        },
+        {
+          "name": "UPDATE010: nonconsenting activation/controller events never reload another reading instance",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to deeply equal { shellReady: true, \u2026(3) }"
+          ]
+        },
+        {
+          "name": "UPDATE011: a failed new-shell confirmation never revokes older confirmed compatible readiness",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to deeply equal { shellReady: true, \u2026(3) }"
+          ]
+        },
+        {
+          "name": "UPDATE012: invalid waiting reply {\"type\":\"SHELL_STATUS\",\"base\":\"/other/\",\"version\":\"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\",\"ready\":true} cannot advertise a usable waiting version",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to deeply equal { shellReady: true, \u2026(3) }"
+          ]
+        },
+        {
+          "name": "UPDATE012: invalid waiting reply {\"type\":\"SHELL_STATUS\",\"base\":\"/vote-better-malaysia/\",\"version\":\"not-sha\",\"ready\":true} cannot advertise a usable waiting version",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to deeply equal { shellReady: true, \u2026(3) }"
+          ]
+        },
+        {
+          "name": "UPDATE012: invalid waiting reply {\"type\":\"SHELL_STATUS\",\"base\":\"/vote-better-malaysia/\",\"version\":\"BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB\",\"ready\":true} cannot advertise a usable waiting version",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to deeply equal { shellReady: true, \u2026(3) }"
+          ]
+        },
+        {
+          "name": "UPDATE012: invalid waiting reply {\"type\":\"SHELL_STATUS\",\"base\":\"/vote-better-malaysia/\",\"version\":\"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\",\"ready\":\"yes\"} cannot advertise a usable waiting version",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to deeply equal { shellReady: true, \u2026(3) }"
+          ]
+        },
+        {
+          "name": "UPDATE019: a same-URL impostor Apply acknowledgement cannot authorize target activation reload",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to be true // Object.is equality"
+          ]
+        },
+        {
+          "name": "UPDATE013: a same-URL foreign worker cannot supply readiness for the actual waiting object",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to deeply equal { shellReady: true, \u2026(3) }"
+          ]
+        },
+        {
+          "name": "UPDATE014: new actual updatefound/install state notifies subscribed observers with the discovered version",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected \"vi.fn()\" to be called with arguments: [ { shellReady: true, \u2026(3) } ]"
+          ]
+        },
+        {
+          "name": "UPDATE015: close removes native listeners and no longer reacts to future worker messages",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected 0 to be greater than 0"
+          ]
+        },
+        {
+          "name": "UPDATE016: Apply without a validated actual waiting worker rejects without persisting or reload",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting"
+          ]
+        },
+        {
+          "name": "UPDATE017: duplicate Apply cannot queue duplicate commits or activation messages",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected \"vi.fn()\" to be called once, but got 0 times",
+            "AssertionError: expected [] to have a length of 1 but got +0"
+          ]
+        },
+        {
+          "name": "UPDATE018: invalid Apply acknowledgement {\"type\":\"APPLY_ACCEPTED\",\"base\":\"/other/\",\"version\":\"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\"} cannot authorize consenting reload",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting"
+          ]
+        },
+        {
+          "name": "UPDATE018: invalid Apply acknowledgement {\"type\":\"APPLY_ACCEPTED\",\"base\":\"/vote-better-malaysia/\",\"version\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\"} cannot authorize consenting reload",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting"
+          ]
+        },
+        {
+          "name": "UPDATE018: invalid Apply acknowledgement {\"type\":\"SHELL_STATUS\",\"base\":\"/vote-better-malaysia/\",\"version\":\"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\",\"ready\":true} cannot authorize consenting reload",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "tests/unit/worker.test.ts",
+      "cases": [
+        {
+          "name": "W001 installation saves every required shell asset and confirms matching complete readiness",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to deeply equal { type: 'SHELL_STATUS', \u2026(3) }"
+          ]
+        },
+        {
+          "name": "W002 failed new install fetch preserves older confirmed compatible shell",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting"
+          ]
+        },
+        {
+          "name": "W002 failed new install 404 preserves older confirmed compatible shell",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting"
+          ]
+        },
+        {
+          "name": "W002 failed new install open preserves older confirmed compatible shell",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting"
+          ]
+        },
+        {
+          "name": "W002 failed new install put preserves older confirmed compatible shell",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting"
+          ]
+        },
+        {
+          "name": "W002 failed new install off-base preserves older confirmed compatible shell",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting"
+          ]
+        },
+        {
+          "name": "W002 failed new install opaque preserves older confirmed compatible shell",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting"
+          ]
+        },
+        {
+          "name": "W002 failed new install mixed-index preserves older confirmed compatible shell",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting"
+          ]
+        },
+        {
+          "name": "W003 readiness rejects absent required /vote-better-malaysia/",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to deeply equal { type: 'SHELL_STATUS', \u2026(3) }"
+          ]
+        },
+        {
+          "name": "W003 readiness rejects absent required /vote-better-malaysia/index.html",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to deeply equal { type: 'SHELL_STATUS', \u2026(3) }"
+          ]
+        },
+        {
+          "name": "W003 readiness rejects absent required /vote-better-malaysia/help.html",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to deeply equal { type: 'SHELL_STATUS', \u2026(3) }"
+          ]
+        },
+        {
+          "name": "W003 readiness rejects absent required /vote-better-malaysia/manifest.webmanifest",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to deeply equal { type: 'SHELL_STATUS', \u2026(3) }"
+          ]
+        },
+        {
+          "name": "W003 readiness rejects absent required /vote-better-malaysia/assets/reader-A1B2C3D4.js",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to deeply equal { type: 'SHELL_STATUS', \u2026(3) }"
+          ]
+        },
+        {
+          "name": "W003 readiness rejects absent required /vote-better-malaysia/assets/reader-A1B2C3D4.css",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to deeply equal { type: 'SHELL_STATUS', \u2026(3) }"
+          ]
+        },
+        {
+          "name": "W003 readiness rejects absent required /vote-better-malaysia/icons/icon-192.png",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to deeply equal { type: 'SHELL_STATUS', \u2026(3) }"
+          ]
+        },
+        {
+          "name": "W003 readiness rejects absent required /vote-better-malaysia/icons/icon-512.png",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to deeply equal { type: 'SHELL_STATUS', \u2026(3) }"
+          ]
+        },
+        {
+          "name": "W003 readiness rejects absent required /vote-better-malaysia/sw.js",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to deeply equal { type: 'SHELL_STATUS', \u2026(3) }"
+          ]
+        },
+        {
+          "name": "W004 readiness is exact to base/version and rejects mixed index stamp",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to deeply equal { type: 'SHELL_STATUS', \u2026(3) }"
+          ]
+        },
+        {
+          "name": "W005 cache open failure produces unconfirmed status without invalidating older cache",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to deeply equal { type: 'SHELL_STATUS', \u2026(3) }"
+          ]
+        },
+        {
+          "name": "W005 cache match failure produces unconfirmed status without invalidating older cache",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to deeply equal { type: 'SHELL_STATUS', \u2026(3) }"
+          ]
+        },
+        {
+          "name": "W006 readiness rejects cached unsuccessful/opaque shell responses",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to deeply equal { type: 'SHELL_STATUS', \u2026(3) }"
+          ]
+        },
+        {
+          "name": "W007 invalid shell manifest base cannot install/cache data or another base",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting"
+          ]
+        },
+        {
+          "name": "W007 invalid shell manifest version cannot install/cache data or another base",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting"
+          ]
+        },
+        {
+          "name": "W007 invalid shell manifest duplicate cannot install/cache data or another base",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting"
+          ]
+        },
+        {
+          "name": "W007 invalid shell manifest data cannot install/cache data or another base",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting"
+          ]
+        },
+        {
+          "name": "W007 invalid shell manifest foreign cannot install/cache data or another base",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting"
+          ]
+        },
+        {
+          "name": "W007 invalid shell manifest escape cannot install/cache data or another base",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting"
+          ]
+        },
+        {
+          "name": "W010 data data/catalogue.json.gz is fresh network-only despite a seeded stale shell entry",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to be an instance of Response"
+          ]
+        },
+        {
+          "name": "W010 data data/sittings/1.json.gz?v=cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc is fresh network-only despite a seeded stale shell entry",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to be an instance of Response"
+          ]
+        },
+        {
+          "name": "W011 disconnected data never falls back to any stale cached shard or shell HTML",
+          "status": "failed",
+          "observedFailures": [
+            "Error: promise resolved \"undefined\" instead of rejecting"
+          ]
+        },
+        {
+          "name": "W012 network data errors remain raw failures rather than empty transcript success",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to be an instance of Response"
+          ]
+        },
+        {
+          "name": "W013 installed shell start URL reopens offline from its repository cache",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to be an instance of Response"
+          ]
+        },
+        {
+          "name": "W013 installed shell index.html reopens offline from its repository cache",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to be an instance of Response"
+          ]
+        },
+        {
+          "name": "W013 installed shell help.html reopens offline from its repository cache",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to be an instance of Response"
+          ]
+        },
+        {
+          "name": "W013 installed shell assets/reader-A1B2C3D4.js reopens offline from its repository cache",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to be an instance of Response"
+          ]
+        },
+        {
+          "name": "W013 installed shell assets/reader-A1B2C3D4.css reopens offline from its repository cache",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to be an instance of Response"
+          ]
+        },
+        {
+          "name": "W013 installed shell manifest.webmanifest reopens offline from its repository cache",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to be an instance of Response"
+          ]
+        },
+        {
+          "name": "W013 installed shell icons/icon-192.png reopens offline from its repository cache",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to be an instance of Response"
+          ]
+        },
+        {
+          "name": "W013 installed shell icons/icon-512.png reopens offline from its repository cache",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to be an instance of Response"
+          ]
+        },
+        {
+          "name": "W014 another reading client retains its exact older hashed asset after application",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to be an instance of Response"
+          ]
+        },
+        {
+          "name": "W015 nonowned/unknown/nonGET GET https://eaglecheow.github.io/other/index.html stays network-only",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to be an instance of Response"
+          ]
+        },
+        {
+          "name": "W015 nonowned/unknown/nonGET GET https://outside.test/app.js stays network-only",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to be an instance of Response"
+          ]
+        },
+        {
+          "name": "W015 nonowned/unknown/nonGET POST https://eaglecheow.github.io/vote-better-malaysia/assets/reader-A1B2C3D4.js stays network-only",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to be an instance of Response"
+          ]
+        },
+        {
+          "name": "W015 nonowned/unknown/nonGET GET https://eaglecheow.github.io/vote-better-malaysia/unknown.png stays network-only",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to be an instance of Response"
+          ]
+        },
+        {
+          "name": "W016 missing/evicted cache leaves online shell reading usable",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to be an instance of Response"
+          ]
+        },
+        {
+          "name": "W020 safe activation cleans only obsolete owned caches with none clients",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to deeply equal { type: 'SHELL_STATUS', \u2026(3) }"
+          ]
+        },
+        {
+          "name": "W020 safe activation cleans only obsolete owned caches with current clients",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to deeply equal { type: 'SHELL_STATUS', \u2026(3) }"
+          ]
+        },
+        {
+          "name": "W020 safe activation cleans only obsolete owned caches with foreign clients",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to deeply equal { type: 'SHELL_STATUS', \u2026(3) }"
+          ]
+        },
+        {
+          "name": "W020 safe activation cleans only obsolete owned caches with closed-old clients",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to deeply equal { type: 'SHELL_STATUS', \u2026(3) }"
+          ]
+        },
+        {
+          "name": "W021 activation conservatively retains old shell with unknown live clients",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to deeply equal { type: 'SHELL_STATUS', \u2026(3) }"
+          ]
+        },
+        {
+          "name": "W021 activation conservatively retains old shell with older live clients",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to deeply equal { type: 'SHELL_STATUS', \u2026(3) }"
+          ]
+        },
+        {
+          "name": "W021 activation conservatively retains old shell with mixed live clients",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to deeply equal { type: 'SHELL_STATUS', \u2026(3) }"
+          ]
+        },
+        {
+          "name": "W021 activation conservatively retains old shell with client-enumeration-failure live clients",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to deeply equal { type: 'SHELL_STATUS', \u2026(3) }"
+          ]
+        },
+        {
+          "name": "W021 activation conservatively retains old shell with cache-enumeration-failure live clients",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to deeply equal { type: 'SHELL_STATUS', \u2026(3) }"
+          ]
+        },
+        {
+          "name": "W022 incomplete current cache cannot erase previous compatible caches during activation",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to deeply equal { type: 'SHELL_STATUS', \u2026(3) }"
+          ]
+        },
+        {
+          "name": "W023 cleanup failure=false never migrates IndexedDB",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to deeply equal { type: 'SHELL_STATUS', \u2026(3) }"
+          ]
+        },
+        {
+          "name": "W023 cleanup failure=true never migrates IndexedDB",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to deeply equal { type: 'SHELL_STATUS', \u2026(3) }"
+          ]
+        },
+        {
+          "name": "W030 only explicit matching Apply from an actual own client requests native skipWaiting",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to deeply equal { type: 'APPLY_ACCEPTED', \u2026(2) }"
+          ]
+        },
+        {
+          "name": "W031 invalid/Continue message null cannot request activation",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to be null"
+          ]
+        },
+        {
+          "name": "W031 invalid/Continue message \"APPLY_UPDATE\" cannot request activation",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to be null"
+          ]
+        },
+        {
+          "name": "W031 invalid/Continue message {} cannot request activation",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to be null"
+          ]
+        },
+        {
+          "name": "W031 invalid/Continue message {\"type\":\"CONTINUE\",\"base\":\"/vote-better-malaysia/\",\"version\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\"} cannot request activation",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to be null"
+          ]
+        },
+        {
+          "name": "W031 invalid/Continue message {\"type\":\"APPLY_UPDATE\",\"base\":\"/other/\",\"version\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\"} cannot request activation",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to be null"
+          ]
+        },
+        {
+          "name": "W031 invalid/Continue message {\"type\":\"APPLY_UPDATE\",\"base\":\"/vote-better-malaysia/\",\"version\":\"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\"} cannot request activation",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to be null"
+          ]
+        },
+        {
+          "name": "W031 invalid/Continue message {\"type\":\"APPLY_UPDATE\",\"base\":\"/vote-better-malaysia/\"} cannot request activation",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to be null"
+          ]
+        },
+        {
+          "name": "W031 invalid/Continue message {\"type\":\"SKIP_WAITING\"} cannot request activation",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to be null"
+          ]
+        },
+        {
+          "name": "W032 native message source https://eaglecheow.github.io/other/ cannot apply this repository worker",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to be null"
+          ]
+        },
+        {
+          "name": "W032 native message source https://foreign.test/vote-better-malaysia/ cannot apply this repository worker",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to be null"
+          ]
+        },
+        {
+          "name": "W032 native message source https://eaglecheow.github.io/vote-better-malaysia-lookalike/ cannot apply this repository worker",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to be null"
+          ]
+        },
+        {
+          "name": "W033 nonexistent native message source cannot activate or confirm readiness",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to be null"
+          ]
+        },
+        {
+          "name": "W034 status query confirms only the exact matching current complete shell",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to deeply equal { type: 'SHELL_STATUS', \u2026(3) }"
+          ]
+        },
+        {
+          "name": "W035 client-version handshake uses actual native source and controls conservative cleanup",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to deeply equal { type: 'CLIENT_VERSION', \u2026(3) }"
+          ]
+        },
+        {
+          "name": "W036 invalid client stamp  cannot authorize cleanup",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to be null"
+          ]
+        },
+        {
+          "name": "W036 invalid client stamp bad cannot authorize cleanup",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to be null"
+          ]
+        },
+        {
+          "name": "W036 invalid client stamp AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA cannot authorize cleanup",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to be null"
+          ]
+        },
+        {
+          "name": "W050 no-version status discovery identifies this actual worker without activating (ready=true)",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to deeply equal { type: 'SHELL_STATUS', \u2026(3) }"
+          ]
+        },
+        {
+          "name": "W050 no-version status discovery identifies this actual worker without activating (ready=false)",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to deeply equal { type: 'SHELL_STATUS', \u2026(3) }"
+          ]
+        },
+        {
+          "name": "W051 status discovery/query rejects base",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to be null"
+          ]
+        },
+        {
+          "name": "W051 status discovery/query rejects foreign-source",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to be null"
+          ]
+        },
+        {
+          "name": "W051 status discovery/query rejects missing-source",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to be null"
+          ]
+        },
+        {
+          "name": "W051 status discovery/query rejects exact-version-mismatch",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to be null"
+          ]
+        },
+        {
+          "name": "W040 binds native install/activate/fetch/message lifecycles without automatic activation",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected [] to deeply equal [ Array(4) ]"
+          ]
+        },
+        {
+          "name": "W041 native install extends lifetime through complete cache population and remains waiting",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to be type of 'function'"
+          ]
+        },
+        {
+          "name": "W042 native install rejects its lifetime on cache saving failure without destroying old readiness",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to be type of 'function'"
+          ]
+        },
+        {
+          "name": "W043 native fetch responds with fresh data and never reads a shell cache for it",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to be type of 'function'"
+          ]
+        },
+        {
+          "name": "W044 native status messages extend lifetime and reply only to the verified source tab",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to be type of 'function'"
+          ]
+        },
+        {
+          "name": "W045 native activation waits for safe cleanup and never claims/reloads/migrates clients",
+          "status": "failed",
+          "observedFailures": [
+            "AssertionError: expected undefined to be type of 'function'"
+          ]
+        }
+      ]
+    }
+  ]
+}

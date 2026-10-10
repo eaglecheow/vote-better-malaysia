@@ -1,0 +1,5 @@
+
+> vote-better-malaysia@0.1.0 test
+> vitest --run tests/unit/recovery.test.ts tests/unit/recovery-messages.test.ts tests/unit/acquisition-refresh.test.ts --reporter=json --outputFile=/private/tmp/hansard-root-us2-red.json
+
+JSON report written to /private/tmp/hansard-root-us2-red.json

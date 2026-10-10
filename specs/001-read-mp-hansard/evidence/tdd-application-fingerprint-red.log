@@ -1,0 +1,98 @@
+
+> vote-better-malaysia@0.1.0 test
+> vitest --run tests/unit/application-fingerprint.test.ts
+
+
+ RUN  v5.0.3 /Users/eaglecheow/dev/vote-better-malaysia
+
+ ❯ tests/unit/application-fingerprint.test.ts (47 tests | 19 failed) 306ms
+   × AFP001 exact input byte changes invalidate scripts/acquire.ts 7ms
+   × AFP001 exact input byte changes invalidate scripts/check-performance.ts 5ms
+   × AFP001 exact input byte changes invalidate scripts/build-worker.ts 6ms
+   × AFP001 exact input byte changes invalidate scripts/check-documentation.ts 5ms
+   × AFP001 exact input byte changes invalidate scripts/collect-performance.ts 5ms
+   × AFP001 exact input byte changes invalidate scripts/publication.ts 6ms
+   × AFP001 exact input byte changes invalidate .github/workflows/pages.yml 5ms
+   × AFP001 exact input byte changes invalidate .github/workflows/ci.yml 5ms
+   × AFP001 exact input byte changes invalidate .nvmrc 5ms
+   × AFP001 exact input byte changes invalidate playwright.config.ts 8ms
+   × AFP001 exact input byte changes invalidate vitest.config.ts 6ms
+   × AFP001 exact input byte changes invalidate public/help.html 7ms
+   × AFP001 exact input byte changes invalidate public/manifest.webmanifest 6ms
+   × AFP001 exact input byte changes invalidate public/icons/icon-192.png 8ms
+   × AFP001 exact input byte changes invalidate public/icons/icon-512.png 11ms
+   × AFP002 canonical digest includes the sorted path, byte length and hash of every intended input 7ms
+   × AFP003 adding an application input invalidates scripts/nested/validation.ts 7ms
+   × AFP003 adding an application input invalidates .github/workflows/another-check.yml 8ms
+   × AFP003 adding an application input invalidates public/fonts/reader.woff2 6ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 19 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/application-fingerprint.test.ts > AFP001 exact input byte changes invalidate scripts/acquire.ts
+ FAIL  tests/unit/application-fingerprint.test.ts > AFP001 exact input byte changes invalidate scripts/check-performance.ts
+ FAIL  tests/unit/application-fingerprint.test.ts > AFP001 exact input byte changes invalidate scripts/build-worker.ts
+ FAIL  tests/unit/application-fingerprint.test.ts > AFP001 exact input byte changes invalidate scripts/check-documentation.ts
+ FAIL  tests/unit/application-fingerprint.test.ts > AFP001 exact input byte changes invalidate scripts/collect-performance.ts
+ FAIL  tests/unit/application-fingerprint.test.ts > AFP001 exact input byte changes invalidate scripts/publication.ts
+ FAIL  tests/unit/application-fingerprint.test.ts > AFP001 exact input byte changes invalidate .github/workflows/pages.yml
+ FAIL  tests/unit/application-fingerprint.test.ts > AFP001 exact input byte changes invalidate .github/workflows/ci.yml
+ FAIL  tests/unit/application-fingerprint.test.ts > AFP001 exact input byte changes invalidate .nvmrc
+ FAIL  tests/unit/application-fingerprint.test.ts > AFP001 exact input byte changes invalidate playwright.config.ts
+ FAIL  tests/unit/application-fingerprint.test.ts > AFP001 exact input byte changes invalidate vitest.config.ts
+ FAIL  tests/unit/application-fingerprint.test.ts > AFP001 exact input byte changes invalidate public/help.html
+ FAIL  tests/unit/application-fingerprint.test.ts > AFP001 exact input byte changes invalidate public/manifest.webmanifest
+ FAIL  tests/unit/application-fingerprint.test.ts > AFP001 exact input byte changes invalidate public/icons/icon-192.png
+ FAIL  tests/unit/application-fingerprint.test.ts > AFP001 exact input byte changes invalidate public/icons/icon-512.png
+AssertionError: expected '2faad5320c0f229c3750696a30c16aab49768…' not to be '2faad5320c0f229c3750696a30c16aab49768…' // Object.is equality
+ ❯ compare tests/unit/application-fingerprint.test.ts:95:66
+     93|       if (typeof inputs[path] !== 'string') changed[changed.length - 1…
+     94|       put(root, path, changed); const after = await applicationFingerp…
+     95|       expect(after).toMatch(/^[a-f0-9]{64}$/); expect(after).not.toBe(…
+       |                                                                  ^
+     96|     }); });
+     97|
+ ❯ withFixture tests/unit/application-fingerprint.test.ts:76:33
+ ❯ changesInput tests/unit/application-fingerprint.test.ts:83:35
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/19]⎯
+
+ FAIL  tests/unit/application-fingerprint.test.ts > AFP002 canonical digest includes the sorted path, byte length and hash of every intended input
+AssertionError: expected '2faad5320c0f229c3750696a30c16aab49768…' to be 'be476dcdd08373acf587c61c2fa873312f7ed…' // Object.is equality
+
+Expected: "be476dcdd08373acf587c61c2fa873312f7ed5ba81e64641026e436a686cdd7b"
+Received: "2faad5320c0f229c3750696a30c16aab497689d1dda287455c76b275b7a71515"
+
+ ❯ compare tests/unit/application-fingerprint.test.ts:110:50
+    108|       const expected: Array<[string, number, string]> = [];
+    109|       for (const path of Object.keys(inputs).sort()) { const bytes = B…
+    110|       expect(await applicationFingerprint(root)).toBe(digest(JSON.stri…
+       |                                                  ^
+    111|     }); });
+    112|
+ ❯ withFixture tests/unit/application-fingerprint.test.ts:76:33
+ ❯ canonicalInputs tests/unit/application-fingerprint.test.ts:102:38
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/19]⎯
+
+ FAIL  tests/unit/application-fingerprint.test.ts > AFP003 adding an application input invalidates scripts/nested/validation.ts
+ FAIL  tests/unit/application-fingerprint.test.ts > AFP003 adding an application input invalidates .github/workflows/another-check.yml
+ FAIL  tests/unit/application-fingerprint.test.ts > AFP003 adding an application input invalidates public/fonts/reader.woff2
+AssertionError: expected '2faad5320c0f229c3750696a30c16aab49768…' not to be '2faad5320c0f229c3750696a30c16aab49768…' // Object.is equality
+ ❯ compare tests/unit/application-fingerprint.test.ts:127:116
+    125|     async function compare(root) {
+    126|       const before = await applicationFingerprint(root); put(root, pat…
+    127|       const after = await applicationFingerprint(root); expect(after).…
+       |                                                                                                                    ^
+    128|     }); });
+    129|
+ ❯ withFixture tests/unit/application-fingerprint.test.ts:76:33
+ ❯ addsInput tests/unit/application-fingerprint.test.ts:119:32
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/19]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  19 failed | 28 passed (47)
+   Start at  18:38:17
+   Duration  550ms (tests 62%, import 22%, transform 15%)
+

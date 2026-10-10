@@ -1,0 +1,421 @@
+{
+  "members": [
+    {
+      "new_author_id": 1839,
+      "name": "LIM GUAN ENG",
+      "birth_year": 1960,
+      "ethnicity": "chinese",
+      "sex": "m"
+    },
+    {
+      "new_author_id": 2857,
+      "name": "RONALD KIANDEE",
+      "birth_year": 1961,
+      "ethnicity": "bumiputera",
+      "sex": "m"
+    },
+    {
+      "new_author_id": 2928,
+      "name": "MAHFUZ BIN HAJI OMAR",
+      "birth_year": 1957,
+      "ethnicity": "bumiputera",
+      "sex": "m"
+    },
+    {
+      "new_author_id": 4463,
+      "name": "MOHAMMED TAUFIQ BIN JOHARI",
+      "birth_year": 1996,
+      "ethnicity": "bumiputera",
+      "sex": "m"
+    },
+    {
+      "new_author_id": 22462,
+      "name": "TEOH CHZE CHONG",
+      "birth_year": null,
+      "ethnicity": "chinese",
+      "sex": "m"
+    },
+    {
+      "new_author_id": 22547,
+      "name": "MOHD KURNIAWAN NAIM MOKTAR",
+      "birth_year": null,
+      "ethnicity": "bumiputera",
+      "sex": "m"
+    }
+  ],
+  "archive": {
+    "1": {
+      "start_date": "1959-09-11",
+      "end_date": "1964-01-11",
+      "1": {
+        "start_date": "1959-09-11",
+        "end_date": "1960-02-23",
+        "1": {
+          "start_date": "1959-09-11",
+          "end_date": "1959-12-14",
+          "sitting_list": [
+            {
+              "sitting_id": 22942,
+              "date": "1959-09-11",
+              "filename": "dr_1959-09-11",
+              "is_final": false
+            }
+          ]
+        }
+      }
+    },
+    "13": {
+      "start_date": "2013-06-24",
+      "end_date": "2018-04-05",
+      "2": {
+        "start_date": "2014-03-10",
+        "end_date": "2014-11-27",
+        "0": {
+          "start_date": "2014-07-23",
+          "end_date": "2014-07-23",
+          "sitting_list": [
+            {
+              "sitting_id": 26241,
+              "date": "2014-07-23",
+              "filename": "dr_2014-07-23",
+              "is_final": true
+            }
+          ]
+        }
+      },
+      "3": {
+        "start_date": "2015-03-09",
+        "end_date": "2016-01-27",
+        "0": {
+          "start_date": "2016-01-26",
+          "end_date": "2016-01-27",
+          "sitting_list": [
+            {
+              "sitting_id": 26299,
+              "date": "2016-01-26",
+              "filename": "dr_2016-01-26",
+              "is_final": true
+            },
+            {
+              "sitting_id": 26298,
+              "date": "2016-01-27",
+              "filename": "dr_2016-01-27",
+              "is_final": true
+            }
+          ]
+        }
+      }
+    },
+    "14": {
+      "start_date": "2018-07-16",
+      "end_date": "2022-10-07",
+      "3": {
+        "start_date": "2020-05-18",
+        "end_date": "2021-07-29",
+        "0": {
+          "start_date": "2021-07-26",
+          "end_date": "2021-07-29",
+          "sitting_list": [
+            {
+              "sitting_id": 26611,
+              "date": "2021-07-26",
+              "filename": "dr_2021-07-26",
+              "is_final": true
+            },
+            {
+              "sitting_id": 26612,
+              "date": "2021-07-27",
+              "filename": "dr_2021-07-27",
+              "is_final": true
+            },
+            {
+              "sitting_id": 26610,
+              "date": "2021-07-28",
+              "filename": "dr_2021-07-28",
+              "is_final": true
+            },
+            {
+              "sitting_id": 26609,
+              "date": "2021-07-29",
+              "filename": "dr_2021-07-29",
+              "is_final": true
+            }
+          ]
+        }
+      },
+      "4": {
+        "start_date": "2021-09-13",
+        "end_date": "2022-01-20",
+        "0": {
+          "start_date": "2022-01-20",
+          "end_date": "2022-01-20",
+          "sitting_list": [
+            {
+              "sitting_id": 26668,
+              "date": "2022-01-20",
+              "filename": "dr_2022-01-20",
+              "is_final": true
+            }
+          ]
+        }
+      },
+      "5": {
+        "start_date": "2022-02-28",
+        "end_date": "2022-10-07",
+        "0": {
+          "start_date": "2022-04-11",
+          "end_date": "2022-04-11",
+          "sitting_list": [
+            {
+              "sitting_id": 26719,
+              "date": "2022-04-11",
+              "filename": "dr_2022-04-11",
+              "is_final": true
+            }
+          ]
+        }
+      }
+    },
+    "15": {
+      "start_date": "2022-12-19",
+      "end_date": "2026-12-08",
+      "2": {
+        "start_date": "2023-02-13",
+        "end_date": "2023-11-30",
+        "0": {
+          "start_date": "2023-09-11",
+          "end_date": "2023-09-19",
+          "sitting_list": [
+            {
+              "sitting_id": 26760,
+              "date": "2023-09-11",
+              "filename": "dr_2023-09-11",
+              "is_final": true
+            },
+            {
+              "sitting_id": 26757,
+              "date": "2023-09-12",
+              "filename": "dr_2023-09-12",
+              "is_final": true
+            },
+            {
+              "sitting_id": 26755,
+              "date": "2023-09-13",
+              "filename": "dr_2023-09-13",
+              "is_final": true
+            },
+            {
+              "sitting_id": 26759,
+              "date": "2023-09-14",
+              "filename": "dr_2023-09-14",
+              "is_final": true
+            },
+            {
+              "sitting_id": 26756,
+              "date": "2023-09-18",
+              "filename": "dr_2023-09-18",
+              "is_final": true
+            },
+            {
+              "sitting_id": 26758,
+              "date": "2023-09-19",
+              "filename": "dr_2023-09-19",
+              "is_final": true
+            }
+          ]
+        }
+      },
+      "4": {
+        "start_date": "2025-02-03",
+        "end_date": "2025-12-04",
+        "0": {
+          "start_date": "2025-05-05",
+          "end_date": "2025-05-05",
+          "sitting_list": [
+            {
+              "sitting_id": 28921,
+              "date": "2025-05-05",
+              "filename": "dr_2025-05-05",
+              "is_final": false
+            }
+          ]
+        }
+      },
+      "5": {
+        "start_date": "2026-01-19",
+        "end_date": "2026-12-08",
+        "1": {
+          "start_date": "2026-01-19",
+          "end_date": "2026-03-03",
+          "sitting_list": [
+            {
+              "sitting_id": 29326,
+              "date": "2026-02-10",
+              "filename": "dr_2026-02-10",
+              "is_final": false
+            }
+          ]
+        }
+      }
+    }
+  },
+  "records": {
+    "2026-02-10": {
+      "meta": {
+        "id": "/hansard/dewan-rakyat/2026-02-10"
+      },
+      "cycle": {
+        "cycle_id": 336,
+        "start_date": "2026-01-19",
+        "end_date": "2026-03-03",
+        "house": 0,
+        "term": 15,
+        "session": 5,
+        "meeting": 1
+      },
+      "date": "2026-02-10",
+      "filename": "dr_2026-02-10",
+      "is_final": false,
+      "speeches": [
+        {
+          "speech": "*[Tuan Yang di-Pertua* ***mempengerusikan Mesyuarat****]*",
+          "author": null,
+          "author_id": null,
+          "timestamp": 1000,
+          "is_annotation": false,
+          "index": 0
+        },
+        {
+          "WAKTU PERTANYAAN-PERTANYAAN MENTERI": [
+            {
+              "speech": "**1. Tuan Lim Guan Eng [Bagan]** Terima kasih, Tan Sri Yang di-Pertua. Bagan minta Yang Berhormat Menteri Luar Negeri menyatakan hasil perdagangan dan keselamatan serantau susulan lawatan Perdana Menteri India, Narendra Modi baru-baru ini ke Malaysia dan sejauh manakah langkah-langkah bersama yang boleh diambil oleh Malaysia dan India terhadap pelaksanaan tarif oleh Amerika Syarikat dan usaha memulihkan demokrasi dan keamanan di Myanmar. Terima kasih.",
+              "author": null,
+              "author_id": null,
+              "timestamp": 1000,
+              "is_annotation": false,
+              "index": 2
+            },
+            {
+              "speech": "Terima kasih Tan Sri Yang di-Pertua. Saya ingin ucapkan terima kasih kepada Yang Berhormat Menteri atas jawapan yang menyeluruh ini.\n\nHubungan di antara Malaysia dan India seperti yang disebut oleh Yang Berhormat Menteri telah sampai ke tahap rakan kongsi strategik. Kalau rakan kongsi strategik ini dilihat membawa manfaat, ia mesti boleh dipercayai (*trusted*) dan juga dapat menunjukkan penyampaian barangan ataupun kegunaan awam dengan izin Tan Sri Yang di-Pertua, *delivery of public good*.\n\nJadi, di sini saya nak tanya, apakah bentuk yang ada dalam kedua-dua konteks ini. Berkaitan dengan tarif Amerika Syarikat, bolehkah Malaysia bertukar pandangan macam mana dia boleh turunkan tarif daripada 50 peratus kepada 18, sedangkan kita sungguhpun ada hubungan baik dengan Amerika Syarikat, masih lebih tinggi dengan 19 peratus. Kalau boleh, bersama supaya kita dapat sama rata. Kalau tidak, dia ada sedikit kelebihan.\n\nDan akhirnya berkaitan dengan Myanmar, apakah langkah seterusnya baik oleh India dan Malaysia, yang boleh membawa kepada keamanan atau menuju ke arah keamanan di Myanmar, iaitu apakah adakah mesyuarat yang akan datang, adakah inisiatif yang akan datang, apakah langkah seterusnya. Takkan kita hanya tunggu dan lihat? Sekian, terima kasih.",
+              "author": "Tuan Lim Guan Eng [Bagan]",
+              "author_id": 1839,
+              "timestamp": 1010,
+              "is_annotation": false,
+              "index": 7
+            }
+          ]
+        },
+        {
+          "PERTANYAAN-PERTANYAAN BAGI JAWAB LISAN": [
+            {
+              "speech": "[Soalan No. 5 - YB Tuan Prabakaran a/l M. Parameswaran (Batu) tidak hadir]",
+              "author": "ANNOTATION",
+              "author_id": null,
+              "timestamp": 1130,
+              "is_annotation": true,
+              "index": 108
+            }
+          ]
+        },
+        {
+          "USUL": [
+            {
+              "USUL MENJUNJUNG KASIH TITAH SERI PADUKA BAGINDA YANG DI-PERTUAN AGONG": [
+                {
+                  "speech": "Ya.",
+                  "author": "Dr. Mohammed Taufiq bin Johari",
+                  "author_id": 4463,
+                  "timestamp": 1530,
+                  "is_annotation": false,
+                  "index": 277
+                },
+                {
+                  "speech": "Yang Berhormat.\n\nBoleh...",
+                  "author": "Tuan Mohd Kurniawan Naim bin Moktar [Kinabatangan]",
+                  "author_id": 22547,
+                  "timestamp": 1530,
+                  "is_annotation": false,
+                  "index": 304
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "2014-07-23": {
+      "meta": {
+        "id": "/hansard/dewan-rakyat/2014-07-23"
+      },
+      "cycle": {
+        "cycle_id": 221,
+        "start_date": "2014-07-23",
+        "end_date": "2014-07-23",
+        "house": 0,
+        "term": 13,
+        "session": 2,
+        "meeting": 0
+      },
+      "date": "2014-07-23",
+      "filename": "dr_2014-07-23",
+      "is_final": true,
+      "speeches": [
+        {
+          "USUL": [
+            {
+              "WAKTU MESYUARAT DAN URUSAN DIBEBASKAN DARIPADA PERATURAN MESYUARAT": [
+                {
+                  "speech": "Ya.",
+                  "author": "Dato’ Haji Mahfuz bin Haji Omar [Pokok Sena]",
+                  "author_id": 2928,
+                  "timestamp": 1210,
+                  "is_annotation": false,
+                  "index": 52
+                },
+                {
+                  "speech": "Tidak apalah ya.\n\nTeruskan.",
+                  "author": "Timbalan Yang di-Pertua [Datuk Seri Ronald Kiandee]",
+                  "author_id": 2857,
+                  "timestamp": 1230,
+                  "is_annotation": false,
+                  "index": 197
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "1959-09-11": {
+      "meta": {
+        "id": "/hansard/dewan-rakyat/1959-09-11"
+      },
+      "cycle": {
+        "cycle_id": 1,
+        "start_date": "1959-09-11",
+        "end_date": "1959-12-14",
+        "house": 0,
+        "term": 1,
+        "session": 1,
+        "meeting": 1
+      },
+      "date": "1959-09-11",
+      "filename": "dr_1959-09-11",
+      "is_final": false,
+      "speeches": [
+        {
+          "ELECTION OF SPEAKER": [
+            {
+              "speech": "I have much pleasure to second the motion.\nWhereupon the said Dato' Haji Mohamed Noah bin Omar was con- ducted to the Chair by the Prime Minister and Dato' Teoh Chze Chong.\nMr. Speaker sat down in the Chair.\nThe Prime Minister (Translated from Malay): Mr. Speaker, Sir, on behalf of the House I would like to express my heartiest congratulations to you, Sir, on your election as Speaker of the House. On behalf of the House and Members of this Parliament, I would like to say that I am confident that with your knowledge of the procedure and all other matters pertaining to the Order of this House, you will be able to carry out your duty effectively: and it is my conviction that all Mem- bers of this House have the fullest\nconfidence in you, Sir. I do not intend to be elaborate in my speech, but I would wish, on behalf of the House, to offer you once again my heartiest congratulations.\nDato' Onn (Kuala Trengganu Sela- tan) (Translated from Malay): Mr. Speaker, as I find that there is no letter to Members to say that there will be no speeches to congratulate you, it would be well if an opportunity is given to the parties on this side of the House to offer their congratulations as, in my view, the Honourable the Prime Minister should not rise to offer con- gratulations on behalf of the whole House. He can only do so on behalf of Members on the Government side, and not on behalf of the whole House unless the agreement of all sections of the House has first been obtained.\nMr. Speaker (Translated from Malay): Honourable Members, the Standing Rules and Orders of the House have not been approved yet, but to accord with normal practice, it is proposed that Members be given an opportunity to make speeches to con- gratulate the Speaker, although this is not mentioned in the letters addressed to Members. Any Member who wishes so to speak may do so now.\nThe Minister of Interior (Dato' Sulei- man) (Translated from Malay): Mr. Speaker, I suggest that Members wishing to congratulate the Speaker should confine themselves to speeches of congratulations.\nDr. Burhanuddin (Besut) (Translated from Malay): Mr. Speaker, on behalf of my colleagues I would like to con- gratulate you, Sir, on being elected as Speaker of this House. We hope that under your guidance the House will henceforward function in an orderly manner, bringing about the welfare and prosperity of the country, which is the aim in having this Assembly con- stituted.",
+              "author": "Dato' Teoh Chze Chong (Segamat Selatan)",
+              "author_id": 22462,
+              "timestamp": "",
+              "is_annotation": false,
+              "index": 0
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

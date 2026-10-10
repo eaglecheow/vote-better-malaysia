@@ -1,0 +1,16 @@
+{
+  "scope": "local-final-help-native-render",
+  "recordedAt": "2026-10-10T12:20:26.913Z",
+  "applicationFingerprint": "fbe830313009c0b417a1169c592957dd5e8f550c4e48319cbbcfb4e8ceac6c3d",
+  "artifact": "/Users/eaglecheow/dev/vote-better-malaysia/.cache/hansard/local-final-site-20261010-help",
+  "url": "http://127.0.0.1:4181/vote-better-malaysia/help.html",
+  "engine": "156.0.8078.4",
+  "viewport": 320,
+  "page": 320,
+  "intro": "Pratonton ini masih dalam penilaian pada peranti dan pelayar. / This preview is still being evaluated on devices and browsers.",
+  "screenshot": "/Users/eaglecheow/dev/vote-better-malaysia/.cache/hansard/final-visuals-help/help-320.png",
+  "physicalAcceptance": false,
+  "assistiveTechnologyVerified": false,
+  "performanceAcceptance": false,
+  "viewportScreenshot": "/Users/eaglecheow/dev/vote-better-malaysia/.cache/hansard/final-visuals-help/help-320-viewport.png"
+}

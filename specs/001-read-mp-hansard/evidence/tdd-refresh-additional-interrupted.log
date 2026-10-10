@@ -1,0 +1,7 @@
+
+> vote-better-malaysia@0.1.0 test
+> vitest --run tests/unit/acquisition-refresh.test.ts -t REF-EXTRA
+
+
+ RUN  v5.0.3 /Users/eaglecheow/dev/vote-better-malaysia
+

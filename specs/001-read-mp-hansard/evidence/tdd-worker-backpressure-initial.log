@@ -1,0 +1,37 @@
+
+> vote-better-malaysia@0.1.0 test
+> vitest --run tests/unit/worker.test.ts -t WSTREAM001
+
+
+ RUN  v5.0.3 /Users/eaglecheow/dev/vote-better-malaysia
+
+ ❯ tests/unit/worker.test.ts (126 tests | 1 failed | 125 skipped) 17ms
+   × WSTREAM001 installation finishes when finite upstream connections require each response body to drain 16ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/worker.test.ts > WSTREAM001 installation finishes when finite upstream connections require each response body to drain
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ responseBackpressure tests/unit/worker.test.ts:879:83
+    877|        */
+    878|       function settled(result): ShellStatus { finished = true; return …
+    879|     try { await Promise.race([installation, backpressure]); expect.sof…
+       |                                                                                   ^
+    880|     finally {
+    881|       // Release only the controlled pool after observing behavior, so…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 125 skipped (126)
+   Start at  19:26:25
+   Duration  105ms (transform 51%, tests 33%, import 13%, worker 3%)
+

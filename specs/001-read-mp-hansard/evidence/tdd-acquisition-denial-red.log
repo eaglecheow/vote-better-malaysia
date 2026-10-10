@@ -1,0 +1,42 @@
+
+> vote-better-malaysia@0.1.0 test
+> vitest --run tests/unit/acquisition-bootstrap.test.ts
+
+
+ RUN  v5.0.3 /Users/eaglecheow/dev/vote-better-malaysia
+
+ ❯ tests/unit/acquisition-bootstrap.test.ts (99 tests | 1 failed) 308ms
+   × T013 access-denied headers stop immediately even when the denial body is inaccessible 4ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/acquisition-bootstrap.test.ts > T013 access-denied headers stop immediately even when the denial body is inaccessible
+AssertionError: expected { rejected: true, requests: 3, …(1) } to deeply equal { rejected: true, requests: 1, …(1) }
+
+- Expected
++ Received
+
+  {
+-   "bodyReads": 0,
++   "bodyReads": 3,
+    "rejected": true,
+-   "requests": 1,
++   "requests": 3,
+  }
+
+ ❯ denialPrecedesBody tests/unit/acquisition-bootstrap.test.ts:843:101
+    841|   let rejected = false;
+    842|   try { await requestOfficial(`${origin}/`, transport, { now, sleep, s…
+    843|   expect({ rejected, requests: transport.mock.calls.length, bodyReads:…
+       |                                                                                                     ^
+    844| }
+    845| test('T013 access-denied headers stop immediately even when the denial…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 98 passed (99)
+   Start at  12:52:26
+   Duration  420ms (tests 85%, transform 12%, import 3%)
+

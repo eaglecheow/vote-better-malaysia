@@ -1,0 +1,103 @@
+
+> vote-better-malaysia@0.1.0 test
+> vitest --run tests/unit/source-retention.test.ts tests/unit/acquisition-regressions.test.ts
+
+
+ RUN  v5.0.3 /Users/eaglecheow/dev/vote-better-malaysia
+
+ ❯ tests/unit/source-retention.test.ts (3 tests | 2 failed) 9ms
+   × RETENTION-IDENTITY: newly supplied identity does not invalidate an unchanged accepted unknown-ID gap after source failure 6ms
+   × RETENTION-RESULT: late reconciliation never guesses assignment of the unchanged retained passage or claims verified absence 1ms
+ ❯ tests/unit/acquisition-regressions.test.ts (2 tests | 2 failed) 19ms
+   × COMMIT-RETAINED: cleanup failure after checkpoint replacement preserves the previous complete accepted public/private pair on rejection 13ms
+   × COMMIT-FIRST: failed first staging leaves both resources absent or a complete consistently reported commit, never a split pair 5ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/acquisition-regressions.test.ts > COMMIT-RETAINED: cleanup failure after checkpoint replacement preserves the previous complete accepted public/private pair on rejection
+AssertionError: expected { rejected: true, …(4) } to deeply equal { rejected: true, …(4) }
+
+- Expected
++ Received
+
+  {
+    "catalogueUnchanged": true,
+-   "checkpointUnchanged": true,
++   "checkpointUnchanged": false,
+    "rejected": true,
+    "shardUnchanged": true,
+    "targetedCleanupAttempts": 1,
+  }
+
+ ❯ preservesAcceptedPair tests/unit/acquisition-regressions.test.ts:73:259
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+
+ FAIL  tests/unit/acquisition-regressions.test.ts > COMMIT-FIRST: failed first staging leaves both resources absent or a complete consistently reported commit, never a split pair
+AssertionError: expected { targetedCleanupAttempts: 1, …(2) } to deeply equal { targetedCleanupAttempts: 1, …(2) }
+
+- Expected
++ Received
+
+  {
+-   "coherentPair": true,
++   "coherentPair": false,
+    "targetedCleanupAttempts": 1,
+-   "truthfulResult": true,
++   "truthfulResult": false,
+  }
+
+ ❯ preservesFirstPairCoherence tests/unit/acquisition-regressions.test.ts:93:160
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯
+
+ FAIL  tests/unit/source-retention.test.ts > RETENTION-IDENTITY: newly supplied identity does not invalidate an unchanged accepted unknown-ID gap after source failure
+AssertionError: expected { accepted: false, …(2) } to deeply equal { accepted: true, …(2) }
+
+- Expected
++ Received
+
+  {
+-   "accepted": true,
+-   "error": null,
+-   "exactAcceptedContent": true,
++   "accepted": false,
++   "error": "Invalid source data: unreconciled source ID",
++   "exactAcceptedContent": false,
+  }
+
+ ❯ preservesRetainedUnknown tests/unit/source-retention.test.ts:56:133
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/4]⎯
+
+ FAIL  tests/unit/source-retention.test.ts > RETENTION-RESULT: late reconciliation never guesses assignment of the unchanged retained passage or claims verified absence
+AssertionError: expected { …(4) } to deeply equal { error: null, …(3) }
+
+- Expected
++ Received
+
+  {
+-   "error": null,
+-   "exactOrderedGaps": true,
+-   "outcome": "incomplete",
+-   "turns": [],
++   "error": "Invalid source data: unreconciled source ID",
++   "exactOrderedGaps": false,
++   "outcome": null,
++   "turns": null,
+  }
+
+ ❯ retainsAmbiguousResult tests/unit/source-retention.test.ts:72:158
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/4]⎯
+
+
+ Test Files  2 failed (2)
+      Tests  4 failed | 1 passed (5)
+   Start at  14:10:40
+   Duration  117ms (transform 58%, tests 23%, import 17%, worker 2%)
+

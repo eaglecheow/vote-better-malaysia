@@ -1,0 +1,169 @@
+
+> vote-better-malaysia@0.1.0 test
+> vitest --run tests/unit/acquisition-refresh.test.ts -t REF-EXTRA
+
+
+ RUN  v5.0.3 /Users/eaglecheow/dev/vote-better-malaysia
+
+ ❯ tests/unit/acquisition-refresh.test.ts (78 tests | 21 failed | 52 skipped) 3913ms
+   × REF-EXTRA-HISTORY-five-checks: malformed accepted sweep history cannot advance or replace prior state 167ms
+   × REF-EXTRA-HISTORY-seven-checks: malformed accepted sweep history cannot advance or replace prior state 140ms
+   × REF-EXTRA-HISTORY-not-array: malformed accepted sweep history cannot advance or replace prior state 139ms
+   × REF-EXTRA-HISTORY-numeric-check: malformed accepted sweep history cannot advance or replace prior state 137ms
+   × REF-EXTRA-HISTORY-malformed-check: malformed accepted sweep history cannot advance or replace prior state 132ms
+   × REF-EXTRA-HISTORY-calendar-invalid: malformed accepted sweep history cannot advance or replace prior state 138ms
+   × REF-EXTRA-HISTORY-future-check: malformed accepted sweep history cannot advance or replace prior state 149ms
+   × REF-EXTRA-PARTIAL-bucket-index: untrusted partial plan cannot resume or advance sweep history 164ms
+   × REF-EXTRA-PARTIAL-bucket-history: untrusted partial plan cannot resume or advance sweep history 162ms
+   × REF-EXTRA-PARTIAL-duplicate-target: untrusted partial plan cannot resume or advance sweep history 158ms
+   × REF-EXTRA-PARTIAL-unknown-pending: untrusted partial plan cannot resume or advance sweep history 161ms
+   × REF-EXTRA-PARTIAL-completed-not-accepted: untrusted partial plan cannot resume or advance sweep history 153ms
+   × REF-EXTRA-PARTIAL-pending-completed-overlap: untrusted partial plan cannot resume or advance sweep history 155ms
+   × REF-EXTRA-PARTIAL-changed-unchanged-overlap: untrusted partial plan cannot resume or advance sweep history 161ms
+   × REF-EXTRA-PARTIAL-failed-completed-overlap: untrusted partial plan cannot resume or advance sweep history 154ms
+   × REF-EXTRA-PARTIAL-unreferenced-hash: untrusted partial plan cannot resume or advance sweep history 153ms
+   × REF-EXTRA-PARTIAL-expired: untrusted partial plan cannot resume or advance sweep history 160ms
+   × REF-EXTRA-PARTIAL-future-created: untrusted partial plan cannot resume or advance sweep history 155ms
+   × REF-EXTRA-NEW-FAILURE: a new inaccessible record stays unavailable with failed rather than pending/success accounting 141ms
+   × REF-EXTRA-OUTSIDE-BUCKET: a failed recent target cannot erase a separately successful historical sweep 136ms
+   × REF-EXTRA-DENIAL: native source access denial preserves accepted data and records stopped acquisition without staging 125ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 21 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-EXTRA-HISTORY-five-checks: malformed accepted sweep history cannot advance or replace prior state
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-EXTRA-HISTORY-seven-checks: malformed accepted sweep history cannot advance or replace prior state
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-EXTRA-HISTORY-not-array: malformed accepted sweep history cannot advance or replace prior state
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-EXTRA-HISTORY-numeric-check: malformed accepted sweep history cannot advance or replace prior state
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-EXTRA-HISTORY-malformed-check: malformed accepted sweep history cannot advance or replace prior state
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-EXTRA-HISTORY-calendar-invalid: malformed accepted sweep history cannot advance or replace prior state
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-EXTRA-HISTORY-future-check: malformed accepted sweep history cannot advance or replace prior state
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ rejectsCheckpointHistory tests/unit/acquisition-refresh.test.ts:891:20
+    889|   checkpoint.refresh = { bucketChecks: history }; await writeFile(path…
+    890|   let rejected = false; try { await acquire(options(value)); } catch {…
+    891|   expect(rejected).toBe(true); expect(requested(value)).toEqual([]); e…
+       |                    ^
+    892|   expect(await report(value)).toMatchObject({ completedIds: [], bucket…
+    893| }
+ ❯ invalidHistory tests/unit/acquisition-refresh.test.ts:907:57
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/21]⎯
+
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-EXTRA-PARTIAL-bucket-index: untrusted partial plan cannot resume or advance sweep history
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-EXTRA-PARTIAL-bucket-history: untrusted partial plan cannot resume or advance sweep history
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-EXTRA-PARTIAL-duplicate-target: untrusted partial plan cannot resume or advance sweep history
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-EXTRA-PARTIAL-unknown-pending: untrusted partial plan cannot resume or advance sweep history
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-EXTRA-PARTIAL-completed-not-accepted: untrusted partial plan cannot resume or advance sweep history
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-EXTRA-PARTIAL-pending-completed-overlap: untrusted partial plan cannot resume or advance sweep history
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-EXTRA-PARTIAL-changed-unchanged-overlap: untrusted partial plan cannot resume or advance sweep history
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-EXTRA-PARTIAL-failed-completed-overlap: untrusted partial plan cannot resume or advance sweep history
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-EXTRA-PARTIAL-unreferenced-hash: untrusted partial plan cannot resume or advance sweep history
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-EXTRA-PARTIAL-expired: untrusted partial plan cannot resume or advance sweep history
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-EXTRA-PARTIAL-future-created: untrusted partial plan cannot resume or advance sweep history
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ rejectsPartialLedger tests/unit/acquisition-refresh.test.ts:960:20
+    958|   await writeFile(path, JSON.stringify(partial)); const before = await…
+    959|   let rejected = false; try { await acquire(options(value)); } catch {…
+    960|   expect(rejected).toBe(true); expect(requested(value)).toEqual([]); e…
+       |                    ^
+    961|   expect(await report(value)).toMatchObject({ bucketCompleted: false, …
+    962| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/21]⎯
+
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-EXTRA-NEW-FAILURE: a new inaccessible record stays unavailable with failed rather than pending/success accounting
+AssertionError: expected null to match object { failedIds: [ '9999' ], …(4) }
+
+- Expected:
+{
+  "acquisitionOutcome": "degraded",
+  "completedIds": ArrayNotContaining [
+    "9999",
+  ],
+  "failedIds": [
+    "9999",
+  ],
+  "pendingIds": [],
+  "stagingOutcome": "success",
+}
+
++ Received:
+null
+
+ ❯ failedNewRecord tests/unit/acquisition-refresh.test.ts:1003:33
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/21]⎯
+
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-EXTRA-OUTSIDE-BUCKET: a failed recent target cannot erase a separately successful historical sweep
+AssertionError: expected null to match object { historicalBucket: 2, …(5) }
+
+- Expected:
+{
+  "acquisitionOutcome": "degraded",
+  "bucketCompleted": true,
+  "failedIds": [
+    "1030",
+  ],
+  "historicalBucket": 2,
+  "pendingIds": [],
+  "stagingOutcome": "success",
+}
+
++ Received:
+null
+
+ ❯ failedOutsideBucket tests/unit/acquisition-refresh.test.ts:1015:33
+    1013|     expect(id).not.toBe(''); value.failures.add(id); const old = selec…
+    1014|     expect(selected(run.catalogue, id).record).toMatchObject({ availab…
+    1015|     expect(await report(value)).toMatchObject({ historicalBucket: 2, b…
+       |                                 ^
+    1016|     const checkpoint = await optionalJson(join(value.state, 'checkpoin…
+    1017|     expect(checkpoint?.refresh?.bucketChecks[2]).toBeTypeOf('string');…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/21]⎯
+
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-EXTRA-DENIAL: native source access denial preserves accepted data and records stopped acquisition without staging
+AssertionError: expected null to match object { completedIds: [], …(3) }
+
+- Expected:
+{
+  "acquisitionOutcome": "failed",
+  "bucketCompleted": false,
+  "completedIds": [],
+  "stagingOutcome": "not-attempted",
+}
+
++ Received:
+null
+
+ ❯ deniedSource tests/unit/acquisition-refresh.test.ts:1038:33
+    1036|     await expect(acquire(input)).rejects.toMatchObject({ kind: 'denied…
+    1037|     expect(requested(value)).toHaveLength(1);
+    1038|     expect(await report(value)).toMatchObject({ completedIds: [], buck…
+       |                                 ^
+    1039|   });
+    1040|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/21]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  21 failed | 5 passed | 52 skipped (78)
+   Start at  17:12:54
+   Duration  4.02s (tests 99%, transform 1%)
+

@@ -1,0 +1,55 @@
+{
+  "scope": "Final user-help refresh of independent local developer checks; T075 remains partial",
+  "recordedAt": "2026-10-10T12:18:09.241030+00:00",
+  "ownedRoot": "/private/tmp/hansard-clean-MPMMKr",
+  "initialEvidence": "clean-environment.json",
+  "initialEvidenceSha256": "0d99c833665f98858fd9b865365a93ef3f66fd475ae70681e1c7efd3413872be",
+  "changedFiles": {
+    "public/help.html": "e5b23b9ead812a60a048b659d50ffed080ea80c96c0c923ae33b0310e8db681d",
+    "docs/user-guide.md": "d005a8504218c24a3dadbaf7eea9f432202080420dda0aea9676a56f2e77e56b"
+  },
+  "fingerprints": {
+    "applicationFingerprint": "fbe830313009c0b417a1169c592957dd5e8f550c4e48319cbbcfb4e8ceac6c3d",
+    "acquisitionFingerprint": "aefa091d7ae3e19bc72bf628be2ede7b48330616b90bd5df222a3314ef1f81d4"
+  },
+  "rootAndCopiedBeforeAfterChecksMatch": true,
+  "releasedCodeHashesUnchanged": {
+    "scripts/ci-inputs.ts": "91e4c76a2cde3dad07944dba8b7627b22403227624772e7a3635949c1f84adac",
+    "scripts/publication.ts": "54639557994a8b8e8099b4e7ac6300da7ecaba7fa75afac624476d309ebd1ae4"
+  },
+  "checks": {
+    "allUnit": {
+      "exitCode": 0,
+      "files": 34,
+      "passed": 2021,
+      "startLocal": "2026-10-10 20:16:48 MYT",
+      "durationSeconds": 11.08,
+      "nativeChromiumUnitBoundaryIncluded": true
+    },
+    "documentation": {
+      "exitCode": 0,
+      "passed": 48,
+      "startLocal": "2026-10-10 20:16:45 MYT",
+      "durationMilliseconds": 956
+    },
+    "build": {
+      "exitCode": 0,
+      "includesTypecheck": true,
+      "completePublicDataPresent": false
+    },
+    "callable": {
+      "exitCode": 0,
+      "findings": []
+    }
+  },
+  "browserJourneySuiteInvoked": false,
+  "port4173Used": false,
+  "initialEvidencePreserved": true,
+  "evidenceHashes": {
+    "clean-environment-final-help-unit.log": "e2788e75eec894c831b3fe25d33e78c682e86760b74e14b4f241f8d356d06b59",
+    "clean-environment-final-help-build.log": "4530a2626e75ef74706abeaec398d4e80e0d9416330ef944c19b80e35973f20a",
+    "clean-environment-final-help-documentation.log": "cebb24961f641ba3baf38cb4c3fb1f5b66d82160ec47323ac3be4a9885cd7d7b",
+    "clean-environment-final-help-callable.log": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "clean-environment-final-help-fingerprints.json": "08f06effdaada75d1cbdd14051ef42b34c0546c7b4a8c98058f535c17faea278"
+  }
+}

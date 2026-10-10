@@ -1,0 +1,517 @@
+{
+  "recordedAt": "2026-10-10T05:52:21.860248+00:00",
+  "command": "npm test -- --run tests/unit/recovery.test.ts tests/unit/recovery-messages.test.ts tests/unit/acquisition-refresh.test.ts --reporter=json --outputFile=/private/tmp/hansard-root-us2-red.json",
+  "node": "24.21.0",
+  "exitCode": 1,
+  "total": 96,
+  "passed": 0,
+  "failed": 96,
+  "pending": 0,
+  "scope": "Future behavior RED preparation only; no production or source/browser gate acceptance.",
+  "fileDigests": {
+    "src/source.ts": "59e42f8f7da4c170bc156573f9310b85c0fa1d93a3b48c6a4351f16899748b7d",
+    "src/main.ts": "26484c98643148f5bdfa71f87b287cb527173d025716c4753144c41b691c498f",
+    "src/messages.ts": "a5a4f18bba88b4688229af4b0643ae778f251ace045d211ea83bb2c0fe48883d",
+    "scripts/acquire.ts": "abed2917b0a8a273118f7b305ae4b3fa47fde793f285f7b589554dfb826b7c5d",
+    "tests/unit/recovery.test.ts": "426cdc73b248b612ef5d0ad755f729e0d7f72a5ec9b7a15588b4d305d81dd03e",
+    "tests/unit/recovery-messages.test.ts": "3045a98c1439fd69f36fe48f86bfa5e87625b88fd633e972f82077eca8978b4a",
+    "tests/unit/acquisition-refresh.test.ts": "cf9caf316cee6f52005884dc06d51ea0b214ee4460b9933a3a123319e49d5144"
+  },
+  "suites": [
+    {
+      "file": "tests/unit/acquisition-refresh.test.ts",
+      "cases": [
+        {
+          "name": "REF-PLAN-001: latest thirty and one oldest-successful historical bucket form a deduplicated normal plan",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected { sittingIds: [], \u2026(2) } to deeply equal { sittingIds: [ '1001', \u2026(37) ], \u2026(2) }"
+        },
+        {
+          "name": "REF-HASH-1: exact full-digest source-ID hashing selects bucket 3",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected { historicalBucket: -1, \u2026(2) } to deeply equal { historicalBucket: 3, \u2026(2) }"
+        },
+        {
+          "name": "REF-HASH-2: exact full-digest source-ID hashing selects bucket 3",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected { historicalBucket: -1, \u2026(2) } to deeply equal { historicalBucket: 3, \u2026(2) }"
+        },
+        {
+          "name": "REF-HASH-3: exact full-digest source-ID hashing selects bucket 2",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected { historicalBucket: -1, \u2026(2) } to deeply equal { historicalBucket: 2, \u2026(2) }"
+        },
+        {
+          "name": "REF-HASH-4: exact full-digest source-ID hashing selects bucket 0",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected { historicalBucket: -1, \u2026(2) } to deeply equal { historicalBucket: +0, \u2026(2) }"
+        },
+        {
+          "name": "REF-HASH-23: exact full-digest source-ID hashing selects bucket 4",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected { historicalBucket: -1, \u2026(2) } to deeply equal { historicalBucket: 4, \u2026(2) }"
+        },
+        {
+          "name": "REF-HASH-1839: exact full-digest source-ID hashing selects bucket 2",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected { historicalBucket: -1, \u2026(2) } to deeply equal { historicalBucket: 2, \u2026(2) }"
+        },
+        {
+          "name": "REF-HASH-22462: exact full-digest source-ID hashing selects bucket 3",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected { historicalBucket: -1, \u2026(2) } to deeply equal { historicalBucket: 3, \u2026(2) }"
+        },
+        {
+          "name": "REF-HASH-26241: exact full-digest source-ID hashing selects bucket 5",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected { historicalBucket: -1, \u2026(2) } to deeply equal { historicalBucket: 5, \u2026(2) }"
+        },
+        {
+          "name": "REF-HASH-29326: exact full-digest source-ID hashing selects bucket 1",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected { historicalBucket: -1, \u2026(2) } to deeply equal { historicalBucket: 1, \u2026(2) }"
+        },
+        {
+          "name": "REF-HASH-22942: exact full-digest source-ID hashing selects bucket 1",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected { historicalBucket: -1, \u2026(2) } to deeply equal { historicalBucket: 1, \u2026(2) }"
+        },
+        {
+          "name": "REF-BUCKET-all-null: null/tied/oldest checks select 0 without advancing caller state",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected -1 to be +0 // Object.is equality"
+        },
+        {
+          "name": "REF-BUCKET-null-first: null/tied/oldest checks select 1 without advancing caller state",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected -1 to be 1 // Object.is equality"
+        },
+        {
+          "name": "REF-BUCKET-equal-checks: null/tied/oldest checks select 0 without advancing caller state",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected -1 to be +0 // Object.is equality"
+        },
+        {
+          "name": "REF-BUCKET-oldest-five: null/tied/oldest checks select 5 without advancing caller state",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected -1 to be 5 // Object.is equality"
+        },
+        {
+          "name": "REF-INVALID-NaN-clock: unsupported planner input is rejected",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected [Function bound planRefresh] to throw an error"
+        },
+        {
+          "name": "REF-INVALID-infinite-clock: unsupported planner input is rejected",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected [Function bound planRefresh] to throw an error"
+        },
+        {
+          "name": "REF-INVALID-empty-history: unsupported planner input is rejected",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected [Function bound planRefresh] to throw an error"
+        },
+        {
+          "name": "REF-INVALID-five-checks: unsupported planner input is rejected",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected [Function bound planRefresh] to throw an error"
+        },
+        {
+          "name": "REF-INVALID-seven-checks: unsupported planner input is rejected",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected [Function bound planRefresh] to throw an error"
+        },
+        {
+          "name": "REF-INVALID-malformed-date: unsupported planner input is rejected",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected [Function bound planRefresh] to throw an error"
+        },
+        {
+          "name": "REF-INVALID-numeric-date: unsupported planner input is rejected",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected [Function bound planRefresh] to throw an error"
+        },
+        {
+          "name": "REF-INVALID-future-check: unsupported planner input is rejected",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected [Function bound planRefresh] to throw an error"
+        },
+        {
+          "name": "REF-PRIORITY: new/unavailable then prior-failed then latest30 then overdue then bucket, each ID once",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected { sittingIds: [], \u2026(2) } to deeply equal { sittingIds: [ '9999', \u2026(39) ], \u2026(2) }"
+        },
+        {
+          "name": "REF-OVERDUE: age 86399999 has overdue status false and catch-up targeting",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected { bucket: -1, overdueIds: [], \u2026(1) } to deeply equal { bucket: 2, overdueIds: [], \u2026(1) }"
+        },
+        {
+          "name": "REF-OVERDUE: age 86400000 has overdue status false and catch-up targeting",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected { bucket: -1, overdueIds: [], \u2026(1) } to deeply equal { bucket: 2, overdueIds: [], \u2026(1) }"
+        },
+        {
+          "name": "REF-OVERDUE: age 86400001 has overdue status true and catch-up targeting",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected { bucket: -1, overdueIds: [], \u2026(1) } to deeply equal { bucket: 2, \u2026(2) }"
+        },
+        {
+          "name": "REF-ORDER: historical bucket checks use oldest successful acquiredAt before exact-ID ties",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected [] to deeply equal [ Array(8) ]"
+        },
+        {
+          "name": "REF-SIX-PLAN: six successful completed normal sweeps target every historical record",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected { \u2026(2) } to deeply equal { Object (buckets, historicalCoverage) }"
+        },
+        {
+          "name": "REF-BOOTSTRAP: absent accepted state plans every freshly inventoried ID without fake overdue times",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected { bucket: -1, ids: [], overdueIds: [] } to deeply equal { bucket: +0, \u2026(2) }"
+        },
+        {
+          "name": "REF-RETAINED-PLAN: prior omitted accepted IDs remain in the complete historical sweep scope",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected { sittingIds: [], \u2026(2) } to deeply equal { sittingIds: [ '1001', \u2026(37) ], \u2026(2) }"
+        },
+        {
+          "name": "REF-RUN-001: actual refresh fetches only prioritized targets and preserves unselected accepted metadata/bytes",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected [ '1070', '1069', '1068', \u2026(67) ] to deeply equal [ '1001', '1002', '1003', \u2026(35) ]"
+        },
+        {
+          "name": "REF-RETAINED-RUN: omitted prior identity is historically rechecked without inventing a current inventory listing",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected { rechecked: false, \u2026(2) } to deeply equal { Object (rechecked, listed, ...) }"
+        },
+        {
+          "name": "REF-RUN-PRIORITY: new/unavailable/previous-failure are acquired before recent and historical work",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected [ '1070', '1069', '1068' ] to deeply equal [ '9999', '1065', '1064' ]"
+        },
+        {
+          "name": "REF-CONTENT-false: content hashes distinguish unchanged/changed while successful acquiredAt advances",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected null to match object { changedIds: [], \u2026(3) }"
+        },
+        {
+          "name": "REF-CONTENT-true: content hashes distinguish unchanged/changed while successful acquiredAt advances",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected null to match object { changedIds: [ '1001' ], \u2026(3) }"
+        },
+        {
+          "name": "REF-FAILED: failed target preserves successful check/content and cannot advance an incomplete bucket",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected null to match object { failedIds: [ '1069' ], \u2026(4) }"
+        },
+        {
+          "name": "REF-THROTTLE: paced Retry-After recovery counts one accepted completed target",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected null to match object { \u2026(3) }"
+        },
+        {
+          "name": "REF-SIX-RUN: six normal four-hour refreshes sweep the full historical inventory without refetching all",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected { \u2026(3) } to deeply equal { chosen: [ +0, 1, 2, 3, 4, 5 ], \u2026(2) }"
+        },
+        {
+          "name": "REF-CATCHUP: overdue accepted work is checked outside the oldest selected historical bucket",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected null to match object { historicalBucket: 2, \u2026(2) }"
+        },
+        {
+          "name": "REF-INTERRUPT: four-hour cap leaves accepted output/sweeps old and resumes only pending prioritized work",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected { kind: 'partial', \u2026(13) } to match object { complete: false, \u2026(2) }"
+        },
+        {
+          "name": "REF-RESUME: same-session validated partial resumes only selected pending IDs and preserves accepted completion times",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected [ '1002', '1003', '1004', \u2026(66) ] to deeply equal [ '1002', '1003', '1004', \u2026(34) ]"
+        },
+        {
+          "name": "REF-FATAL-discovery: failure preserves baseline/sweeps with separate acquisition and staging receipts",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected null to match object { bucketCompleted: false, \u2026(2) }"
+        },
+        {
+          "name": "REF-FATAL-inventory: failure preserves baseline/sweeps with separate acquisition and staging receipts",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected null to match object { bucketCompleted: false, \u2026(2) }"
+        },
+        {
+          "name": "REF-FATAL-record: failure preserves baseline/sweeps with separate acquisition and staging receipts",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected null to match object { bucketCompleted: false, \u2026(2) }"
+        },
+        {
+          "name": "REF-FATAL-output: failure preserves baseline/sweeps with separate acquisition and staging receipts",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected null to match object { bucketCompleted: false, \u2026(2) }"
+        },
+        {
+          "name": "REF-NO-STATE: no prior publication/checkpoint safely bootstraps with an explicit full-target report",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected null to match object { strategy: 'bootstrap', \u2026(5) }"
+        },
+        {
+          "name": "REF-LOST-false: missing/expired retention baseline blocks replacement and records trust failure",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected null to match object { baseline: 'unrecoverable', \u2026(4) }"
+        },
+        {
+          "name": "REF-LOST-true: missing/expired retention baseline blocks replacement and records trust failure",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected null to match object { baseline: 'unrecoverable', \u2026(4) }"
+        },
+        {
+          "name": "REF-RETENTION: exactly seven-day validated state is usable while later expiry cannot masquerade as new unavailable data",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected null to match object { strategy: 'incremental', \u2026(3) }"
+        },
+        {
+          "name": "REF-SERVED-false: missing/expired state recovers only trusted served baseline and reports bootstrap retention",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected null to match object { strategy: 'bootstrap', \u2026(5) }"
+        },
+        {
+          "name": "REF-SERVED-true: missing/expired state recovers only trusted served baseline and reports bootstrap retention",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected null to match object { strategy: 'bootstrap', \u2026(5) }"
+        }
+      ]
+    },
+    {
+      "file": "tests/unit/recovery-messages.test.ts",
+      "cases": [
+        {
+          "name": "REC-MSG-MS-retry: complete nonblank Malay recovery wording",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected undefined to be 'Cuba lagi' // Object.is equality"
+        },
+        {
+          "name": "REC-MSG-MS-retryCatalogue: complete nonblank Malay recovery wording",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected undefined to be 'Muatkan semula senarai' // Object.is equality"
+        },
+        {
+          "name": "REC-MSG-MS-overdue: complete nonblank Malay recovery wording",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected undefined to be 'Lebih 24 jam sejak rekod sumber berja\u2026' // Object.is equality"
+        },
+        {
+          "name": "REC-MSG-MS-knownSourceFailure: complete nonblank Malay recovery wording",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected undefined to be 'Percubaan memperoleh rekod sumber gag\u2026' // Object.is equality"
+        },
+        {
+          "name": "REC-MSG-MS-pipelineEvidence: complete nonblank Malay recovery wording",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected undefined to be 'Bukti proses data' // Object.is equality"
+        },
+        {
+          "name": "REC-MSG-MS-staticKnowledgeLimit: complete nonblank Malay recovery wording",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected undefined to be 'Salinan laman ini hanya menunjukkan s\u2026' // Object.is equality"
+        },
+        {
+          "name": "REC-MSG-EN-retry: complete nonblank English recovery wording",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected undefined to be 'Retry' // Object.is equality"
+        },
+        {
+          "name": "REC-MSG-EN-retryCatalogue: complete nonblank English recovery wording",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected undefined to be 'Reload lists' // Object.is equality"
+        },
+        {
+          "name": "REC-MSG-EN-overdue: complete nonblank English recovery wording",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected undefined to be 'More than 24 hours since the source r\u2026' // Object.is equality"
+        },
+        {
+          "name": "REC-MSG-EN-knownSourceFailure: complete nonblank English recovery wording",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected undefined to be 'A source record acquisition attempt f\u2026' // Object.is equality"
+        },
+        {
+          "name": "REC-MSG-EN-pipelineEvidence: complete nonblank English recovery wording",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected undefined to be 'Data pipeline evidence' // Object.is equality"
+        },
+        {
+          "name": "REC-MSG-EN-staticKnowledgeLimit: complete nonblank English recovery wording",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected undefined to be 'This site snapshot shows only status \u2026' // Object.is equality"
+        },
+        {
+          "name": "REC-MSG-KEYS-ms: new recovery key sets are complete and equivalent",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected [] to deeply equal [ 'knownSourceFailure', \u2026(5) ]"
+        },
+        {
+          "name": "REC-MSG-KEYS-en: new recovery key sets are complete and equivalent",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected [] to deeply equal [ 'knownSourceFailure', \u2026(5) ]"
+        }
+      ]
+    },
+    {
+      "file": "tests/unit/recovery.test.ts",
+      "cases": [
+        {
+          "name": "T029 source check overdue at 2026-10-11T03:00:59.999Z is false, independently of device/snapshot times",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected undefined to be false // Object.is equality"
+        },
+        {
+          "name": "T029 source check overdue at 2026-10-11T03:01:00.000Z is false, independently of device/snapshot times",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected undefined to be false // Object.is equality"
+        },
+        {
+          "name": "T029 source check overdue at 2026-10-11T03:01:00.001Z is true, independently of device/snapshot times",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected undefined to be true // Object.is equality"
+        },
+        {
+          "name": "T029 failed source attempt preserves accepted successful age and reports only its known date",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected undefined to deeply equal { overdue: true, \u2026(2) }"
+        },
+        {
+          "name": "T029 old successful snapshot age does not invent a later pipeline failure",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected undefined to be null"
+        },
+        {
+          "name": "T029 unknown source success cannot be replaced by attempt/preparation/device times",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected undefined to deeply equal { overdue: false, \u2026(2) }"
+        },
+        {
+          "name": "T029 rejects invalid independent current clock invalid",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected [Function bound publishedSourceStatus] to throw an error"
+        },
+        {
+          "name": "T029 rejects invalid independent current clock 2026-02-30T00:00:00.000Z",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected [Function bound publishedSourceStatus] to throw an error"
+        },
+        {
+          "name": "T029 rejects invalid independent current clock 2026-10-10T04:00:00+00:00",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected [Function bound publishedSourceStatus] to throw an error"
+        },
+        {
+          "name": "REC-LIST-ms: failed initial list can be retried through labeled native controls",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected { label: null, calls: 1, \u2026(3) } to deeply equal { \u2026(5) }"
+        },
+        {
+          "name": "REC-LIST-en: failed initial list can be retried through labeled native controls",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected { label: null, calls: 1, \u2026(3) } to deeply equal { label: 'Reload lists', \u2026(4) }"
+        },
+        {
+          "name": "REC-PAIR-ms: retry keeps exact selections/focus and yields the matching complete supplied pair",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected { label: null, \u2026(5) } to deeply equal { label: 'Cuba lagi', \u2026(5) }"
+        },
+        {
+          "name": "REC-PAIR-en: retry keeps exact selections/focus and yields the matching complete supplied pair",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected { label: null, \u2026(5) } to deeply equal { label: 'Retry', \u2026(5) }"
+        },
+        {
+          "name": "REC-LOADING-ms: native retry is keyboard-focusable and announces its actual pending request",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected { nativeButton: false, \u2026(6) } to deeply equal { nativeButton: true, \u2026(6) }"
+        },
+        {
+          "name": "REC-LOADING-en: native retry is keyboard-focusable and announces its actual pending request",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected { nativeButton: false, \u2026(6) } to deeply equal { nativeButton: true, \u2026(6) }"
+        },
+        {
+          "name": "REC-RACE-SAME-ms: late same-pair Retry cannot replace a newer successful Read",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected { calls: 2, \u2026(3) } to deeply equal { calls: 3, \u2026(3) }"
+        },
+        {
+          "name": "REC-RACE-SAME-en: late same-pair Retry cannot replace a newer successful Read",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected { calls: 2, \u2026(3) } to deeply equal { calls: 3, \u2026(3) }"
+        },
+        {
+          "name": "REC-RACE-CHANGE-ms: an old retry completion cannot follow new identity controls",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected { calls: [ '1839', '2928' ], \u2026(3) } to deeply equal { \u2026(4) }"
+        },
+        {
+          "name": "REC-RACE-CHANGE-en: an old retry completion cannot follow new identity controls",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected { calls: [ '1839', '2928' ], \u2026(3) } to deeply equal { \u2026(4) }"
+        },
+        {
+          "name": "REC-AGE-ms: overdue uses accepted source success despite a newer failure/snapshot/device check",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected null to be 'Lebih 24 jam sejak rekod sumber berja\u2026' // Object.is equality"
+        },
+        {
+          "name": "REC-AGE-en: overdue uses accepted source success despite a newer failure/snapshot/device check",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected null to be 'More than 24 hours since the source r\u2026' // Object.is equality"
+        },
+        {
+          "name": "REC-KNOWN-ms: only the published snapshot supplies a dated failure and workflow evidence link",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected { failure: null, evidence: null, \u2026(2) } to deeply equal { \u2026(4) }"
+        },
+        {
+          "name": "REC-KNOWN-en: only the published snapshot supplies a dated failure and workflow evidence link",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected { failure: null, evidence: null, \u2026(2) } to deeply equal { \u2026(4) }"
+        },
+        {
+          "name": "REC-KNOWLEDGE-ms: age cannot become a specific future workflow failure",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected { overdue: null, failure: null, \u2026(1) } to deeply equal { \u2026(3) }"
+        },
+        {
+          "name": "REC-KNOWLEDGE-en: age cannot become a specific future workflow failure",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected { overdue: null, failure: null, \u2026(1) } to deeply equal { \u2026(3) }"
+        },
+        {
+          "name": "REC-UNKNOWN-ms: failed-attempt age cannot create source success or a device check",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected { overdue: null, failure: null, \u2026(1) } to deeply equal { overdue: null, \u2026(2) }"
+        },
+        {
+          "name": "REC-UNKNOWN-en: failed-attempt age cannot create source success or a device check",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected { overdue: null, failure: null, \u2026(1) } to deeply equal { overdue: null, \u2026(2) }"
+        },
+        {
+          "name": "REC-ERROR-CONTEXT-ms: site-data failure preserves known pair/draft/source without claiming absence or pipeline failure",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected { source: null, memberId: null, \u2026(2) } to deeply equal { \u2026(4) }"
+        },
+        {
+          "name": "REC-ERROR-CONTEXT-en: site-data failure preserves known pair/draft/source without claiming absence or pipeline failure",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected { source: null, memberId: null, \u2026(2) } to deeply equal { \u2026(4) }"
+        },
+        {
+          "name": "REC-LANGUAGE: recovery notices switch to English while original source bytes and valid choices remain",
+          "status": "failed",
+          "firstFailure": "AssertionError: expected { Object (knowledge, overdue, ...) } to deeply equal { \u2026(5) }"
+        }
+      ]
+    }
+  ]
+}

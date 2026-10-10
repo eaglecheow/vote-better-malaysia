@@ -1,0 +1,470 @@
+[WebServer] (node:72025) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 48 tests using 5 workers
+
+(node:72028) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:72027) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:72026) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:72029) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:72030) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   2 [chromium] › tests/browser/install.spec.ts:3:1 › INSTALL-BROWSER001: real base-scoped manifest/start/scope and native decoded icon dimensions stay bounded (535ms)
+  ✓   4 [webkit] › tests/browser/install.spec.ts:3:1 › INSTALL-BROWSER001: real base-scoped manifest/start/scope and native decoded icon dimensions stay bounded (907ms)
+  ✓   7 [webkit] › tests/browser/install.spec.ts:34:1 › INSTALL-BROWSER002: real native registration and complete versioned CacheStorage confirm shell readiness without data caching (377ms)
+  ✓   8 [webkit] › tests/browser/install.spec.ts:60:1 › INSTALL-BROWSER003: an actual first-shell install failure leaves online reading/saving available with no offline-ready promise (319ms)
+  ✓   9 [webkit] › tests/browser/install.spec.ts:91:1 › INSTALL-BROWSER004: the manifest reader entry remains a usable website with preserved saved content without a prompt event (596ms)
+  ✓  10 [webkit] › tests/browser/offline.spec.ts:4:47 › OFFLINE001 ms: a closed reader reopens exact committed words, gaps, annotations and provenance offline (525ms)
+  ✓  11 [webkit] › tests/browser/offline.spec.ts:4:47 › OFFLINE001 en: a closed reader reopens exact committed words, gaps, annotations and provenance offline (657ms)
+  ✓  12 [webkit] › tests/browser/offline.spec.ts:27:1 › OFFLINE002: fetching one sitting never saves an unopened different-member pair (529ms)
+  ✓  13 [webkit] › tests/browser/offline.spec.ts:44:1 › OFFLINE003: a cached shell and catalogue without an opened transcript require a connection (446ms)
+  ✘   5 [chromium] › tests/browser/updates.spec.ts:5:1 › UPDATES-BROWSER001: native waiting-version discovery and Continue preserve two current reading tabs (30.1s)
+  ✘   1 [chromium] › tests/browser/offline.spec.ts:4:47 › OFFLINE001 ms: a closed reader reopens exact committed words, gaps, annotations and provenance offline (30.1s)
+  ✘   3 [chromium] › tests/browser/storage.spec.ts:3:1 › STORAGE-BROWSER001: native request success precedes commit and cannot acknowledge the new saved time (30.1s)
+(node:72203) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:72204) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:72205) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   6 [chromium] › tests/browser/install.spec.ts:34:1 › INSTALL-BROWSER002: real native registration and complete versioned CacheStorage confirm shell readiness without data caching (30.4s)
+(node:72221) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  18 [chromium] › tests/browser/install.spec.ts:60:1 › INSTALL-BROWSER003: an actual first-shell install failure leaves online reading/saving available with no offline-ready promise (300ms)
+  ✘  14 [webkit] › tests/browser/offline.spec.ts:59:1 › OFFLINE004: real pair-store eviction loses that transcript without claiming verified absence (30.0s)
+(node:72234) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  20 [webkit] › tests/browser/offline.spec.ts:72:77 › OFFLINE005 schemaVersion: incompatible real saved data stays unavailable without destructive repair (763ms)
+  ✘  17 [chromium] › tests/browser/storage.spec.ts:26:1 › STORAGE-BROWSER002: native abort after real put success rolls back all stores and preserves the older offline copy (30.1s)
+  ✘  16 [chromium] › tests/browser/offline.spec.ts:4:47 › OFFLINE001 en: a closed reader reopens exact committed words, gaps, annotations and provenance offline (30.1s)
+  ✘  15 [chromium] › tests/browser/updates.spec.ts:28:1 › UPDATES-BROWSER002: native preference commit precedes actual waiting-target Apply and only the consenting tab reloads (30.1s)
+(node:72342) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:72340) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:72341) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  19 [chromium] › tests/browser/install.spec.ts:91:1 › INSTALL-BROWSER004: the manifest reader entry remains a usable website with preserved saved content without a prompt event (30.0s)
+(node:72357) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  21 [webkit] › tests/browser/offline.spec.ts:72:77 › OFFLINE005 memberId: incompatible real saved data stays unavailable without destructive repair (29.4s)
+  ✘  22 [chromium] › tests/browser/storage.spec.ts:46:1 › STORAGE-BROWSER003: unchanged source bytes still get a new successful validation and committed saved time (3.7s)
+  ✘  25 [webkit] › tests/browser/storage.spec.ts:3:1 › STORAGE-BROWSER001: native request success precedes commit and cannot acknowledge the new saved time (2.7s)
+  ✘  23 [chromium] › tests/browser/updates.spec.ts:85:1 › UPDATES-BROWSER003: real preference transaction abort prevents Apply and preserves both active and waiting workers (3.7s)
+  ✘  24 [chromium] › tests/browser/offline.spec.ts:27:1 › OFFLINE002: fetching one sitting never saves an unopened different-member pair (3.8s)
+
+
+  1) [chromium] › tests/browser/install.spec.ts:34:1 › INSTALL-BROWSER002: real native registration and complete versioned CacheStorage confirm shell readiness without data caching 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: page.waitForFunction: Test timeout of 30000ms exceeded.
+
+       at ../fixtures/pwa.ts:213
+
+      211 |     async function active(scope: string): Promise<boolean> { return (await navigator.serviceWorker.getRegistration(scope))?.active?.state === 'activated'; }, fixture.url);
+      212 |   await page.reload(); await expect(page.locator('#member-select option[value="1839"]')).toBeAttached();
+    > 213 |   await page.waitForFunction(
+          |              ^
+      214 |     /** Requires actual controlling worker presence. @returns Whether this page has a native controller. */
+      215 |     function controlled(): boolean { return navigator.serviceWorker.controller !== null; });
+      216 |   await expect.poll(
+        at openReader (/Users/eaglecheow/dev/vote-better-malaysia/tests/fixtures/pwa.ts:213:14)
+        at /Users/eaglecheow/dev/vote-better-malaysia/tests/browser/install.spec.ts:41:5
+
+    Error Context: test-results/install-INSTALL-BROWSER002-88048-diness-without-data-caching-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/install-INSTALL-BROWSER002-88048-diness-without-data-caching-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/install-INSTALL-BROWSER002-88048-diness-without-data-caching-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [chromium] › tests/browser/install.spec.ts:91:1 › INSTALL-BROWSER004: the manifest reader entry remains a usable website with preserved saved content without a prompt event 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: page.waitForFunction: Test timeout of 30000ms exceeded.
+
+       at ../fixtures/pwa.ts:213
+
+      211 |     async function active(scope: string): Promise<boolean> { return (await navigator.serviceWorker.getRegistration(scope))?.active?.state === 'activated'; }, fixture.url);
+      212 |   await page.reload(); await expect(page.locator('#member-select option[value="1839"]')).toBeAttached();
+    > 213 |   await page.waitForFunction(
+          |              ^
+      214 |     /** Requires actual controlling worker presence. @returns Whether this page has a native controller. */
+      215 |     function controlled(): boolean { return navigator.serviceWorker.controller !== null; });
+      216 |   await expect.poll(
+        at openReader (/Users/eaglecheow/dev/vote-better-malaysia/tests/fixtures/pwa.ts:213:14)
+        at /Users/eaglecheow/dev/vote-better-malaysia/tests/browser/install.spec.ts:98:5
+
+    Error Context: test-results/install-INSTALL-BROWSER004-67769-tent-without-a-prompt-event-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/install-INSTALL-BROWSER004-67769-tent-without-a-prompt-event-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/install-INSTALL-BROWSER004-67769-tent-without-a-prompt-event-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [chromium] › tests/browser/offline.spec.ts:4:47 › OFFLINE001 ms: a closed reader reopens exact committed words, gaps, annotations and provenance offline 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: page.waitForFunction: Test timeout of 30000ms exceeded.
+
+       at ../fixtures/pwa.ts:213
+
+      211 |     async function active(scope: string): Promise<boolean> { return (await navigator.serviceWorker.getRegistration(scope))?.active?.state === 'activated'; }, fixture.url);
+      212 |   await page.reload(); await expect(page.locator('#member-select option[value="1839"]')).toBeAttached();
+    > 213 |   await page.waitForFunction(
+          |              ^
+      214 |     /** Requires actual controlling worker presence. @returns Whether this page has a native controller. */
+      215 |     function controlled(): boolean { return navigator.serviceWorker.controller !== null; });
+      216 |   await expect.poll(
+        at openReader (/Users/eaglecheow/dev/vote-better-malaysia/tests/fixtures/pwa.ts:213:14)
+        at /Users/eaglecheow/dev/vote-better-malaysia/tests/browser/offline.spec.ts:11:5
+
+    Error Context: test-results/offline-OFFLINE001-ms-a-cl-3d0ad-ions-and-provenance-offline-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/offline-OFFLINE001-ms-a-cl-3d0ad-ions-and-provenance-offline-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/offline-OFFLINE001-ms-a-cl-3d0ad-ions-and-provenance-offline-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) [chromium] › tests/browser/offline.spec.ts:4:47 › OFFLINE001 en: a closed reader reopens exact committed words, gaps, annotations and provenance offline 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: page.waitForFunction: Test timeout of 30000ms exceeded.
+
+       at ../fixtures/pwa.ts:213
+
+      211 |     async function active(scope: string): Promise<boolean> { return (await navigator.serviceWorker.getRegistration(scope))?.active?.state === 'activated'; }, fixture.url);
+      212 |   await page.reload(); await expect(page.locator('#member-select option[value="1839"]')).toBeAttached();
+    > 213 |   await page.waitForFunction(
+          |              ^
+      214 |     /** Requires actual controlling worker presence. @returns Whether this page has a native controller. */
+      215 |     function controlled(): boolean { return navigator.serviceWorker.controller !== null; });
+      216 |   await expect.poll(
+        at openReader (/Users/eaglecheow/dev/vote-better-malaysia/tests/fixtures/pwa.ts:213:14)
+        at /Users/eaglecheow/dev/vote-better-malaysia/tests/browser/offline.spec.ts:11:5
+
+    Error Context: test-results/offline-OFFLINE001-en-a-cl-bafe8-ions-and-provenance-offline-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/offline-OFFLINE001-en-a-cl-bafe8-ions-and-provenance-offline-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/offline-OFFLINE001-en-a-cl-bafe8-ions-and-provenance-offline-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5) [chromium] › tests/browser/storage.spec.ts:3:1 › STORAGE-BROWSER001: native request success precedes commit and cannot acknowledge the new saved time 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: page.waitForFunction: Test timeout of 30000ms exceeded.
+
+       at ../fixtures/pwa.ts:213
+
+      211 |     async function active(scope: string): Promise<boolean> { return (await navigator.serviceWorker.getRegistration(scope))?.active?.state === 'activated'; }, fixture.url);
+      212 |   await page.reload(); await expect(page.locator('#member-select option[value="1839"]')).toBeAttached();
+    > 213 |   await page.waitForFunction(
+          |              ^
+      214 |     /** Requires actual controlling worker presence. @returns Whether this page has a native controller. */
+      215 |     function controlled(): boolean { return navigator.serviceWorker.controller !== null; });
+      216 |   await expect.poll(
+        at openReader (/Users/eaglecheow/dev/vote-better-malaysia/tests/fixtures/pwa.ts:213:14)
+        at /Users/eaglecheow/dev/vote-better-malaysia/tests/browser/storage.spec.ts:10:5
+
+    Error Context: test-results/storage-STORAGE-BROWSER001-7d4be-nowledge-the-new-saved-time-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/storage-STORAGE-BROWSER001-7d4be-nowledge-the-new-saved-time-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/storage-STORAGE-BROWSER001-7d4be-nowledge-the-new-saved-time-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  6) [chromium] › tests/browser/storage.spec.ts:26:1 › STORAGE-BROWSER002: native abort after real put success rolls back all stores and preserves the older offline copy 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: page.waitForFunction: Test timeout of 30000ms exceeded.
+
+       at ../fixtures/pwa.ts:213
+
+      211 |     async function active(scope: string): Promise<boolean> { return (await navigator.serviceWorker.getRegistration(scope))?.active?.state === 'activated'; }, fixture.url);
+      212 |   await page.reload(); await expect(page.locator('#member-select option[value="1839"]')).toBeAttached();
+    > 213 |   await page.waitForFunction(
+          |              ^
+      214 |     /** Requires actual controlling worker presence. @returns Whether this page has a native controller. */
+      215 |     function controlled(): boolean { return navigator.serviceWorker.controller !== null; });
+      216 |   await expect.poll(
+        at openReader (/Users/eaglecheow/dev/vote-better-malaysia/tests/fixtures/pwa.ts:213:14)
+        at /Users/eaglecheow/dev/vote-better-malaysia/tests/browser/storage.spec.ts:33:5
+
+    Error Context: test-results/storage-STORAGE-BROWSER002-5ca73-rves-the-older-offline-copy-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/storage-STORAGE-BROWSER002-5ca73-rves-the-older-offline-copy-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/storage-STORAGE-BROWSER002-5ca73-rves-the-older-offline-copy-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  7) [chromium] › tests/browser/updates.spec.ts:5:1 › UPDATES-BROWSER001: native waiting-version discovery and Continue preserve two current reading tabs 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: page.waitForFunction: Test timeout of 30000ms exceeded.
+
+       at ../fixtures/pwa.ts:213
+
+      211 |     async function active(scope: string): Promise<boolean> { return (await navigator.serviceWorker.getRegistration(scope))?.active?.state === 'activated'; }, fixture.url);
+      212 |   await page.reload(); await expect(page.locator('#member-select option[value="1839"]')).toBeAttached();
+    > 213 |   await page.waitForFunction(
+          |              ^
+      214 |     /** Requires actual controlling worker presence. @returns Whether this page has a native controller. */
+      215 |     function controlled(): boolean { return navigator.serviceWorker.controller !== null; });
+      216 |   await expect.poll(
+        at openReader (/Users/eaglecheow/dev/vote-better-malaysia/tests/fixtures/pwa.ts:213:14)
+        at /Users/eaglecheow/dev/vote-better-malaysia/tests/browser/updates.spec.ts:12:5
+
+    Error Context: test-results/updates-UPDATES-BROWSER001-e7846-ve-two-current-reading-tabs-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/updates-UPDATES-BROWSER001-e7846-ve-two-current-reading-tabs-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/updates-UPDATES-BROWSER001-e7846-ve-two-current-reading-tabs-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  8) [chromium] › tests/browser/updates.spec.ts:28:1 › UPDATES-BROWSER002: native preference commit precedes actual waiting-target Apply and only the consenting tab reloads 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: page.waitForFunction: Test timeout of 30000ms exceeded.
+
+       at ../fixtures/pwa.ts:213
+
+      211 |     async function active(scope: string): Promise<boolean> { return (await navigator.serviceWorker.getRegistration(scope))?.active?.state === 'activated'; }, fixture.url);
+      212 |   await page.reload(); await expect(page.locator('#member-select option[value="1839"]')).toBeAttached();
+    > 213 |   await page.waitForFunction(
+          |              ^
+      214 |     /** Requires actual controlling worker presence. @returns Whether this page has a native controller. */
+      215 |     function controlled(): boolean { return navigator.serviceWorker.controller !== null; });
+      216 |   await expect.poll(
+        at openReader (/Users/eaglecheow/dev/vote-better-malaysia/tests/fixtures/pwa.ts:213:14)
+        at /Users/eaglecheow/dev/vote-better-malaysia/tests/browser/updates.spec.ts:35:5
+
+    Error Context: test-results/updates-UPDATES-BROWSER002-9f735--the-consenting-tab-reloads-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/updates-UPDATES-BROWSER002-9f735--the-consenting-tab-reloads-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/updates-UPDATES-BROWSER002-9f735--the-consenting-tab-reloads-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  9) [webkit] › tests/browser/offline.spec.ts:59:1 › OFFLINE004: real pair-store eviction loses that transcript without claiming verified absence 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: page.waitForFunction: Test timeout of 30000ms exceeded.
+
+       at ../fixtures/pwa.ts:213
+
+      211 |     async function active(scope: string): Promise<boolean> { return (await navigator.serviceWorker.getRegistration(scope))?.active?.state === 'activated'; }, fixture.url);
+      212 |   await page.reload(); await expect(page.locator('#member-select option[value="1839"]')).toBeAttached();
+    > 213 |   await page.waitForFunction(
+          |              ^
+      214 |     /** Requires actual controlling worker presence. @returns Whether this page has a native controller. */
+      215 |     function controlled(): boolean { return navigator.serviceWorker.controller !== null; });
+      216 |   await expect.poll(
+        at openReader (/Users/eaglecheow/dev/vote-better-malaysia/tests/fixtures/pwa.ts:213:14)
+        at /Users/eaglecheow/dev/vote-better-malaysia/tests/browser/offline.spec.ts:66:5
+
+    Error Context: test-results/offline-OFFLINE004-real-pa-4ab52-t-claiming-verified-absence-webkit/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/offline-OFFLINE004-real-pa-4ab52-t-claiming-verified-absence-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/offline-OFFLINE004-real-pa-4ab52-t-claiming-verified-absence-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  10) [chromium] › tests/browser/offline.spec.ts:27:1 › OFFLINE002: fetching one sitting never saves an unopened different-member pair 
+
+    Test was interrupted.
+
+    Error: page.waitForFunction: Test ended.
+
+       at ../fixtures/pwa.ts:213
+
+      211 |     async function active(scope: string): Promise<boolean> { return (await navigator.serviceWorker.getRegistration(scope))?.active?.state === 'activated'; }, fixture.url);
+      212 |   await page.reload(); await expect(page.locator('#member-select option[value="1839"]')).toBeAttached();
+    > 213 |   await page.waitForFunction(
+          |              ^
+      214 |     /** Requires actual controlling worker presence. @returns Whether this page has a native controller. */
+      215 |     function controlled(): boolean { return navigator.serviceWorker.controller !== null; });
+      216 |   await expect.poll(
+        at openReader (/Users/eaglecheow/dev/vote-better-malaysia/tests/fixtures/pwa.ts:213:14)
+        at /Users/eaglecheow/dev/vote-better-malaysia/tests/browser/offline.spec.ts:34:5
+
+    Error Context: test-results/offline-OFFLINE002-fetchin-62685-pened-different-member-pair-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/offline-OFFLINE002-fetchin-62685-pened-different-member-pair-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/offline-OFFLINE002-fetchin-62685-pened-different-member-pair-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  11) [chromium] › tests/browser/storage.spec.ts:46:1 › STORAGE-BROWSER003: unchanged source bytes still get a new successful validation and committed saved time 
+
+    Test was interrupted.
+
+    Error: page.waitForFunction: Test ended.
+
+       at ../fixtures/pwa.ts:213
+
+      211 |     async function active(scope: string): Promise<boolean> { return (await navigator.serviceWorker.getRegistration(scope))?.active?.state === 'activated'; }, fixture.url);
+      212 |   await page.reload(); await expect(page.locator('#member-select option[value="1839"]')).toBeAttached();
+    > 213 |   await page.waitForFunction(
+          |              ^
+      214 |     /** Requires actual controlling worker presence. @returns Whether this page has a native controller. */
+      215 |     function controlled(): boolean { return navigator.serviceWorker.controller !== null; });
+      216 |   await expect.poll(
+        at openReader (/Users/eaglecheow/dev/vote-better-malaysia/tests/fixtures/pwa.ts:213:14)
+        at /Users/eaglecheow/dev/vote-better-malaysia/tests/browser/storage.spec.ts:52:5
+
+    Error Context: test-results/storage-STORAGE-BROWSER003-85e46-on-and-committed-saved-time-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/storage-STORAGE-BROWSER003-85e46-on-and-committed-saved-time-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/storage-STORAGE-BROWSER003-85e46-on-and-committed-saved-time-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  12) [chromium] › tests/browser/updates.spec.ts:85:1 › UPDATES-BROWSER003: real preference transaction abort prevents Apply and preserves both active and waiting workers 
+
+    Test was interrupted.
+
+    Error: page.waitForFunction: Test ended.
+
+       at ../fixtures/pwa.ts:213
+
+      211 |     async function active(scope: string): Promise<boolean> { return (await navigator.serviceWorker.getRegistration(scope))?.active?.state === 'activated'; }, fixture.url);
+      212 |   await page.reload(); await expect(page.locator('#member-select option[value="1839"]')).toBeAttached();
+    > 213 |   await page.waitForFunction(
+          |              ^
+      214 |     /** Requires actual controlling worker presence. @returns Whether this page has a native controller. */
+      215 |     function controlled(): boolean { return navigator.serviceWorker.controller !== null; });
+      216 |   await expect.poll(
+        at openReader (/Users/eaglecheow/dev/vote-better-malaysia/tests/fixtures/pwa.ts:213:14)
+        at /Users/eaglecheow/dev/vote-better-malaysia/tests/browser/updates.spec.ts:92:5
+
+    Error Context: test-results/updates-UPDATES-BROWSER003-b6b8a--active-and-waiting-workers-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/updates-UPDATES-BROWSER003-b6b8a--active-and-waiting-workers-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/updates-UPDATES-BROWSER003-b6b8a--active-and-waiting-workers-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  13) [webkit] › tests/browser/offline.spec.ts:72:77 › OFFLINE005 memberId: incompatible real saved data stays unavailable without destructive repair 
+
+    Test was interrupted.
+
+    Error: page.waitForFunction: Test ended.
+
+       at ../fixtures/pwa.ts:213
+
+      211 |     async function active(scope: string): Promise<boolean> { return (await navigator.serviceWorker.getRegistration(scope))?.active?.state === 'activated'; }, fixture.url);
+      212 |   await page.reload(); await expect(page.locator('#member-select option[value="1839"]')).toBeAttached();
+    > 213 |   await page.waitForFunction(
+          |              ^
+      214 |     /** Requires actual controlling worker presence. @returns Whether this page has a native controller. */
+      215 |     function controlled(): boolean { return navigator.serviceWorker.controller !== null; });
+      216 |   await expect.poll(
+        at openReader (/Users/eaglecheow/dev/vote-better-malaysia/tests/fixtures/pwa.ts:213:14)
+        at /Users/eaglecheow/dev/vote-better-malaysia/tests/browser/offline.spec.ts:79:5
+
+    Error Context: test-results/offline-OFFLINE005-memberI-3dfd7--without-destructive-repair-webkit/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/offline-OFFLINE005-memberI-3dfd7--without-destructive-repair-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/offline-OFFLINE005-memberI-3dfd7--without-destructive-repair-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  14) [webkit] › tests/browser/storage.spec.ts:3:1 › STORAGE-BROWSER001: native request success precedes commit and cannot acknowledge the new saved time 
+
+    Test was interrupted.
+
+    Error: page.waitForFunction: Test ended.
+
+       at ../fixtures/pwa.ts:213
+
+      211 |     async function active(scope: string): Promise<boolean> { return (await navigator.serviceWorker.getRegistration(scope))?.active?.state === 'activated'; }, fixture.url);
+      212 |   await page.reload(); await expect(page.locator('#member-select option[value="1839"]')).toBeAttached();
+    > 213 |   await page.waitForFunction(
+          |              ^
+      214 |     /** Requires actual controlling worker presence. @returns Whether this page has a native controller. */
+      215 |     function controlled(): boolean { return navigator.serviceWorker.controller !== null; });
+      216 |   await expect.poll(
+        at openReader (/Users/eaglecheow/dev/vote-better-malaysia/tests/fixtures/pwa.ts:213:14)
+        at /Users/eaglecheow/dev/vote-better-malaysia/tests/browser/storage.spec.ts:10:5
+
+    Error Context: test-results/storage-STORAGE-BROWSER001-7d4be-nowledge-the-new-saved-time-webkit/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/storage-STORAGE-BROWSER001-7d4be-nowledge-the-new-saved-time-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/storage-STORAGE-BROWSER001-7d4be-nowledge-the-new-saved-time-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  9 failed
+    [chromium] › tests/browser/install.spec.ts:34:1 › INSTALL-BROWSER002: real native registration and complete versioned CacheStorage confirm shell readiness without data caching 
+    [chromium] › tests/browser/install.spec.ts:91:1 › INSTALL-BROWSER004: the manifest reader entry remains a usable website with preserved saved content without a prompt event 
+    [chromium] › tests/browser/offline.spec.ts:4:47 › OFFLINE001 ms: a closed reader reopens exact committed words, gaps, annotations and provenance offline 
+    [chromium] › tests/browser/offline.spec.ts:4:47 › OFFLINE001 en: a closed reader reopens exact committed words, gaps, annotations and provenance offline 
+    [chromium] › tests/browser/storage.spec.ts:3:1 › STORAGE-BROWSER001: native request success precedes commit and cannot acknowledge the new saved time 
+    [chromium] › tests/browser/storage.spec.ts:26:1 › STORAGE-BROWSER002: native abort after real put success rolls back all stores and preserves the older offline copy 
+    [chromium] › tests/browser/updates.spec.ts:5:1 › UPDATES-BROWSER001: native waiting-version discovery and Continue preserve two current reading tabs 
+    [chromium] › tests/browser/updates.spec.ts:28:1 › UPDATES-BROWSER002: native preference commit precedes actual waiting-target Apply and only the consenting tab reloads 
+    [webkit] › tests/browser/offline.spec.ts:59:1 › OFFLINE004: real pair-store eviction loses that transcript without claiming verified absence 
+  5 interrupted
+    [chromium] › tests/browser/offline.spec.ts:27:1 › OFFLINE002: fetching one sitting never saves an unopened different-member pair 
+    [chromium] › tests/browser/storage.spec.ts:46:1 › STORAGE-BROWSER003: unchanged source bytes still get a new successful validation and committed saved time 
+    [chromium] › tests/browser/updates.spec.ts:85:1 › UPDATES-BROWSER003: real preference transaction abort prevents Apply and preserves both active and waiting workers 
+    [webkit] › tests/browser/offline.spec.ts:72:77 › OFFLINE005 memberId: incompatible real saved data stays unavailable without destructive repair 
+    [webkit] › tests/browser/storage.spec.ts:3:1 › STORAGE-BROWSER001: native request success precedes commit and cannot acknowledge the new saved time 
+  23 did not run
+  11 passed (1.1m)

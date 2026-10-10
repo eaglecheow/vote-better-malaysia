@@ -1,0 +1,5 @@
+
+> vote-better-malaysia@0.1.0 test
+> vitest --run tests/unit/acquisition-bootstrap.test.ts tests/unit/acquisition-refresh.test.ts tests/unit/acquisition-regressions.test.ts tests/unit/source-retention.test.ts --reporter=json --outputFile=specs/001-read-mp-hansard/evidence/tdd-ci-acquisition-final-green.json
+
+JSON report written to /Users/eaglecheow/dev/vote-better-malaysia/specs/001-read-mp-hansard/evidence/tdd-ci-acquisition-final-green.json

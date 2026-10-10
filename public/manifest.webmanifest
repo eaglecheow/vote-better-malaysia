@@ -1,0 +1,16 @@
+{
+  "id": "/vote-better-malaysia/",
+  "name": "Pembaca Hansard Ahli Parlimen",
+  "short_name": "Hansard",
+  "description": "Baca sumbangan Ahli Parlimen dalam Hansard. Read MPs' contributions in Hansard.",
+  "lang": "ms",
+  "start_url": "/vote-better-malaysia/",
+  "scope": "/vote-better-malaysia/",
+  "display": "standalone",
+  "theme_color": "#0f4c5c",
+  "background_color": "#f7f8fa",
+  "icons": [
+    { "src": "/vote-better-malaysia/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/vote-better-malaysia/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ]
+}

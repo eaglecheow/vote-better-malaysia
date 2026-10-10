@@ -1,0 +1,18 @@
+{
+  "scope": "local-working-tree-diagnostic",
+  "publicationEligible": false,
+  "recordedAt": "2026-10-10T12:11:33.114Z",
+  "baseRevision": "1c4b079935bc5b7604474c1ba55def43ed6f0270",
+  "uncommitted": true,
+  "applicationFingerprint": "4727ea13b65363e2621813c998e00a25c052cdd2bed0f2543267ffe6b110e06e",
+  "artifact": "/Users/eaglecheow/dev/vote-better-malaysia/.cache/hansard/local-final-site-20261010",
+  "inputs": {
+    "scripts/ci-inputs.ts": "91e4c76a2cde3dad07944dba8b7627b22403227624772e7a3635949c1f84adac",
+    "scripts/publication.ts": "54639557994a8b8e8099b4e7ac6300da7ecaba7fa75afac624476d309ebd1ae4",
+    ".github/workflows/ci.yml": "1866c0f11ddd290f1c8f40102a4c57bdfd04c697e17c8ecc0f6770ad52dbf871",
+    "src/main.ts": "326e642689655d359f37931b6caae2289c2b951e8addf6737c1c8118a8f33084",
+    "worker/service-worker.ts": "da792f9655d3c7b232f4e4152c3b3f0121e8b8e67694814332f7a23cf73cd9d3",
+    "public/help.html": "ebe057308786ef9c30199234a4ac928aaf595005cdd624b3c742fe1be98f4343",
+    "tests/fixtures/pwa.ts": "69ae042a145b71b40cd97b63d3eb8de7b385bdede600dbdb0fbadbf5155e11ae"
+  }
+}

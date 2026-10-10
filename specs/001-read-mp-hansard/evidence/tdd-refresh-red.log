@@ -1,0 +1,1506 @@
+
+> vote-better-malaysia@0.1.0 test
+> vitest --run tests/unit/acquisition-refresh.test.ts tests/unit/acquisition-bootstrap.test.ts
+
+
+ RUN  v5.0.3 /Users/eaglecheow/dev/vote-better-malaysia
+
+ ❯ tests/unit/acquisition-refresh.test.ts (52 tests | 52 failed) 3685ms
+   × REF-PLAN-001: latest thirty and one oldest-successful historical bucket form a deduplicated normal plan 16ms
+   × REF-HASH-1: exact full-digest source-ID hashing selects bucket 3 1ms
+   × REF-HASH-2: exact full-digest source-ID hashing selects bucket 3 2ms
+   × REF-HASH-3: exact full-digest source-ID hashing selects bucket 2 1ms
+   × REF-HASH-4: exact full-digest source-ID hashing selects bucket 0 2ms
+   × REF-HASH-23: exact full-digest source-ID hashing selects bucket 4 1ms
+   × REF-HASH-1839: exact full-digest source-ID hashing selects bucket 2 1ms
+   × REF-HASH-22462: exact full-digest source-ID hashing selects bucket 3 1ms
+   × REF-HASH-26241: exact full-digest source-ID hashing selects bucket 5 1ms
+   × REF-HASH-29326: exact full-digest source-ID hashing selects bucket 1 1ms
+   × REF-HASH-22942: exact full-digest source-ID hashing selects bucket 1 1ms
+   × REF-BUCKET-all-null: null/tied/oldest checks select 0 without advancing caller state 2ms
+   × REF-BUCKET-null-first: null/tied/oldest checks select 1 without advancing caller state 2ms
+   × REF-BUCKET-equal-checks: null/tied/oldest checks select 0 without advancing caller state 2ms
+   × REF-BUCKET-oldest-five: null/tied/oldest checks select 5 without advancing caller state 2ms
+   × REF-INVALID-NaN-clock: unsupported planner input is rejected 2ms
+   × REF-INVALID-infinite-clock: unsupported planner input is rejected 3ms
+   × REF-INVALID-empty-history: unsupported planner input is rejected 3ms
+   × REF-INVALID-five-checks: unsupported planner input is rejected 2ms
+   × REF-INVALID-seven-checks: unsupported planner input is rejected 1ms
+   × REF-INVALID-malformed-date: unsupported planner input is rejected 3ms
+   × REF-INVALID-numeric-date: unsupported planner input is rejected 1ms
+   × REF-INVALID-future-check: unsupported planner input is rejected 1ms
+   × REF-PRIORITY: new/unavailable then prior-failed then latest30 then overdue then bucket, each ID once 2ms
+   × REF-OVERDUE: age 86399999 has overdue status false and catch-up targeting 1ms
+   × REF-OVERDUE: age 86400000 has overdue status false and catch-up targeting 1ms
+   × REF-OVERDUE: age 86400001 has overdue status true and catch-up targeting 2ms
+   × REF-ORDER: historical bucket checks use oldest successful acquiredAt before exact-ID ties 2ms
+   × REF-SIX-PLAN: six successful completed normal sweeps target every historical record 3ms
+   × REF-BOOTSTRAP: absent accepted state plans every freshly inventoried ID without fake overdue times 2ms
+   × REF-RETAINED-PLAN: prior omitted accepted IDs remain in the complete historical sweep scope 3ms
+   × REF-RUN-001: actual refresh fetches only prioritized targets and preserves unselected accepted metadata/bytes 224ms
+   × REF-RETAINED-RUN: omitted prior identity is historically rechecked without inventing a current inventory listing 196ms
+   × REF-RUN-PRIORITY: new/unavailable/previous-failure are acquired before recent and historical work 202ms
+   × REF-CONTENT-false: content hashes distinguish unchanged/changed while successful acquiredAt advances 139ms
+   × REF-CONTENT-true: content hashes distinguish unchanged/changed while successful acquiredAt advances 145ms
+   × REF-FAILED: failed target preserves successful check/content and cannot advance an incomplete bucket 146ms
+   × REF-THROTTLE: paced Retry-After recovery counts one accepted completed target 176ms
+   × REF-SIX-RUN: six normal four-hour refreshes sweep the full historical inventory without refetching all 741ms
+   × REF-CATCHUP: overdue accepted work is checked outside the oldest selected historical bucket 182ms
+   × REF-INTERRUPT: four-hour cap leaves accepted output/sweeps old and resumes only pending prioritized work 118ms
+   × REF-RESUME: same-session validated partial resumes only selected pending IDs and preserves accepted completion times 168ms
+   × REF-FATAL-discovery: failure preserves baseline/sweeps with separate acquisition and staging receipts 118ms
+   × REF-FATAL-inventory: failure preserves baseline/sweeps with separate acquisition and staging receipts 111ms
+   × REF-FATAL-record: failure preserves baseline/sweeps with separate acquisition and staging receipts 111ms
+   × REF-FATAL-output: failure preserves baseline/sweeps with separate acquisition and staging receipts 204ms
+   × REF-NO-STATE: no prior publication/checkpoint safely bootstraps with an explicit full-target report 123ms
+   × REF-LOST-false: missing/expired retention baseline blocks replacement and records trust failure 40ms
+   × REF-LOST-true: missing/expired retention baseline blocks replacement and records trust failure 43ms
+   × REF-RETENTION: exactly seven-day validated state is usable while later expiry cannot masquerade as new unavailable data 143ms
+   × REF-SERVED-false: missing/expired state recovers only trusted served baseline and reports bootstrap retention 144ms
+   × REF-SERVED-true: missing/expired state recovers only trusted served baseline and reports bootstrap retention 138ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 52 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-PLAN-001: latest thirty and one oldest-successful historical bucket form a deduplicated normal plan
+AssertionError: expected { sittingIds: [], …(2) } to deeply equal { sittingIds: [ '1001', …(37) ], …(2) }
+
+- Expected
++ Received
+
+  {
+-   "historicalBucket": 2,
++   "historicalBucket": -1,
+    "overdueIds": [],
+-   "sittingIds": [
+-     "1001",
+-     "1002",
+-     "1003",
+-     "1004",
+-     "1005",
+-     "1006",
+-     "1007",
+-     "1008",
+-     "1009",
+-     "1010",
+-     "1011",
+-     "1012",
+-     "1013",
+-     "1014",
+-     "1015",
+-     "1016",
+-     "1017",
+-     "1018",
+-     "1019",
+-     "1020",
+-     "1021",
+-     "1022",
+-     "1023",
+-     "1024",
+-     "1025",
+-     "1026",
+-     "1027",
+-     "1028",
+-     "1029",
+-     "1030",
+-     "1069",
+-     "1052",
+-     "1051",
+-     "1049",
+-     "1048",
+-     "1047",
+-     "1045",
+-     "1035",
+-   ],
++   "sittingIds": [],
+  }
+
+ ❯ checksNormalPlan tests/unit/acquisition-refresh.test.ts:349:88
+    347|   const value = model();
+    348|   const checks = [iso(start - 1000), iso(start - 2000), iso(start - 60…
+    349|   expect(planRefresh(validateCatalogue(value.catalogue), value.latest,…
+       |                                                                                        ^
+    350| }
+    351| test('REF-PLAN-001: latest thirty and one oldest-successful historical…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/52]⎯
+
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-HASH-1: exact full-digest source-ID hashing selects bucket 3
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-HASH-2: exact full-digest source-ID hashing selects bucket 3
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-HASH-22462: exact full-digest source-ID hashing selects bucket 3
+AssertionError: expected { historicalBucket: -1, …(2) } to deeply equal { historicalBucket: 3, …(2) }
+
+- Expected
++ Received
+
+  {
+-   "count": 31,
+-   "historicalBucket": 3,
+-   "historicalTarget": true,
++   "count": 0,
++   "historicalBucket": -1,
++   "historicalTarget": false,
+  }
+
+ ❯ checksKnownBucket tests/unit/acquisition-refresh.test.ts:368:134
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/52]⎯
+
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-HASH-3: exact full-digest source-ID hashing selects bucket 2
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-HASH-1839: exact full-digest source-ID hashing selects bucket 2
+AssertionError: expected { historicalBucket: -1, …(2) } to deeply equal { historicalBucket: 2, …(2) }
+
+- Expected
++ Received
+
+  {
+-   "count": 31,
+-   "historicalBucket": 2,
+-   "historicalTarget": true,
++   "count": 0,
++   "historicalBucket": -1,
++   "historicalTarget": false,
+  }
+
+ ❯ checksKnownBucket tests/unit/acquisition-refresh.test.ts:368:134
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/52]⎯
+
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-HASH-4: exact full-digest source-ID hashing selects bucket 0
+AssertionError: expected { historicalBucket: -1, …(2) } to deeply equal { historicalBucket: +0, …(2) }
+
+- Expected
++ Received
+
+  {
+-   "count": 31,
+-   "historicalBucket": 0,
+-   "historicalTarget": true,
++   "count": 0,
++   "historicalBucket": -1,
++   "historicalTarget": false,
+  }
+
+ ❯ checksKnownBucket tests/unit/acquisition-refresh.test.ts:368:134
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/52]⎯
+
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-HASH-23: exact full-digest source-ID hashing selects bucket 4
+AssertionError: expected { historicalBucket: -1, …(2) } to deeply equal { historicalBucket: 4, …(2) }
+
+- Expected
++ Received
+
+  {
+-   "count": 31,
+-   "historicalBucket": 4,
+-   "historicalTarget": true,
++   "count": 0,
++   "historicalBucket": -1,
++   "historicalTarget": false,
+  }
+
+ ❯ checksKnownBucket tests/unit/acquisition-refresh.test.ts:368:134
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/52]⎯
+
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-HASH-26241: exact full-digest source-ID hashing selects bucket 5
+AssertionError: expected { historicalBucket: -1, …(2) } to deeply equal { historicalBucket: 5, …(2) }
+
+- Expected
++ Received
+
+  {
+-   "count": 31,
+-   "historicalBucket": 5,
+-   "historicalTarget": true,
++   "count": 0,
++   "historicalBucket": -1,
++   "historicalTarget": false,
+  }
+
+ ❯ checksKnownBucket tests/unit/acquisition-refresh.test.ts:368:134
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/52]⎯
+
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-HASH-29326: exact full-digest source-ID hashing selects bucket 1
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-HASH-22942: exact full-digest source-ID hashing selects bucket 1
+AssertionError: expected { historicalBucket: -1, …(2) } to deeply equal { historicalBucket: 1, …(2) }
+
+- Expected
++ Received
+
+  {
+-   "count": 31,
+-   "historicalBucket": 1,
+-   "historicalTarget": true,
++   "count": 0,
++   "historicalBucket": -1,
++   "historicalTarget": false,
+  }
+
+ ❯ checksKnownBucket tests/unit/acquisition-refresh.test.ts:368:134
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/52]⎯
+
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-BUCKET-all-null: null/tied/oldest checks select 0 without advancing caller state
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-BUCKET-equal-checks: null/tied/oldest checks select 0 without advancing caller state
+AssertionError: expected -1 to be +0 // Object.is equality
+
+- Expected
++ Received
+
+- 0
++ -1
+
+ ❯ checksBucketOrder tests/unit/acquisition-refresh.test.ts:381:33
+    379|   const value = model(); const before = JSON.stringify({ catalogue: va…
+    380|   const plan = planRefresh(validateCatalogue(value.catalogue), value.l…
+    381|   expect(plan.historicalBucket).toBe(expectedBucket);
+       |                                 ^
+    382|   expect(JSON.stringify({ catalogue: value.catalogue, latest: value.la…
+    383| }
+ ❯ tests/unit/acquisition-refresh.test.ts:395:83
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/52]⎯
+
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-BUCKET-null-first: null/tied/oldest checks select 1 without advancing caller state
+AssertionError: expected -1 to be 1 // Object.is equality
+
+- Expected
++ Received
+
+- 1
++ -1
+
+ ❯ checksBucketOrder tests/unit/acquisition-refresh.test.ts:381:33
+    379|   const value = model(); const before = JSON.stringify({ catalogue: va…
+    380|   const plan = planRefresh(validateCatalogue(value.catalogue), value.l…
+    381|   expect(plan.historicalBucket).toBe(expectedBucket);
+       |                                 ^
+    382|   expect(JSON.stringify({ catalogue: value.catalogue, latest: value.la…
+    383| }
+ ❯ tests/unit/acquisition-refresh.test.ts:395:83
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/52]⎯
+
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-BUCKET-oldest-five: null/tied/oldest checks select 5 without advancing caller state
+AssertionError: expected -1 to be 5 // Object.is equality
+
+- Expected
++ Received
+
+- 5
++ -1
+
+ ❯ checksBucketOrder tests/unit/acquisition-refresh.test.ts:381:33
+    379|   const value = model(); const before = JSON.stringify({ catalogue: va…
+    380|   const plan = planRefresh(validateCatalogue(value.catalogue), value.l…
+    381|   expect(plan.historicalBucket).toBe(expectedBucket);
+       |                                 ^
+    382|   expect(JSON.stringify({ catalogue: value.catalogue, latest: value.la…
+    383| }
+ ❯ tests/unit/acquisition-refresh.test.ts:395:83
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/52]⎯
+
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-INVALID-NaN-clock: unsupported planner input is rejected
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-INVALID-infinite-clock: unsupported planner input is rejected
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-INVALID-empty-history: unsupported planner input is rejected
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-INVALID-five-checks: unsupported planner input is rejected
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-INVALID-seven-checks: unsupported planner input is rejected
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-INVALID-malformed-date: unsupported planner input is rejected
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-INVALID-numeric-date: unsupported planner input is rejected
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-INVALID-future-check: unsupported planner input is rejected
+AssertionError: expected [Function bound planRefresh] to throw an error
+ ❯ rejectsPlanInput tests/unit/acquisition-refresh.test.ts:405:179
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/52]⎯
+
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-PRIORITY: new/unavailable then prior-failed then latest30 then overdue then bucket, each ID once
+AssertionError: expected { sittingIds: [], …(2) } to deeply equal { sittingIds: [ '9999', …(39) ], …(2) }
+
+- Expected
++ Received
+
+  {
+-   "historicalBucket": 0,
+-   "overdueIds": [
+-     "1063",
+-   ],
+-   "sittingIds": [
+-     "9999",
+-     "1065",
+-     "1064",
+-     "1001",
+-     "1002",
+-     "1003",
+-     "1004",
+-     "1005",
+-     "1006",
+-     "1007",
+-     "1008",
+-     "1009",
+-     "1010",
+-     "1011",
+-     "1012",
+-     "1013",
+-     "1014",
+-     "1015",
+-     "1016",
+-     "1017",
+-     "1018",
+-     "1019",
+-     "1020",
+-     "1021",
+-     "1022",
+-     "1023",
+-     "1024",
+-     "1025",
+-     "1026",
+-     "1027",
+-     "1028",
+-     "1029",
+-     "1063",
+-     "1067",
+-     "1062",
+-     "1057",
+-     "1055",
+-     "1040",
+-     "1037",
+-     "1030",
+-   ],
++   "historicalBucket": -1,
++   "overdueIds": [],
++   "sittingIds": [],
+  }
+
+ ❯ checksPriority tests/unit/acquisition-refresh.test.ts:430:16
+    428|   const history: Sitting[] = []; for (const sitting of value.catalogue…
+    429|   history.sort(oldestCheck); for (const sitting of history) expected.p…
+    430|   expect(plan).toEqual({ sittingIds: expected, historicalBucket: 0, ov…
+       |                ^
+    431| }
+    432| test('REF-PRIORITY: new/unavailable then prior-failed then latest30 th…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/52]⎯
+
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-OVERDUE: age 86399999 has overdue status false and catch-up targeting
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-OVERDUE: age 86400000 has overdue status false and catch-up targeting
+AssertionError: expected { bucket: -1, overdueIds: [], …(1) } to deeply equal { bucket: 2, overdueIds: [], …(1) }
+
+- Expected
++ Received
+
+  {
+-   "bucket": 2,
++   "bucket": -1,
+    "overdueIds": [],
+    "targeted": false,
+  }
+
+ ❯ checksOverdue tests/unit/acquisition-refresh.test.ts:447:121
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[13/52]⎯
+
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-OVERDUE: age 86400001 has overdue status true and catch-up targeting
+AssertionError: expected { bucket: -1, overdueIds: [], …(1) } to deeply equal { bucket: 2, …(2) }
+
+- Expected
++ Received
+
+  {
+-   "bucket": 2,
+-   "overdueIds": [
+-     "1070",
+-   ],
+-   "targeted": true,
++   "bucket": -1,
++   "overdueIds": [],
++   "targeted": false,
+  }
+
+ ❯ checksOverdue tests/unit/acquisition-refresh.test.ts:447:121
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[14/52]⎯
+
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-ORDER: historical bucket checks use oldest successful acquiredAt before exact-ID ties
+AssertionError: expected [] to deeply equal [ Array(8) ]
+
+- Expected
++ Received
+
+- [
+-   "1069",
+-   "1035",
+-   "1045",
+-   "1047",
+-   "1048",
+-   "1049",
+-   "1051",
+-   "1052",
+- ]
++ []
+
+ ❯ checksHistoricalOrder tests/unit/acquisition-refresh.test.ts:466:18
+    464|   const actual: string[] = []; for (const id of plan.sittingIds) if (i…
+    465|   const expected = [oldest]; for (const id of ids) if (id !== oldest) …
+    466|   expect(actual).toEqual(expected);
+       |                  ^
+    467| }
+    468| test('REF-ORDER: historical bucket checks use oldest successful acquir…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[15/52]⎯
+
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-SIX-PLAN: six successful completed normal sweeps target every historical record
+AssertionError: expected { …(2) } to deeply equal { Object (buckets, historicalCoverage) }
+
+- Expected
++ Received
+
+  {
+    "buckets": [
+-     0,
+-     1,
+-     2,
+-     3,
+-     4,
+-     5,
+-   ],
+-   "historicalCoverage": [
+-     "1001",
+-     "1002",
+-     "1003",
+-     "1004",
+-     "1005",
+-     "1006",
+-     "1007",
+-     "1008",
+-     "1009",
+-     "1010",
+-     "1011",
+-     "1012",
+-     "1013",
+-     "1014",
+-     "1015",
+-     "1016",
+-     "1017",
+-     "1018",
+-     "1019",
+-     "1020",
+-     "1021",
+-     "1022",
+-     "1023",
+-     "1024",
+-     "1025",
+-     "1026",
+-     "1027",
+-     "1028",
+-     "1029",
+-     "1030",
+-     "1031",
+-     "1032",
+-     "1033",
+-     "1034",
+-     "1035",
+-     "1036",
+-     "1037",
+-     "1038",
+-     "1039",
+-     "1040",
+-     "1041",
+-     "1042",
+-     "1043",
+-     "1044",
+-     "1045",
+-     "1046",
+-     "1047",
+-     "1048",
+-     "1049",
+-     "1050",
+-     "1051",
+-     "1052",
+-     "1053",
+-     "1054",
+-     "1055",
+-     "1056",
+-     "1057",
+-     "1058",
+-     "1059",
+-     "1060",
+-     "1061",
+-     "1062",
+-     "1063",
+-     "1064",
+-     "1065",
+-     "1066",
+-     "1067",
+-     "1068",
+-     "1069",
+-     "1070",
++     -1,
++     -1,
++     -1,
++     -1,
++     -1,
++     -1,
+    ],
++   "historicalCoverage": [],
+  }
+
+ ❯ checksSixPlans tests/unit/acquisition-refresh.test.ts:486:61
+    484|     value.catalogue.preparedAt = iso(time);
+    485|   }
+    486|   expect({ buckets, historicalCoverage: [...seen].sort() }).toEqual({ …
+       |                                                             ^
+    487| }
+    488|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[16/52]⎯
+
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-BOOTSTRAP: absent accepted state plans every freshly inventoried ID without fake overdue times
+AssertionError: expected { bucket: -1, ids: [], overdueIds: [] } to deeply equal { bucket: +0, …(2) }
+
+- Expected
++ Received
+
+  {
+-   "bucket": 0,
+-   "ids": [
+-     "1001",
+-     "1002",
+-     "1003",
+-     "1004",
+-     "1005",
+-     "1006",
+-     "1007",
+-     "1008",
+-     "1009",
+-     "1010",
+-     "1011",
+-     "1012",
+-     "1013",
+-     "1014",
+-     "1015",
+-     "1016",
+-     "1017",
+-     "1018",
+-     "1019",
+-     "1020",
+-     "1021",
+-     "1022",
+-     "1023",
+-     "1024",
+-     "1025",
+-     "1026",
+-     "1027",
+-     "1028",
+-     "1029",
+-     "1030",
+-     "1031",
+-     "1032",
+-     "1033",
+-     "1034",
+-     "1035",
+-     "1036",
+-     "1037",
+-     "1038",
+-     "1039",
+-     "1040",
+-     "1041",
+-     "1042",
+-     "1043",
+-     "1044",
+-     "1045",
+-     "1046",
+-     "1047",
+-     "1048",
+-     "1049",
+-     "1050",
+-     "1051",
+-     "1052",
+-     "1053",
+-     "1054",
+-     "1055",
+-     "1056",
+-     "1057",
+-     "1058",
+-     "1059",
+-     "1060",
+-     "1061",
+-     "1062",
+-     "1063",
+-     "1064",
+-     "1065",
+-     "1066",
+-     "1067",
+-     "1068",
+-     "1069",
+-     "1070",
+-   ],
++   "bucket": -1,
++   "ids": [],
+    "overdueIds": [],
+  }
+
+ ❯ checksBootstrapPlan tests/unit/acquisition-refresh.test.ts:503:108
+    501| function checksBootstrapPlan(): void {
+    502|   const value = model(); const plan = planRefresh(null, value.latest, …
+    503|   expect({ bucket: plan.historicalBucket, ids: [...plan.sittingIds].so…
+       |                                                                                                            ^
+    504| }
+    505| test('REF-BOOTSTRAP: absent accepted state plans every freshly invento…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[17/52]⎯
+
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-RETAINED-PLAN: prior omitted accepted IDs remain in the complete historical sweep scope
+AssertionError: expected { sittingIds: [], …(2) } to deeply equal { sittingIds: [ '1001', …(37) ], …(2) }
+
+- Expected
++ Received
+
+  {
+-   "historicalBucket": 1,
++   "historicalBucket": -1,
+    "overdueIds": [],
+-   "sittingIds": [
+-     "1001",
+-     "1002",
+-     "1003",
+-     "1004",
+-     "1005",
+-     "1006",
+-     "1007",
+-     "1008",
+-     "1009",
+-     "1010",
+-     "1011",
+-     "1012",
+-     "1013",
+-     "1014",
+-     "1015",
+-     "1016",
+-     "1017",
+-     "1018",
+-     "1019",
+-     "1020",
+-     "1021",
+-     "1022",
+-     "1023",
+-     "1024",
+-     "1025",
+-     "1026",
+-     "1027",
+-     "1028",
+-     "1029",
+-     "1030",
+-     "1070",
+-     "1068",
+-     "1066",
+-     "1060",
+-     "1056",
+-     "1044",
+-     "1039",
+-     "1034",
+-   ],
++   "sittingIds": [],
+  }
+
+ ❯ checksRetainedPlan tests/unit/acquisition-refresh.test.ts:525:16
+    523|   const checks: (string | null)[] = [iso(start - 1000), iso(start - 10…
+    524|   const plan = planRefresh(validateCatalogue(value.catalogue), value.l…
+    525|   expect(plan).toEqual({ sittingIds: normalTargets(value, chosen), his…
+       |                ^
+    526|   expect(plan.sittingIds).toContain(omitted.id);
+    527| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[18/52]⎯
+
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-RUN-001: actual refresh fetches only prioritized targets and preserves unselected accepted metadata/bytes
+AssertionError: expected [ '1070', '1069', '1068', …(67) ] to deeply equal [ '1001', '1002', '1003', …(35) ]
+
+- Expected
++ Received
+
+  [
+-   "1001",
+-   "1002",
+-   "1003",
+-   "1004",
+-   "1005",
+-   "1006",
+-   "1007",
+-   "1008",
+-   "1009",
+-   "1010",
+-   "1011",
+-   "1012",
+-   "1013",
+-   "1014",
+-   "1015",
+-   "1016",
+-   "1017",
+-   "1018",
+-   "1019",
+-   "1020",
+-   "1021",
+-   "1022",
+-   "1023",
+-   "1024",
+-   "1025",
+-   "1026",
+-   "1027",
+-   "1028",
+-   "1029",
+-   "1030",
++   "1070",
+    "1069",
++   "1068",
++   "1067",
++   "1066",
++   "1065",
++   "1064",
++   "1063",
++   "1062",
++   "1061",
++   "1060",
++   "1059",
++   "1058",
++   "1057",
++   "1056",
++   "1055",
++   "1054",
++   "1053",
+    "1052",
+    "1051",
++   "1050",
+    "1049",
+    "1048",
+    "1047",
++   "1046",
+    "1045",
++   "1044",
++   "1043",
++   "1042",
++   "1041",
++   "1040",
++   "1039",
++   "1038",
++   "1037",
++   "1036",
+    "1035",
++   "1034",
++   "1033",
++   "1032",
++   "1031",
++   "1030",
++   "1029",
++   "1028",
++   "1027",
++   "1026",
++   "1025",
++   "1024",
++   "1023",
++   "1022",
++   "1021",
++   "1020",
++   "1019",
++   "1018",
++   "1017",
++   "1016",
++   "1015",
++   "1014",
++   "1013",
++   "1012",
++   "1011",
++   "1010",
++   "1009",
++   "1008",
++   "1007",
++   "1006",
++   "1005",
++   "1004",
++   "1003",
++   "1002",
++   "1001",
+  ]
+
+ ❯ checksActualIncremental tests/unit/acquisition-refresh.test.ts:546:28
+    544|   const old = selected(value.catalogue, untouched.id); const bytes = a…
+    545|   const run = await acquire(options(value));
+    546|   expect(requested(value)).toEqual(expected);
+       |                            ^
+    547|   expect(selected(run.catalogue, untouched.id).record).toEqual(old.rec…
+    548|   expect(await readFile(join(value.out, 'sittings', untouched.id + '.j…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[19/52]⎯
+
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-RETAINED-RUN: omitted prior identity is historically rechecked without inventing a current inventory listing
+AssertionError: expected { rechecked: false, …(2) } to deeply equal { Object (rechecked, listed, ...) }
+
+- Expected
++ Received
+
+  {
+    "acceptedId": "1070",
+    "listed": false,
+-   "rechecked": true,
++   "rechecked": false,
+  }
+
+ ❯ checksRetainedRun tests/unit/acquisition-refresh.test.ts:573:185
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[20/52]⎯
+
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-RUN-PRIORITY: new/unavailable/previous-failure are acquired before recent and historical work
+AssertionError: expected [ '1070', '1069', '1068' ] to deeply equal [ '9999', '1065', '1064' ]
+
+- Expected
++ Received
+
+  [
+-   "9999",
+-   "1065",
+-   "1064",
++   "1070",
++   "1069",
++   "1068",
+  ]
+
+ ❯ checksActualPriority tests/unit/acquisition-refresh.test.ts:593:40
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[21/52]⎯
+
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-CONTENT-false: content hashes distinguish unchanged/changed while successful acquiredAt advances
+AssertionError: expected null to match object { changedIds: [], …(3) }
+
+- Expected:
+{
+  "changedIds": [],
+  "completedIds": ArrayContaining [
+    "1001",
+  ],
+  "failedIds": [],
+  "unchangedIds": ArrayContaining [
+    "1001",
+  ],
+}
+
++ Received:
+null
+
+ ❯ checksChangedOutcome tests/unit/acquisition-refresh.test.ts:612:31
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[22/52]⎯
+
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-CONTENT-true: content hashes distinguish unchanged/changed while successful acquiredAt advances
+AssertionError: expected null to match object { changedIds: [ '1001' ], …(3) }
+
+- Expected:
+{
+  "changedIds": [
+    "1001",
+  ],
+  "completedIds": ArrayContaining [
+    "1001",
+  ],
+  "failedIds": [],
+  "unchangedIds": ArrayNotContaining [
+    "1001",
+  ],
+}
+
++ Received:
+null
+
+ ❯ checksChangedOutcome tests/unit/acquisition-refresh.test.ts:612:31
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[23/52]⎯
+
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-FAILED: failed target preserves successful check/content and cannot advance an incomplete bucket
+AssertionError: expected null to match object { failedIds: [ '1069' ], …(4) }
+
+- Expected:
+{
+  "acquisitionOutcome": "degraded",
+  "bucketCompleted": false,
+  "completedIds": ArrayNotContaining [
+    "1069",
+  ],
+  "failedIds": [
+    "1069",
+  ],
+  "stagingOutcome": "success",
+}
+
++ Received:
+null
+
+ ❯ checksFailedBucket tests/unit/acquisition-refresh.test.ts:632:31
+    630|   const attempts: number[] = []; for (const call of value.calls) if (c…
+    631|   expect(attempts).toHaveLength(3); expect(attempts[1] - attempts[0]).…
+    632|   expect(await report(value)).toMatchObject({ failedIds: [id], complet…
+       |                               ^
+    633|   expect(await optionalJson(join(value.state, 'checkpoint.json'))).toM…
+    634| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[24/52]⎯
+
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-THROTTLE: paced Retry-After recovery counts one accepted completed target
+AssertionError: expected null to match object { …(3) }
+
+- Expected:
+{
+  "bucketCompleted": true,
+  "completedIds": ArrayContaining [
+    "1001",
+  ],
+  "failedIds": [],
+}
+
++ Received:
+null
+
+ ❯ checksThrottle tests/unit/acquisition-refresh.test.ts:649:31
+    647|   expect(attempts).toHaveLength(2); expect(attempts[1] - attempts[0]).…
+    648|   expect(selected(run.catalogue, '1001').record.lastAttemptOutcome).to…
+    649|   expect(await report(value)).toMatchObject({ completedIds: expect.arr…
+       |                               ^
+    650| }
+    651| test('REF-THROTTLE: paced Retry-After recovery counts one accepted com…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[25/52]⎯
+
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-SIX-RUN: six normal four-hour refreshes sweep the full historical inventory without refetching all
+AssertionError: expected { …(3) } to deeply equal { chosen: [ +0, 1, 2, 3, 4, 5 ], …(2) }
+
+- Expected
++ Received
+
+@@ -1,15 +1,15 @@
+  {
+    "chosen": [
+-     0,
+-     1,
+-     2,
+-     3,
+-     4,
+-     5,
++     -1,
++     -1,
++     -1,
++     -1,
++     -1,
++     -1,
+    ],
+-   "everyRunIncremental": true,
++   "everyRunIncremental": false,
+    "ids": [
+      "1001",
+      "1002",
+      "1003",
+      "1004",
+
+ ❯ checksSixRuns tests/unit/acquisition-refresh.test.ts:671:108
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[26/52]⎯
+
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-CATCHUP: overdue accepted work is checked outside the oldest selected historical bucket
+AssertionError: expected null to match object { historicalBucket: 2, …(2) }
+
+- Expected:
+{
+  "completedIds": ArrayContaining [
+    "1070",
+  ],
+  "historicalBucket": 2,
+  "overdueIds": [
+    "1070",
+  ],
+}
+
++ Received:
+null
+
+ ❯ checksCatchup tests/unit/acquisition-refresh.test.ts:692:31
+    690|   const chosen = (bucket(id) + 1) % 6; value.bucketChecks.fill(iso(sta…
+    691|   await seed(value); const run = await acquire(options(value));
+    692|   expect(await report(value)).toMatchObject({ historicalBucket: chosen…
+       |                               ^
+    693|   expect(requested(value)).toContain(id);
+    694|   expect(selected(run.catalogue, id).record.acquiredAt! > iso(start - …
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[27/52]⎯
+
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-INTERRUPT: four-hour cap leaves accepted output/sweeps old and resumes only pending prioritized work
+AssertionError: expected { kind: 'partial', …(13) } to match object { complete: false, …(2) }
+(36 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+    "accepted": [
+      {
+-       "id": "9999",
++       "id": "1070",
+      },
+    ],
+    "complete": false,
+-   "refresh": {
+-     "bucketChecks": [
+-       "2026-10-09T22:00:00.000Z",
+-       "2026-10-09T21:00:00.000Z",
+-       "2026-10-09T18:00:00.000Z",
+-       "2026-10-09T20:00:00.000Z",
+-       "2026-10-09T19:00:00.000Z",
+-       "2026-10-09T23:00:00.000Z",
+-     ],
+-     "completedIds": [
+-       "9999",
+-     ],
+-     "historicalBucket": 2,
+-   },
+  }
+
+ ❯ checksInterruptedPlan tests/unit/acquisition-refresh.test.ts:709:76
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[28/52]⎯
+
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-RESUME: same-session validated partial resumes only selected pending IDs and preserves accepted completion times
+AssertionError: expected [ '1002', '1003', '1004', …(66) ] to deeply equal [ '1002', '1003', '1004', …(34) ]
+
+- Expected
++ Received
+
+@@ -26,14 +26,46 @@
+    "1026",
+    "1027",
+    "1028",
+    "1029",
+    "1030",
+-   "1069",
+-   "1052",
+-   "1051",
+-   "1049",
+-   "1048",
+-   "1047",
++   "1031",
++   "1032",
++   "1033",
++   "1034",
++   "1035",
++   "1036",
++   "1037",
++   "1038",
++   "1039",
++   "1040",
++   "1041",
++   "1042",
++   "1043",
++   "1044",
+    "1045",
+-   "1035",
++   "1046",
++   "1047",
++   "1048",
++   "1049",
++   "1050",
++   "1051",
++   "1052",
++   "1053",
++   "1054",
++   "1055",
++   "1056",
++   "1057",
++   "1058",
++   "1059",
++   "1060",
++   "1061",
++   "1062",
++   "1063",
++   "1064",
++   "1065",
++   "1066",
++   "1067",
++   "1068",
++   "1069",
++   "1070",
+  ]
+
+ ❯ checksPendingResume tests/unit/acquisition-refresh.test.ts:739:28
+    737|   value.pauseAfterRecord = false; value.calls.length = 0;
+    738|   const run = await acquire(options(value));
+    739|   expect(requested(value)).toEqual(pending);
+       |                            ^
+    740|   expect(selected(run.catalogue, '1001').record.acquiredAt).toBe(parti…
+    741|   expect(await report(value)).toMatchObject({ targetIds: targets, comp…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[29/52]⎯
+
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-FATAL-discovery: failure preserves baseline/sweeps with separate acquisition and staging receipts
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-FATAL-inventory: failure preserves baseline/sweeps with separate acquisition and staging receipts
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-FATAL-record: failure preserves baseline/sweeps with separate acquisition and staging receipts
+AssertionError: expected null to match object { bucketCompleted: false, …(2) }
+
+- Expected:
+{
+  "acquisitionOutcome": "failed",
+  "bucketCompleted": false,
+  "stagingOutcome": "not-attempted",
+}
+
++ Received:
+null
+
+ ❯ checksFatalReport tests/unit/acquisition-refresh.test.ts:759:31
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[30/52]⎯
+
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-FATAL-output: failure preserves baseline/sweeps with separate acquisition and staging receipts
+AssertionError: expected null to match object { bucketCompleted: false, …(2) }
+
+- Expected:
+{
+  "acquisitionOutcome": "success",
+  "bucketCompleted": false,
+  "stagingOutcome": "failed",
+}
+
++ Received:
+null
+
+ ❯ checksFatalReport tests/unit/acquisition-refresh.test.ts:759:31
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[31/52]⎯
+
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-NO-STATE: no prior publication/checkpoint safely bootstraps with an explicit full-target report
+AssertionError: expected null to match object { strategy: 'bootstrap', …(5) }
+
+- Expected:
+{
+  "acquisitionOutcome": "success",
+  "baseline": "none",
+  "completedIds": ArrayContaining [
+    "1070",
+    "1069",
+    "1068",
+    "1067",
+    "1066",
+    "1065",
+    "1064",
+    "1063",
+    "1062",
+    "1061",
+    "1060",
+    "1059",
+    "1058",
+    "1057",
+    "1056",
+    "1055",
+    "1054",
+    "1053",
+    "1052",
+    "1051",
+    "1050",
+    "1049",
+    "1048",
+    "1047",
+    "1046",
+    "1045",
+    "1044",
+    "1043",
+    "1042",
+    "1041",
+    "1040",
+    "1039",
+    "1038",
+    "1037",
+    "1036",
+    "1035",
+    "1034",
+    "1033",
+    "1032",
+    "1031",
+    "1030",
+    "1029",
+    "1028",
+    "1027",
+    "1026",
+    "1025",
+    "1024",
+    "1023",
+    "1022",
+    "1021",
+    "1020",
+    "1019",
+    "1018",
+    "1017",
+    "1016",
+    "1015",
+    "1014",
+    "1013",
+    "1012",
+    "1011",
+    "1010",
+    "1009",
+    "1008",
+    "1007",
+    "1006",
+    "1005",
+    "1004",
+    "1003",
+    "1002",
+    "1001",
+  ],
+  "pendingIds": [],
+  "strategy": "bootstrap",
+  "targetIds": ArrayContaining [
+    "1070",
+    "1069",
+    "1068",
+    "1067",
+    "1066",
+    "1065",
+    "1064",
+    "1063",
+    "1062",
+    "1061",
+    "1060",
+    "1059",
+    "1058",
+    "1057",
+    "1056",
+    "1055",
+    "1054",
+    "1053",
+    "1052",
+    "1051",
+    "1050",
+    "1049",
+    "1048",
+    "1047",
+    "1046",
+    "1045",
+    "1044",
+    "1043",
+    "1042",
+    "1041",
+    "1040",
+    "1039",
+    "1038",
+    "1037",
+    "1036",
+    "1035",
+    "1034",
+    "1033",
+    "1032",
+    "1031",
+    "1030",
+    "1029",
+    "1028",
+    "1027",
+    "1026",
+    "1025",
+    "1024",
+    "1023",
+    "1022",
+    "1021",
+    "1020",
+    "1019",
+    "1018",
+    "1017",
+    "1016",
+    "1015",
+    "1014",
+    "1013",
+    "1012",
+    "1011",
+    "1010",
+    "1009",
+    "1008",
+    "1007",
+    "1006",
+    "1005",
+    "1004",
+    "1003",
+    "1002",
+    "1001",
+  ],
+}
+
++ Received:
+null
+
+ ❯ checksNoStateBootstrap tests/unit/acquisition-refresh.test.ts:782:31
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[32/52]⎯
+
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-LOST-false: missing/expired retention baseline blocks replacement and records trust failure
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-LOST-true: missing/expired retention baseline blocks replacement and records trust failure
+AssertionError: expected null to match object { baseline: 'unrecoverable', …(4) }
+
+- Expected:
+{
+  "acquisitionOutcome": "failed",
+  "baseline": "unrecoverable",
+  "bucketCompleted": false,
+  "completedIds": [],
+  "stagingOutcome": "not-attempted",
+}
+
++ Received:
+null
+
+ ❯ checksLostStateReport tests/unit/acquisition-refresh.test.ts:801:31
+    799|   let rejected = false; try { await acquire(options(value)); } catch {…
+    800|   expect({ rejected, calls: requested(value), output: await readFile(j…
+    801|   expect(await report(value)).toMatchObject({ baseline: 'unrecoverable…
+       |                               ^
+    802| }
+    803| test.each([false, true])('REF-LOST-%s: missing/expired retention basel…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[33/52]⎯
+
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-RETENTION: exactly seven-day validated state is usable while later expiry cannot masquerade as new unavailable data
+AssertionError: expected null to match object { strategy: 'incremental', …(3) }
+
+- Expected:
+{
+  "acquisitionOutcome": "success",
+  "baseline": "checkpoint",
+  "historicalBucket": 2,
+  "strategy": "incremental",
+}
+
++ Received:
+null
+
+ ❯ checksSevenDayBoundary tests/unit/acquisition-refresh.test.ts:816:31
+    814|   const run = await acquire(options(value));
+    815|   expect(run.catalogue.coverage.latestInventoryCount).toBe(value.lates…
+    816|   expect(await report(value)).toMatchObject({ strategy: 'incremental',…
+       |                               ^
+    817| }
+    818| test('REF-RETENTION: exactly seven-day validated state is usable while…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[34/52]⎯
+
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-SERVED-false: missing/expired state recovers only trusted served baseline and reports bootstrap retention
+ FAIL  tests/unit/acquisition-refresh.test.ts > REF-SERVED-true: missing/expired state recovers only trusted served baseline and reports bootstrap retention
+AssertionError: expected null to match object { strategy: 'bootstrap', …(5) }
+
+- Expected:
+{
+  "acquisitionOutcome": "degraded",
+  "baseline": "served",
+  "failedIds": [
+    "1070",
+  ],
+  "stagingOutcome": "success",
+  "strategy": "bootstrap",
+  "targetIds": ArrayContaining [
+    "1070",
+    "1069",
+    "1068",
+    "1067",
+    "1066",
+    "1065",
+    "1064",
+    "1063",
+    "1062",
+    "1061",
+    "1060",
+    "1059",
+    "1058",
+    "1057",
+    "1056",
+    "1055",
+    "1054",
+    "1053",
+    "1052",
+    "1051",
+    "1050",
+    "1049",
+    "1048",
+    "1047",
+    "1046",
+    "1045",
+    "1044",
+    "1043",
+    "1042",
+    "1041",
+    "1040",
+    "1039",
+    "1038",
+    "1037",
+    "1036",
+    "1035",
+    "1034",
+    "1033",
+    "1032",
+    "1031",
+    "1030",
+    "1029",
+    "1028",
+    "1027",
+    "1026",
+    "1025",
+    "1024",
+    "1023",
+    "1022",
+    "1021",
+    "1020",
+    "1019",
+    "1018",
+    "1017",
+    "1016",
+    "1015",
+    "1014",
+    "1013",
+    "1012",
+    "1011",
+    "1010",
+    "1009",
+    "1008",
+    "1007",
+    "1006",
+    "1005",
+    "1004",
+    "1003",
+    "1002",
+    "1001",
+  ],
+}
+
++ Received:
+null
+
+ ❯ checksServedRecovery tests/unit/acquisition-refresh.test.ts:870:31
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[35/52]⎯
+
+
+ Test Files  1 failed | 1 passed (2)
+      Tests  52 failed | 99 passed (151)
+   Start at  13:12:23
+   Duration  3.84s (tests 97%, transform 2%, import 1%)
+

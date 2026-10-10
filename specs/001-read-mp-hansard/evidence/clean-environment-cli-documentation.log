@@ -1,0 +1,5 @@
+
+> vote-better-malaysia@0.1.0 check:docs
+> node scripts/check-documentation.ts
+
+Required candidate and accuracy review report are missing (--candidate, --report)

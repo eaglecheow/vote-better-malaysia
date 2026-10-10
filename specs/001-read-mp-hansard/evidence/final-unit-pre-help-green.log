@@ -1,0 +1,5 @@
+
+> vote-better-malaysia@0.1.0 test
+> vitest --run --reporter=json --outputFile=specs/001-read-mp-hansard/evidence/final-unit-green.json
+
+JSON report written to /Users/eaglecheow/dev/vote-better-malaysia/specs/001-read-mp-hansard/evidence/final-unit-green.json

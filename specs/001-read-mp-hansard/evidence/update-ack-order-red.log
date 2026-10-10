@@ -1,0 +1,66 @@
+
+> vote-better-malaysia@0.1.0 test
+> vitest --run tests/unit/updates.test.ts -t UPDATE024
+
+
+ RUN  v5.0.3 /Users/eaglecheow/dev/vote-better-malaysia
+
+ ❯ tests/unit/updates.test.ts (35 tests | 2 failed | 33 skipped) 24ms
+   × UPDATE024 CLIENT_VERSION: ordinary replies before a delayed actual Apply acknowledgement cannot reject consent 18ms
+   × UPDATE024 SHELL_STATUS: ordinary replies before a delayed actual Apply acknowledgement cannot reject consent 6ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/updates.test.ts > UPDATE024 CLIENT_VERSION: ordinary replies before a delayed actual Apply acknowledgement cannot reject consent
+ FAIL  tests/unit/updates.test.ts > UPDATE024 SHELL_STATUS: ordinary replies before a delayed actual Apply acknowledgement cannot reject consent
+AssertionError: expected 'failure' to be 'pending' // Object.is equality
+
+Expected: "pending"
+Received: "failure"
+
+ ❯ tests/unit/updates.test.ts:317:51
+    315|     s.container.message(target, type === 'CLIENT_VERSION'
+    316|       ? { type, base, version: current, accepted: true } : { type, bas…
+    317|     await settle(); expect.soft(observed.outcome).toBe('pending'); exp…
+       |                                                   ^
+    318|     s.container.message(target, { type: 'APPLY_ACCEPTED', base, versio…
+    319|     expect.soft(observed.outcome).toBe('success'); expect.soft(s.conta…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/6]⎯
+
+ FAIL  tests/unit/updates.test.ts > UPDATE024 CLIENT_VERSION: ordinary replies before a delayed actual Apply acknowledgement cannot reject consent
+ FAIL  tests/unit/updates.test.ts > UPDATE024 SHELL_STATUS: ordinary replies before a delayed actual Apply acknowledgement cannot reject consent
+AssertionError: expected 'failure' to be 'success' // Object.is equality
+
+Expected: "success"
+Received: "failure"
+
+ ❯ tests/unit/updates.test.ts:319:35
+    317|     await settle(); expect.soft(observed.outcome).toBe('pending'); exp…
+    318|     s.container.message(target, { type: 'APPLY_ACCEPTED', base, versio…
+    319|     expect.soft(observed.outcome).toBe('success'); expect.soft(s.conta…
+       |                                   ^
+    320|     s.client.close(); await applied;
+    321|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/6]⎯
+
+ FAIL  tests/unit/updates.test.ts > UPDATE024 CLIENT_VERSION: ordinary replies before a delayed actual Apply acknowledgement cannot reject consent
+ FAIL  tests/unit/updates.test.ts > UPDATE024 SHELL_STATUS: ordinary replies before a delayed actual Apply acknowledgement cannot reject consent
+AssertionError: expected "vi.fn()" to be called once, but got 0 times
+ ❯ tests/unit/updates.test.ts:319:84
+    317|     await settle(); expect.soft(observed.outcome).toBe('pending'); exp…
+    318|     s.container.message(target, { type: 'APPLY_ACCEPTED', base, versio…
+    319|     expect.soft(observed.outcome).toBe('success'); expect.soft(s.conta…
+       |                                                                                    ^
+    320|     s.client.close(); await applied;
+    321|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/6]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 33 skipped (35)
+   Start at  19:09:32
+   Duration  105ms (tests 49%, transform 36%, import 11%, worker 3%)
+
