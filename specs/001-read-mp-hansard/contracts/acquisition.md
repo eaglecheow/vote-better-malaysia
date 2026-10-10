@@ -58,6 +58,8 @@ at most two retries with backoff. Honor rate limits/`Retry-After`; stop on acces
 Cap acquisition at four hours per run. Checkpoint accepted individual records on timeout;
 later runs resume overdue work. Delays, throttling and scheduler inactivity can miss the
 best-effort 24-hour target and must remain visible in receipts/overdue indications.
+Waiting for required physical-device evidence can also delay publication; do not hold
+the acquisition concurrency lock while an operator collects that evidence.
 
 ## Normalization, state and failures
 
@@ -94,6 +96,29 @@ Stage all files before replacing output. Validate inventory reconciliation, refe
 digest consistency, gzip round trips, schema/identity, all-item accounting and every
 [budget](../plan.md). Deploy one complete artifact using reviewed application code after
 required checks. Scheduled data work must not auto-edit/merge application source.
+
+Acquisition size-rejection behavior requires its own foundational unit RED: exact-limit
+and one-byte-over cases for catalogue/shard gzip, decoded resources and total staged data,
+with prior accepted output/state preserved on rejection. The total staged-data ceiling is
+≤900,000,000 bytes; the later whole-artifact gate additionally includes every shell/other
+deployed file. A staged-data pass cannot establish that the complete site fits.
+
+Prepare a frozen candidate and retain its artifact digest, `snapshotId`, application
+fingerprint, fixture references, source revision and prior served-baseline digest outside
+the deployed file set. Use the [plan's evidence applicability rules](../plan.md#publication-evidence-applicability).
+New candidates run fresh automated checks and require actual-target reports on a trusted
+test-only HTTPS origin under the repository subpath. Reuse reviewed reports only for the
+exact same candidate/application/dataset/conditions; any deployed-byte change requires
+new reports, even if application code is unchanged.
+
+Missing or failed prepublication evidence records `awaiting-evidence` or the relevant
+failure in the run summary/receipts, retains the prior site and ends the run. Keep frozen
+candidate/report artifacts for seven days. Manual promotion names trusted default-branch
+candidate/evidence artifact run IDs, verifies provenance/checksums and every prepublication
+gate, and publishes the same bytes without reacquisition/rebuild. Reject expired artifacts,
+changed application inputs and a candidate whose prior served baseline no longer matches
+the current site. Live Pages-address checks follow publication and block a delivery claim
+if they fail; they cannot be required before the first deployment.
 
 After successful Pages deployment, record a `DeploymentReceipt` containing `snapshotId`,
 deployment identifier, GitHub-confirmed `publishedAt`, `verifiedServedAt` after a live

@@ -245,6 +245,37 @@ separate; planned shell budgets do not replace full source-size measurement or f
 **Alternatives considered**: Mocks, emulated iPhones, Lighthouse scores alone, and tests
 written after production behavior do not meet the constitution.
 
+## 6. Analysis remediation: measurements and publication evidence
+
+**Decision**: Use standard GitHub-hosted `ubuntu-24.04` x64 laboratory runs and the
+Pixel 6a, iPhone 13, Windows i5-8250U/8 GiB and MacBook Air M1/8 GiB actual acceptance
+baselines specified in [plan.md](plan.md#performance-budgets).
+
+**Rationale**: On 2026-10-10, `gh repo view eaglecheow/vote-better-malaysia --json
+visibility,defaultBranchRef` confirmed a public repository with default branch `main`.
+[GitHub's runner reference](https://docs.github.com/en/actions/reference/runners/github-hosted-runners)
+documents four vCPUs/16 GB RAM for the selected public-repository Linux runner class.
+Record actual CPU/image/tool variants; this fixes the class without claiming identical
+physical hosts. The named physical baselines are design choices, not devices verified
+available or tested by this operation.
+
+**Decision**: Bind reports to every deployed byte of a frozen candidate, application
+inputs, snapshot, fixtures and measurement conditions. Reuse only exact matching evidence;
+data-only changes require fresh actual-target reports as well as fresh automated checks.
+Missing evidence holds publication and is reported for maintainer recovery. Promote the
+tested artifact without reacquisition/rebuilding; reject expired or superseded candidates.
+
+**Rationale**: This preserves the constitution's actual-device and production-budget gates
+without presenting reports for an older snapshot as proof of a new one. Testing uses a
+trusted HTTPS origin before promotion; actual Pages checks follow deployment, avoiding a
+circular first-publication prerequisite. The manual evidence step may delay best-effort
+refresh and must remain visible. No acceptance reports or workflow were created here.
+
+**Alternatives considered**: A generic unspecified runner leaves measurements dependent
+on hardware chosen later. Reusing reports only by source revision ignores changed data;
+skipping physical-device gates weakens the agreed validation contract. A broader evidence
+reuse scheme is unnecessary for this remediation.
+
 ## Research disposition and verification boundary
 
 All planning decisions are resolved. User approval accepts the internal interface,

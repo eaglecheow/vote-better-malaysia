@@ -64,6 +64,16 @@ CI browser/mechanism checks use controlled, source-verified fixtures; full-snaps
 release checks use the reconciled acquired output. Keep generated `public/data/`,
 `.cache/` and `dist/` outside source commits through the planned ignore rules.
 
+Freeze and measure the full candidate before actual-device acceptance. Reports bind to
+the deployed-file artifact digest, application fingerprint, snapshot, fixtures and
+conditions defined in [plan.md](plan.md#publication-evidence-applicability). Test the frozen
+candidate at a trusted HTTPS origin under the repository subpath. Missing reports hold
+publication with `awaiting-evidence`; collect them without holding the acquisition lock,
+then manually promote the named trusted artifact/report runs without reacquisition or
+rebuilding. Any changed deployed bytes, expired artifacts, changed application inputs or
+superseded served baseline require a newly checked candidate. Actual Pages-address journeys
+follow deployment. This evidence step may delay the best-effort 24-hour refresh target.
+
 ## RED → GREEN → REFACTOR evidence
 
 For each behavior, first write and run meaningful unit assertions, including invalid
@@ -80,6 +90,9 @@ behavioral assertion failure, subsequent GREEN/regression results, and necessary
 refactoring or an explicit no-refactor decision. Test setup must not introduce the
 covered feature before RED. Link durable source, browser, usability, performance and
 documentation reports from `evidence/`; do not substitute retrospective tests for TDD.
+Foundational acquisition RED must include exact-limit/one-byte-over size checks and
+preservation of accepted output/state before acquisition size rejection is implemented;
+RED for the later performance checker does not cover that earlier behavior.
 
 ## Source acquisition and publication checks
 
@@ -190,9 +203,13 @@ runner class, revision, fixture hashes, raw runs and pass/fail aggregation. Use 
 gzip settings for build accounting; catalogue/shard budgets count actual stored gzip
 files. Decode and validate complete text/provenance before marking a result ready.
 
-- Mobile lab proxy: Chromium 390×844, 1.6 Mbps down/750 Kbps up, 150 ms RTT, 4× CPU.
+- Use the exact lab runner and four physical hardware baselines in
+  [plan.md](plan.md#performance-budgets); validate runner allocation and record CPU/image,
+  OS/browser/tool versions. Missing hardware or a different runner blocks the affected
+  check until a documented plan amendment and rerun; substitute results cannot pass it.
+- Mobile lab proxy: pinned Chromium 390×844, 1.6 Mbps down/750 Kbps up, 150 ms RTT, 4× CPU.
 - Desktop lab proxy: 1440×900, 10 Mbps down/2 Mbps up, 40 ms RTT, 1× CPU on the same
-  recorded fixed runner class. Record actual acceptance hardware separately.
+  defined runner class. Record actual acceptance hardware separately.
 - Use 20 runs per profile with nearest-rank percentiles for laboratory budgets.
   Cold runs clear HTTP cache, workers, Cache Storage and IndexedDB; repeat runs retain
   them after a successful visit. Offline runs prepopulate, close, disable networking
@@ -208,7 +225,7 @@ files. Decode and validate complete text/provenance before marking a result read
 | Cold full catalogue / repeat reader | p95 ready ≤5 s / ≤1 s. |
 | Decompression/validation/filtering | p95 ≤500 ms mobile proxy; ≤200 ms desktop proxy. |
 | Selection/language/read interaction | Lab p95 next paint ≤200 ms; not field INP. |
-| Online selected reading | ≥29 of 30 attempts per device group ≤5 s across ≥5 sittings; retrieval failures separately reported and never successes. |
+| Online selected reading | ≥29 of 30 attempts on each actual baseline/browser ≤5 s across ≥5 sittings; report mobile/desktop and target results separately; retrieval failures are never successes. |
 | Actual offline reopen | All ten attempts on each acceptance browser ≤2 s, with saved-data state; every unsaved pair requires a connection. |
 
 CI must require type/unit/browser/production-build checks, reviewed RED evidence,
@@ -216,6 +233,10 @@ all numeric budgets and applicable recorded actual-browser budget evidence befor
 merge. Demonstrate that an exceeded limit or missing report fails the required gate;
 a workflow file alone does not prove enforcement. Source and actual Pages acceptance
 remain required delivery evidence. Check all limits in [plan.md](plan.md).
+Verify exact-candidate report reuse succeeds, while changed bytes/application/fixtures,
+wrong conditions, missing/expired reports and superseded-candidate promotion fail. Each
+new scheduled snapshot runs fresh automated checks and needs fresh actual-target reports;
+do not treat an old report's code revision alone as sufficient publication evidence.
 
 Report real-user mobile and desktop p75 LCP ≤2.5 s, INP ≤200 ms and CLS ≤0.1 separately.
 Before sufficient field data exists, state these targets are unverified for each group.

@@ -103,6 +103,10 @@ messages. Keep build-only request/state handling outside the browser bundle.
 
 No constitution exception is requested. Planning readiness does not assert a tested app.
 
+Analysis remediation on 2026-10-10 keeps foundational acquisition size rejection behind
+its own verified RED, defines the runner and physical-device baselines below, and binds
+publication evidence to an immutable candidate. These are design gates, not measured passes.
+
 ## Acquisition and Publication
 
 The [acquisition contract](contracts/acquisition.md) defines discovery, scheduling,
@@ -141,6 +145,13 @@ receipt, not a prediction in a prebuilt manifest. Official change times remain u
 unless supplied. Document reuse-policy limits and obey source-specific restrictions
 actually discovered before publication; no third-party reconstruction is substituted.
 
+Scheduled acquisition prepares a frozen candidate; it does not bypass missing acceptance
+evidence. The publication contract below applies to both scheduled and manual runs. A run
+waiting for physical-device reports records `awaiting-evidence`, preserves the served site,
+and releases the concurrency lock. Maintainers test and promote that exact artifact without
+reacquisition or rebuilding. This manual evidence step can delay the best-effort 24-hour
+target and belongs in operational reports and bilingual freshness guidance.
+
 ## Reader and PWA
 
 The [data model](data-model.md) and [reader contract](contracts/reader.md) define identities,
@@ -177,6 +188,11 @@ unit assertions. Record behavioral RED before production code, then GREEN and re
 or explicit no-refactor evidence. Harness/import/syntax/dependency failures and tests
 already passing do not count as RED.
 
+Before acquisition implements size rejection, foundational unit tests must demonstrate
+exact-limit acceptance and one-byte-over rejection for catalogue/shard gzip, decoded
+resources and total staged-data sizes, including unchanged accepted output/state after
+failure. Later tests of the performance checker cannot replace this acquisition RED gate.
+
 Planned evidence: `specs/001-read-mp-hansard/evidence/tdd.md`, plus source, browser,
 performance, accessibility/usability and documentation reports. Record IDs, commands,
 revision/working-tree hash, expected/observed failures, passes and gaps when checks run.
@@ -186,9 +202,42 @@ commands; implementation must verify those commands before documenting them as w
 CI requires type/unit checks, reviewed RED evidence, production build, asset/full-artifact
 sizes, actual-engine browser offline/update checks, performance budgets and documentation
 coverage. Missing/exceeded required checks block merge; configure branch protection.
-CI also requires revision-matched reports containing ten offline measurements per actual
+CI also requires candidate-matched reports containing ten offline measurements per actual
 acceptance target, all ≤2 s. Source accuracy and remaining device acceptance require review
 before release. No workflow or branch protection was created by this operation.
+
+### Publication evidence applicability
+
+Use one SHA-256 artifact digest over a canonical sorted list of every deployed relative
+path, byte length and file SHA-256. Keep this digest, evidence and deployment receipts
+outside the deployed file set. Reports identify source revision, application fingerprint
+(application/tooling/configuration/lockfile/workflow inputs), artifact digest, `snapshotId`,
+fixture hashes and measurement conditions. Documentation-only evidence commits do not
+invalidate an unchanged application/artifact; the recorded tested revision remains honest.
+Record the prior served-baseline digest as well so update/promotion reports identify both
+the existing reader and its replacement. Candidate fixture metadata is generated ignored
+workflow output, not an automatic edit to tracked test fixtures or application source.
+
+- Prepare and retain a complete frozen candidate and its served-baseline digest in trusted
+  default-branch artifacts for seven days. Measure/select its full catalogue and median,
+  p95/largest fixtures before actual-target testing so every report tests the same bytes.
+- Every newly prepared candidate runs type/unit/build, actual-engine browser, complete
+  size/lab timing, documentation and source-validation gates. Actual-device reports on a
+  trusted test-only HTTPS origin at the repository subpath are prepublication evidence;
+  actual Pages-address checks and confirmed deployment receipts follow publication.
+- Reuse reviewed actual-device/source/documentation reports only for the exact same
+  application fingerprint, artifact digest, snapshot, fixtures and conditions, with browser
+  versions still stable at acceptance. Any deployed-byte change, including provenance-only
+  catalogue changes, invalidates reuse. Data-only snapshots require fresh actual-target
+  reports; automated/emulated results cannot stand in for them.
+- Missing, failed, mismatched or expired reports hold publication. Manual promotion names
+  the trusted candidate and evidence artifact runs, rechecks their provenance/checksums and
+  all prepublication gates, and deploys the tested bytes without acquisition or rebuilding.
+  Reject promotion if the candidate's application fingerprint differs from reviewed current
+  default-branch inputs or its served-baseline digest no longer matches the current site.
+- Postdeployment receipt/live-URL checks must pass before delivery/finalization is claimed;
+  they are not prerequisites that make the first publication circular. Report a failed
+  live check honestly and require maintainer recovery before claiming the release complete.
 
 Browser checks cover installation/activation, cache replacement, closed-reader offline
 reopen, unsaved pairs, storage loss/write failure, failed refresh, waiting/applied updates,
@@ -227,14 +276,38 @@ Include all application assets, including any fonts/images later introduced.
 | Cold catalogue ready | p95 ≤5 s | 20 fresh runs per profile; User Timing after complete validated catalogue is usable |
 | Repeat reader ready | p95 ≤1 s | 20 prepopulated runs per profile; User Timing after saved reader/selections usable |
 | Decompress + validate + filter | p95 ≤500 ms mobile; ≤200 ms desktop | 20 runs per profile on each median, p95 and largest sitting; time complete result/gap construction |
-| Online Read → matching subset/gaps or verified absence | ≤5 s in ≥29/30 attempts per device group | ≥5 sittings of different lengths; time complete text/provenance; failures remain in denominator |
+| Online Read → matching subset/gaps or verified absence | ≤5 s in ≥29/30 attempts per actual baseline/browser | ≥5 sittings of different lengths; separate target/mobile/desktop results; time complete text/provenance; failures remain in denominator |
 | Offline reopen → complete saved result | ≤2 s in all ten attempts per actual target | Saved pairs including largest/gaps; close reader, disable network, reopen and verify complete text/provenance |
 | Selection/language/read → next paint | p95 ≤200 ms | 20 scripted interactions per profile, including long/gap results; not field INP |
 
-Mobile lab profile: Chromium 390×844, 1.6 Mbps down/750 Kbps up, 150 ms RTT, 4× CPU
-slowdown on a recorded fixed runner class. Desktop: 1440×900, 10 Mbps down/2 Mbps up,
-40 ms RTT, 1× CPU on the same runner. Apply these networks to actual mobile/desktop
-online acceptance; record their physical hardware separately.
+Lab runner baseline: standard GitHub-hosted `ubuntu-24.04` x64 for this public repository,
+with four vCPUs and 16 GB RAM, as documented in the
+[GitHub runner reference](https://docs.github.com/en/actions/reference/runners/github-hosted-runners)
+and checked on 2026-10-10. Use one browser process and no concurrent measurement jobs.
+Validate the runner label/OS/architecture/allocation before measuring; record actual CPU
+model, runner image revision and exact Node/browser/tool versions. Hosted CPU/image variants
+are disclosed, not described as identical physical machines; do not pool different
+conditions into one percentile. A different runner allocation requires a plan amendment
+and new measurements, not silently retaining this baseline's results.
+
+Mobile lab profile: pinned Playwright Chromium 390×844, 1.6 Mbps down/750 Kbps up,
+150 ms RTT, 4× CPU slowdown. Desktop: 1440×900, 10 Mbps down/2 Mbps up, 40 ms RTT,
+1× CPU on the same runner class. Pin tools through the lockfile/browser installation;
+these profiles remain laboratory proxies, not actual Android/iPhone evidence.
+
+| Actual acceptance baseline | Browser targets | Conditions |
+|---|---|---|
+| Google Pixel 6a | Stable Android Chrome | Native mobile viewport; mobile network above; no CPU emulation |
+| Apple iPhone 13 | Stable iPhone Safari | Native mobile viewport; mobile network above; no CPU emulation |
+| Intel Core i5-8250U, 8 GiB RAM, Windows 11 x64 laptop | Stable desktop Chrome, Edge, Firefox | 1440×900 viewport; desktop network above; AC power |
+| MacBook Air M1, 8 GiB RAM, supported stable macOS | Stable desktop Safari | 1440×900 viewport; desktop network above; AC power |
+
+Use supported stable OS/browser releases at acceptance, record their exact versions,
+disable battery-saver modes, and close unrelated applications. Missing baseline hardware
+blocks the affected check; substitutions require a documented plan amendment and rerun.
+Perform 30 online attempts on each baseline/browser, requiring ≥29 successful ≤5-second
+results independently, and all ten ≤2-second offline attempts on each of the six targets.
+Keep target results separate; passing faster hardware cannot substitute for these baselines.
 
 Cold runs clear HTTP cache, workers, Cache Storage and IndexedDB. Repeat runs retain them
 after a successful visit. Offline runs retain saved content only. Bootstrap measures every
@@ -244,7 +317,7 @@ Exceeding archive/file/timing limits blocks release pending explicit design adju
 never dropping data. First offline visits/unsaved pairs have no reading-time budget because
 no readable result is promised; feedback/interaction remains covered.
 
-Acquisition is capped at four hours per run on a recorded Actions runner, with one request
+Acquisition is capped at four hours per run on the defined Actions runner, with one request
 start per second maximum. Receipts record attempts/completion/overdue coverage, not a
 source latency guarantee. CI validates timeout/rate configuration with controlled clocks
 and enforces full-output sizes. Field mobile/desktop results remain separate; unavailable
