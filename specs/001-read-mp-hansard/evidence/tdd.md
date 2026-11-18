@@ -1,5 +1,10 @@
 # TDD execution evidence
 
+## Optional page metadata repair (2026-11-18)
+
+[Repair RED/GREEN and limitations](tdd-page-metadata.md) records the current
+compatibility fix and 60 regression cases. It does not establish publication.
+
 ## Final local regression and CI completion
 
 The final unrestricted Node 24 run passes **2,021/2,021** cases, zero failed or

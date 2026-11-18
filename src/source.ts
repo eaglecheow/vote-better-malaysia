@@ -888,6 +888,7 @@ export function validateSittingRecord(value: unknown, sitting: Sitting, catalogu
  * @param catalogue Reconciled member and sitting catalogue.
  * @returns Stable normalized content with every source leaf exactly once, including gaps and annotations.
  * @throws When source identity, structure, marker, fields or provided indices are unsupported.
+ * @remarks Optional positive source/PDF page bounds are validated but do not change the normalized schema.
  */
 export function normalizeSourceRecord(raw: unknown, sitting: Sitting, catalogue: Catalogue): SittingRecord {
   const selected = reconciledSitting(validateCatalogue(catalogue), sitting);
@@ -924,7 +925,14 @@ export function normalizeSourceRecord(raw: unknown, sitting: Sitting, catalogue:
     }
     const node = sourceObject(value, 'source speech node');
     if ('speech' in node) {
-      for (const key of Object.keys(node)) requireValue(['speech', 'author', 'author_id', 'timestamp', 'is_annotation', 'index', 'new_author_id'].includes(key), 'unsupported source leaf field');
+      const pageFields = ['source_page_start', 'source_page_end', 'pdf_page_start', 'pdf_page_end'];
+      for (const key of Object.keys(node)) requireValue(['speech', 'author', 'author_id', 'timestamp', 'is_annotation', 'index', 'new_author_id', ...pageFields].includes(key), 'unsupported source leaf field');
+      for (const key of pageFields) if (Object.hasOwn(node, key)) sourceInteger(node[key], `source ${key}`, 1);
+      for (const prefix of ['source', 'pdf']) {
+        const start = node[`${prefix}_page_start`];
+        const end = node[`${prefix}_page_end`];
+        if (start !== undefined && end !== undefined) requireValue((start as number) <= (end as number), `source ${prefix} page range`);
+      }
       requireValue(typeof node.speech === 'string', 'source speech string');
       const rawAuthor = node.author === undefined || node.author === null ? null : node.author;
       requireValue(rawAuthor === null || typeof rawAuthor === 'string', 'source author label');
