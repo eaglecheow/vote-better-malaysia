@@ -96,6 +96,14 @@ recheck need not change its digest.
 | `timestamp` | Nullable original source speech time value; not an official change timestamp. |
 | `gapReason` | Null unless unassigned: `missing-id`, `unknown-id`, or `conflicting-id`. |
 
+Official leaves may also supply `source_page_start`, `source_page_end`,
+`pdf_page_start`, and `pdf_page_end`. Each supplied value must be a positive safe
+integer; paired bounds must be ordered independently within each page-number
+system. Omitted and partial bounds remain supported. No fixed offset, equal span
+or single-page restriction is assumed. These validated source-only fields do not
+change normalized content or schema. Other unknown leaf fields still reject the
+replacement.
+
 Classify an annotation only when the source `is_annotation` marker is boolean `true`.
 Missing, null or `false` markers leave the item in speaking-item accounting; do not infer
 annotations from labels, brackets or prose. Other marker values reject the replacement

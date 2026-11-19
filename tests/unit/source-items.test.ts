@@ -1166,3 +1166,87 @@ test.each(['not-a-time', '2026-10-10', '2026-10-10T06:00:00+08:00'])('ITM-R018: 
       () => buildTranscriptResult(catalogue, '1839', '29326', shard([item()], catalogue), refreshedAt),
     ).toThrow();
   });
+
+
+test.each([
+  {},
+  { source_page_start: 1, source_page_end: 1, pdf_page_start: 7, pdf_page_end: 7 },
+  { source_page_start: 12, source_page_end: 15, pdf_page_start: 3, pdf_page_end: 9 },
+  { source_page_start: 1 },
+  { source_page_end: 2 },
+  { pdf_page_start: 3 },
+  { pdf_page_end: Number.MAX_SAFE_INTEGER },
+])('ITM-PAGE-ACCEPT: optional page metadata %j preserves normalized content',
+  /**
+   * Accepts historical and optional page metadata without changing normalized content.
+   * @param pages Controlled source page bounds; no source/PDF offset is assumed.
+   * @returns Nothing; asserts exact text, attribution, schema and input preservation.
+   */
+  (pages) => {
+    const tree = [{ ' Heading ': [
+      leaf({ ...pages, index: 1 }),
+      leaf({ ...pages, index: 2, author_id: null }),
+      leaf({ ...pages, index: 3, is_annotation: true }),
+    ] }];
+    const original = structuredClone(tree);
+    expect(normalize(tree).items).toEqual([
+      item({ sourceIndex: 1, sectionPath: [' Heading '] }),
+      item({ ordinal: 1, sourceIndex: 2, sectionPath: [' Heading '], sourceAuthorId: null, memberId: null, attribution: 'unassigned', gapReason: 'missing-id' }),
+      item({ ordinal: 2, sourceIndex: 3, sectionPath: [' Heading '], memberId: null, attribution: 'annotation' }),
+    ]);
+    expect(tree).toEqual(original);
+  });
+
+for (const field of ['source_page_start', 'source_page_end', 'pdf_page_start', 'pdf_page_end']) {
+  test.each(invalidCases([null, undefined, 0, -1, 1.5, '7', true, {}, [], NaN, Infinity, Number.MAX_SAFE_INTEGER + 1]))(
+    `ITM-PAGE-VALUE: ${field} rejects malformed value %j`,
+    /**
+     * Rejects malformed known metadata without coercion.
+     * @param value Controlled invalid page bound.
+     * @returns Nothing; asserts the field-specific validation error.
+     */
+    (value) => {
+      expect(
+        /**
+         * Supplies an invalid page bound to the normalization boundary.
+         * @returns A normalized record only if validation incorrectly succeeds.
+         * @throws Propagates the required page validation rejection.
+         */
+        () => normalize([leaf({ [field]: value })]),
+      ).toThrow(`source ${field}`);
+    });
+}
+
+test.each(['source', 'pdf'])('ITM-PAGE-RANGE: rejects reversed %s bounds',
+  /**
+   * Checks ordering independently for source and PDF page ranges.
+   * @param prefix Page-number system under test.
+   * @returns Nothing; asserts the range-specific rejection.
+   */
+  (prefix) => {
+    expect(
+      /**
+       * Supplies positive but reversed page bounds.
+       * @returns A normalized record only if validation incorrectly succeeds.
+       * @throws Propagates the required range rejection.
+       */
+      () => normalize([leaf({ [`${prefix}_page_start`]: 3, [`${prefix}_page_end`]: 2 })]),
+    ).toThrow(`source ${prefix} page range`);
+  });
+
+test.each(['source_page', 'pdf_page_count', 'unrecognized_field'])('ITM-PAGE-UNKNOWN: rejects unrelated field %s',
+  /**
+   * Keeps the allowlist closed alongside valid page metadata.
+   * @param field Unknown source leaf field.
+   * @returns Nothing; asserts unknown-field rejection.
+   */
+  (field) => {
+    expect(
+      /**
+       * Adds an unknown field to otherwise valid page metadata.
+       * @returns A normalized record only if validation incorrectly succeeds.
+       * @throws Propagates the required unknown-field rejection.
+       */
+      () => normalize([leaf({ source_page_start: 1, source_page_end: 1, pdf_page_start: 7, pdf_page_end: 7, [field]: 1 })]),
+    ).toThrow('unsupported source leaf field');
+  });
